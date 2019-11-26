@@ -3,12 +3,15 @@ import styled from "styled-components";
 import HeaderLeague from "../Routes/Header/HeaderLeague";
 
 const Header = styled.header`
+  margin-top: 0.1%;
   width: 100%;
-  height: 90px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px;
+  /* border-bottom-width: 1px;
+  border-bottom-style: solid; */
 `;
 
 const HeaderLeftDiv = styled.div`
@@ -17,7 +20,6 @@ const HeaderLeftDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: gray;
 `;
 
 const HeaderRightDiv = styled.div`
@@ -26,7 +28,11 @@ const HeaderRightDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+`;
+
+const TitleText = styled.text`
+  font-size: 32px;
+  font-weight: 800;
 `;
 
 const BoldText = styled.text`
@@ -37,7 +43,7 @@ export default () => {
   return (
     <Header>
       <HeaderLeftDiv>
-        <BoldText>헤더 좌측</BoldText>
+        <TitleText>Watchurs</TitleText>
       </HeaderLeftDiv>
       <HeaderLeague />
       <HeaderRightDiv>

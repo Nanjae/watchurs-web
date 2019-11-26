@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import imagess from "../../image2.jpg";
 
 const HeaderLeagueDiv = styled.div`
   width: 70%;
@@ -7,7 +8,6 @@ const HeaderLeagueDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
 `;
 
 const LeagueColumnDiv = styled.div`
@@ -18,18 +18,29 @@ const LeagueColumnDiv = styled.div`
 `;
 
 const LeagueColumnTop = styled.div`
-  height: 50%;
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+
 const LeagueColumnBot = styled.div`
   padding: 0px 20%;
   width: 100%;
-  height: 50%;
+  height: 30%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const LeagueTitleLogo = styled.div`
+  background-image: url(${props => props.src});
+  background-size: cover;
+  width: 180px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 const BoldText = styled.text`
@@ -41,7 +52,7 @@ export default () => {
     <HeaderLeagueDiv>
       <LeagueColumnDiv>
         <LeagueColumnTop>
-          <BoldText>리그 오브 레전드</BoldText>
+          <LeagueTitleLogo src={imagess} />
         </LeagueColumnTop>
         <LeagueColumnBot>
           <BoldText>하단 메뉴</BoldText>
