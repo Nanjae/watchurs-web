@@ -1,67 +1,99 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import imagess from "../../image2.jpg";
 
 const HeaderLeagueDiv = styled.div`
-  width: 70%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const LeagueColumnDiv = styled.div`
+const LeagueMenuDiv = styled.div`
   width: 100%;
-  height: 100%;
-  flex-direction: column;
-  display: flex;
-`;
-
-const LeagueColumnTop = styled.div`
-  height: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const LeagueColumnBot = styled.div`
-  padding: 0px 20%;
-  width: 100%;
-  height: 30%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const LeagueTitleLogo = styled.div`
-  background-image: url(${props => props.src});
-  background-size: cover;
-  width: 180px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+const LeagueMenuBox = styled.div`
+  padding: 10px;
+  cursor: pointer;
 `;
 
-const BoldText = styled.text`
+const LeagueMenuText = styled.text`
+  font-size: 22px;
   font-weight: 600;
+  user-select: none;
 `;
 
 export default () => {
+  const [firstFocus, setFirstFocus] = useState(true);
+  const [secondFocus, setSecondFocus] = useState(false);
+  const [thirdFocus, setThirdFocus] = useState(false);
+  const onFirstMouseOver = () => {
+    setFirstFocus(true);
+  };
+  const onFirstMouseOut = () => {
+    setFirstFocus(false);
+  };
+  const onFirstClick = () => {
+    setFirstFocus(true);
+    setSecondFocus(false);
+    setThirdFocus(false);
+  };
+  const onSecondMouseOver = () => {
+    setSecondFocus(true);
+  };
+  const onSecondMouseOut = () => {
+    setSecondFocus(false);
+  };
+  const onSecondClick = () => {
+    setFirstFocus(false);
+    setSecondFocus(true);
+    setThirdFocus(false);
+  };
+  const onThirdMouseOver = () => {
+    setThirdFocus(true);
+  };
+  const onThirdMouseOut = () => {
+    setThirdFocus(false);
+  };
+  const onThirdClick = () => {
+    setFirstFocus(false);
+    setSecondFocus(false);
+    setThirdFocus(true);
+  };
   return (
     <HeaderLeagueDiv>
-      <LeagueColumnDiv>
-        <LeagueColumnTop>
-          <LeagueTitleLogo src={imagess} />
-        </LeagueColumnTop>
-        <LeagueColumnBot>
-          <BoldText>하단 메뉴</BoldText>
-          <BoldText>하단 메뉴</BoldText>
-          <BoldText>하단 메뉴</BoldText>
-          <BoldText>하단 메뉴</BoldText>
-          <BoldText>하단 메뉴</BoldText>
-        </LeagueColumnBot>
-      </LeagueColumnDiv>
+      <LeagueMenuDiv>
+        <LeagueMenuBox>
+          <LeagueMenuText
+            onMouseOver={onFirstMouseOver}
+            onMouseOut={onFirstMouseOut}
+            onClick={onFirstClick}
+            style={{ opacity: firstFocus ? 1.0 : 0.6 }}
+          >
+            전체 순위
+          </LeagueMenuText>
+        </LeagueMenuBox>
+        <LeagueMenuBox
+          onMouseOver={onSecondMouseOver}
+          onMouseOut={onSecondMouseOut}
+          onClick={onSecondClick}
+          style={{ opacity: secondFocus ? 1.0 : 0.6 }}
+        >
+          <LeagueMenuText>팀 설정</LeagueMenuText>
+        </LeagueMenuBox>
+        <LeagueMenuBox
+          onMouseOver={onThirdMouseOver}
+          onMouseOut={onThirdMouseOut}
+          onClick={onThirdClick}
+          style={{ opacity: thirdFocus ? 1.0 : 0.6 }}
+        >
+          <LeagueMenuText>대회 정보</LeagueMenuText>
+        </LeagueMenuBox>
+      </LeagueMenuDiv>
     </HeaderLeagueDiv>
   );
 };

@@ -1,54 +1,157 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderLeague from "../Routes/Header/HeaderLeague";
+import leagueIcon from "../Assets/leagueIcon.png";
 
 const Header = styled.header`
-  margin-top: 0.1%;
+  position: fixed;
   width: 100%;
-  height: 120px;
+  height: 108px;
+  flex-direction: column;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  /* border-bottom-width: 1px;
-  border-bottom-style: solid; */
+  background-color: ${props => props.theme.bgColor};
+  border-bottom: 1px solid ${props => props.theme.grayColor};
 `;
 
-const HeaderLeftDiv = styled.div`
-  width: 15%;
-  height: 100%;
+const HeaderTop = styled.div`
+  width: 100%;
+  height: 54px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
-const HeaderRightDiv = styled.div`
-  width: 15%;
+const TopTitleDiv = styled.div`
+  height: 100%;
+  margin: 12px;
+  display: flex;
+  align-items: center;
+`;
+
+const TitleBox = styled.div`
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
 `;
 
 const TitleText = styled.text`
-  font-size: 32px;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 30px;
+  user-select: none;
 `;
 
-const BoldText = styled.text`
-  font-weight: 600;
+const TopButtonDiv = styled.div`
+  height: 100%;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+`;
+
+const LoginButton = styled.div`
+  margin-right: 30px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 2px solid ${props => props.theme.btnColor};
+  border-radius: 4px;
+  opacity: 0.8;
+  cursor: pointer;
+`;
+
+const LoginText = styled.text`
+  color: ${props => props.theme.btnColor};
+  user-select: none;
+`;
+
+const LinkButton = styled.div`
+  margin-left: 20px;
+  background-color: ${props => props.theme.btnColor};
+  padding: 10px;
+  border: 2px solid ${props => props.theme.btnColor};
+  border-radius: 4px;
+  :focus {
+    opacity: 0.2;
+  }
+  cursor: pointer;
+`;
+
+const LinkText = styled.text`
+  color: ${props => props.theme.whiteColor};
+  user-select: none;
+`;
+
+const PageBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PageText = styled.text`
+  user-select: none;
+`;
+
+const PageIcon = styled.div`
+  margin-right: 5px;
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+`;
+
+const HeaderBot = styled.div`
+  width: 100%;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default () => {
+  const [linkOpacity, setLinkOpacity] = useState(0.8);
+  const [loginOpacity, setLoginOpacity] = useState(0.8);
+  const onLinkMouseOut = () => {
+    setLinkOpacity(0.8);
+  };
+  const onLinkMouseOver = () => {
+    setLinkOpacity(1.0);
+  };
+  const onLoginMouseOut = () => {
+    setLoginOpacity(0.8);
+  };
+  const onLoginMouseOver = () => {
+    setLoginOpacity(1.0);
+  };
   return (
     <Header>
-      <HeaderLeftDiv>
-        <TitleText>Watchurs</TitleText>
-      </HeaderLeftDiv>
-      <HeaderLeague />
-      <HeaderRightDiv>
-        <BoldText>헤더 우측</BoldText>
-      </HeaderRightDiv>
+      <HeaderTop>
+        <TopTitleDiv>
+          <TitleBox>
+            <TitleText>WATCHURS</TitleText>
+          </TitleBox>
+        </TopTitleDiv>
+        <TopButtonDiv>
+          <PageBox>
+            <PageIcon url={leagueIcon} />
+            <PageText>리그 오브 레전드</PageText>
+          </PageBox>
+          <LinkButton
+            onMouseOver={onLinkMouseOver}
+            onMouseOut={onLinkMouseOut}
+            style={{ opacity: linkOpacity }}
+          >
+            <LinkText>와쳐스 맵</LinkText>
+          </LinkButton>
+          <LoginButton
+            onMouseOver={onLoginMouseOver}
+            onMouseOut={onLoginMouseOut}
+            style={{ opacity: loginOpacity }}
+          >
+            <LoginText>로그인</LoginText>
+          </LoginButton>
+        </TopButtonDiv>
+      </HeaderTop>
+      <HeaderBot>
+        <HeaderLeague />
+      </HeaderBot>
     </Header>
   );
 };
