@@ -5,12 +5,14 @@ import leagueIcon from "../Assets/leagueIcon.png";
 
 const Header = styled.header`
   position: fixed;
-  width: 100%;
+  width: 60%;
   height: 108px;
   flex-direction: column;
   display: flex;
+  margin-left: 20%;
   background-color: ${props => props.theme.bgColor};
-  border-bottom: 1px solid ${props => props.theme.lightGrayColor};
+  border: 1px solid ${props => props.theme.lightGrayColor};
+  border-top: 0px;
 `;
 
 const HeaderTop = styled.div`
@@ -23,7 +25,7 @@ const HeaderTop = styled.div`
 
 const TopTitleDiv = styled.div`
   height: 100%;
-  margin: 12px;
+  margin: 15px;
   display: flex;
   align-items: center;
 `;
@@ -48,8 +50,8 @@ const TopButtonDiv = styled.div`
 `;
 
 const LoginButton = styled.div`
-  margin-right: 30px;
-  margin-left: 20px;
+  margin-right: 15px;
+  margin-left: 15px;
   padding: 10px;
   border: 2px solid ${props => props.theme.btnColor};
   border-radius: 4px;
