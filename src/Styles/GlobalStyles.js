@@ -52,7 +52,7 @@ export default createGlobalStyle`
     body {
         background-color: ${props => props.theme.bgColor};
         color: ${props => props.theme.blackColor};
-        font-family: "SpoqaHanSans";
+        font-family: "Atomy";
         font-weight: 400;
         font-size: 14px;
     }

@@ -17,79 +17,54 @@ const LeagueMenuDiv = styled.div`
 `;
 
 const LeagueMenuBox = styled.div`
-  padding: 10px;
+  height: 100%;
+  margin-top: 10px;
+  padding: 10px 5px;
   cursor: pointer;
+  border-bottom: 3px solid white;
 `;
 
 const LeagueMenuText = styled.text`
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 600;
   user-select: none;
 `;
 
 export default () => {
-  const [firstFocus, setFirstFocus] = useState(true);
-  const [secondFocus, setSecondFocus] = useState(false);
-  const [thirdFocus, setThirdFocus] = useState(false);
-  const onFirstMouseOver = () => {
-    setFirstFocus(true);
-  };
-  const onFirstMouseOut = () => {
-    setFirstFocus(false);
-  };
-  const onFirstClick = () => {
-    setFirstFocus(true);
-    setSecondFocus(false);
-    setThirdFocus(false);
-  };
-  const onSecondMouseOver = () => {
-    setSecondFocus(true);
-  };
-  const onSecondMouseOut = () => {
-    setSecondFocus(false);
-  };
-  const onSecondClick = () => {
-    setFirstFocus(false);
-    setSecondFocus(true);
-    setThirdFocus(false);
-  };
-  const onThirdMouseOver = () => {
-    setThirdFocus(true);
-  };
-  const onThirdMouseOut = () => {
-    setThirdFocus(false);
-  };
-  const onThirdClick = () => {
-    setFirstFocus(false);
-    setSecondFocus(false);
-    setThirdFocus(true);
+  const [selected, setSelected] = useState(1);
+  const onClick = num => {
+    setSelected(num);
   };
   return (
     <HeaderLeagueDiv>
       <LeagueMenuDiv>
-        <LeagueMenuBox>
-          <LeagueMenuText
-            onMouseOver={onFirstMouseOver}
-            onMouseOut={onFirstMouseOut}
-            onClick={onFirstClick}
-            style={{ opacity: firstFocus ? 1.0 : 0.6 }}
-          >
-            전체 순위
-          </LeagueMenuText>
+        <LeagueMenuBox
+          onClick={() => onClick(1)}
+          style={
+            selected === 1
+              ? { opacity: 1.0, borderBottomColor: "black" }
+              : { opacity: 0.5, borderBottomColor: "white" }
+          }
+        >
+          <LeagueMenuText>전체 순위</LeagueMenuText>
         </LeagueMenuBox>
         <LeagueMenuBox
-          onMouseOver={onSecondMouseOver}
-          onMouseOut={onSecondMouseOut}
-          onClick={onSecondClick}
-          style={{ opacity: secondFocus ? 1.0 : 0.6 }}
+          onClick={() => onClick(2)}
+          style={
+            selected === 2
+              ? { opacity: 1.0, borderBottomColor: "black" }
+              : { opacity: 0.5, borderBottomColor: "white" }
+          }
         >
           <LeagueMenuText>팀 설정</LeagueMenuText>
         </LeagueMenuBox>
         <LeagueMenuBox
-          onMouseOver={onThirdMouseOver}
-          onMouseOut={onThirdMouseOut}
-          onClick={onThirdClick}
-          style={{ opacity: thirdFocus ? 1.0 : 0.6 }}
+          onClick={() => onClick(3)}
+          style={
+            selected === 3
+              ? { opacity: 1.0, borderBottomColor: "black" }
+              : { opacity: 0.5, borderBottomColor: "white" }
+          }
         >
           <LeagueMenuText>대회 정보</LeagueMenuText>
         </LeagueMenuBox>

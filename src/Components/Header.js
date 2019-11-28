@@ -10,7 +10,7 @@ const Header = styled.header`
   flex-direction: column;
   display: flex;
   background-color: ${props => props.theme.bgColor};
-  border-bottom: 1px solid ${props => props.theme.grayColor};
+  border-bottom: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const HeaderTop = styled.div`
@@ -106,19 +106,14 @@ const HeaderBot = styled.div`
 `;
 
 export default () => {
-  const [linkOpacity, setLinkOpacity] = useState(0.8);
-  const [loginOpacity, setLoginOpacity] = useState(0.8);
-  const onLinkMouseOut = () => {
-    setLinkOpacity(0.8);
+  const [selected, setSelected] = useState(0);
+  const [opacity, setOpacity] = useState(0.8);
+  const onMouseOut = () => {
+    setSelected(0);
   };
-  const onLinkMouseOver = () => {
-    setLinkOpacity(1.0);
-  };
-  const onLoginMouseOut = () => {
-    setLoginOpacity(0.8);
-  };
-  const onLoginMouseOver = () => {
-    setLoginOpacity(1.0);
+  const onMouseOver = num => {
+    setSelected(num);
+    setOpacity(1.0);
   };
   return (
     <Header>
@@ -134,16 +129,16 @@ export default () => {
             <PageText>리그 오브 레전드</PageText>
           </PageBox>
           <LinkButton
-            onMouseOver={onLinkMouseOver}
-            onMouseOut={onLinkMouseOut}
-            style={{ opacity: linkOpacity }}
+            onMouseOver={() => onMouseOver(1)}
+            onMouseOut={() => onMouseOut()}
+            style={{ opacity: selected === 1 ? opacity : 0.8 }}
           >
             <LinkText>와쳐스 맵</LinkText>
           </LinkButton>
           <LoginButton
-            onMouseOver={onLoginMouseOver}
-            onMouseOut={onLoginMouseOut}
-            style={{ opacity: loginOpacity }}
+            onMouseOver={() => onMouseOver(2)}
+            onMouseOut={() => onMouseOut()}
+            style={{ opacity: selected === 2 ? opacity : 0.8 }}
           >
             <LoginText>로그인</LoginText>
           </LoginButton>
