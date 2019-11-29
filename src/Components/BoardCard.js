@@ -58,14 +58,16 @@ const BroadAvatar = styled.div`
   background-size: cover;
   border-radius: 18px;
   border: 1px solid ${props => props.theme.lightGrayColor};
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 const BroadNameText = styled.div`
   margin-right: 5px;
 `;
 
-const BroadIdText = styled.div``;
+const BroadIdText = styled.div`
+  font-size: 13px;
+`;
 
 const BroadPlatform = styled.div`
   width: 20px;
@@ -91,7 +93,7 @@ const LeagueSAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   border: 1px solid ${props => props.theme.lightGrayColor};
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 const LeagueSNameText = styled.div``;
@@ -99,8 +101,9 @@ const LeagueSNameText = styled.div``;
 const LeagueTierBox = styled.div`
   width: 21%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 20px;
   margin: 14px 0px;
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
@@ -110,7 +113,7 @@ const LeagueTierEmblem = styled.div`
   height: 36px;
   background-image: url(${props => props.url});
   background-size: cover;
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 const LeagueTierText = styled.div`
@@ -126,54 +129,37 @@ const LeaguePointsText = styled.div``;
 const LeagueWinRateBox = styled.div`
   width: 16%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 14px 0px;
+  padding-left: 15px;
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const LeagueWinRateBar = styled.div`
   display: flex;
-  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
   height: 70%;
   margin-right: 8px;
+  padding: 0px 5px;
+  background: linear-gradient(
+    to right,
+    ${props => props.theme.mainColor} 0%,
+    ${props => props.theme.mainColor} 72%,
+    ${props => props.theme.lightMainColor} 72%,
+    ${props => props.theme.lightMainColor} 100%
+  );
   border: 1px solid ${props => props.theme.lightGrayColor};
   border-radius: 7px;
-`;
-
-const LeagueWinsBar = styled.div`
-  width: 63%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: ${props => props.theme.mainColor};
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-`;
-
-const LeagueLossesBar = styled.div`
-  width: 37%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: ${props => props.theme.lightMainColor};
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-`;
-
-const LeagueWinsText = styled.div`
   font-size: 12px;
-  margin-left: 5px;
-  color: white;
+  color: ${props => props.theme.whiteColor};
 `;
 
-const LeagueLossesText = styled.div`
-  font-size: 12px;
-  margin-right: 5px;
-  color: white;
-`;
+const LeagueWinsText = styled.div``;
+
+const LeagueLossesText = styled.div``;
 
 const LeagueWinRateText = styled.div`
   font-size: 13px;
@@ -234,14 +220,10 @@ export default () => {
       </LeagueTierBox>
       <LeagueWinRateBox>
         <LeagueWinRateBar>
-          <LeagueWinsBar>
-            <LeagueWinsText>138승</LeagueWinsText>
-          </LeagueWinsBar>
-          <LeagueLossesBar>
-            <LeagueLossesText>123패</LeagueLossesText>
-          </LeagueLossesBar>
+          <LeagueWinsText>1338승</LeagueWinsText>
+          <LeagueLossesText>1223패</LeagueLossesText>
         </LeagueWinRateBar>
-        <LeagueWinRateText>63%</LeagueWinRateText>
+        <LeagueWinRateText>72%</LeagueWinRateText>
       </LeagueWinRateBox>
       <LeagueFavBox>
         <LeagueFavStar
