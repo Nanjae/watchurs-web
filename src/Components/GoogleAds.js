@@ -31,7 +31,7 @@ export default class GoogleAds extends Component {
         <GoogleAdsLeftDiv>
           <ins
             className="adsbygoogle"
-            style={{ display: "inline-block", width: 160, height: 600 }}
+            style={{ display: "inline-block", width: 300, height: 600 }}
             data-ad-client="ca-pub-2379639620636294"
             data-ad-slot="6765307417"
           ></ins>
@@ -39,7 +39,7 @@ export default class GoogleAds extends Component {
         <GoogleAdsRightDiv>
           <ins
             className="adsbygoogle"
-            style={{ display: "inline-block", width: 160, height: 600 }}
+            style={{ display: "inline-block", width: 300, height: 600 }}
             data-ad-client="ca-pub-2379639620636294"
             data-ad-slot="5316494373"
           ></ins>
