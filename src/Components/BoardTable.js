@@ -4,70 +4,73 @@ import styled from "styled-components";
 const BoardTableDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  height: 40px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: #eeeeee;
-  padding: 15px;
   user-select: none;
+  padding: 10px 0px;
   color: ${props => props.theme.grayColor};
 `;
 
 const TableRankBox = styled.div`
-  padding-right: 0px;
+  width: 6%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const TableRankText = styled.text``;
 
 const BroadInfoBox = styled.div`
-  padding-right: 60px;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const BroadInfoText = styled.text``;
 
 const LeagueSNameBox = styled.div`
-  padding-right: 60px;
+  width: 19%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const LeagueSNameText = styled.text``;
 
 const LeagueTierBox = styled.div`
-  padding-right: 30px;
+  width: 21%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const LeagueTierText = styled.text``;
 
-const LeagueRankBox = styled.div`
-  padding-right: 30px;
-`;
-
-const LeagueRankText = styled.text``;
-
-const LeaguePointsBox = styled.div`
-  padding-right: 30px;
-`;
-
-const LeaguePointsText = styled.text``;
-
-const LeagueWinsBox = styled.div`
-  padding-right: 30px;
-`;
-
-const LeagueWinsText = styled.text``;
-
-const LeagueLossesBox = styled.div`
-  padding-right: 30px;
-`;
-
-const LeagueLossesText = styled.text``;
-
 const LeagueWinRateBox = styled.div`
-  padding-right: 30px;
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const LeagueWinRateText = styled.text``;
 
-const LeagueFavBox = styled.div``;
+const LeagueFavBox = styled.div`
+  width: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const LeagueFavText = styled.text``;
 
@@ -86,18 +89,6 @@ export default () => {
       <LeagueTierBox>
         <LeagueTierText>티어</LeagueTierText>
       </LeagueTierBox>
-      <LeagueRankBox>
-        <LeagueRankText>랭크</LeagueRankText>
-      </LeagueRankBox>
-      <LeaguePointsBox>
-        <LeaguePointsText>점수</LeaguePointsText>
-      </LeaguePointsBox>
-      <LeagueWinsBox>
-        <LeagueWinsText>승</LeagueWinsText>
-      </LeagueWinsBox>
-      <LeagueLossesBox>
-        <LeagueLossesText>패</LeagueLossesText>
-      </LeagueLossesBox>
       <LeagueWinRateBox>
         <LeagueWinRateText>승률</LeagueWinRateText>
       </LeagueWinRateBox>

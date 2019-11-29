@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderLeague from "../Routes/Header/HeaderLeague";
-import leagueIcon from "../Assets/leagueIcon.png";
+import leagueIcon from "../Assets/League/LeagueIcon.png";
 
 const Header = styled.header`
   position: fixed;

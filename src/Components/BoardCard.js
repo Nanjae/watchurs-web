@@ -1,5 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
+import emblemIron from "../Assets/League/EmblemIron.png";
+import emblemBronze from "../Assets/League/EmblemBronze.png";
+import emblemSilver from "../Assets/League/EmblemSilver.png";
+import emblemGold from "../Assets/League/EmblemGold.png";
+import emblemPlatinum from "../Assets/League/EmblemPlatinum.png";
+import emblemDiamond from "../Assets/League/EmblemDiamond.png";
+import emblemMaster from "../Assets/League/EmblemMaster.png";
+import emblemGrandmaster from "../Assets/League/EmblemGrandmaster.png";
+import emblemChallenger from "../Assets/League/EmblemChallenger.png";
 
 const BoardTableDiv = styled.div`
   display: flex;
@@ -12,14 +22,15 @@ const BoardTableDiv = styled.div`
   background-color: ${props => props.theme.whiteColor};
   user-select: none;
   color: ${props => props.theme.grayColor};
-  font-size: 12px;
+  font-size: 15px;
 `;
 
 const TableRankBox = styled.div`
   width: 6%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 15px;
   margin: 14px 0px;
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
@@ -27,31 +38,62 @@ const TableRankBox = styled.div`
 const TableRankText = styled.text``;
 
 const BroadInfoBox = styled.div`
-  width: 20%;
+  width: 33%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 15px;
   margin: 14px 0px;
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const BroadBAvatar = styled.div`
-  width: 30px;
-  height: 30px;
+const BroadAvatar = styled.div`
+  width: 36px;
+  height: 36px;
   background-image: url("https://static-cdn.jtvnw.net/jtv_user_pictures/dbb514f1-469b-479e-b5ba-3ac0f09a2776-profile_image-70x70.png");
   background-size: cover;
-  border-radius: 15px;
+  border-radius: 18px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
   margin-right: 5px;
 `;
 
-const BroadBNameText = styled.text`
-  font-size: 14px;
+const BroadNameText = styled.text`
+  margin-right: 5px;
 `;
 
-const BroadBIdText = styled.text``;
+const BroadIdText = styled.text``;
+
+const BroadPlatform = styled.div`
+  width: 20px;
+  height: 20px;
+  background-image: url(${props => props.url});
+  background-size: cover;
+  margin-right: 15px;
+`;
 
 const LeagueSNameBox = styled.div`
-  width: 20%;
+  width: 19%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+  margin: 14px 0px;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
+`;
+
+const LeagueSAvatar = styled.div`
+  width: 36px;
+  height: 36px;
+  background-image: url("https://opgg-static.akamaized.net/images/profile_icons/profileIcon4230.jpg?image=q_auto&v=1518361200");
+  background-size: cover;
+  border: 1px solid ${props => props.theme.lightGrayColor};
+  margin-right: 5px;
+`;
+
+const LeagueSNameText = styled.text``;
+
+const LeagueTierBox = styled.div`
+  width: 21%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,76 +101,49 @@ const LeagueSNameBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const LeagueSNameText = styled.text`
-  font-size: 14px;
+const LeagueTierEmblem = styled.div`
+  width: 36px;
+  height: 36px;
+  background-image: url(${props => props.url});
+  background-size: cover;
+  margin-right: 5px;
 `;
 
-const LeagueTierBox = styled.div`
-  width: 8%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const LeagueTierText = styled.text`
+  margin-right: 5px;
 `;
 
-const LeagueTierText = styled.text``;
-
-const LeagueRankBox = styled.div`
-  width: 8%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const LeagueRankText = styled.text``;
-
-const LeaguePointsBox = styled.div`
-  width: 8%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const LeagueRankText = styled.text`
+  margin-right: 5px;
 `;
 
 const LeaguePointsText = styled.text``;
 
-const LeagueWinsBox = styled.div`
-  width: 8%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const LeagueWinsText = styled.text``;
-
-const LeagueLossesBox = styled.div`
-  width: 8%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const LeagueLossesText = styled.text``;
-
 const LeagueWinRateBox = styled.div`
-  width: 8%;
-  height: 100%;
+  width: 14%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 14px 0px;
+  border-right: 1px solid ${props => props.theme.lightGrayColor};
+`;
+
+const LeagueWinsText = styled.text`
+  margin-right: 5px;
+`;
+
+const LeagueLossesText = styled.text`
+  margin-right: 5px;
 `;
 
 const LeagueWinRateText = styled.text``;
 
 const LeagueFavBox = styled.div`
-  width: 6%;
-  height: 100%;
+  width: 7%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 14px 0px;
 `;
 
 const LeagueFavText = styled.text``;
@@ -137,33 +152,28 @@ export default () => {
   return (
     <BoardTableDiv>
       <TableRankBox>
-        <TableRankText>1</TableRankText>
+        <TableRankText>999</TableRankText>
       </TableRankBox>
       <BroadInfoBox>
-        <BroadBAvatar />
-        <BroadBNameText>얍얍</BroadBNameText>
-        <BroadBIdText>(yapyap30)</BroadBIdText>
+        <BroadPlatform url={twitchLogo} />
+        <BroadAvatar />
+        <BroadNameText>트위치아이디최대</BroadNameText>
+        <BroadIdText>(yapyap30looksam1)</BroadIdText>
       </BroadInfoBox>
       <LeagueSNameBox>
-        <LeagueSNameText>귀살대 네즈코</LeagueSNameText>
+        <LeagueSAvatar />
+        <LeagueSNameText>소환사명 최대 글자</LeagueSNameText>
       </LeagueSNameBox>
       <LeagueTierBox>
-        <LeagueTierText>티어</LeagueTierText>
+        <LeagueTierEmblem url={emblemPlatinum} />
+        <LeagueTierText>다이아몬드</LeagueTierText>
+        <LeagueRankText>Ⅲ</LeagueRankText>
+        <LeaguePointsText>(100 LP)</LeaguePointsText>
       </LeagueTierBox>
-      <LeagueRankBox>
-        <LeagueRankText>랭크</LeagueRankText>
-      </LeagueRankBox>
-      <LeaguePointsBox>
-        <LeaguePointsText>점수</LeaguePointsText>
-      </LeaguePointsBox>
-      <LeagueWinsBox>
-        <LeagueWinsText>승</LeagueWinsText>
-      </LeagueWinsBox>
-      <LeagueLossesBox>
-        <LeagueLossesText>패</LeagueLossesText>
-      </LeagueLossesBox>
       <LeagueWinRateBox>
-        <LeagueWinRateText>승률</LeagueWinRateText>
+        <LeagueWinsText>138승</LeagueWinsText>
+        <LeagueLossesText>123패</LeagueLossesText>
+        <LeagueWinRateText>52%</LeagueWinRateText>
       </LeagueWinRateBox>
       <LeagueFavBox>
         <svg
