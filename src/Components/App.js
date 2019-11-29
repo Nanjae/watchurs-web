@@ -5,6 +5,7 @@ import Theme from "../Styles/Theme";
 import { HashRouter as Router } from "react-router-dom";
 import Routes from "./Routes";
 import Header from "./Header";
+import GoogleAds from "./GoogleAds";
 
 const Wrapper = styled.div``;
 
@@ -15,6 +16,7 @@ export default () => {
       <Router>
         <Header />
         <Wrapper>
+          <GoogleAds />
           <Routes />
         </Wrapper>
       </Router>
