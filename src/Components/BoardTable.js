@@ -8,10 +8,11 @@ const BoardTableDiv = styled.div`
   width: 100%;
   height: 40px;
   border: 1px solid ${props => props.theme.lightGrayColor};
-  background-color: #eeeeee;
+  background-color: ${props => props.theme.pinkColor};
+  opacity: 0.8;
   user-select: none;
   padding: 10px 0px;
-  color: ${props => props.theme.grayColor};
+  color: ${props => props.theme.whiteColor};
 `;
 
 const TableRankBox = styled.div`
@@ -23,7 +24,7 @@ const TableRankBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const TableRankText = styled.text``;
+const TableRankText = styled.div``;
 
 const BroadInfoBox = styled.div`
   width: 33%;
@@ -33,7 +34,7 @@ const BroadInfoBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const BroadInfoText = styled.text``;
+const BroadInfoText = styled.div``;
 
 const LeagueSNameBox = styled.div`
   width: 19%;
@@ -43,7 +44,7 @@ const LeagueSNameBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const LeagueSNameText = styled.text``;
+const LeagueSNameText = styled.div``;
 
 const LeagueTierBox = styled.div`
   width: 21%;
@@ -53,7 +54,7 @@ const LeagueTierBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const LeagueTierText = styled.text``;
+const LeagueTierText = styled.div``;
 
 const LeagueWinRateBox = styled.div`
   width: 14%;
@@ -63,7 +64,7 @@ const LeagueWinRateBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const LeagueWinRateText = styled.text``;
+const LeagueWinRateText = styled.div``;
 
 const LeagueFavBox = styled.div`
   width: 7%;
@@ -72,7 +73,7 @@ const LeagueFavBox = styled.div`
   align-items: center;
 `;
 
-const LeagueFavText = styled.text``;
+const LeagueFavText = styled.div``;
 
 export default () => {
   return (

@@ -4,7 +4,6 @@ const BORDER_RADIUS = "4px";
 export default {
   bgColor: "#f5f5f5",
   btnColor: "#e84393",
-
   whiteColor: "#FFFFFF",
   blackColor: "#000000",
   darkGrayColor: "#2d3436",

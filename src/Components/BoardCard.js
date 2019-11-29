@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
+import emptyStar from "../Assets/Common/EmptyStar.png";
+import fullStar from "../Assets/Common/FullStar.png";
 // import emblemIron from "../Assets/League/EmblemIron.png";
 // import emblemBronze from "../Assets/League/EmblemBronze.png";
 // import emblemSilver from "../Assets/League/EmblemSilver.png";
@@ -35,7 +37,7 @@ const TableRankBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const TableRankText = styled.text``;
+const TableRankText = styled.div``;
 
 const BroadInfoBox = styled.div`
   width: 33%;
@@ -50,18 +52,18 @@ const BroadInfoBox = styled.div`
 const BroadAvatar = styled.div`
   width: 36px;
   height: 36px;
-  background-image: url("https://static-cdn.jtvnw.net/jtv_user_pictures/dbb514f1-469b-479e-b5ba-3ac0f09a2776-profile_image-70x70.png");
+  background-image: url(${props => props.url});
   background-size: cover;
   border-radius: 18px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   margin-right: 5px;
 `;
 
-const BroadNameText = styled.text`
+const BroadNameText = styled.div`
   margin-right: 5px;
 `;
 
-const BroadIdText = styled.text``;
+const BroadIdText = styled.div``;
 
 const BroadPlatform = styled.div`
   width: 20px;
@@ -84,13 +86,13 @@ const LeagueSNameBox = styled.div`
 const LeagueSAvatar = styled.div`
   width: 36px;
   height: 36px;
-  background-image: url("https://opgg-static.akamaized.net/images/profile_icons/profileIcon4230.jpg?image=q_auto&v=1518361200");
+  background-image: url(${props => props.url});
   background-size: cover;
   border: 1px solid ${props => props.theme.lightGrayColor};
   margin-right: 5px;
 `;
 
-const LeagueSNameText = styled.text``;
+const LeagueSNameText = styled.div``;
 
 const LeagueTierBox = styled.div`
   width: 21%;
@@ -109,15 +111,15 @@ const LeagueTierEmblem = styled.div`
   margin-right: 5px;
 `;
 
-const LeagueTierText = styled.text`
+const LeagueTierText = styled.div`
   margin-right: 5px;
 `;
 
-const LeagueRankText = styled.text`
+const LeagueRankText = styled.div`
   margin-right: 5px;
 `;
 
-const LeaguePointsText = styled.text``;
+const LeaguePointsText = styled.div``;
 
 const LeagueWinRateBox = styled.div`
   width: 14%;
@@ -128,15 +130,15 @@ const LeagueWinRateBox = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const LeagueWinsText = styled.text`
+const LeagueWinsText = styled.div`
   margin-right: 5px;
 `;
 
-const LeagueLossesText = styled.text`
+const LeagueLossesText = styled.div`
   margin-right: 5px;
 `;
 
-const LeagueWinRateText = styled.text``;
+const LeagueWinRateText = styled.div``;
 
 const LeagueFavBox = styled.div`
   width: 7%;
@@ -144,6 +146,13 @@ const LeagueFavBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 14px 0px;
+`;
+
+const LeagueFavStar = styled.div`
+  width: 20px;
+  height: 20px;
+  background-image: url(${props => props.url});
+  background-size: cover;
 `;
 
 export default () => {
@@ -154,12 +163,20 @@ export default () => {
       </TableRankBox>
       <BroadInfoBox>
         <BroadPlatform url={twitchLogo} />
-        <BroadAvatar />
+        <BroadAvatar
+          url={
+            "https://static-cdn.jtvnw.net/jtv_user_pictures/dbb514f1-469b-479e-b5ba-3ac0f09a2776-profile_image-70x70.png"
+          }
+        />
         <BroadNameText>트위치아이디최대</BroadNameText>
         <BroadIdText>(yapyap30looksam1)</BroadIdText>
       </BroadInfoBox>
       <LeagueSNameBox>
-        <LeagueSAvatar />
+        <LeagueSAvatar
+          url={
+            "https://opgg-static.akamaized.net/images/profile_icons/profileIcon4230.jpg?image=q_auto&v=1518361200"
+          }
+        />
         <LeagueSNameText>소환사명 최대 글자</LeagueSNameText>
       </LeagueSNameBox>
       <LeagueTierBox>
@@ -174,14 +191,7 @@ export default () => {
         <LeagueWinRateText>52%</LeagueWinRateText>
       </LeagueWinRateBox>
       <LeagueFavBox>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
-        </svg>
+        <LeagueFavStar url={fullStar} />
       </LeagueFavBox>
     </BoardTableDiv>
   );

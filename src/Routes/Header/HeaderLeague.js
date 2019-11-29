@@ -24,7 +24,7 @@ const LeagueMenuBox = styled.div`
   border-bottom: 3px solid white;
 `;
 
-const LeagueMenuText = styled.text`
+const LeagueMenuText = styled.div`
   font-size: 17px;
   font-weight: 600;
   user-select: none;

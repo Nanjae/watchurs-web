@@ -36,7 +36,7 @@ const TitleBox = styled.div`
   align-items: center;
 `;
 
-const TitleText = styled.text`
+const TitleText = styled.div`
   font-weight: 600;
   font-size: 30px;
   user-select: none;
@@ -59,7 +59,7 @@ const LoginButton = styled.div`
   cursor: pointer;
 `;
 
-const LoginText = styled.text`
+const LoginText = styled.div`
   color: ${props => props.theme.btnColor};
   user-select: none;
 `;
@@ -76,7 +76,7 @@ const LinkButton = styled.div`
   cursor: pointer;
 `;
 
-const LinkText = styled.text`
+const LinkText = styled.div`
   color: ${props => props.theme.whiteColor};
   user-select: none;
 `;
@@ -87,7 +87,7 @@ const PageBox = styled.div`
   align-items: center;
 `;
 
-const PageText = styled.text`
+const PageText = styled.div`
   user-select: none;
 `;
 
