@@ -1,42 +1,50 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import AdSense from "react-adsense";
 
-const GoogleAdsDiv = styled.div`
+const Wrapper = styled.div``;
+
+const GoogleAdsLeftDiv = styled.div`
   position: fixed;
-  width: 160px;
+  top: 200px;
+  left: 40px;
+  width: 300px;
   height: 600px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-export default () => {
-  return (
-    <GoogleAdsDiv>
-      <AdSense.Google
-        client="ca-pub-2379639620636294"
-        slot="6765307417"
-        style={{ display: "inline-block", width: 160, height: 600 }}
-      />
-    </GoogleAdsDiv>
-  );
-};
+const GoogleAdsRightDiv = styled.div`
+  position: fixed;
+  top: 200px;
+  right: 40px;
+  width: 300px;
+  height: 600px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
+`;
 
-{
-  /* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- watchurs_ads_left -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-2379639620636294"
-     data-ad-slot="6765307417"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> */
-  /* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- watchurs_ads_right -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:160px;height:600px"
-     data-ad-client="ca-pub-2379639620636294"
-     data-ad-slot="5316494373"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> */
+export default class GoogleAds extends Component {
+  componentDidMount() {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
+  render() {
+    return (
+      <Wrapper>
+        <GoogleAdsLeftDiv>
+          <ins
+            className="adsbygoogle"
+            style={{ display: "inline-block", width: 160, height: 600 }}
+            data-ad-client="ca-pub-2379639620636294"
+            data-ad-slot="6765307417"
+          ></ins>
+        </GoogleAdsLeftDiv>
+        <GoogleAdsRightDiv>
+          <ins
+            className="adsbygoogle"
+            style={{ display: "inline-block", width: 160, height: 600 }}
+            data-ad-client="ca-pub-2379639620636294"
+            data-ad-slot="5316494373"
+          ></ins>
+        </GoogleAdsRightDiv>
+      </Wrapper>
+    );
+  }
 }

@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
-import emblemIron from "../Assets/League/EmblemIron.png";
-import emblemBronze from "../Assets/League/EmblemBronze.png";
-import emblemSilver from "../Assets/League/EmblemSilver.png";
-import emblemGold from "../Assets/League/EmblemGold.png";
+// import emblemIron from "../Assets/League/EmblemIron.png";
+// import emblemBronze from "../Assets/League/EmblemBronze.png";
+// import emblemSilver from "../Assets/League/EmblemSilver.png";
+// import emblemGold from "../Assets/League/EmblemGold.png";
 import emblemPlatinum from "../Assets/League/EmblemPlatinum.png";
-import emblemDiamond from "../Assets/League/EmblemDiamond.png";
-import emblemMaster from "../Assets/League/EmblemMaster.png";
-import emblemGrandmaster from "../Assets/League/EmblemGrandmaster.png";
-import emblemChallenger from "../Assets/League/EmblemChallenger.png";
+// import emblemDiamond from "../Assets/League/EmblemDiamond.png";
+// import emblemMaster from "../Assets/League/EmblemMaster.png";
+// import emblemGrandmaster from "../Assets/League/EmblemGrandmaster.png";
+// import emblemChallenger from "../Assets/League/EmblemChallenger.png";
 
 const BoardTableDiv = styled.div`
   display: flex;
@@ -145,8 +145,6 @@ const LeagueFavBox = styled.div`
   align-items: center;
   margin: 14px 0px;
 `;
-
-const LeagueFavText = styled.text``;
 
 export default () => {
   return (
