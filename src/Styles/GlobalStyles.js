@@ -57,7 +57,7 @@ export default createGlobalStyle`
         font-size: 14px;
     }
     a {
-        /* text-decoration:none; */
+        text-decoration:none;
     }
     input {
         outline:none;

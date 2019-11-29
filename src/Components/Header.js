@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderLeague from "../Routes/Header/HeaderLeague";
 import leagueIcon from "../Assets/League/LeagueIcon.png";
+import Theme from "../Styles/Theme";
 
 const Header = styled.header`
   position: fixed;
@@ -53,30 +54,26 @@ const LoginButton = styled.div`
   margin-right: 15px;
   margin-left: 15px;
   padding: 10px;
-  border: 2px solid ${props => props.theme.btnColor};
+  border: 2px solid ${props => props.theme.lightMainColor};
   border-radius: 4px;
-  opacity: 0.8;
   cursor: pointer;
 `;
 
 const LoginText = styled.div`
-  color: ${props => props.theme.btnColor};
+  color: ${props => props.theme.lightMainColor};
   user-select: none;
 `;
 
-const LinkButton = styled.div`
+const MapButton = styled.div`
   margin-left: 20px;
-  background-color: ${props => props.theme.btnColor};
+  background-color: ${props => props.theme.lightMainColor};
   padding: 10px;
-  border: 2px solid ${props => props.theme.btnColor};
+  border: 2px solid ${props => props.theme.lightMainColor};
   border-radius: 4px;
-  :focus {
-    opacity: 0.2;
-  }
   cursor: pointer;
 `;
 
-const LinkText = styled.div`
+const MapText = styled.div`
   color: ${props => props.theme.whiteColor};
   user-select: none;
 `;
@@ -108,14 +105,12 @@ const HeaderBot = styled.div`
 `;
 
 export default () => {
-  const [selected, setSelected] = useState(0);
-  const [opacity, setOpacity] = useState(0.8);
+  const [focused, setFocused] = useState(0);
   const onMouseOut = () => {
-    setSelected(0);
+    setFocused(0);
   };
   const onMouseOver = num => {
-    setSelected(num);
-    setOpacity(1.0);
+    setFocused(num);
   };
   return (
     <Header>
@@ -130,17 +125,25 @@ export default () => {
             <PageIcon url={leagueIcon} />
             <PageText>리그 오브 레전드</PageText>
           </PageBox>
-          <LinkButton
+          <MapButton
             onMouseOver={() => onMouseOver(1)}
             onMouseOut={() => onMouseOut()}
-            style={{ opacity: selected === 1 ? opacity : 0.8 }}
+            style={{
+              backgroundColor:
+                focused === 1 ? Theme.mainColor : Theme.lightMainColor,
+              borderColor:
+                focused === 1 ? Theme.mainColor : Theme.lightMainColor
+            }}
           >
-            <LinkText>와쳐스 맵</LinkText>
-          </LinkButton>
+            <MapText>와쳐스 맵</MapText>
+          </MapButton>
           <LoginButton
             onMouseOver={() => onMouseOver(2)}
             onMouseOut={() => onMouseOut()}
-            style={{ opacity: selected === 2 ? opacity : 0.8 }}
+            style={{
+              borderColor:
+                focused === 2 ? Theme.mainColor : Theme.lightMainColor
+            }}
           >
             <LoginText>로그인</LoginText>
           </LoginButton>

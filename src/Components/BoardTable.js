@@ -8,8 +8,7 @@ const BoardTableDiv = styled.div`
   width: 100%;
   height: 40px;
   border: 1px solid ${props => props.theme.lightGrayColor};
-  background-color: ${props => props.theme.pinkColor};
-  opacity: 0.8;
+  background-color: ${props => props.theme.lightMainColor};
   user-select: none;
   padding: 10px 0px;
   color: ${props => props.theme.whiteColor};
@@ -37,7 +36,7 @@ const BroadInfoBox = styled.div`
 const BroadInfoText = styled.div``;
 
 const LeagueSNameBox = styled.div`
-  width: 19%;
+  width: 17%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +56,7 @@ const LeagueTierBox = styled.div`
 const LeagueTierText = styled.div``;
 
 const LeagueWinRateBox = styled.div`
-  width: 14%;
+  width: 16%;
   display: flex;
   justify-content: center;
   align-items: center;
