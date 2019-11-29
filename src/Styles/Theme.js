@@ -2,7 +2,7 @@ const BOX_BORDER = "1px solid #e6e6e6";
 const BORDER_RADIUS = "4px";
 
 export default {
-  bgColor: "#FFFFFF",
+  bgColor: "#f5f5f5",
   btnColor: "#e84393",
 
   whiteColor: "#FFFFFF",

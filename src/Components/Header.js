@@ -10,7 +10,7 @@ const Header = styled.header`
   flex-direction: column;
   display: flex;
   margin-left: 20%;
-  background-color: ${props => props.theme.bgColor};
+  background-color: ${props => props.theme.whiteColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
   border-top: 0px;
 `;
