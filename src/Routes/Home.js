@@ -20,7 +20,7 @@ const GoogleAdsLeftDiv = styled.div`
   justify-content: center;
   width: 20%;
   height: 600px;
-  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
+  border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const GoogleAdsRightDiv = styled.div`
@@ -29,17 +29,21 @@ const GoogleAdsRightDiv = styled.div`
   justify-content: center;
   width: 20%;
   height: 600px;
-  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
+  border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 const GoogleAdsBottomDiv = styled.div`
-  min-width: 970px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 90px;
   min-height: 90px;
   margin-top: 20px;
   border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
 let scrollTop = window.scrollY;
+let windowHeight = window.innerHeight;
 
 export default class Home extends Component {
   componentDidMount() {
@@ -53,18 +57,27 @@ export default class Home extends Component {
 
   handleScroll = () => {
     scrollTop = window.scrollY;
+    windowHeight = window.innerHeight;
     this.setState({ scrollTop });
+    this.setState({ windowHeight });
+    console.log({ windowHeight });
   };
 
   render() {
     return (
       <Wrapper>
-        <GoogleAdsLeftDiv style={{ top: scrollTop }}>
+        <GoogleAdsLeftDiv
+          style={{ top: scrollTop, height: windowHeight < 720 ? 250 : 600 }}
+        >
           <ins
             className="adsbygoogle"
-            style={{ display: "inline-block", width: 300, height: 600 }}
+            style={{
+              display: "inline-block",
+              width: 300,
+              height: windowHeight < 720 ? 250 : 600
+            }}
             data-ad-client="ca-pub-2379639620636294"
-            data-ad-slot="9707983766"
+            data-ad-slot={windowHeight < 720 ? "6765307417" : "9707983766"}
           ></ins>
         </GoogleAdsLeftDiv>
         <BoardDiv>
@@ -103,12 +116,18 @@ export default class Home extends Component {
             ></ins>
           </GoogleAdsBottomDiv>
         </BoardDiv>
-        <GoogleAdsRightDiv style={{ top: scrollTop }}>
+        <GoogleAdsRightDiv
+          style={{ top: scrollTop, height: windowHeight < 720 ? 250 : 600 }}
+        >
           <ins
             className="adsbygoogle"
-            style={{ display: "inline-block", width: 300, height: 600 }}
+            style={{
+              display: "inline-block",
+              width: 300,
+              height: windowHeight < 720 ? 250 : 600
+            }}
             data-ad-client="ca-pub-2379639620636294"
-            data-ad-slot="7927998232"
+            data-ad-slot={windowHeight < 720 ? "5316494373" : "7927998232"}
           ></ins>
         </GoogleAdsRightDiv>
       </Wrapper>
