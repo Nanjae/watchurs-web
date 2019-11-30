@@ -20,7 +20,7 @@ const GoogleAdsLeftDiv = styled.div`
   justify-content: center;
   width: 20%;
   height: 600px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const GoogleAdsRightDiv = styled.div`
@@ -29,17 +29,17 @@ const GoogleAdsRightDiv = styled.div`
   justify-content: center;
   width: 20%;
   height: 600px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const GoogleAdsBottomDiv = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: center;
   width: 100%;
   height: 90px;
   min-height: 90px;
   margin-top: 20px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 let scrollTop = window.scrollY;
