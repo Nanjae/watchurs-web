@@ -33,6 +33,13 @@ const GoogleAdsRightDiv = styled.div`
   border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
+const GoogleAdsBottomDiv = styled.div`
+  min-width: 970px;
+  min-height: 90px;
+  margin-top: 20px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
+`;
+
 let scrollTop = window.scrollY;
 
 export default class Home extends Component {
@@ -53,12 +60,12 @@ export default class Home extends Component {
   render() {
     return (
       <Wrapper>
-        <GoogleAdsLeftDiv style={{ top: scrollTop + 20 }}>
+        <GoogleAdsLeftDiv style={{ top: scrollTop + 50 }}>
           <ins
             className="adsbygoogle"
             style={{ display: "inline-block", width: 300, height: 600 }}
             data-ad-client="ca-pub-2379639620636294"
-            data-ad-slot="6765307417"
+            data-ad-slot="9707983766"
           ></ins>
         </GoogleAdsLeftDiv>
         <BoardDiv>
@@ -88,13 +95,21 @@ export default class Home extends Component {
           <BoardCard />
           <BoardCard />
           <BoardCard />
+          <GoogleAdsBottomDiv>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "inline-block", width: 970, height: 90 }}
+              data-ad-client="ca-pub-2379639620636294"
+              data-ad-slot="3631344781"
+            ></ins>
+          </GoogleAdsBottomDiv>
         </BoardDiv>
-        <GoogleAdsRightDiv style={{ top: scrollTop + 20 }}>
+        <GoogleAdsRightDiv style={{ top: scrollTop + 50 }}>
           <ins
             className="adsbygoogle"
             style={{ display: "inline-block", width: 300, height: 600 }}
             data-ad-client="ca-pub-2379639620636294"
-            data-ad-slot="5316494373"
+            data-ad-slot="7927998232"
           ></ins>
         </GoogleAdsRightDiv>
       </Wrapper>

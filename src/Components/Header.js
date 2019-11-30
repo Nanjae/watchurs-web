@@ -8,7 +8,7 @@ const Header = styled.header`
   position: fixed;
   width: 100%;
   min-width: 1140px;
-  height: 108px;
+  height: 100px;
   flex-direction: column;
   display: flex;
   background-color: ${props => props.theme.whiteColor};
@@ -18,7 +18,7 @@ const Header = styled.header`
 
 const HeaderTop = styled.div`
   width: 100%;
-  height: 54px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,7 +98,7 @@ const PageIcon = styled.div`
 
 const HeaderBot = styled.div`
   width: 100%;
-  height: 54px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

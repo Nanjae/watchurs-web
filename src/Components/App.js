@@ -5,6 +5,7 @@ import Theme from "../Styles/Theme";
 import { HashRouter as Router } from "react-router-dom";
 import Routes from "./Routes";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Wrapper = styled.div``;
 
@@ -12,11 +13,12 @@ export default () => {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
+      <Header />
       <Router>
-        <Header />
         <Wrapper>
           <Routes />
         </Wrapper>
+        <Footer />
       </Router>
     </ThemeProvider>
   );
