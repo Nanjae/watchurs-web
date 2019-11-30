@@ -34,7 +34,7 @@ const Wrapper = styled.div``;
 const RankBoard = () => {
   const { data, loading } = useQuery(SEE_ALL_BROADCASTER);
   if (!loading) {
-    data.seeAllBroadcaster.map((broad, index) => console.log(broad.index));
+    // data.seeAllBroadcaster.map((broad, index) => console.log(broad.index));
   }
 
   return (
