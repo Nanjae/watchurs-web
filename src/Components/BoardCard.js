@@ -189,6 +189,7 @@ let sTierEmblem = emblemUnranked;
 let sTierName = "랭크없음";
 
 export default ({
+  sRanking,
   bId,
   bName,
   bAvatar,
@@ -203,13 +204,14 @@ export default ({
   sWinRate
 }) => {
   const [focused, setFocused] = useState(false);
+
   const onMouseOut = () => {
     setFocused(false);
   };
+
   const onMouseOver = () => {
     setFocused(true);
   };
-
   if (sTier === "UNRANKED") {
     sTierEmblem = emblemUnranked;
     sTierName = "랭크없음";
@@ -246,12 +248,10 @@ export default ({
     sRank = "";
   }
 
-  console.log(sRank);
-
   return (
     <BoardTableDiv>
       <TableRankBox>
-        <TableRankText>999</TableRankText>
+        <TableRankText>{sRanking}</TableRankText>
       </TableRankBox>
       <BroadInfoBox>
         <BroadPlatform url={twitchLogo} />
@@ -267,9 +267,7 @@ export default ({
         <LeagueTierEmblem url={sTierEmblem} />
         <LeagueTierText>{sTierName}</LeagueTierText>
         {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
-        {sRank !== "" ? (
-          <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
-        ) : null}
+        <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
       </LeagueTierBox>
       <LeagueWinRateBox>
         <LeagueWinRateBar
