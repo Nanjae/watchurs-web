@@ -49,18 +49,22 @@ export default class Home extends Component {
   componentDidMount() {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.windowResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.windowResize);
   }
 
   handleScroll = () => {
     scrollTop = window.scrollY;
-    windowHeight = window.innerHeight;
     this.setState({ scrollTop });
+  };
+
+  windowResize = () => {
+    windowHeight = window.innerHeight;
     this.setState({ windowHeight });
-    console.log({ windowHeight });
   };
 
   render() {
