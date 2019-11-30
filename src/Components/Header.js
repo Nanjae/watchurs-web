@@ -6,11 +6,11 @@ import Theme from "../Styles/Theme";
 
 const Header = styled.header`
   position: fixed;
-  width: 60%;
+  width: 100%;
+  min-width: 1140px;
   height: 108px;
   flex-direction: column;
   display: flex;
-  margin-left: 20%;
   background-color: ${props => props.theme.whiteColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
   border-top: 0px;
