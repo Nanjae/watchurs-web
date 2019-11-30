@@ -181,7 +181,19 @@ const LeagueFavStar = styled.div`
   cursor: pointer;
 `;
 
-export default () => {
+export default ({
+  bId,
+  bName,
+  bAvatar,
+  bPlatform,
+  sName,
+  sTier,
+  sRank,
+  sPoints,
+  sWins,
+  sLosses,
+  sWinRate
+}) => {
   const [focused, setFocused] = useState(false);
   const onMouseOut = () => {
     setFocused(false);
@@ -196,13 +208,9 @@ export default () => {
       </TableRankBox>
       <BroadInfoBox>
         <BroadPlatform url={twitchLogo} />
-        <BroadAvatar
-          url={
-            "https://static-cdn.jtvnw.net/jtv_user_pictures/dbb514f1-469b-479e-b5ba-3ac0f09a2776-profile_image-70x70.png"
-          }
-        />
-        <BroadNameText>트위치아이디최대</BroadNameText>
-        <BroadIdText>(yapyap30looksam1)</BroadIdText>
+        <BroadAvatar url={bAvatar} />
+        <BroadNameText>{bName}</BroadNameText>
+        <BroadIdText>({bId})</BroadIdText>
       </BroadInfoBox>
       <LeagueSNameBox>
         <LeagueSAvatar
@@ -210,20 +218,20 @@ export default () => {
             "https://opgg-static.akamaized.net/images/profile_icons/profileIcon4230.jpg?image=q_auto&v=1518361200"
           }
         />
-        <LeagueSNameText>소환사명 최대 글자</LeagueSNameText>
+        <LeagueSNameText>{sName}</LeagueSNameText>
       </LeagueSNameBox>
       <LeagueTierBox>
         <LeagueTierEmblem url={emblemDiamond} />
         <LeagueTierText>다이아몬드</LeagueTierText>
         <LeagueRankText>Ⅳ</LeagueRankText>
-        <LeaguePointsText>(100 LP)</LeaguePointsText>
+        <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
       </LeagueTierBox>
       <LeagueWinRateBox>
         <LeagueWinRateBar>
-          <LeagueWinsText>1338승</LeagueWinsText>
-          <LeagueLossesText>1223패</LeagueLossesText>
+          <LeagueWinsText>{sWins}승</LeagueWinsText>
+          <LeagueLossesText>{sLosses}패</LeagueLossesText>
         </LeagueWinRateBar>
-        <LeagueWinRateText>72%</LeagueWinRateText>
+        <LeagueWinRateText>{sWinRate}%</LeagueWinRateText>
       </LeagueWinRateBox>
       <LeagueFavBox>
         <LeagueFavStar

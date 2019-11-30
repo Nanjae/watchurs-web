@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Home from "../Routes/Home";
+import Home from "../Routes/League/LeagueRank/LeagueRank";
 
 const DefaultRoute = () => (
   <Switch>
