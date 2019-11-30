@@ -6,31 +6,30 @@ import BoardCard from "../Components/BoardCard";
 const Wrapper = styled.div`
   padding-top: 120px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-width: 100%;
-  margin-bottom: 12px;
+  justify-content: left;
 `;
 
 const BoardDiv = styled.div`
-  width: 60%;
+  width: 1140px;
   min-width: 1140px;
 `;
 
 const GoogleAdsLeftDiv = styled.div`
   position: relative;
-  min-width: 300px;
-  min-height: 600px;
-  margin-right: 50px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: 600px;
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const GoogleAdsRightDiv = styled.div`
   position: relative;
-  min-width: 300px;
-  min-height: 600px;
-  margin-left: 50px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: 600px;
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const GoogleAdsBottomDiv = styled.div`
@@ -60,7 +59,7 @@ export default class Home extends Component {
   render() {
     return (
       <Wrapper>
-        <GoogleAdsLeftDiv style={{ top: scrollTop + 50 }}>
+        <GoogleAdsLeftDiv style={{ top: scrollTop }}>
           <ins
             className="adsbygoogle"
             style={{ display: "inline-block", width: 300, height: 600 }}
@@ -104,7 +103,7 @@ export default class Home extends Component {
             ></ins>
           </GoogleAdsBottomDiv>
         </BoardDiv>
-        <GoogleAdsRightDiv style={{ top: scrollTop + 50 }}>
+        <GoogleAdsRightDiv style={{ top: scrollTop }}>
           <ins
             className="adsbygoogle"
             style={{ display: "inline-block", width: 300, height: 600 }}
