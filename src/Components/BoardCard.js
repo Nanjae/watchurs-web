@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
 // import emptyStar from "../Assets/Common/EmptyStar.png";
-import fullStar from "../Assets/Common/FullStar.png";
+// import fullStar from "../Assets/Common/FullStar.png";
 // import lightEmptyStar from "../Assets/Common/LightEmptyStar.png";
-import lightFullStar from "../Assets/Common/LightFullStar.png";
-// import emblemIron from "../Assets/League/EmblemIron.png";
-// import emblemBronze from "../Assets/League/EmblemBronze.png";
-// import emblemSilver from "../Assets/League/EmblemSilver.png";
-// import emblemGold from "../Assets/League/EmblemGold.png";
-// import emblemPlatinum from "../Assets/League/EmblemPlatinum.png";
+// import lightFullStar from "../Assets/Common/LightFullStar.png";
+import refresh from "../Assets/Common/Refresh.png";
+import lightRefresh from "../Assets/Common/LightRefresh.png";
+import emblemUnranked from "../Assets/League/EmblemUnranked.png";
+import emblemIron from "../Assets/League/EmblemIron.png";
+import emblemBronze from "../Assets/League/EmblemBronze.png";
+import emblemSilver from "../Assets/League/EmblemSilver.png";
+import emblemGold from "../Assets/League/EmblemGold.png";
+import emblemPlatinum from "../Assets/League/EmblemPlatinum.png";
 import emblemDiamond from "../Assets/League/EmblemDiamond.png";
-// import emblemMaster from "../Assets/League/EmblemMaster.png";
-// import emblemGrandmaster from "../Assets/League/EmblemGrandmaster.png";
-// import emblemChallenger from "../Assets/League/EmblemChallenger.png";
+import emblemMaster from "../Assets/League/EmblemMaster.png";
+import emblemGrandmaster from "../Assets/League/EmblemGrandmaster.png";
+import emblemChallenger from "../Assets/League/EmblemChallenger.png";
+import Theme from "../Styles/Theme";
 
 const BoardTableDiv = styled.div`
   display: flex;
@@ -147,8 +151,8 @@ const LeagueWinRateBar = styled.div`
   background: linear-gradient(
     to right,
     ${props => props.theme.mainColor} 0%,
-    ${props => props.theme.mainColor} 72%,
-    ${props => props.theme.lightMainColor} 72%,
+    ${props => props.theme.mainColor} ${props => props.winRate}%,
+    ${props => props.theme.lightMainColor} ${props => props.winRate}%,
     ${props => props.theme.lightMainColor} 100%
   );
   border: 1px solid ${props => props.theme.lightGrayColor};
@@ -181,12 +185,16 @@ const LeagueFavStar = styled.div`
   cursor: pointer;
 `;
 
+let sTierEmblem = emblemUnranked;
+let sTierName = "랭크없음";
+
 export default ({
   bId,
   bName,
   bAvatar,
   bPlatform,
   sName,
+  sAvatar,
   sTier,
   sRank,
   sPoints,
@@ -201,6 +209,45 @@ export default ({
   const onMouseOver = () => {
     setFocused(true);
   };
+
+  if (sTier === "UNRANKED") {
+    sTierEmblem = emblemUnranked;
+    sTierName = "랭크없음";
+    sRank = "";
+  } else if (sTier === "IRON") {
+    sTierEmblem = emblemIron;
+    sTierName = "아이언";
+  } else if (sTier === "BRONZE") {
+    sTierEmblem = emblemBronze;
+    sTierName = "브론즈";
+  } else if (sTier === "SILVER") {
+    sTierEmblem = emblemSilver;
+    sTierName = "실버";
+  } else if (sTier === "GOLD") {
+    sTierEmblem = emblemGold;
+    sTierName = "골드";
+  } else if (sTier === "PLATINUM") {
+    sTierEmblem = emblemPlatinum;
+    sTierName = "플래티넘";
+  } else if (sTier === "DIAMOND") {
+    sTierEmblem = emblemDiamond;
+    sTierName = "다이아몬드";
+  } else if (sTier === "MASTER") {
+    sTierEmblem = emblemMaster;
+    sTierName = "마스터";
+    sRank = "";
+  } else if (sTier === "GRANDMASTER") {
+    sTierEmblem = emblemGrandmaster;
+    sTierName = "그랜드마스터";
+    sRank = "";
+  } else if (sTier === "CHALLENGER") {
+    sTierEmblem = emblemChallenger;
+    sTierName = "챌린저";
+    sRank = "";
+  }
+
+  console.log(sRank);
+
   return (
     <BoardTableDiv>
       <TableRankBox>
@@ -213,21 +260,24 @@ export default ({
         <BroadIdText>({bId})</BroadIdText>
       </BroadInfoBox>
       <LeagueSNameBox>
-        <LeagueSAvatar
-          url={
-            "https://opgg-static.akamaized.net/images/profile_icons/profileIcon4230.jpg?image=q_auto&v=1518361200"
-          }
-        />
+        <LeagueSAvatar url={sAvatar} />
         <LeagueSNameText>{sName}</LeagueSNameText>
       </LeagueSNameBox>
       <LeagueTierBox>
-        <LeagueTierEmblem url={emblemDiamond} />
-        <LeagueTierText>다이아몬드</LeagueTierText>
-        <LeagueRankText>Ⅳ</LeagueRankText>
-        <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+        <LeagueTierEmblem url={sTierEmblem} />
+        <LeagueTierText>{sTierName}</LeagueTierText>
+        {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
+        {sRank !== "" ? (
+          <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+        ) : null}
       </LeagueTierBox>
       <LeagueWinRateBox>
-        <LeagueWinRateBar>
+        <LeagueWinRateBar
+          winRate={sWinRate}
+          style={{
+            backgroundColor: sWinRate === "--" ? Theme.lightGrayColor : null
+          }}
+        >
           <LeagueWinsText>{sWins}승</LeagueWinsText>
           <LeagueLossesText>{sLosses}패</LeagueLossesText>
         </LeagueWinRateBar>
@@ -237,7 +287,7 @@ export default ({
         <LeagueFavStar
           onMouseOver={() => onMouseOver()}
           onMouseOut={() => onMouseOut()}
-          url={focused ? fullStar : lightFullStar}
+          url={focused ? refresh : lightRefresh}
         />
       </LeagueFavBox>
     </BoardTableDiv>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import RankTable from "./RankTable";
+import RankBoard from "./RankBoard";
 
 const Wrapper = styled.div`
   padding-top: 120px;
@@ -84,7 +84,7 @@ export default class Home extends Component {
           ></ins>
         </GoogleAdsLeftDiv>
         <BoardDiv>
-          <RankTable />
+          <RankBoard />
           <GoogleAdsBottomDiv>
             <ins
               className="adsbygoogle"

@@ -15,6 +15,7 @@ const SEE_ALL_BROADCASTER = gql`
       bPlatform
       bSummoner {
         sName
+        sAvatar
         sTier
         sRank
         sPoints
@@ -27,7 +28,7 @@ const SEE_ALL_BROADCASTER = gql`
 
 const Wrapper = styled.div``;
 
-const RankTable = () => {
+const RankBoard = () => {
   const { data, loading } = useQuery(SEE_ALL_BROADCASTER);
   if (!loading) {
     console.log(data);
@@ -44,6 +45,7 @@ const RankTable = () => {
             bName={broad.bName}
             bAvatar={broad.bAvatar}
             sName={broad.bSummoner.sName}
+            sAvatar={broad.bSummoner.sAvatar}
             sTier={broad.bSummoner.sTier}
             sRank={broad.bSummoner.sRank}
             sPoints={broad.bSummoner.sPoints}
@@ -52,7 +54,7 @@ const RankTable = () => {
             sWinRate={
               broad.bSummoner.sWins + broad.bSummoner.sLosses === 0
                 ? "--"
-                : Math.floor(
+                : Math.round(
                     (broad.bSummoner.sWins /
                       (broad.bSummoner.sWins + broad.bSummoner.sLosses)) *
                       100
@@ -64,4 +66,4 @@ const RankTable = () => {
   );
 };
 
-export default RankTable;
+export default RankBoard;

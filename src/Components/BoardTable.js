@@ -93,7 +93,7 @@ export default () => {
         <LeagueWinRateText>승률</LeagueWinRateText>
       </LeagueWinRateBox>
       <LeagueFavBox>
-        <LeagueFavText>즐겨찾기</LeagueFavText>
+        <LeagueFavText>갱신</LeagueFavText>
       </LeagueFavBox>
     </BoardTableDiv>
   );
