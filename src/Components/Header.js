@@ -27,20 +27,20 @@ const HeaderTop = styled.div`
 
 const TopTitleDiv = styled.div`
   height: 100%;
-  margin: 15px;
   display: flex;
   align-items: center;
 `;
 
 const TitleBox = styled.div`
   height: 100%;
+  padding-left: 10px;
   display: flex;
   align-items: center;
 `;
 
 const TitleText = styled.div`
-  font-weight: 600;
-  font-size: 30px;
+  font-weight: bold;
+  font-size: 40px;
   user-select: none;
 `;
 
@@ -63,6 +63,7 @@ const LoginButton = styled.div`
 const LoginText = styled.div`
   color: ${props => props.theme.lightMainColor};
   user-select: none;
+  font-weight: bold;
 `;
 
 const MapButton = styled.div`
@@ -77,6 +78,7 @@ const MapButton = styled.div`
 const MapText = styled.div`
   color: ${props => props.theme.whiteColor};
   user-select: none;
+  font-weight: bold;
 `;
 
 const PageBox = styled.div`
@@ -87,6 +89,7 @@ const PageBox = styled.div`
 
 const PageText = styled.div`
   user-select: none;
+  font-weight: bold;
 `;
 
 const PageIcon = styled.div`

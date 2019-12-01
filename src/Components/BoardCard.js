@@ -31,14 +31,14 @@ const BoardTableDiv = styled.div`
   user-select: none;
   color: ${props => props.theme.grayColor};
   font-size: 15px;
+  font-weight: bold;
 `;
 
 const TableRankBox = styled.div`
   width: 6%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding-right: 15px;
   margin: 14px 0px;
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
@@ -46,7 +46,7 @@ const TableRankBox = styled.div`
 const TableRankText = styled.div``;
 
 const BroadInfoBox = styled.div`
-  width: 33%;
+  width: 31%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -71,6 +71,7 @@ const BroadNameText = styled.div`
 
 const BroadIdText = styled.div`
   font-size: 13px;
+  font-weight: bold;
 `;
 
 const BroadPlatform = styled.div`
@@ -82,7 +83,7 @@ const BroadPlatform = styled.div`
 `;
 
 const LeagueSNameBox = styled.div`
-  width: 17%;
+  width: 19%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -128,7 +129,10 @@ const LeagueRankText = styled.div`
   margin-right: 5px;
 `;
 
-const LeaguePointsText = styled.div``;
+const LeaguePointsText = styled.div`
+  font-weight: bold;
+  font-size: 13px;
+`;
 
 const LeagueWinRateBox = styled.div`
   width: 16%;
@@ -144,8 +148,8 @@ const LeagueWinRateBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 60%;
   margin-right: 8px;
   padding: 0px 5px;
   background: linear-gradient(
@@ -157,19 +161,24 @@ const LeagueWinRateBar = styled.div`
   );
   border: 1px solid ${props => props.theme.lightGrayColor};
   border-radius: 7px;
-  font-size: 12px;
   color: ${props => props.theme.whiteColor};
 `;
 
-const LeagueWinsText = styled.div``;
-
-const LeagueLossesText = styled.div``;
-
-const LeagueWinRateText = styled.div`
-  font-size: 13px;
+const LeagueWinsText = styled.div`
+  font-size: 10px;
+  font-weight: normal;
 `;
 
-const LeagueFavBox = styled.div`
+const LeagueLossesText = styled.div`
+  font-size: 10px;
+  font-weight: normal;
+`;
+
+const LeagueWinRateText = styled.div`
+  padding-bottom: 3px;
+`;
+
+const LeagueRefreshBox = styled.div`
   width: 7%;
   display: flex;
   justify-content: center;
@@ -177,7 +186,7 @@ const LeagueFavBox = styled.div`
   margin: 14px 0px;
 `;
 
-const LeagueFavStar = styled.div`
+const LeagueRefresh = styled.div`
   width: 20px;
   height: 20px;
   background-image: url(${props => props.url});
@@ -281,13 +290,13 @@ export default ({
         </LeagueWinRateBar>
         <LeagueWinRateText>{sWinRate}%</LeagueWinRateText>
       </LeagueWinRateBox>
-      <LeagueFavBox>
-        <LeagueFavStar
+      <LeagueRefreshBox>
+        <LeagueRefresh
           onMouseOver={() => onMouseOver()}
           onMouseOut={() => onMouseOut()}
           url={focused ? refresh : lightRefresh}
         />
-      </LeagueFavBox>
+      </LeagueRefreshBox>
     </BoardTableDiv>
   );
 };

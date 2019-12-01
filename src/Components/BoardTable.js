@@ -6,7 +6,7 @@ const BoardTableDiv = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  height: 40px;
+  height: 20px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: ${props => props.theme.lightMainColor};
   user-select: none;
@@ -17,30 +17,29 @@ const BoardTableDiv = styled.div`
 const TableRankBox = styled.div`
   width: 6%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding-right: 15px;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  /* border-right: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const TableRankText = styled.div``;
 
 const BroadInfoBox = styled.div`
-  width: 33%;
+  width: 31%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  /* border-right: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const BroadInfoText = styled.div``;
 
 const LeagueSNameBox = styled.div`
-  width: 17%;
+  width: 19%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  /* border-right: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const LeagueSNameText = styled.div``;
@@ -50,7 +49,7 @@ const LeagueTierBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  /* border-right: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const LeagueTierText = styled.div``;
@@ -60,7 +59,7 @@ const LeagueWinRateBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  /* border-right: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const LeagueWinRateText = styled.div``;

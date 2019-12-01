@@ -10,7 +10,8 @@ import SpoqaHanSansBold from "./fonts/SpoqaHanSansBold.ttf";
 
 export default createGlobalStyle`
     ${reset};
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+    /* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
     * {
         box-sizing:border-box;
     }
@@ -48,12 +49,12 @@ export default createGlobalStyle`
         font-family: "Atomy";
         font-weight: 600;
         src: url(${AtomyBold});
-    }
+    } */
     body {
         background-color: ${props => props.theme.bgColor};
         color: ${props => props.theme.blackColor};
-        font-family: "Atomy";
-        font-weight: 400;
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: normal;
         font-size: 14px;
     }
     a {
