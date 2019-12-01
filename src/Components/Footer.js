@@ -11,7 +11,7 @@ const FooterLeft = styled.div`
   display: flex;
   justify-content: center;
   width: 20%;
-  min-width: 250px;
+  min-width: 270px;
   height: 100%;
 `;
 
@@ -20,7 +20,7 @@ const FooterRight = styled.div`
   display: flex;
   justify-content: center;
   width: 20%;
-  min-width: 300px;
+  min-width: 320px;
   height: 100%;
 `;
 
