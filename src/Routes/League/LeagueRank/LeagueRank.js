@@ -13,32 +13,34 @@ const BoardDiv = styled.div`
   min-width: 1140px;
 `;
 
-const GoogleAdsLeftDiv = styled.div`
+const AdsLeftDiv = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   width: 20%;
+  min-width: 300px;
   height: 600px;
   /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
-const GoogleAdsRightDiv = styled.div`
+const AdsRightDiv = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   width: 20%;
+  min-width: 300px;
   height: 600px;
   /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
-const GoogleAdsBottomDiv = styled.div`
-  /* display: flex;
+const AdsBottomDiv = styled.div`
+  display: flex;
   justify-content: center;
   width: 100%;
   height: 90px;
   min-height: 90px;
   margin-top: 20px;
-  border: 1px solid ${props => props.theme.lightGrayColor}; */
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 let scrollTop = window.scrollY;
@@ -69,45 +71,69 @@ export default class Home extends Component {
   render() {
     return (
       <Wrapper>
-        <GoogleAdsLeftDiv
+        <AdsLeftDiv
           style={{ top: scrollTop, height: windowHeight < 720 ? 250 : 600 }}
         >
-          <ins
-            className="adsbygoogle"
-            style={{
-              display: "inline-block",
-              width: 300,
-              height: windowHeight < 720 ? 250 : 600
-            }}
-            data-ad-client="ca-pub-2379639620636294"
-            data-ad-slot={windowHeight < 720 ? "6765307417" : "9707983766"}
-          ></ins>
-        </GoogleAdsLeftDiv>
+          {windowHeight < 720 ? (
+            <iframe
+              title="Left_300x250"
+              width="300"
+              height="250"
+              allowtransparency="true"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_300.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          ) : (
+            <iframe
+              title="Left_160x600"
+              width="160"
+              height="600"
+              allowtransparency="true"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_160.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106227&mon_rf=REFERRER_URL"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          )}
+        </AdsLeftDiv>
         <BoardDiv>
           <RankBoard />
-          <GoogleAdsBottomDiv>
-            <ins
-              className="adsbygoogle"
-              style={{ display: "inline-block", width: 970, height: 90 }}
-              data-ad-client="ca-pub-2379639620636294"
-              data-ad-slot="3631344781"
-            ></ins>
-          </GoogleAdsBottomDiv>
+          <AdsBottomDiv>
+            <iframe
+              title="Bottom_728x90"
+              width="728"
+              height="90"
+              allowtransparency="true"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_728.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          </AdsBottomDiv>
         </BoardDiv>
-        <GoogleAdsRightDiv
+        <AdsRightDiv
           style={{ top: scrollTop, height: windowHeight < 720 ? 250 : 600 }}
         >
-          <ins
-            className="adsbygoogle"
-            style={{
-              display: "inline-block",
-              width: 300,
-              height: windowHeight < 720 ? 250 : 600
-            }}
-            data-ad-client="ca-pub-2379639620636294"
-            data-ad-slot={windowHeight < 720 ? "5316494373" : "7927998232"}
-          ></ins>
-        </GoogleAdsRightDiv>
+          {windowHeight < 720 ? (
+            <iframe
+              width="300"
+              height="250"
+              allowtransparency="true"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_300.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106226&mon_rf=REFERRER_URL"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          ) : (
+            <iframe
+              title="Right_160x600"
+              width="160"
+              height="600"
+              allowtransparency="true"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_160.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106226&mon_rf=REFERRER_URL"
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          )}
+        </AdsRightDiv>
       </Wrapper>
     );
   }

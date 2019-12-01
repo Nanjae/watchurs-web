@@ -6,6 +6,7 @@ import Theme from "../Styles/Theme";
 
 const Header = styled.header`
   position: fixed;
+  z-index: 1;
   width: 100%;
   min-width: 1140px;
   height: 100px;
