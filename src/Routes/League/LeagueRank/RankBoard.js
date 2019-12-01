@@ -33,7 +33,7 @@ const Wrapper = styled.div``;
 const RankBoard = () => {
   const { data, loading } = useQuery(SEE_ALL_SUMMONER);
   if (!loading) {
-    console.log(data);
+    // console.log(data);
     // data.seeAllBroadcaster.map((broad, index) => console.log(broad.index));
   }
 

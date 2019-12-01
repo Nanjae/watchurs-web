@@ -115,6 +115,7 @@ export default class Home extends Component {
         >
           {windowHeight < 720 ? (
             <iframe
+              title="Right_300x250"
               width="300"
               height="250"
               allowtransparency="true"
