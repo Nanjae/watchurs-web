@@ -3,7 +3,7 @@ import styled from "styled-components";
 import RankBoard from "./RankBoard";
 
 const Wrapper = styled.div`
-  padding-top: 120px;
+  padding-top: 110px;
   display: flex;
   justify-content: left;
 `;
@@ -18,18 +18,19 @@ const AdsLeftDiv = styled.div`
   display: flex;
   justify-content: center;
   width: 20%;
-  min-width: 300px;
-  height: 600px;
+  min-width: 270px;
+  height: 100%;
   /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
 const AdsRightDiv = styled.div`
   position: relative;
+  flex-direction: column;
   display: flex;
-  justify-content: center;
+  align-items: center;
   width: 20%;
-  min-width: 300px;
-  height: 600px;
+  min-width: 320px;
+  height: 100%;
   /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
@@ -39,7 +40,7 @@ const AdsBottomDiv = styled.div`
   width: 100%;
   height: 90px;
   min-height: 90px;
-  margin-top: 20px;
+  margin-top: 10px;
   /* border: 1px solid ${props => props.theme.lightGrayColor}; */
 `;
 
@@ -71,16 +72,14 @@ export default class Home extends Component {
   render() {
     return (
       <Wrapper>
-        <AdsLeftDiv
-          style={{ top: scrollTop, height: windowHeight < 720 ? 250 : 600 }}
-        >
-          {windowHeight < 720 ? (
+        <AdsLeftDiv style={{ top: scrollTop }}>
+          {windowHeight < 730 ? (
             <iframe
-              title="Left_300x250"
-              width="300"
+              title="RightLeft_250x250"
+              width="250"
               height="250"
               allowtransparency="true"
-              src="https://tab2.clickmon.co.kr/pop/wp_ad_300.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_250.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106229&mon_rf=REFERRER_URL"
               frameBorder="0"
               scrolling="no"
             ></iframe>
@@ -110,30 +109,27 @@ export default class Home extends Component {
             ></iframe>
           </AdsBottomDiv>
         </BoardDiv>
-        <AdsRightDiv
-          style={{ top: scrollTop, height: windowHeight < 720 ? 250 : 600 }}
-        >
-          {windowHeight < 720 ? (
+        <AdsRightDiv style={{ top: scrollTop }}>
+          {windowHeight < 730 ? null : (
             <iframe
-              title="Right_300x250"
-              width="300"
+              title="RightLeft_250x250"
+              width="250"
               height="250"
               allowtransparency="true"
-              src="https://tab2.clickmon.co.kr/pop/wp_ad_300.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106226&mon_rf=REFERRER_URL"
-              frameBorder="0"
-              scrolling="no"
-            ></iframe>
-          ) : (
-            <iframe
-              title="Right_160x600"
-              width="160"
-              height="600"
-              allowtransparency="true"
-              src="https://tab2.clickmon.co.kr/pop/wp_ad_160.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106226&mon_rf=REFERRER_URL"
+              src="https://tab2.clickmon.co.kr/pop/wp_ad_250.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106229&mon_rf=REFERRER_URL"
               frameBorder="0"
               scrolling="no"
             ></iframe>
           )}
+          <iframe
+            title="Right_300x250"
+            width="300"
+            height="250"
+            allowtransparency="true"
+            src="https://tab2.clickmon.co.kr/pop/wp_ad_300.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106229&mon_rf=REFERRER_URL"
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
         </AdsRightDiv>
       </Wrapper>
     );

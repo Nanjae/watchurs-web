@@ -2,17 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterWrapper = styled.div`
-  margin: 0 auto;
-  min-width: 1140px;
-  width: 60%;
+  display: flex;
+  justify-content: left;
+`;
+
+const FooterLeft = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  min-width: 250px;
+  height: 100%;
+`;
+
+const FooterRight = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  min-width: 300px;
+  height: 100%;
 `;
 
 const Footer = styled.footer`
+  width: 60%;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   font-weight: 600;
-  margin: 20px 0px;
+  min-width: 1140px;
+  margin: 10px 0px;
 `;
 
 const List = styled.ul`
@@ -36,6 +55,7 @@ const Copyright = styled.div`
 
 export default () => (
   <FooterWrapper>
+    <FooterLeft />
     <Footer>
       <List>
         <ListItem>
@@ -49,5 +69,6 @@ export default () => (
         ⓒ {new Date().getFullYear()} WATCHURS FOR BROADCAST PLATFORMS
       </Copyright>
     </Footer>
+    <FooterRight />
   </FooterWrapper>
 );

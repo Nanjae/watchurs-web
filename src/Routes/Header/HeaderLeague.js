@@ -18,7 +18,7 @@ const LeagueMenuDiv = styled.div`
 
 const LeagueMenuBox = styled.div`
   height: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 10px 5px;
   cursor: pointer;
   border-bottom: 3px solid white;
