@@ -5,9 +5,8 @@ import Home from "../Routes/League/LeagueRank/LeagueRank";
 
 const DefaultRoute = () => (
   <Switch>
-    {/* <Route path="/riot.txt" component={Riot} /> */}
     <Route path="/" component={Home} />
-    {/* <Redirect from="*" to="/" /> */}
+    <Redirect from="*" to="/" />
   </Switch>
 );
 
