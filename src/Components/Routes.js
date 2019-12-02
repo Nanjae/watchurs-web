@@ -5,9 +5,9 @@ import Riot from "../Routes/Riot";
 
 const DefaultRoute = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/riot.txt/" component={Riot} />
-    <Redirect from="*" to="/" />
+    <Route path="/riot.txt" component={Riot} />
+    <Route path="/" component={Home} />
+    {/* <Redirect from="*" to="/" /> */}
   </Switch>
 );
 
