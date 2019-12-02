@@ -1,3 +1,3 @@
-import riot from "../../src/Routes/Riot";
+import riot from "../../src/riot.txt";
 
 export default () => riot;
