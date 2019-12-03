@@ -11,6 +11,8 @@ import BoardTable from "./BoardTable";
 const SEE_ALL_SUMMONER = gql`
   {
     seeAllSummoner {
+      id
+      sId
       sName
       sAvatar
       sTier
@@ -46,6 +48,8 @@ const RankBoard = () => {
         data.seeAllSummoner.map((broad, index) => (
           <BoardCard
             key={index + 1}
+            id={broad.id}
+            sId={broad.sId}
             sRanking={index + 1}
             bId={broad.sBroadcaster.bId}
             bName={broad.sBroadcaster.bName}

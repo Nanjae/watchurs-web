@@ -18,6 +18,14 @@ import emblemMaster from "../Assets/League/EmblemMaster.png";
 import emblemGrandmaster from "../Assets/League/EmblemGrandmaster.png";
 import emblemChallenger from "../Assets/League/EmblemChallenger.png";
 import Theme from "../Styles/Theme";
+import { gql } from "apollo-boost";
+import { useMutation } from "react-apollo-hooks";
+
+const REFRESH_SUMMONER = gql`
+  mutation refreshSummoner($id: String!, $sId: String!) {
+    refreshSummoner(id: $id, sId: $sId)
+  }
+`;
 
 const BoardTableDiv = styled.div`
   display: flex;
@@ -198,6 +206,8 @@ let sTierEmblem = emblemUnranked;
 let sTierName = "랭크없음";
 
 export default ({
+  id,
+  sId,
   sRanking,
   bId,
   bName,
@@ -221,6 +231,14 @@ export default ({
   const onMouseOver = () => {
     setFocused(true);
   };
+  const [refreshSummonerM] = useMutation(REFRESH_SUMMONER, {
+    variables: { id, sId }
+  });
+
+  const onClickRefresh = async () => {
+    refreshSummonerM();
+  };
+
   if (sTier === "UNRANKED") {
     sTierEmblem = emblemUnranked;
     sTierName = "랭크없음";
@@ -282,7 +300,7 @@ export default ({
         <LeagueWinRateBar
           winRate={sWinRate}
           style={{
-            backgroundColor: sWinRate === "--" ? Theme.lightGrayColor : null
+            backgroundColor: sWinRate === "--" ? Theme.aTheme : null
           }}
         >
           <LeagueWinsText>{sWins}승</LeagueWinsText>
@@ -292,6 +310,7 @@ export default ({
       </LeagueWinRateBox>
       <LeagueRefreshBox>
         <LeagueRefresh
+          onClick={() => onClickRefresh()}
           onMouseOver={() => onMouseOver()}
           onMouseOut={() => onMouseOut()}
           url={focused ? refresh : lightRefresh}
