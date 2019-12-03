@@ -7,11 +7,14 @@ const BoardTableDiv = styled.div`
   justify-content: center;
   width: 100%;
   height: 20px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
-  background-color: ${props => props.theme.lightMainColor};
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
+  background-color: ${props => props.theme.bTheme};
   user-select: none;
   padding: 10px 0px;
-  color: ${props => props.theme.whiteColor};
+  color: ${props => props.theme.eTheme};
+  border-bottom: 2px solid ${props => props.theme.dTheme};
+  font-weight: 600;
+  font-size:13px;
 `;
 
 const TableRankBox = styled.div`

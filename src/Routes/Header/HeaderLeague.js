@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link, withRouter } from "react-router-dom";
 
 const HeaderLeagueDiv = styled.div`
   width: 30%;
@@ -16,21 +17,22 @@ const LeagueMenuDiv = styled.div`
   align-items: center;
 `;
 
-const LeagueMenuBox = styled.div`
+const LeagueMenuBox = styled(Link)`
   height: 100%;
   margin-top: 5px;
   padding: 10px 5px;
   cursor: pointer;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid ${props => props.theme.cTheme};
 `;
 
 const LeagueMenuText = styled.div`
   font-size: 17px;
   font-weight: bold;
   user-select: none;
+  color: ${props => props.theme.cTheme};
 `;
 
-export default () => {
+export default withRouter(() => {
   const [selected, setSelected] = useState(1);
   const onClick = num => {
     setSelected(num);
@@ -39,36 +41,27 @@ export default () => {
     <HeaderLeagueDiv>
       <LeagueMenuDiv>
         <LeagueMenuBox
+          to="/ranking"
           onClick={() => onClick(1)}
-          style={
-            selected === 1
-              ? { opacity: 1.0, borderBottomColor: "black" }
-              : { opacity: 0.5, borderBottomColor: "white" }
-          }
+          style={selected === 1 ? { opacity: 1.0 } : { opacity: 0.5 }}
         >
-          <LeagueMenuText>전체 순위</LeagueMenuText>
+          <LeagueMenuText>전체랭킹</LeagueMenuText>
         </LeagueMenuBox>
         <LeagueMenuBox
+          to="/favorites"
           onClick={() => onClick(2)}
-          style={
-            selected === 2
-              ? { opacity: 1.0, borderBottomColor: "black" }
-              : { opacity: 0.5, borderBottomColor: "white" }
-          }
+          style={selected === 2 ? { opacity: 1.0 } : { opacity: 0.5 }}
         >
-          <LeagueMenuText>팀 설정</LeagueMenuText>
+          <LeagueMenuText>즐겨찾기</LeagueMenuText>
         </LeagueMenuBox>
         <LeagueMenuBox
+          to="/contest"
           onClick={() => onClick(3)}
-          style={
-            selected === 3
-              ? { opacity: 1.0, borderBottomColor: "black" }
-              : { opacity: 0.5, borderBottomColor: "white" }
-          }
+          style={selected === 3 ? { opacity: 1.0 } : { opacity: 0.5 }}
         >
-          <LeagueMenuText>대회 정보</LeagueMenuText>
+          <LeagueMenuText>대회정보</LeagueMenuText>
         </LeagueMenuBox>
       </LeagueMenuDiv>
     </HeaderLeagueDiv>
   );
-};
+});

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import RankBoard from "./RankBoard";
 
 const Wrapper = styled.div`
   padding-top: 110px;
@@ -11,6 +10,12 @@ const Wrapper = styled.div`
 const BoardDiv = styled.div`
   width: 1140px;
   min-width: 1140px;
+`;
+
+const FavDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const AdsLeftDiv = styled.div`
@@ -96,7 +101,7 @@ export default class Home extends Component {
           )}
         </AdsLeftDiv>
         <BoardDiv>
-          <RankBoard />
+          <FavDiv>대회정보</FavDiv>
           <AdsBottomDiv>
             <iframe
               title="Bottom_728x90"

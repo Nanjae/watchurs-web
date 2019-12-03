@@ -25,11 +25,11 @@ const BoardTableDiv = styled.div`
   justify-content: center;
   width: 100%;
   height: 60px;
-  border: 1px solid #b2bec3;
-  border-top-width: 0px;
-  background-color: ${props => props.theme.whiteColor};
+  border-bottom: 2px solid ${props => props.theme.dTheme};
+  /* border-top-width: 0px; */
+  background-color: ${props => props.theme.eTheme};
   user-select: none;
-  color: ${props => props.theme.grayColor};
+  color: ${props => props.theme.aTheme};
   font-size: 15px;
   font-weight: bold;
 `;
@@ -40,7 +40,7 @@ const TableRankBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 14px 0px;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  border-right: 2px solid ${props => props.theme.dTheme};
 `;
 
 const TableRankText = styled.div``;
@@ -52,7 +52,7 @@ const BroadInfoBox = styled.div`
   align-items: center;
   padding-left: 15px;
   margin: 14px 0px;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  border-right: 2px solid ${props => props.theme.dTheme};
 `;
 
 const BroadAvatar = styled.div`
@@ -61,7 +61,7 @@ const BroadAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   border-radius: 18px;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  border: 1px solid ${props => props.theme.dTheme};
   margin-right: 8px;
 `;
 
@@ -89,7 +89,7 @@ const LeagueSNameBox = styled.div`
   align-items: center;
   padding-left: 15px;
   margin: 14px 0px;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  border-right: 2px solid ${props => props.theme.dTheme};
 `;
 
 const LeagueSAvatar = styled.div`
@@ -97,7 +97,7 @@ const LeagueSAvatar = styled.div`
   height: 36px;
   background-image: url(${props => props.url});
   background-size: cover;
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  border: 1px solid ${props => props.theme.dTheme};
   margin-right: 8px;
 `;
 
@@ -110,7 +110,7 @@ const LeagueTierBox = styled.div`
   align-items: center;
   padding-left: 20px;
   margin: 14px 0px;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  border-right: 2px solid ${props => props.theme.dTheme};
 `;
 
 const LeagueTierEmblem = styled.div`
@@ -141,7 +141,7 @@ const LeagueWinRateBox = styled.div`
   align-items: center;
   margin: 14px 0px;
   padding-left: 15px;
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  border-right: 2px solid ${props => props.theme.dTheme};
 `;
 
 const LeagueWinRateBar = styled.div`
@@ -154,14 +154,14 @@ const LeagueWinRateBar = styled.div`
   padding: 0px 5px;
   background: linear-gradient(
     to right,
-    ${props => props.theme.mainColor} 0%,
-    ${props => props.theme.mainColor} ${props => props.winRate}%,
-    ${props => props.theme.lightMainColor} ${props => props.winRate}%,
-    ${props => props.theme.lightMainColor} 100%
+    ${props => props.theme.cTheme} 0%,
+    ${props => props.theme.cTheme} ${props => props.winRate}%,
+    ${props => props.theme.dTheme} ${props => props.winRate}%,
+    ${props => props.theme.dTheme} 100%
   );
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  /* border: 1px solid ${props => props.theme.lightGrayColor}; */
   border-radius: 7px;
-  color: ${props => props.theme.whiteColor};
+  color: ${props => props.theme.fTheme};
 `;
 
 const LeagueWinsText = styled.div`

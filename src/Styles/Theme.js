@@ -1,10 +1,10 @@
 export default {
-  bgColor: "#f5f5f5",
-  whiteColor: "#FFFFFF",
-  blackColor: "#000000",
-  darkGrayColor: "#2d3436",
-  grayColor: "#636e72",
-  lightGrayColor: "#b2bec3",
   mainColor: "#6C2498",
-  lightMainColor: "#874EAB"
+  lightMainColor: "#874EAB",
+  aTheme: "#0D0D0D",
+  bTheme: "#593C2C",
+  cTheme: "#A67051",
+  dTheme: "#F2B47E",
+  eTheme: "#F2DC99",
+  fTheme: "#faf2ff"
 };

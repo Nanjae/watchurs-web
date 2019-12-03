@@ -51,19 +51,20 @@ export default createGlobalStyle`
         src: url(${AtomyBold});
     } */
     body {
-        background-color: ${props => props.theme.bgColor};
-        color: ${props => props.theme.blackColor};
+        background-color: ${props => props.theme.dTheme};
+        color: ${props => props.theme.aTheme};
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
         font-size: 14px;
     }
     a {
-        text-decoration:none;
+        color: ${props => props.theme.aTheme};
+        text-decoration: none;
     }
     input {
-        outline:none;
+        outline: none;
     }
     button {
-        outline:none;
+        outline: none;
     }
 `;

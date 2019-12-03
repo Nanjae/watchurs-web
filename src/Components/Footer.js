@@ -45,30 +45,35 @@ const ListItem = styled.li`
 `;
 
 const Link = styled.div`
-  color: ${props => props.theme.mainColor};
+  color: ${props => props.theme.bTheme};
   cursor: pointer;
 `;
 
 const Copyright = styled.div`
-  color: ${props => props.theme.darkGrayColor};
+  color: ${props => props.theme.aTheme};
 `;
 
-export default () => (
-  <FooterWrapper>
-    <FooterLeft />
-    <Footer>
-      <List>
-        <ListItem>
-          <Link href="#">WATCHURS란?</Link>
-        </ListItem>
-        <ListItem>
-          <Link href="#">개발자</Link>
-        </ListItem>
-      </List>
-      <Copyright>
-        ⓒ {new Date().getFullYear()} WATCHURS FOR BROADCAST PLATFORMS
-      </Copyright>
-    </Footer>
-    <FooterRight />
-  </FooterWrapper>
-);
+export default () => {
+  const openInNewTab = url => {
+    const win = window.open(url, "_blank");
+    win.focus();
+  };
+  return (
+    <FooterWrapper>
+      <FooterLeft />
+      <Footer>
+        <List>
+          <ListItem>
+            <Link onClick={() => openInNewTab("https://watchurs.com")}>
+              WATCHURS란?
+            </Link>
+          </ListItem>
+        </List>
+        <Copyright>
+          ⓒ {new Date().getFullYear()} WATCHURS FOR BROADCAST PLATFORMS
+        </Copyright>
+      </Footer>
+      <FooterRight />
+    </FooterWrapper>
+  );
+};

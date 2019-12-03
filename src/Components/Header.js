@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderLeague from "../Routes/Header/HeaderLeague";
-import leagueIcon from "../Assets/League/LeagueIcon.png";
+// import leagueIcon from "../Assets/League/LeagueIcon.png";
 import Theme from "../Styles/Theme";
+import { Link, withRouter } from "react-router-dom";
 
 const Header = styled.header`
   position: fixed;
@@ -12,9 +13,10 @@ const Header = styled.header`
   height: 100px;
   flex-direction: column;
   display: flex;
-  background-color: ${props => props.theme.whiteColor};
-  border: 1px solid ${props => props.theme.lightGrayColor};
+  background-color: ${props => props.theme.aTheme};
+  /* border: 1px solid ${props => props.theme.skinTone}; */
   border-top: 0px;
+  color: ${props => props.theme.cTheme};
 `;
 
 const HeaderTop = styled.div`
@@ -40,7 +42,7 @@ const TitleBox = styled.div`
 
 const TitleText = styled.div`
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   user-select: none;
 `;
 
@@ -51,35 +53,36 @@ const TopButtonDiv = styled.div`
   align-items: center;
 `;
 
-const LoginButton = styled.div`
+const LoginButton = styled(Link)`
   margin-right: 15px;
   margin-left: 15px;
   padding: 10px;
-  border: 2px solid ${props => props.theme.lightMainColor};
+  border: 2px solid ${props => props.theme.cTheme};
+  background-color: ${props => props.theme.cTheme};
   border-radius: 4px;
   cursor: pointer;
 `;
 
 const LoginText = styled.div`
-  color: ${props => props.theme.lightMainColor};
+  color: ${props => props.theme.dTheme};
   user-select: none;
   font-weight: bold;
 `;
 
-const MapButton = styled.div`
-  margin-left: 20px;
-  background-color: ${props => props.theme.lightMainColor};
-  padding: 10px;
-  border: 2px solid ${props => props.theme.lightMainColor};
-  border-radius: 4px;
-  cursor: pointer;
-`;
+// const MapButton = styled.div`
+//   margin-left: 20px;
+//   background-color: ${props => props.theme.lightMainColor};
+//   padding: 10px;
+//   border: 2px solid ${props => props.theme.lightMainColor};
+//   border-radius: 4px;
+//   cursor: pointer;
+// `;
 
-const MapText = styled.div`
-  color: ${props => props.theme.whiteColor};
-  user-select: none;
-  font-weight: bold;
-`;
+// const MapText = styled.div`
+//   color: ${props => props.theme.whiteColor};
+//   user-select: none;
+//   font-weight: bold;
+// `;
 
 const PageBox = styled.div`
   display: flex;
@@ -90,15 +93,16 @@ const PageBox = styled.div`
 const PageText = styled.div`
   user-select: none;
   font-weight: bold;
+  font-size: 16px;
 `;
 
-const PageIcon = styled.div`
-  margin-right: 5px;
-  background-image: url(${props => props.url});
-  background-size: cover;
-  width: 30px;
-  height: 30px;
-`;
+// const PageIcon = styled.div`
+//   margin-right: 5px;
+//   background-image: url(${props => props.url});
+//   background-size: cover;
+//   width: 30px;
+//   height: 30px;
+// `;
 
 const HeaderBot = styled.div`
   width: 100%;
@@ -108,7 +112,7 @@ const HeaderBot = styled.div`
   align-items: center;
 `;
 
-export default () => {
+export default withRouter(() => {
   const [focused, setFocused] = useState(0);
   const onMouseOut = () => {
     setFocused(0);
@@ -126,10 +130,10 @@ export default () => {
         </TopTitleDiv>
         <TopButtonDiv>
           <PageBox>
-            <PageIcon url={leagueIcon} />
+            {/* <PageIcon url={leagueIcon} /> */}
             <PageText>리그 오브 레전드</PageText>
           </PageBox>
-          <MapButton
+          {/* <MapButton
             onMouseOver={() => onMouseOver(1)}
             onMouseOut={() => onMouseOut()}
             style={{
@@ -140,13 +144,14 @@ export default () => {
             }}
           >
             <MapText>와쳐스 맵</MapText>
-          </MapButton>
+          </MapButton> */}
           <LoginButton
+            to="/login"
             onMouseOver={() => onMouseOver(2)}
             onMouseOut={() => onMouseOut()}
             style={{
-              borderColor:
-                focused === 2 ? Theme.mainColor : Theme.lightMainColor
+              borderColor: focused === 2 ? Theme.cTheme : Theme.bTheme,
+              backgroundColor: focused === 2 ? Theme.cTheme : Theme.bTheme
             }}
           >
             <LoginText>로그인</LoginText>
@@ -158,4 +163,4 @@ export default () => {
       </HeaderBot>
     </Header>
   );
-};
+});

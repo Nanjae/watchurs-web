@@ -13,8 +13,8 @@ export default () => {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
-      <Header />
       <Router>
+        <Header />
         <Wrapper>
           <Routes />
         </Wrapper>
