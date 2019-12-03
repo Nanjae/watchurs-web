@@ -29,48 +29,53 @@ const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: bold;
   min-width: 1140px;
   margin: 10px 0px;
 `;
 
-const List = styled.ul`
-  display: flex;
-`;
+// const List = styled.ul`
+//   display: flex;
+// `;
 
-const ListItem = styled.li`
-  &:not(:last-child) {
-    margin-right: 16px;
-  }
-`;
+// const ListItem = styled.li`
+//   &:not(:last-child) {
+//     margin-right: 16px;
+//   }
+// `;
 
-const Link = styled.div`
-  color: ${props => props.theme.bTheme};
-  cursor: pointer;
-`;
+// const Link = styled.div`
+//   color: ${props => props.theme.bTheme};
+//   cursor: pointer;
+// `;
 
 const Copyright = styled.div`
-  color: ${props => props.theme.aTheme};
+  color: ${props => props.theme.bTheme};
+  text-align: center;
 `;
 
 export default () => {
-  const openInNewTab = url => {
-    const win = window.open(url, "_blank");
-    win.focus();
-  };
+  // const openInNewTab = url => {
+  //   const win = window.open(url, "_blank");
+  //   win.focus();
+  // };
   return (
     <FooterWrapper>
       <FooterLeft />
       <Footer>
-        <List>
+        {/* <List>
           <ListItem>
             <Link onClick={() => openInNewTab("https://watchurs.com")}>
               WATCHURS란?
             </Link>
           </ListItem>
-        </List>
+        </List> */}
         <Copyright>
-          ⓒ {new Date().getFullYear()} WATCHURS FOR BROADCAST PLATFORMS
+          ⓒ {new Date().getFullYear()} WATCHURS isn’t endorsed by Riot Games and
+          doesn’t reflect the views or opinions of Riot Games or anyone
+          officially involved in producing or managing League of Legends. League
+          of Legends and Riot Games are trademarks or registered trademarks of
+          Riot Games, Inc. League of Legends © Riot Games, Inc.
         </Copyright>
       </Footer>
       <FooterRight />
