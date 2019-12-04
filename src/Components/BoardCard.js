@@ -186,12 +186,9 @@ const LeagueRefreshBox = styled.div`
   margin: 14px 0px;
 `;
 
-const LeagueRefresh = styled.div`
-  width: 20px;
-  height: 20px;
-  background-image: url(${props => props.url});
-  background-size: cover;
-  cursor: pointer;
+const LeagueRefreshText = styled.div`
+  font-size: 13px;
+  padding-bottom: 2px;
 `;
 
 let sTierEmblem = emblemUnranked;
@@ -212,7 +209,8 @@ export default ({
   sPoints,
   sWins,
   sLosses,
-  sWinRate
+  sWinRate,
+  isUpdated
 }) => {
   const [focused, setFocused] = useState(false);
 
@@ -294,11 +292,7 @@ export default ({
         <LeagueWinRateText>{sWinRate}%</LeagueWinRateText>
       </LeagueWinRateBox>
       <LeagueRefreshBox>
-        <LeagueRefresh
-          onMouseOver={() => onMouseOver()}
-          onMouseOut={() => onMouseOut()}
-          url={focused ? refresh : lightRefresh}
-        />
+        <LeagueRefreshText>{isUpdated}</LeagueRefreshText>
       </LeagueRefreshBox>
     </BoardTableDiv>
   );
