@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
 // import emptyStar from "../Assets/Common/EmptyStar.png";
 // import fullStar from "../Assets/Common/FullStar.png";
 // import lightEmptyStar from "../Assets/Common/LightEmptyStar.png";
 // import lightFullStar from "../Assets/Common/LightFullStar.png";
-import refresh from "../Assets/Common/Refresh.png";
-import lightRefresh from "../Assets/Common/LightRefresh.png";
 import emblemUnranked from "../Assets/League/EmblemUnranked.png";
 import emblemIron from "../Assets/League/EmblemIron.png";
 import emblemBronze from "../Assets/League/EmblemBronze.png";
@@ -212,16 +210,6 @@ export default ({
   sWinRate,
   isUpdated
 }) => {
-  const [focused, setFocused] = useState(false);
-
-  const onMouseOut = () => {
-    setFocused(false);
-  };
-
-  const onMouseOver = () => {
-    setFocused(true);
-  };
-
   if (sTier === "UNRANKED") {
     sTierEmblem = emblemUnranked;
     sTierName = "랭크없음";

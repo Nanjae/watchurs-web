@@ -3,7 +3,7 @@ import GlobalStyles from "../Styles/GlobalStyles";
 import styled, { ThemeProvider } from "styled-components";
 import Theme from "../Styles/Theme";
 import { BrowserRouter as Router } from "react-router-dom";
-import Routes from "./Routes";
+import { DefaultRoute } from "./Routes";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -16,7 +16,7 @@ export default () => {
       <Router>
         <Header />
         <Wrapper>
-          <Routes />
+          <DefaultRoute />
         </Wrapper>
         <Footer />
       </Router>

@@ -47,7 +47,8 @@ let serverTimeHours = "d";
 let serverTimeMinutes = "e";
 let serverNewDate = "";
 
-const RankBoard = () => {
+const RankBoard = ({ from, to }) => {
+  console.log(from, to);
   const { data: dateData, loading: dateLoading } = useQuery(DATE_SERVER);
   const { data, loading } = useQuery(SEE_ALL_SUMMONER);
   if (!loading) {
@@ -97,28 +98,7 @@ const RankBoard = () => {
             isUpdated = "ERROR";
           } else {
             isUpdated = (serverNewDate - summonerNewDate) / 60000 + "분 전";
-          } // if (serverTimeYear === summonerTimeYear) {
-          //   if (serverTimeMonth === summonerTimeMonth) {
-          //     if (serverTimeDate === summonerTimeDate) {
-          //       if (serverTimeHours === summonerTimeHours) {
-          //         if (serverTimeMinutes === summonerTimeMinutes) {
-          //           isUpdated = "0분 전";
-          //         } else {
-          //           isUpdated =
-          //             serverTimeMinutes - summonerTimeMinutes + "분 전";
-          //         }
-          //       } else {
-          //         isUpdated = serverTimeHours - summonerTimeHours + "시간 전";
-          //       }
-          //     } else {
-          //       isUpdated = serverTimeDate - summonerTimeDate + "일 전";
-          //     }
-          //   } else {
-          //     isUpdated = serverTimeMonth - summonerTimeMonth + "개월 전";
-          //   }
-          // } else {
-          //   isUpdated = serverTimeYear - summonerTimeYear + "년 전";
-          // }
+          }
           return (
             <BoardCard
               key={index + 1}
