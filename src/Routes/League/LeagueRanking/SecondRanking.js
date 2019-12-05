@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import RankBoard from "../../../Components/RankBoard";
+import RankingLink from "../../../Components/RankingLink";
 
 const Wrapper = styled.div`
   padding-top: 110px;
@@ -96,7 +97,8 @@ export default class Home extends Component {
           )}
         </AdsLeftDiv>
         <BoardDiv>
-          <RankBoard />
+          <RankBoard skip={20} first={20} />
+          <RankingLink />
           <AdsBottomDiv>
             <iframe
               title="Bottom_728x90"

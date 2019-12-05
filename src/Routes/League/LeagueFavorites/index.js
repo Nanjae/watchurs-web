@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import FavBoard from "../../../Components/FavBoard";
 
 const Wrapper = styled.div`
   padding-top: 110px;
@@ -10,12 +11,6 @@ const Wrapper = styled.div`
 const BoardDiv = styled.div`
   width: 1140px;
   min-width: 1140px;
-`;
-
-const FavDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const AdsLeftDiv = styled.div`
@@ -101,7 +96,7 @@ export default class Home extends Component {
           )}
         </AdsLeftDiv>
         <BoardDiv>
-          <FavDiv>즐겨찾기</FavDiv>
+          <FavBoard />
           <AdsBottomDiv>
             <iframe
               title="Bottom_728x90"

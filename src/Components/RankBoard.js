@@ -9,6 +9,7 @@ import BoardTable from "./BoardTable";
 // 또는 정렬을 할 경우 소환사 정보 없는 브로드캐스터는 자동으로 탈락할거 같음
 
 const SEE_ALL_SUMMONER = gql`
+  # query seeAllSummoner($skip: Int!, $first: Int!)
   {
     seeAllSummoner {
       id
@@ -47,11 +48,11 @@ let serverTimeHours = "d";
 let serverTimeMinutes = "e";
 let serverNewDate = "";
 
-const RankBoard = ({ from, to }) => {
-  console.log(from, to);
+const RankBoard = () => {
   const { data: dateData, loading: dateLoading } = useQuery(DATE_SERVER);
   const { data, loading } = useQuery(SEE_ALL_SUMMONER);
   if (!loading) {
+    // console.log("로딩 " + skip + " ~ " + first);
     // console.log(data);
     // data.seeAllBroadcaster.map((broad, index) => console.log(broad.index));
   }
