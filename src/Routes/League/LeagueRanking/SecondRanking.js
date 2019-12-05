@@ -96,7 +96,7 @@ export default class Home extends Component {
           )}
         </AdsLeftDiv>
         <BoardDiv>
-          <RankBoard from={10} to={19} />
+          <RankBoard />
           <AdsBottomDiv>
             <iframe
               title="Bottom_728x90"
