@@ -1,37 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-const FooterWrapper = styled.div`
-  display: flex;
-  justify-content: left;
-`;
-
-const FooterLeft = styled.div`
+const Footer = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  width: 20%;
-  min-width: 270px;
-  height: 100%;
+  align-items: center;
+  height: 50px;
+  background-color: ${props => props.theme.bTheme};
+  color:${props => props.theme.fTheme};
+  /* border-top: 1px solid ${props => props.theme.eTheme}; */
 `;
 
-const FooterRight = styled.div`
-  position: relative;
+const CopyrightBox = styled.footer`
   display: flex;
   justify-content: center;
-  width: 20%;
-  min-width: 320px;
-  height: 100%;
-`;
-
-const Footer = styled.footer`
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
   font-size: 12px;
-  font-weight: bold;
-  min-width: 1140px;
-  margin: 10px 0px;
 `;
 
 // const List = styled.ul`
@@ -49,9 +33,9 @@ const Footer = styled.footer`
 //   cursor: pointer;
 // `;
 
-const Copyright = styled.div`
-  color: ${props => props.theme.bTheme};
+const CopyrightText = styled.div`
   text-align: center;
+  line-height: 18px;
 `;
 
 export default () => {
@@ -60,9 +44,8 @@ export default () => {
   //   win.focus();
   // };
   return (
-    <FooterWrapper>
-      <FooterLeft />
-      <Footer>
+    <Footer>
+      <CopyrightBox>
         {/* <List>
           <ListItem>
             <Link onClick={() => openInNewTab("https://watchurs.com")}>
@@ -70,15 +53,14 @@ export default () => {
             </Link>
           </ListItem>
         </List> */}
-        <Copyright>
+        <CopyrightText>
           ⓒ {new Date().getFullYear()} WATCHURS isn’t endorsed by Riot Games and
           doesn’t reflect the views or opinions of Riot Games or anyone
-          officially involved in producing or managing League of Legends. League
-          of Legends and Riot Games are trademarks or registered trademarks of
-          Riot Games, Inc. League of Legends © Riot Games, Inc.
-        </Copyright>
-      </Footer>
-      <FooterRight />
-    </FooterWrapper>
+          officially involved in producing or managing <br /> League of Legends.
+          League of Legends and Riot Games are trademarks or registered
+          trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+        </CopyrightText>
+      </CopyrightBox>
+    </Footer>
   );
 };

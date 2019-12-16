@@ -1,10 +1,14 @@
 export default {
-  mainColor: "#6C2498",
+  mainColor: "#9147FF",
   lightMainColor: "#874EAB",
-  aTheme: "#0D0D0D",
-  bTheme: "#593C2C",
-  cTheme: "#A67051",
-  dTheme: "#F2B47E",
-  eTheme: "#F2DC99",
-  fTheme: "#faf2ff"
+  aTheme: "#232637",
+  bTheme: "#313131",
+  cTheme: "#F7F7F8",
+  dTheme: "#E8ECF1",
+  eTheme: "#DDDDDE",
+  fTheme: "#FFFFFF",
+  gTheme: "#4E5269",
+  hTheme: "#464A61",
+  iTheme: "#131329",
+  jTheme: "#8C91A0"
 };
