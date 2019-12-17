@@ -4,6 +4,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo-hooks";
 import RankingCard from "./RankingCard";
 import RankingTable from "./RankingTable";
+import Loader from "../Loader";
 
 // 수정예정 index 체크 seeAllSummoners 만드는게 좋아보임
 // 또는 정렬을 할 경우 소환사 정보 없는 브로드캐스터는 자동으로 탈락할거 같음
@@ -43,6 +44,7 @@ const RankingBoard = () => {
   return (
     <Wrapper>
       <RankingTable />
+      {loading && <Loader />}
       {!loading &&
         data &&
         data.seeAllSummoner &&
