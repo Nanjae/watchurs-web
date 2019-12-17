@@ -11,6 +11,8 @@ import emblemDiamond from "../../Assets/League/EmblemDiamond.png";
 import emblemMaster from "../../Assets/League/EmblemMaster.png";
 import emblemGrandmaster from "../../Assets/League/EmblemGrandmaster.png";
 import emblemChallenger from "../../Assets/League/EmblemChallenger.png";
+import { useGlobal } from "reactn";
+import Theme from "../../Styles/Theme";
 
 const RankingCardDiv = styled.div`
   width: 100%;
@@ -156,8 +158,22 @@ export default ({
     sTierName = "챌린저";
     sRank = "";
   }
+
+  const [select, setSelect] = useGlobal("selectedRanking");
+
+  const handleSelect = sRanking => {
+    setSelect(sRanking);
+  };
+
   return (
-    <RankingCardDiv>
+    <RankingCardDiv
+      onClick={() => handleSelect(sRanking)}
+      style={
+        select === sRanking
+          ? { backgroundColor: Theme.iTheme, color: Theme.jTheme }
+          : null
+      }
+    >
       <CardDiv>
         <RankBox>
           <RankText>{sRanking}</RankText>
