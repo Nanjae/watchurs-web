@@ -18,6 +18,7 @@ const RankingCardDiv = styled.div`
   width: 100%;
   background-color: ${props => props.theme.fTheme};
   margin-top: 5px;
+  cursor: pointer;
 `;
 
 const CardDiv = styled.div`

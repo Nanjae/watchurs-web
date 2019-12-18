@@ -7,8 +7,8 @@ import DetailData from "./DetailData";
 
 const RankingDetailDiv = styled.div`
   position: fixed;
-  right: 2.5%;
-  width: 360px;
+  right: 20px;
+  width: 410px;
   height: 400px;
   background-color: ${props => props.theme.gTheme};
 `;

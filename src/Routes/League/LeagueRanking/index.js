@@ -9,6 +9,7 @@ const LeagueRankingDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   background-color: ${props => props.theme.dTheme};
+  user-select: none;
 `;
 
 const LeftDiv = styled.div`
