@@ -13,6 +13,7 @@ const SEE_ALL_SUMMONER = gql`
   # query seeAllSummoner($skip: Int!, $first: Int!)
   {
     seeAllSummoner {
+      sId
       sName
       sAvatar
       sTier
@@ -52,10 +53,12 @@ const RankingBoard = () => {
           return (
             <RankingCard
               key={index + 1}
+              sId={summoner.sId}
               sRanking={index + 1}
               bId={summoner.sBroadcaster.bId}
               bName={summoner.sBroadcaster.bName}
               bAvatar={summoner.sBroadcaster.bAvatar}
+              bPlatform={summoner.sBroadcaster.bPlatform}
               sName={summoner.sName}
               sAvatar={summoner.sAvatar}
               sTier={summoner.sTier}

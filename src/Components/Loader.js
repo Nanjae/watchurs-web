@@ -17,10 +17,10 @@ const Loader = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 200px;
   animation: ${Animation} 1s linear infinite;
-  font-size: 20px;
   font-weight: bold;
 `;
 
-export default () => <Loader>WATCHURS 로딩 중...</Loader>;
+export default ({ paddingTop = 200, fontSize = 20 }) => (
+  <Loader style={{ paddingTop, fontSize }}>WATCHURS 로딩 중...</Loader>
+);

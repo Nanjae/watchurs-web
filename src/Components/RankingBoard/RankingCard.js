@@ -117,6 +117,7 @@ export default ({
   bName,
   bAvatar,
   bPlatform,
+  sId,
   sName,
   sAvatar,
   sTier,
@@ -167,10 +168,10 @@ export default ({
 
   return (
     <RankingCardDiv
-      onClick={() => handleSelect(sRanking)}
+      onClick={() => handleSelect(sId)}
       style={
-        select === sRanking
-          ? { backgroundColor: Theme.iTheme, color: Theme.jTheme }
+        select === sId
+          ? { backgroundColor: Theme.hTheme, color: Theme.cTheme }
           : null
       }
     >
@@ -179,14 +180,16 @@ export default ({
           <RankText>{sRanking}</RankText>
         </RankBox>
         <BInfoBox>
-          <BPlatform url={bPlatform === "TWITCH" ? twitchLogo : twitchLogo} />
+          <BPlatform url={bPlatform === "TWITCH" ? twitchLogo : null} />
           <BAvatar url={bAvatar} />
           <BNameText>{bName}</BNameText>
           <BIdText>({bId})</BIdText>
         </BInfoBox>
         <SInfoBox>
           <SAvatar url={sAvatar} />
-          <SNameText>{sName}</SNameText>
+          <SNameText style={select === sId ? { color: Theme.kTheme } : null}>
+            {sName}
+          </SNameText>
         </SInfoBox>
         <STierBox>
           <STier url={sTierEmblem} />

@@ -10,5 +10,6 @@ export default {
   gTheme: "#4E5269",
   hTheme: "#464A61",
   iTheme: "#131329",
-  jTheme: "#8C91A0"
+  jTheme: "#8C91A0",
+  kTheme: "#E19A10"
 };

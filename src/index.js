@@ -6,7 +6,7 @@ import Client from "./Apollo/Client";
 import { setGlobal } from "reactn";
 
 setGlobal({
-  selectedRanking: 0
+  selectedRanking: "0"
 });
 
 ReactDOM.render(
