@@ -3,10 +3,7 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
 const Header = styled.header`
-  position: fixed;
-  z-index: 1;
   width: 100%;
-  min-width: 1140px;
   height: 50px;
   flex-direction: column;
   display: flex;
