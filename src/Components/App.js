@@ -5,7 +5,7 @@ import Theme from "../Styles/Theme";
 import { BrowserRouter as Router } from "react-router-dom";
 import { DefaultRoute } from "./Routes";
 import Header from "./Header";
-import Menu from "./Menu";
+// import Menu from "./Menu";
 
 const Wrapper = styled.div``;
 
@@ -16,7 +16,7 @@ export default () => {
       <Router>
         <Header />
         <Wrapper>
-          <Menu />
+          {/* <Menu /> */}
           <DefaultRoute />
         </Wrapper>
       </Router>
