@@ -2,6 +2,7 @@ export default {
   mainColor: "#9147FF",
   lightMainColor: "#874EAB",
   darkBlueColor: "#232637",
+  deepBlueColor: "#010415",
   pinkColor: "#4E6279",
   whiteColor: "#FFFFFF",
   aTheme: "#232637",
