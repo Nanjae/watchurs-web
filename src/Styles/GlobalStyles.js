@@ -13,13 +13,13 @@ export default createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
     body {
         background-color: ${props => props.theme.dTheme};
-        color: ${props => props.theme.aTheme};
+        color: ${props => props.theme.whiteColor};
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 16px;
     }
     a {
-        color: ${props => props.theme.aTheme};
+        color: ${props => props.theme.whiteColor};
         text-decoration: none;
     }
     input {
