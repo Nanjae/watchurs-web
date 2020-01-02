@@ -1,4 +1,4 @@
-import React /*, { useRef, useState, useEffect }*/ from "react";
+import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
@@ -17,9 +17,16 @@ const Header = styled.div`
 
 const HeaderDiv = styled.div``;
 
-const TopDiv = styled.div`
+const TopOpacityDiv = styled.div`
+  z-index: -50;
+  position: absolute;
   background-color: ${props => props.theme.darkBlueColor};
   opacity: 0.8;
+  width: 100%;
+  height: 179px;
+`;
+
+const TopFstBoxDiv = styled.div`
   padding: 60px 15%;
   display: flex;
   flex-direction: column;
@@ -49,13 +56,14 @@ const TitleSndText = styled.div`
   font-weight: bold;
   font-size: 24px;
   user-select: none;
-  color: ${props => props.theme.pinkColor};
+  color: ${props => props.theme.orangeColor};
 `;
 
 const TopSndBox = styled.div`
   padding-top: 10px;
   display: flex;
   align-items: center;
+  user-select: none;
 `;
 
 const InfoIcon = styled.div`
@@ -72,6 +80,13 @@ const CountBroadFstText = styled.div`
   margin-right: 5px;
   font-size: 12px;
 `;
+
+const ArrowBox = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
+
 const CountBroadSndText = styled.div`
   font-size: 12px;
   color: ${props => props.theme.orangeColor};
@@ -106,9 +121,16 @@ const SearchIcon = styled.div`
   height: 18px;
 `;
 
-const BotDiv = styled.div`
+const BotOpacityDiv = styled.div`
+  z-index: -50;
+  position: absolute;
   background-color: ${props => props.theme.deepBlueColor};
   opacity: 0.8;
+  width: 100%;
+  height: 46px;
+`;
+
+const BotDiv = styled.div`
   padding: 15px 15%;
 `;
 
@@ -133,12 +155,6 @@ export default withRouter(() => {
     headerHeight,
     mainHeight
   } = useWindowDimensions();
-  // const [height, setHeight] = useState(0);
-  // const ref = useRef(null);
-
-  // useEffect(() => {
-  //   setHeight(ref.current.clientHeight);
-  // }, []);
 
   console.log(
     "(windowWidth, windowHeight) : (" + windowWidth + ", " + windowHeight + ")"
@@ -151,10 +167,10 @@ export default withRouter(() => {
   console.log("(mainHeight) : (" + mainHeight + ")");
 
   return (
-    <Header /*ref={ref}*/>
+    <Header>
       {windowWidth < 900 ? (
         <HeaderDiv>
-          <TopDiv style={{ padding: 10 }}>
+          <TopFstBoxDiv style={{ padding: 10 }}>
             <TitleDiv
               style={{
                 display: "flex",
@@ -169,7 +185,9 @@ export default withRouter(() => {
                   <TitleFstText style={{ paddingRight: 4, fontSize: 18 }}>
                     와쳐스
                   </TitleFstText>
-                  <TitleSndText style={{ fontSize: 12 }}>WATCHURS</TitleSndText>
+                  <TitleSndText style={{ fontSize: 12 }}>
+                    리그 오브 레전드
+                  </TitleSndText>
                 </TitleBox>
               </TopFstBox>
               <TopSndBox style={{ paddingTop: 0 }}>
@@ -180,13 +198,15 @@ export default withRouter(() => {
                 <CountBroadFstText style={{ fontSize: 10 }}>
                   등록된 브로드캐스터:
                 </CountBroadFstText>
-                <CountBroadSndText style={{ fontSize: 10 }}>
-                  33명
-                </CountBroadSndText>
-                <ArrowIcon
-                  style={{ marginLeft: 2, backgroundSize: "10px 10px" }}
-                  url={IconArrow}
-                />
+                <ArrowBox>
+                  <CountBroadSndText style={{ fontSize: 10 }}>
+                    33명
+                  </CountBroadSndText>
+                  <ArrowIcon
+                    style={{ marginLeft: 2, backgroundSize: "10px 10px" }}
+                    url={IconArrow}
+                  />
+                </ArrowBox>
               </TopSndBox>
             </TitleDiv>
             <SearchInputDiv style={{ padding: "8px" }}>
@@ -196,29 +216,30 @@ export default withRouter(() => {
               />
               <SearchIcon url={IconSearch} style={{ width: 14, height: 14 }} />
             </SearchInputDiv>
-          </TopDiv>
+          </TopFstBoxDiv>
           <BotDiv style={{ padding: "10px 18px" }}>
             <MenuDiv>
               <MenuBox style={{ marginRight: 10 }}>
-                <MenuText style={{ fontSize: 14 }}>임시메뉴</MenuText>
+                <MenuText style={{ fontSize: 14 }}>홈</MenuText>
               </MenuBox>
               <MenuBox style={{ marginRight: 10 }}>
-                <MenuText style={{ fontSize: 14 }}>임시메뉴</MenuText>
+                <MenuText style={{ fontSize: 14 }}>랭킹</MenuText>
               </MenuBox>
               <MenuBox style={{ marginRight: 10 }}>
-                <MenuText style={{ fontSize: 14 }}>임시메뉴</MenuText>
+                <MenuText style={{ fontSize: 14 }}></MenuText>
               </MenuBox>
             </MenuDiv>
           </BotDiv>
         </HeaderDiv>
       ) : (
         <HeaderDiv>
-          <TopDiv>
+          <TopOpacityDiv />
+          <TopFstBoxDiv>
             <TopFstBox>
               <TitleDiv>
                 <TitleBox>
-                  <TitleFstText>와쳐스</TitleFstText>
-                  <TitleSndText>WATCHURS</TitleSndText>
+                  <TitleFstText>WATCHURS</TitleFstText>
+                  <TitleSndText>리그 오브 레전드</TitleSndText>
                 </TitleBox>
               </TitleDiv>
               <SearchInputDiv>
@@ -229,20 +250,23 @@ export default withRouter(() => {
             <TopSndBox>
               <InfoIcon url={IconInfo} />
               <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
-              <CountBroadSndText>33명</CountBroadSndText>
-              <ArrowIcon url={IconArrow} />
+              <ArrowBox>
+                <CountBroadSndText>33명</CountBroadSndText>
+                <ArrowIcon url={IconArrow} />
+              </ArrowBox>
             </TopSndBox>
-          </TopDiv>
+          </TopFstBoxDiv>
+          <BotOpacityDiv />
           <BotDiv>
             <MenuDiv>
               <MenuBox>
-                <MenuText>임시메뉴</MenuText>
+                <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
               <MenuBox>
-                <MenuText>임시메뉴</MenuText>
+                <MenuText>전체 순위</MenuText>
               </MenuBox>
               <MenuBox>
-                <MenuText>임시메뉴</MenuText>
+                <MenuText></MenuText>
               </MenuBox>
             </MenuDiv>
           </BotDiv>
