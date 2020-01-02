@@ -8,8 +8,7 @@ const Footer = styled.div`
   align-items: center;
   height: 50px;
   background-color: ${props => props.theme.bTheme};
-  color:${props => props.theme.fTheme};
-  /* border-top: 1px solid ${props => props.theme.eTheme}; */
+  color: ${props => props.theme.fTheme};
 `;
 
 const CopyrightBox = styled.footer`
@@ -18,41 +17,15 @@ const CopyrightBox = styled.footer`
   font-size: 12px;
 `;
 
-// const List = styled.ul`
-//   display: flex;
-// `;
-
-// const ListItem = styled.li`
-//   &:not(:last-child) {
-//     margin-right: 16px;
-//   }
-// `;
-
-// const Link = styled.div`
-//   color: ${props => props.theme.bTheme};
-//   cursor: pointer;
-// `;
-
 const CopyrightText = styled.div`
   text-align: center;
   line-height: 18px;
 `;
 
 export default () => {
-  // const openInNewTab = url => {
-  //   const win = window.open(url, "_blank");
-  //   win.focus();
-  // };
   return (
     <Footer>
       <CopyrightBox>
-        {/* <List>
-          <ListItem>
-            <Link onClick={() => openInNewTab("https://watchurs.com")}>
-              WATCHURS란?
-            </Link>
-          </ListItem>
-        </List> */}
         <CopyrightText>
           ⓒ {new Date().getFullYear()} WATCHURS isn’t endorsed by Riot Games and
           doesn’t reflect the views or opinions of Riot Games or anyone
