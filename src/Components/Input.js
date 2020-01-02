@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.input`
-  background-color: ${props => props.theme.whiteColor};
   border-radius: 4px;
   border: 0px;
   font-size: ${props => props.fontsize};
   padding: ${props => props.padding};
-  padding-right: 30px;
+  width: ${props => props.width};
 `;
 
 const Input = ({
@@ -18,7 +17,8 @@ const Input = ({
   type = "text",
   className,
   fontsize = "14px",
-  padding = "10px 20px 10px 10px"
+  padding = "0px",
+  width = "88%"
 }) => (
   <Container
     className={className}
@@ -29,6 +29,7 @@ const Input = ({
     type={type}
     fontsize={fontsize}
     padding={padding}
+    width={width}
   />
 );
 

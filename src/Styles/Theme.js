@@ -5,6 +5,7 @@ export default {
   deepBlueColor: "#010415",
   pinkColor: "#4E6279",
   whiteColor: "#FFFFFF",
+  orangeColor: "#669933",
   aTheme: "#232637",
   bTheme: "#313131",
   cTheme: "#F7F7F8",

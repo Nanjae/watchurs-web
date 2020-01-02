@@ -1,34 +1,42 @@
 import React from "react";
 import styled from "styled-components";
-import HomeImage from "../../../Assets/Common/runeterra-freljord-02-resized.png";
-// import useWindowDimensions from "../../../Hooks/useWindowDimensions";
+import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 // import Footer from "../../../Components/Footer";
 // import RankingBoard from "../../../Components/RankingBoard/RankingBoard";
 // import RankingDetail from "../../../Components/RankingBoard/RankingDetail";
 
 const LeagueHome = styled.div``;
 
-const LeagueHomeDiv = styled.div`
+const LeagueHomeDiv = styled.div``;
+
+const TopDiv = styled.div``;
+
+const MainDiv = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-items: center;
 `;
 
-// 16:9 이미지 사이즈
-const SearchDiv = styled.div`
-  width: 100%;
-  padding-top: 56.25%;
-  background-image: url(${HomeImage});
-  background-size: 100%;
-  background-repeat: no-repeat;
-`;
+const SearchDiv = styled.div``;
+
+const SearchInput = styled.div``;
 
 export default () => {
+  const { windowWidth, headerHeight, mainHeight } = useWindowDimensions();
+
   return (
     <LeagueHome>
-      <LeagueHomeDiv>
-        <SearchDiv></SearchDiv>
-      </LeagueHomeDiv>
+      {windowWidth < 900 ? (
+        <LeagueHomeDiv>
+          <TopDiv style={{ height: headerHeight }} />
+          <MainDiv style={{ height: mainHeight }}>Hello</MainDiv>
+        </LeagueHomeDiv>
+      ) : (
+        <LeagueHomeDiv>
+          <TopDiv style={{ height: headerHeight }} />
+          <MainDiv style={{ height: mainHeight }}>Hello</MainDiv>
+        </LeagueHomeDiv>
+      )}
     </LeagueHome>
   );
 };
