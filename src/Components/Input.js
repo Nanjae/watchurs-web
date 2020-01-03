@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 const Container = styled.input`
   border: 0px;
-  background-color: ${props => props.bgColor};
-  font-size: ${props => props.fontsize};
-  padding: ${props => props.padding};
-  width: ${props => props.width};
+  padding: 0px;
+  margin: 0px;
+  width: 85%;
   ${props => props.style};
 `;
 
@@ -17,8 +16,6 @@ const Input = ({
   onChange,
   type = "text",
   className,
-  padding = "0px",
-  width = "88%",
   style
 }) => (
   <Container
@@ -28,8 +25,6 @@ const Input = ({
     value={value}
     onChange={onChange}
     type={type}
-    padding={padding}
-    width={width}
     style={style}
   />
 );

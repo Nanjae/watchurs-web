@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import Input from "../../../Components/Input";
 import IconSearch from "../../../Assets/Common/IconSearch.png";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-resized.png";
+import { darkBuleColor } from "../../../Styles/StyleFunction";
 // import Footer from "../../../Components/Footer";
 // import RankingBoard from "../../../Components/RankingBoard/RankingBoard";
 // import RankingDetail from "../../../Components/RankingBoard/RankingDetail";
@@ -20,18 +20,33 @@ const MainBgDiv = styled.div`
   background-position-x: center;
   background-position-y: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 950px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 100%;
+    height: 1000px;
+  }
 `;
 
 const MainOpacityDiv = styled.div`
-  margin-top: 225px;
-  z-index: -50;
-  position: absolute;
-  background-color: ${props => props.theme.darkBlueColor};
-  height: 725px;
-  width: 100%;
-  opacity: 0.6;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    padding-top: 250px;
+    height: 750px;
+  }
 `;
 
 const MainDiv = styled.div`
@@ -39,35 +54,85 @@ const MainDiv = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 725px;
-  padding: 0px 15%;
-  padding-top: 225px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    padding: 0px 15%;
+    height: 750px;
+    width: 70%;
+  }
 `;
 
 const MainTextBox = styled.div`
-  margin-top: 100px;
-  margin-bottom: 50px;
   user-select: none;
   text-align: center;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
 `;
 
 const MainFstText = styled.div`
   color: ${props => props.theme.orangeColor};
-  font-size: 20px;
-  font-weight: bold;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 24px;
+    font-weight: bold;
+  }
 `;
 
 const MainSndText = styled.div`
-  margin: 10px 0px;
   color: ${props => props.theme.whiteColor};
-  font-size: 50px;
-  font-weight: bold;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    margin: 10px 0px;
+    font-size: 60px;
+    font-weight: bold;
+  }
 `;
 
 const MainTrdText = styled.div`
-  font-size: 20px;
-  font-weight: bold;
   color: ${props => props.theme.shinyOrangeColor};
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 24px;
+    font-weight: bold;
+  }
 `;
 
 const SearchInputDiv = styled.div`
@@ -106,19 +171,11 @@ const SearchIcon = styled.div`
 `;
 
 export default () => {
-  const { windowWidth } = useWindowDimensions();
-
   return (
     <LeagueHome>
-      {windowWidth < 900 ? (
-        <LeagueHomeDiv>
-          {/* <TopDiv style={{ height: 114 }} /> */}
-          <MainDiv style={{ height: 200 }}>Hello</MainDiv>
-        </LeagueHomeDiv>
-      ) : (
-        <LeagueHomeDiv>
-          <MainBgDiv url={BgImage} />
-          <MainOpacityDiv />
+      <LeagueHomeDiv>
+        <MainBgDiv url={BgImage} />
+        <MainOpacityDiv style={{ backgroundColor: darkBuleColor }}>
           <MainDiv>
             <MainTextBox>
               <MainFstText>LOL 브로드캐스터 조회 - 와쳐스</MainFstText>
@@ -137,8 +194,8 @@ export default () => {
               </SearchIconBox>
             </SearchInputDiv>
           </MainDiv>
-        </LeagueHomeDiv>
-      )}
+        </MainOpacityDiv>
+      </LeagueHomeDiv>
     </LeagueHome>
   );
 };
