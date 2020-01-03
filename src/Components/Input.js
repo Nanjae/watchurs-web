@@ -7,6 +7,7 @@ const Container = styled.input`
   font-size: ${props => props.fontsize};
   padding: ${props => props.padding};
   width: ${props => props.width};
+  ${props => props.style};
 `;
 
 const Input = ({
@@ -16,9 +17,9 @@ const Input = ({
   onChange,
   type = "text",
   className,
-  fontsize = "14px",
   padding = "0px",
-  width = "88%"
+  width = "88%",
+  style
 }) => (
   <Container
     className={className}
@@ -27,9 +28,9 @@ const Input = ({
     value={value}
     onChange={onChange}
     type={type}
-    fontsize={fontsize}
     padding={padding}
     width={width}
+    style={style}
   />
 );
 

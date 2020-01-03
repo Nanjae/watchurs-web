@@ -119,6 +119,7 @@ const SearchIcon = styled.div`
   background-size: cover;
   width: 18px;
   height: 18px;
+  cursor: pointer;
 `;
 
 const BotOpacityDiv = styled.div`
@@ -148,23 +149,17 @@ const MenuBox = styled.div`
 const MenuText = styled.div``;
 
 export default withRouter(() => {
-  const {
-    windowWidth,
-    windowHeight,
-    bgHeight,
-    headerHeight,
-    mainHeight
-  } = useWindowDimensions();
+  const { windowWidth } = useWindowDimensions();
 
-  console.log(
-    "(windowWidth, windowHeight) : (" + windowWidth + ", " + windowHeight + ")"
-  );
+  // console.log(
+  //   "(windowWidth, windowHeight) : (" + windowWidth + ", " + windowHeight + ")"
+  // );
 
-  console.log(
-    "(bgHeight, headerHeight) : (" + bgHeight + ", " + headerHeight + ")"
-  );
+  // console.log(
+  //   "(bgHeight, headerHeight) : (" + bgHeight + ", " + headerHeight + ")"
+  // );
 
-  console.log("(mainHeight) : (" + mainHeight + ")");
+  // console.log("(mainHeight) : (" + mainHeight + ")");
 
   return (
     <Header>
@@ -263,7 +258,7 @@ export default withRouter(() => {
                 <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
               <MenuBox>
-                <MenuText>전체 순위</MenuText>
+                <MenuText>전체 랭킹</MenuText>
               </MenuBox>
               <MenuBox>
                 <MenuText></MenuText>

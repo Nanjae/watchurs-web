@@ -92,8 +92,8 @@ const SearchIconBox = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.orangeColor};
-  width: 50px;
-  height: 54px;
+  width: 46px;
+  height: 50px;
   border-left: 4px solid ${props => props.theme.orangeColor};
   cursor: pointer;
 `;
@@ -130,7 +130,7 @@ export default () => {
             <SearchInputDiv>
               <SearchInput
                 placeholder={"브로드캐스터 닉네임 또는 아이디를 입력해주세요."}
-                fontsize={"20px"}
+                style={{ fontSize: "18px", fontWeight: "bold" }}
               />
               <SearchIconBox>
                 <SearchIcon url={IconSearch} />
