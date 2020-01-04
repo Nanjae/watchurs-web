@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "../../../Components/Input";
 import IconSearch from "../../../Assets/Common/IconSearch.png";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-resized.png";
 import { darkBuleColor } from "../../../Styles/StyleFunction";
+import IconClose from "../../../Assets/Common/IconClose.png";
+import useWindowDimensions from "../../../Hooks/useWindowDimensions";
+import { useWindowScroll } from "@react-hook/window-scroll";
 // import Footer from "../../../Components/Footer";
 // import RankingBoard from "../../../Components/RankingBoard/RankingBoard";
 // import RankingDetail from "../../../Components/RankingBoard/RankingDetail";
@@ -35,6 +38,7 @@ const MainBgDiv = styled.div`
 `;
 
 const MainOpacityDiv = styled.div`
+  /* position: absolute; */
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (min-width: 600px) {
@@ -81,8 +85,8 @@ const MainTextBox = styled.div`
   @media only screen and (min-width: 1200px) {
   }
   @media only screen and (min-width: 1500px) {
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -138,18 +142,37 @@ const MainTrdText = styled.div`
 const SearchInputDiv = styled.div`
   border: 4px solid ${props => props.theme.orangeColor};
   background-color: ${props => props.theme.deepBlueColor};
-  width: 70%;
-  min-width: 550px;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 70%;
+  }
 `;
 
 const SearchInput = styled(Input)`
   background-color: ${props => props.theme.deepBlueColor};
   color: white;
-  padding: 15px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    padding: 15px;
+  }
 `;
 
 const SearchIconBox = styled.div`
@@ -157,20 +180,84 @@ const SearchIconBox = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.orangeColor};
-  width: 46px;
-  height: 50px;
   border-left: 4px solid ${props => props.theme.orangeColor};
   cursor: pointer;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 54px;
+    height: 54px;
+  }
 `;
 
 const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 24px;
-  height: 24px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 28px;
+    height: 28px;
+  }
+`;
+
+const AdsBottomDiv = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 100%;
+  }
+`;
+
+const CloseIconBox = styled.div`
+  z-index: 100;
+  margin-left: -14px;
+  background-color: white;
+  height: fit-content;
+`;
+
+const CloseIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
 `;
 
 export default () => {
+  const { windowHeight } = useWindowDimensions();
+  const scrollY = useWindowScroll(60);
+  const fixedScrollY = windowHeight + scrollY;
+  const [adsClose, setAdsClose] = useState(false);
+
+  const adsCloseHandler = () => {
+    setAdsClose(adsClose ? false : true);
+  };
+
   return (
     <LeagueHome>
       <LeagueHomeDiv>
@@ -178,7 +265,9 @@ export default () => {
         <MainOpacityDiv style={{ backgroundColor: darkBuleColor }}>
           <MainDiv>
             <MainTextBox>
-              <MainFstText>LOL 브로드캐스터 조회 - 와쳐스</MainFstText>
+              <MainFstText>
+                리그오브레전드 브로드캐스터 조회 - 와쳐스
+              </MainFstText>
               <MainSndText>WATCHURS</MainSndText>
               <MainTrdText>
                 좋아하는 브로드캐스터의 랭킹과 통계를 확인해보세요!
@@ -193,6 +282,28 @@ export default () => {
                 <SearchIcon url={IconSearch} />
               </SearchIconBox>
             </SearchInputDiv>
+            {adsClose ? null : (
+              <AdsBottomDiv
+                style={
+                  fixedScrollY >= 1000
+                    ? { top: windowHeight - (fixedScrollY - 910) }
+                    : { top: windowHeight - 90 }
+                }
+              >
+                <iframe
+                  title="Bottom_728x90"
+                  width="728"
+                  height="90"
+                  allowtransparency="true"
+                  src="https://tab2.clickmon.co.kr/pop/wp_ad_728.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
+                  frameBorder="0"
+                  scrolling="no"
+                ></iframe>
+                <CloseIconBox>
+                  <CloseIcon url={IconClose} onClick={adsCloseHandler} />
+                </CloseIconBox>
+              </AdsBottomDiv>
+            )}
           </MainDiv>
         </MainOpacityDiv>
       </LeagueHomeDiv>

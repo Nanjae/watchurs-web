@@ -21,7 +21,7 @@ export default () => {
           <Header />
           {/* <Menu /> */}
           <DefaultRoute />
-          {/* <Footer /> */}
+          <Footer />
         </Wrapper>
       </Router>
     </ThemeProvider>

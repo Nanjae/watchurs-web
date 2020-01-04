@@ -3,6 +3,7 @@ export default {
   blueColor: "#9147FF",
   darkBlueColor: "#232637",
   deepBlueColor: "#010415",
+  blackBlueColor: "#151722",
   pinkColor: "#4E6279",
   whiteColor: "#FFFFFF",
   shinyOrangeColor: "#BBEE88",
