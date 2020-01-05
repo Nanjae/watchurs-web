@@ -5,7 +5,7 @@ const Container = styled.input`
   border: 0px;
   padding: 0px;
   margin: 0px;
-  width: 85%;
+  width: 95%;
   ${props => props.style};
 `;
 

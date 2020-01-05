@@ -7,6 +7,7 @@ import IconInfo from "../Assets/Common/IconInfo.png";
 import IconArrow from "../Assets/Common/IconArrow.png";
 import Theme from "../Styles/Theme";
 import { deepBuleColor, darkBuleColor } from "../Styles/StyleFunction";
+import useWindowDimensions from "../Hooks/useWindowDimensions";
 
 const Header = styled.div`
   position: absolute;
@@ -34,8 +35,10 @@ const TopOpacityDiv = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    height: 160px;
   }
   @media only screen and (min-width: 1200px) {
+    height: 200px;
   }
   @media only screen and (min-width: 1500px) {
     height: 200px;
@@ -51,8 +54,14 @@ const TopFstBoxDiv = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    padding: 0px 10%;
+    width: 80%;
+    height: 160px;
   }
   @media only screen and (min-width: 1200px) {
+    padding: 0px 15%;
+    width: 70%;
+    height: 200px;
   }
   @media only screen and (min-width: 1500px) {
     padding: 0px 15%;
@@ -97,13 +106,18 @@ const TitleFstText = styled.div`
   font-weight: bold;
   user-select: none;
   color: ${props => props.theme.whiteColor};
+  letter-spacing: -1.5px;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    padding-right: 6px;
+    font-size: 40px;
   }
   @media only screen and (min-width: 1200px) {
+    padding-right: 8px;
+    font-size: 44px;
   }
   @media only screen and (min-width: 1500px) {
     padding-right: 10px;
@@ -120,8 +134,10 @@ const TitleSndText = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    font-size: 20px;
   }
   @media only screen and (min-width: 1200px) {
+    font-size: 22px;
   }
   @media only screen and (min-width: 1500px) {
     font-size: 24px;
@@ -138,12 +154,13 @@ const TopSndBox = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    margin-top: 12px;
   }
   @media only screen and (min-width: 1200px) {
+    margin-top: 14px;
   }
   @media only screen and (min-width: 1500px) {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 16px;
   }
 `;
 
@@ -163,27 +180,85 @@ const SiteInfoBox = styled.div`
 `;
 
 const SiteInfoFstText = styled.div`
-  font-size: 16px;
-  font-weight: bold;
   color: ${props => props.theme.darkOrangeColor};
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 16px;
+    font-weight: bold;
+  }
 `;
 
 const SiteInfoSndText = styled.div`
-  font-size: 14px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+    font-size: 11px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 13px;
+  }
 `;
 
 const SiteInfoTrdText = styled.div`
-  margin-left: 5px;
-  font-size: 16px;
-  font-weight: bold;
   color: ${props => props.theme.orangeColor};
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+    margin-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 4px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 1500px) {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
 `;
 
 const SiteInfoFthText = styled.div`
-  margin-left: 5px;
-  font-size: 16px;
-  font-weight: bold;
   color: ${props => props.theme.lightOrangeColor};
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 4px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  @media only screen and (min-width: 1500px) {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
 `;
 
 const CountBroadBox = styled.div`
@@ -193,10 +268,13 @@ const CountBroadBox = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
+    font-size: 12px;
   }
   @media only screen and (min-width: 1500px) {
+    font-size: 13px;
   }
 `;
 
@@ -208,8 +286,16 @@ const InfoIcon = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
+    background-size: 11px;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1500px) {
     background-size: 12px;
@@ -219,7 +305,18 @@ const InfoIcon = styled.div`
   }
 `;
 
-const CountBroadFstText = styled.div``;
+const CountBroadFstText = styled.div`
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+  }
+`;
 
 const ArrowBox = styled.div`
   display: flex;
@@ -230,8 +327,10 @@ const ArrowBox = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    margin-left: 3px;
   }
   @media only screen and (min-width: 1200px) {
+    margin-left: 4px;
   }
   @media only screen and (min-width: 1500px) {
     margin-left: 5px;
@@ -260,8 +359,16 @@ const ArrowIcon = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
   }
   @media only screen and (min-width: 1200px) {
+    background-size: 11px;
+    width: 11px;
+    height: 11px;
+    margin-left: 4px;
   }
   @media only screen and (min-width: 1500px) {
     background-size: 12px;
@@ -298,8 +405,14 @@ const SearchInputBox = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    width: 180px;
+    padding: 0px 10px;
+    height: 32px;
   }
   @media only screen and (min-width: 1200px) {
+    width: 240px;
+    padding: 0px 10px;
+    height: 36px;
   }
   @media only screen and (min-width: 1500px) {
     width: 300px;
@@ -308,7 +421,21 @@ const SearchInputBox = styled.div`
   }
 `;
 
-const SearchInput = styled(Input)``;
+const SearchInput = styled(Input)`
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 13px;
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 14px;
+  }
+`;
 
 const SearchIcon = styled.div`
   background-image: url(${props => props.url});
@@ -319,26 +446,37 @@ const SearchIcon = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
   }
   @media only screen and (min-width: 1200px) {
+    margin-left: 4px;
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 1500px) {
+    margin-left: 5px;
     width: 16px;
     height: 16px;
   }
 `;
 
 const BotOpacityDiv = styled.div`
-  width: 100%;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    width: 100%;
+    height: 40px;
   }
   @media only screen and (min-width: 1200px) {
+    width: 100%;
+    height: 50px;
   }
   @media only screen and (min-width: 1500px) {
+    width: 100%;
     height: 50px;
   }
 `;
@@ -352,12 +490,18 @@ const MenuDiv = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    padding: 0px 10%;
+    font-size: 13px;
+    width: 80%;
   }
   @media only screen and (min-width: 1200px) {
+    padding: 0px 15%;
+    font-size: 14px;
+    width: 70%;
   }
   @media only screen and (min-width: 1500px) {
     padding: 0px 15%;
-    font-size: 16px;
+    font-size: 15px;
     width: 70%;
   }
 `;
@@ -373,8 +517,12 @@ const MenuBox = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
+    width: 10%;
+    height: 40px;
   }
   @media only screen and (min-width: 1200px) {
+    width: 10%;
+    height: 50px;
   }
   @media only screen and (min-width: 1500px) {
     width: 10%;
@@ -385,6 +533,7 @@ const MenuBox = styled.div`
 const MenuText = styled.div``;
 
 export default withRouter(() => {
+  const { windowWidth } = useWindowDimensions();
   return (
     <Header>
       <HeaderDiv>
@@ -394,7 +543,9 @@ export default withRouter(() => {
               <TitleDiv>
                 <TitleBox>
                   <TitleFstText>WATCHURS</TitleFstText>
-                  <TitleSndText>리그 오브 레전드</TitleSndText>
+                  <TitleSndText>
+                    {windowWidth >= 900 ? "리그 오브 레전드" : "LOL"}
+                  </TitleSndText>
                 </TitleBox>
               </TitleDiv>
               <SearchInputDiv>
@@ -405,16 +556,24 @@ export default withRouter(() => {
               </SearchInputDiv>
             </TopFstBox>
             <TopSndBox>
-              <SiteInfoBox>
-                <SiteInfoFstText>와쳐스</SiteInfoFstText>
-                <SiteInfoSndText>는</SiteInfoSndText>
-                <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
-                <SiteInfoSndText>의</SiteInfoSndText>
-                <SiteInfoFthText>리그오브레전드 랭킹</SiteInfoFthText>
-                <SiteInfoSndText>과</SiteInfoSndText>
-                <SiteInfoFthText>통계</SiteInfoFthText>
-                <SiteInfoSndText>를 제공합니다.</SiteInfoSndText>
-              </SiteInfoBox>
+              {windowWidth >= 900 ? (
+                <SiteInfoBox>
+                  <SiteInfoFstText>와쳐스</SiteInfoFstText>
+                  <SiteInfoSndText>는</SiteInfoSndText>
+                  <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
+                  <SiteInfoSndText>의</SiteInfoSndText>
+                  <SiteInfoFthText>리그오브레전드 랭킹</SiteInfoFthText>
+                  <SiteInfoSndText>과</SiteInfoSndText>
+                  <SiteInfoFthText>통계</SiteInfoFthText>
+                  <SiteInfoSndText>를 제공합니다.</SiteInfoSndText>
+                </SiteInfoBox>
+              ) : (
+                <SiteInfoBox>
+                  <SiteInfoFstText>와쳐스</SiteInfoFstText>
+                  <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
+                  <SiteInfoFthText>랭킹 & 통계 조회</SiteInfoFthText>
+                </SiteInfoBox>
+              )}
               <CountBroadBox>
                 <InfoIcon url={IconInfo} />
                 <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
