@@ -31,8 +31,10 @@ const HeaderDiv = styled.div``;
 const TopOpacityDiv = styled.div`
   width: 100%;
   @media only screen and (max-width: 600px) {
+    height: 100px;
   }
   @media only screen and (min-width: 600px) {
+    height: 160px;
   }
   @media only screen and (min-width: 900px) {
     height: 160px;
@@ -45,13 +47,19 @@ const TopOpacityDiv = styled.div`
   }
 `;
 
-const TopFstBoxDiv = styled.div`
+const TopBoxDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   @media only screen and (max-width: 600px) {
+    padding: 0px 2%;
+    width: 96%;
+    height: 100px;
   }
   @media only screen and (min-width: 600px) {
+    padding: 0px 10%;
+    width: 80%;
+    height: 160px;
   }
   @media only screen and (min-width: 900px) {
     padding: 0px 10%;
@@ -85,7 +93,20 @@ const TopFstBox = styled.div`
   }
 `;
 
-const TitleDiv = styled.div``;
+const TitleDiv = styled.div`
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 900px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1500px) {
+  }
+`;
 
 const TitleBox = styled.div`
   display: flex;
@@ -108,16 +129,21 @@ const TitleFstText = styled.div`
   color: ${props => props.theme.whiteColor};
   letter-spacing: -1.5px;
   @media only screen and (max-width: 600px) {
+    padding-right: 4px;
+    font-size: 28px;
+    padding-left: 4px;
   }
   @media only screen and (min-width: 600px) {
+    padding-right: 6px;
+    font-size: 40px;
   }
   @media only screen and (min-width: 900px) {
     padding-right: 6px;
     font-size: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    padding-right: 8px;
-    font-size: 44px;
+    padding-right: 10px;
+    font-size: 48px;
   }
   @media only screen and (min-width: 1500px) {
     padding-right: 10px;
@@ -130,14 +156,16 @@ const TitleSndText = styled.div`
   user-select: none;
   color: ${props => props.theme.orangeColor};
   @media only screen and (max-width: 600px) {
+    font-size: 14px;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 20px;
   }
   @media only screen and (min-width: 900px) {
     font-size: 20px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 22px;
+    font-size: 24px;
   }
   @media only screen and (min-width: 1500px) {
     font-size: 24px;
@@ -150,14 +178,17 @@ const TopSndBox = styled.div`
   align-items: center;
   user-select: none;
   @media only screen and (max-width: 600px) {
+    margin-top: 8px;
+    align-items: flex-end;
   }
   @media only screen and (min-width: 600px) {
+    margin-top: 12px;
   }
   @media only screen and (min-width: 900px) {
     margin-top: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-top: 14px;
+    margin-top: 16px;
   }
   @media only screen and (min-width: 1500px) {
     margin-top: 16px;
@@ -182,15 +213,20 @@ const SiteInfoBox = styled.div`
 const SiteInfoFstText = styled.div`
   color: ${props => props.theme.darkOrangeColor};
   @media only screen and (max-width: 600px) {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 4px;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 14px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 900px) {
     font-size: 14px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1500px) {
@@ -201,14 +237,16 @@ const SiteInfoFstText = styled.div`
 
 const SiteInfoSndText = styled.div`
   @media only screen and (max-width: 600px) {
+    font-size: 9px;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 11px;
   }
   @media only screen and (min-width: 900px) {
     font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 12px;
+    font-size: 13px;
   }
   @media only screen and (min-width: 1500px) {
     font-size: 13px;
@@ -218,17 +256,23 @@ const SiteInfoSndText = styled.div`
 const SiteInfoTrdText = styled.div`
   color: ${props => props.theme.orangeColor};
   @media only screen and (max-width: 600px) {
+    margin-left: 3px;
+    font-size: 12px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 600px) {
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 900px) {
-    margin-left: 3px;
+    margin-left: 4px;
     font-size: 14px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 4px;
-    font-size: 15px;
+    margin-left: 5px;
+    font-size: 16px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1500px) {
@@ -241,8 +285,14 @@ const SiteInfoTrdText = styled.div`
 const SiteInfoFthText = styled.div`
   color: ${props => props.theme.lightOrangeColor};
   @media only screen and (max-width: 600px) {
+    margin-left: 3px;
+    font-size: 12px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 600px) {
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 900px) {
     margin-left: 4px;
@@ -250,8 +300,8 @@ const SiteInfoFthText = styled.div`
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 4px;
-    font-size: 15px;
+    margin-left: 5px;
+    font-size: 16px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1500px) {
@@ -264,14 +314,16 @@ const SiteInfoFthText = styled.div`
 const CountBroadBox = styled.div`
   display: flex;
   @media only screen and (max-width: 600px) {
+    font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 11px;
   }
   @media only screen and (min-width: 900px) {
     font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 12px;
+    font-size: 13px;
   }
   @media only screen and (min-width: 1500px) {
     font-size: 13px;
@@ -282,8 +334,16 @@ const InfoIcon = styled.div`
   background-image: url(${props => props.url});
   background-repeat: no-repeat;
   @media only screen and (max-width: 600px) {
+    background-size: 9px;
+    width: 9px;
+    height: 9px;
+    margin-right: 2px;
   }
   @media only screen and (min-width: 600px) {
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 900px) {
     background-size: 10px;
@@ -292,9 +352,9 @@ const InfoIcon = styled.div`
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    background-size: 11px;
-    width: 11px;
-    height: 11px;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
     margin-right: 4px;
   }
   @media only screen and (min-width: 1500px) {
@@ -323,8 +383,11 @@ const ArrowBox = styled.div`
   align-items: center;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
+    margin-left: 2px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 600px) {
+    margin-left: 3px;
   }
   @media only screen and (min-width: 900px) {
     margin-left: 3px;
@@ -333,7 +396,7 @@ const ArrowBox = styled.div`
     margin-left: 4px;
   }
   @media only screen and (min-width: 1500px) {
-    margin-left: 5px;
+    margin-left: 4px;
   }
 `;
 
@@ -355,8 +418,16 @@ const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-repeat: no-repeat;
   @media only screen and (max-width: 600px) {
+    background-size: 9px;
+    width: 9px;
+    height: 9px;
+    margin-left: 2px;
   }
   @media only screen and (min-width: 600px) {
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
   }
   @media only screen and (min-width: 900px) {
     background-size: 10px;
@@ -365,9 +436,9 @@ const ArrowIcon = styled.div`
     margin-left: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    background-size: 11px;
-    width: 11px;
-    height: 11px;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
     margin-left: 4px;
   }
   @media only screen and (min-width: 1500px) {
@@ -383,6 +454,7 @@ const SearchInputDiv = styled.div`
   justify-content: center;
   align-items: flex-end;
   @media only screen and (max-width: 600px) {
+    width: 100%;
   }
   @media only screen and (min-width: 600px) {
   }
@@ -401,18 +473,24 @@ const SearchInputBox = styled.div`
   justify-content: space-between;
   align-items: center;
   @media only screen and (max-width: 600px) {
+    width: 100%;
+    padding: 0px 10px;
+    height: 32px;
   }
   @media only screen and (min-width: 600px) {
-  }
-  @media only screen and (min-width: 900px) {
     width: 180px;
     padding: 0px 10px;
     height: 32px;
   }
-  @media only screen and (min-width: 1200px) {
-    width: 240px;
+  @media only screen and (min-width: 900px) {
+    width: 220px;
     padding: 0px 10px;
-    height: 36px;
+    height: 32px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 260px;
+    padding: 0px 10px;
+    height: 40px;
   }
   @media only screen and (min-width: 1500px) {
     width: 300px;
@@ -422,15 +500,19 @@ const SearchInputBox = styled.div`
 `;
 
 const SearchInput = styled(Input)`
+  font-weight: bold;
+  /* opacity: 0.9; */
   @media only screen and (max-width: 600px) {
+    font-size: 12px;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 12px;
   }
   @media only screen and (min-width: 900px) {
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 13px;
+    font-size: 14px;
   }
   @media only screen and (min-width: 1500px) {
     font-size: 14px;
@@ -442,8 +524,14 @@ const SearchIcon = styled.div`
   background-size: cover;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
   }
   @media only screen and (min-width: 600px) {
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
   }
   @media only screen and (min-width: 900px) {
     margin-left: 3px;
@@ -452,11 +540,11 @@ const SearchIcon = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     margin-left: 4px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
   @media only screen and (min-width: 1500px) {
-    margin-left: 5px;
+    margin-left: 4px;
     width: 16px;
     height: 16px;
   }
@@ -464,8 +552,12 @@ const SearchIcon = styled.div`
 
 const BotOpacityDiv = styled.div`
   @media only screen and (max-width: 600px) {
+    width: 100%;
+    height: 36px;
   }
   @media only screen and (min-width: 600px) {
+    width: 100%;
+    height: 40px;
   }
   @media only screen and (min-width: 900px) {
     width: 100%;
@@ -486,23 +578,29 @@ const MenuDiv = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 600px) {
+    padding: 0px 0%;
+    font-size: 12px;
+    width: 100%;
   }
   @media only screen and (min-width: 600px) {
+    padding: 0px 5%;
+    font-size: 13px;
+    width: 90%;
   }
   @media only screen and (min-width: 900px) {
-    padding: 0px 10%;
+    padding: 0px 5%;
     font-size: 13px;
-    width: 80%;
+    width: 90%;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 0px 15%;
-    font-size: 14px;
-    width: 70%;
+    padding: 0px 10%;
+    font-size: 15px;
+    width: 80%;
   }
   @media only screen and (min-width: 1500px) {
-    padding: 0px 15%;
+    padding: 0px 10%;
     font-size: 15px;
-    width: 70%;
+    width: 80%;
   }
 `;
 
@@ -513,19 +611,24 @@ const MenuBox = styled.div`
   user-select: none;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
+    width: 75px;
+    min-width: 75px;
+    height: 36px;
   }
   @media only screen and (min-width: 600px) {
+    width: 85px;
+    height: 40px;
   }
   @media only screen and (min-width: 900px) {
-    width: 10%;
+    width: 85px;
     height: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 10%;
+    width: 95px;
     height: 50px;
   }
   @media only screen and (min-width: 1500px) {
-    width: 10%;
+    width: 95px;
     height: 50px;
   }
 `;
@@ -536,76 +639,134 @@ export default withRouter(() => {
   const { windowWidth } = useWindowDimensions();
   return (
     <Header>
-      <HeaderDiv>
-        <TopOpacityDiv style={{ backgroundColor: darkBuleColor }}>
-          <TopFstBoxDiv>
-            <TopFstBox>
-              <TitleDiv>
-                <TitleBox>
-                  <TitleFstText>WATCHURS</TitleFstText>
-                  <TitleSndText>
-                    {windowWidth >= 900 ? "리그 오브 레전드" : "LOL"}
-                  </TitleSndText>
-                </TitleBox>
-              </TitleDiv>
-              <SearchInputDiv>
-                <SearchInputBox>
-                  <SearchInput placeholder={"브로드캐스터 검색"} />
-                  <SearchIcon url={IconSearch} />
-                </SearchInputBox>
-              </SearchInputDiv>
-            </TopFstBox>
-            <TopSndBox>
-              {windowWidth >= 900 ? (
-                <SiteInfoBox>
-                  <SiteInfoFstText>와쳐스</SiteInfoFstText>
-                  <SiteInfoSndText>는</SiteInfoSndText>
-                  <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
-                  <SiteInfoSndText>의</SiteInfoSndText>
-                  <SiteInfoFthText>리그오브레전드 랭킹</SiteInfoFthText>
-                  <SiteInfoSndText>과</SiteInfoSndText>
-                  <SiteInfoFthText>통계</SiteInfoFthText>
-                  <SiteInfoSndText>를 제공합니다.</SiteInfoSndText>
-                </SiteInfoBox>
-              ) : (
+      {windowWidth < 600 ? (
+        <HeaderDiv>
+          <TopOpacityDiv style={{ backgroundColor: darkBuleColor }}>
+            <TopBoxDiv>
+              <TopFstBox>
+                <TitleDiv>
+                  <TitleBox>
+                    <TitleFstText>WATCHURS</TitleFstText>
+                    <TitleSndText>리그 오브 레전드</TitleSndText>
+                  </TitleBox>
+                </TitleDiv>
+              </TopFstBox>
+              <TopSndBox>
                 <SiteInfoBox>
                   <SiteInfoFstText>와쳐스</SiteInfoFstText>
                   <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
-                  <SiteInfoFthText>랭킹 & 통계 조회</SiteInfoFthText>
+                  <SiteInfoFthText>랭킹 & 통계</SiteInfoFthText>
                 </SiteInfoBox>
-              )}
-              <CountBroadBox>
-                <InfoIcon url={IconInfo} />
-                <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
-                <ArrowBox>
-                  <CountBroadSndText>33명</CountBroadSndText>
-                  <ArrowIcon url={IconArrow} />
-                </ArrowBox>
-              </CountBroadBox>
-            </TopSndBox>
-          </TopFstBoxDiv>
-        </TopOpacityDiv>
-        <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
-          <MenuDiv>
-            <MenuBox
-              style={{
-                backgroundColor: deepBuleColor,
-                color: Theme.darkOrangeColor,
-                fontWeight: "bold"
-              }}
-            >
-              <MenuText style={{ display: "none" }}>와쳐스 홈</MenuText>
-              <MenuText>와쳐스 홈</MenuText>
-            </MenuBox>
-            <MenuBox>
-              <MenuText>전체 랭킹</MenuText>
-            </MenuBox>
-            <MenuBox>
-              <MenuText>등록 요청</MenuText>
-            </MenuBox>
-          </MenuDiv>
-        </BotOpacityDiv>
-      </HeaderDiv>
+                <CountBroadBox>
+                  <InfoIcon url={IconInfo} />
+                  <CountBroadFstText>총 브로드캐스터:</CountBroadFstText>
+                  <ArrowBox>
+                    <CountBroadSndText>33명</CountBroadSndText>
+                    <ArrowIcon url={IconArrow} />
+                  </ArrowBox>
+                </CountBroadBox>
+              </TopSndBox>
+              <TopSndBox>
+                <SearchInputDiv>
+                  <SearchInputBox>
+                    <SearchInput placeholder={"브로드캐스터 검색"} />
+                    <SearchIcon url={IconSearch} />
+                  </SearchInputBox>
+                </SearchInputDiv>
+              </TopSndBox>
+            </TopBoxDiv>
+          </TopOpacityDiv>
+          <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
+            <MenuDiv>
+              <MenuBox
+                style={{
+                  backgroundColor: Theme.deepBlueColor,
+                  color: Theme.shinyOrangeColor,
+                  fontWeight: "bold"
+                }}
+              >
+                <MenuText>와쳐스 홈</MenuText>
+              </MenuBox>
+              <MenuBox>
+                <MenuText>전체 랭킹</MenuText>
+              </MenuBox>
+              <MenuBox>
+                <MenuText>등록 요청</MenuText>
+              </MenuBox>
+            </MenuDiv>
+          </BotOpacityDiv>
+        </HeaderDiv>
+      ) : (
+        <HeaderDiv>
+          <TopOpacityDiv style={{ backgroundColor: darkBuleColor }}>
+            <TopBoxDiv>
+              <TopFstBox>
+                <TitleDiv>
+                  <TitleBox>
+                    <TitleFstText>WATCHURS</TitleFstText>
+                    <TitleSndText>
+                      {windowWidth >= 900 ? "리그 오브 레전드" : "LOL"}
+                    </TitleSndText>
+                  </TitleBox>
+                </TitleDiv>
+                <SearchInputDiv>
+                  <SearchInputBox>
+                    <SearchInput placeholder={"브로드캐스터 검색"} />
+                    <SearchIcon url={IconSearch} />
+                  </SearchInputBox>
+                </SearchInputDiv>
+              </TopFstBox>
+              <TopSndBox>
+                {windowWidth >= 900 ? (
+                  <SiteInfoBox>
+                    <SiteInfoFstText>와쳐스</SiteInfoFstText>
+                    <SiteInfoSndText>는</SiteInfoSndText>
+                    <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
+                    <SiteInfoSndText>의</SiteInfoSndText>
+                    <SiteInfoFthText>리그오브레전드 랭킹</SiteInfoFthText>
+                    <SiteInfoSndText>과</SiteInfoSndText>
+                    <SiteInfoFthText>통계</SiteInfoFthText>
+                    <SiteInfoSndText>를 제공합니다.</SiteInfoSndText>
+                  </SiteInfoBox>
+                ) : (
+                  <SiteInfoBox>
+                    <SiteInfoFstText>와쳐스</SiteInfoFstText>
+                    <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
+                    <SiteInfoFthText>랭킹 & 통계 조회</SiteInfoFthText>
+                  </SiteInfoBox>
+                )}
+                <CountBroadBox>
+                  <InfoIcon url={IconInfo} />
+                  <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
+                  <ArrowBox>
+                    <CountBroadSndText>33명</CountBroadSndText>
+                    <ArrowIcon url={IconArrow} />
+                  </ArrowBox>
+                </CountBroadBox>
+              </TopSndBox>
+            </TopBoxDiv>
+          </TopOpacityDiv>
+          <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
+            <MenuDiv>
+              <MenuBox
+                style={{
+                  backgroundColor: Theme.deepBlueColor,
+                  color: Theme.shinyOrangeColor,
+                  fontWeight: "bold"
+                }}
+              >
+                <MenuText>와쳐스 홈</MenuText>
+              </MenuBox>
+              <MenuBox>
+                <MenuText>전체 랭킹</MenuText>
+              </MenuBox>
+              <MenuBox>
+                <MenuText>등록 요청</MenuText>
+              </MenuBox>
+            </MenuDiv>
+          </BotOpacityDiv>
+        </HeaderDiv>
+      )}
     </Header>
   );
 });
@@ -615,7 +776,7 @@ export default withRouter(() => {
 // );
 
 // <HeaderDiv>
-//       <TopFstBoxDiv style={{ padding: 10 }}>
+//       <TopBoxDiv style={{ padding: 10 }}>
 //         <TitleDiv
 //           style={{
 //             display: "flex",
@@ -658,7 +819,7 @@ export default withRouter(() => {
 //           <SearchInput fontsize={"14px"} placeholder={"브로드캐스터 검색"} />
 //           <SearchIcon url={IconSearch} style={{ width: 14, height: 14 }} />
 //         </SearchInputBox>
-//       </TopFstBoxDiv>
+//       </TopBoxDiv>
 //       <BotDiv style={{ padding: "10px 18px" }}>
 //         <MenuDiv>
 //           <MenuBox style={{ marginRight: 10 }}>

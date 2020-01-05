@@ -13,23 +13,35 @@ const FooterDiv = styled.div`
   color: ${props => props.theme.fTheme};
   user-select: none;
   @media only screen and (max-width: 600px) {
+    line-height: 12px;
+    height: 70px;
+    padding: 0px 2%;
+    letter-spacing: -0.4px;
+    font-size: 9px;
   }
   @media only screen and (min-width: 600px) {
+    line-height: 15px;
+    height: 70px;
+    padding: 0px 5%;
+    font-size: 10px;
   }
   @media only screen and (min-width: 900px) {
     line-height: 15px;
-    height: 60px;
+    height: 70px;
     padding: 0px 5%;
+    font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
     line-height: 15px;
-    height: 50px;
+    height: 70px;
     padding: 0px 10%;
+    font-size: 12px;
   }
   @media only screen and (min-width: 1500px) {
     line-height: 15px;
-    height: 50px;
-    padding: 0px 15%;
+    height: 70px;
+    padding: 0px 10%;
+    font-size: 13px;
   }
 `;
 
@@ -41,13 +53,10 @@ const CopyrightFstBox = styled.footer`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
-    font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 12px;
   }
   @media only screen and (min-width: 1500px) {
-    font-size: 13px;
   }
 `;
 
@@ -59,13 +68,10 @@ const CopyrightSndBox = styled.footer`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 900px) {
-    font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 12px;
   }
   @media only screen and (min-width: 1500px) {
-    font-size: 13px;
   }
 `;
 
@@ -87,8 +93,12 @@ const CopyrightSndText = styled.div`
   color: ${props => props.theme.lightOrangeColor};
   text-align: center;
   @media only screen and (max-width: 600px) {
+    font-weight: bold;
+    margin: 0px 2px;
   }
   @media only screen and (min-width: 600px) {
+    font-weight: bold;
+    margin: 0px 3px;
   }
   @media only screen and (min-width: 900px) {
     font-weight: bold;
@@ -109,7 +119,35 @@ export default () => {
 
   return (
     <Footer>
-      {windowWidth >= 1200 ? (
+      {windowWidth < 600 ? (
+        <FooterDiv>
+          <CopyrightFstBox>
+            <CopyrightFstText>ⓒ {new Date().getFullYear()}</CopyrightFstText>
+            <CopyrightSndText>WATCHURS</CopyrightSndText>
+            <CopyrightFstText>
+              isn’t endorsed by Riot Games and doesn’t reflect the views
+            </CopyrightFstText>
+          </CopyrightFstBox>
+          <CopyrightFstBox>
+            <CopyrightFstText>
+              or opinions of Riot Games or anyone officially involved in
+              producing or managing
+            </CopyrightFstText>
+          </CopyrightFstBox>
+          <CopyrightSndBox>
+            <CopyrightFstText>
+              League of Legends. League of Legends and Riot Games are trademarks
+              or
+            </CopyrightFstText>
+          </CopyrightSndBox>
+          <CopyrightSndBox>
+            <CopyrightFstText>
+              registered trademarks of Riot Games, Inc. League of Legends © Riot
+              Games, Inc.
+            </CopyrightFstText>
+          </CopyrightSndBox>
+        </FooterDiv>
+      ) : windowWidth >= 1200 ? (
         <FooterDiv>
           <CopyrightFstBox>
             <CopyrightFstText>ⓒ {new Date().getFullYear()}</CopyrightFstText>

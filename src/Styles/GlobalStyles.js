@@ -19,10 +19,14 @@ export default createGlobalStyle`
         font-size: 16px;
     }
     a {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: normal;
         color: ${props => props.theme.whiteColor};
         text-decoration: none;
     }
     input {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: normal;
         outline: none;
     }
     button {

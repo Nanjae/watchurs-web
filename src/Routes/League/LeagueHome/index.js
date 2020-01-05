@@ -24,8 +24,14 @@ const MainBgDiv = styled.div`
   background-position-y: center;
   background-repeat: no-repeat;
   @media only screen and (max-width: 600px) {
+    background-position-x: 30%;
+    width: 100%;
+    height: 736px;
   }
   @media only screen and (min-width: 600px) {
+    background-position-x: 30%;
+    width: 100%;
+    height: 800px;
   }
   @media only screen and (min-width: 900px) {
     width: 100%;
@@ -33,7 +39,7 @@ const MainBgDiv = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     width: 100%;
-    height: 900px;
+    height: 1000px;
   }
   @media only screen and (min-width: 1500px) {
     width: 100%;
@@ -42,10 +48,13 @@ const MainBgDiv = styled.div`
 `;
 
 const MainOpacityDiv = styled.div`
-  /* position: absolute; */
   @media only screen and (max-width: 600px) {
+    padding-top: 136px;
+    height: 600px;
   }
   @media only screen and (min-width: 600px) {
+    padding-top: 200px;
+    height: 600px;
   }
   @media only screen and (min-width: 900px) {
     padding-top: 200px;
@@ -53,7 +62,7 @@ const MainOpacityDiv = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     padding-top: 250px;
-    height: 650px;
+    height: 750px;
   }
   @media only screen and (min-width: 1500px) {
     padding-top: 250px;
@@ -67,8 +76,14 @@ const MainDiv = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 600px) {
+    padding: 0px 2%;
+    height: 600px;
+    width: 96%;
   }
   @media only screen and (min-width: 600px) {
+    padding: 0px 10%;
+    height: 600px;
+    width: 80%;
   }
   @media only screen and (min-width: 900px) {
     padding: 0px 10%;
@@ -77,7 +92,7 @@ const MainDiv = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     padding: 0px 15%;
-    height: 650px;
+    height: 750px;
     width: 70%;
   }
   @media only screen and (min-width: 1500px) {
@@ -91,35 +106,43 @@ const MainTextBox = styled.div`
   user-select: none;
   text-align: center;
   @media only screen and (max-width: 600px) {
+    margin-top: 50px;
+    margin-bottom: 25px;
   }
   @media only screen and (min-width: 600px) {
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
   @media only screen and (min-width: 900px) {
-    margin-top: 70px;
-    margin-bottom: 35px;
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
   @media only screen and (min-width: 1200px) {
     margin-top: 70px;
     margin-bottom: 35px;
   }
   @media only screen and (min-width: 1500px) {
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 70px;
+    margin-bottom: 35px;
   }
 `;
 
 const MainFstText = styled.div`
   color: ${props => props.theme.orangeColor};
   @media only screen and (max-width: 600px) {
+    font-size: 18px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 20px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 900px) {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1500px) {
@@ -132,8 +155,14 @@ const MainSndText = styled.div`
   color: ${props => props.theme.whiteColor};
   letter-spacing: -1.5px;
   @media only screen and (max-width: 600px) {
+    margin: 6px 0px;
+    font-size: 52px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 600px) {
+    margin: 8px 0px;
+    font-size: 56px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 900px) {
     margin: 8px 0px;
@@ -141,8 +170,8 @@ const MainSndText = styled.div`
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    margin: 8px 0px;
-    font-size: 56px;
+    margin: 10px 0px;
+    font-size: 60px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1500px) {
@@ -155,15 +184,20 @@ const MainSndText = styled.div`
 const MainTrdText = styled.div`
   color: ${props => props.theme.shinyOrangeColor};
   @media only screen and (max-width: 600px) {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
   }
   @media only screen and (min-width: 600px) {
+    font-size: 20px;
+    font-weight: bold;
   }
   @media only screen and (min-width: 900px) {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1500px) {
@@ -180,17 +214,19 @@ const SearchInputDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   @media only screen and (max-width: 600px) {
+    width: 95%;
   }
   @media only screen and (min-width: 600px) {
+    width: 90%;
   }
   @media only screen and (min-width: 900px) {
-    width: 700px;
+    width: 90%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 800px;
+    width: 90%;
   }
   @media only screen and (min-width: 1500px) {
-    width: 900px;
+    width: 90%;
   }
 `;
 
@@ -199,16 +235,20 @@ const SearchInput = styled(Input)`
   color: white;
   font-weight: bold;
   @media only screen and (max-width: 600px) {
+    padding: 10px;
+    font-size: 12px;
   }
   @media only screen and (min-width: 600px) {
+    padding: 12px;
+    font-size: 14px;
   }
   @media only screen and (min-width: 900px) {
     padding: 12px;
     font-size: 14px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 12px;
-    font-size: 14px;
+    padding: 15px;
+    font-size: 16px;
   }
   @media only screen and (min-width: 1500px) {
     padding: 15px;
@@ -224,16 +264,20 @@ const SearchIconBox = styled.div`
   border-left: 4px solid ${props => props.theme.orangeColor};
   cursor: pointer;
   @media only screen and (max-width: 600px) {
+    width: 38px;
+    height: 38px;
   }
   @media only screen and (min-width: 600px) {
+    width: 46px;
+    height: 46px;
   }
   @media only screen and (min-width: 900px) {
     width: 46px;
     height: 46px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 46px;
-    height: 46px;
+    width: 54px;
+    height: 54px;
   }
   @media only screen and (min-width: 1500px) {
     width: 54px;
@@ -245,16 +289,20 @@ const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 600px) {
+    width: 20px;
+    height: 20px;
   }
   @media only screen and (min-width: 600px) {
+    width: 24px;
+    height: 24px;
   }
   @media only screen and (min-width: 900px) {
     width: 24px;
     height: 24px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
   @media only screen and (min-width: 1500px) {
     width: 28px;
@@ -267,8 +315,10 @@ const AdsBottomDiv = styled.div`
   display: flex;
   justify-content: center;
   @media only screen and (max-width: 600px) {
+    width: 100%;
   }
   @media only screen and (min-width: 600px) {
+    width: 100%;
   }
   @media only screen and (min-width: 900px) {
     width: 100%;
@@ -285,8 +335,12 @@ const CloseIconBox = styled.div`
   z-index: 100;
   background-color: white;
   @media only screen and (max-width: 600px) {
+    margin-left: -14px;
+    height: 14px;
   }
   @media only screen and (min-width: 600px) {
+    margin-left: -14px;
+    height: 14px;
   }
   @media only screen and (min-width: 900px) {
     margin-left: -14px;
@@ -309,8 +363,14 @@ const CloseIcon = styled.div`
   background-position-y: center;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
+    background-size: 10px;
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 600px) {
+    background-size: 10px;
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 900px) {
     background-size: 10px;
@@ -347,22 +407,36 @@ export default () => {
           <MainDiv>
             <MainTextBox>
               <MainFstText>
-                리그오브레전드 브로드캐스터 조회 - 와쳐스
+                {windowWidth < 600
+                  ? "LOL 브로드캐스터 조회 - 와쳐스"
+                  : "리그오브레전드 브로드캐스터 조회 - 와쳐스"}
               </MainFstText>
               <MainSndText>WATCHURS</MainSndText>
-              <MainTrdText>
-                좋아하는 브로드캐스터의 랭킹과 통계를 확인해보세요!
-              </MainTrdText>
+              {windowWidth < 600 ? (
+                <MainTrdText>
+                  좋아하는 브로드캐스터의
+                  <br />
+                  랭킹과 통계를 확인해보세요!
+                </MainTrdText>
+              ) : (
+                <MainTrdText>
+                  좋아하는 브로드캐스터의 랭킹과 통계를 확인해보세요!
+                </MainTrdText>
+              )}
             </MainTextBox>
             <SearchInputDiv>
               <SearchInput
-                placeholder={"브로드캐스터 닉네임 또는 아이디를 입력해주세요."}
+                placeholder={
+                  windowWidth < 600
+                    ? "브로드캐스터 닉네임 또는 아이디"
+                    : "브로드캐스터 닉네임 또는 아이디를 입력해주세요."
+                }
               />
               <SearchIconBox>
                 <SearchIcon url={IconSearch} />
               </SearchIconBox>
             </SearchInputDiv>
-            {adsClose ? null : (
+            {adsClose ? null : windowWidth >= 750 ? (
               <AdsBottomDiv
                 style={
                   windowWidth >= 1500
@@ -370,10 +444,10 @@ export default () => {
                       ? { top: windowHeight - (fixedScrollY - 910) }
                       : { top: windowHeight - 90 }
                     : windowWidth >= 1200
-                    ? fixedScrollY >= 900
-                      ? { top: windowHeight - (fixedScrollY - 810) }
+                    ? fixedScrollY >= 1000
+                      ? { top: windowHeight - (fixedScrollY - 910) }
                       : { top: windowHeight - 90 }
-                    : windowWidth >= 900 && fixedScrollY >= 800
+                    : windowWidth >= 750 && fixedScrollY >= 800
                     ? { top: windowHeight - (fixedScrollY - 710) }
                     : { top: windowHeight - 90 }
                 }
@@ -385,6 +459,31 @@ export default () => {
                   allowtransparency="true"
                   src="https://tab2.clickmon.co.kr/pop/wp_ad_728.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
                   frameBorder="0"
+                  scrolling="no"
+                ></iframe>
+                <CloseIconBox>
+                  <CloseIcon url={IconClose} onClick={adsCloseHandler} />
+                </CloseIconBox>
+              </AdsBottomDiv>
+            ) : (
+              <AdsBottomDiv
+                style={
+                  windowWidth >= 600
+                    ? fixedScrollY >= 800
+                      ? { top: windowHeight - (fixedScrollY - 600) }
+                      : { top: windowHeight - 200 }
+                    : fixedScrollY >= 736
+                    ? { top: windowHeight - (fixedScrollY - 536) }
+                    : { top: windowHeight - 200 }
+                }
+              >
+                <iframe
+                  title="Bottom_200x200"
+                  width="200"
+                  height="200"
+                  allowtransparency="true"
+                  src="https://tab2.clickmon.co.kr/pop/wp_ad_200.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
+                  frameborder="0"
                   scrolling="no"
                 ></iframe>
                 <CloseIconBox>
