@@ -15,32 +15,26 @@ const FooterDiv = styled.div`
   @media only screen and (max-width: 600px) {
     line-height: 12px;
     height: 70px;
-    padding: 0px 2%;
-    letter-spacing: -0.4px;
-    font-size: 9px;
+    padding: 0px 0%;
+    letter-spacing: -0.5px;
+    font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
     line-height: 15px;
-    height: 70px;
-    padding: 0px 5%;
-    font-size: 10px;
-  }
-  @media only screen and (min-width: 900px) {
-    line-height: 15px;
-    height: 70px;
-    padding: 0px 5%;
+    height: 60px;
+    padding: 0px 4%;
     font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
     line-height: 15px;
-    height: 70px;
-    padding: 0px 10%;
+    height: 50px;
+    padding: 0px 6%;
     font-size: 12px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     line-height: 15px;
-    height: 70px;
-    padding: 0px 10%;
+    height: 50px;
+    padding: 0px 8%;
     font-size: 13px;
   }
 `;
@@ -52,11 +46,9 @@ const CopyrightFstBox = styled.footer`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -67,11 +59,9 @@ const CopyrightSndBox = styled.footer`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -81,11 +71,9 @@ const CopyrightFstText = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -100,15 +88,11 @@ const CopyrightSndText = styled.div`
     font-weight: bold;
     margin: 0px 3px;
   }
-  @media only screen and (min-width: 900px) {
-    font-weight: bold;
-    margin: 0px 4px;
-  }
   @media only screen and (min-width: 1200px) {
     font-weight: bold;
     margin: 0px 4px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     font-weight: bold;
     margin: 0px 5px;
   }
@@ -125,25 +109,27 @@ export default () => {
             <CopyrightFstText>ⓒ {new Date().getFullYear()}</CopyrightFstText>
             <CopyrightSndText>WATCHURS</CopyrightSndText>
             <CopyrightFstText>
-              isn’t endorsed by Riot Games and doesn’t reflect the views
+              isn’t endorsed by Riot Games and doesn’t reflect
             </CopyrightFstText>
           </CopyrightFstBox>
           <CopyrightFstBox>
             <CopyrightFstText>
-              or opinions of Riot Games or anyone officially involved in
-              producing or managing
+              the views or opinions of Riot Games or anyone officially involved
+            </CopyrightFstText>
+          </CopyrightFstBox>
+          <CopyrightFstBox>
+            <CopyrightFstText>
+              in producing or managing League of Legends. League of Legends
             </CopyrightFstText>
           </CopyrightFstBox>
           <CopyrightSndBox>
             <CopyrightFstText>
-              League of Legends. League of Legends and Riot Games are trademarks
-              or
+              and Riot Games are trademarks or registered trademarks
             </CopyrightFstText>
           </CopyrightSndBox>
           <CopyrightSndBox>
             <CopyrightFstText>
-              registered trademarks of Riot Games, Inc. League of Legends © Riot
-              Games, Inc.
+              of Riot Games, Inc. League of Legends © Riot Games, Inc.
             </CopyrightFstText>
           </CopyrightSndBox>
         </FooterDiv>
@@ -178,12 +164,12 @@ export default () => {
           </CopyrightFstBox>
           <CopyrightFstBox>
             or anyone officially involved in producing or managing League of
-            Legends. League of Legends and
+            Legends. League of Legends and Riot
           </CopyrightFstBox>
           <CopyrightSndBox>
             <CopyrightFstText>
-              Riot Games are trademarks or registered trademarks of Riot Games,
-              Inc. League of Legends © Riot Games, Inc.
+              Games are trademarks or registered trademarks of Riot Games, Inc.
+              League of Legends © Riot Games, Inc.
             </CopyrightFstText>
           </CopyrightSndBox>
         </FooterDiv>

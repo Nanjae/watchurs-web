@@ -20,53 +20,48 @@ const MainBgDiv = styled.div`
   position: absolute;
   background-image: url(${props => props.url});
   background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
   background-repeat: no-repeat;
+  background-position-x: 30%;
+  background-position-y: 90%;
+  height: ${props => props.windowHeight}px;
   @media only screen and (max-width: 600px) {
-    background-position-x: 30%;
     width: 100%;
-    height: 736px;
+    min-height: 500px;
   }
   @media only screen and (min-width: 600px) {
-    background-position-x: 30%;
     width: 100%;
-    height: 800px;
-  }
-  @media only screen and (min-width: 900px) {
-    width: 100%;
-    height: 800px;
+    min-height: 600px;
   }
   @media only screen and (min-width: 1200px) {
     width: 100%;
-    height: 1000px;
+    min-height: 750px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     width: 100%;
-    height: 1000px;
+    min-height: 900px;
   }
 `;
 
 const MainOpacityDiv = styled.div`
   @media only screen and (max-width: 600px) {
-    padding-top: 136px;
-    height: 600px;
+    padding-top: 150px;
+    min-height: 350px;
+    height: ${props => props.windowHeight - 150}px;
   }
   @media only screen and (min-width: 600px) {
     padding-top: 200px;
-    height: 600px;
-  }
-  @media only screen and (min-width: 900px) {
-    padding-top: 200px;
-    height: 600px;
+    min-height: 400px;
+    height: ${props => props.windowHeight - 200}px;
   }
   @media only screen and (min-width: 1200px) {
     padding-top: 250px;
-    height: 750px;
+    min-height: 500px;
+    height: ${props => props.windowHeight - 250}px;
   }
-  @media only screen and (min-width: 1500px) {
-    padding-top: 250px;
-    height: 750px;
+  @media only screen and (min-width: 1800px) {
+    padding-top: 300px;
+    min-height: 600px;
+    height: ${props => props.windowHeight - 300}px;
   }
 `;
 
@@ -77,28 +72,27 @@ const MainDiv = styled.div`
   align-items: center;
   @media only screen and (max-width: 600px) {
     padding: 0px 2%;
-    height: 600px;
     width: 96%;
+    min-height: 350px;
+    height: ${props => props.windowHeight - 150}px;
   }
   @media only screen and (min-width: 600px) {
     padding: 0px 10%;
-    height: 600px;
-    width: 80%;
-  }
-  @media only screen and (min-width: 900px) {
-    padding: 0px 10%;
-    height: 600px;
+    height: ${props => props.windowHeight - 200}px;
+    min-height: 400px;
     width: 80%;
   }
   @media only screen and (min-width: 1200px) {
     padding: 0px 15%;
-    height: 750px;
+    height: ${props => props.windowHeight - 250}px;
+    min-height: 500px;
     width: 70%;
   }
-  @media only screen and (min-width: 1500px) {
-    padding: 0px 15%;
-    height: 750px;
-    width: 70%;
+  @media only screen and (min-width: 1800px) {
+    padding: 0px 20%;
+    height: ${props => props.windowHeight - 300}px;
+    min-height: 600px;
+    width: 60%;
   }
 `;
 
@@ -106,24 +100,20 @@ const MainTextBox = styled.div`
   user-select: none;
   text-align: center;
   @media only screen and (max-width: 600px) {
-    margin-top: 50px;
-    margin-bottom: 25px;
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
   @media only screen and (min-width: 600px) {
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-  @media only screen and (min-width: 900px) {
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-top: 70px;
-    margin-bottom: 35px;
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
-  @media only screen and (min-width: 1500px) {
-    margin-top: 70px;
-    margin-bottom: 35px;
+  @media only screen and (min-width: 1800px) {
+    margin-top: 120px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -137,16 +127,12 @@ const MainFstText = styled.div`
     font-size: 20px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 900px) {
-    font-size: 20px;
-    font-weight: bold;
-  }
   @media only screen and (min-width: 1200px) {
     font-size: 24px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 24px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 28px;
     font-weight: bold;
   }
 `;
@@ -164,19 +150,14 @@ const MainSndText = styled.div`
     font-size: 56px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 900px) {
-    margin: 8px 0px;
-    font-size: 56px;
-    font-weight: bold;
-  }
   @media only screen and (min-width: 1200px) {
     margin: 10px 0px;
     font-size: 60px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 1500px) {
-    margin: 10px 0px;
-    font-size: 60px;
+  @media only screen and (min-width: 1800px) {
+    margin: 12px 0px;
+    font-size: 64px;
     font-weight: bold;
   }
 `;
@@ -192,16 +173,12 @@ const MainTrdText = styled.div`
     font-size: 20px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 900px) {
-    font-size: 20px;
-    font-weight: bold;
-  }
   @media only screen and (min-width: 1200px) {
     font-size: 24px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 24px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 28px;
     font-weight: bold;
   }
 `;
@@ -219,13 +196,10 @@ const SearchInputDiv = styled.div`
   @media only screen and (min-width: 600px) {
     width: 90%;
   }
-  @media only screen and (min-width: 900px) {
-    width: 90%;
-  }
   @media only screen and (min-width: 1200px) {
     width: 90%;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     width: 90%;
   }
 `;
@@ -235,14 +209,10 @@ const SearchInput = styled(Input)`
   color: white;
   font-weight: bold;
   @media only screen and (max-width: 600px) {
-    padding: 10px;
-    font-size: 12px;
-  }
-  @media only screen and (min-width: 600px) {
     padding: 12px;
     font-size: 14px;
   }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 600px) {
     padding: 12px;
     font-size: 14px;
   }
@@ -250,9 +220,9 @@ const SearchInput = styled(Input)`
     padding: 15px;
     font-size: 16px;
   }
-  @media only screen and (min-width: 1500px) {
-    padding: 15px;
-    font-size: 16px;
+  @media only screen and (min-width: 1800px) {
+    padding: 18px;
+    font-size: 18px;
   }
 `;
 
@@ -264,24 +234,20 @@ const SearchIconBox = styled.div`
   border-left: 4px solid ${props => props.theme.orangeColor};
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
   }
   @media only screen and (min-width: 600px) {
-    width: 46px;
-    height: 46px;
-  }
-  @media only screen and (min-width: 900px) {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 54px;
-    height: 54px;
+    width: 60px;
+    height: 60px;
   }
-  @media only screen and (min-width: 1500px) {
-    width: 54px;
-    height: 54px;
+  @media only screen and (min-width: 1800px) {
+    width: 72px;
+    height: 72px;
   }
 `;
 
@@ -289,14 +255,10 @@ const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 600px) {
-    width: 20px;
-    height: 20px;
-  }
-  @media only screen and (min-width: 600px) {
     width: 24px;
     height: 24px;
   }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 600px) {
     width: 24px;
     height: 24px;
   }
@@ -304,9 +266,9 @@ const SearchIcon = styled.div`
     width: 28px;
     height: 28px;
   }
-  @media only screen and (min-width: 1500px) {
-    width: 28px;
-    height: 28px;
+  @media only screen and (min-width: 1800px) {
+    width: 32px;
+    height: 32px;
   }
 `;
 
@@ -320,13 +282,10 @@ const AdsBottomDiv = styled.div`
   @media only screen and (min-width: 600px) {
     width: 100%;
   }
-  @media only screen and (min-width: 900px) {
-    width: 100%;
-  }
   @media only screen and (min-width: 1200px) {
     width: 100%;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     width: 100%;
   }
 `;
@@ -342,15 +301,11 @@ const CloseIconBox = styled.div`
     margin-left: -14px;
     height: 14px;
   }
-  @media only screen and (min-width: 900px) {
-    margin-left: -14px;
-    height: 14px;
-  }
   @media only screen and (min-width: 1200px) {
     margin-left: -14px;
     height: 14px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     margin-left: -14px;
     height: 14px;
   }
@@ -372,17 +327,12 @@ const CloseIcon = styled.div`
     width: 14px;
     height: 14px;
   }
-  @media only screen and (min-width: 900px) {
-    background-size: 10px;
-    width: 14px;
-    height: 14px;
-  }
   @media only screen and (min-width: 1200px) {
     background-size: 10px;
     width: 14px;
     height: 14px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     background-size: 10px;
     width: 14px;
     height: 14px;
@@ -395,6 +345,10 @@ export default () => {
   const fixedScrollY = windowHeight + scrollY;
   const [adsClose, setAdsClose] = useState(false);
 
+  console.log("height : " + windowHeight);
+  console.log("scrollY : " + scrollY);
+  console.log("fixed : " + fixedScrollY);
+
   const adsCloseHandler = () => {
     setAdsClose(adsClose ? false : true);
   };
@@ -402,10 +356,13 @@ export default () => {
   return (
     <LeagueHome>
       <LeagueHomeDiv>
-        <MainBgDiv url={BgImage} />
-        <MainOpacityDiv style={{ backgroundColor: darkBuleColor }}>
-          <MainDiv>
-            <MainTextBox>
+        <MainBgDiv windowHeight={windowHeight} url={BgImage} />
+        <MainOpacityDiv
+          windowHeight={windowHeight}
+          style={{ backgroundColor: darkBuleColor }}
+        >
+          <MainDiv windowHeight={windowHeight}>
+            <MainTextBox windowHeight={windowHeight}>
               <MainFstText>
                 {windowWidth < 600
                   ? "LOL 브로드캐스터 조회 - 와쳐스"
@@ -439,16 +396,30 @@ export default () => {
             {adsClose ? null : windowWidth >= 750 ? (
               <AdsBottomDiv
                 style={
-                  windowWidth >= 1500
-                    ? fixedScrollY >= 1000
-                      ? { top: windowHeight - (fixedScrollY - 910) }
+                  windowWidth >= 1800
+                    ? fixedScrollY >= windowHeight - 300
+                      ? windowHeight < 900
+                        ? { top: fixedScrollY - scrollY - 90 }
+                        : {
+                            top:
+                              windowHeight - (fixedScrollY - windowHeight + 90)
+                          }
                       : { top: windowHeight - 90 }
                     : windowWidth >= 1200
-                    ? fixedScrollY >= 1000
-                      ? { top: windowHeight - (fixedScrollY - 910) }
+                    ? fixedScrollY >= windowHeight - 250
+                      ? windowHeight < 750
+                        ? { top: fixedScrollY - scrollY - 90 }
+                        : {
+                            top:
+                              windowHeight - (fixedScrollY - windowHeight + 90)
+                          }
                       : { top: windowHeight - 90 }
-                    : windowWidth >= 750 && fixedScrollY >= 800
-                    ? { top: windowHeight - (fixedScrollY - 710) }
+                    : windowWidth >= 750 && fixedScrollY >= windowHeight - 200
+                    ? windowHeight < 600
+                      ? { top: fixedScrollY - scrollY - 90 }
+                      : {
+                          top: windowHeight - (fixedScrollY - windowHeight + 90)
+                        }
                     : { top: windowHeight - 90 }
                 }
               >
@@ -469,11 +440,21 @@ export default () => {
               <AdsBottomDiv
                 style={
                   windowWidth >= 600
-                    ? fixedScrollY >= 800
-                      ? { top: windowHeight - (fixedScrollY - 600) }
+                    ? fixedScrollY >= windowHeight - 200
+                      ? windowHeight < 600
+                        ? { top: fixedScrollY - scrollY - 200 }
+                        : {
+                            top:
+                              windowHeight - (fixedScrollY - windowHeight + 200)
+                          }
                       : { top: windowHeight - 200 }
-                    : fixedScrollY >= 736
-                    ? { top: windowHeight - (fixedScrollY - 536) }
+                    : fixedScrollY >= windowHeight - 150
+                    ? windowHeight < 500
+                      ? { top: fixedScrollY - scrollY - 200 }
+                      : {
+                          top:
+                            windowHeight - (fixedScrollY - windowHeight + 200)
+                        }
                     : { top: windowHeight - 200 }
                 }
               >
@@ -483,7 +464,7 @@ export default () => {
                   height="200"
                   allowtransparency="true"
                   src="https://tab2.clickmon.co.kr/pop/wp_ad_200.php?PopAd=CM_M_1003067%7C%5E%7CCM_A_1065774%7C%5E%7CAdver_M_1046207&rt_ad_id_code=RTA_106228&mon_rf=REFERRER_URL"
-                  frameborder="0"
+                  frameBorder="0"
                   scrolling="no"
                 ></iframe>
                 <CloseIconBox>

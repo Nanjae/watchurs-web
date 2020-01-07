@@ -18,11 +18,9 @@ const Header = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -31,19 +29,16 @@ const HeaderDiv = styled.div``;
 const TopOpacityDiv = styled.div`
   width: 100%;
   @media only screen and (max-width: 600px) {
-    height: 100px;
+    height: 114px;
   }
   @media only screen and (min-width: 600px) {
-    height: 160px;
-  }
-  @media only screen and (min-width: 900px) {
     height: 160px;
   }
   @media only screen and (min-width: 1200px) {
     height: 200px;
   }
-  @media only screen and (min-width: 1500px) {
-    height: 200px;
+  @media only screen and (min-width: 1800px) {
+    height: 240px;
   }
 `;
 
@@ -54,14 +49,9 @@ const TopBoxDiv = styled.div`
   @media only screen and (max-width: 600px) {
     padding: 0px 2%;
     width: 96%;
-    height: 100px;
+    height: 114px;
   }
   @media only screen and (min-width: 600px) {
-    padding: 0px 10%;
-    width: 80%;
-    height: 160px;
-  }
-  @media only screen and (min-width: 900px) {
     padding: 0px 10%;
     width: 80%;
     height: 160px;
@@ -71,10 +61,10 @@ const TopBoxDiv = styled.div`
     width: 70%;
     height: 200px;
   }
-  @media only screen and (min-width: 1500px) {
-    padding: 0px 15%;
-    width: 70%;
-    height: 200px;
+  @media only screen and (min-width: 1800px) {
+    padding: 0px 20%;
+    width: 60%;
+    height: 240px;
   }
 `;
 
@@ -85,26 +75,26 @@ const TopFstBox = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
 const TitleDiv = styled.div`
   @media only screen and (max-width: 600px) {
+    margin-top: 12px;
     display: flex;
     justify-content: space-between;
   }
   @media only screen and (min-width: 600px) {
-  }
-  @media only screen and (min-width: 900px) {
+    margin-top: 16px;
   }
   @media only screen and (min-width: 1200px) {
+    margin-top: 20px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
+    margin-top: 24px;
   }
 `;
 
@@ -115,11 +105,9 @@ const TitleBox = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -137,17 +125,13 @@ const TitleFstText = styled.div`
     padding-right: 6px;
     font-size: 40px;
   }
-  @media only screen and (min-width: 900px) {
-    padding-right: 6px;
-    font-size: 40px;
-  }
   @media only screen and (min-width: 1200px) {
     padding-right: 10px;
     font-size: 48px;
   }
-  @media only screen and (min-width: 1500px) {
-    padding-right: 10px;
-    font-size: 48px;
+  @media only screen and (min-width: 1800px) {
+    padding-right: 14px;
+    font-size: 56px;
   }
 `;
 
@@ -161,14 +145,11 @@ const TitleSndText = styled.div`
   @media only screen and (min-width: 600px) {
     font-size: 20px;
   }
-  @media only screen and (min-width: 900px) {
-    font-size: 20px;
-  }
   @media only screen and (min-width: 1200px) {
     font-size: 24px;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 24px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 28px;
   }
 `;
 
@@ -182,16 +163,13 @@ const TopSndBox = styled.div`
     align-items: flex-end;
   }
   @media only screen and (min-width: 600px) {
-    margin-top: 12px;
-  }
-  @media only screen and (min-width: 900px) {
-    margin-top: 12px;
+    margin-top: 10px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-top: 16px;
+    margin-top: 12px;
   }
-  @media only screen and (min-width: 1500px) {
-    margin-top: 16px;
+  @media only screen and (min-width: 1800px) {
+    margin-top: 14px;
   }
 `;
 
@@ -202,18 +180,16 @@ const SiteInfoBox = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
 const SiteInfoFstText = styled.div`
   color: ${props => props.theme.darkOrangeColor};
   @media only screen and (max-width: 600px) {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     padding-left: 4px;
   }
@@ -221,35 +197,28 @@ const SiteInfoFstText = styled.div`
     font-size: 14px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 900px) {
-    font-size: 14px;
-    font-weight: bold;
-  }
   @media only screen and (min-width: 1200px) {
     font-size: 16px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 16px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
     font-weight: bold;
   }
 `;
 
 const SiteInfoSndText = styled.div`
   @media only screen and (max-width: 600px) {
-    font-size: 9px;
+    font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
-    font-size: 11px;
-  }
-  @media only screen and (min-width: 900px) {
     font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
     font-size: 13px;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 13px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 15px;
   }
 `;
 
@@ -257,27 +226,22 @@ const SiteInfoTrdText = styled.div`
   color: ${props => props.theme.orangeColor};
   @media only screen and (max-width: 600px) {
     margin-left: 3px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 4px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  @media only screen and (min-width: 900px) {
-    margin-left: 4px;
+    margin-left: 3px;
     font-size: 14px;
     font-weight: bold;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 5px;
+    margin-left: 4px;
     font-size: 16px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     margin-left: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
   }
 `;
@@ -286,15 +250,10 @@ const SiteInfoFthText = styled.div`
   color: ${props => props.theme.lightOrangeColor};
   @media only screen and (max-width: 600px) {
     margin-left: 3px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 4px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  @media only screen and (min-width: 900px) {
     margin-left: 4px;
     font-size: 14px;
     font-weight: bold;
@@ -304,64 +263,57 @@ const SiteInfoFthText = styled.div`
     font-size: 16px;
     font-weight: bold;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     margin-left: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
   }
 `;
 
 const CountBroadBox = styled.div`
   display: flex;
+  align-items: center;
   @media only screen and (max-width: 600px) {
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
     font-size: 11px;
   }
-  @media only screen and (min-width: 900px) {
-    font-size: 11px;
-  }
   @media only screen and (min-width: 1200px) {
     font-size: 13px;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 13px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 15px;
   }
 `;
 
 const InfoIcon = styled.div`
   background-image: url(${props => props.url});
   background-repeat: no-repeat;
+  background-position: center;
   @media only screen and (max-width: 600px) {
     background-size: 9px;
-    width: 9px;
-    height: 9px;
-    margin-right: 2px;
-  }
-  @media only screen and (min-width: 600px) {
-    background-size: 10px;
     width: 10px;
     height: 10px;
     margin-right: 3px;
   }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 600px) {
     background-size: 10px;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
     background-size: 12px;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     margin-right: 4px;
   }
-  @media only screen and (min-width: 1500px) {
-    background-size: 12px;
-    width: 12px;
-    height: 12px;
-    margin-right: 4px;
+  @media only screen and (min-width: 1800px) {
+    background-size: 14px;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
   }
 `;
 
@@ -370,11 +322,9 @@ const CountBroadFstText = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -383,20 +333,17 @@ const ArrowBox = styled.div`
   align-items: center;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    margin-left: 2px;
+    margin-left: 3px;
     margin-right: 4px;
   }
   @media only screen and (min-width: 600px) {
     margin-left: 3px;
   }
-  @media only screen and (min-width: 900px) {
-    margin-left: 3px;
-  }
   @media only screen and (min-width: 1200px) {
     margin-left: 4px;
   }
-  @media only screen and (min-width: 1500px) {
-    margin-left: 4px;
+  @media only screen and (min-width: 1800px) {
+    margin-left: 5px;
   }
 `;
 
@@ -406,46 +353,39 @@ const CountBroadSndText = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
 const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-repeat: no-repeat;
+  background-position: center;
   @media only screen and (max-width: 600px) {
     background-size: 9px;
-    width: 9px;
-    height: 9px;
-    margin-left: 2px;
-  }
-  @media only screen and (min-width: 600px) {
-    background-size: 10px;
     width: 10px;
     height: 10px;
     margin-left: 3px;
   }
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 600px) {
     background-size: 10px;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     margin-left: 3px;
   }
   @media only screen and (min-width: 1200px) {
     background-size: 12px;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     margin-left: 4px;
   }
-  @media only screen and (min-width: 1500px) {
-    background-size: 12px;
-    width: 12px;
-    height: 12px;
-    margin-left: 4px;
+  @media only screen and (min-width: 1800px) {
+    background-size: 14px;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
   }
 `;
 
@@ -458,11 +398,9 @@ const SearchInputDiv = styled.div`
   }
   @media only screen and (min-width: 600px) {
   }
-  @media only screen and (min-width: 900px) {
-  }
   @media only screen and (min-width: 1200px) {
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -482,40 +420,31 @@ const SearchInputBox = styled.div`
     padding: 0px 10px;
     height: 32px;
   }
-  @media only screen and (min-width: 900px) {
-    width: 220px;
-    padding: 0px 10px;
-    height: 32px;
-  }
   @media only screen and (min-width: 1200px) {
     width: 260px;
     padding: 0px 10px;
     height: 40px;
   }
-  @media only screen and (min-width: 1500px) {
-    width: 300px;
+  @media only screen and (min-width: 1800px) {
+    width: 340px;
     padding: 0px 10px;
-    height: 40px;
+    height: 48px;
   }
 `;
 
 const SearchInput = styled(Input)`
   font-weight: bold;
-  /* opacity: 0.9; */
   @media only screen and (max-width: 600px) {
-    font-size: 12px;
+    font-size: 13px;
   }
   @media only screen and (min-width: 600px) {
-    font-size: 12px;
-  }
-  @media only screen and (min-width: 900px) {
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
     font-size: 14px;
   }
-  @media only screen and (min-width: 1500px) {
-    font-size: 14px;
+  @media only screen and (min-width: 1800px) {
+    font-size: 16px;
   }
 `;
 
@@ -533,17 +462,12 @@ const SearchIcon = styled.div`
     width: 12px;
     height: 12px;
   }
-  @media only screen and (min-width: 900px) {
-    margin-left: 3px;
-    width: 12px;
-    height: 12px;
-  }
   @media only screen and (min-width: 1200px) {
     margin-left: 4px;
     width: 16px;
     height: 16px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     margin-left: 4px;
     width: 16px;
     height: 16px;
@@ -559,17 +483,13 @@ const BotOpacityDiv = styled.div`
     width: 100%;
     height: 40px;
   }
-  @media only screen and (min-width: 900px) {
-    width: 100%;
-    height: 40px;
-  }
   @media only screen and (min-width: 1200px) {
     width: 100%;
     height: 50px;
   }
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     width: 100%;
-    height: 50px;
+    height: 60px;
   }
 `;
 
@@ -583,24 +503,19 @@ const MenuDiv = styled.div`
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
-    padding: 0px 5%;
+    padding: 0px 7%;
     font-size: 13px;
-    width: 90%;
-  }
-  @media only screen and (min-width: 900px) {
-    padding: 0px 5%;
-    font-size: 13px;
-    width: 90%;
+    width: 86%;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 0px 10%;
+    padding: 0px 12%;
     font-size: 15px;
-    width: 80%;
+    width: 76%;
   }
-  @media only screen and (min-width: 1500px) {
-    padding: 0px 10%;
-    font-size: 15px;
-    width: 80%;
+  @media only screen and (min-width: 1800px) {
+    padding: 0px 17%;
+    font-size: 17px;
+    width: 66%;
   }
 `;
 
@@ -611,25 +526,20 @@ const MenuBox = styled.div`
   user-select: none;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    width: 75px;
-    min-width: 75px;
+    width: 72px;
     height: 36px;
   }
   @media only screen and (min-width: 600px) {
-    width: 85px;
-    height: 40px;
-  }
-  @media only screen and (min-width: 900px) {
-    width: 85px;
+    width: 80px;
     height: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 95px;
+    width: 100px;
     height: 50px;
   }
-  @media only screen and (min-width: 1500px) {
-    width: 95px;
-    height: 50px;
+  @media only screen and (min-width: 1800px) {
+    width: 120px;
+    height: 60px;
   }
 `;
 
@@ -705,7 +615,7 @@ export default withRouter(() => {
                   <TitleBox>
                     <TitleFstText>WATCHURS</TitleFstText>
                     <TitleSndText>
-                      {windowWidth >= 900 ? "리그 오브 레전드" : "LOL"}
+                      {windowWidth >= 750 ? "리그 오브 레전드" : "LOL"}
                     </TitleSndText>
                   </TitleBox>
                 </TitleDiv>
@@ -717,7 +627,7 @@ export default withRouter(() => {
                 </SearchInputDiv>
               </TopFstBox>
               <TopSndBox>
-                {windowWidth >= 900 ? (
+                {windowWidth >= 750 ? (
                   <SiteInfoBox>
                     <SiteInfoFstText>와쳐스</SiteInfoFstText>
                     <SiteInfoSndText>는</SiteInfoSndText>
