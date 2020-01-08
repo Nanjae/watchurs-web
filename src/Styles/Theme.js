@@ -1,5 +1,5 @@
 export default {
-  lightMainColor: "#874EAB",
+  purpleColor: "#874EAB",
   blueColor: "#9147FF",
   darkBlueColor: "#232637",
   deepBlueColor: "#010415",
@@ -10,6 +10,8 @@ export default {
   lightOrangeColor: "#99CC66",
   orangeColor: "#669933",
   darkOrangeColor: "#336600",
+  blackColor: "#000000",
+  grayColor: "#EAEAEA",
   aTheme: "#232637",
   bTheme: "#313131",
   cTheme: "#F7F7F8",

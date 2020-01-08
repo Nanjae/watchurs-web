@@ -7,9 +7,7 @@ import { darkBuleColor } from "../../../Styles/StyleFunction";
 import IconClose from "../../../Assets/Common/IconClose.png";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import { useWindowScroll } from "@react-hook/window-scroll";
-// import Footer from "../../../Components/Footer";
-// import RankingBoard from "../../../Components/RankingBoard/RankingBoard";
-// import RankingDetail from "../../../Components/RankingBoard/RankingDetail";
+import RankBoard from "../../../Components/RankBoard/RankBoard";
 
 const LeagueHome = styled.div``;
 
@@ -474,6 +472,7 @@ export default () => {
             )}
           </MainDiv>
         </MainOpacityDiv>
+        <RankBoard></RankBoard>
       </LeagueHomeDiv>
     </LeagueHome>
   );

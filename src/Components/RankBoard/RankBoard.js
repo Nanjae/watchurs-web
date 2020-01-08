@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo-hooks";
+import BoardCard from "./BoardCard";
+// import useWindowDimensions from "../../Hooks/useWindowDimensions";
+// import Loader from "../Loader";
 
 const SEE_ALL_SUMMONER = gql`
-  {
-    seeAllSummoner {
+  query seeAllSummoner($from: Int, $to: Int) {
+    seeAllSummoner(from: $from, to: $to) {
       id
       sId
       sName
@@ -13,117 +16,149 @@ const SEE_ALL_SUMMONER = gql`
       sTier
       sRank
       sPoints
-      sWins
-      sLosses
       sBroadcaster {
-        bId
         bName
         bAvatar
         bPlatform
       }
-      updatedAt
     }
   }
 `;
 
-const DATE_SERVER = gql`
-  {
-    dateServer
+const RankBoard = styled.div``;
+
+const RankBoardDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  background-color: ${props => props.theme.grayColor};
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+  @media only screen and (min-width: 600px) {
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+    padding: 20px 0px;
+  }
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
-const Wrapper = styled.div``;
-
-let serverTime = "";
-let serverTimeYear = "a";
-let serverTimeMonth = "b";
-let serverTimeDate = "c";
-let serverTimeHours = "d";
-let serverTimeMinutes = "e";
-let serverNewDate = "";
-
-const RankBoard = () => {
-  const { data: dateData, loading: dateLoading } = useQuery(DATE_SERVER);
-  const { data, loading } = useQuery(SEE_ALL_SUMMONER);
-  if (!loading) {
-    // console.log("로딩 " + skip + " ~ " + first);
-    // console.log(data);
-    // data.seeAllBroadcaster.map((broad, index) => console.log(broad.index));
+const RankFstBoardBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    min-width: 300px;
+    margin-right: 0px;
+    margin-bottom: 10px;
   }
-  if (!dateLoading) {
-    serverTime = dateData.dateServer;
-    serverTimeYear = serverTime.slice(0, 4);
-    serverTimeMonth = serverTime.slice(5, 7);
-    serverTimeDate = serverTime.slice(8, 10);
-    serverTimeHours = serverTime.slice(11, 13);
-    serverTimeMinutes = serverTime.slice(14, 16);
-    serverNewDate = Date.UTC(
-      serverTimeYear,
-      serverTimeMonth - 1,
-      serverTimeDate,
-      serverTimeHours,
-      serverTimeMinutes
-    );
-    // console.log(serverNewDate);
+  @media only screen and (min-width: 600px) {
+    min-width: 550px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 550px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 650px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+`;
+const RankSndBoardBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    min-width: 300px;
+    margin-left: 0px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 550px;
+    margin-left: 0px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 550px;
+    margin-left: 10px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 650px;
+    margin-left: 10px;
+  }
+`;
+
+export default () => {
+  //   const { windowWidth, windowHeight } = useWindowDimensions();
+
+  const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
+    variables: { from: 1, to: 10 }
+  });
+  if (!loading) {
+    // console.log(data);
   }
 
   return (
-    <Wrapper>
-      <BoardTable />
-      {!loading &&
-        data &&
-        data.seeAllSummoner &&
-        data.seeAllSummoner.map((summoner, index) => {
-          const summonerTime = summoner.updatedAt;
-          const summonerTimeMonth = summonerTime.slice(5, 7);
-          const summonerTimeYear = summonerTime.slice(0, 4);
-          const summonerTimeDate = summonerTime.slice(8, 10);
-          const summonerTimeHours = summonerTime.slice(11, 13);
-          const summonerTimeMinutes = summonerTime.slice(14, 16);
-          const summonerNewDate = Date.UTC(
-            summonerTimeYear,
-            summonerTimeMonth - 1,
-            summonerTimeDate,
-            summonerTimeHours,
-            summonerTimeMinutes
-          );
-          let isUpdated = "ERROR";
-          // console.log(summonerNewDate);
-          if (serverNewDate === "") {
-            isUpdated = "ERROR";
-          } else {
-            isUpdated = (serverNewDate - summonerNewDate) / 60000 + "분 전";
-          }
-          return (
-            <BoardCard
-              key={index + 1}
-              id={summoner.id}
-              sId={summoner.sId}
-              sRanking={index + 1}
-              bId={summoner.sBroadcaster.bId}
-              bName={summoner.sBroadcaster.bName}
-              bAvatar={summoner.sBroadcaster.bAvatar}
-              sName={summoner.sName}
-              sAvatar={summoner.sAvatar}
-              sTier={summoner.sTier}
-              sRank={summoner.sRank}
-              sPoints={summoner.sPoints}
-              sWins={summoner.sWins}
-              sLosses={summoner.sLosses}
-              sWinRate={
-                summoner.sWins + summoner.sLosses === 0
-                  ? "--"
-                  : Math.round(
-                      (summoner.sWins / (summoner.sWins + summoner.sLosses)) *
-                        100
-                    )
-              }
-              isUpdated={isUpdated}
-            />
-          );
-        })}
-    </Wrapper>
+    <RankBoard>
+      {loading ? null : (
+        <RankBoardDiv>
+          {data && data.seeAllSummoner && (
+            <RankFstBoardBox>
+              {data.seeAllSummoner.map((summoner, index) => {
+                return (
+                  <BoardCard
+                    key={index}
+                    index={index}
+                    sName={summoner.sName}
+                    sAvatar={summoner.sAvatar}
+                    sTier={summoner.sTier}
+                    sRank={summoner.sRank}
+                    sPoints={summoner.sPoints}
+                    bId={summoner.sBroadcaster.bId}
+                    bName={summoner.sBroadcaster.bName}
+                    bAvatar={summoner.sBroadcaster.bAvatar}
+                    bPlatform={summoner.sBroadcaster.bPlatform}
+                  />
+                );
+              })}
+            </RankFstBoardBox>
+          )}
+          {data && data.seeAllSummoner && (
+            <RankSndBoardBox>
+              {data.seeAllSummoner.map((summoner, index) => {
+                return (
+                  <BoardCard
+                    key={index}
+                    index={index}
+                    sName={summoner.sName}
+                    sAvatar={summoner.sAvatar}
+                    sTier={summoner.sTier}
+                    sRank={summoner.sRank}
+                    sPoints={summoner.sPoints}
+                    bId={summoner.sBroadcaster.bId}
+                    bName={summoner.sBroadcaster.bName}
+                    bAvatar={summoner.sBroadcaster.bAvatar}
+                    bPlatform={summoner.sBroadcaster.bPlatform}
+                  />
+                );
+              })}
+            </RankSndBoardBox>
+          )}
+        </RankBoardDiv>
+      )}
+    </RankBoard>
   );
 };
-
-export default RankBoard;

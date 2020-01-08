@@ -8,6 +8,14 @@ import IconArrow from "../Assets/Common/IconArrow.png";
 import Theme from "../Styles/Theme";
 import { deepBuleColor, darkBuleColor } from "../Styles/StyleFunction";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
+import { useQuery } from "react-apollo-hooks";
+import { gql } from "apollo-boost";
+
+const COUNT_ALL_SUMMONER = gql`
+  {
+    countAllSummoner
+  }
+`;
 
 const Header = styled.div`
   position: absolute;
@@ -208,6 +216,7 @@ const SiteInfoFstText = styled.div`
 `;
 
 const SiteInfoSndText = styled.div`
+  color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 600px) {
     font-size: 10px;
   }
@@ -318,6 +327,7 @@ const InfoIcon = styled.div`
 `;
 
 const CountBroadFstText = styled.div`
+  color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (min-width: 600px) {
@@ -525,6 +535,7 @@ const MenuBox = styled.div`
   align-items: center;
   user-select: none;
   cursor: pointer;
+  color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 600px) {
     width: 72px;
     height: 36px;
@@ -543,10 +554,25 @@ const MenuBox = styled.div`
   }
 `;
 
-const MenuText = styled.div``;
+const MenuText = styled.div`
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
+`;
 
 export default withRouter(() => {
   const { windowWidth } = useWindowDimensions();
+
+  const { data, loading } = useQuery(COUNT_ALL_SUMMONER);
+  if (!loading) {
+    // console.log(data);
+  }
+
   return (
     <Header>
       {windowWidth < 600 ? (
@@ -567,14 +593,18 @@ export default withRouter(() => {
                   <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
                   <SiteInfoFthText>랭킹 & 통계</SiteInfoFthText>
                 </SiteInfoBox>
-                <CountBroadBox>
-                  <InfoIcon url={IconInfo} />
-                  <CountBroadFstText>총 브로드캐스터:</CountBroadFstText>
-                  <ArrowBox>
-                    <CountBroadSndText>33명</CountBroadSndText>
-                    <ArrowIcon url={IconArrow} />
-                  </ArrowBox>
-                </CountBroadBox>
+                {!loading && data && data.countAllSummoner && (
+                  <CountBroadBox>
+                    <InfoIcon url={IconInfo} />
+                    <CountBroadFstText>총 브로드캐스터:</CountBroadFstText>
+                    <ArrowBox>
+                      <CountBroadSndText>
+                        {data.countAllSummoner}명
+                      </CountBroadSndText>
+                      <ArrowIcon url={IconArrow} />
+                    </ArrowBox>
+                  </CountBroadBox>
+                )}
               </TopSndBox>
               <TopSndBox>
                 <SearchInputDiv>
@@ -645,14 +675,18 @@ export default withRouter(() => {
                     <SiteInfoFthText>랭킹 & 통계 조회</SiteInfoFthText>
                   </SiteInfoBox>
                 )}
-                <CountBroadBox>
-                  <InfoIcon url={IconInfo} />
-                  <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
-                  <ArrowBox>
-                    <CountBroadSndText>33명</CountBroadSndText>
-                    <ArrowIcon url={IconArrow} />
-                  </ArrowBox>
-                </CountBroadBox>
+                {!loading && data && data.countAllSummoner && (
+                  <CountBroadBox>
+                    <InfoIcon url={IconInfo} />
+                    <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
+                    <ArrowBox>
+                      <CountBroadSndText>
+                        {data.countAllSummoner}명
+                      </CountBroadSndText>
+                      <ArrowIcon url={IconArrow} />
+                    </ArrowBox>
+                  </CountBroadBox>
+                )}
               </TopSndBox>
             </TopBoxDiv>
           </TopOpacityDiv>
@@ -680,67 +714,3 @@ export default withRouter(() => {
     </Header>
   );
 });
-
-// console.log(
-//   "(windowWidth, windowHeight) : (" + windowWidth + ", " + windowHeight + ")"
-// );
-
-// <HeaderDiv>
-//       <TopBoxDiv style={{ padding: 10 }}>
-//         <TitleDiv
-//           style={{
-//             display: "flex",
-//             justifyContent: "space-between",
-//             alignItems: "flex-end",
-//             marginBottom: 10,
-//             padding: "0px 8px"
-//           }}
-//         >
-//           <TopFstBox>
-//             <TitleBox>
-//               <TitleFstText style={{ paddingRight: 4, fontSize: 18 }}>
-//                 와쳐스
-//               </TitleFstText>
-//               <TitleSndText style={{ fontSize: 12 }}>
-//                 리그 오브 레전드
-//               </TitleSndText>
-//             </TitleBox>
-//           </TopFstBox>
-//           <TopSndBox style={{ paddingTop: 0 }}>
-//             <InfoIcon
-//               style={{ marginRight: 1, backgroundSize: "10px 10px" }}
-//               url={IconInfo}
-//             />
-//             <CountBroadFstText style={{ fontSize: 10 }}>
-//               등록된 브로드캐스터:
-//             </CountBroadFstText>
-//             <ArrowBox>
-//               <CountBroadSndText style={{ fontSize: 10 }}>
-//                 33명
-//               </CountBroadSndText>
-//               <ArrowIcon
-//                 style={{ marginLeft: 2, backgroundSize: "10px 10px" }}
-//                 url={IconArrow}
-//               />
-//             </ArrowBox>
-//           </TopSndBox>
-//         </TitleDiv>
-//         <SearchInputBox style={{ padding: "8px" }}>
-//           <SearchInput fontsize={"14px"} placeholder={"브로드캐스터 검색"} />
-//           <SearchIcon url={IconSearch} style={{ width: 14, height: 14 }} />
-//         </SearchInputBox>
-//       </TopBoxDiv>
-//       <BotDiv style={{ padding: "10px 18px" }}>
-//         <MenuDiv>
-//           <MenuBox style={{ marginRight: 10 }}>
-//             <MenuText style={{ fontSize: 14 }}>홈</MenuText>
-//           </MenuBox>
-//           <MenuBox style={{ marginRight: 10 }}>
-//             <MenuText style={{ fontSize: 14 }}>랭킹</MenuText>
-//           </MenuBox>
-//           <MenuBox style={{ marginRight: 10 }}>
-//             <MenuText style={{ fontSize: 14 }}></MenuText>
-//           </MenuBox>
-//         </MenuDiv>
-//       </BotDiv>
-//     </HeaderDiv>

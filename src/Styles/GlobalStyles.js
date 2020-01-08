@@ -12,8 +12,8 @@ export default createGlobalStyle`
     ${reset};
     @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
     body {
-        background-color: ${props => props.theme.dTheme};
-        color: ${props => props.theme.whiteColor};
+        background-color: ${props => props.theme.whiteColor};
+        color: ${props => props.theme.blackColor};
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
         font-size: 16px;
@@ -22,7 +22,7 @@ export default createGlobalStyle`
     a {
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
-        color: ${props => props.theme.whiteColor};
+        color: ${props => props.theme.blackColor};
         text-decoration: none;
         text-rendering: optimizeLegibility;
     }
