@@ -20,7 +20,6 @@ const BoardCardDiv = styled.div`
   justify-content: flex-start;
   width: 100%;
   user-select: none;
-  color: ${props => props.theme.aTheme};
   font-weight: bold;
   border-bottom: 2px solid ${props => props.theme.grayColor};
   @media only screen and (max-width: 600px) {

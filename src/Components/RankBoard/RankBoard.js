@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo-hooks";
 import BoardCard from "./BoardCard";
+import BoardTitle from "./BoardTitle";
 // import useWindowDimensions from "../../Hooks/useWindowDimensions";
 // import Loader from "../Loader";
 
@@ -32,7 +33,6 @@ const RankBoardDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: fit-content;
-  width: 100%;
   background-color: ${props => props.theme.grayColor};
   @media only screen and (max-width: 600px) {
     flex-direction: column;
@@ -77,6 +77,7 @@ const RankFstBoardBox = styled.div`
     margin-bottom: 0px;
   }
 `;
+
 const RankSndBoardBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -117,6 +118,7 @@ export default () => {
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
             <RankFstBoardBox>
+              <BoardTitle />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard
@@ -138,6 +140,7 @@ export default () => {
           )}
           {data && data.seeAllSummoner && (
             <RankSndBoardBox>
+              <BoardTitle />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard

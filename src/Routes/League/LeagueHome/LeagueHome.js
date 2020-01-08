@@ -71,7 +71,7 @@ const MainDiv = styled.div`
   align-items: center;
   @media only screen and (max-width: 600px) {
     padding: 0px 2%;
-    width: 98%;
+    width: 96%;
     min-height: 450px;
   }
   @media only screen and (min-width: 600px) {
