@@ -7,7 +7,7 @@ import BoardCard from "./BoardCard";
 // import Loader from "../Loader";
 
 const SEE_ALL_SUMMONER = gql`
-  query seeAllSummoner($from: Int!, $to: Int!) {
+  query seeAllSummoner($from: Int, $to: Int) {
     seeAllSummoner(from: $from, to: $to) {
       id
       sId
