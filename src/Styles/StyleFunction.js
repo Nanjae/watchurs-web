@@ -5,5 +5,5 @@ export const hex2rgba = (hex, alpha = 1) => {
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-export const deepBuleColor = hex2rgba(Theme.deepBlueColor, 0.6);
-export const darkBuleColor = hex2rgba(Theme.darkBlueColor, 0.6);
+export const deepBuleColor = hex2rgba(Theme.deepBlueColor, 0.5);
+export const darkBuleColor = hex2rgba(Theme.darkBlueColor, 0.5);

@@ -17,17 +17,20 @@ export default createGlobalStyle`
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
         font-size: 16px;
+        text-rendering: optimizeLegibility;
     }
     a {
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
         color: ${props => props.theme.whiteColor};
         text-decoration: none;
+        text-rendering: optimizeLegibility;
     }
     input {
         font-family: "Nanum Gothic", sans-serif;
         font-weight: normal;
         outline: none;
+        text-rendering: optimizeLegibility;
     }
     button {
         outline: none;

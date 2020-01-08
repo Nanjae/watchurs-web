@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "../../../Components/Input";
 import IconSearch from "../../../Assets/Common/IconSearch.png";
-import BgImage from "../../../Assets/Common/runeterra-freljord-02-resized.png";
+import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import { darkBuleColor } from "../../../Styles/StyleFunction";
 import IconClose from "../../../Assets/Common/IconClose.png";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
@@ -343,11 +343,11 @@ export default () => {
   const { windowWidth, windowHeight } = useWindowDimensions();
   const scrollY = useWindowScroll(60);
   const fixedScrollY = windowHeight + scrollY;
-  const [adsClose, setAdsClose] = useState(false);
+  const [adsClose, setAdsClose] = useState(true);
 
-  console.log("height : " + windowHeight);
-  console.log("scrollY : " + scrollY);
-  console.log("fixed : " + fixedScrollY);
+  // console.log("height : " + windowHeight);
+  // console.log("scrollY : " + scrollY);
+  // console.log("fixed : " + fixedScrollY);
 
   const adsCloseHandler = () => {
     setAdsClose(adsClose ? false : true);

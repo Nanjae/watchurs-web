@@ -17,9 +17,7 @@ export default () => {
       <GlobalStyles />
       <Router>
         <Wrapper>
-          {/* <HeaderBg /> */}
           <Header />
-          {/* <Menu /> */}
           <DefaultRoute />
           <Footer />
         </Wrapper>

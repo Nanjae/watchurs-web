@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import LeagueHome from "../Routes/League/LeagueHome";
+import LeagueHome from "../Routes/League/LeagueHome/LeagueHome";
 // import FirstRanking from "../Routes/League/LeagueRanking/FirstRanking";
 // import LeagueFavorites from "../Routes/League/LeagueFavorites";
 // import LeagueContest from "../Routes/League/LeagueContest";
