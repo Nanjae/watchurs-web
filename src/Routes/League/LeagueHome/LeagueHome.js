@@ -21,20 +21,22 @@ const MainBgDiv = styled.div`
   background-repeat: no-repeat;
   background-position-x: 30%;
   background-position-y: 90%;
-  height: ${props => props.windowHeight}px;
   @media only screen and (max-width: 600px) {
     width: 100%;
-    min-height: 500px;
+    min-height: 600px;
   }
   @media only screen and (min-width: 600px) {
+    height: ${props => props.windowHeight}px;
     width: 100%;
     min-height: 600px;
   }
   @media only screen and (min-width: 1200px) {
+    height: ${props => props.windowHeight}px;
     width: 100%;
     min-height: 750px;
   }
   @media only screen and (min-width: 1800px) {
+    height: ${props => props.windowHeight}px;
     width: 100%;
     min-height: 900px;
   }
@@ -44,11 +46,10 @@ const MainOpacityDiv = styled.div`
   @media only screen and (max-width: 600px) {
     padding-top: 150px;
     min-height: 350px;
-    height: ${props => props.windowHeight - 150}px;
   }
   @media only screen and (min-width: 600px) {
     padding-top: 200px;
-    min-height: 400px;
+    min-height: 450px;
     height: ${props => props.windowHeight - 200}px;
   }
   @media only screen and (min-width: 1200px) {
@@ -70,9 +71,8 @@ const MainDiv = styled.div`
   align-items: center;
   @media only screen and (max-width: 600px) {
     padding: 0px 2%;
-    width: 96%;
-    min-height: 350px;
-    height: ${props => props.windowHeight - 150}px;
+    width: 98%;
+    min-height: 450px;
   }
   @media only screen and (min-width: 600px) {
     padding: 0px 10%;
