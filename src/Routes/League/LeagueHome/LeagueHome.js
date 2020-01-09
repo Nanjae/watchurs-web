@@ -49,7 +49,7 @@ const MainOpacityDiv = styled.div`
   }
   @media only screen and (min-width: 600px) {
     padding-top: 200px;
-    min-height: 450px;
+    min-height: 400px;
     height: ${props => props.windowHeight - 200}px;
   }
   @media only screen and (min-width: 1200px) {
@@ -72,7 +72,7 @@ const MainDiv = styled.div`
   @media only screen and (max-width: 600px) {
     padding: 0px 2%;
     width: 96%;
-    min-height: 450px;
+    min-height: 350px;
   }
   @media only screen and (min-width: 600px) {
     padding: 0px 10%;
