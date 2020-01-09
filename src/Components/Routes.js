@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import LeagueHome from "../Routes/League/LeagueHome/LeagueHome";
+import LeagueRank from "../Routes/League/LeagueRank/LeagueRank";
 // import FirstRanking from "../Routes/League/LeagueRanking/FirstRanking";
 // import LeagueFavorites from "../Routes/League/LeagueFavorites";
 // import LeagueContest from "../Routes/League/LeagueContest";
@@ -10,6 +11,8 @@ import LeagueHome from "../Routes/League/LeagueHome/LeagueHome";
 export const DefaultRoute = () => (
   <Switch>
     <Route exact path="/" component={LeagueHome} />
+    <Route exact path="/home" component={LeagueHome} />
+    <Route exact path="/rank" component={LeagueRank} />
     {/* <Route exact path="/ranking" component={FirstRanking} />
     <Route exact path="/ranking/1" component={FirstRanking} /> */}
     {/* <Route exact path="/ranking/2" component={SecondRanking} /> */}

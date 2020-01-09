@@ -10,7 +10,7 @@ const FooterDiv = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.blackBlueColor};
-  color: ${props => props.theme.fTheme};
+  color: ${props => props.theme.whiteColor};
   user-select: none;
   @media only screen and (max-width: 599px) {
     line-height: 12px;

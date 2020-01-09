@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import Input from "./Input";
 import IconSearch from "../Assets/Common/IconSearch.png";
 import IconInfo from "../Assets/Common/IconInfo.png";
@@ -119,7 +119,7 @@ const TitleBox = styled.div`
   }
 `;
 
-const TitleFstText = styled.div`
+const TitleFstText = styled(Link)`
   font-weight: bold;
   user-select: none;
   color: ${props => props.theme.whiteColor};
@@ -529,7 +529,7 @@ const MenuDiv = styled.div`
   }
 `;
 
-const MenuBox = styled.div`
+const MenuBox = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -582,7 +582,7 @@ export default withRouter(() => {
               <TopFstBox>
                 <TitleDiv>
                   <TitleBox>
-                    <TitleFstText>WATCHURS</TitleFstText>
+                    <TitleFstText to={"/home"}>WATCHURS</TitleFstText>
                     <TitleSndText>리그 오브 레전드</TitleSndText>
                   </TitleBox>
                 </TitleDiv>
@@ -624,13 +624,14 @@ export default withRouter(() => {
                   color: Theme.shinyOrangeColor,
                   fontWeight: "bold"
                 }}
+                to={"/home"}
               >
                 <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
-              <MenuBox>
+              <MenuBox to={"/rank"}>
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
-              <MenuBox>
+              <MenuBox to={"/"}>
                 <MenuText>등록 요청</MenuText>
               </MenuBox>
             </MenuDiv>
@@ -643,7 +644,7 @@ export default withRouter(() => {
               <TopFstBox>
                 <TitleDiv>
                   <TitleBox>
-                    <TitleFstText>WATCHURS</TitleFstText>
+                    <TitleFstText to="/home">WATCHURS</TitleFstText>
                     <TitleSndText>
                       {windowWidth >= 750 ? "리그 오브 레전드" : "LOL"}
                     </TitleSndText>
@@ -698,13 +699,14 @@ export default withRouter(() => {
                   color: Theme.shinyOrangeColor,
                   fontWeight: "bold"
                 }}
+                to="/home"
               >
                 <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
-              <MenuBox>
+              <MenuBox to="/rank">
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
-              <MenuBox>
+              <MenuBox to="/">
                 <MenuText>등록 요청</MenuText>
               </MenuBox>
             </MenuDiv>

@@ -4,7 +4,6 @@ import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo-hooks";
 import BoardCard from "./BoardCard";
 import BoardTitle from "./BoardTitle";
-import Loader from "../Loader";
 // import useWindowDimensions from "../../Hooks/useWindowDimensions";
 // import Loader from "../Loader";
 
@@ -79,18 +78,43 @@ const RankFstBoardBox = styled.div`
   }
 `;
 
+const RankSndBoardBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 599px) {
+    width: 100%;
+    min-width: 300px;
+    margin-left: 0px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 560px;
+    margin-left: 0px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 560px;
+    margin-left: 10px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 680px;
+    margin-left: 10px;
+  }
+`;
+
 export default () => {
   //   const { windowWidth, windowHeight } = useWindowDimensions();
 
-  const { data, loading } = useQuery(SEE_ALL_SUMMONER);
+  const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
+    variables: { from: 1, to: 10 }
+  });
   if (!loading) {
+    // console.log(data);
   }
 
   return (
     <RankBoard>
-      {loading ? (
-        <Loader />
-      ) : (
+      {loading ? null : (
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
             <RankFstBoardBox>
@@ -113,6 +137,28 @@ export default () => {
                 );
               })}
             </RankFstBoardBox>
+          )}
+          {data && data.seeAllSummoner && (
+            <RankSndBoardBox>
+              <BoardTitle />
+              {data.seeAllSummoner.map((summoner, index) => {
+                return (
+                  <BoardCard
+                    key={index}
+                    index={index}
+                    sName={summoner.sName}
+                    sAvatar={summoner.sAvatar}
+                    sTier={summoner.sTier}
+                    sRank={summoner.sRank}
+                    sPoints={summoner.sPoints}
+                    bId={summoner.sBroadcaster.bId}
+                    bName={summoner.sBroadcaster.bName}
+                    bAvatar={summoner.sBroadcaster.bAvatar}
+                    bPlatform={summoner.sBroadcaster.bPlatform}
+                  />
+                );
+              })}
+            </RankSndBoardBox>
           )}
         </RankBoardDiv>
       )}

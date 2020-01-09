@@ -7,7 +7,8 @@ import { darkBuleColor } from "../../../Styles/StyleFunction";
 import IconClose from "../../../Assets/Common/IconClose.png";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import { useWindowScroll } from "@react-hook/window-scroll";
-import RankBoard from "../../../Components/RankBoard/RankBoard";
+import RankBoard from "../../../Components/HomeRankBoard/RankBoard";
+import Footer from "../../../Components/Footer";
 
 const LeagueHome = styled.div``;
 
@@ -45,7 +46,7 @@ const MainBgDiv = styled.div`
 const MainOpacityDiv = styled.div`
   @media only screen and (max-width: 599px) {
     padding-top: 150px;
-    min-height: 350px;
+    min-height: 450px;
   }
   @media only screen and (min-width: 600px) {
     padding-top: 200px;
@@ -72,7 +73,7 @@ const MainDiv = styled.div`
   @media only screen and (max-width: 599px) {
     padding: 0px 2%;
     width: 96%;
-    min-height: 350px;
+    min-height: 450px;
   }
   @media only screen and (min-width: 600px) {
     padding: 0px 10%;
@@ -472,7 +473,8 @@ export default () => {
             )}
           </MainDiv>
         </MainOpacityDiv>
-        <RankBoard></RankBoard>
+        <RankBoard />
+        <Footer />
       </LeagueHomeDiv>
     </LeagueHome>
   );
