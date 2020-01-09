@@ -22,7 +22,7 @@ const Header = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -36,7 +36,7 @@ const HeaderDiv = styled.div``;
 
 const TopOpacityDiv = styled.div`
   width: 100%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     height: 114px;
   }
   @media only screen and (min-width: 600px) {
@@ -54,7 +54,7 @@ const TopBoxDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding: 0px 2%;
     width: 96%;
     height: 114px;
@@ -79,7 +79,7 @@ const TopBoxDiv = styled.div`
 const TopFstBox = styled.div`
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -90,7 +90,7 @@ const TopFstBox = styled.div`
 `;
 
 const TitleDiv = styled.div`
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-top: 12px;
     display: flex;
     justify-content: space-between;
@@ -109,7 +109,7 @@ const TitleDiv = styled.div`
 const TitleBox = styled.div`
   display: flex;
   align-items: flex-end;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -124,7 +124,7 @@ const TitleFstText = styled.div`
   user-select: none;
   color: ${props => props.theme.whiteColor};
   letter-spacing: -1.5px;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding-right: 4px;
     font-size: 28px;
     padding-left: 4px;
@@ -147,7 +147,7 @@ const TitleSndText = styled.div`
   font-weight: bold;
   user-select: none;
   color: ${props => props.theme.orangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 14px;
   }
   @media only screen and (min-width: 600px) {
@@ -166,7 +166,7 @@ const TopSndBox = styled.div`
   justify-content: space-between;
   align-items: center;
   user-select: none;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-top: 8px;
     align-items: flex-end;
   }
@@ -184,7 +184,7 @@ const TopSndBox = styled.div`
 const SiteInfoBox = styled.div`
   display: flex;
   align-items: flex-end;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -196,7 +196,7 @@ const SiteInfoBox = styled.div`
 
 const SiteInfoFstText = styled.div`
   color: ${props => props.theme.darkOrangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 11px;
     font-weight: bold;
     padding-left: 4px;
@@ -217,7 +217,7 @@ const SiteInfoFstText = styled.div`
 
 const SiteInfoSndText = styled.div`
   color: ${props => props.theme.whiteColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
@@ -233,7 +233,7 @@ const SiteInfoSndText = styled.div`
 
 const SiteInfoTrdText = styled.div`
   color: ${props => props.theme.orangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-left: 3px;
     font-size: 11px;
     font-weight: bold;
@@ -257,7 +257,7 @@ const SiteInfoTrdText = styled.div`
 
 const SiteInfoFthText = styled.div`
   color: ${props => props.theme.lightOrangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-left: 3px;
     font-size: 11px;
     font-weight: bold;
@@ -282,7 +282,7 @@ const SiteInfoFthText = styled.div`
 const CountBroadBox = styled.div`
   display: flex;
   align-items: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
@@ -300,7 +300,7 @@ const InfoIcon = styled.div`
   background-image: url(${props => props.url});
   background-repeat: no-repeat;
   background-position: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     background-size: 9px;
     width: 10px;
     height: 10px;
@@ -328,7 +328,7 @@ const InfoIcon = styled.div`
 
 const CountBroadFstText = styled.div`
   color: ${props => props.theme.whiteColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -342,7 +342,7 @@ const ArrowBox = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-left: 3px;
     margin-right: 4px;
   }
@@ -359,7 +359,7 @@ const ArrowBox = styled.div`
 
 const CountBroadSndText = styled.div`
   color: ${props => props.theme.orangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -373,7 +373,7 @@ const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-repeat: no-repeat;
   background-position: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     background-size: 9px;
     width: 10px;
     height: 10px;
@@ -403,7 +403,7 @@ const SearchInputDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
@@ -420,7 +420,7 @@ const SearchInputBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
     padding: 0px 10px;
     height: 32px;
@@ -444,7 +444,7 @@ const SearchInputBox = styled.div`
 
 const SearchInput = styled(Input)`
   font-weight: bold;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 13px;
   }
   @media only screen and (min-width: 600px) {
@@ -462,7 +462,7 @@ const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   cursor: pointer;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-left: 3px;
     width: 12px;
     height: 12px;
@@ -485,7 +485,7 @@ const SearchIcon = styled.div`
 `;
 
 const BotOpacityDiv = styled.div`
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
     height: 36px;
   }
@@ -507,7 +507,7 @@ const MenuDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding: 0px 0%;
     font-size: 12px;
     width: 100%;
@@ -536,7 +536,7 @@ const MenuBox = styled.div`
   user-select: none;
   cursor: pointer;
   color: ${props => props.theme.whiteColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 72px;
     height: 36px;
   }
@@ -555,7 +555,7 @@ const MenuBox = styled.div`
 `;
 
 const MenuText = styled.div`
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }

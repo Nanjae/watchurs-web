@@ -12,7 +12,7 @@ const FooterDiv = styled.div`
   background-color: ${props => props.theme.blackBlueColor};
   color: ${props => props.theme.fTheme};
   user-select: none;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     line-height: 12px;
     height: 70px;
     padding: 0px 0%;
@@ -42,7 +42,7 @@ const FooterDiv = styled.div`
 const CopyrightFstBox = styled.footer`
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -55,7 +55,7 @@ const CopyrightFstBox = styled.footer`
 const CopyrightSndBox = styled.footer`
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -67,7 +67,7 @@ const CopyrightSndBox = styled.footer`
 
 const CopyrightFstText = styled.div`
   text-align: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
   }
@@ -80,7 +80,7 @@ const CopyrightFstText = styled.div`
 const CopyrightSndText = styled.div`
   color: ${props => props.theme.lightOrangeColor};
   text-align: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-weight: bold;
     margin: 0px 2px;
   }

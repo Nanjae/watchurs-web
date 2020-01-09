@@ -34,7 +34,7 @@ const RankBoardDiv = styled.div`
   align-items: center;
   height: fit-content;
   background-color: ${props => props.theme.grayColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     flex-direction: column;
     padding: 10px 0px;
   }
@@ -55,24 +55,24 @@ const RankFstBoardBox = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
     min-width: 300px;
     margin-right: 0px;
     margin-bottom: 10px;
   }
   @media only screen and (min-width: 600px) {
-    min-width: 550px;
+    min-width: 560px;
     margin-right: 0px;
     margin-bottom: 10px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 550px;
+    min-width: 560px;
     margin-right: 10px;
     margin-bottom: 0px;
   }
   @media only screen and (min-width: 1800px) {
-    min-width: 650px;
+    min-width: 680px;
     margin-right: 10px;
     margin-bottom: 0px;
   }
@@ -83,21 +83,21 @@ const RankSndBoardBox = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
     min-width: 300px;
     margin-left: 0px;
   }
   @media only screen and (min-width: 600px) {
-    min-width: 550px;
+    min-width: 560px;
     margin-left: 0px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 550px;
+    min-width: 560px;
     margin-left: 10px;
   }
   @media only screen and (min-width: 1800px) {
-    min-width: 650px;
+    min-width: 680px;
     margin-left: 10px;
   }
 `;

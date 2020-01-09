@@ -14,7 +14,7 @@ const BoardTitleDiv = styled.div`
   font-weight: bold;
   background-color: ${props => props.theme.purpleColor};
   border-bottom: 2px solid ${props => props.theme.grayColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding: 6px 0px;
     font-size: 12px;
   }
@@ -35,7 +35,7 @@ const BoardTitleDiv = styled.div`
 const PlatformIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-left: 6px;
     margin-right: 6px;
     width: 16px;

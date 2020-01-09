@@ -21,7 +21,7 @@ const MainBgDiv = styled.div`
   background-repeat: no-repeat;
   background-position-x: 30%;
   background-position-y: 90%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
     min-height: 600px;
   }
@@ -43,7 +43,7 @@ const MainBgDiv = styled.div`
 `;
 
 const MainOpacityDiv = styled.div`
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding-top: 150px;
     min-height: 350px;
   }
@@ -69,7 +69,7 @@ const MainDiv = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding: 0px 2%;
     width: 96%;
     min-height: 350px;
@@ -97,7 +97,7 @@ const MainDiv = styled.div`
 const MainTextBox = styled.div`
   user-select: none;
   text-align: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-top: 60px;
     margin-bottom: 30px;
   }
@@ -117,7 +117,7 @@ const MainTextBox = styled.div`
 
 const MainFstText = styled.div`
   color: ${props => props.theme.orangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 18px;
     font-weight: bold;
   }
@@ -138,7 +138,7 @@ const MainFstText = styled.div`
 const MainSndText = styled.div`
   color: ${props => props.theme.whiteColor};
   letter-spacing: -1.5px;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin: 6px 0px;
     font-size: 52px;
     font-weight: bold;
@@ -162,7 +162,7 @@ const MainSndText = styled.div`
 
 const MainTrdText = styled.div`
   color: ${props => props.theme.shinyOrangeColor};
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     font-size: 18px;
     font-weight: bold;
     line-height: 24px;
@@ -188,7 +188,7 @@ const SearchInputDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 95%;
   }
   @media only screen and (min-width: 600px) {
@@ -206,7 +206,7 @@ const SearchInput = styled(Input)`
   background-color: ${props => props.theme.deepBlueColor};
   color: white;
   font-weight: bold;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     padding: 12px;
     font-size: 14px;
   }
@@ -231,7 +231,7 @@ const SearchIconBox = styled.div`
   background-color: ${props => props.theme.orangeColor};
   border-left: 4px solid ${props => props.theme.orangeColor};
   cursor: pointer;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 48px;
     height: 48px;
   }
@@ -252,7 +252,7 @@ const SearchIconBox = styled.div`
 const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 24px;
     height: 24px;
   }
@@ -274,7 +274,7 @@ const AdsBottomDiv = styled.div`
   position: fixed;
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
@@ -291,7 +291,7 @@ const AdsBottomDiv = styled.div`
 const CloseIconBox = styled.div`
   z-index: 100;
   background-color: white;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     margin-left: -14px;
     height: 14px;
   }
@@ -315,7 +315,7 @@ const CloseIcon = styled.div`
   background-position-x: center;
   background-position-y: center;
   cursor: pointer;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 599px) {
     background-size: 10px;
     width: 14px;
     height: 14px;
