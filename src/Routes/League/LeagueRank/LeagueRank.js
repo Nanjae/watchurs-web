@@ -62,8 +62,7 @@ const MainDiv = styled.div`
   align-items: center;
   background-color: ${props => props.theme.grayColor};
   @media only screen and (max-width: 599px) {
-    padding: 0px 2%;
-    width: 96%;
+    width: 100%;
     min-height: 450px;
     height: fit-content;
   }

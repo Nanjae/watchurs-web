@@ -15,20 +15,24 @@ const BoardTitleDiv = styled.div`
   background-color: ${props => props.theme.purpleColor};
   border-bottom: 2px solid ${props => props.theme.grayColor};
   @media only screen and (max-width: 599px) {
-    padding: 6px 0px;
+    /* padding: 6px 0px; */
     font-size: 12px;
+    height: 30px;
   }
   @media only screen and (min-width: 600px) {
-    padding: 8px 0px;
+    /* padding: 8px 0px; */
     font-size: 14px;
+    height: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 8px 0px;
+    /* padding: 8px 0px; */
     font-size: 14px;
+    height: 40px;
   }
   @media only screen and (min-width: 1800px) {
-    padding: 10px 0px;
+    /* padding: 10px 0px; */
     font-size: 16px;
+    height: 50px;
   }
 `;
 

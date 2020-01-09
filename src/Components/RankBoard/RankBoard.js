@@ -27,7 +27,9 @@ const SEE_ALL_SUMMONER = gql`
   }
 `;
 
-const RankBoard = styled.div``;
+const RankBoard = styled.div`
+  width: 100%;
+`;
 
 const RankBoardDiv = styled.div`
   display: flex;
@@ -35,6 +37,7 @@ const RankBoardDiv = styled.div`
   align-items: center;
   height: fit-content;
   background-color: ${props => props.theme.grayColor};
+  width: 100%;
   @media only screen and (max-width: 599px) {
     flex-direction: column;
     padding: 10px 0px;
@@ -48,6 +51,8 @@ const RankBoardDiv = styled.div`
     padding: 20px 0px;
   }
   @media only screen and (min-width: 1800px) {
+    flex-direction: row;
+    padding: 20px 0px;
   }
 `;
 
@@ -57,25 +62,16 @@ const RankFstBoardBox = styled.div`
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
-    width: 100%;
-    min-width: 300px;
-    margin-right: 0px;
-    margin-bottom: 10px;
+    min-width: 100%;
   }
   @media only screen and (min-width: 600px) {
     min-width: 560px;
-    margin-right: 0px;
-    margin-bottom: 10px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 560px;
-    margin-right: 10px;
-    margin-bottom: 0px;
+    min-width: 800px;
   }
   @media only screen and (min-width: 1800px) {
-    min-width: 680px;
-    margin-right: 10px;
-    margin-bottom: 0px;
+    min-width: 1050px;
   }
 `;
 
