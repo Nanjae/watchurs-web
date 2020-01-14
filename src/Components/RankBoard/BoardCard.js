@@ -11,6 +11,8 @@ import emblemDiamond from "../../Assets/League/EmblemDiamond.png";
 import emblemMaster from "../../Assets/League/EmblemMaster.png";
 import emblemGrandmaster from "../../Assets/League/EmblemGrandmaster.png";
 import emblemChallenger from "../../Assets/League/EmblemChallenger.png";
+import Theme from "../../Styles/Theme";
+import IconArrow from "../../Assets/Common/IconArrow.png";
 
 const BoardCard = styled.div``;
 
@@ -54,7 +56,7 @@ const TableRankBox = styled.div`
     width: 7%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 7%;
+    width: 4%;
   }
 `;
 
@@ -74,7 +76,7 @@ const BroadInfoBox = styled.div`
     width: 31%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 31%;
+    width: 23%;
   }
 `;
 
@@ -144,7 +146,7 @@ const LeagueSNameBox = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 32%;
+  width: 23%;
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
@@ -211,7 +213,7 @@ const LeagueTierBox = styled.div`
     width: 31%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 31%;
+    width: 23%;
   }
 `;
 
@@ -276,6 +278,78 @@ const LeagueRankText = styled.div`
 
 const LeaguePointsText = styled.div``;
 
+const LeagueWinRateBox = styled.div`
+  width: 23%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const LeagueWinRateBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 24px;
+  background: linear-gradient(
+    to right,
+    ${props => props.theme.orangeColor} 0%,
+    ${props => props.theme.orangeColor} ${props => props.winRate}%,
+    ${props => props.theme.darkOrangeColor} ${props => props.winRate}%,
+    ${props => props.theme.darkOrangeColor} 100%
+  );
+  border-radius: 10px;
+  margin: 0px 10px;
+  color: ${props => props.theme.whiteColor};
+`;
+
+const LeagueWinsText = styled.div`
+  font-size: 12px;
+  margin-left: 6px;
+  font-weight: normal;
+`;
+
+const LeagueLossesText = styled.div`
+  font-size: 12px;
+  margin-right: 6px;
+  font-weight: normal;
+`;
+
+const LeagueWinRateText = styled.div``;
+
+const TableArrowBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 599px) {
+    width: 5%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 7%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 7%;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 4%;
+  }
+`;
+
+const ArrowIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
 let sTierEmblem = emblemUnranked;
 let sTierName = "랭크없음";
 
@@ -288,7 +362,10 @@ export default ({
   sAvatar,
   sTier,
   sRank,
-  sPoints
+  sPoints,
+  sWins,
+  sLosses,
+  sWinRate
 }) => {
   if (sTier === "IRON") {
     sTierEmblem = emblemIron;
@@ -347,6 +424,26 @@ export default ({
           {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
           <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
         </LeagueTierBox>
+        <LeagueWinRateBox>
+          <LeagueWinRateBar
+            winRate={sWinRate}
+            style={
+              sWinRate === "--"
+                ? {
+                    backgroundColor: Theme.grayColor,
+                    color: Theme.blackColor
+                  }
+                : null
+            }
+          >
+            <LeagueWinsText>{sWins}승</LeagueWinsText>
+            <LeagueLossesText>{sLosses}패</LeagueLossesText>
+          </LeagueWinRateBar>
+          <LeagueWinRateText>{sWinRate}%</LeagueWinRateText>
+        </LeagueWinRateBox>
+        <TableArrowBox>
+          <ArrowIcon url={IconArrow} />
+        </TableArrowBox>
       </BoardCardDiv>
     </BoardCard>
   );

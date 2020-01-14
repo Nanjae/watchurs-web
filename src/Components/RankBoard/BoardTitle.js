@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import Theme from "../../Styles/Theme";
 
 const BoardTitle = styled.div``;
 
@@ -12,8 +12,8 @@ const BoardTitleDiv = styled.div`
   width: 100%;
   user-select: none;
   font-weight: bold;
-  background-color: ${props => props.theme.purpleColor};
-  border-bottom: 2px solid ${props => props.theme.grayColor};
+  background-color: ${props => props.theme.darkGrayColor};
+  color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
     font-size: 12px;
     height: 30px;
@@ -27,58 +27,47 @@ const BoardTitleDiv = styled.div`
     height: 40px;
   }
   @media only screen and (min-width: 1800px) {
-    font-size: 16px;
     height: 50px;
+    font-size: 14px;
   }
 `;
 
-const PlatformIcon = styled.div`
-  background-image: url(${props => props.url});
-  background-size: cover;
-  @media only screen and (max-width: 599px) {
-    margin-left: 6px;
-    margin-right: 6px;
-    width: 16px;
-    height: 16px;
-  }
-  @media only screen and (min-width: 600px) {
-    margin-left: 8px;
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
-  }
-  @media only screen and (min-width: 1200px) {
-    margin-left: 8px;
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
-  }
-  @media only screen and (min-width: 1800px) {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 24px;
-    height: 24px;
-  }
+const PlatformDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
 `;
 
-const TitleText = styled.div`
-  color: ${props => props.theme.whiteColor};
-  @media only screen and (max-width: 599px) {
-  }
-  @media only screen and (min-width: 600px) {
-  }
-  @media only screen and (min-width: 1200px) {
-  }
-  @media only screen and (min-width: 1800px) {
-  }
+const PlatformBox = styled.div`
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
 `;
+
+const PlatformText = styled.div``;
 
 export default () => {
   return (
     <BoardTitle>
       <BoardTitleDiv>
-        <PlatformIcon url={twitchLogo} />
-        <TitleText>브로드캐스터 전체 랭킹</TitleText>
+        <PlatformDiv>
+          <PlatformBox
+            style={{
+              backgroundColor: Theme.orangeColor,
+              border: `2px solid ${Theme.orangeColor}`
+            }}
+          >
+            <PlatformText>전체랭킹</PlatformText>
+          </PlatformBox>
+          <PlatformBox style={{ border: `0px solid ${Theme.twitchColor}` }}>
+            <PlatformText>트위치</PlatformText>
+          </PlatformBox>
+          <PlatformBox style={{ border: `0px solid ${Theme.afreecaColor}` }}>
+            <PlatformText>아프리카</PlatformText>
+          </PlatformBox>
+        </PlatformDiv>
       </BoardTitleDiv>
     </BoardTitle>
   );
