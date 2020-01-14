@@ -5,6 +5,7 @@ import { useQuery } from "react-apollo-hooks";
 import BoardCard from "./BoardCard";
 import BoardTitle from "./BoardTitle";
 import Loader from "../Loader";
+import BoardTag from "./BoardTag";
 // import useWindowDimensions from "../../Hooks/useWindowDimensions";
 // import Loader from "../Loader";
 
@@ -18,6 +19,8 @@ const SEE_ALL_SUMMONER = gql`
       sTier
       sRank
       sPoints
+      sWins
+      sLosses
       sBroadcaster {
         bName
         bAvatar
@@ -27,7 +30,9 @@ const SEE_ALL_SUMMONER = gql`
   }
 `;
 
-const RankBoard = styled.div``;
+const RankBoard = styled.div`
+  width: 100%;
+`;
 
 const RankBoardDiv = styled.div`
   display: flex;
@@ -35,53 +40,42 @@ const RankBoardDiv = styled.div`
   align-items: center;
   height: fit-content;
   background-color: ${props => props.theme.grayColor};
+  width: 100%;
   @media only screen and (max-width: 599px) {
-    flex-direction: column;
     padding: 10px 0px;
   }
   @media only screen and (min-width: 600px) {
-    flex-direction: column;
     padding: 10px 0px;
   }
   @media only screen and (min-width: 1200px) {
-    flex-direction: row;
     padding: 20px 0px;
   }
   @media only screen and (min-width: 1800px) {
+    padding: 20px 0px;
   }
 `;
 
-const RankFstBoardBox = styled.div`
+const RankBoardBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
+  width: 100%;
   @media only screen and (max-width: 599px) {
-    width: 100%;
     min-width: 300px;
-    margin-right: 0px;
-    margin-bottom: 10px;
   }
   @media only screen and (min-width: 600px) {
     min-width: 560px;
-    margin-right: 0px;
-    margin-bottom: 10px;
   }
   @media only screen and (min-width: 1200px) {
     min-width: 560px;
-    margin-right: 10px;
-    margin-bottom: 0px;
   }
   @media only screen and (min-width: 1800px) {
     min-width: 680px;
-    margin-right: 10px;
-    margin-bottom: 0px;
   }
 `;
 
 export default () => {
-  //   const { windowWidth, windowHeight } = useWindowDimensions();
-
   const { data, loading } = useQuery(SEE_ALL_SUMMONER);
   if (!loading) {
   }
@@ -93,8 +87,9 @@ export default () => {
       ) : (
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
-            <RankFstBoardBox>
+            <RankBoardBox>
               <BoardTitle />
+              <BoardTag />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard
@@ -109,10 +104,21 @@ export default () => {
                     bName={summoner.sBroadcaster.bName}
                     bAvatar={summoner.sBroadcaster.bAvatar}
                     bPlatform={summoner.sBroadcaster.bPlatform}
+                    sWins={summoner.sWins}
+                    sLosses={summoner.sLosses}
+                    sWinRate={
+                      summoner.sWins + summoner.sLosses === 0
+                        ? "--"
+                        : Math.round(
+                            (summoner.sWins /
+                              (summoner.sWins + summoner.sLosses)) *
+                              100
+                          )
+                    }
                   />
                 );
               })}
-            </RankFstBoardBox>
+            </RankBoardBox>
           )}
         </RankBoardDiv>
       )}

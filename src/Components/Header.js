@@ -4,7 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import Input from "./Input";
 import IconSearch from "../Assets/Common/IconSearch.png";
 import IconInfo from "../Assets/Common/IconInfo.png";
-import IconArrow from "../Assets/Common/IconArrow.png";
+import IconCircleArrow from "../Assets/Common/IconCircleArrow.png";
 import Theme from "../Styles/Theme";
 import { deepBuleColor, darkBuleColor } from "../Styles/StyleFunction";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
@@ -601,7 +601,7 @@ export default withRouter(() => {
                       <CountBroadSndText>
                         {data.countAllSummoner}명
                       </CountBroadSndText>
-                      <ArrowIcon url={IconArrow} />
+                      <ArrowIcon url={IconCircleArrow} />
                     </ArrowBox>
                   </CountBroadBox>
                 )}
@@ -621,7 +621,7 @@ export default withRouter(() => {
               <MenuBox
                 style={{
                   backgroundColor: Theme.deepBlueColor,
-                  color: Theme.shinyOrangeColor,
+                  color: Theme.orangeColor,
                   fontWeight: "bold"
                 }}
                 to={"/home"}
@@ -684,7 +684,7 @@ export default withRouter(() => {
                       <CountBroadSndText>
                         {data.countAllSummoner}명
                       </CountBroadSndText>
-                      <ArrowIcon url={IconArrow} />
+                      <ArrowIcon url={IconCircleArrow} />
                     </ArrowBox>
                   </CountBroadBox>
                 )}
@@ -696,7 +696,7 @@ export default withRouter(() => {
               <MenuBox
                 style={{
                   backgroundColor: Theme.deepBlueColor,
-                  color: Theme.shinyOrangeColor,
+                  color: Theme.orangeColor,
                   fontWeight: "bold"
                 }}
                 to="/home"
