@@ -97,6 +97,14 @@ const MainDiv = styled.div`
   }
 `;
 
+const TrashText = styled.div`
+  display: flex;
+  padding-top: 50px;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+`;
+
 export default withRouter(
   ({
     match: {
@@ -129,7 +137,10 @@ export default withRouter(
           <MainDiv windowHeight={windowHeight}>
             {loading && <Loader />}
             {!loading && data && data.seeOneBroadcaster && (
-              <>{data.seeOneBroadcaster[0].bName}</>
+              <>
+                <TrashText>{data.seeOneBroadcaster[0].bName} 페이지</TrashText>
+                <TrashText>프론트 디자인 어떻게 할까~?</TrashText>
+              </>
             )}
           </MainDiv>
           <Footer />

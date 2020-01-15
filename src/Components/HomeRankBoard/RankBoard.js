@@ -8,7 +8,7 @@ import BoardTitle from "./BoardTitle";
 // import Loader from "../Loader";
 
 const SEE_ALL_SUMMONER = gql`
-  query seeAllSummoner($from: Int, $to: Int) {
+  query seeAllSummoner($from: String, $to: String) {
     seeAllSummoner(from: $from, to: $to) {
       id
       sId
@@ -107,7 +107,7 @@ export default () => {
   //   const { windowWidth, windowHeight } = useWindowDimensions();
 
   const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
-    variables: { from: 1, to: 10 }
+    variables: { from: "1", to: "10" }
   });
   if (!loading) {
     // console.log(data);

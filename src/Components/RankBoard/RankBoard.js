@@ -6,11 +6,12 @@ import BoardCard from "./BoardCard";
 import BoardTitle from "./BoardTitle";
 import Loader from "../Loader";
 import BoardTag from "./BoardTag";
+import BoardNext from "./BoardNext";
 // import useWindowDimensions from "../../Hooks/useWindowDimensions";
 // import Loader from "../Loader";
 
 const SEE_ALL_SUMMONER = gql`
-  query seeAllSummoner($from: Int, $to: Int) {
+  query seeAllSummoner($from: String, $to: String) {
     seeAllSummoner(from: $from, to: $to) {
       id
       sId
@@ -43,16 +44,12 @@ const RankBoardDiv = styled.div`
   background-color: ${props => props.theme.grayColor};
   width: 100%;
   @media only screen and (max-width: 599px) {
-    padding: 10px 0px;
   }
   @media only screen and (min-width: 600px) {
-    padding: 10px 0px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 20px 0px;
   }
   @media only screen and (min-width: 1800px) {
-    padding: 20px 0px;
   }
 `;
 
@@ -76,8 +73,13 @@ const RankBoardBox = styled.div`
   }
 `;
 
-export default () => {
-  const { data, loading } = useQuery(SEE_ALL_SUMMONER);
+export default ({ linkData }) => {
+  const from = (linkData.page - 1) * 10 + 1;
+  const to = linkData.page * 10;
+
+  const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
+    variables: { from: `${from}`, to: `${to}` }
+  });
   if (!loading) {
   }
 
@@ -89,13 +91,14 @@ export default () => {
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
             <RankBoardBox>
+              <BoardNext />
               <BoardTitle />
               <BoardTag />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard
                     key={index}
-                    index={index}
+                    index={parseInt(from) + index}
                     sName={summoner.sName}
                     sAvatar={summoner.sAvatar}
                     sTier={summoner.sTier}
@@ -119,6 +122,7 @@ export default () => {
                   />
                 );
               })}
+              <BoardNext />
             </RankBoardBox>
           )}
         </RankBoardDiv>

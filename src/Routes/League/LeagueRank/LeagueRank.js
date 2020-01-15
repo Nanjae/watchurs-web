@@ -5,6 +5,7 @@ import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import RankBoard from "../../../Components/RankBoard/RankBoard";
 import Footer from "../../../Components/Footer";
+import { withRouter } from "react-router-dom";
 // import { useWindowScroll } from "@react-hook/window-scroll";
 
 const LeagueRank = styled.div``;
@@ -86,7 +87,7 @@ const MainDiv = styled.div`
   }
 `;
 
-export default () => {
+export default withRouter(({ match: { params: page } }) => {
   const { windowHeight } = useWindowDimensions();
   //   const scrollY = useWindowScroll(60);
   //   const fixedScrollY = windowHeight + scrollY;
@@ -106,10 +107,10 @@ export default () => {
         <MainBgDiv windowHeight={windowHeight} url={BgImage} />
         <MainOpacityDiv style={{ backgroundColor: darkBuleColor }} />
         <MainDiv windowHeight={windowHeight}>
-          <RankBoard />
+          <RankBoard linkData={page} />
         </MainDiv>
         <Footer />
       </LeagueRankDiv>
     </LeagueRank>
   );
-};
+});

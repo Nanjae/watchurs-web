@@ -573,6 +573,8 @@ export default withRouter(() => {
     // console.log(data);
   }
 
+  const page = 1;
+
   return (
     <Header>
       {windowWidth < 600 ? (
@@ -703,12 +705,12 @@ export default withRouter(() => {
               >
                 <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
-              <MenuBox to="/rank">
+              <MenuBox to={`/rank/${page}`}>
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
-              <MenuBox to="/">
+              {/* <MenuBox to="/">
                 <MenuText>등록 요청</MenuText>
-              </MenuBox>
+              </MenuBox> */}
             </MenuDiv>
           </BotOpacityDiv>
         </HeaderDiv>

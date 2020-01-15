@@ -409,7 +409,7 @@ export default ({
     <BoardCard>
       <BoardCardDiv to={`/detail/${bId}`}>
         <TableRankBox>
-          <TableRankText>{index + 1}</TableRankText>
+          <TableRankText>{index}</TableRankText>
         </TableRankBox>
         <BroadInfoBox>
           <BroadPlatform url={bPlatform ? twitchLogo : twitchLogo} />
