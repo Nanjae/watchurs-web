@@ -13,10 +13,11 @@ import emblemGrandmaster from "../../Assets/League/EmblemGrandmaster.png";
 import emblemChallenger from "../../Assets/League/EmblemChallenger.png";
 import Theme from "../../Styles/Theme";
 import IconArrow from "../../Assets/Common/IconArrow.png";
+import { Link } from "react-router-dom";
 
 const BoardCard = styled.div``;
 
-const BoardCardDiv = styled.div`
+const BoardCardDiv = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -355,6 +356,7 @@ let sTierName = "랭크없음";
 
 export default ({
   index,
+  bId,
   bName,
   bAvatar,
   bPlatform,
@@ -405,7 +407,7 @@ export default ({
 
   return (
     <BoardCard>
-      <BoardCardDiv>
+      <BoardCardDiv to={`/detail/${bId}`}>
         <TableRankBox>
           <TableRankText>{index + 1}</TableRankText>
         </TableRankBox>

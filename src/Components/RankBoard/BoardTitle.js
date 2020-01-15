@@ -27,7 +27,7 @@ const BoardTitleDiv = styled.div`
     height: 40px;
   }
   @media only screen and (min-width: 1800px) {
-    height: 50px;
+    height: 60px;
     font-size: 14px;
   }
 `;

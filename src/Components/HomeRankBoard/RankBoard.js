@@ -18,6 +18,7 @@ const SEE_ALL_SUMMONER = gql`
       sRank
       sPoints
       sBroadcaster {
+        bId
         bName
         bAvatar
         bPlatform

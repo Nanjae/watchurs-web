@@ -22,6 +22,7 @@ const SEE_ALL_SUMMONER = gql`
       sWins
       sLosses
       sBroadcaster {
+        bId
         bName
         bAvatar
         bPlatform
