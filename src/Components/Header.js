@@ -622,7 +622,8 @@ export default withRouter(({ location }) => {
             <MenuDiv>
               <MenuBox
                 style={
-                  location.pathname.split("/")[1] === ("" || "home")
+                  location.pathname.split("/")[1] === "" ||
+                  location.pathname.split("/")[1] === "home"
                     ? {
                         backgroundColor: Theme.deepBlueColor,
                         color: Theme.orangeColor,
@@ -712,7 +713,8 @@ export default withRouter(({ location }) => {
             <MenuDiv>
               <MenuBox
                 style={
-                  location.pathname.split("/")[1] === ("" || "home")
+                  location.pathname.split("/")[1] === "" ||
+                  location.pathname.split("/")[1] === "home"
                     ? {
                         backgroundColor: Theme.deepBlueColor,
                         color: Theme.orangeColor,

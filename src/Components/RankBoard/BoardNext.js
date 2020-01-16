@@ -18,11 +18,11 @@ const BoardNextDiv = styled.div`
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
-    padding: 20px 0px;
+    padding: 10px 0px;
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 20px 0px;
+    padding: 15px 0px;
     font-size: 12px;
   }
   @media only screen and (min-width: 1800px) {
