@@ -31,7 +31,7 @@ const BoardCardDiv = styled(Link)`
   }
   @media only screen and (min-width: 600px) {
     height: 40px;
-    font-size: 12px;
+    font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {
     height: 40px;
@@ -51,10 +51,10 @@ const TableRankBox = styled.div`
     width: 5%;
   }
   @media only screen and (min-width: 600px) {
-    width: 7%;
+    width: 4%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 7%;
+    width: 4%;
   }
   @media only screen and (min-width: 1800px) {
     width: 4%;
@@ -71,10 +71,10 @@ const BroadInfoBox = styled.div`
     width: 29%;
   }
   @media only screen and (min-width: 600px) {
-    width: 31%;
+    width: 24%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 31%;
+    width: 23%;
   }
   @media only screen and (min-width: 1800px) {
     width: 23%;
@@ -90,14 +90,14 @@ const BroadPlatform = styled.div`
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
-    margin-right: 5px;
-    margin-left: 5px;
-    width: 16px;
-    height: 16px;
+    margin-right: 3px;
+    margin-left: 3px;
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 4px;
+    margin-left: 4px;
     width: 16px;
     height: 16px;
   }
@@ -120,16 +120,16 @@ const BroadAvatar = styled.div`
     margin-right: 2px;
   }
   @media only screen and (min-width: 600px) {
-    border-radius: 12px;
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
     border-radius: 12px;
     width: 24px;
     height: 24px;
-    margin-right: 5px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
     border-radius: 12px;
@@ -147,14 +147,17 @@ const LeagueSNameBox = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 23%;
   @media only screen and (max-width: 599px) {
+    width: 34%;
   }
   @media only screen and (min-width: 600px) {
+    width: 24%;
   }
   @media only screen and (min-width: 1200px) {
+    width: 23%;
   }
   @media only screen and (min-width: 1800px) {
+    width: 23%;
   }
 `;
 
@@ -167,10 +170,10 @@ const LeagueSAvatar = styled.div`
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
     width: 24px;
@@ -208,10 +211,10 @@ const LeagueTierBox = styled.div`
     width: 34%;
   }
   @media only screen and (min-width: 600px) {
-    width: 31%;
+    width: 24%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 31%;
+    width: 23%;
   }
   @media only screen and (min-width: 1800px) {
     width: 23%;
@@ -227,16 +230,16 @@ const LeagueTierEmblem = styled.div`
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
     width: 24px;
     height: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
     width: 24px;
@@ -252,10 +255,10 @@ const LeagueTierText = styled.div`
     margin-right: 2px;
   }
   @media only screen and (min-width: 600px) {
-    margin-right: 5px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-right: 5px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
     margin-right: 5px;
@@ -267,10 +270,10 @@ const LeagueRankText = styled.div`
     margin-right: 2px;
   }
   @media only screen and (min-width: 600px) {
-    margin-right: 5px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-right: 5px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
     margin-right: 5px;
@@ -280,18 +283,28 @@ const LeagueRankText = styled.div`
 const LeaguePointsText = styled.div``;
 
 const LeagueWinRateBox = styled.div`
-  width: 23%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media only screen and (max-width: 599px) {
+    width: 34%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 24%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 23%;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 23%;
+  }
 `;
 
 const LeagueWinRateBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
-  height: 24px;
+  width: 200px;
   background: linear-gradient(
     to right,
     ${props => props.theme.orangeColor} 0%,
@@ -300,20 +313,59 @@ const LeagueWinRateBar = styled.div`
     ${props => props.theme.darkOrangeColor} 100%
   );
   border-radius: 10px;
-  margin: 0px 10px;
   color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 599px) {
+    height: 16px;
+    font-size: 10px;
+    margin: 0px 6px;
+  }
+  @media only screen and (min-width: 600px) {
+    height: 20px;
+    font-size: 10px;
+    margin: 0px 6px;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 22px;
+    font-size: 12px;
+    margin: 0px 8px;
+  }
+  @media only screen and (min-width: 1800px) {
+    height: 24px;
+    font-size: 12px;
+    margin: 0px 10px;
+  }
 `;
 
 const LeagueWinsText = styled.div`
-  font-size: 12px;
-  margin-left: 6px;
   font-weight: normal;
+  @media only screen and (max-width: 599px) {
+    margin-left: 3px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-left: 4px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-left: 6px;
+  }
 `;
 
 const LeagueLossesText = styled.div`
-  font-size: 12px;
-  margin-right: 6px;
   font-weight: normal;
+  @media only screen and (max-width: 599px) {
+    margin-right: 3px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-right: 4px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-right: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-right: 6px;
+  }
 `;
 
 const LeagueWinRateText = styled.div``;
@@ -326,10 +378,10 @@ const TableArrowBox = styled.div`
     width: 5%;
   }
   @media only screen and (min-width: 600px) {
-    width: 7%;
+    width: 0%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 7%;
+    width: 4%;
   }
   @media only screen and (min-width: 1800px) {
     width: 4%;
@@ -340,10 +392,16 @@ const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
+    width: 12px;
+    height: 12px;
   }
   @media only screen and (min-width: 600px) {
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 1200px) {
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 1800px) {
     width: 16px;

@@ -87,7 +87,7 @@ const MainDiv = styled.div`
   }
 `;
 
-export default withRouter(({ match: { params: page } }) => {
+export default withRouter(() => {
   const { windowHeight } = useWindowDimensions();
   //   const scrollY = useWindowScroll(60);
   //   const fixedScrollY = windowHeight + scrollY;
@@ -107,7 +107,7 @@ export default withRouter(({ match: { params: page } }) => {
         <MainBgDiv windowHeight={windowHeight} url={BgImage} />
         <MainOpacityDiv style={{ backgroundColor: darkBuleColor }} />
         <MainDiv windowHeight={windowHeight}>
-          <RankBoard linkData={page} />
+          <RankBoard />
         </MainDiv>
         <Footer />
       </LeagueRankDiv>

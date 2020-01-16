@@ -514,17 +514,17 @@ const MenuDiv = styled.div`
   }
   @media only screen and (min-width: 600px) {
     padding: 0px 7%;
-    font-size: 13px;
+    font-size: 14px;
     width: 86%;
   }
   @media only screen and (min-width: 1200px) {
     padding: 0px 12%;
-    font-size: 15px;
+    font-size: 16px;
     width: 76%;
   }
   @media only screen and (min-width: 1800px) {
     padding: 0px 17%;
-    font-size: 17px;
+    font-size: 18px;
     width: 66%;
   }
 `;
@@ -565,7 +565,7 @@ const MenuText = styled.div`
   }
 `;
 
-export default withRouter(() => {
+export default withRouter(({ location }) => {
   const { windowWidth } = useWindowDimensions();
 
   const { data, loading } = useQuery(COUNT_ALL_SUMMONER);
@@ -621,21 +621,36 @@ export default withRouter(() => {
           <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
             <MenuDiv>
               <MenuBox
-                style={{
-                  backgroundColor: Theme.deepBlueColor,
-                  color: Theme.orangeColor,
-                  fontWeight: "bold"
-                }}
+                style={
+                  location.pathname.split("/")[1] === ("" || "home")
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
                 to={"/home"}
               >
                 <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
-              <MenuBox to={"/rank"}>
+              <MenuBox
+                style={
+                  location.pathname.split("/")[1] === "rank"
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
+                to={"/rank/1"}
+              >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
-              <MenuBox to={"/"}>
+              {/* <MenuBox to={"/"}>
                 <MenuText>등록 요청</MenuText>
-              </MenuBox>
+              </MenuBox> */}
             </MenuDiv>
           </BotOpacityDiv>
         </HeaderDiv>
@@ -696,16 +711,31 @@ export default withRouter(() => {
           <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
             <MenuDiv>
               <MenuBox
-                style={{
-                  backgroundColor: Theme.deepBlueColor,
-                  color: Theme.orangeColor,
-                  fontWeight: "bold"
-                }}
+                style={
+                  location.pathname.split("/")[1] === ("" || "home")
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
                 to="/home"
               >
                 <MenuText>와쳐스 홈</MenuText>
               </MenuBox>
-              <MenuBox to={`/rank/${page}`}>
+              <MenuBox
+                style={
+                  location.pathname.split("/")[1] === "rank"
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
+                to={`/rank/${page}`}
+              >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
               {/* <MenuBox to="/">

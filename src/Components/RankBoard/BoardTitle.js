@@ -15,16 +15,16 @@ const BoardTitleDiv = styled.div`
   background-color: ${props => props.theme.darkGrayColor};
   color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
-    font-size: 12px;
-    height: 30px;
+    height: 40px;
+    font-size: 11px;
   }
   @media only screen and (min-width: 600px) {
-    font-size: 14px;
-    height: 40px;
+    height: 50px;
+    font-size: 13px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 14px;
-    height: 40px;
+    height: 50px;
+    font-size: 13px;
   }
   @media only screen and (min-width: 1800px) {
     height: 60px;
@@ -36,14 +36,39 @@ const PlatformDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20px;
+  @media only screen and (max-width: 599px) {
+    margin-left: 10px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-left: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 15px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-left: 20px;
+  }
 `;
 
 const PlatformBox = styled.div`
-  padding: 8px;
-  margin-right: 10px;
   border-radius: 4px;
   cursor: pointer;
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+    margin-right: 6px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 6px;
+    margin-right: 8px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 6px;
+    margin-right: 8px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 8px;
+    margin-right: 10px;
+  }
 `;
 
 const PlatformText = styled.div``;

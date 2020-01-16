@@ -15,14 +15,14 @@ const FooterDiv = styled.div`
   @media only screen and (max-width: 599px) {
     line-height: 12px;
     height: 70px;
-    padding: 0px 0%;
+    padding: 0px;
     letter-spacing: -0.5px;
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
     line-height: 15px;
     height: 60px;
-    padding: 0px 4%;
+    padding: 0px;
     font-size: 11px;
   }
   @media only screen and (min-width: 1200px) {

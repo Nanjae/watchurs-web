@@ -7,8 +7,7 @@ import BoardTitle from "./BoardTitle";
 import Loader from "../Loader";
 import BoardTag from "./BoardTag";
 import BoardNext from "./BoardNext";
-// import useWindowDimensions from "../../Hooks/useWindowDimensions";
-// import Loader from "../Loader";
+import { withRouter } from "react-router-dom";
 
 const SEE_ALL_SUMMONER = gql`
   query seeAllSummoner($from: String, $to: String) {
@@ -63,24 +62,26 @@ const RankBoardBox = styled.div`
     min-width: 300px;
   }
   @media only screen and (min-width: 600px) {
-    min-width: 560px;
+    min-width: 580px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 560px;
+    min-width: 580px;
   }
   @media only screen and (min-width: 1800px) {
     min-width: 680px;
   }
 `;
 
-export default ({ linkData }) => {
-  const from = (linkData.page - 1) * 10 + 1;
-  const to = linkData.page * 10;
+export default withRouter(({ location }) => {
+  const from = (location.pathname.split("/")[2] - 1) * 20 + 1;
+  const to = location.pathname.split("/")[2] * 20;
 
   const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
     variables: { from: `${from}`, to: `${to}` }
   });
+
   if (!loading) {
+    // console.log(data);
   }
 
   return (
@@ -129,4 +130,4 @@ export default ({ linkData }) => {
       )}
     </RankBoard>
   );
-};
+});

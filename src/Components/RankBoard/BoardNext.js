@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Theme from "../../Styles/Theme";
 
 const BoardNext = styled.div``;
@@ -13,19 +13,21 @@ const BoardNextDiv = styled.div`
   user-select: none;
   background-color: ${props => props.theme.grayColor};
   color: ${props => props.theme.darkOrangeColor};
+  font-weight: bold;
   @media only screen and (max-width: 599px) {
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
+    padding: 20px 0px;
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
+    padding: 20px 0px;
     font-size: 12px;
   }
   @media only screen and (min-width: 1800px) {
     padding: 20px 0px;
     font-size: 14px;
-    font-weight: bold;
   }
 `;
 
@@ -55,10 +57,12 @@ const NumberBox = styled(Link)`
     width: 5%;
   }
   @media only screen and (min-width: 600px) {
-    width: 7%;
+    width: 28px;
+    height: 28px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 7%;
+    width: 32px;
+    height: 32px;
   }
   @media only screen and (min-width: 1800px) {
     width: 36px;
@@ -68,31 +72,65 @@ const NumberBox = styled(Link)`
 
 const NumberText = styled.div``;
 
-export default () => {
+export default withRouter(({ location }) => {
   return (
     <BoardNext>
       <BoardNextDiv>
         <NumberDiv>
           <NumberBox
-            style={{
-              backgroundColor: Theme.orangeColor,
-              color: Theme.whiteColor
-            }}
+            style={
+              location.pathname === "/rank/1"
+                ? {
+                    backgroundColor: Theme.orangeColor,
+                    color: Theme.whiteColor
+                  }
+                : null
+            }
             to="/rank/1"
           >
             <NumberText>1</NumberText>
           </NumberBox>
-          <NumberBox to="/rank/2">
+          <NumberBox
+            style={
+              location.pathname === "/rank/2"
+                ? {
+                    backgroundColor: Theme.orangeColor,
+                    color: Theme.whiteColor
+                  }
+                : null
+            }
+            to="/rank/2"
+          >
             <NumberText>2</NumberText>
           </NumberBox>
-          <NumberBox to="/rank/3">
+          <NumberBox
+            style={
+              location.pathname === "/rank/3"
+                ? {
+                    backgroundColor: Theme.orangeColor,
+                    color: Theme.whiteColor
+                  }
+                : null
+            }
+            to="/rank/3"
+          >
             <NumberText>3</NumberText>
           </NumberBox>
-          <NumberBox to={"/rank/4"}>
+          <NumberBox
+            style={
+              location.pathname === "/rank/4"
+                ? {
+                    backgroundColor: Theme.orangeColor,
+                    color: Theme.whiteColor
+                  }
+                : null
+            }
+            to={"/rank/4"}
+          >
             <NumberText>4</NumberText>
           </NumberBox>
         </NumberDiv>
       </BoardNextDiv>
     </BoardNext>
   );
-};
+});
