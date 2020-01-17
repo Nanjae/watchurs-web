@@ -117,17 +117,6 @@ export default withRouter(
     });
 
     if (!loading) console.log(data);
-    //   const scrollY = useWindowScroll(60);
-    //   const fixedScrollY = windowHeight + scrollY;
-    //   const [adsClose, setAdsClose] = useState(true);
-
-    // console.log("height : " + windowHeight);
-    // console.log("scrollY : " + scrollY);
-    // console.log("fixed : " + fixedScrollY);
-
-    //   const adsCloseHandler = () => {
-    //     setAdsClose(adsClose ? false : true);
-    //   };
 
     return (
       <LeagueDetail>
