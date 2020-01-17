@@ -72,7 +72,7 @@ const RankBoardBox = styled.div`
     min-width: 800px;
   }
   @media only screen and (min-width: 1800px) {
-    min-width: 1000px;
+    min-width: 1050px;
   }
 `;
 

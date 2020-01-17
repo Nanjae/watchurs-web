@@ -7,3 +7,4 @@ export const hex2rgba = (hex, alpha = 1) => {
 
 export const deepBuleColor = hex2rgba(Theme.deepBlueColor, 0.5);
 export const darkBuleColor = hex2rgba(Theme.darkBlueColor, 0.5);
+export const lightOrangeColor = hex2rgba(Theme.lightOrangeColor, 0.2);

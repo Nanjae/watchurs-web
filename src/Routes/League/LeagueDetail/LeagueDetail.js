@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { darkBuleColor } from "../../../Styles/StyleFunction";
+import { darkBuleColor, lightOrangeColor } from "../../../Styles/StyleFunction";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import Footer from "../../../Components/Footer";
@@ -8,6 +8,7 @@ import { withRouter } from "react-router-dom";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
 import Loader from "../../../Components/Loader";
+import HeaderImage from "../../../Assets/Common/runeterra-ionia-01.jpg";
 
 const SEE_ONE_BROADCASTER = gql`
   query seeOneBroadcaster($term: String!) {
@@ -97,12 +98,50 @@ const MainDiv = styled.div`
   }
 `;
 
-const TrashText = styled.div`
+const DetailDiv = styled.div`
   display: flex;
-  padding-top: 50px;
-  height: 100%;
-  font-size: 30px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0px;
+`;
+
+const HeaderBgDiv = styled.div`
+  position: absolute;
+  width: 1050px;
+  height: 250px;
+  background-image: url(${props => props.url});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+`;
+
+const HeaderOpacityDiv = styled.div`
+  position: absolute;
+  width: 1050px;
+  z-index: 50;
+  padding-top: 250px;
+`;
+
+const HeaderDiv = styled.div`
+  z-index: 100;
+  width: 1050px;
+  height: 250px;
+  font-size: 18px;
   font-weight: bold;
+`;
+
+const MenuDiv = styled.div`
+  width: 1050px;
+  height: 400px;
+  background-color: white;
+  margin-top: 10px;
+`;
+
+const MenuTitleDiv = styled.div`
+  width: 1050px;
+  height: 50px;
+  background-color: ${props => props.theme.orangeColor};
 `;
 
 export default withRouter(
@@ -126,10 +165,19 @@ export default withRouter(
           <MainDiv windowHeight={windowHeight}>
             {loading && <Loader />}
             {!loading && data && data.seeOneBroadcaster && (
-              <>
-                <TrashText>{data.seeOneBroadcaster[0].bName} 페이지</TrashText>
-                <TrashText>프론트 디자인 어떻게 할까~?</TrashText>
-              </>
+              <DetailDiv>
+                <HeaderBgDiv url={HeaderImage} />
+                <HeaderOpacityDiv
+                  style={{ backgroundColor: lightOrangeColor }}
+                />
+                <HeaderDiv>{data.seeOneBroadcaster[0].bName}</HeaderDiv>
+                <MenuDiv>
+                  <MenuTitleDiv />
+                </MenuDiv>
+                <MenuDiv>
+                  <MenuTitleDiv />
+                </MenuDiv>
+              </DetailDiv>
             )}
           </MainDiv>
           <Footer />
