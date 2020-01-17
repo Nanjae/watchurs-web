@@ -104,8 +104,6 @@ const RankSndBoardBox = styled.div`
 `;
 
 export default () => {
-  //   const { windowWidth, windowHeight } = useWindowDimensions();
-
   const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
     variables: { from: "1", to: "10" }
   });

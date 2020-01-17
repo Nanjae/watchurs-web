@@ -577,10 +577,6 @@ export default withRouter(({ location }) => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // const goTop = () => {
-  //   window.scrollTo(0, 0);
-  // };
-
   return (
     <Header>
       {windowWidth < 600 ? (
