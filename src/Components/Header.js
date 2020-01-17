@@ -584,7 +584,7 @@ export default withRouter(({ location }) => {
               <TopFstBox>
                 <TitleDiv>
                   <TitleBox>
-                    <TitleFstText to={"/home"}>WATCHURS</TitleFstText>
+                    <TitleFstText to={"/"}>WATCHURS</TitleFstText>
                     <TitleSndText>리그 오브 레전드</TitleSndText>
                   </TitleBox>
                 </TitleDiv>
