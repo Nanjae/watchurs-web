@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { withRouter, Link } from "react-router-dom";
 import Input from "./Input";
@@ -573,7 +573,13 @@ export default withRouter(({ location }) => {
     // console.log(data);
   }
 
-  const page = 1;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  // const goTop = () => {
+  //   window.scrollTo(0, 0);
+  // };
 
   return (
     <Header>
@@ -736,7 +742,7 @@ export default withRouter(({ location }) => {
                       }
                     : null
                 }
-                to={`/rank/${page}`}
+                to={`/rank/1`}
               >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
