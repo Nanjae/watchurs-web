@@ -57,7 +57,7 @@ const RankFstBoardBox = styled.div`
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
-    width: 100%;
+    width: 99%;
     min-width: 300px;
     margin-right: 0px;
     margin-bottom: 10px;
@@ -85,7 +85,7 @@ const RankSndBoardBox = styled.div`
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
-    width: 100%;
+    width: 99%;
     min-width: 300px;
     margin-left: 0px;
   }
