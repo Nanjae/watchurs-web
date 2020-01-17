@@ -43,12 +43,16 @@ const RankBoardDiv = styled.div`
   background-color: ${props => props.theme.grayColor};
   width: 100%;
   @media only screen and (max-width: 599px) {
+    margin: 5px 0px;
   }
   @media only screen and (min-width: 600px) {
+    margin: 10px 0px;
   }
   @media only screen and (min-width: 1200px) {
+    margin: 10px 0px;
   }
   @media only screen and (min-width: 1800px) {
+    margin: 15px 0px;
   }
 `;
 
@@ -57,18 +61,18 @@ const RankBoardBox = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${props => props.theme.whiteColor};
-  width: 100%;
   @media only screen and (max-width: 599px) {
+    width: 99%;
     min-width: 300px;
   }
   @media only screen and (min-width: 600px) {
     min-width: 580px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 580px;
+    min-width: 800px;
   }
   @media only screen and (min-width: 1800px) {
-    min-width: 680px;
+    min-width: 1000px;
   }
 `;
 
@@ -92,7 +96,6 @@ export default withRouter(({ location }) => {
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
             <RankBoardBox>
-              <BoardNext />
               <BoardTitle />
               <BoardTag />
               {data.seeAllSummoner.map((summoner, index) => {

@@ -15,18 +15,19 @@ const BoardNextDiv = styled.div`
   color: ${props => props.theme.darkOrangeColor};
   font-weight: bold;
   @media only screen and (max-width: 599px) {
+    padding-top: 5px;
     font-size: 10px;
   }
   @media only screen and (min-width: 600px) {
-    padding: 10px 0px;
+    padding-top: 10px;
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 15px 0px;
-    font-size: 12px;
+    padding-top: 10px;
+    font-size: 13px;
   }
   @media only screen and (min-width: 1800px) {
-    padding: 20px 0px;
+    padding-top: 15px;
     font-size: 14px;
   }
 `;
@@ -54,7 +55,8 @@ const NumberBox = styled(Link)`
     border-bottom-right-radius: 3px;
   }
   @media only screen and (max-width: 599px) {
-    width: 5%;
+    width: 24px;
+    height: 24px;
   }
   @media only screen and (min-width: 600px) {
     width: 28px;

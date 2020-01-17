@@ -68,10 +68,9 @@ const MainDiv = styled.div`
     height: fit-content;
   }
   @media only screen and (min-width: 600px) {
-    padding: 0px 10%;
     min-height: ${props => props.windowHeight - 200}px;
     height: fit-content;
-    width: 80%;
+    width: 100%;
   }
   @media only screen and (min-width: 1200px) {
     padding: 0px 15%;

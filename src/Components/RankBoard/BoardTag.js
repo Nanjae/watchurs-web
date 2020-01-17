@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const BoardTag = styled.div``;
 
@@ -35,16 +36,16 @@ const TableRankBox = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 5%;
+    width: 7%;
   }
   @media only screen and (min-width: 600px) {
-    width: 4%;
+    width: 5%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 4%;
+    width: 5%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 4%;
+    width: 5%;
   }
 `;
 
@@ -55,10 +56,10 @@ const BroadInfoBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 29%;
+    width: 28%;
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 23%;
   }
   @media only screen and (min-width: 1200px) {
     width: 23%;
@@ -69,7 +70,18 @@ const BroadInfoBox = styled.div`
 `;
 
 const BroadNameText = styled.div`
-  margin-left: 57px;
+  @media only screen and (max-width: 599px) {
+    margin-left: 16px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-left: 45px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 51px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-left: 57px;
+  }
 `;
 
 const LeagueSNameBox = styled.div`
@@ -80,24 +92,25 @@ const LeagueSNameBox = styled.div`
     width: 29%;
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 22%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 23%;
+    width: 22%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 23%;
+    width: 22%;
   }
 `;
 
 const LeagueSNameText = styled.div`
   @media only screen and (max-width: 599px) {
+    margin-left: 4px;
   }
   @media only screen and (min-width: 600px) {
     margin-left: 28px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 36px;
+    margin-left: 32px;
   }
   @media only screen and (min-width: 1800px) {
     margin-left: 36px;
@@ -109,10 +122,10 @@ const LeagueTierBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 34%;
+    width: 36%;
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 26%;
   }
   @media only screen and (min-width: 1200px) {
     width: 23%;
@@ -124,12 +137,13 @@ const LeagueTierBox = styled.div`
 
 const LeagueTierText = styled.div`
   @media only screen and (max-width: 599px) {
+    margin-left: 4px;
   }
   @media only screen and (min-width: 600px) {
     margin-left: 26px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 34px;
+    margin-left: 30px;
   }
   @media only screen and (min-width: 1800px) {
     margin-left: 34px;
@@ -141,7 +155,6 @@ const LeagueWinRateBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 34%;
   }
   @media only screen and (min-width: 600px) {
     width: 24%;
@@ -158,10 +171,10 @@ const LeagueWinRateText = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 40px;
+    margin-left: 44px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 61px;
+    margin-left: 57px;
   }
   @media only screen and (min-width: 1800px) {
     margin-left: 75px;
@@ -169,6 +182,8 @@ const LeagueWinRateText = styled.div`
 `;
 
 export default () => {
+  const { windowWidth } = useWindowDimensions();
+
   return (
     <BoardTag>
       <BoardTagDiv>
@@ -185,7 +200,9 @@ export default () => {
           <LeagueTierText>티어</LeagueTierText>
         </LeagueTierBox>
         <LeagueWinRateBox>
-          <LeagueWinRateText>승률</LeagueWinRateText>
+          {windowWidth < 600 ? null : (
+            <LeagueWinRateText>승률</LeagueWinRateText>
+          )}
         </LeagueWinRateBox>
       </BoardTagDiv>
     </BoardTag>

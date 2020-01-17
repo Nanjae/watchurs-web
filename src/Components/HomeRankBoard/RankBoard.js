@@ -124,7 +124,7 @@ export default () => {
                 return (
                   <BoardCard
                     key={index}
-                    index={index}
+                    index={1 + index}
                     sName={summoner.sName}
                     sAvatar={summoner.sAvatar}
                     sTier={summoner.sTier}
@@ -146,7 +146,7 @@ export default () => {
                 return (
                   <BoardCard
                     key={index}
-                    index={index}
+                    index={1 + index}
                     sName={summoner.sName}
                     sAvatar={summoner.sAvatar}
                     sTier={summoner.sTier}

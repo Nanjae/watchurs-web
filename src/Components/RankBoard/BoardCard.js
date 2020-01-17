@@ -14,6 +14,7 @@ import emblemChallenger from "../../Assets/League/EmblemChallenger.png";
 import Theme from "../../Styles/Theme";
 import IconArrow from "../../Assets/Common/IconArrow.png";
 import { Link } from "react-router-dom";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const BoardCard = styled.div``;
 
@@ -48,16 +49,16 @@ const TableRankBox = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 5%;
+    width: 7%;
   }
   @media only screen and (min-width: 600px) {
-    width: 4%;
+    width: 5%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 4%;
+    width: 5%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 4%;
+    width: 5%;
   }
 `;
 
@@ -68,10 +69,10 @@ const BroadInfoBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 29%;
+    width: 28%;
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 23%;
   }
   @media only screen and (min-width: 1200px) {
     width: 23%;
@@ -98,8 +99,8 @@ const BroadPlatform = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-right: 4px;
     margin-left: 4px;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
   @media only screen and (min-width: 1800px) {
     margin-right: 5px;
@@ -126,9 +127,9 @@ const BroadAvatar = styled.div`
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    border-radius: 12px;
-    width: 24px;
-    height: 24px;
+    border-radius: 11px;
+    width: 22px;
+    height: 22px;
     margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
@@ -148,16 +149,16 @@ const LeagueSNameBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 34%;
+    width: 29%;
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 22%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 23%;
+    width: 22%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 23%;
+    width: 22%;
   }
 `;
 
@@ -176,10 +177,10 @@ const LeagueSAvatar = styled.div`
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 22px;
+    height: 22px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
     width: 24px;
@@ -208,10 +209,10 @@ const LeagueTierBox = styled.div`
   align-items: center;
   color: ${props => props.theme.darkOrangeColor};
   @media only screen and (max-width: 599px) {
-    width: 34%;
+    width: 36%;
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 26%;
   }
   @media only screen and (min-width: 1200px) {
     width: 23%;
@@ -236,8 +237,8 @@ const LeagueTierEmblem = styled.div`
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     margin-left: 4px;
     margin-right: 4px;
   }
@@ -287,7 +288,6 @@ const LeagueWinRateBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 34%;
   }
   @media only screen and (min-width: 600px) {
     width: 24%;
@@ -304,7 +304,6 @@ const LeagueWinRateBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 200px;
   background: linear-gradient(
     to right,
     ${props => props.theme.orangeColor} 0%,
@@ -315,56 +314,56 @@ const LeagueWinRateBar = styled.div`
   border-radius: 10px;
   color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
-    height: 16px;
-    font-size: 10px;
-    margin: 0px 6px;
   }
   @media only screen and (min-width: 600px) {
+    width: 100px;
     height: 20px;
     font-size: 10px;
-    margin: 0px 6px;
+    margin: 0px 3px;
   }
   @media only screen and (min-width: 1200px) {
+    width: 130px;
     height: 22px;
     font-size: 12px;
-    margin: 0px 8px;
+    margin: 0px 4px;
   }
   @media only screen and (min-width: 1800px) {
+    width: 170px;
     height: 24px;
     font-size: 12px;
-    margin: 0px 10px;
+    margin: 0px 5px;
   }
 `;
 
 const LeagueWinsText = styled.div`
   font-weight: normal;
   @media only screen and (max-width: 599px) {
-    margin-left: 3px;
+    margin-left: 2px;
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 4px;
+    margin-left: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 5px;
+    margin-left: 4px;
   }
   @media only screen and (min-width: 1800px) {
-    margin-left: 6px;
+    margin-left: 5px;
   }
 `;
 
 const LeagueLossesText = styled.div`
   font-weight: normal;
   @media only screen and (max-width: 599px) {
-    margin-right: 3px;
+    margin-right: 2px;
   }
   @media only screen and (min-width: 600px) {
-    margin-right: 4px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-right: 5px;
+    margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
-    margin-right: 6px;
+    margin-right: 5px;
   }
 `;
 
@@ -375,10 +374,8 @@ const TableArrowBox = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 5%;
   }
   @media only screen and (min-width: 600px) {
-    width: 0%;
   }
   @media only screen and (min-width: 1200px) {
     width: 4%;
@@ -392,12 +389,8 @@ const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
-    width: 12px;
-    height: 12px;
   }
   @media only screen and (min-width: 600px) {
-    width: 14px;
-    height: 14px;
   }
   @media only screen and (min-width: 1200px) {
     width: 14px;
@@ -463,6 +456,8 @@ export default ({
     sRank = "";
   }
 
+  const { windowWidth } = useWindowDimensions();
+
   return (
     <BoardCard>
       <BoardCardDiv to={`/detail/${bId}`}>
@@ -484,26 +479,30 @@ export default ({
           {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
           <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
         </LeagueTierBox>
-        <LeagueWinRateBox>
-          <LeagueWinRateBar
-            winRate={sWinRate}
-            style={
-              sWinRate === "--"
-                ? {
-                    backgroundColor: Theme.grayColor,
-                    color: Theme.blackColor
-                  }
-                : null
-            }
-          >
-            <LeagueWinsText>{sWins}승</LeagueWinsText>
-            <LeagueLossesText>{sLosses}패</LeagueLossesText>
-          </LeagueWinRateBar>
-          <LeagueWinRateText>{sWinRate}%</LeagueWinRateText>
-        </LeagueWinRateBox>
-        <TableArrowBox>
-          <ArrowIcon url={IconArrow} />
-        </TableArrowBox>
+        {windowWidth < 600 ? null : (
+          <LeagueWinRateBox>
+            <LeagueWinRateBar
+              winRate={sWinRate}
+              style={
+                sWinRate === "--"
+                  ? {
+                      backgroundColor: Theme.grayColor,
+                      color: Theme.blackColor
+                    }
+                  : null
+              }
+            >
+              <LeagueWinsText>{sWins}승</LeagueWinsText>
+              <LeagueLossesText>{sLosses}패</LeagueLossesText>
+            </LeagueWinRateBar>
+            <LeagueWinRateText>{sWinRate}%</LeagueWinRateText>
+          </LeagueWinRateBox>
+        )}
+        {windowWidth < 1200 ? null : (
+          <TableArrowBox>
+            <ArrowIcon url={IconArrow} />
+          </TableArrowBox>
+        )}
       </BoardCardDiv>
     </BoardCard>
   );
