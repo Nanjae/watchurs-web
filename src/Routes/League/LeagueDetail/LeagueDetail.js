@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { darkBuleColor, lightOrangeColor } from "../../../Styles/StyleFunction";
+import {
+  darkBuleColor,
+  lightOrangeColor,
+  deepBuleColor
+} from "../../../Styles/StyleFunction";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import Footer from "../../../Components/Footer";
@@ -9,12 +13,18 @@ import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
 import Loader from "../../../Components/Loader";
 import HeaderImage from "../../../Assets/Common/runeterra-ionia-01.jpg";
+import Theme from "../../../Styles/Theme";
 
 const SEE_ONE_BROADCASTER = gql`
   query seeOneBroadcaster($term: String!) {
     seeOneBroadcaster(term: $term) {
       bId
       bName
+      bAvatar
+      bSummoner {
+        sName
+        sAvatar
+      }
     }
   }
 `;
@@ -109,7 +119,7 @@ const DetailDiv = styled.div`
 const HeaderBgDiv = styled.div`
   position: absolute;
   width: 1050px;
-  height: 250px;
+  height: 190px;
   background-image: url(${props => props.url});
   background-size: cover;
   background-repeat: no-repeat;
@@ -120,29 +130,133 @@ const HeaderOpacityDiv = styled.div`
   position: absolute;
   width: 1050px;
   z-index: 50;
-  padding-top: 250px;
+  padding-top: 190px;
 `;
 
 const HeaderDiv = styled.div`
   z-index: 100;
   width: 1050px;
-  height: 250px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-size: 18px;
   font-weight: bold;
 `;
 
+const BroadDiv = styled.div`
+  display: flex;
+  align-items: flex-end;
+  margin-top: 20px;
+  margin-left: 20px;
+`;
+
+const BroadAvatarDiv = styled.div`
+  background-color: black;
+  border: 4px solid white;
+  width: 90px;
+  height: 90px;
+  margin-right: 20px;
+`;
+
+const BroadAvatar = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 90px;
+  height: 90px;
+`;
+
+const BroadInfoDiv = styled.div``;
+
+const BroadName = styled.div`
+  font-size: 32px;
+  color: ${props => props.theme.whiteColor};
+  margin-bottom: 10px;
+`;
+
+const BroadSNameDiv = styled.div`
+  font-size: 18px;
+  color: ${props => props.theme.orangeColor};
+  background-color: ${props => props.theme.whiteColor};
+  padding: 5px;
+  border-radius: 4px;
+`;
+
 const MenuDiv = styled.div`
-  width: 1050px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const MenuBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 0px 20px;
+  color: ${props => props.theme.whiteColor};
+  font-weight: normal;
+  font-size: 18px;
+`;
+
+const BaseInfoDiv = styled.div`
+  width: 1048px;
   height: 400px;
   background-color: white;
   margin-top: 10px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const MenuTitleDiv = styled.div`
+const BaseTitleDiv = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 1050px;
   height: 50px;
-  background-color: ${props => props.theme.orangeColor};
+  background-color: ${props => props.theme.darkGrayColor};
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: -1px;
+  margin-top: -1px;
+  color: ${props => props.theme.lightOrangeColor};
 `;
+
+const CommonTitle = styled.div`
+  margin-left: 15px;
+`;
+
+const BaseMainDiv = styled.div`
+  padding: 15px;
+`;
+
+const BaseMainLeftDiv = styled.div`
+  display: flex;
+  align-items: flex-end;
+`;
+
+const BaseMainLeftFstBox = styled.div``;
+
+const SummonerAvatarDiv = styled.div``;
+
+const SummonerAvatar = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+`;
+
+const BaseMainLeftSndBox = styled.div``;
+
+const SummonerRankingText = styled.div``;
+
+const SummonerName = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+`;
+
+const BaseMainRightDiv = styled.div``;
 
 export default withRouter(
   ({
@@ -170,13 +284,56 @@ export default withRouter(
                 <HeaderOpacityDiv
                   style={{ backgroundColor: lightOrangeColor }}
                 />
-                <HeaderDiv>{data.seeOneBroadcaster[0].bName}</HeaderDiv>
-                <MenuDiv>
-                  <MenuTitleDiv />
-                </MenuDiv>
-                <MenuDiv>
-                  <MenuTitleDiv />
-                </MenuDiv>
+                <HeaderDiv>
+                  <BroadDiv>
+                    <BroadAvatarDiv>
+                      <BroadAvatar url={data.seeOneBroadcaster[0].bAvatar} />
+                    </BroadAvatarDiv>
+                    <BroadInfoDiv>
+                      <BroadName>{data.seeOneBroadcaster[0].bName}</BroadName>
+                      <BroadSNameDiv>연결된 소환사 계정 : 1</BroadSNameDiv>
+                    </BroadInfoDiv>
+                  </BroadDiv>
+                  <MenuDiv style={{ backgroundColor: darkBuleColor }}>
+                    <MenuBox
+                      style={{
+                        backgroundColor: deepBuleColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }}
+                    >
+                      {data.seeOneBroadcaster[0].bSummoner.sName}
+                    </MenuBox>
+                    {/* <MenuBox>
+                      {data.seeOneBroadcaster[0].bSummoner.sName}
+                    </MenuBox> */}
+                  </MenuDiv>
+                </HeaderDiv>
+                <BaseInfoDiv>
+                  <BaseTitleDiv>
+                    <CommonTitle>소환사 정보</CommonTitle>
+                  </BaseTitleDiv>
+                  <BaseMainDiv>
+                    <BaseMainLeftDiv>
+                      <BaseMainLeftFstBox>
+                        <SummonerAvatar
+                          url={data.seeOneBroadcaster[0].bSummoner.sAvatar}
+                        />
+                      </BaseMainLeftFstBox>
+                      <BaseMainLeftSndBox>
+                        <SummonerRankingText></SummonerRankingText>
+                        <SummonerName>
+                          {data.seeOneBroadcaster[0].bSummoner.sName}
+                        </SummonerName>
+                      </BaseMainLeftSndBox>
+                    </BaseMainLeftDiv>
+                  </BaseMainDiv>
+                </BaseInfoDiv>
+                <BaseInfoDiv>
+                  <BaseTitleDiv>
+                    <CommonTitle>상세 통계</CommonTitle>
+                  </BaseTitleDiv>
+                </BaseInfoDiv>
               </DetailDiv>
             )}
           </MainDiv>

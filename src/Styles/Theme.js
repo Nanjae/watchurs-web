@@ -13,6 +13,7 @@ export default {
   blackColor: "#000000",
   lightGrayColor: "#c7c7c7",
   grayColor: "#E8ECF1",
+  lightGrayColor: "#D6D6D6",
   darkGrayColor: "#313641",
   twitchColor: "#9147FF",
   afreecaColor: "#0545B0",
