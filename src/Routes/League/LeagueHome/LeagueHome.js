@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Input from "../../../Components/Input";
 import IconSearch from "../../../Assets/Common/IconSearch.png";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
-import { darkBuleColor } from "../../../Styles/StyleFunction";
+import { darkBlueColor } from "../../../Styles/StyleFunction";
 import IconClose from "../../../Assets/Common/IconClose.png";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import { useWindowScroll } from "@react-hook/window-scroll";
@@ -358,7 +358,7 @@ export default () => {
         <MainBgDiv windowHeight={windowHeight} url={BgImage} />
         <MainOpacityDiv
           windowHeight={windowHeight}
-          style={{ backgroundColor: darkBuleColor }}
+          style={{ backgroundColor: darkBlueColor }}
         >
           <MainDiv windowHeight={windowHeight}>
             <MainTextBox windowHeight={windowHeight}>

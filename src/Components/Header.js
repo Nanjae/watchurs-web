@@ -6,7 +6,7 @@ import IconSearch from "../Assets/Common/IconSearch.png";
 import IconInfo from "../Assets/Common/IconInfo.png";
 import IconCircleArrow from "../Assets/Common/IconCircleArrow.png";
 import Theme from "../Styles/Theme";
-import { deepBuleColor, darkBuleColor } from "../Styles/StyleFunction";
+import { deepBlueColor, darkBlueColor } from "../Styles/StyleFunction";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
@@ -581,7 +581,7 @@ export default withRouter(({ location }) => {
     <Header>
       {windowWidth < 600 ? (
         <HeaderDiv>
-          <TopOpacityDiv style={{ backgroundColor: darkBuleColor }}>
+          <TopOpacityDiv style={{ backgroundColor: darkBlueColor }}>
             <TopBoxDiv>
               <TopFstBox>
                 <TitleDiv>
@@ -620,7 +620,7 @@ export default withRouter(({ location }) => {
               </TopSndBox>
             </TopBoxDiv>
           </TopOpacityDiv>
-          <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
+          <BotOpacityDiv style={{ backgroundColor: deepBlueColor }}>
             <MenuDiv>
               <MenuBox
                 style={
@@ -659,7 +659,7 @@ export default withRouter(({ location }) => {
         </HeaderDiv>
       ) : (
         <HeaderDiv>
-          <TopOpacityDiv style={{ backgroundColor: darkBuleColor }}>
+          <TopOpacityDiv style={{ backgroundColor: darkBlueColor }}>
             <TopBoxDiv>
               <TopFstBox>
                 <TitleDiv>
@@ -711,7 +711,7 @@ export default withRouter(({ location }) => {
               </TopSndBox>
             </TopBoxDiv>
           </TopOpacityDiv>
-          <BotOpacityDiv style={{ backgroundColor: deepBuleColor }}>
+          <BotOpacityDiv style={{ backgroundColor: deepBlueColor }}>
             <MenuDiv>
               <MenuBox
                 style={

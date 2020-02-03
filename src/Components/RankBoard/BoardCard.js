@@ -231,20 +231,20 @@ const LeagueTierEmblem = styled.div`
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 22px;
     margin-left: 3px;
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 24px;
     margin-left: 4px;
     margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 26px;
     margin-left: 5px;
     margin-right: 5px;
   }

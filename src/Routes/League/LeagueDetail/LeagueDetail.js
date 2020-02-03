@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  darkBuleColor,
+  darkBlueColor,
   lightOrangeColor,
-  deepBuleColor
+  deepBlueColor
 } from "../../../Styles/StyleFunction";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
@@ -14,6 +14,18 @@ import { gql } from "apollo-boost";
 import Loader from "../../../Components/Loader";
 import HeaderImage from "../../../Assets/Common/runeterra-ionia-01.jpg";
 import Theme from "../../../Styles/Theme";
+import twitchLogo from "../../../Assets/Twitch/TwitchLogo.png";
+import ReactMinimalPieChart from "react-minimal-pie-chart";
+import emblemUnranked from "../../../Assets/League/EmblemUnranked.png";
+import emblemIron from "../../../Assets/League/EmblemIron.png";
+import emblemBronze from "../../../Assets/League/EmblemBronze.png";
+import emblemSilver from "../../../Assets/League/EmblemSilver.png";
+import emblemGold from "../../../Assets/League/EmblemGold.png";
+import emblemPlatinum from "../../../Assets/League/EmblemPlatinum.png";
+import emblemDiamond from "../../../Assets/League/EmblemDiamond.png";
+import emblemMaster from "../../../Assets/League/EmblemMaster.png";
+import emblemGrandmaster from "../../../Assets/League/EmblemGrandmaster.png";
+import emblemChallenger from "../../../Assets/League/EmblemChallenger.png";
 
 const SEE_ONE_BROADCASTER = gql`
   query seeOneBroadcaster($term: String!) {
@@ -24,6 +36,11 @@ const SEE_ONE_BROADCASTER = gql`
       bSummoner {
         sName
         sAvatar
+        sWins
+        sLosses
+        sTier
+        sRank
+        sPoints
       }
     }
   }
@@ -152,8 +169,8 @@ const BroadDiv = styled.div`
 `;
 
 const BroadAvatarDiv = styled.div`
-  background-color: black;
-  border: 4px solid white;
+  background-color: ${props => props.theme.blackColor};
+  border: 4px solid ${props => props.theme.whiteColor};
   width: 90px;
   height: 90px;
   margin-right: 20px;
@@ -166,16 +183,42 @@ const BroadAvatar = styled.div`
   height: 90px;
 `;
 
-const BroadInfoDiv = styled.div``;
+const BroadInfoDiv = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const BroadPlatformDiv = styled.div`
+  display: flex;
+  background-color: ${props => props.theme.whiteColor};
+  width: fit-content;
+  padding: 5px;
+  border-radius: 4px;
+`;
+
+const PlatformIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
+`;
+
+const BroadPlatform = styled.div`
+  font-size: 14px;
+  color: ${props => props.theme.twitchColor};
+`;
 
 const BroadName = styled.div`
   font-size: 32px;
   color: ${props => props.theme.whiteColor};
-  margin-bottom: 10px;
 `;
 
 const BroadSNameDiv = styled.div`
-  font-size: 18px;
+  font-size: 14px;
+  width: fit-content;
   color: ${props => props.theme.orangeColor};
   background-color: ${props => props.theme.whiteColor};
   padding: 5px;
@@ -201,21 +244,40 @@ const MenuBox = styled.div`
 `;
 
 const BaseInfoDiv = styled.div`
-  width: 1048px;
-  height: 400px;
-  background-color: white;
+  width: 1050px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const BaseInfoBox = styled.div`
+  height: 370px;
   margin-top: 10px;
+`;
+
+const BaseMainDiv = styled.div`
+  display: flex;
+  height: 370px;
+`;
+
+const BaseMainBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: ${props => props.theme.whiteColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
+  width: 338px;
+  height: 100%;
 `;
 
 const BaseTitleDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 1050px;
-  height: 50px;
+  width: 340px;
+  height: 40px;
   background-color: ${props => props.theme.darkGrayColor};
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   margin-left: -1px;
   margin-top: -1px;
@@ -223,40 +285,188 @@ const BaseTitleDiv = styled.div`
 `;
 
 const CommonTitle = styled.div`
-  margin-left: 15px;
+  margin-left: 12px;
 `;
 
-const BaseMainDiv = styled.div`
-  padding: 15px;
-`;
-
-const BaseMainLeftDiv = styled.div`
+const FstInfoDiv = styled.div`
+  width: 320px;
   display: flex;
+  justify-content: flex-start;
+  padding: 10px;
   align-items: flex-end;
 `;
 
-const BaseMainLeftFstBox = styled.div``;
+const FstInfoFstBox = styled.div``;
 
-const SummonerAvatarDiv = styled.div``;
+const SummonerAvatarDiv = styled.div`
+  background-color: ${props => props.theme.whiteColor};
+  border: 4px solid ${props => props.theme.brownColor};
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+`;
 
 const SummonerAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   width: 90px;
   height: 90px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+`;
+
+const SummonerLevel = styled.div`
+  padding: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: ${props => props.theme.brownColor};
+`;
+
+const FstInfoSndBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`;
+
+const SummonerRankingBox = styled.div``;
+
+const SummonerRankingText = styled.div`
+  border-radius: 4px;
+  padding: 5px;
+  width: fit-content;
+  color: ${props => props.theme.whiteColor};
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 4px;
+`;
+
+const SummonerName = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  color: ${props => props.theme.brownColor};
+`;
+
+const SndInfoDiv = styled.div`
+  width: 298px;
+  padding: 10px;
+  background-color: ${props => props.theme.grayColor};
+  border: 1px solid ${props => props.theme.lightGrayColor};
+`;
+
+const SndInfoFstDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -10px;
+`;
+
+const SndInfoFstDivFstDiv = styled.div`
   margin-right: 10px;
 `;
 
-const BaseMainLeftSndBox = styled.div``;
-
-const SummonerRankingText = styled.div``;
-
-const SummonerName = styled.div`
-  font-size: 18px;
-  font-weight: bold;
+const EmblemIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 77px;
+  height: 90px;
 `;
 
-const BaseMainRightDiv = styled.div``;
+const SndInfoFstDivSndDiv = styled.div`
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+`;
+
+const SeasonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: normal;
+`;
+
+const SeasonText = styled.div`
+  background-color: ${props => props.theme.darkOrangeColor};
+  width: fit-content;
+  border-radius: 4px;
+  padding: 5px;
+  color: ${props => props.theme.whiteColor};
+`;
+
+const SoloText = styled.div`
+  background-color: ${props => props.theme.orangeColor};
+  width: fit-content;
+  border-radius: 4px;
+  padding: 5px;
+  color: ${props => props.theme.whiteColor};
+  margin-left: 4px;
+`;
+
+const TierBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 20px;
+  margin-bottom: 10px;
+`;
+
+const TierText = styled.div``;
+
+const RankText = styled.div`
+  margin: 0px 4px;
+`;
+
+const PointsText = styled.div`
+  font-size: 16px;
+`;
+
+const SndInfoSndDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SndInfoSndDivFstBox = styled.div``;
+
+const WinRateDiv = styled.div``;
+
+const SndInfoSndDivSndBox = styled.div`
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const WinLossBox = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+`;
+
+const TotalText = styled.div`
+  color: ${props => props.theme.darkOrangeColor};
+`;
+
+const WinsText = styled.div`
+  color: ${props => props.theme.winColor};
+  margin: 0px 5px;
+`;
+
+const LossesText = styled.div`
+  color: ${props => props.theme.lossColor};
+`;
+
+let sTierEmblem = emblemUnranked;
+let sTierName = "랭크없음";
+let sRank = "";
 
 export default withRouter(
   ({
@@ -269,13 +479,51 @@ export default withRouter(
       variables: { term: bId }
     });
 
-    if (!loading) console.log(data);
+    if (!loading && data && data.seeOneBroadcaster) {
+      sRank = data.seeOneBroadcaster[0].bSummoner.sRank;
+
+      if (data.seeOneBroadcaster[0].bSummoner.sTier === "IRON") {
+        sTierEmblem = emblemIron;
+        sTierName = "아이언";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "BRONZE") {
+        sTierEmblem = emblemBronze;
+        sTierName = "브론즈";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "SILVER") {
+        sTierEmblem = emblemSilver;
+        sTierName = "실버";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "GOLD") {
+        sTierEmblem = emblemGold;
+        sTierName = "골드";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "PLATINUM") {
+        sTierEmblem = emblemPlatinum;
+        sTierName = "플래티넘";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "DIAMOND") {
+        sTierEmblem = emblemDiamond;
+        sTierName = "다이아몬드";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "MASTER") {
+        sTierEmblem = emblemMaster;
+        sTierName = "마스터";
+        sRank = "";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "GRANDMASTER") {
+        sTierEmblem = emblemGrandmaster;
+        sTierName = "그랜드마스터";
+        sRank = "";
+      } else if (data.seeOneBroadcaster[0].bSummoner.sTier === "CHALLENGER") {
+        sTierEmblem = emblemChallenger;
+        sTierName = "챌린저";
+        sRank = "";
+      } else {
+        sTierEmblem = emblemUnranked;
+        sTierName = "랭크없음";
+        sRank = "";
+      }
+    }
 
     return (
       <LeagueDetail>
         <LeagueDetailDiv>
           <MainBgDiv windowHeight={windowHeight} url={BgImage} />
-          <MainOpacityDiv style={{ backgroundColor: darkBuleColor }} />
+          <MainOpacityDiv style={{ backgroundColor: darkBlueColor }} />
           <MainDiv windowHeight={windowHeight}>
             {loading && <Loader />}
             {!loading && data && data.seeOneBroadcaster && (
@@ -290,49 +538,170 @@ export default withRouter(
                       <BroadAvatar url={data.seeOneBroadcaster[0].bAvatar} />
                     </BroadAvatarDiv>
                     <BroadInfoDiv>
+                      <BroadPlatformDiv>
+                        <PlatformIcon url={twitchLogo} />
+                        <BroadPlatform>트위치</BroadPlatform>
+                      </BroadPlatformDiv>
                       <BroadName>{data.seeOneBroadcaster[0].bName}</BroadName>
                       <BroadSNameDiv>연결된 소환사 계정 : 1</BroadSNameDiv>
                     </BroadInfoDiv>
                   </BroadDiv>
-                  <MenuDiv style={{ backgroundColor: darkBuleColor }}>
+                  <MenuDiv style={{ backgroundColor: deepBlueColor }}>
                     <MenuBox
                       style={{
-                        backgroundColor: deepBuleColor,
+                        backgroundColor: Theme.deepBlueColor,
                         color: Theme.orangeColor,
                         fontWeight: "bold"
                       }}
                     >
                       {data.seeOneBroadcaster[0].bSummoner.sName}
                     </MenuBox>
-                    {/* <MenuBox>
-                      {data.seeOneBroadcaster[0].bSummoner.sName}
-                    </MenuBox> */}
                   </MenuDiv>
                 </HeaderDiv>
                 <BaseInfoDiv>
-                  <BaseTitleDiv>
-                    <CommonTitle>소환사 정보</CommonTitle>
-                  </BaseTitleDiv>
-                  <BaseMainDiv>
-                    <BaseMainLeftDiv>
-                      <BaseMainLeftFstBox>
-                        <SummonerAvatar
-                          url={data.seeOneBroadcaster[0].bSummoner.sAvatar}
-                        />
-                      </BaseMainLeftFstBox>
-                      <BaseMainLeftSndBox>
-                        <SummonerRankingText></SummonerRankingText>
-                        <SummonerName>
-                          {data.seeOneBroadcaster[0].bSummoner.sName}
-                        </SummonerName>
-                      </BaseMainLeftSndBox>
-                    </BaseMainLeftDiv>
-                  </BaseMainDiv>
-                </BaseInfoDiv>
-                <BaseInfoDiv>
-                  <BaseTitleDiv>
-                    <CommonTitle>상세 통계</CommonTitle>
-                  </BaseTitleDiv>
+                  <BaseInfoBox>
+                    <BaseMainDiv>
+                      <BaseMainBox>
+                        <BaseTitleDiv>
+                          <CommonTitle>소환사 정보</CommonTitle>
+                        </BaseTitleDiv>
+                        <FstInfoDiv>
+                          <FstInfoFstBox>
+                            <SummonerAvatarDiv>
+                              <SummonerAvatar
+                                url={
+                                  data.seeOneBroadcaster[0].bSummoner.sAvatar
+                                }
+                              >
+                                <SummonerLevel>100</SummonerLevel>
+                              </SummonerAvatar>
+                            </SummonerAvatarDiv>
+                          </FstInfoFstBox>
+                          <FstInfoSndBox>
+                            <SummonerRankingBox>
+                              <SummonerRankingText
+                                style={{ backgroundColor: Theme.orangeColor }}
+                              >
+                                전체 1위
+                              </SummonerRankingText>
+                              <SummonerRankingText
+                                style={{ backgroundColor: Theme.twitchColor }}
+                              >
+                                트위치 1위
+                              </SummonerRankingText>
+                            </SummonerRankingBox>
+                            <SummonerName>
+                              {data.seeOneBroadcaster[0].bSummoner.sName}
+                            </SummonerName>
+                          </FstInfoSndBox>
+                        </FstInfoDiv>
+                        <SndInfoDiv>
+                          <SndInfoFstDiv>
+                            <SndInfoFstDivSndDiv>
+                              <SeasonBox>
+                                <SeasonText>시즌 10</SeasonText>
+                                <SoloText>솔로랭크</SoloText>
+                              </SeasonBox>
+                              <TierBox>
+                                <TierText>{sTierName}</TierText>
+                                <RankText>{sRank}</RankText>
+                                <PointsText>
+                                  ({data.seeOneBroadcaster[0].bSummoner.sPoints}
+                                  LP)
+                                </PointsText>
+                              </TierBox>
+                            </SndInfoFstDivSndDiv>
+                            <SndInfoFstDivFstDiv>
+                              <EmblemIcon url={sTierEmblem} />
+                            </SndInfoFstDivFstDiv>
+                          </SndInfoFstDiv>
+                          <SndInfoSndDiv>
+                            <SndInfoSndDivFstBox>
+                              <WinRateDiv>
+                                <ReactMinimalPieChart
+                                  animate={true}
+                                  animationDuration={500}
+                                  animationEasing="ease-out"
+                                  cx={50}
+                                  cy={50}
+                                  data={[
+                                    {
+                                      color: Theme.winColor,
+                                      title: "승",
+                                      value:
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sWins
+                                    },
+                                    {
+                                      color: Theme.lossColor,
+                                      title: "패",
+                                      value:
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sLosses
+                                    }
+                                  ]}
+                                  label={({ data }) =>
+                                    Math.round(data[0].percentage) + "%"
+                                  }
+                                  labelStyle={{
+                                    fontSize: 20,
+                                    fontWeight: "bold",
+                                    fill: Theme.darkOrangeColor
+                                  }}
+                                  labelPosition={0}
+                                  lengthAngle={360}
+                                  lineWidth={30}
+                                  onClick={undefined}
+                                  onMouseOut={undefined}
+                                  onMouseOver={undefined}
+                                  paddingAngle={3}
+                                  radius={50}
+                                  rounded={false}
+                                  startAngle={100}
+                                  viewBoxSize={[100, 100]}
+                                  style={{ height: 100, width: 100 }}
+                                />
+                              </WinRateDiv>
+                            </SndInfoSndDivFstBox>
+                            <SndInfoSndDivSndBox>
+                              <WinLossBox>
+                                <TotalText>
+                                  {data.seeOneBroadcaster[0].bSummoner.sWins +
+                                    data.seeOneBroadcaster[0].bSummoner.sLosses}
+                                  전
+                                </TotalText>
+                                <WinsText>
+                                  {data.seeOneBroadcaster[0].bSummoner.sWins}승
+                                </WinsText>
+                                <LossesText>
+                                  {data.seeOneBroadcaster[0].bSummoner.sLosses}
+                                  패
+                                </LossesText>
+                              </WinLossBox>
+                            </SndInfoSndDivSndBox>
+                          </SndInfoSndDiv>
+                        </SndInfoDiv>
+                      </BaseMainBox>
+                    </BaseMainDiv>
+                  </BaseInfoBox>
+                  <BaseInfoBox>
+                    <BaseMainDiv>
+                      <BaseMainBox>
+                        <BaseTitleDiv>
+                          <CommonTitle>선호 포지션</CommonTitle>
+                        </BaseTitleDiv>
+                      </BaseMainBox>
+                    </BaseMainDiv>
+                  </BaseInfoBox>
+                  <BaseInfoBox>
+                    <BaseMainDiv>
+                      <BaseMainBox>
+                        <BaseTitleDiv>
+                          <CommonTitle>선호 챔피언</CommonTitle>
+                        </BaseTitleDiv>
+                      </BaseMainBox>
+                    </BaseMainDiv>
+                  </BaseInfoBox>
                 </BaseInfoDiv>
               </DetailDiv>
             )}

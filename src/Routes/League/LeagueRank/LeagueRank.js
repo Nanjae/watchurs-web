@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { darkBuleColor } from "../../../Styles/StyleFunction";
+import { darkBlueColor } from "../../../Styles/StyleFunction";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import RankBoard from "../../../Components/RankBoard/RankBoard";
@@ -93,7 +93,7 @@ export default withRouter(() => {
     <LeagueRank>
       <LeagueRankDiv>
         <MainBgDiv windowHeight={windowHeight} url={BgImage} />
-        <MainOpacityDiv style={{ backgroundColor: darkBuleColor }} />
+        <MainOpacityDiv style={{ backgroundColor: darkBlueColor }} />
         <MainDiv windowHeight={windowHeight}>
           <RankBoard />
         </MainDiv>
