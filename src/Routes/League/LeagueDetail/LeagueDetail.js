@@ -46,6 +46,10 @@ const SEE_ONE_BROADCASTER = gql`
   }
 `;
 
+/**
+ * LeagueDetail 전체 스크린
+ */
+
 const LeagueDetail = styled.div``;
 
 const LeagueDetailDiv = styled.div``;
@@ -132,6 +136,10 @@ const DetailDiv = styled.div`
   width: 100%;
   margin: 15px 0px;
 `;
+
+/**
+ * 헤더 브로드캐스터 정보
+ */
 
 const HeaderBgDiv = styled.div`
   position: absolute;
@@ -243,23 +251,30 @@ const MenuBox = styled.div`
   font-size: 18px;
 `;
 
-const BaseInfoDiv = styled.div`
+/**
+ * 소환사 인포 박스
+ * 1. 소환사 정보
+ * 2. 선호 포지션
+ * 3. 선호 챔피언
+ */
+
+const InfoDiv = styled.div`
   width: 1050px;
   display: flex;
   justify-content: space-between;
 `;
 
-const BaseInfoBox = styled.div`
+const InfoBox = styled.div`
   height: 370px;
   margin-top: 10px;
 `;
 
-const BaseMainDiv = styled.div`
+const InfoMainDiv = styled.div`
   display: flex;
   height: 370px;
 `;
 
-const BaseMainBox = styled.div`
+const InfoMainBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -270,7 +285,7 @@ const BaseMainBox = styled.div`
   height: 100%;
 `;
 
-const BaseTitleDiv = styled.div`
+const CommonTitleDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -288,7 +303,11 @@ const CommonTitle = styled.div`
   margin-left: 12px;
 `;
 
-const FstInfoDiv = styled.div`
+/**
+ * 1. 소환사 정보
+ */
+
+const SummonerInfoDiv = styled.div`
   width: 320px;
   display: flex;
   justify-content: flex-start;
@@ -296,7 +315,7 @@ const FstInfoDiv = styled.div`
   align-items: flex-end;
 `;
 
-const FstInfoFstBox = styled.div``;
+const SummonerInfoBox = styled.div``;
 
 const SummonerAvatarDiv = styled.div`
   background-color: ${props => props.theme.whiteColor};
@@ -324,7 +343,7 @@ const SummonerLevel = styled.div`
   background-color: ${props => props.theme.brownColor};
 `;
 
-const FstInfoSndBox = styled.div`
+const SummonerRankingDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -349,32 +368,21 @@ const SummonerName = styled.div`
   color: ${props => props.theme.brownColor};
 `;
 
-const SndInfoDiv = styled.div`
+const SummonerDetailDiv = styled.div`
   width: 298px;
   padding: 10px;
   background-color: ${props => props.theme.grayColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const SndInfoFstDiv = styled.div`
+const SummonerTierDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: -10px;
 `;
 
-const SndInfoFstDivFstDiv = styled.div`
-  margin-right: 10px;
-`;
-
-const EmblemIcon = styled.div`
-  background-image: url(${props => props.url});
-  background-size: cover;
-  width: 77px;
-  height: 90px;
-`;
-
-const SndInfoFstDivSndDiv = styled.div`
+const SummonerTierBox = styled.div`
   border-radius: 4px;
   padding: 10px;
   display: flex;
@@ -427,17 +435,26 @@ const PointsText = styled.div`
   font-size: 16px;
 `;
 
-const SndInfoSndDiv = styled.div`
+const SummonerEmblemBox = styled.div`
+  margin-right: 10px;
+`;
+
+const EmblemIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 77px;
+  height: 90px;
+`;
+
+const SummonerWinRateDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const SndInfoSndDivFstBox = styled.div``;
+const SummonerWinRateBox = styled.div``;
 
-const WinRateDiv = styled.div``;
-
-const SndInfoSndDivSndBox = styled.div`
+const SummonerWinLossDiv = styled.div`
   margin-left: 10px;
   display: flex;
   flex-direction: column;
@@ -463,6 +480,26 @@ const WinsText = styled.div`
 const LossesText = styled.div`
   color: ${props => props.theme.lossColor};
 `;
+
+/**
+ * 2. 선호 포지션
+ */
+
+const FavLaneDiv = styled.div``;
+
+const LaneInfoDiv = styled.div``;
+
+const LaneWinRateDiv = styled.div``;
+
+/**
+ * 3. 선호 챔피언
+ */
+
+const FavChampDiv = styled.div``;
+
+const ChampInfoDiv = styled.div``;
+
+const ChampWinRateDiv = styled.div``;
 
 let sTierEmblem = emblemUnranked;
 let sTierName = "랭크없음";
@@ -558,15 +595,15 @@ export default withRouter(
                     </MenuBox>
                   </MenuDiv>
                 </HeaderDiv>
-                <BaseInfoDiv>
-                  <BaseInfoBox>
-                    <BaseMainDiv>
-                      <BaseMainBox>
-                        <BaseTitleDiv>
+                <InfoDiv>
+                  <InfoBox>
+                    <InfoMainDiv>
+                      <InfoMainBox>
+                        <CommonTitleDiv>
                           <CommonTitle>소환사 정보</CommonTitle>
-                        </BaseTitleDiv>
-                        <FstInfoDiv>
-                          <FstInfoFstBox>
+                        </CommonTitleDiv>
+                        <SummonerInfoDiv>
+                          <SummonerInfoBox>
                             <SummonerAvatarDiv>
                               <SummonerAvatar
                                 url={
@@ -576,8 +613,8 @@ export default withRouter(
                                 <SummonerLevel>100</SummonerLevel>
                               </SummonerAvatar>
                             </SummonerAvatarDiv>
-                          </FstInfoFstBox>
-                          <FstInfoSndBox>
+                          </SummonerInfoBox>
+                          <SummonerRankingDiv>
                             <SummonerRankingBox>
                               <SummonerRankingText
                                 style={{ backgroundColor: Theme.orangeColor }}
@@ -593,11 +630,11 @@ export default withRouter(
                             <SummonerName>
                               {data.seeOneBroadcaster[0].bSummoner.sName}
                             </SummonerName>
-                          </FstInfoSndBox>
-                        </FstInfoDiv>
-                        <SndInfoDiv>
-                          <SndInfoFstDiv>
-                            <SndInfoFstDivSndDiv>
+                          </SummonerRankingDiv>
+                        </SummonerInfoDiv>
+                        <SummonerDetailDiv>
+                          <SummonerTierDiv>
+                            <SummonerTierBox>
                               <SeasonBox>
                                 <SeasonText>시즌 10</SeasonText>
                                 <SoloText>솔로랭크</SoloText>
@@ -610,60 +647,57 @@ export default withRouter(
                                   LP)
                                 </PointsText>
                               </TierBox>
-                            </SndInfoFstDivSndDiv>
-                            <SndInfoFstDivFstDiv>
+                            </SummonerTierBox>
+                            <SummonerEmblemBox>
                               <EmblemIcon url={sTierEmblem} />
-                            </SndInfoFstDivFstDiv>
-                          </SndInfoFstDiv>
-                          <SndInfoSndDiv>
-                            <SndInfoSndDivFstBox>
-                              <WinRateDiv>
-                                <ReactMinimalPieChart
-                                  animate={true}
-                                  animationDuration={500}
-                                  animationEasing="ease-out"
-                                  cx={50}
-                                  cy={50}
-                                  data={[
-                                    {
-                                      color: Theme.winColor,
-                                      title: "승",
-                                      value:
-                                        data.seeOneBroadcaster[0].bSummoner
-                                          .sWins
-                                    },
-                                    {
-                                      color: Theme.lossColor,
-                                      title: "패",
-                                      value:
-                                        data.seeOneBroadcaster[0].bSummoner
-                                          .sLosses
-                                    }
-                                  ]}
-                                  label={({ data }) =>
-                                    Math.round(data[0].percentage) + "%"
+                            </SummonerEmblemBox>
+                          </SummonerTierDiv>
+                          <SummonerWinRateDiv>
+                            <SummonerWinRateBox>
+                              <ReactMinimalPieChart
+                                animate={true}
+                                animationDuration={500}
+                                animationEasing="ease-out"
+                                cx={50}
+                                cy={50}
+                                data={[
+                                  {
+                                    color: Theme.winColor,
+                                    title: "승",
+                                    value:
+                                      data.seeOneBroadcaster[0].bSummoner.sWins
+                                  },
+                                  {
+                                    color: Theme.lossColor,
+                                    title: "패",
+                                    value:
+                                      data.seeOneBroadcaster[0].bSummoner
+                                        .sLosses
                                   }
-                                  labelStyle={{
-                                    fontSize: 20,
-                                    fontWeight: "bold",
-                                    fill: Theme.darkOrangeColor
-                                  }}
-                                  labelPosition={0}
-                                  lengthAngle={360}
-                                  lineWidth={30}
-                                  onClick={undefined}
-                                  onMouseOut={undefined}
-                                  onMouseOver={undefined}
-                                  paddingAngle={3}
-                                  radius={50}
-                                  rounded={false}
-                                  startAngle={100}
-                                  viewBoxSize={[100, 100]}
-                                  style={{ height: 100, width: 100 }}
-                                />
-                              </WinRateDiv>
-                            </SndInfoSndDivFstBox>
-                            <SndInfoSndDivSndBox>
+                                ]}
+                                label={({ data }) =>
+                                  Math.round(data[0].percentage) + "%"
+                                }
+                                labelStyle={{
+                                  fontSize: 20,
+                                  fontWeight: "bold",
+                                  fill: Theme.darkOrangeColor
+                                }}
+                                labelPosition={0}
+                                lengthAngle={360}
+                                lineWidth={30}
+                                onClick={undefined}
+                                onMouseOut={undefined}
+                                onMouseOver={undefined}
+                                paddingAngle={3}
+                                radius={50}
+                                rounded={false}
+                                startAngle={100}
+                                viewBoxSize={[100, 100]}
+                                style={{ height: 100, width: 100 }}
+                              />
+                            </SummonerWinRateBox>
+                            <SummonerWinLossDiv>
                               <WinLossBox>
                                 <TotalText>
                                   {data.seeOneBroadcaster[0].bSummoner.sWins +
@@ -678,31 +712,39 @@ export default withRouter(
                                   패
                                 </LossesText>
                               </WinLossBox>
-                            </SndInfoSndDivSndBox>
-                          </SndInfoSndDiv>
-                        </SndInfoDiv>
-                      </BaseMainBox>
-                    </BaseMainDiv>
-                  </BaseInfoBox>
-                  <BaseInfoBox>
-                    <BaseMainDiv>
-                      <BaseMainBox>
-                        <BaseTitleDiv>
+                            </SummonerWinLossDiv>
+                          </SummonerWinRateDiv>
+                        </SummonerDetailDiv>
+                      </InfoMainBox>
+                    </InfoMainDiv>
+                  </InfoBox>
+                  <InfoBox>
+                    <InfoMainDiv>
+                      <InfoMainBox>
+                        <CommonTitleDiv>
                           <CommonTitle>선호 포지션</CommonTitle>
-                        </BaseTitleDiv>
-                      </BaseMainBox>
-                    </BaseMainDiv>
-                  </BaseInfoBox>
-                  <BaseInfoBox>
-                    <BaseMainDiv>
-                      <BaseMainBox>
-                        <BaseTitleDiv>
+                        </CommonTitleDiv>
+                        <FavLaneDiv>
+                          <LaneInfoDiv>선호 라인 정보</LaneInfoDiv>
+                          <LaneWinRateDiv>선호 라인 승률</LaneWinRateDiv>
+                        </FavLaneDiv>
+                      </InfoMainBox>
+                    </InfoMainDiv>
+                  </InfoBox>
+                  <InfoBox>
+                    <InfoMainDiv>
+                      <InfoMainBox>
+                        <CommonTitleDiv>
                           <CommonTitle>선호 챔피언</CommonTitle>
-                        </BaseTitleDiv>
-                      </BaseMainBox>
-                    </BaseMainDiv>
-                  </BaseInfoBox>
-                </BaseInfoDiv>
+                        </CommonTitleDiv>
+                        <FavChampDiv>
+                          <ChampInfoDiv>선호 챔피언 정보</ChampInfoDiv>
+                          <ChampWinRateDiv>선호 챔피언 승률</ChampWinRateDiv>
+                        </FavChampDiv>
+                      </InfoMainBox>
+                    </InfoMainDiv>
+                  </InfoBox>
+                </InfoDiv>
               </DetailDiv>
             )}
           </MainDiv>
