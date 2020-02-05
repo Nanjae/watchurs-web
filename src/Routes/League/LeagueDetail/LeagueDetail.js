@@ -26,6 +26,11 @@ import emblemDiamond from "../../../Assets/League/EmblemDiamond.png";
 import emblemMaster from "../../../Assets/League/EmblemMaster.png";
 import emblemGrandmaster from "../../../Assets/League/EmblemGrandmaster.png";
 import emblemChallenger from "../../../Assets/League/EmblemChallenger.png";
+import positionAdc from "../../../Assets/League/PositionAdc.png";
+import positionJgl from "../../../Assets/League/PositionJgl.png";
+import positionMid from "../../../Assets/League/PositionMid.png";
+import positionSup from "../../../Assets/League/PositionSup.png";
+import positionTop from "../../../Assets/League/PositionTop.png";
 
 const SEE_ONE_BROADCASTER = gql`
   query seeOneBroadcaster($term: String!) {
@@ -41,6 +46,10 @@ const SEE_ONE_BROADCASTER = gql`
         sTier
         sRank
         sPoints
+        sDetail {
+          dLane
+          dWins
+        }
       }
     }
   }
@@ -485,11 +494,114 @@ const LossesText = styled.div`
  * 2. 선호 포지션
  */
 
-const FavLaneDiv = styled.div``;
+const RecentMatchDiv = styled.div`
+  height: 311px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+`;
 
-const LaneInfoDiv = styled.div``;
+const RecentMatchBox = styled.div`
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :first-child {
+    border-bottom: 1px solid ${props => props.theme.lightGrayColor};
+    height: 65%;
+  }
+`;
 
-const LaneWinRateDiv = styled.div``;
+const LaneInfoDiv = styled.div`
+  height: 140px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LaneInfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+`;
+
+const LaneImage = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+`;
+
+const LaneText = styled.div`
+  margin-top: 5px;
+  width: fit-content;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: ${props => props.theme.orangeColor};
+  color: ${props => props.theme.whiteColor};
+  text-align: center;
+`;
+
+const LaneDetailDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+`;
+
+const LanePickText = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const LaneWinRateDiv = styled.div`
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
+  background-color: ${props => props.theme.grayColor};
+  margin-top: 15px;
+  width: 90px;
+`;
+
+const LaneWinLossBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+const LaneTotalText = styled.div`
+  color: ${props => props.theme.darkOrangeColor};
+`;
+
+const LaneWinsText = styled.div`
+  color: ${props => props.theme.winColor};
+  margin: 0px 3px;
+`;
+
+const LaneLossText = styled.div`
+  color: ${props => props.theme.lossColor};
+`;
+
+const LaneWinRateText = styled.div`
+  color: ${props => props.theme.whiteColor};
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: ${props => props.theme.darkOrangeColor};
+`;
 
 /**
  * 3. 선호 챔피언
@@ -504,6 +616,11 @@ const ChampWinRateDiv = styled.div``;
 let sTierEmblem = emblemUnranked;
 let sTierName = "랭크없음";
 let sRank = "";
+let arrLane = [];
+let detailWins = Array(20);
+let detailLane = Array(20);
+let fstFavLane = "";
+let sndFavLane = "";
 
 export default withRouter(
   ({
@@ -517,6 +634,107 @@ export default withRouter(
     });
 
     if (!loading && data && data.seeOneBroadcaster) {
+      console.log(data);
+
+      /**
+       * 포지션 분류
+       */
+
+      data.seeOneBroadcaster[0].bSummoner.sDetail.map((detail, index) => {
+        if (detail.dLane <= 5) {
+          detailWins[index] = detail.dWins[0];
+        } else {
+          detailWins[index] = detail.dWins[1];
+        }
+        if (detail.dLane === 1 || detail.dLane === 6) {
+          detailLane[index] = "TOP";
+        } else if (detail.dLane === 2 || detail.dLane === 7) {
+          detailLane[index] = "JGL";
+        } else if (detail.dLane === 3 || detail.dLane === 8) {
+          detailLane[index] = "MID";
+        } else if (detail.dLane === 4 || detail.dLane === 9) {
+          detailLane[index] = "ADC";
+        } else if (detail.dLane === 5 || detail.dLane === 10) {
+          detailLane[index] = "SUP";
+        } else {
+          detailLane[index] = "NaN";
+        }
+        return { detailWins, detailLane };
+      });
+
+      console.log(detailWins, detailLane);
+
+      const topLane = detailLane.filter(x => x === "TOP").length;
+      const jglLane = detailLane.filter(x => x === "JGL").length;
+      const midLane = detailLane.filter(x => x === "MID").length;
+      const adcLane = detailLane.filter(x => x === "ADC").length;
+      const supLane = detailLane.filter(x => x === "SUP").length;
+
+      let topWins = 0;
+      let jglWins = 0;
+      let midWins = 0;
+      let adcWins = 0;
+      let supWins = 0;
+
+      detailLane.map((lane, index) => {
+        if (detailWins[index] === "Win") {
+          if (lane === "TOP") {
+            topWins += 1;
+          } else if (lane === "JGL") {
+            jglWins += 1;
+          } else if (lane === "MID") {
+            midWins += 1;
+          } else if (lane === "ADC") {
+            adcWins += 1;
+          } else if (lane === "SUP") {
+            supWins += 1;
+          }
+        }
+        return { topWins, jglWins, midWins, adcWins, supWins };
+      });
+
+      arrLane = [
+        { lane: "TOP", count: topLane, wins: topWins },
+        { lane: "JGL", count: jglLane, wins: jglWins },
+        { lane: "MID", count: midLane, wins: midWins },
+        { lane: "ADC", count: adcLane, wins: adcWins },
+        { lane: "SUP", count: supLane, wins: supWins }
+      ].sort((a, b) => {
+        return a.count > b.count ? -1 : 1;
+      });
+
+      if (arrLane[0].lane === "TOP") {
+        fstFavLane = positionTop;
+      } else if (arrLane[0].lane === "JGL") {
+        fstFavLane = positionJgl;
+      } else if (arrLane[0].lane === "MID") {
+        fstFavLane = positionMid;
+      } else if (arrLane[0].lane === "ADC") {
+        fstFavLane = positionAdc;
+      } else if (arrLane[0].lane === "SUP") {
+        fstFavLane = positionSup;
+      }
+
+      if (arrLane[1].lane === "TOP") {
+        sndFavLane = positionTop;
+      } else if (arrLane[1].lane === "JGL") {
+        sndFavLane = positionJgl;
+      } else if (arrLane[1].lane === "MID") {
+        sndFavLane = positionMid;
+      } else if (arrLane[1].lane === "ADC") {
+        sndFavLane = positionAdc;
+      } else if (arrLane[1].lane === "SUP") {
+        sndFavLane = positionSup;
+      }
+
+      console.log(arrLane);
+
+      console.log(fstFavLane, sndFavLane);
+
+      /**
+       * 티어 분류
+       */
+
       sRank = data.seeOneBroadcaster[0].bSummoner.sRank;
 
       if (data.seeOneBroadcaster[0].bSummoner.sTier === "IRON") {
@@ -722,12 +940,80 @@ export default withRouter(
                     <InfoMainDiv>
                       <InfoMainBox>
                         <CommonTitleDiv>
-                          <CommonTitle>선호 포지션</CommonTitle>
+                          <CommonTitle>최근 승률</CommonTitle>
                         </CommonTitleDiv>
-                        <FavLaneDiv>
-                          <LaneInfoDiv>선호 라인 정보</LaneInfoDiv>
-                          <LaneWinRateDiv>선호 라인 승률</LaneWinRateDiv>
-                        </FavLaneDiv>
+                        <RecentMatchDiv>
+                          <RecentMatchBox></RecentMatchBox>
+                          <RecentMatchBox>
+                            <LaneInfoDiv>
+                              <LaneInfoBox>
+                                <LaneImage url={fstFavLane} />
+                                <LaneText>{arrLane[0].lane}</LaneText>
+                              </LaneInfoBox>
+                              <LaneDetailDiv>
+                                <LanePickText>
+                                  픽률{" "}
+                                  {Math.round((arrLane[0].count / 20) * 100)}%
+                                </LanePickText>
+                                <LaneWinRateDiv>
+                                  <LaneWinLossBox>
+                                    <LaneTotalText>
+                                      {arrLane[0].count}전
+                                    </LaneTotalText>
+                                    <LaneWinsText>
+                                      {arrLane[0].wins}승
+                                    </LaneWinsText>
+                                    <LaneLossText>
+                                      {arrLane[0].count - arrLane[0].wins}패
+                                    </LaneLossText>
+                                  </LaneWinLossBox>
+                                  <LaneWinRateText>
+                                    승률{" "}
+                                    {Math.round(
+                                      (arrLane[0].wins / arrLane[0].count) * 100
+                                    )}
+                                    %
+                                  </LaneWinRateText>
+                                </LaneWinRateDiv>
+                              </LaneDetailDiv>
+                            </LaneInfoDiv>
+                            {arrLane[1].count !== 0 && (
+                              <LaneInfoDiv>
+                                <LaneInfoBox>
+                                  <LaneImage url={sndFavLane} />
+                                  <LaneText>{arrLane[1].lane}</LaneText>
+                                </LaneInfoBox>
+                                <LaneDetailDiv>
+                                  <LanePickText>
+                                    픽률{" "}
+                                    {Math.round((arrLane[1].count / 20) * 100)}%
+                                  </LanePickText>
+                                  <LaneWinRateDiv>
+                                    <LaneWinLossBox>
+                                      <LaneTotalText>
+                                        {arrLane[1].count}전
+                                      </LaneTotalText>
+                                      <LaneWinsText>
+                                        {arrLane[1].wins}승
+                                      </LaneWinsText>
+                                      <LaneLossText>
+                                        {arrLane[1].count - arrLane[1].wins}패
+                                      </LaneLossText>
+                                    </LaneWinLossBox>
+                                    <LaneWinRateText>
+                                      승률{" "}
+                                      {Math.round(
+                                        (arrLane[1].wins / arrLane[1].count) *
+                                          100
+                                      )}
+                                      %
+                                    </LaneWinRateText>
+                                  </LaneWinRateDiv>
+                                </LaneDetailDiv>
+                              </LaneInfoDiv>
+                            )}
+                          </RecentMatchBox>
+                        </RecentMatchDiv>
                       </InfoMainBox>
                     </InfoMainDiv>
                   </InfoBox>
@@ -738,8 +1024,8 @@ export default withRouter(
                           <CommonTitle>선호 챔피언</CommonTitle>
                         </CommonTitleDiv>
                         <FavChampDiv>
-                          <ChampInfoDiv>선호 챔피언 정보</ChampInfoDiv>
-                          <ChampWinRateDiv>선호 챔피언 승률</ChampWinRateDiv>
+                          <ChampInfoDiv></ChampInfoDiv>
+                          <ChampWinRateDiv></ChampWinRateDiv>
                         </FavChampDiv>
                       </InfoMainBox>
                     </InfoMainDiv>
