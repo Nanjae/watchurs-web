@@ -12,7 +12,7 @@ import { withRouter } from "react-router-dom";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
 import Loader from "../../../Components/Loader";
-import HeaderImage from "../../../Assets/Common/runeterra-ionia-01.jpg";
+import HeaderImage from "../../../Assets/Common/runeterra-ionia-01-c.png";
 import Theme from "../../../Styles/Theme";
 import twitchLogo from "../../../Assets/Twitch/TwitchLogo.png";
 import ReactMinimalPieChart from "react-minimal-pie-chart";
