@@ -534,7 +534,7 @@ const LaneText = styled.div`
   margin-top: 5px;
   width: fit-content;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   padding: 4px;
   background-color: ${props => props.theme.orangeColor};
@@ -559,7 +559,6 @@ const LanePickText = styled.div`
 
 const LaneWinRateDiv = styled.div`
   padding: 3px;
-  border-radius: 4px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: ${props => props.theme.grayColor};
   margin-top: 10px;
@@ -958,7 +957,7 @@ export default withRouter(
                                   Math.round(data[0].percentage) + "%"
                                 }
                                 labelStyle={{
-                                  fontSize: 20,
+                                  fontSize: 16,
                                   fontWeight: "bold",
                                   fill: Theme.darkOrangeColor
                                 }}
@@ -1103,7 +1102,7 @@ export default withRouter(
                                     Math.round(data[0].percentage) + "%"
                                   }
                                   labelStyle={{
-                                    fontSize: 20,
+                                    fontSize: 16,
                                     fontWeight: "bold",
                                     fill: Theme.darkOrangeColor
                                   }}
