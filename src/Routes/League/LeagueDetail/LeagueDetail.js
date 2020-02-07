@@ -258,19 +258,22 @@ const MenuBox = styled.div`
   color: ${props => props.theme.whiteColor};
   font-weight: normal;
   font-size: 18px;
+  cursor: pointer;
 `;
 
 /**
  * 소환사 인포 박스
  * 1. 소환사 정보
  * 2. 선호 포지션
- * 3. 선호 챔피언
+ * 3. 최근 승률
+ * 4. 선호 챔피언
  */
 
 const InfoDiv = styled.div`
   width: 1050px;
   display: flex;
   justify-content: space-between;
+  user-select: none;
 `;
 
 const InfoBox = styled.div`
@@ -494,34 +497,22 @@ const LossesText = styled.div`
  * 2. 선호 포지션
  */
 
-const RecentMatchDiv = styled.div`
-  height: 311px;
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-`;
-
-const RecentMatchBox = styled.div`
-  height: 35%;
+const LaneDiv = styled.div`
+  height: 122px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  :first-child {
-    border-bottom: 1px solid ${props => props.theme.lightGrayColor};
-    height: 65%;
-  }
 `;
 
 const LaneInfoDiv = styled.div`
-  height: 140px;
-  width: 50%;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  :not(:first-child) {
+    margin-left: 10px;
+  }
 `;
 
 const LaneInfoBox = styled.div`
@@ -529,23 +520,23 @@ const LaneInfoBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 5px;
+  margin-right: 3px;
 `;
 
 const LaneImage = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 `;
 
 const LaneText = styled.div`
   margin-top: 5px;
   width: fit-content;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
-  padding: 5px;
+  padding: 4px;
   background-color: ${props => props.theme.orangeColor};
   color: ${props => props.theme.whiteColor};
   text-align: center;
@@ -567,19 +558,20 @@ const LanePickText = styled.div`
 `;
 
 const LaneWinRateDiv = styled.div`
-  padding: 4px;
+  padding: 3px;
   border-radius: 4px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: ${props => props.theme.grayColor};
-  margin-top: 15px;
-  width: 90px;
+  margin-top: 10px;
+  width: 100px;
 `;
 
 const LaneWinLossBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 3px;
+  margin-bottom: 8px;
 `;
 
 const LaneTotalText = styled.div`
@@ -604,7 +596,76 @@ const LaneWinRateText = styled.div`
 `;
 
 /**
- * 3. 선호 챔피언
+ * 3. 최근 승률
+ */
+
+const RecentMatchDiv = styled.div`
+  height: 150px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+`;
+
+const RecentMatchBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const RecentWinRateDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const RecentWinRateBox = styled.div``;
+
+const RecentWinLossDiv = styled.div`
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const RecentWinLossBox = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+`;
+
+const RecentTotalText = styled.div`
+  color: ${props => props.theme.darkOrangeColor};
+`;
+
+const RecentWinsText = styled.div`
+  color: ${props => props.theme.winColor};
+  margin: 0px 5px;
+`;
+
+const RecentLossesText = styled.div`
+  color: ${props => props.theme.lossColor};
+`;
+
+const RecentTextDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+const RecentText = styled.div`
+  font-size: 12px;
+  font-weight: bold;
+`;
+
+/**
+ * 4. 선호 챔피언
  */
 
 const FavChampDiv = styled.div``;
@@ -634,7 +695,7 @@ export default withRouter(
     });
 
     if (!loading && data && data.seeOneBroadcaster) {
-      console.log(data);
+      // console.log(data);
 
       /**
        * 포지션 분류
@@ -910,7 +971,7 @@ export default withRouter(
                                 paddingAngle={3}
                                 radius={50}
                                 rounded={false}
-                                startAngle={100}
+                                startAngle={120}
                                 viewBoxSize={[100, 100]}
                                 style={{ height: 100, width: 100 }}
                               />
@@ -940,79 +1001,151 @@ export default withRouter(
                     <InfoMainDiv>
                       <InfoMainBox>
                         <CommonTitleDiv>
-                          <CommonTitle>최근 승률</CommonTitle>
+                          <CommonTitle>선호 포지션</CommonTitle>
                         </CommonTitleDiv>
-                        <RecentMatchDiv>
-                          <RecentMatchBox></RecentMatchBox>
-                          <RecentMatchBox>
+                        <LaneDiv>
+                          <LaneInfoDiv>
+                            <LaneInfoBox>
+                              <LaneImage url={fstFavLane} />
+                              <LaneText>{arrLane[0].lane}</LaneText>
+                            </LaneInfoBox>
+                            <LaneDetailDiv>
+                              <LanePickText>
+                                픽률 {Math.round((arrLane[0].count / 20) * 100)}
+                                %
+                              </LanePickText>
+                              <LaneWinRateDiv>
+                                <LaneWinLossBox>
+                                  <LaneTotalText>
+                                    {arrLane[0].count}전
+                                  </LaneTotalText>
+                                  <LaneWinsText>
+                                    {arrLane[0].wins}승
+                                  </LaneWinsText>
+                                  <LaneLossText>
+                                    {arrLane[0].count - arrLane[0].wins}패
+                                  </LaneLossText>
+                                </LaneWinLossBox>
+                                <LaneWinRateText>
+                                  승률{" "}
+                                  {Math.round(
+                                    (arrLane[0].wins / arrLane[0].count) * 100
+                                  )}
+                                  %
+                                </LaneWinRateText>
+                              </LaneWinRateDiv>
+                            </LaneDetailDiv>
+                          </LaneInfoDiv>
+                          {arrLane[1].count !== 0 && (
                             <LaneInfoDiv>
                               <LaneInfoBox>
-                                <LaneImage url={fstFavLane} />
-                                <LaneText>{arrLane[0].lane}</LaneText>
+                                <LaneImage url={sndFavLane} />
+                                <LaneText>{arrLane[1].lane}</LaneText>
                               </LaneInfoBox>
                               <LaneDetailDiv>
                                 <LanePickText>
                                   픽률{" "}
-                                  {Math.round((arrLane[0].count / 20) * 100)}%
+                                  {Math.round((arrLane[1].count / 20) * 100)}%
                                 </LanePickText>
                                 <LaneWinRateDiv>
                                   <LaneWinLossBox>
                                     <LaneTotalText>
-                                      {arrLane[0].count}전
+                                      {arrLane[1].count}전
                                     </LaneTotalText>
                                     <LaneWinsText>
-                                      {arrLane[0].wins}승
+                                      {arrLane[1].wins}승
                                     </LaneWinsText>
                                     <LaneLossText>
-                                      {arrLane[0].count - arrLane[0].wins}패
+                                      {arrLane[1].count - arrLane[1].wins}패
                                     </LaneLossText>
                                   </LaneWinLossBox>
                                   <LaneWinRateText>
                                     승률{" "}
                                     {Math.round(
-                                      (arrLane[0].wins / arrLane[0].count) * 100
+                                      (arrLane[1].wins / arrLane[1].count) * 100
                                     )}
                                     %
                                   </LaneWinRateText>
                                 </LaneWinRateDiv>
                               </LaneDetailDiv>
                             </LaneInfoDiv>
-                            {arrLane[1].count !== 0 && (
-                              <LaneInfoDiv>
-                                <LaneInfoBox>
-                                  <LaneImage url={sndFavLane} />
-                                  <LaneText>{arrLane[1].lane}</LaneText>
-                                </LaneInfoBox>
-                                <LaneDetailDiv>
-                                  <LanePickText>
-                                    픽률{" "}
-                                    {Math.round((arrLane[1].count / 20) * 100)}%
-                                  </LanePickText>
-                                  <LaneWinRateDiv>
-                                    <LaneWinLossBox>
-                                      <LaneTotalText>
-                                        {arrLane[1].count}전
-                                      </LaneTotalText>
-                                      <LaneWinsText>
-                                        {arrLane[1].wins}승
-                                      </LaneWinsText>
-                                      <LaneLossText>
-                                        {arrLane[1].count - arrLane[1].wins}패
-                                      </LaneLossText>
-                                    </LaneWinLossBox>
-                                    <LaneWinRateText>
-                                      승률{" "}
-                                      {Math.round(
-                                        (arrLane[1].wins / arrLane[1].count) *
-                                          100
-                                      )}
-                                      %
-                                    </LaneWinRateText>
-                                  </LaneWinRateDiv>
-                                </LaneDetailDiv>
-                              </LaneInfoDiv>
-                            )}
+                          )}
+                        </LaneDiv>
+                        <CommonTitleDiv>
+                          <CommonTitle>최근 승률</CommonTitle>
+                        </CommonTitleDiv>
+                        <RecentMatchDiv>
+                          <RecentMatchBox>
+                            <RecentWinRateDiv>
+                              <RecentWinRateBox>
+                                <ReactMinimalPieChart
+                                  animate={true}
+                                  animationDuration={500}
+                                  animationEasing="ease-out"
+                                  cx={50}
+                                  cy={50}
+                                  data={[
+                                    {
+                                      color: Theme.winColor,
+                                      title: "승",
+                                      value: detailWins.filter(x => x === "Win")
+                                        .length
+                                    },
+                                    {
+                                      color: Theme.lossColor,
+                                      title: "패",
+                                      value: detailWins.filter(
+                                        x => x === "Fail"
+                                      ).length
+                                    }
+                                  ]}
+                                  label={({ data }) =>
+                                    Math.round(data[0].percentage) + "%"
+                                  }
+                                  labelStyle={{
+                                    fontSize: 20,
+                                    fontWeight: "bold",
+                                    fill: Theme.darkOrangeColor
+                                  }}
+                                  labelPosition={0}
+                                  lengthAngle={360}
+                                  lineWidth={30}
+                                  onClick={undefined}
+                                  onMouseOut={undefined}
+                                  onMouseOver={undefined}
+                                  paddingAngle={3}
+                                  radius={50}
+                                  rounded={false}
+                                  startAngle={120}
+                                  viewBoxSize={[100, 100]}
+                                  style={{ height: 100, width: 100 }}
+                                />
+                              </RecentWinRateBox>
+                              <RecentWinLossDiv>
+                                <RecentWinLossBox>
+                                  <RecentTotalText>
+                                    {detailWins.length}전
+                                  </RecentTotalText>
+                                  <RecentWinsText>
+                                    {detailWins.filter(x => x === "Win").length}
+                                    승
+                                  </RecentWinsText>
+                                  <RecentLossesText>
+                                    {
+                                      detailWins.filter(x => x === "Fail")
+                                        .length
+                                    }
+                                    패
+                                  </RecentLossesText>
+                                </RecentWinLossBox>
+                              </RecentWinLossDiv>
+                            </RecentWinRateDiv>
                           </RecentMatchBox>
+                          <RecentTextDiv>
+                            <RecentText>
+                              * 소환사의 협곡(5vs5) 매치 결과만 표시됩니다.
+                            </RecentText>
+                          </RecentTextDiv>
                         </RecentMatchDiv>
                       </InfoMainBox>
                     </InfoMainDiv>
@@ -1040,3 +1173,11 @@ export default withRouter(
     );
   }
 );
+
+/**
+ *
+ */
+
+/**
+ *
+ */
