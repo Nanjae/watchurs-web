@@ -49,6 +49,8 @@ const SEE_ONE_BROADCASTER = gql`
         sDetail {
           dLane
           dWins
+          dChampionName
+          dChampionAvatar
         }
       }
     }
@@ -667,11 +669,113 @@ const RecentText = styled.div`
  * 4. 선호 챔피언
  */
 
-const FavChampDiv = styled.div``;
+const FavChampDiv = styled.div`
+  height: 331px;
+  display: flex;
+  flex-direction: column;
+`;
 
-const ChampInfoDiv = styled.div``;
+const FavChampBox = styled.div`
+  padding: 5px;
+  height: 100px;
+  width: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :not(:first-child) {
+    border-top: 1px solid ${props => props.theme.lightGrayColor};
+  }
+`;
 
-const ChampWinRateDiv = styled.div``;
+const ChampInfoDiv = styled.div`
+  height: 100%;
+  width: 90px;
+`;
+
+const ChampInfoBox = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ChampAvatar = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+`;
+
+const ChampName = styled.div`
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: ${props => props.theme.blackColor};
+`;
+
+const ChampDetailDiv = styled.div`
+  height: 70px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid ${props => props.theme.lightGrayColor};
+  background-color: ${props => props.theme.grayColor};
+`;
+
+const ChampDetailBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+`;
+
+const ChampPick = styled.div`
+  padding: 5px;
+  font-weight: bold;
+`;
+
+const ChampWinRate = styled.div`
+  padding: 5px;
+  font-weight: bold;
+  background-color: ${props => props.theme.darkOrangeColor};
+  color: ${props => props.theme.whiteColor};
+  border-radius: 4px;
+`;
+
+const ChampWinRateBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    ${props => props.theme.orangeColor} 0%,
+    ${props => props.theme.orangeColor} ${props => props.winRate}%,
+    ${props => props.theme.darkOrangeColor} ${props => props.winRate}%,
+    ${props => props.theme.darkOrangeColor} 100%
+  );
+  border-radius: 10px;
+  color: ${props => props.theme.whiteColor};
+  width: 170px;
+  height: 24px;
+  font-size: 12px;
+  margin: 0px 5px;
+  font-weight: normal;
+`;
+
+const ChampWinText = styled.div`
+  margin-left: 5px;
+`;
+
+const ChampLossText = styled.div`
+  margin-right: 5px;
+`;
 
 let sTierEmblem = emblemUnranked;
 let sTierName = "랭크없음";
@@ -694,7 +798,7 @@ export default withRouter(
     });
 
     if (!loading && data && data.seeOneBroadcaster) {
-      // console.log(data);
+      console.log(data);
 
       /**
        * 포지션 분류
@@ -721,8 +825,6 @@ export default withRouter(
         }
         return { detailWins, detailLane };
       });
-
-      console.log(detailWins, detailLane);
 
       const topLane = detailLane.filter(x => x === "TOP").length;
       const jglLane = detailLane.filter(x => x === "JGL").length;
@@ -786,10 +888,6 @@ export default withRouter(
       } else if (arrLane[1].lane === "SUP") {
         sndFavLane = positionSup;
       }
-
-      console.log(arrLane);
-
-      console.log(fstFavLane, sndFavLane);
 
       /**
        * 티어 분류
@@ -1156,8 +1254,96 @@ export default withRouter(
                           <CommonTitle>선호 챔피언</CommonTitle>
                         </CommonTitleDiv>
                         <FavChampDiv>
-                          <ChampInfoDiv></ChampInfoDiv>
-                          <ChampWinRateDiv></ChampWinRateDiv>
+                          <FavChampBox>
+                            <ChampInfoDiv>
+                              <ChampInfoBox>
+                                <ChampAvatar
+                                  url={
+                                    data.seeOneBroadcaster[0].bSummoner
+                                      .sDetail[0].dChampionAvatar
+                                  }
+                                />
+                                <ChampName>
+                                  {
+                                    data.seeOneBroadcaster[0].bSummoner
+                                      .sDetail[0].dChampionName
+                                  }
+                                </ChampName>
+                              </ChampInfoBox>
+                            </ChampInfoDiv>
+                            <ChampDetailDiv>
+                              <ChampDetailBox>
+                                <ChampPick>픽률 70%</ChampPick>
+                                <ChampWinRate>승률 65%</ChampWinRate>
+                              </ChampDetailBox>
+                              <ChampDetailBox>
+                                <ChampWinRateBar winRate={60}>
+                                  <ChampWinText>12승</ChampWinText>
+                                  <ChampLossText>6패</ChampLossText>
+                                </ChampWinRateBar>
+                              </ChampDetailBox>
+                            </ChampDetailDiv>
+                          </FavChampBox>
+                          <FavChampBox>
+                            <ChampInfoDiv>
+                              <ChampInfoBox>
+                                <ChampAvatar
+                                  url={
+                                    data.seeOneBroadcaster[0].bSummoner
+                                      .sDetail[1].dChampionAvatar
+                                  }
+                                />
+                                <ChampName>
+                                  {
+                                    data.seeOneBroadcaster[0].bSummoner
+                                      .sDetail[1].dChampionName
+                                  }
+                                </ChampName>
+                              </ChampInfoBox>
+                            </ChampInfoDiv>
+                            <ChampDetailDiv>
+                              <ChampDetailBox>
+                                <ChampPick>픽률 70%</ChampPick>
+                                <ChampWinRate>승률 65%</ChampWinRate>
+                              </ChampDetailBox>
+                              <ChampDetailBox>
+                                <ChampWinRateBar winRate={60}>
+                                  <ChampWinText>12승</ChampWinText>
+                                  <ChampLossText>6패</ChampLossText>
+                                </ChampWinRateBar>
+                              </ChampDetailBox>
+                            </ChampDetailDiv>
+                          </FavChampBox>
+                          <FavChampBox>
+                            <ChampInfoDiv>
+                              <ChampInfoBox>
+                                <ChampAvatar
+                                  url={
+                                    data.seeOneBroadcaster[0].bSummoner
+                                      .sDetail[2].dChampionAvatar
+                                  }
+                                />
+                                <ChampName>
+                                  {
+                                    data.seeOneBroadcaster[0].bSummoner
+                                      .sDetail[2].dChampionName
+                                  }
+                                </ChampName>
+                              </ChampInfoBox>
+                            </ChampInfoDiv>
+                            <ChampDetailDiv>
+                              <ChampDetailBox>
+                                <ChampPick>픽률 70%</ChampPick>
+                                <ChampWinRate>승률 65%</ChampWinRate>
+                              </ChampDetailBox>
+                              <ChampDetailBox>
+                                <ChampWinRateBar winRate={60}>
+                                  <ChampWinText>12승</ChampWinText>
+                                  <ChampLossText>6패</ChampLossText>
+                                </ChampWinRateBar>
+                              </ChampDetailBox>
+                            </ChampDetailDiv>
+                          </FavChampBox>
                         </FavChampDiv>
                       </InfoMainBox>
                     </InfoMainDiv>
