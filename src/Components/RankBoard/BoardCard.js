@@ -306,10 +306,10 @@ const LeagueWinRateBar = styled.div`
   align-items: center;
   background: linear-gradient(
     to right,
-    ${props => props.theme.orangeColor} 0%,
-    ${props => props.theme.orangeColor} ${props => props.winRate}%,
-    ${props => props.theme.darkOrangeColor} ${props => props.winRate}%,
-    ${props => props.theme.darkOrangeColor} 100%
+    ${props => props.theme.winColor} 0%,
+    ${props => props.theme.winColor} ${props => props.winRate}%,
+    ${props => props.theme.lossColor} ${props => props.winRate}%,
+    ${props => props.theme.lossColor} 100%
   );
   border-radius: 10px;
   color: ${props => props.theme.whiteColor};

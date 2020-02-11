@@ -154,30 +154,66 @@ const DetailDiv = styled.div`
 
 const HeaderBgDiv = styled.div`
   position: absolute;
-  width: 1050px;
   height: 190px;
   background-image: url(${props => props.url});
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 50%;
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 800px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 1050px;
+  }
 `;
 
 const HeaderOpacityDiv = styled.div`
   position: absolute;
-  width: 1050px;
   z-index: 50;
   padding-top: 190px;
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 800px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 1050px;
+  }
 `;
 
 const HeaderDiv = styled.div`
   z-index: 100;
-  width: 1050px;
   height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-size: 18px;
   font-weight: bold;
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 800px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 1050px;
+  }
 `;
 
 const BroadDiv = styled.div`
@@ -272,10 +308,32 @@ const MenuBox = styled.div`
  */
 
 const InfoDiv = styled.div`
-  width: 1050px;
+  display: flex;
+  user-select: none;
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 800px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 1050px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+const InfoColumn = styled.div`
   display: flex;
   justify-content: space-between;
-  user-select: none;
 `;
 
 const InfoBox = styled.div`
@@ -295,15 +353,26 @@ const InfoMainBox = styled.div`
   align-items: center;
   background-color: ${props => props.theme.whiteColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
-  width: 338px;
   height: 100%;
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 298px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 578px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 393px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 338px;
+  }
 `;
 
 const CommonTitleDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 340px;
   height: 40px;
   background-color: ${props => props.theme.darkGrayColor};
   font-size: 16px;
@@ -311,6 +380,19 @@ const CommonTitleDiv = styled.div`
   margin-left: -1px;
   margin-top: -1px;
   color: ${props => props.theme.lightOrangeColor};
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 395px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 340px;
+  }
 `;
 
 const CommonTitle = styled.div`
@@ -322,11 +404,23 @@ const CommonTitle = styled.div`
  */
 
 const SummonerInfoDiv = styled.div`
-  width: 320px;
   display: flex;
   justify-content: flex-start;
   padding: 10px;
   align-items: flex-end;
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 280px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 560px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 375px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 320px;
+  }
 `;
 
 const SummonerInfoBox = styled.div``;
@@ -334,19 +428,47 @@ const SummonerInfoBox = styled.div``;
 const SummonerAvatarDiv = styled.div`
   background-color: ${props => props.theme.whiteColor};
   border: 4px solid ${props => props.theme.brownColor};
-  width: 90px;
-  height: 90px;
   margin-right: 10px;
+  @media only screen and (max-width: 599px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 const SummonerAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 90px;
-  height: 90px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  @media only screen and (max-width: 599px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 const SummonerLevel = styled.div`
@@ -383,10 +505,22 @@ const SummonerName = styled.div`
 `;
 
 const SummonerDetailDiv = styled.div`
-  width: 298px;
   padding: 10px;
   background-color: ${props => props.theme.grayColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 353px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 298px;
+  }
 `;
 
 const SummonerTierDiv = styled.div`
@@ -505,6 +639,18 @@ const LaneDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 599px) {
+    height: 122px;
+  }
+  @media only screen and (min-width: 600px) {
+    height: 122px;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 170px;
+  }
+  @media only screen and (min-width: 1800px) {
+    height: 122px;
+  }
 `;
 
 const LaneInfoDiv = styled.div`
@@ -512,8 +658,25 @@ const LaneInfoDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  :not(:first-child) {
-    margin-left: 10px;
+  @media only screen and (max-width: 599px) {
+    :not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    :not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    :not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+  @media only screen and (min-width: 1800px) {
+    :not(:first-child) {
+      margin-left: 10px;
+    }
   }
 `;
 
@@ -557,13 +720,18 @@ const LaneDetailDiv = styled.div`
 const LanePickText = styled.div`
   display: flex;
   justify-content: center;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: ${props => props.theme.brownColor};
+  color: ${props => props.theme.whiteColor};
 `;
 
 const LaneWinRateDiv = styled.div`
   padding: 3px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: ${props => props.theme.grayColor};
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100px;
 `;
 
@@ -589,11 +757,7 @@ const LaneLossText = styled.div`
 `;
 
 const LaneWinRateText = styled.div`
-  color: ${props => props.theme.whiteColor};
   text-align: center;
-  padding: 4px;
-  border-radius: 4px;
-  background-color: ${props => props.theme.darkOrangeColor};
 `;
 
 /**
@@ -673,23 +837,37 @@ const FavChampDiv = styled.div`
   height: 331px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const FavChampBox = styled.div`
   padding: 5px;
   height: 100px;
-  width: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
   :not(:first-child) {
     border-top: 1px solid ${props => props.theme.lightGrayColor};
   }
+  @media only screen and (max-width: 599px) {
+    width: 99%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 580px;
+  }
+  @media only screen and (min-width: 1200px) {
+    min-width: 385px;
+  }
+  @media only screen and (min-width: 1800px) {
+    min-width: 300px;
+  }
 `;
 
 const ChampInfoDiv = styled.div`
   height: 100%;
-  width: 90px;
+  width: 100px;
 `;
 
 const ChampInfoBox = styled.div`
@@ -710,14 +888,14 @@ const ChampAvatar = styled.div`
 
 const ChampName = styled.div`
   margin-top: 5px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: ${props => props.theme.blackColor};
 `;
 
 const ChampDetailDiv = styled.div`
   height: 70px;
-  width: 220px;
+  width: 210px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -739,14 +917,15 @@ const ChampDetailBox = styled.div`
 const ChampPick = styled.div`
   padding: 5px;
   font-weight: bold;
+  border-radius: 4px;
+  background-color: ${props => props.theme.brownColor};
+  color: ${props => props.theme.whiteColor};
 `;
 
 const ChampWinRate = styled.div`
   padding: 5px;
   font-weight: bold;
-  background-color: ${props => props.theme.darkOrangeColor};
-  color: ${props => props.theme.whiteColor};
-  border-radius: 4px;
+  margin-left: 10px;
 `;
 
 const ChampWinRateBar = styled.div`
@@ -755,10 +934,10 @@ const ChampWinRateBar = styled.div`
   align-items: center;
   background: linear-gradient(
     to right,
-    ${props => props.theme.orangeColor} 0%,
-    ${props => props.theme.orangeColor} ${props => props.winRate}%,
-    ${props => props.theme.darkOrangeColor} ${props => props.winRate}%,
-    ${props => props.theme.darkOrangeColor} 100%
+    ${props => props.theme.winColor} 0%,
+    ${props => props.theme.winColor} ${props => props.winRate}%,
+    ${props => props.theme.lossColor} ${props => props.winRate}%,
+    ${props => props.theme.lossColor} 100%
   );
   border-radius: 10px;
   color: ${props => props.theme.whiteColor};
@@ -773,6 +952,15 @@ const ChampWinText = styled.div`
   margin-left: 5px;
 `;
 
+const ChampTotalText = styled.div`
+  margin-top: -20px;
+  color: ${props => props.theme.darkOrangeColor};
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: ${props => props.theme.grayColor};
+  padding: 3px 5px;
+`;
+
 const ChampLossText = styled.div`
   margin-right: 5px;
 `;
@@ -785,6 +973,7 @@ let detailWins = Array(20);
 let detailLane = Array(20);
 let fstFavLane = "";
 let sndFavLane = "";
+let arrChamp = [];
 
 export default withRouter(
   ({
@@ -792,13 +981,13 @@ export default withRouter(
       params: { bId }
     }
   }) => {
-    const { windowHeight } = useWindowDimensions();
+    const { windowHeight, windowWidth } = useWindowDimensions();
     const { data, loading } = useQuery(SEE_ONE_BROADCASTER, {
       variables: { term: bId }
     });
 
     if (!loading && data && data.seeOneBroadcaster) {
-      console.log(data);
+      // console.log(data.seeOneBroadcaster[0].bSummoner.sDetail);
 
       /**
        * 포지션 분류
@@ -930,6 +1119,48 @@ export default withRouter(
         sTierName = "랭크없음";
         sRank = "";
       }
+
+      /**
+       * 챔피언 분류
+       */
+
+      arrChamp = [];
+
+      data.seeOneBroadcaster[0].bSummoner.sDetail.map(detail => {
+        if (arrChamp.find(x => x.champ === detail.dChampionName)) {
+          arrChamp[
+            arrChamp.findIndex(x => x.champ === detail.dChampionName)
+          ].count += 1;
+          arrChamp[
+            arrChamp.findIndex(x => x.champ === detail.dChampionName)
+          ].wins +=
+            detail.dLane <= 5
+              ? detail.dWins[0] === "Fail"
+                ? 0
+                : 1
+              : detail.dWins[1] === "Win"
+              ? 1
+              : 0;
+        } else {
+          arrChamp[arrChamp.length] = {
+            champ: detail.dChampionName,
+            count: 1,
+            wins:
+              detail.dLane <= 5
+                ? detail.dWins[0] === "Fail"
+                  ? 0
+                  : 1
+                : detail.dWins[1] === "Win"
+                ? 1
+                : 0,
+            avatar: detail.dChampionAvatar
+          };
+        }
+        return arrChamp;
+      });
+
+      arrChamp.sort((a, b) => b.count - a.count);
+      // console.log(arrChamp);
     }
 
     return (
@@ -971,210 +1202,542 @@ export default withRouter(
                     </MenuBox>
                   </MenuDiv>
                 </HeaderDiv>
-                <InfoDiv>
-                  <InfoBox>
-                    <InfoMainDiv>
-                      <InfoMainBox>
-                        <CommonTitleDiv>
-                          <CommonTitle>소환사 정보</CommonTitle>
-                        </CommonTitleDiv>
-                        <SummonerInfoDiv>
-                          <SummonerInfoBox>
-                            <SummonerAvatarDiv>
-                              <SummonerAvatar
-                                url={
-                                  data.seeOneBroadcaster[0].bSummoner.sAvatar
-                                }
-                              >
-                                <SummonerLevel>100</SummonerLevel>
-                              </SummonerAvatar>
-                            </SummonerAvatarDiv>
-                          </SummonerInfoBox>
-                          <SummonerRankingDiv>
-                            <SummonerRankingBox>
-                              <SummonerRankingText
-                                style={{ backgroundColor: Theme.orangeColor }}
-                              >
-                                전체 1위
-                              </SummonerRankingText>
-                              <SummonerRankingText
-                                style={{ backgroundColor: Theme.twitchColor }}
-                              >
-                                트위치 1위
-                              </SummonerRankingText>
-                            </SummonerRankingBox>
-                            <SummonerName>
-                              {data.seeOneBroadcaster[0].bSummoner.sName}
-                            </SummonerName>
-                          </SummonerRankingDiv>
-                        </SummonerInfoDiv>
-                        <SummonerDetailDiv>
-                          <SummonerTierDiv>
-                            <SummonerTierBox>
-                              <SeasonBox>
-                                <SeasonText>시즌 10</SeasonText>
-                                <SoloText>솔로랭크</SoloText>
-                              </SeasonBox>
-                              <TierBox>
-                                <TierText>{sTierName}</TierText>
-                                <RankText>{sRank}</RankText>
-                                <PointsText>
-                                  ({data.seeOneBroadcaster[0].bSummoner.sPoints}
-                                  LP)
-                                </PointsText>
-                              </TierBox>
-                            </SummonerTierBox>
-                            <SummonerEmblemBox>
-                              <EmblemIcon url={sTierEmblem} />
-                            </SummonerEmblemBox>
-                          </SummonerTierDiv>
-                          <SummonerWinRateDiv>
-                            <SummonerWinRateBox>
-                              <ReactMinimalPieChart
-                                animate={true}
-                                animationDuration={500}
-                                animationEasing="ease-out"
-                                cx={50}
-                                cy={50}
-                                data={[
-                                  {
-                                    color: Theme.winColor,
-                                    title: "승",
-                                    value:
-                                      data.seeOneBroadcaster[0].bSummoner.sWins
-                                  },
-                                  {
-                                    color: Theme.lossColor,
-                                    title: "패",
-                                    value:
+                {windowWidth >= 1200 && windowWidth < 1800 ? (
+                  <InfoDiv>
+                    <InfoColumn>
+                      <InfoBox>
+                        <InfoMainDiv>
+                          <InfoMainBox>
+                            <CommonTitleDiv>
+                              <CommonTitle>소환사 정보</CommonTitle>
+                            </CommonTitleDiv>
+                            <SummonerInfoDiv>
+                              <SummonerInfoBox>
+                                <SummonerAvatarDiv>
+                                  <SummonerAvatar
+                                    url={
                                       data.seeOneBroadcaster[0].bSummoner
-                                        .sLosses
+                                        .sAvatar
+                                    }
+                                  >
+                                    <SummonerLevel>100</SummonerLevel>
+                                  </SummonerAvatar>
+                                </SummonerAvatarDiv>
+                              </SummonerInfoBox>
+                              <SummonerRankingDiv>
+                                <SummonerRankingBox>
+                                  <SummonerRankingText
+                                    style={{
+                                      backgroundColor: Theme.orangeColor
+                                    }}
+                                  >
+                                    전체 1위
+                                  </SummonerRankingText>
+                                  <SummonerRankingText
+                                    style={{
+                                      backgroundColor: Theme.twitchColor
+                                    }}
+                                  >
+                                    트위치 1위
+                                  </SummonerRankingText>
+                                </SummonerRankingBox>
+                                <SummonerName>
+                                  {data.seeOneBroadcaster[0].bSummoner.sName}
+                                </SummonerName>
+                              </SummonerRankingDiv>
+                            </SummonerInfoDiv>
+                            <SummonerDetailDiv>
+                              <SummonerTierDiv>
+                                <SummonerTierBox>
+                                  <SeasonBox>
+                                    <SeasonText>시즌 10</SeasonText>
+                                    <SoloText>솔로랭크</SoloText>
+                                  </SeasonBox>
+                                  <TierBox>
+                                    <TierText>{sTierName}</TierText>
+                                    <RankText>{sRank}</RankText>
+                                    <PointsText>
+                                      (
+                                      {
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sPoints
+                                      }
+                                      LP)
+                                    </PointsText>
+                                  </TierBox>
+                                </SummonerTierBox>
+                                <SummonerEmblemBox>
+                                  <EmblemIcon url={sTierEmblem} />
+                                </SummonerEmblemBox>
+                              </SummonerTierDiv>
+                              <SummonerWinRateDiv>
+                                <SummonerWinRateBox>
+                                  <ReactMinimalPieChart
+                                    animate={true}
+                                    animationDuration={500}
+                                    animationEasing="ease-out"
+                                    cx={50}
+                                    cy={50}
+                                    data={[
+                                      {
+                                        color: Theme.winColor,
+                                        title: "승",
+                                        value:
+                                          data.seeOneBroadcaster[0].bSummoner
+                                            .sWins
+                                      },
+                                      {
+                                        color: Theme.lossColor,
+                                        title: "패",
+                                        value:
+                                          data.seeOneBroadcaster[0].bSummoner
+                                            .sLosses
+                                      }
+                                    ]}
+                                    label={({ data }) =>
+                                      Math.round(data[0].percentage) + "%"
+                                    }
+                                    labelStyle={{
+                                      fontSize: 16,
+                                      fontWeight: "bold",
+                                      fill: Theme.darkOrangeColor
+                                    }}
+                                    labelPosition={0}
+                                    lengthAngle={360}
+                                    lineWidth={30}
+                                    onClick={undefined}
+                                    onMouseOut={undefined}
+                                    onMouseOver={undefined}
+                                    paddingAngle={3}
+                                    radius={50}
+                                    rounded={false}
+                                    startAngle={120}
+                                    viewBoxSize={[100, 100]}
+                                    style={{ height: 100, width: 100 }}
+                                  />
+                                </SummonerWinRateBox>
+                                <SummonerWinLossDiv>
+                                  <WinLossBox>
+                                    <TotalText>
+                                      {data.seeOneBroadcaster[0].bSummoner
+                                        .sWins +
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sLosses}
+                                      전
+                                    </TotalText>
+                                    <WinsText>
+                                      {
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sWins
+                                      }
+                                      승
+                                    </WinsText>
+                                    <LossesText>
+                                      {
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sLosses
+                                      }
+                                      패
+                                    </LossesText>
+                                  </WinLossBox>
+                                </SummonerWinLossDiv>
+                              </SummonerWinRateDiv>
+                            </SummonerDetailDiv>
+                          </InfoMainBox>
+                        </InfoMainDiv>
+                      </InfoBox>
+                      <InfoBox>
+                        <InfoMainDiv>
+                          <InfoMainBox>
+                            <CommonTitleDiv>
+                              <CommonTitle>선호 챔피언</CommonTitle>
+                            </CommonTitleDiv>
+                            <FavChampDiv>
+                              <FavChampBox>
+                                <ChampInfoDiv>
+                                  <ChampInfoBox>
+                                    <ChampAvatar url={arrChamp[0].avatar} />
+                                    <ChampName>{arrChamp[0].champ}</ChampName>
+                                  </ChampInfoBox>
+                                </ChampInfoDiv>
+                                <ChampDetailDiv>
+                                  <ChampDetailBox>
+                                    <ChampPick>
+                                      픽률{" "}
+                                      {Math.round(
+                                        (arrChamp[0].count / 20) * 100
+                                      )}
+                                      %
+                                    </ChampPick>
+                                    <ChampWinRate>
+                                      승률{" "}
+                                      {Math.round(
+                                        (arrChamp[0].wins / arrChamp[0].count) *
+                                          100
+                                      )}
+                                      %
+                                    </ChampWinRate>
+                                  </ChampDetailBox>
+                                  <ChampDetailBox>
+                                    <ChampWinRateBar
+                                      winRate={Math.round(
+                                        (arrChamp[0].wins / arrChamp[0].count) *
+                                          100
+                                      )}
+                                    >
+                                      <ChampWinText>
+                                        {arrChamp[0].wins}승
+                                      </ChampWinText>
+                                      <ChampTotalText>
+                                        {arrChamp[0].count}전
+                                      </ChampTotalText>
+                                      <ChampLossText>
+                                        {arrChamp[0].count - arrChamp[0].wins}패
+                                      </ChampLossText>
+                                    </ChampWinRateBar>
+                                  </ChampDetailBox>
+                                </ChampDetailDiv>
+                              </FavChampBox>
+                              {arrChamp.length < 2 ? null : (
+                                <FavChampBox>
+                                  <ChampInfoDiv>
+                                    <ChampInfoBox>
+                                      <ChampAvatar url={arrChamp[1].avatar} />
+                                      <ChampName>{arrChamp[1].champ}</ChampName>
+                                    </ChampInfoBox>
+                                  </ChampInfoDiv>
+                                  <ChampDetailDiv>
+                                    <ChampDetailBox>
+                                      <ChampPick>
+                                        픽률{" "}
+                                        {Math.round(
+                                          (arrChamp[1].count / 20) * 100
+                                        )}
+                                        %
+                                      </ChampPick>
+                                      <ChampWinRate>
+                                        승률{" "}
+                                        {Math.round(
+                                          (arrChamp[1].wins /
+                                            arrChamp[1].count) *
+                                            100
+                                        )}
+                                        %
+                                      </ChampWinRate>
+                                    </ChampDetailBox>
+                                    <ChampDetailBox>
+                                      <ChampWinRateBar
+                                        winRate={Math.round(
+                                          (arrChamp[1].wins /
+                                            arrChamp[1].count) *
+                                            100
+                                        )}
+                                      >
+                                        <ChampWinText>
+                                          {arrChamp[1].wins}승
+                                        </ChampWinText>
+                                        <ChampTotalText>
+                                          {arrChamp[1].count}전
+                                        </ChampTotalText>
+                                        <ChampLossText>
+                                          {arrChamp[1].count - arrChamp[1].wins}
+                                          패
+                                        </ChampLossText>
+                                      </ChampWinRateBar>
+                                    </ChampDetailBox>
+                                  </ChampDetailDiv>
+                                </FavChampBox>
+                              )}
+                              {arrChamp.length < 3 ? null : (
+                                <FavChampBox>
+                                  <ChampInfoDiv>
+                                    <ChampInfoBox>
+                                      <ChampAvatar url={arrChamp[2].avatar} />
+                                      <ChampName>{arrChamp[2].champ}</ChampName>
+                                    </ChampInfoBox>
+                                  </ChampInfoDiv>
+                                  <ChampDetailDiv>
+                                    <ChampDetailBox>
+                                      <ChampPick>
+                                        픽률{" "}
+                                        {Math.round(
+                                          (arrChamp[2].count / 20) * 100
+                                        )}
+                                        %
+                                      </ChampPick>
+                                      <ChampWinRate>
+                                        승률{" "}
+                                        {Math.round(
+                                          (arrChamp[2].wins /
+                                            arrChamp[2].count) *
+                                            100
+                                        )}
+                                        %
+                                      </ChampWinRate>
+                                    </ChampDetailBox>
+                                    <ChampDetailBox>
+                                      <ChampWinRateBar
+                                        winRate={Math.round(
+                                          (arrChamp[2].wins /
+                                            arrChamp[2].count) *
+                                            100
+                                        )}
+                                      >
+                                        <ChampWinText>
+                                          {arrChamp[2].wins}승
+                                        </ChampWinText>
+                                        <ChampTotalText>
+                                          {arrChamp[2].count}전
+                                        </ChampTotalText>
+                                        <ChampLossText>
+                                          {arrChamp[2].count - arrChamp[2].wins}
+                                          패
+                                        </ChampLossText>
+                                      </ChampWinRateBar>
+                                    </ChampDetailBox>
+                                  </ChampDetailDiv>
+                                </FavChampBox>
+                              )}
+                            </FavChampDiv>
+                          </InfoMainBox>
+                        </InfoMainDiv>
+                      </InfoBox>
+                    </InfoColumn>
+                    <InfoColumn>
+                      <InfoBox>
+                        <InfoMainDiv style={{ height: 210 }}>
+                          <InfoMainBox>
+                            <CommonTitleDiv>
+                              <CommonTitle>최근 승률</CommonTitle>
+                            </CommonTitleDiv>
+                            <RecentMatchDiv>
+                              <RecentMatchBox>
+                                <RecentWinRateDiv>
+                                  <RecentWinRateBox>
+                                    <ReactMinimalPieChart
+                                      animate={true}
+                                      animationDuration={500}
+                                      animationEasing="ease-out"
+                                      cx={50}
+                                      cy={50}
+                                      data={[
+                                        {
+                                          color: Theme.winColor,
+                                          title: "승",
+                                          value: detailWins.filter(
+                                            x => x === "Win"
+                                          ).length
+                                        },
+                                        {
+                                          color: Theme.lossColor,
+                                          title: "패",
+                                          value: detailWins.filter(
+                                            x => x === "Fail"
+                                          ).length
+                                        }
+                                      ]}
+                                      label={({ data }) =>
+                                        Math.round(data[0].percentage) + "%"
+                                      }
+                                      labelStyle={{
+                                        fontSize: 16,
+                                        fontWeight: "bold",
+                                        fill: Theme.darkOrangeColor
+                                      }}
+                                      labelPosition={0}
+                                      lengthAngle={360}
+                                      lineWidth={30}
+                                      onClick={undefined}
+                                      onMouseOut={undefined}
+                                      onMouseOver={undefined}
+                                      paddingAngle={3}
+                                      radius={50}
+                                      rounded={false}
+                                      startAngle={120}
+                                      viewBoxSize={[100, 100]}
+                                      style={{ height: 100, width: 100 }}
+                                    />
+                                  </RecentWinRateBox>
+                                  <RecentWinLossDiv>
+                                    <RecentWinLossBox>
+                                      <RecentTotalText>
+                                        {detailWins.length}전
+                                      </RecentTotalText>
+                                      <RecentWinsText>
+                                        {
+                                          detailWins.filter(x => x === "Win")
+                                            .length
+                                        }
+                                        승
+                                      </RecentWinsText>
+                                      <RecentLossesText>
+                                        {
+                                          detailWins.filter(x => x === "Fail")
+                                            .length
+                                        }
+                                        패
+                                      </RecentLossesText>
+                                    </RecentWinLossBox>
+                                  </RecentWinLossDiv>
+                                </RecentWinRateDiv>
+                              </RecentMatchBox>
+                              <RecentTextDiv>
+                                <RecentText>
+                                  * 소환사의 협곡(5vs5) 매치 결과만 표시됩니다.
+                                </RecentText>
+                              </RecentTextDiv>
+                            </RecentMatchDiv>
+                          </InfoMainBox>
+                        </InfoMainDiv>
+                      </InfoBox>
+                      <InfoBox>
+                        <InfoMainDiv style={{ height: 210 }}>
+                          <InfoMainBox>
+                            <CommonTitleDiv>
+                              <CommonTitle>선호 포지션</CommonTitle>
+                            </CommonTitleDiv>
+                            <LaneDiv>
+                              <LaneInfoDiv>
+                                <LaneInfoBox>
+                                  <LaneImage url={fstFavLane} />
+                                  <LaneText>{arrLane[0].lane}</LaneText>
+                                </LaneInfoBox>
+                                <LaneDetailDiv>
+                                  <LanePickText>
+                                    픽률{" "}
+                                    {Math.round((arrLane[0].count / 20) * 100)}%
+                                  </LanePickText>
+                                  <LaneWinRateDiv>
+                                    <LaneWinLossBox>
+                                      <LaneTotalText>
+                                        {arrLane[0].count}전
+                                      </LaneTotalText>
+                                      <LaneWinsText>
+                                        {arrLane[0].wins}승
+                                      </LaneWinsText>
+                                      <LaneLossText>
+                                        {arrLane[0].count - arrLane[0].wins}패
+                                      </LaneLossText>
+                                    </LaneWinLossBox>
+                                    <LaneWinRateText>
+                                      승률{" "}
+                                      {Math.round(
+                                        (arrLane[0].wins / arrLane[0].count) *
+                                          100
+                                      )}
+                                      %
+                                    </LaneWinRateText>
+                                  </LaneWinRateDiv>
+                                </LaneDetailDiv>
+                              </LaneInfoDiv>
+                              {arrLane[1].count !== 0 && (
+                                <LaneInfoDiv>
+                                  <LaneInfoBox>
+                                    <LaneImage url={sndFavLane} />
+                                    <LaneText>{arrLane[1].lane}</LaneText>
+                                  </LaneInfoBox>
+                                  <LaneDetailDiv>
+                                    <LanePickText>
+                                      픽률{" "}
+                                      {Math.round(
+                                        (arrLane[1].count / 20) * 100
+                                      )}
+                                      %
+                                    </LanePickText>
+                                    <LaneWinRateDiv>
+                                      <LaneWinLossBox>
+                                        <LaneTotalText>
+                                          {arrLane[1].count}전
+                                        </LaneTotalText>
+                                        <LaneWinsText>
+                                          {arrLane[1].wins}승
+                                        </LaneWinsText>
+                                        <LaneLossText>
+                                          {arrLane[1].count - arrLane[1].wins}패
+                                        </LaneLossText>
+                                      </LaneWinLossBox>
+                                      <LaneWinRateText>
+                                        승률{" "}
+                                        {Math.round(
+                                          (arrLane[1].wins / arrLane[1].count) *
+                                            100
+                                        )}
+                                        %
+                                      </LaneWinRateText>
+                                    </LaneWinRateDiv>
+                                  </LaneDetailDiv>
+                                </LaneInfoDiv>
+                              )}
+                            </LaneDiv>
+                          </InfoMainBox>
+                        </InfoMainDiv>
+                      </InfoBox>
+                    </InfoColumn>
+                  </InfoDiv>
+                ) : (
+                  <InfoDiv>
+                    <InfoBox>
+                      <InfoMainDiv>
+                        <InfoMainBox>
+                          <CommonTitleDiv>
+                            <CommonTitle>소환사 정보</CommonTitle>
+                          </CommonTitleDiv>
+                          <SummonerInfoDiv>
+                            <SummonerInfoBox>
+                              <SummonerAvatarDiv>
+                                <SummonerAvatar
+                                  url={
+                                    data.seeOneBroadcaster[0].bSummoner.sAvatar
                                   }
-                                ]}
-                                label={({ data }) =>
-                                  Math.round(data[0].percentage) + "%"
-                                }
-                                labelStyle={{
-                                  fontSize: 16,
-                                  fontWeight: "bold",
-                                  fill: Theme.darkOrangeColor
-                                }}
-                                labelPosition={0}
-                                lengthAngle={360}
-                                lineWidth={30}
-                                onClick={undefined}
-                                onMouseOut={undefined}
-                                onMouseOver={undefined}
-                                paddingAngle={3}
-                                radius={50}
-                                rounded={false}
-                                startAngle={120}
-                                viewBoxSize={[100, 100]}
-                                style={{ height: 100, width: 100 }}
-                              />
-                            </SummonerWinRateBox>
-                            <SummonerWinLossDiv>
-                              <WinLossBox>
-                                <TotalText>
-                                  {data.seeOneBroadcaster[0].bSummoner.sWins +
-                                    data.seeOneBroadcaster[0].bSummoner.sLosses}
-                                  전
-                                </TotalText>
-                                <WinsText>
-                                  {data.seeOneBroadcaster[0].bSummoner.sWins}승
-                                </WinsText>
-                                <LossesText>
-                                  {data.seeOneBroadcaster[0].bSummoner.sLosses}
-                                  패
-                                </LossesText>
-                              </WinLossBox>
-                            </SummonerWinLossDiv>
-                          </SummonerWinRateDiv>
-                        </SummonerDetailDiv>
-                      </InfoMainBox>
-                    </InfoMainDiv>
-                  </InfoBox>
-                  <InfoBox>
-                    <InfoMainDiv>
-                      <InfoMainBox>
-                        <CommonTitleDiv>
-                          <CommonTitle>선호 포지션</CommonTitle>
-                        </CommonTitleDiv>
-                        <LaneDiv>
-                          <LaneInfoDiv>
-                            <LaneInfoBox>
-                              <LaneImage url={fstFavLane} />
-                              <LaneText>{arrLane[0].lane}</LaneText>
-                            </LaneInfoBox>
-                            <LaneDetailDiv>
-                              <LanePickText>
-                                픽률 {Math.round((arrLane[0].count / 20) * 100)}
-                                %
-                              </LanePickText>
-                              <LaneWinRateDiv>
-                                <LaneWinLossBox>
-                                  <LaneTotalText>
-                                    {arrLane[0].count}전
-                                  </LaneTotalText>
-                                  <LaneWinsText>
-                                    {arrLane[0].wins}승
-                                  </LaneWinsText>
-                                  <LaneLossText>
-                                    {arrLane[0].count - arrLane[0].wins}패
-                                  </LaneLossText>
-                                </LaneWinLossBox>
-                                <LaneWinRateText>
-                                  승률{" "}
-                                  {Math.round(
-                                    (arrLane[0].wins / arrLane[0].count) * 100
-                                  )}
-                                  %
-                                </LaneWinRateText>
-                              </LaneWinRateDiv>
-                            </LaneDetailDiv>
-                          </LaneInfoDiv>
-                          {arrLane[1].count !== 0 && (
-                            <LaneInfoDiv>
-                              <LaneInfoBox>
-                                <LaneImage url={sndFavLane} />
-                                <LaneText>{arrLane[1].lane}</LaneText>
-                              </LaneInfoBox>
-                              <LaneDetailDiv>
-                                <LanePickText>
-                                  픽률{" "}
-                                  {Math.round((arrLane[1].count / 20) * 100)}%
-                                </LanePickText>
-                                <LaneWinRateDiv>
-                                  <LaneWinLossBox>
-                                    <LaneTotalText>
-                                      {arrLane[1].count}전
-                                    </LaneTotalText>
-                                    <LaneWinsText>
-                                      {arrLane[1].wins}승
-                                    </LaneWinsText>
-                                    <LaneLossText>
-                                      {arrLane[1].count - arrLane[1].wins}패
-                                    </LaneLossText>
-                                  </LaneWinLossBox>
-                                  <LaneWinRateText>
-                                    승률{" "}
-                                    {Math.round(
-                                      (arrLane[1].wins / arrLane[1].count) * 100
-                                    )}
-                                    %
-                                  </LaneWinRateText>
-                                </LaneWinRateDiv>
-                              </LaneDetailDiv>
-                            </LaneInfoDiv>
-                          )}
-                        </LaneDiv>
-                        <CommonTitleDiv>
-                          <CommonTitle>최근 승률</CommonTitle>
-                        </CommonTitleDiv>
-                        <RecentMatchDiv>
-                          <RecentMatchBox>
-                            <RecentWinRateDiv>
-                              <RecentWinRateBox>
+                                >
+                                  <SummonerLevel>100</SummonerLevel>
+                                </SummonerAvatar>
+                              </SummonerAvatarDiv>
+                            </SummonerInfoBox>
+                            <SummonerRankingDiv>
+                              <SummonerRankingBox>
+                                <SummonerRankingText
+                                  style={{ backgroundColor: Theme.orangeColor }}
+                                >
+                                  전체 1위
+                                </SummonerRankingText>
+                                <SummonerRankingText
+                                  style={{ backgroundColor: Theme.twitchColor }}
+                                >
+                                  트위치 1위
+                                </SummonerRankingText>
+                              </SummonerRankingBox>
+                              <SummonerName>
+                                {data.seeOneBroadcaster[0].bSummoner.sName}
+                              </SummonerName>
+                            </SummonerRankingDiv>
+                          </SummonerInfoDiv>
+                          <SummonerDetailDiv>
+                            <SummonerTierDiv>
+                              <SummonerTierBox>
+                                <SeasonBox>
+                                  <SeasonText>시즌 10</SeasonText>
+                                  <SoloText>솔로랭크</SoloText>
+                                </SeasonBox>
+                                <TierBox>
+                                  <TierText>{sTierName}</TierText>
+                                  <RankText>{sRank}</RankText>
+                                  <PointsText>
+                                    (
+                                    {
+                                      data.seeOneBroadcaster[0].bSummoner
+                                        .sPoints
+                                    }
+                                    LP)
+                                  </PointsText>
+                                </TierBox>
+                              </SummonerTierBox>
+                              <SummonerEmblemBox>
+                                <EmblemIcon url={sTierEmblem} />
+                              </SummonerEmblemBox>
+                            </SummonerTierDiv>
+                            <SummonerWinRateDiv>
+                              <SummonerWinRateBox>
                                 <ReactMinimalPieChart
                                   animate={true}
                                   animationDuration={500}
@@ -1185,15 +1748,16 @@ export default withRouter(
                                     {
                                       color: Theme.winColor,
                                       title: "승",
-                                      value: detailWins.filter(x => x === "Win")
-                                        .length
+                                      value:
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sWins
                                     },
                                     {
                                       color: Theme.lossColor,
                                       title: "패",
-                                      value: detailWins.filter(
-                                        x => x === "Fail"
-                                      ).length
+                                      value:
+                                        data.seeOneBroadcaster[0].bSummoner
+                                          .sLosses
                                     }
                                   ]}
                                   label={({ data }) =>
@@ -1217,138 +1781,341 @@ export default withRouter(
                                   viewBoxSize={[100, 100]}
                                   style={{ height: 100, width: 100 }}
                                 />
-                              </RecentWinRateBox>
-                              <RecentWinLossDiv>
-                                <RecentWinLossBox>
-                                  <RecentTotalText>
-                                    {detailWins.length}전
-                                  </RecentTotalText>
-                                  <RecentWinsText>
-                                    {detailWins.filter(x => x === "Win").length}
+                              </SummonerWinRateBox>
+                              <SummonerWinLossDiv>
+                                <WinLossBox>
+                                  <TotalText>
+                                    {data.seeOneBroadcaster[0].bSummoner.sWins +
+                                      data.seeOneBroadcaster[0].bSummoner
+                                        .sLosses}
+                                    전
+                                  </TotalText>
+                                  <WinsText>
+                                    {data.seeOneBroadcaster[0].bSummoner.sWins}
                                     승
-                                  </RecentWinsText>
-                                  <RecentLossesText>
+                                  </WinsText>
+                                  <LossesText>
                                     {
-                                      detailWins.filter(x => x === "Fail")
-                                        .length
+                                      data.seeOneBroadcaster[0].bSummoner
+                                        .sLosses
                                     }
                                     패
-                                  </RecentLossesText>
-                                </RecentWinLossBox>
-                              </RecentWinLossDiv>
-                            </RecentWinRateDiv>
-                          </RecentMatchBox>
-                          <RecentTextDiv>
-                            <RecentText>
-                              * 소환사의 협곡(5vs5) 매치 결과만 표시됩니다.
-                            </RecentText>
-                          </RecentTextDiv>
-                        </RecentMatchDiv>
-                      </InfoMainBox>
-                    </InfoMainDiv>
-                  </InfoBox>
-                  <InfoBox>
-                    <InfoMainDiv>
-                      <InfoMainBox>
-                        <CommonTitleDiv>
-                          <CommonTitle>선호 챔피언</CommonTitle>
-                        </CommonTitleDiv>
-                        <FavChampDiv>
-                          <FavChampBox>
-                            <ChampInfoDiv>
-                              <ChampInfoBox>
-                                <ChampAvatar
-                                  url={
-                                    data.seeOneBroadcaster[0].bSummoner
-                                      .sDetail[0].dChampionAvatar
-                                  }
-                                />
-                                <ChampName>
-                                  {
-                                    data.seeOneBroadcaster[0].bSummoner
-                                      .sDetail[0].dChampionName
-                                  }
-                                </ChampName>
-                              </ChampInfoBox>
-                            </ChampInfoDiv>
-                            <ChampDetailDiv>
-                              <ChampDetailBox>
-                                <ChampPick>픽률 70%</ChampPick>
-                                <ChampWinRate>승률 65%</ChampWinRate>
-                              </ChampDetailBox>
-                              <ChampDetailBox>
-                                <ChampWinRateBar winRate={60}>
-                                  <ChampWinText>12승</ChampWinText>
-                                  <ChampLossText>6패</ChampLossText>
-                                </ChampWinRateBar>
-                              </ChampDetailBox>
-                            </ChampDetailDiv>
-                          </FavChampBox>
-                          <FavChampBox>
-                            <ChampInfoDiv>
-                              <ChampInfoBox>
-                                <ChampAvatar
-                                  url={
-                                    data.seeOneBroadcaster[0].bSummoner
-                                      .sDetail[1].dChampionAvatar
-                                  }
-                                />
-                                <ChampName>
-                                  {
-                                    data.seeOneBroadcaster[0].bSummoner
-                                      .sDetail[1].dChampionName
-                                  }
-                                </ChampName>
-                              </ChampInfoBox>
-                            </ChampInfoDiv>
-                            <ChampDetailDiv>
-                              <ChampDetailBox>
-                                <ChampPick>픽률 70%</ChampPick>
-                                <ChampWinRate>승률 65%</ChampWinRate>
-                              </ChampDetailBox>
-                              <ChampDetailBox>
-                                <ChampWinRateBar winRate={60}>
-                                  <ChampWinText>12승</ChampWinText>
-                                  <ChampLossText>6패</ChampLossText>
-                                </ChampWinRateBar>
-                              </ChampDetailBox>
-                            </ChampDetailDiv>
-                          </FavChampBox>
-                          <FavChampBox>
-                            <ChampInfoDiv>
-                              <ChampInfoBox>
-                                <ChampAvatar
-                                  url={
-                                    data.seeOneBroadcaster[0].bSummoner
-                                      .sDetail[2].dChampionAvatar
-                                  }
-                                />
-                                <ChampName>
-                                  {
-                                    data.seeOneBroadcaster[0].bSummoner
-                                      .sDetail[2].dChampionName
-                                  }
-                                </ChampName>
-                              </ChampInfoBox>
-                            </ChampInfoDiv>
-                            <ChampDetailDiv>
-                              <ChampDetailBox>
-                                <ChampPick>픽률 70%</ChampPick>
-                                <ChampWinRate>승률 65%</ChampWinRate>
-                              </ChampDetailBox>
-                              <ChampDetailBox>
-                                <ChampWinRateBar winRate={60}>
-                                  <ChampWinText>12승</ChampWinText>
-                                  <ChampLossText>6패</ChampLossText>
-                                </ChampWinRateBar>
-                              </ChampDetailBox>
-                            </ChampDetailDiv>
-                          </FavChampBox>
-                        </FavChampDiv>
-                      </InfoMainBox>
-                    </InfoMainDiv>
-                  </InfoBox>
-                </InfoDiv>
+                                  </LossesText>
+                                </WinLossBox>
+                              </SummonerWinLossDiv>
+                            </SummonerWinRateDiv>
+                          </SummonerDetailDiv>
+                        </InfoMainBox>
+                      </InfoMainDiv>
+                    </InfoBox>
+                    <InfoBox>
+                      <InfoMainDiv>
+                        <InfoMainBox>
+                          <CommonTitleDiv>
+                            <CommonTitle>선호 챔피언</CommonTitle>
+                          </CommonTitleDiv>
+                          <FavChampDiv>
+                            <FavChampBox>
+                              <ChampInfoDiv>
+                                <ChampInfoBox>
+                                  <ChampAvatar url={arrChamp[0].avatar} />
+                                  <ChampName>{arrChamp[0].champ}</ChampName>
+                                </ChampInfoBox>
+                              </ChampInfoDiv>
+                              <ChampDetailDiv>
+                                <ChampDetailBox>
+                                  <ChampPick>
+                                    픽률{" "}
+                                    {Math.round((arrChamp[0].count / 20) * 100)}
+                                    %
+                                  </ChampPick>
+                                  <ChampWinRate>
+                                    승률{" "}
+                                    {Math.round(
+                                      (arrChamp[0].wins / arrChamp[0].count) *
+                                        100
+                                    )}
+                                    %
+                                  </ChampWinRate>
+                                </ChampDetailBox>
+                                <ChampDetailBox>
+                                  <ChampWinRateBar
+                                    winRate={Math.round(
+                                      (arrChamp[0].wins / arrChamp[0].count) *
+                                        100
+                                    )}
+                                  >
+                                    <ChampWinText>
+                                      {arrChamp[0].wins}승
+                                    </ChampWinText>
+                                    <ChampTotalText>
+                                      {arrChamp[0].count}전
+                                    </ChampTotalText>
+                                    <ChampLossText>
+                                      {arrChamp[0].count - arrChamp[0].wins}패
+                                    </ChampLossText>
+                                  </ChampWinRateBar>
+                                </ChampDetailBox>
+                              </ChampDetailDiv>
+                            </FavChampBox>
+                            {arrChamp.length < 2 ? null : (
+                              <FavChampBox>
+                                <ChampInfoDiv>
+                                  <ChampInfoBox>
+                                    <ChampAvatar url={arrChamp[1].avatar} />
+                                    <ChampName>{arrChamp[1].champ}</ChampName>
+                                  </ChampInfoBox>
+                                </ChampInfoDiv>
+                                <ChampDetailDiv>
+                                  <ChampDetailBox>
+                                    <ChampPick>
+                                      픽률{" "}
+                                      {Math.round(
+                                        (arrChamp[1].count / 20) * 100
+                                      )}
+                                      %
+                                    </ChampPick>
+                                    <ChampWinRate>
+                                      승률{" "}
+                                      {Math.round(
+                                        (arrChamp[1].wins / arrChamp[1].count) *
+                                          100
+                                      )}
+                                      %
+                                    </ChampWinRate>
+                                  </ChampDetailBox>
+                                  <ChampDetailBox>
+                                    <ChampWinRateBar
+                                      winRate={Math.round(
+                                        (arrChamp[1].wins / arrChamp[1].count) *
+                                          100
+                                      )}
+                                    >
+                                      <ChampWinText>
+                                        {arrChamp[1].wins}승
+                                      </ChampWinText>
+                                      <ChampTotalText>
+                                        {arrChamp[1].count}전
+                                      </ChampTotalText>
+                                      <ChampLossText>
+                                        {arrChamp[1].count - arrChamp[1].wins}패
+                                      </ChampLossText>
+                                    </ChampWinRateBar>
+                                  </ChampDetailBox>
+                                </ChampDetailDiv>
+                              </FavChampBox>
+                            )}
+                            {arrChamp.length < 3 ? null : (
+                              <FavChampBox>
+                                <ChampInfoDiv>
+                                  <ChampInfoBox>
+                                    <ChampAvatar url={arrChamp[2].avatar} />
+                                    <ChampName>{arrChamp[2].champ}</ChampName>
+                                  </ChampInfoBox>
+                                </ChampInfoDiv>
+                                <ChampDetailDiv>
+                                  <ChampDetailBox>
+                                    <ChampPick>
+                                      픽률{" "}
+                                      {Math.round(
+                                        (arrChamp[2].count / 20) * 100
+                                      )}
+                                      %
+                                    </ChampPick>
+                                    <ChampWinRate>
+                                      승률{" "}
+                                      {Math.round(
+                                        (arrChamp[2].wins / arrChamp[2].count) *
+                                          100
+                                      )}
+                                      %
+                                    </ChampWinRate>
+                                  </ChampDetailBox>
+                                  <ChampDetailBox>
+                                    <ChampWinRateBar
+                                      winRate={Math.round(
+                                        (arrChamp[2].wins / arrChamp[2].count) *
+                                          100
+                                      )}
+                                    >
+                                      <ChampWinText>
+                                        {arrChamp[2].wins}승
+                                      </ChampWinText>
+                                      <ChampTotalText>
+                                        {arrChamp[2].count}전
+                                      </ChampTotalText>
+                                      <ChampLossText>
+                                        {arrChamp[2].count - arrChamp[2].wins}패
+                                      </ChampLossText>
+                                    </ChampWinRateBar>
+                                  </ChampDetailBox>
+                                </ChampDetailDiv>
+                              </FavChampBox>
+                            )}
+                          </FavChampDiv>
+                        </InfoMainBox>
+                      </InfoMainDiv>
+                    </InfoBox>
+                    <InfoBox>
+                      <InfoMainDiv>
+                        <InfoMainBox>
+                          <CommonTitleDiv>
+                            <CommonTitle>선호 포지션</CommonTitle>
+                          </CommonTitleDiv>
+                          <LaneDiv>
+                            <LaneInfoDiv>
+                              <LaneInfoBox>
+                                <LaneImage url={fstFavLane} />
+                                <LaneText>{arrLane[0].lane}</LaneText>
+                              </LaneInfoBox>
+                              <LaneDetailDiv>
+                                <LanePickText>
+                                  픽률{" "}
+                                  {Math.round((arrLane[0].count / 20) * 100)}%
+                                </LanePickText>
+                                <LaneWinRateDiv>
+                                  <LaneWinLossBox>
+                                    <LaneTotalText>
+                                      {arrLane[0].count}전
+                                    </LaneTotalText>
+                                    <LaneWinsText>
+                                      {arrLane[0].wins}승
+                                    </LaneWinsText>
+                                    <LaneLossText>
+                                      {arrLane[0].count - arrLane[0].wins}패
+                                    </LaneLossText>
+                                  </LaneWinLossBox>
+                                  <LaneWinRateText>
+                                    승률{" "}
+                                    {Math.round(
+                                      (arrLane[0].wins / arrLane[0].count) * 100
+                                    )}
+                                    %
+                                  </LaneWinRateText>
+                                </LaneWinRateDiv>
+                              </LaneDetailDiv>
+                            </LaneInfoDiv>
+                            {arrLane[1].count !== 0 && (
+                              <LaneInfoDiv>
+                                <LaneInfoBox>
+                                  <LaneImage url={sndFavLane} />
+                                  <LaneText>{arrLane[1].lane}</LaneText>
+                                </LaneInfoBox>
+                                <LaneDetailDiv>
+                                  <LanePickText>
+                                    픽률{" "}
+                                    {Math.round((arrLane[1].count / 20) * 100)}%
+                                  </LanePickText>
+                                  <LaneWinRateDiv>
+                                    <LaneWinLossBox>
+                                      <LaneTotalText>
+                                        {arrLane[1].count}전
+                                      </LaneTotalText>
+                                      <LaneWinsText>
+                                        {arrLane[1].wins}승
+                                      </LaneWinsText>
+                                      <LaneLossText>
+                                        {arrLane[1].count - arrLane[1].wins}패
+                                      </LaneLossText>
+                                    </LaneWinLossBox>
+                                    <LaneWinRateText>
+                                      승률{" "}
+                                      {Math.round(
+                                        (arrLane[1].wins / arrLane[1].count) *
+                                          100
+                                      )}
+                                      %
+                                    </LaneWinRateText>
+                                  </LaneWinRateDiv>
+                                </LaneDetailDiv>
+                              </LaneInfoDiv>
+                            )}
+                          </LaneDiv>
+                          <CommonTitleDiv>
+                            <CommonTitle>최근 승률</CommonTitle>
+                          </CommonTitleDiv>
+                          <RecentMatchDiv>
+                            <RecentMatchBox>
+                              <RecentWinRateDiv>
+                                <RecentWinRateBox>
+                                  <ReactMinimalPieChart
+                                    animate={true}
+                                    animationDuration={500}
+                                    animationEasing="ease-out"
+                                    cx={50}
+                                    cy={50}
+                                    data={[
+                                      {
+                                        color: Theme.winColor,
+                                        title: "승",
+                                        value: detailWins.filter(
+                                          x => x === "Win"
+                                        ).length
+                                      },
+                                      {
+                                        color: Theme.lossColor,
+                                        title: "패",
+                                        value: detailWins.filter(
+                                          x => x === "Fail"
+                                        ).length
+                                      }
+                                    ]}
+                                    label={({ data }) =>
+                                      Math.round(data[0].percentage) + "%"
+                                    }
+                                    labelStyle={{
+                                      fontSize: 16,
+                                      fontWeight: "bold",
+                                      fill: Theme.darkOrangeColor
+                                    }}
+                                    labelPosition={0}
+                                    lengthAngle={360}
+                                    lineWidth={30}
+                                    onClick={undefined}
+                                    onMouseOut={undefined}
+                                    onMouseOver={undefined}
+                                    paddingAngle={3}
+                                    radius={50}
+                                    rounded={false}
+                                    startAngle={120}
+                                    viewBoxSize={[100, 100]}
+                                    style={{ height: 100, width: 100 }}
+                                  />
+                                </RecentWinRateBox>
+                                <RecentWinLossDiv>
+                                  <RecentWinLossBox>
+                                    <RecentTotalText>
+                                      {detailWins.length}전
+                                    </RecentTotalText>
+                                    <RecentWinsText>
+                                      {
+                                        detailWins.filter(x => x === "Win")
+                                          .length
+                                      }
+                                      승
+                                    </RecentWinsText>
+                                    <RecentLossesText>
+                                      {
+                                        detailWins.filter(x => x === "Fail")
+                                          .length
+                                      }
+                                      패
+                                    </RecentLossesText>
+                                  </RecentWinLossBox>
+                                </RecentWinLossDiv>
+                              </RecentWinRateDiv>
+                            </RecentMatchBox>
+                            <RecentTextDiv>
+                              <RecentText>
+                                * 소환사의 협곡(5vs5) 매치 결과만 표시됩니다.
+                              </RecentText>
+                            </RecentTextDiv>
+                          </RecentMatchDiv>
+                        </InfoMainBox>
+                      </InfoMainDiv>
+                    </InfoBox>
+                  </InfoDiv>
+                )}
               </DetailDiv>
             )}
           </MainDiv>
