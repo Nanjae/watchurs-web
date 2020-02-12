@@ -10,6 +10,7 @@ import { deepBlueColor, darkBlueColor } from "../Styles/StyleFunction";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
+import AutoInput from "./AutoInput";
 
 const COUNT_ALL_SUMMONER = gql`
   {
@@ -419,7 +420,8 @@ const SearchInputBox = styled.div`
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  z-index: 100;
   @media only screen and (max-width: 599px) {
     width: 100%;
     padding: 0px 10px;
@@ -437,8 +439,8 @@ const SearchInputBox = styled.div`
   }
   @media only screen and (min-width: 1800px) {
     width: 340px;
-    padding: 0px 10px;
-    height: 48px;
+    padding: 15px 10px;
+    height: 18px;
   }
 `;
 
@@ -672,7 +674,8 @@ export default withRouter(({ location }) => {
                 </TitleDiv>
                 <SearchInputDiv>
                   <SearchInputBox>
-                    <SearchInput placeholder={"브로드캐스터 검색"} />
+                    <AutoInput />
+                    {/* <SearchInput placeholder={"브로드캐스터 검색"} /> */}
                     <SearchIcon url={IconSearch} />
                   </SearchInputBox>
                 </SearchInputDiv>

@@ -835,6 +835,7 @@ const RecentText = styled.div`
 
 const FavChampDiv = styled.div`
   height: 331px;
+  width: 340px;
   display: flex;
   flex-direction: column;
   justify-content: center;
