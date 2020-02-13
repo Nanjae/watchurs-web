@@ -1,17 +1,33 @@
 import React, { Component } from "react";
 import Autosuggest from "react-autosuggest";
 import styled from "styled-components";
+import { broadcasters } from "../BroadcasterList";
+import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
 
 const AutoSuggestDiv = styled.div`
-  height: 100px;
-  width: 300px;
+  height: 40px;
+  width: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-color: ${props => props.theme.grayColor};
+  background-color: ${props => props.theme.whiteColor};
   cursor: pointer;
-  border: 2px solid ${props => props.theme.lightGrayColor};
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
 `;
+
+const BroadcasterPlatform = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+`;
+
+const BroadcasterNameText = styled.div``;
+
+const BroadcasterIdText = styled.div``;
 
 const Container = styled.input`
   border: 0px;
@@ -34,19 +50,7 @@ const Container = styled.input`
 `;
 
 // Imagine you have a list of languages that you'd like to autosuggest.
-const languages = [
-  {
-    bName: "얍얍",
-    bId: "yapyap30",
-    bPlatform: "TWITCH"
-  },
-  {
-    bName: "한동숙",
-    bId: "yapyap20",
-    bPlatform: "TWITCH"
-  },
-  { bName: "룩삼", bId: "yapyap10", bPlatform: "TWITCH" }
-];
+const broadcasterList = broadcasters;
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = value => {
@@ -56,13 +60,13 @@ const getSuggestions = value => {
 
   return inputLength === 0
     ? []
-    : languages.filter(
+    : broadcasterList.filter(
         lang =>
           lang.bName.toLowerCase().slice(0, inputLength) === inputName ||
           lang.bId.toLowerCase().slice(0, inputLength) === inputId
       ).length === 0
     ? [{ bName: "", bId: "", bPlatform: "" }]
-    : languages.filter(
+    : broadcasterList.filter(
         lang =>
           lang.bName.toLowerCase().slice(0, inputLength) === inputName ||
           lang.bId.toLowerCase().slice(0, inputLength) === inputId
@@ -79,7 +83,13 @@ const renderSuggestion = suggestion => {
   return suggestion.bId === "" ? (
     <AutoSuggestDiv>검색 결과 없음</AutoSuggestDiv>
   ) : (
-    <AutoSuggestDiv>{suggestion.bName}</AutoSuggestDiv>
+    <AutoSuggestDiv>
+      <BroadcasterPlatform
+        url={suggestion.bPlatform === "TWITCH" ? twitchLogo : null}
+      />
+      <BroadcasterNameText>{suggestion.bName}</BroadcasterNameText>
+      <BroadcasterIdText>({suggestion.bId})</BroadcasterIdText>
+    </AutoSuggestDiv>
   );
 };
 
