@@ -460,7 +460,7 @@ const SearchInput = styled(Input)`
   }
 `;
 
-const SearchIcon = styled.div`
+const SearchIcon = styled(Link)`
   background-image: url(${props => props.url});
   background-size: cover;
   cursor: pointer;
@@ -675,8 +675,6 @@ export default withRouter(({ location }) => {
                 <SearchInputDiv>
                   <SearchInputBox>
                     <AutoInput />
-                    {/* <SearchInput placeholder={"브로드캐스터 검색"} /> */}
-                    <SearchIcon url={IconSearch} />
                   </SearchInputBox>
                 </SearchInputDiv>
               </TopFstBox>

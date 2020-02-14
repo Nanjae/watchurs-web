@@ -3,18 +3,21 @@ import Autosuggest from "react-autosuggest";
 import styled from "styled-components";
 import { broadcasters } from "../BroadcasterList";
 import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
+import { Link, withRouter } from "react-router-dom";
 
-const AutoSuggestDiv = styled.div`
+const AutoSuggestDiv = styled(Link)`
   height: 40px;
   width: 200px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: ${props => props.theme.whiteColor};
   cursor: pointer;
-  padding: 5px 10px;
-  font-weight: bold;
+  user-select: none;
+  padding: 0px 10px;
   font-size: 14px;
+  font-weight: bold;
+  background-color: ${props => props.theme.grayColor};
+  color: ${props => props.theme.purpleColor};
 `;
 
 const BroadcasterPlatform = styled.div`
@@ -81,9 +84,9 @@ const getSuggestionValue = suggestion => suggestion.bName;
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => {
   return suggestion.bId === "" ? (
-    <AutoSuggestDiv>검색 결과 없음</AutoSuggestDiv>
+    <AutoSuggestDiv to={""}>검색 결과 없음</AutoSuggestDiv>
   ) : (
-    <AutoSuggestDiv>
+    <AutoSuggestDiv to={`/detail/${suggestion.bId}`}>
       <BroadcasterPlatform
         url={suggestion.bPlatform === "TWITCH" ? twitchLogo : null}
       />
@@ -93,9 +96,21 @@ const renderSuggestion = suggestion => {
   );
 };
 
-const renderInputComponent = inputProps => <Container {...inputProps} />;
+const renderInputComponent = inputProps => (
+  <Container
+    onKeyPress={event => {
+      console.log(event.key);
+      if (event.key === "Enter") {
+        window.location.assign(
+          `${window.location.origin}/detail/${inputProps.value}`
+        );
+      }
+    }}
+    {...inputProps}
+  />
+);
 
-export default class AutoInput extends Component {
+class AutoInput extends Component {
   constructor() {
     super();
 
@@ -110,7 +125,7 @@ export default class AutoInput extends Component {
     };
   }
 
-  onChange = (event, { newValue }) => {
+  onChange = (event, { newValue, method }) => {
     this.setState({
       value: newValue
     });
@@ -131,6 +146,11 @@ export default class AutoInput extends Component {
     });
   };
 
+  onSuggestionSelected = (
+    event,
+    { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
+  ) => {};
+
   render() {
     const { value, suggestions } = this.state;
 
@@ -147,6 +167,7 @@ export default class AutoInput extends Component {
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        onSuggestionSelected={this.onSuggestionSelected}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
         renderInputComponent={renderInputComponent}
@@ -155,3 +176,5 @@ export default class AutoInput extends Component {
     );
   }
 }
+
+export default withRouter(AutoInput);

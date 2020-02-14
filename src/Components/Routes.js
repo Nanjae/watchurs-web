@@ -17,6 +17,7 @@ export const DefaultRoute = () => (
     <Route exact path="/home" component={LeagueHome} />
     <Route exact path="/rank/:page" component={LeagueRank} />
     <Route exact path="/detail/:bId" component={LeagueDetail} />
+    <Route exact path="/other/example" component={LeagueHome} />
     <Redirect from="*" to="/" />
   </Switch>
 );

@@ -8,7 +8,7 @@ import {
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import Footer from "../../../Components/Footer";
-import { withRouter } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
 import Loader from "../../../Components/Loader";
@@ -983,13 +983,17 @@ export default withRouter(
     }
   }) => {
     const { windowHeight, windowWidth } = useWindowDimensions();
+
     const { data, loading } = useQuery(SEE_ONE_BROADCASTER, {
       variables: { term: bId }
     });
 
-    if (!loading && data && data.seeOneBroadcaster) {
-      // console.log(data.seeOneBroadcaster[0].bSummoner.sDetail);
+    if (!loading && data && data.seeOneBroadcaster === null) {
+      const history = useHistory();
+      history.push(`/other/example`);
+    }
 
+    if (!loading && data && data.seeOneBroadcaster) {
       /**
        * 포지션 분류
        */
