@@ -4,19 +4,29 @@ import styled from "styled-components";
 import { broadcasters } from "../BroadcasterList";
 import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
 import { Link, withRouter } from "react-router-dom";
+import IconArrow from "../Assets/Common/IconArrow.png";
+import IconSearch from "../Assets/Common/IconSearch.png";
 
-const AutoSuggestDiv = styled(Link)`
+const AutoSuggestionDiv = styled(Link)`
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${props => props.theme.whiteColor};
+  padding: 0px 10px;
+  margin-left: -10px;
+  cursor: pointer;
+  user-select: none;
+`;
+
+const AutoSuggestionBox = styled.div`
   height: 40px;
-  width: 200px;
+  width: 230px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  cursor: pointer;
-  user-select: none;
-  padding: 0px 10px;
   font-size: 14px;
   font-weight: bold;
-  background-color: ${props => props.theme.grayColor};
   color: ${props => props.theme.purpleColor};
 `;
 
@@ -32,24 +42,50 @@ const BroadcasterNameText = styled.div``;
 
 const BroadcasterIdText = styled.div``;
 
-const Container = styled.input`
+const ArrowIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 18px;
+  height: 18px;
+`;
+
+const InputDiv = styled.div`
+  display: flex;
+`;
+
+const InputText = styled.input`
   border: 0px;
-  padding: 0px;
-  margin: 0px;
-  width: 90%;
+  width: 315px;
   font-weight: bold;
   @media only screen and (max-width: 599px) {
+    padding: 0px;
+    margin: 0px;
     font-size: 13px;
   }
   @media only screen and (min-width: 600px) {
+    padding: 0px;
+    margin: 0px;
     font-size: 12px;
   }
   @media only screen and (min-width: 1200px) {
+    padding: 0px;
+    margin: 0px;
     font-size: 14px;
   }
   @media only screen and (min-width: 1800px) {
+    padding: 0px;
+    margin: 0px;
+    margin-right: 5px;
+    margin-bottom: 10px;
     font-size: 16px;
   }
+`;
+
+const SearchIcon = styled.div`
+  background-image: url(${props => props.url});
+  background-size: cover;
+  width: 18px;
+  height: 18px;
 `;
 
 // Imagine you have a list of languages that you'd like to autosuggest.
@@ -84,30 +120,45 @@ const getSuggestionValue = suggestion => suggestion.bName;
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => {
   return suggestion.bId === "" ? (
-    <AutoSuggestDiv to={""}>검색 결과 없음</AutoSuggestDiv>
+    <AutoSuggestionDiv>
+      <AutoSuggestionBox to={""}>검색 결과 없음</AutoSuggestionBox>
+    </AutoSuggestionDiv>
   ) : (
-    <AutoSuggestDiv to={`/detail/${suggestion.bId}`}>
-      <BroadcasterPlatform
-        url={suggestion.bPlatform === "TWITCH" ? twitchLogo : null}
-      />
-      <BroadcasterNameText>{suggestion.bName}</BroadcasterNameText>
-      <BroadcasterIdText>({suggestion.bId})</BroadcasterIdText>
-    </AutoSuggestDiv>
+    <AutoSuggestionDiv to={`/detail/${suggestion.bId}`}>
+      <AutoSuggestionBox>
+        <BroadcasterPlatform
+          url={suggestion.bPlatform === "TWITCH" ? twitchLogo : null}
+        />
+        <BroadcasterNameText>{suggestion.bName}</BroadcasterNameText>
+        <BroadcasterIdText>({suggestion.bId})</BroadcasterIdText>
+      </AutoSuggestionBox>
+      <ArrowIcon url={IconArrow} />
+    </AutoSuggestionDiv>
   );
 };
 
 const renderInputComponent = inputProps => (
-  <Container
-    onKeyPress={event => {
-      console.log(event.key);
-      if (event.key === "Enter") {
+  <InputDiv>
+    <InputText
+      onKeyPress={event => {
+        console.log(event.key);
+        if (event.key === "Enter") {
+          window.location.assign(
+            `${window.location.origin}/detail/${inputProps.value}`
+          );
+        }
+      }}
+      {...inputProps}
+    />
+    <SearchIcon
+      onClick={() => {
         window.location.assign(
           `${window.location.origin}/detail/${inputProps.value}`
         );
-      }
-    }}
-    {...inputProps}
-  />
+      }}
+      url={IconSearch}
+    />
+  </InputDiv>
 );
 
 class AutoInput extends Component {
@@ -146,11 +197,6 @@ class AutoInput extends Component {
     });
   };
 
-  onSuggestionSelected = (
-    event,
-    { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
-  ) => {};
-
   render() {
     const { value, suggestions } = this.state;
 
@@ -167,7 +213,6 @@ class AutoInput extends Component {
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        onSuggestionSelected={this.onSuggestionSelected}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
         renderInputComponent={renderInputComponent}

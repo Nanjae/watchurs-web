@@ -1,23 +1,13 @@
 export const broadcasters = [
   {
-    bName: "얍얍",
-    bPlatform: "TWITCH",
-    bId: "yapyap30"
-  },
-  {
-    bName: "룩삼",
-    bPlatform: "TWITCH",
-    bId: "looksam"
-  },
-  {
     bName: "공혁준",
     bPlatform: "TWITCH",
     bId: "rhdgurwns"
   },
   {
-    bName: "한동숙",
+    bName: "룩삼",
     bPlatform: "TWITCH",
-    bId: "handongsuk"
+    bId: "looksam"
   },
   {
     bName: "서새봄냥",
@@ -43,11 +33,6 @@ export const broadcasters = [
     bName: "철면수심",
     bPlatform: "TWITCH",
     bId: "109ace"
-  },
-  {
-    bName: "소풍왔니",
-    bPlatform: "TWITCH",
-    bId: "yumyumyu77"
   },
   {
     bName: "오킹",
@@ -80,19 +65,9 @@ export const broadcasters = [
     bId: "pacific8815"
   },
   {
-    bName: "캡틴잭",
-    bPlatform: "TWITCH",
-    bId: "hwkang2"
-  },
-  {
     bName: "던ㅤ",
     bPlatform: "TWITCH",
     bId: "dawnhs"
-  },
-  {
-    bName: "고스트",
-    bPlatform: "TWITCH",
-    bId: "ghostgc"
   },
   {
     bName: "매드라이프_",
@@ -165,14 +140,9 @@ export const broadcasters = [
     bId: "nodolly"
   },
   {
-    bName: "초승달",
+    bName: "소풍왔니",
     bPlatform: "TWITCH",
-    bId: "cocopopp671"
-  },
-  {
-    bName: "플러리",
-    bPlatform: "TWITCH",
-    bId: "flurry1989"
+    bId: "yumyumyu77"
   },
   {
     bName: "짬타수아",
@@ -193,5 +163,20 @@ export const broadcasters = [
     bName: "지수소녀",
     bPlatform: "TWITCH",
     bId: "wltn4765"
+  },
+  {
+    bName: "플러리",
+    bPlatform: "TWITCH",
+    bId: "flurry1989"
+  },
+  {
+    bName: "얍얍",
+    bPlatform: "TWITCH",
+    bId: "yapyap30"
+  },
+  {
+    bName: "한동숙",
+    bPlatform: "TWITCH",
+    bId: "handongsuk"
   }
 ];

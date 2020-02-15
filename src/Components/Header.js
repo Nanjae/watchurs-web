@@ -419,7 +419,7 @@ const SearchInputBox = styled.div`
   background-color: ${props => props.theme.whiteColor};
   border-radius: 4px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   z-index: 100;
   @media only screen and (max-width: 599px) {
