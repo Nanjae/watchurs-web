@@ -10,7 +10,7 @@ import { deepBlueColor, darkBlueColor } from "../Styles/StyleFunction";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
-import AutoInput from "./AutoInput";
+import AutoInput from "../Components/AutoInput/HeaderAutoInput";
 
 const COUNT_ALL_SUMMONER = gql`
   {

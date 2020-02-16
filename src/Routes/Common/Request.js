@@ -4,7 +4,7 @@ import { darkBlueColor } from "../../Styles/StyleFunction";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import BgImage from "../../Assets/Common/runeterra-freljord-02-r-c.png";
 import Footer from "../../Components/Footer";
-import AutoInput from "../../Components/AutoInput";
+import AutoInput from "../../Components/AutoInput/HeaderAutoInput";
 
 const CommonPage = styled.div``;
 

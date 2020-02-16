@@ -8,7 +8,7 @@ import { withRouter, useHistory } from "react-router-dom";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
 import Loader from "../../../Components/Loader";
-import BroadcasterDetail from "../../../Components/BroadcasterDetail/BroadcasterDetail";
+import BroadcasterHeader from "../../../Components/BroadcasterDetail/BroadcasterHeader";
 
 const SEE_ONE_BROADCASTER = gql`
   query seeOneBroadcaster($term: String!) {
@@ -122,21 +122,35 @@ export default withRouter(
   ({
     match: {
       params: { bId }
-    }
+    },
+    location
   }) => {
     const { windowHeight } = useWindowDimensions();
+    const history = useHistory();
+    let detailPage = location.pathname.split("/")[
+      location.pathname.split("/").length - 1
+    ];
 
     const { data, loading } = useQuery(SEE_ONE_BROADCASTER, {
       variables: { term: bId }
     });
 
     if (!loading) {
-      console.log(data);
+      // console.log(data);
     }
 
     if (!loading && data && data.seeOneBroadcaster === null) {
-      const history = useHistory();
       history.push(`/other/example`);
+    }
+
+    if (
+      !loading &&
+      data &&
+      data.seeOneBroadcaster &&
+      data.seeOneBroadcaster[0].bSummoner.length < detailPage
+    ) {
+      detailPage = 1;
+      history.push(`/detail/${data.seeOneBroadcaster[0].bId}/1`);
     }
 
     return (
@@ -147,7 +161,11 @@ export default withRouter(
           <MainDiv windowHeight={windowHeight}>
             {loading && <Loader />}
             {!loading && data && data.seeOneBroadcaster && (
-              <BroadcasterDetail loading={loading} data={data} />
+              <BroadcasterHeader
+                loading={loading}
+                data={data}
+                detailPage={detailPage}
+              />
             )}
           </MainDiv>
           <Footer />

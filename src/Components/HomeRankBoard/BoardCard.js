@@ -333,7 +333,7 @@ export default ({
 
   return (
     <BoardCard>
-      <BoardCardDiv to={`/detail/${bId}`}>
+      <BoardCardDiv to={`/detail/${bId}/1`}>
         <TableRankBox>
           <TableRankText>{index}</TableRankText>
         </TableRankBox>

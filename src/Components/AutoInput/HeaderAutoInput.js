@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Autosuggest from "react-autosuggest";
 import styled from "styled-components";
-import { broadcasters } from "../BroadcasterList";
-import twitchLogo from "../Assets/Twitch/TwitchLogo.png";
+import { broadcasters } from "../../BroadcasterList";
+import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
 import { Link, withRouter } from "react-router-dom";
-import IconArrow from "../Assets/Common/IconArrow.png";
-import IconSearch from "../Assets/Common/IconSearch.png";
+import IconArrow from "../../Assets/Common/IconArrow.png";
+import IconSearch from "../../Assets/Common/IconSearch.png";
 
 const AutoSuggestionDiv = styled(Link)`
   width: 250px;
