@@ -8,20 +8,22 @@ import IconArrow from "../../Assets/Common/IconArrow.png";
 import IconSearch from "../../Assets/Common/IconSearch.png";
 
 const AutoSuggestionDiv = styled(Link)`
-  width: 250px;
+  width: 340px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: ${props => props.theme.whiteColor};
   padding: 0px 10px;
   margin-left: -10px;
+  margin-top: -6px;
   cursor: pointer;
   user-select: none;
+  border-radius: 4px;
 `;
 
 const AutoSuggestionBox = styled.div`
   height: 40px;
-  width: 230px;
+  width: 310px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -86,6 +88,7 @@ const SearchIcon = styled.div`
   background-size: cover;
   width: 18px;
   height: 18px;
+  cursor: pointer;
 `;
 
 // Imagine you have a list of languages that you'd like to autosuggest.
@@ -124,7 +127,7 @@ const renderSuggestion = suggestion => {
       <AutoSuggestionBox to={""}>검색 결과 없음</AutoSuggestionBox>
     </AutoSuggestionDiv>
   ) : (
-    <AutoSuggestionDiv to={`/detail/${suggestion.bId}`}>
+    <AutoSuggestionDiv to={`/detail/${suggestion.bId}/1`}>
       <AutoSuggestionBox>
         <BroadcasterPlatform
           url={suggestion.bPlatform === "TWITCH" ? twitchLogo : null}
@@ -144,7 +147,7 @@ const renderInputComponent = inputProps => (
         console.log(event.key);
         if (event.key === "Enter") {
           window.location.assign(
-            `${window.location.origin}/detail/${inputProps.value}`
+            `${window.location.origin}/detail/${inputProps.value}/1`
           );
         }
       }}
@@ -153,7 +156,7 @@ const renderInputComponent = inputProps => (
     <SearchIcon
       onClick={() => {
         window.location.assign(
-          `${window.location.origin}/detail/${inputProps.value}`
+          `${window.location.origin}/detail/${inputProps.value}/1`
         );
       }}
       url={IconSearch}
@@ -161,7 +164,7 @@ const renderInputComponent = inputProps => (
   </InputDiv>
 );
 
-class AutoInput extends Component {
+class HeaderAutoInput extends Component {
   constructor() {
     super();
 
@@ -222,4 +225,4 @@ class AutoInput extends Component {
   }
 }
 
-export default withRouter(AutoInput);
+export default withRouter(HeaderAutoInput);

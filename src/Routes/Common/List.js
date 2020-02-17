@@ -101,7 +101,7 @@ export default () => {
         <MainBgDiv windowHeight={windowHeight} url={BgImage} />
         <MainOpacityDiv style={{ backgroundColor: darkBlueColor }} />
         <MainDiv windowHeight={windowHeight}>
-          <PageDiv>없는 브로드캐스터 => 등록요청 페이지</PageDiv>
+          <PageDiv>등록된 브로드캐스터 => 브로드캐스터 목록 페이지</PageDiv>
         </MainDiv>
         <Footer />
       </CommonPageDiv>

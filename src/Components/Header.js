@@ -10,7 +10,7 @@ import { deepBlueColor, darkBlueColor } from "../Styles/StyleFunction";
 import useWindowDimensions from "../Hooks/useWindowDimensions";
 import { useQuery } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
-import AutoInput from "../Components/AutoInput/HeaderAutoInput";
+import HeaderAutoInput from "../Components/AutoInput/HeaderAutoInput";
 
 const COUNT_ALL_SUMMONER = gql`
   {
@@ -339,7 +339,7 @@ const CountBroadFstText = styled.div`
   }
 `;
 
-const ArrowBox = styled.div`
+const ArrowBox = styled(Link)`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -674,7 +674,7 @@ export default withRouter(({ location }) => {
                 </TitleDiv>
                 <SearchInputDiv>
                   <SearchInputBox>
-                    <AutoInput />
+                    <HeaderAutoInput />
                   </SearchInputBox>
                 </SearchInputDiv>
               </TopFstBox>
@@ -701,7 +701,7 @@ export default withRouter(({ location }) => {
                   <CountBroadBox>
                     <InfoIcon url={IconInfo} />
                     <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
-                    <ArrowBox>
+                    <ArrowBox to={`/common/list`}>
                       <CountBroadSndText>
                         {data.countAllSummoner}명
                       </CountBroadSndText>

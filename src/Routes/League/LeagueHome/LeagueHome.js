@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Input from "../../../Components/Input";
-import IconSearch from "../../../Assets/Common/IconSearch.png";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import { darkBlueColor } from "../../../Styles/StyleFunction";
 import IconClose from "../../../Assets/Common/IconClose.png";
@@ -9,6 +7,7 @@ import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import { useWindowScroll } from "@react-hook/window-scroll";
 import RankBoard from "../../../Components/HomeRankBoard/RankBoard";
 import Footer from "../../../Components/Footer";
+import HomeAutoInput from "../../../Components/AutoInput/HomeAutoInput";
 
 const LeagueHome = styled.div``;
 
@@ -181,93 +180,49 @@ const MainTrdText = styled.div`
     font-weight: bold;
   }
 `;
-
 const SearchInputDiv = styled.div`
-  border: 4px solid ${props => props.theme.orangeColor};
-  background-color: ${props => props.theme.deepBlueColor};
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media only screen and (max-width: 599px) {
-    width: 95%;
-  }
-  @media only screen and (min-width: 600px) {
-    width: 90%;
-  }
-  @media only screen and (min-width: 1200px) {
-    width: 90%;
-  }
-  @media only screen and (min-width: 1800px) {
-    width: 90%;
-  }
-`;
-
-const SearchInput = styled(Input)`
-  background-color: ${props => props.theme.deepBlueColor};
-  color: white;
-  font-weight: bold;
-  @media only screen and (max-width: 599px) {
-    padding: 12px;
-    font-size: 14px;
-  }
-  @media only screen and (min-width: 600px) {
-    padding: 12px;
-    font-size: 14px;
-  }
-  @media only screen and (min-width: 1200px) {
-    padding: 15px;
-    font-size: 16px;
-  }
-  @media only screen and (min-width: 1800px) {
-    padding: 18px;
-    font-size: 18px;
-  }
-`;
-
-const SearchIconBox = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: ${props => props.theme.orangeColor};
-  border-left: 4px solid ${props => props.theme.orangeColor};
-  cursor: pointer;
+  align-items: flex-end;
   @media only screen and (max-width: 599px) {
-    width: 48px;
-    height: 48px;
+    width: 100%;
   }
   @media only screen and (min-width: 600px) {
-    width: 48px;
-    height: 48px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 60px;
-    height: 60px;
   }
   @media only screen and (min-width: 1800px) {
-    width: 72px;
-    height: 72px;
+    width: fit-content;
   }
 `;
 
-const SearchIcon = styled.div`
-  background-image: url(${props => props.url});
-  background-size: cover;
+const SearchInputBox = styled.div`
+  background-color: ${props => props.theme.deepBlueColor};
+  border-radius: 4px;
+  border: 4px solid ${props => props.theme.orangeColor};
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 100;
   @media only screen and (max-width: 599px) {
-    width: 24px;
-    height: 24px;
+    width: 100%;
+    padding: 0px 10px;
+    height: 32px;
   }
   @media only screen and (min-width: 600px) {
-    width: 24px;
-    height: 24px;
+    width: 180px;
+    padding: 0px 10px;
+    height: 32px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 28px;
-    height: 28px;
+    width: 260px;
+    padding: 0px 10px;
+    height: 40px;
   }
   @media only screen and (min-width: 1800px) {
-    width: 32px;
-    height: 32px;
+    width: fit-content;
+    padding: 0px;
+    height: 60px;
   }
 `;
 
@@ -381,16 +336,9 @@ export default () => {
               )}
             </MainTextBox>
             <SearchInputDiv>
-              <SearchInput
-                placeholder={
-                  windowWidth < 600
-                    ? "브로드캐스터 닉네임 또는 아이디"
-                    : "브로드캐스터 닉네임 또는 아이디를 입력해주세요."
-                }
-              />
-              <SearchIconBox>
-                <SearchIcon url={IconSearch} />
-              </SearchIconBox>
+              <SearchInputBox>
+                <HomeAutoInput />
+              </SearchInputBox>
             </SearchInputDiv>
             {adsClose ? null : windowWidth >= 750 ? (
               <AdsBottomDiv
