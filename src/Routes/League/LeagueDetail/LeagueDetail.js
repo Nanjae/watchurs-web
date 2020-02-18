@@ -19,6 +19,7 @@ const SEE_ONE_BROADCASTER = gql`
       bSummoner {
         sName
         sAvatar
+        sLevel
         sWins
         sLosses
         sTier

@@ -1321,7 +1321,12 @@ export default withRouter(({ loading, data, detailPage }) => {
                         .sAvatar
                     }
                   >
-                    <SummonerLevel>100</SummonerLevel>
+                    <SummonerLevel>
+                      {
+                        data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                          .sLevel
+                      }
+                    </SummonerLevel>
                   </SummonerAvatar>
                 </SummonerAvatarDiv>
               </SummonerInfoBox>
