@@ -896,11 +896,6 @@ export default withRouter(({ loading, data, detailPage }) => {
     // console.log(arrChamp);
   }
 
-  console.log(
-    data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sWins +
-      data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sLosses
-  );
-
   return windowWidth >= 1200 && windowWidth < 1800 ? (
     <InfoDiv>
       <InfoColumn>

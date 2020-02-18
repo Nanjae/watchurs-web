@@ -8,36 +8,74 @@ import IconArrow from "../../Assets/Common/IconArrow.png";
 import IconSearch from "../../Assets/Common/IconSearch.png";
 
 const AutoSuggestionDiv = styled(Link)`
-  width: 340px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: ${props => props.theme.whiteColor};
-  padding: 0px 10px;
   margin-left: -10px;
   margin-top: -6px;
   cursor: pointer;
   user-select: none;
   border-radius: 4px;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 0px 8px;
+    width: 184px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 0px 10px;
+    width: 260px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 0px 10px;
+    width: 340px;
+  }
 `;
 
 const AutoSuggestionBox = styled.div`
   height: 40px;
-  width: 310px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 14px;
   font-weight: bold;
   color: ${props => props.theme.purpleColor};
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 12px;
+    width: 164px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+    width: 240px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 16px;
+    width: 320px;
+  }
 `;
 
 const BroadcasterPlatform = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 const BroadcasterNameText = styled.div``;
@@ -47,32 +85,54 @@ const BroadcasterIdText = styled.div``;
 const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 18px;
-  height: 18px;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+    width: 14px;
+    height: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 const InputDiv = styled.div`
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;
 
 const InputText = styled.input`
   border: 0px;
-  width: 315px;
   font-weight: bold;
   @media only screen and (max-width: 599px) {
     padding: 0px;
     margin: 0px;
+    margin-right: 5px;
+    margin-bottom: 10px;
     font-size: 13px;
+    width: 90%;
   }
   @media only screen and (min-width: 600px) {
     padding: 0px;
     margin: 0px;
+    margin-right: 5px;
+    margin-bottom: 10px;
     font-size: 12px;
+    width: 159px;
   }
   @media only screen and (min-width: 1200px) {
     padding: 0px;
     margin: 0px;
+    margin-right: 5px;
+    margin-bottom: 10px;
     font-size: 14px;
+    width: 235px;
   }
   @media only screen and (min-width: 1800px) {
     padding: 0px;
@@ -80,15 +140,30 @@ const InputText = styled.input`
     margin-right: 5px;
     margin-bottom: 10px;
     font-size: 16px;
+    width: 315px;
   }
 `;
 
 const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 18px;
-  height: 18px;
   cursor: pointer;
+  @media only screen and (max-width: 599px) {
+    width: 14px;
+    height: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 14px;
+    height: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 // Imagine you have a list of languages that you'd like to autosuggest.
@@ -212,15 +287,17 @@ class HeaderAutoInput extends Component {
 
     // Finally, render it!
     return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        renderInputComponent={renderInputComponent}
-        inputProps={inputProps}
-      />
+      <div style={{ width: "100%" }}>
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={renderSuggestion}
+          renderInputComponent={renderInputComponent}
+          inputProps={inputProps}
+        />
+      </div>
     );
   }
 }

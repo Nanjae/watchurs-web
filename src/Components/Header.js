@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { withRouter, Link } from "react-router-dom";
-import Input from "./Input";
-import IconSearch from "../Assets/Common/IconSearch.png";
 import IconInfo from "../Assets/Common/IconInfo.png";
 import IconCircleArrow from "../Assets/Common/IconCircleArrow.png";
 import Theme from "../Styles/Theme";
@@ -424,65 +422,23 @@ const SearchInputBox = styled.div`
   z-index: 100;
   @media only screen and (max-width: 599px) {
     width: 100%;
-    padding: 0px 10px;
-    height: 32px;
+    padding: 8px 6px;
+    height: 14px;
   }
   @media only screen and (min-width: 600px) {
     width: 180px;
-    padding: 0px 10px;
-    height: 32px;
+    padding: 10px 10px;
+    height: 14px;
   }
   @media only screen and (min-width: 1200px) {
     width: 260px;
-    padding: 0px 10px;
-    height: 40px;
+    padding: 12px 10px;
+    height: 16px;
   }
   @media only screen and (min-width: 1800px) {
     width: 340px;
     padding: 15px 10px;
     height: 18px;
-  }
-`;
-
-const SearchInput = styled(Input)`
-  font-weight: bold;
-  @media only screen and (max-width: 599px) {
-    font-size: 13px;
-  }
-  @media only screen and (min-width: 600px) {
-    font-size: 12px;
-  }
-  @media only screen and (min-width: 1200px) {
-    font-size: 14px;
-  }
-  @media only screen and (min-width: 1800px) {
-    font-size: 16px;
-  }
-`;
-
-const SearchIcon = styled(Link)`
-  background-image: url(${props => props.url});
-  background-size: cover;
-  cursor: pointer;
-  @media only screen and (max-width: 599px) {
-    margin-left: 3px;
-    width: 12px;
-    height: 12px;
-  }
-  @media only screen and (min-width: 600px) {
-    margin-left: 3px;
-    width: 12px;
-    height: 12px;
-  }
-  @media only screen and (min-width: 1200px) {
-    margin-left: 4px;
-    width: 16px;
-    height: 16px;
-  }
-  @media only screen and (min-width: 1800px) {
-    margin-left: 4px;
-    width: 16px;
-    height: 16px;
   }
 `;
 
@@ -615,8 +571,7 @@ export default withRouter(({ location }) => {
               <TopSndBox>
                 <SearchInputDiv>
                   <SearchInputBox>
-                    <SearchInput placeholder={"브로드캐스터 검색"} />
-                    <SearchIcon url={IconSearch} />
+                    <HeaderAutoInput />
                   </SearchInputBox>
                 </SearchInputDiv>
               </TopSndBox>
