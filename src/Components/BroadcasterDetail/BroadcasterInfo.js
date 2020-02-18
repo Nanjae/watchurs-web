@@ -319,6 +319,8 @@ const SummonerWinRateDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px;
+  font-weight: bold;
 `;
 
 const SummonerWinRateBox = styled.div``;
@@ -688,7 +690,7 @@ const ChampLossText = styled.div`
 `;
 
 let sTierEmblem = emblemUnranked;
-let sTierName = "랭크없음";
+let sTierName = "UNRANKED";
 let sRank = "";
 let arrLane = [];
 let detailWins = Array(20);
@@ -847,7 +849,7 @@ export default withRouter(({ loading, data, detailPage }) => {
       sRank = "";
     } else {
       sTierEmblem = emblemUnranked;
-      sTierName = "랭크없음";
+      sTierName = "UNRANKED";
       sRank = "";
     }
 
@@ -893,6 +895,11 @@ export default withRouter(({ loading, data, detailPage }) => {
     arrChamp.sort((a, b) => b.count - a.count);
     // console.log(arrChamp);
   }
+
+  console.log(
+    data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sWins +
+      data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sLosses
+  );
 
   return windowWidth >= 1200 && windowWidth < 1800 ? (
     <InfoDiv>
@@ -1346,90 +1353,98 @@ export default withRouter(({ loading, data, detailPage }) => {
                   <TierBox>
                     <TierText>{sTierName}</TierText>
                     <RankText>{sRank}</RankText>
-                    <PointsText>
-                      (
-                      {
-                        data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                          .sPoints
-                      }
-                      LP)
-                    </PointsText>
+                    {sTierName !== "UNRANKED" ? (
+                      <PointsText>
+                        (
+                        {
+                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                            .sPoints
+                        }
+                        LP)
+                      </PointsText>
+                    ) : null}
                   </TierBox>
                 </SummonerTierBox>
                 <SummonerEmblemBox>
                   <EmblemIcon url={sTierEmblem} />
                 </SummonerEmblemBox>
               </SummonerTierDiv>
-              <SummonerWinRateDiv>
-                <SummonerWinRateBox>
-                  <ReactMinimalPieChart
-                    animate={true}
-                    animationDuration={500}
-                    animationEasing="ease-out"
-                    cx={50}
-                    cy={50}
-                    data={[
-                      {
-                        color: Theme.winColor,
-                        title: "승",
-                        value:
+              {data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sWins +
+                data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sLosses >
+              0 ? (
+                <SummonerWinRateDiv>
+                  <SummonerWinRateBox>
+                    <ReactMinimalPieChart
+                      animate={true}
+                      animationDuration={500}
+                      animationEasing="ease-out"
+                      cx={50}
+                      cy={50}
+                      data={[
+                        {
+                          color: Theme.winColor,
+                          title: "승",
+                          value:
+                            data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                              .sWins
+                        },
+                        {
+                          color: Theme.lossColor,
+                          title: "패",
+                          value:
+                            data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                              .sLosses
+                        }
+                      ]}
+                      label={({ data }) => Math.round(data[0].percentage) + "%"}
+                      labelStyle={{
+                        fontSize: 16,
+                        fontWeight: "bold",
+                        fill: Theme.darkOrangeColor
+                      }}
+                      labelPosition={0}
+                      lengthAngle={360}
+                      lineWidth={30}
+                      onClick={undefined}
+                      onMouseOut={undefined}
+                      onMouseOver={undefined}
+                      paddingAngle={3}
+                      radius={50}
+                      rounded={false}
+                      startAngle={120}
+                      viewBoxSize={[100, 100]}
+                      style={{ height: 100, width: 100 }}
+                    />
+                  </SummonerWinRateBox>
+                  <SummonerWinLossDiv>
+                    <WinLossBox>
+                      <TotalText>
+                        {data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                          .sWins +
+                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                            .sLosses}
+                        전
+                      </TotalText>
+                      <WinsText>
+                        {
                           data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
                             .sWins
-                      },
-                      {
-                        color: Theme.lossColor,
-                        title: "패",
-                        value:
+                        }
+                        승
+                      </WinsText>
+                      <LossesText>
+                        {
                           data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
                             .sLosses
-                      }
-                    ]}
-                    label={({ data }) => Math.round(data[0].percentage) + "%"}
-                    labelStyle={{
-                      fontSize: 16,
-                      fontWeight: "bold",
-                      fill: Theme.darkOrangeColor
-                    }}
-                    labelPosition={0}
-                    lengthAngle={360}
-                    lineWidth={30}
-                    onClick={undefined}
-                    onMouseOut={undefined}
-                    onMouseOver={undefined}
-                    paddingAngle={3}
-                    radius={50}
-                    rounded={false}
-                    startAngle={120}
-                    viewBoxSize={[100, 100]}
-                    style={{ height: 100, width: 100 }}
-                  />
-                </SummonerWinRateBox>
-                <SummonerWinLossDiv>
-                  <WinLossBox>
-                    <TotalText>
-                      {data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                        .sWins +
-                        data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                          .sLosses}
-                      전
-                    </TotalText>
-                    <WinsText>
-                      {
-                        data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                          .sWins
-                      }
-                      승
-                    </WinsText>
-                    <LossesText>
-                      {
-                        data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                          .sLosses
-                      }
-                      패
-                    </LossesText>
-                  </WinLossBox>
-                </SummonerWinLossDiv>
-              </SummonerWinRateDiv>
+                        }
+                        패
+                      </LossesText>
+                    </WinLossBox>
+                  </SummonerWinLossDiv>
+                </SummonerWinRateDiv>
+              ) : (
+                <SummonerWinRateDiv>랭크 기록 없음</SummonerWinRateDiv>
+              )}
             </SummonerDetailDiv>
           </InfoMainBox>
         </InfoMainDiv>

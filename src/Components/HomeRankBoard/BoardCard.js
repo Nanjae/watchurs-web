@@ -350,7 +350,9 @@ export default ({
           <LeagueTierEmblem url={sTierEmblem} />
           <LeagueTierText>{sTierName}</LeagueTierText>
           {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
-          <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+          {sTierName !== "UNRANKED" ? (
+            <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+          ) : null}
         </LeagueTierBox>
       </BoardCardDiv>
     </BoardCard>

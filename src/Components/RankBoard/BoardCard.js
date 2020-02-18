@@ -403,7 +403,7 @@ const ArrowIcon = styled.div`
 `;
 
 let sTierEmblem = emblemUnranked;
-let sTierName = "랭크없음";
+let sTierName = "UNRANKED";
 
 export default ({
   index,
@@ -452,7 +452,7 @@ export default ({
     sRank = "";
   } else {
     sTierEmblem = emblemUnranked;
-    sTierName = "랭크없음";
+    sTierName = "UNRANKED";
     sRank = "";
   }
 
@@ -477,7 +477,9 @@ export default ({
           <LeagueTierEmblem url={sTierEmblem} />
           <LeagueTierText>{sTierName}</LeagueTierText>
           {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
-          <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+          {sTierName !== "UNRANKED" ? (
+            <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+          ) : null}
         </LeagueTierBox>
         {windowWidth < 600 ? null : (
           <LeagueWinRateBox>
