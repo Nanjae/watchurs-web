@@ -12,45 +12,58 @@ const AutoSuggestionDiv = styled(Link)`
   justify-content: space-between;
   align-items: center;
   background-color: ${props => props.theme.whiteColor};
-  margin-left: -10px;
-  margin-top: -6px;
   cursor: pointer;
   user-select: none;
   border-radius: 4px;
   @media only screen and (max-width: 599px) {
+    margin-top: -8px;
+    margin-left: -6px;
+    padding: 0px 6px;
+    width: 100%;
   }
   @media only screen and (min-width: 600px) {
+    margin-top: -6px;
+    margin-left: -10px;
     padding: 0px 8px;
     width: 184px;
   }
   @media only screen and (min-width: 1200px) {
+    margin-top: -6px;
+    margin-left: -10px;
     padding: 0px 10px;
     width: 260px;
   }
   @media only screen and (min-width: 1800px) {
+    margin-top: -6px;
+    margin-left: -10px;
     padding: 0px 10px;
     width: 340px;
   }
 `;
 
 const AutoSuggestionBox = styled.div`
-  height: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-weight: bold;
   color: ${props => props.theme.purpleColor};
   @media only screen and (max-width: 599px) {
+    height: 36px;
+    font-size: 13px;
+    width: 90%;
   }
   @media only screen and (min-width: 600px) {
+    height: 40px;
     font-size: 12px;
     width: 164px;
   }
   @media only screen and (min-width: 1200px) {
+    height: 40px;
     font-size: 14px;
     width: 240px;
   }
   @media only screen and (min-width: 1800px) {
+    height: 40px;
     font-size: 16px;
     width: 320px;
   }
@@ -60,6 +73,9 @@ const BroadcasterPlatform = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
+    margin-right: 4px;
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 600px) {
     margin-right: 4px;
@@ -86,6 +102,8 @@ const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
+    width: 14px;
+    height: 14px;
   }
   @media only screen and (min-width: 600px) {
     width: 14px;

@@ -184,12 +184,15 @@ const SearchInputDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
   @media only screen and (max-width: 599px) {
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
+    width: fit-content;
   }
   @media only screen and (min-width: 1200px) {
+    width: fit-content;
   }
   @media only screen and (min-width: 1800px) {
     width: fit-content;
@@ -204,24 +207,21 @@ const SearchInputBox = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   z-index: 100;
+  padding: 0px;
   @media only screen and (max-width: 599px) {
     width: 100%;
-    padding: 0px 10px;
-    height: 32px;
+    height: 42px;
   }
   @media only screen and (min-width: 600px) {
-    width: 180px;
-    padding: 0px 10px;
-    height: 32px;
+    width: fit-content;
+    height: 48px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 260px;
-    padding: 0px 10px;
-    height: 40px;
+    width: fit-content;
+    height: 54px;
   }
   @media only screen and (min-width: 1800px) {
     width: fit-content;
-    padding: 0px;
     height: 60px;
   }
 `;
@@ -230,17 +230,14 @@ const AdsBottomDiv = styled.div`
   position: fixed;
   display: flex;
   justify-content: center;
+  width: 100%;
   @media only screen and (max-width: 599px) {
-    width: 100%;
   }
   @media only screen and (min-width: 600px) {
-    width: 100%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 100%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 100%;
   }
 `;
 

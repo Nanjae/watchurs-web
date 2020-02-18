@@ -8,38 +8,88 @@ import IconArrow from "../../Assets/Common/IconArrow.png";
 import IconSearch from "../../Assets/Common/IconSearch.png";
 
 const AutoSuggestionDiv = styled(Link)`
-  width: 910px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: ${props => props.theme.deepBlueColor};
-  margin-left: -4px;
-  margin-top: -6px;
-  padding: 0px 10px;
   cursor: pointer;
   user-select: none;
   border: 4px solid ${props => props.theme.orangeColor};
   border-top: 0px;
   border-radius: 4px;
+  @media only screen and (max-width: 599px) {
+    margin-top: -6px;
+    margin-left: -4px;
+    padding: 0px;
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: -6px;
+    margin-left: -4px;
+    padding: 0px 10px;
+    width: 440px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: -6px;
+    margin-left: -4px;
+    padding: 0px 10px;
+    width: 710px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-top: -6px;
+    margin-left: -4px;
+    padding: 0px 10px;
+    width: 910px;
+  }
 `;
 
 const AutoSuggestionBox = styled.div`
   height: 40px;
-  width: 800px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: 18px;
   font-weight: bold;
-  color: ${props => props.theme.purpleColor};
+  color: ${props => props.theme.twitchColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+    width: 90%;
+    margin-left: 8px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 430px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 600px;
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 800px;
+    font-size: 18px;
+  }
 `;
 
 const BroadcasterPlatform = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 20px;
-  height: 20px;
   margin-right: 5px;
+  @media only screen and (max-width: 599px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 18px;
+    height: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const BroadcasterNameText = styled.div``;
@@ -49,37 +99,71 @@ const BroadcasterIdText = styled.div``;
 const ArrowIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 18px;
-  height: 18px;
+  @media only screen and (max-width: 599px) {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 18px;
+    height: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const InputDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  width: fit-content;
-  height: 60px;
+  @media only screen and (max-width: 599px) {
+    width: 100%;
+    height: 40px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: fit-content;
+    height: 48px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: fit-content;
+    height: 54px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: fit-content;
+    height: 60px;
+  }
 `;
 
 const InputText = styled.input`
   border: 0px;
-  width: 100%;
   font-weight: bold;
   background-color: ${props => props.theme.deepBlueColor};
   color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
     padding: 0px;
     margin: 0px;
-    font-size: 13px;
+    padding-left: 10px;
+    font-size: 12px;
+    width: 80%;
   }
   @media only screen and (min-width: 600px) {
     padding: 0px;
     margin: 0px;
-    font-size: 12px;
+    padding-left: 15px;
+    font-size: 14px;
+    width: 445px;
   }
   @media only screen and (min-width: 1200px) {
     padding: 0px;
     margin: 0px;
-    font-size: 14px;
+    padding-left: 15px;
+    font-size: 16px;
+    width: 715px;
   }
   @media only screen and (min-width: 1800px) {
     padding: 0px;
@@ -91,19 +175,47 @@ const InputText = styled.input`
 `;
 
 const SearchIconBox = styled.div`
-  width: 70px;
-  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.orangeColor};
+  @media only screen and (max-width: 599px) {
+    width: 46px;
+    height: 42px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 55px;
+    height: 48px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 62px;
+    height: 54px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 69px;
+    height: 60px;
+  }
 `;
 
 const SearchIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 40px;
-  height: 40px;
+  @media only screen and (max-width: 599px) {
+    width: 24px;
+    height: 24px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 32px;
+    height: 32px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 36px;
+    height: 36px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 // Imagine you have a list of languages that you'd like to autosuggest.
@@ -229,15 +341,17 @@ class HomeAutoInput extends Component {
 
     // Finally, render it!
     return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        renderInputComponent={renderInputComponent}
-        inputProps={inputProps}
-      />
+      <div style={{ width: "100%" }}>
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={renderSuggestion}
+          renderInputComponent={renderInputComponent}
+          inputProps={inputProps}
+        />
+      </div>
     );
   }
 }
