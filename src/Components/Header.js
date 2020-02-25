@@ -559,7 +559,7 @@ export default withRouter(({ location }) => {
                   <CountBroadBox>
                     <InfoIcon url={IconInfo} />
                     <CountBroadFstText>총 브로드캐스터:</CountBroadFstText>
-                    <ArrowBox>
+                    <ArrowBox to={`/common/list`}>
                       <CountBroadSndText>
                         {data.countAllSummoner}명
                       </CountBroadSndText>

@@ -58,13 +58,23 @@ const InfoColumn = styled.div`
 `;
 
 const InfoBox = styled.div`
-  height: 370px;
   margin-top: 10px;
 `;
 
 const InfoMainDiv = styled.div`
   display: flex;
-  height: 370px;
+  @media only screen and (max-width: 599px) {
+    height: 360px;
+  }
+  @media only screen and (min-width: 600px) {
+    height: 370px;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 370px;
+  }
+  @media only screen and (min-width: 1800px) {
+    height: 370px;
+  }
 `;
 
 const InfoMainBox = styled.div`
@@ -76,7 +86,7 @@ const InfoMainBox = styled.div`
   border: 1px solid ${props => props.theme.lightGrayColor};
   height: 100%;
   @media only screen and (max-width: 599px) {
-    width: 99%;
+    width: 100%;
     min-width: 298px;
   }
   @media only screen and (min-width: 600px) {
@@ -98,11 +108,11 @@ const CommonTitleDiv = styled.div`
   background-color: ${props => props.theme.darkGrayColor};
   font-size: 16px;
   font-weight: bold;
-  margin-left: -1px;
+  /* margin-left: -1px; */
   margin-top: -1px;
   color: ${props => props.theme.lightOrangeColor};
   @media only screen and (max-width: 599px) {
-    width: 99%;
+    width: 100%;
     min-width: 300px;
   }
   @media only screen and (min-width: 600px) {
@@ -130,14 +140,15 @@ const SummonerInfoDiv = styled.div`
   padding: 10px;
   align-items: flex-end;
   @media only screen and (max-width: 599px) {
-    width: 99%;
+    padding: 10px 0px;
+    width: 100%;
     min-width: 280px;
   }
   @media only screen and (min-width: 600px) {
-    min-width: 560px;
+    min-width: 558px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 375px;
+    min-width: 374px;
   }
   @media only screen and (min-width: 1800px) {
     min-width: 320px;
@@ -151,8 +162,9 @@ const SummonerAvatarDiv = styled.div`
   border: 4px solid ${props => props.theme.brownColor};
   margin-right: 10px;
   @media only screen and (max-width: 599px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
   }
   @media only screen and (min-width: 600px) {
     width: 90px;
@@ -175,8 +187,8 @@ const SummonerAvatar = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   @media only screen and (max-width: 599px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   @media only screen and (min-width: 600px) {
     width: 90px;
@@ -211,36 +223,79 @@ const SummonerRankingBox = styled.div``;
 
 const SummonerRankingText = styled.div`
   border-radius: 4px;
-  padding: 5px;
   width: fit-content;
   color: ${props => props.theme.whiteColor};
-  font-size: 12px;
   font-weight: normal;
   margin-bottom: 4px;
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+    font-size: 11px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 5px;
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 5px;
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 5px;
+    font-size: 12px;
+  }
 `;
 
 const SummonerName = styled.div`
-  font-size: 24px;
   font-weight: bold;
   color: ${props => props.theme.brownColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 24px;
+  }
 `;
 
 const SummonerDetailDiv = styled.div`
-  padding: 10px;
+  width: 100%;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
+`;
+
+const SummonerDetailBox = styled.div`
   background-color: ${props => props.theme.grayColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
   @media only screen and (max-width: 599px) {
-    width: 99%;
-    min-width: 300px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
   }
   @media only screen and (min-width: 600px) {
-    min-width: 580px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
   }
   @media only screen and (min-width: 1200px) {
-    min-width: 353px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
   }
   @media only screen and (min-width: 1800px) {
-    min-width: 298px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 0px;
   }
 `;
 
@@ -265,16 +320,38 @@ const SeasonBox = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
-  font-size: 14px;
   font-weight: normal;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+  }
 `;
 
 const SeasonText = styled.div`
   background-color: ${props => props.theme.darkOrangeColor};
   width: fit-content;
   border-radius: 4px;
-  padding: 5px;
   color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 5px;
+  }
 `;
 
 const SoloText = styled.div`
@@ -290,8 +367,19 @@ const TierBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 20px;
   margin-bottom: 10px;
+  @media only screen and (max-width: 599px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 20px;
+  }
 `;
 
 const TierText = styled.div``;
@@ -301,7 +389,18 @@ const RankText = styled.div`
 `;
 
 const PointsText = styled.div`
-  font-size: 16px;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 16px;
+  }
 `;
 
 const SummonerEmblemBox = styled.div`
@@ -311,8 +410,22 @@ const SummonerEmblemBox = styled.div`
 const EmblemIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 77px;
-  height: 90px;
+  @media only screen and (max-width: 599px) {
+    width: 68px;
+    height: 80px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 77px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 77px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 77px;
+    height: 90px;
+  }
 `;
 
 const SummonerWinRateDiv = styled.div`
@@ -333,10 +446,21 @@ const SummonerWinLossDiv = styled.div`
 `;
 
 const WinLossBox = styled.div`
-  font-size: 18px;
   font-weight: bold;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 599px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const TotalText = styled.div`
@@ -579,7 +703,7 @@ const FavChampBox = styled.div`
     min-width: 300px;
   }
   @media only screen and (min-width: 600px) {
-    min-width: 580px;
+    min-width: 570px;
   }
   @media only screen and (min-width: 1200px) {
     min-width: 385px;
@@ -941,99 +1065,105 @@ export default withRouter(({ loading, data, detailPage }) => {
                 </SummonerRankingDiv>
               </SummonerInfoDiv>
               <SummonerDetailDiv>
-                <SummonerTierDiv>
-                  <SummonerTierBox>
-                    <SeasonBox>
-                      <SeasonText>시즌 10</SeasonText>
-                      <SoloText>솔로랭크</SoloText>
-                    </SeasonBox>
-                    <TierBox>
-                      <TierText>{sTierName}</TierText>
-                      <RankText>{sRank}</RankText>
-                      <PointsText>
-                        (
-                        {
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sPoints
+                <SummonerDetailBox>
+                  <SummonerTierDiv>
+                    <SummonerTierBox>
+                      <SeasonBox>
+                        <SeasonText>시즌 10</SeasonText>
+                        <SoloText>솔로랭크</SoloText>
+                      </SeasonBox>
+                      <TierBox>
+                        <TierText>{sTierName}</TierText>
+                        <RankText>{sRank}</RankText>
+                        <PointsText>
+                          (
+                          {
+                            data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                              .sPoints
+                          }
+                          LP)
+                        </PointsText>
+                      </TierBox>
+                    </SummonerTierBox>
+                    <SummonerEmblemBox>
+                      <EmblemIcon url={sTierEmblem} />
+                    </SummonerEmblemBox>
+                  </SummonerTierDiv>
+                  <SummonerWinRateDiv>
+                    <SummonerWinRateBox>
+                      <ReactMinimalPieChart
+                        animate={true}
+                        animationDuration={500}
+                        animationEasing="ease-out"
+                        cx={50}
+                        cy={50}
+                        data={[
+                          {
+                            color: Theme.winColor,
+                            title: "승",
+                            value:
+                              data.seeOneBroadcaster[0].bSummoner[
+                                detailPage - 1
+                              ].sWins
+                          },
+                          {
+                            color: Theme.lossColor,
+                            title: "패",
+                            value:
+                              data.seeOneBroadcaster[0].bSummoner[
+                                detailPage - 1
+                              ].sLosses
+                          }
+                        ]}
+                        label={({ data }) =>
+                          Math.round(data[0].percentage) + "%"
                         }
-                        LP)
-                      </PointsText>
-                    </TierBox>
-                  </SummonerTierBox>
-                  <SummonerEmblemBox>
-                    <EmblemIcon url={sTierEmblem} />
-                  </SummonerEmblemBox>
-                </SummonerTierDiv>
-                <SummonerWinRateDiv>
-                  <SummonerWinRateBox>
-                    <ReactMinimalPieChart
-                      animate={true}
-                      animationDuration={500}
-                      animationEasing="ease-out"
-                      cx={50}
-                      cy={50}
-                      data={[
-                        {
-                          color: Theme.winColor,
-                          title: "승",
-                          value:
+                        labelStyle={{
+                          fontSize: 16,
+                          fontWeight: "bold",
+                          fill: Theme.darkOrangeColor
+                        }}
+                        labelPosition={0}
+                        lengthAngle={360}
+                        lineWidth={30}
+                        onClick={undefined}
+                        onMouseOut={undefined}
+                        onMouseOver={undefined}
+                        paddingAngle={3}
+                        radius={50}
+                        rounded={false}
+                        startAngle={120}
+                        viewBoxSize={[100, 100]}
+                        style={{ height: 100, width: 100 }}
+                      />
+                    </SummonerWinRateBox>
+                    <SummonerWinLossDiv>
+                      <WinLossBox>
+                        <TotalText>
+                          {data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                            .sWins +
+                            data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                              .sLosses}
+                          전
+                        </TotalText>
+                        <WinsText>
+                          {
                             data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
                               .sWins
-                        },
-                        {
-                          color: Theme.lossColor,
-                          title: "패",
-                          value:
+                          }
+                          승
+                        </WinsText>
+                        <LossesText>
+                          {
                             data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
                               .sLosses
-                        }
-                      ]}
-                      label={({ data }) => Math.round(data[0].percentage) + "%"}
-                      labelStyle={{
-                        fontSize: 16,
-                        fontWeight: "bold",
-                        fill: Theme.darkOrangeColor
-                      }}
-                      labelPosition={0}
-                      lengthAngle={360}
-                      lineWidth={30}
-                      onClick={undefined}
-                      onMouseOut={undefined}
-                      onMouseOver={undefined}
-                      paddingAngle={3}
-                      radius={50}
-                      rounded={false}
-                      startAngle={120}
-                      viewBoxSize={[100, 100]}
-                      style={{ height: 100, width: 100 }}
-                    />
-                  </SummonerWinRateBox>
-                  <SummonerWinLossDiv>
-                    <WinLossBox>
-                      <TotalText>
-                        {data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                          .sWins +
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sLosses}
-                        전
-                      </TotalText>
-                      <WinsText>
-                        {
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sWins
-                        }
-                        승
-                      </WinsText>
-                      <LossesText>
-                        {
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sLosses
-                        }
-                        패
-                      </LossesText>
-                    </WinLossBox>
-                  </SummonerWinLossDiv>
-                </SummonerWinRateDiv>
+                          }
+                          패
+                        </LossesText>
+                      </WinLossBox>
+                    </SummonerWinLossDiv>
+                  </SummonerWinRateDiv>
+                </SummonerDetailBox>
               </SummonerDetailDiv>
             </InfoMainBox>
           </InfoMainDiv>
@@ -1344,107 +1474,113 @@ export default withRouter(({ loading, data, detailPage }) => {
               </SummonerRankingDiv>
             </SummonerInfoDiv>
             <SummonerDetailDiv>
-              <SummonerTierDiv>
-                <SummonerTierBox>
-                  <SeasonBox>
-                    <SeasonText>시즌 10</SeasonText>
-                    <SoloText>솔로랭크</SoloText>
-                  </SeasonBox>
-                  <TierBox>
-                    <TierText>{sTierName}</TierText>
-                    <RankText>{sRank}</RankText>
-                    {sTierName !== "UNRANKED" ? (
-                      <PointsText>
-                        (
-                        {
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sPoints
+              <SummonerDetailBox>
+                <SummonerTierDiv>
+                  <SummonerTierBox>
+                    <SeasonBox>
+                      <SeasonText>시즌 10</SeasonText>
+                      <SoloText>솔로랭크</SoloText>
+                    </SeasonBox>
+                    <TierBox>
+                      <TierText>{sTierName}</TierText>
+                      <RankText>{sRank}</RankText>
+                      {sTierName !== "UNRANKED" ? (
+                        <PointsText>
+                          (
+                          {
+                            data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                              .sPoints
+                          }
+                          LP)
+                        </PointsText>
+                      ) : null}
+                    </TierBox>
+                  </SummonerTierBox>
+                  <SummonerEmblemBox>
+                    <EmblemIcon url={sTierEmblem} />
+                  </SummonerEmblemBox>
+                </SummonerTierDiv>
+                {data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sWins +
+                  data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sLosses >
+                0 ? (
+                  <SummonerWinRateDiv>
+                    <SummonerWinRateBox>
+                      <ReactMinimalPieChart
+                        animate={true}
+                        animationDuration={500}
+                        animationEasing="ease-out"
+                        cx={50}
+                        cy={50}
+                        data={[
+                          {
+                            color: Theme.winColor,
+                            title: "승",
+                            value:
+                              data.seeOneBroadcaster[0].bSummoner[
+                                detailPage - 1
+                              ].sWins
+                          },
+                          {
+                            color: Theme.lossColor,
+                            title: "패",
+                            value:
+                              data.seeOneBroadcaster[0].bSummoner[
+                                detailPage - 1
+                              ].sLosses
+                          }
+                        ]}
+                        label={({ data }) =>
+                          Math.round(data[0].percentage) + "%"
                         }
-                        LP)
-                      </PointsText>
-                    ) : null}
-                  </TierBox>
-                </SummonerTierBox>
-                <SummonerEmblemBox>
-                  <EmblemIcon url={sTierEmblem} />
-                </SummonerEmblemBox>
-              </SummonerTierDiv>
-              {data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sWins +
-                data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sLosses >
-              0 ? (
-                <SummonerWinRateDiv>
-                  <SummonerWinRateBox>
-                    <ReactMinimalPieChart
-                      animate={true}
-                      animationDuration={500}
-                      animationEasing="ease-out"
-                      cx={50}
-                      cy={50}
-                      data={[
-                        {
-                          color: Theme.winColor,
-                          title: "승",
-                          value:
+                        labelStyle={{
+                          fontSize: 16,
+                          fontWeight: "bold",
+                          fill: Theme.darkOrangeColor
+                        }}
+                        labelPosition={0}
+                        lengthAngle={360}
+                        lineWidth={30}
+                        onClick={undefined}
+                        onMouseOut={undefined}
+                        onMouseOver={undefined}
+                        paddingAngle={3}
+                        radius={50}
+                        rounded={false}
+                        startAngle={120}
+                        viewBoxSize={[100, 100]}
+                        style={{ height: 100, width: 100 }}
+                      />
+                    </SummonerWinRateBox>
+                    <SummonerWinLossDiv>
+                      <WinLossBox>
+                        <TotalText>
+                          {data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                            .sWins +
+                            data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
+                              .sLosses}
+                          전
+                        </TotalText>
+                        <WinsText>
+                          {
                             data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
                               .sWins
-                        },
-                        {
-                          color: Theme.lossColor,
-                          title: "패",
-                          value:
+                          }
+                          승
+                        </WinsText>
+                        <LossesText>
+                          {
                             data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
                               .sLosses
-                        }
-                      ]}
-                      label={({ data }) => Math.round(data[0].percentage) + "%"}
-                      labelStyle={{
-                        fontSize: 16,
-                        fontWeight: "bold",
-                        fill: Theme.darkOrangeColor
-                      }}
-                      labelPosition={0}
-                      lengthAngle={360}
-                      lineWidth={30}
-                      onClick={undefined}
-                      onMouseOut={undefined}
-                      onMouseOver={undefined}
-                      paddingAngle={3}
-                      radius={50}
-                      rounded={false}
-                      startAngle={120}
-                      viewBoxSize={[100, 100]}
-                      style={{ height: 100, width: 100 }}
-                    />
-                  </SummonerWinRateBox>
-                  <SummonerWinLossDiv>
-                    <WinLossBox>
-                      <TotalText>
-                        {data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                          .sWins +
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sLosses}
-                        전
-                      </TotalText>
-                      <WinsText>
-                        {
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sWins
-                        }
-                        승
-                      </WinsText>
-                      <LossesText>
-                        {
-                          data.seeOneBroadcaster[0].bSummoner[detailPage - 1]
-                            .sLosses
-                        }
-                        패
-                      </LossesText>
-                    </WinLossBox>
-                  </SummonerWinLossDiv>
-                </SummonerWinRateDiv>
-              ) : (
-                <SummonerWinRateDiv>랭크 기록 없음</SummonerWinRateDiv>
-              )}
+                          }
+                          패
+                        </LossesText>
+                      </WinLossBox>
+                    </SummonerWinLossDiv>
+                  </SummonerWinRateDiv>
+                ) : (
+                  <SummonerWinRateDiv>랭크 기록 없음</SummonerWinRateDiv>
+                )}
+              </SummonerDetailBox>
             </SummonerDetailDiv>
           </InfoMainBox>
         </InfoMainDiv>

@@ -12,7 +12,18 @@ const DetailDiv = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 15px 0px;
+  @media only screen and (max-width: 599px) {
+    margin: 8px 0px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin: 15px 0px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin: 15px 0px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin: 15px 0px;
+  }
 `;
 
 /**
@@ -21,22 +32,25 @@ const DetailDiv = styled.div`
 
 const HeaderBgDiv = styled.div`
   position: absolute;
-  height: 190px;
   background-image: url(${props => props.url});
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 50%;
   @media only screen and (max-width: 599px) {
+    height: 160px;
     width: 99%;
     min-width: 300px;
   }
   @media only screen and (min-width: 600px) {
+    height: 190px;
     min-width: 580px;
   }
   @media only screen and (min-width: 1200px) {
+    height: 190px;
     min-width: 800px;
   }
   @media only screen and (min-width: 1800px) {
+    height: 190px;
     min-width: 1050px;
   }
 `;
@@ -44,41 +58,46 @@ const HeaderBgDiv = styled.div`
 const HeaderOpacityDiv = styled.div`
   position: absolute;
   z-index: 50;
-  padding-top: 190px;
   @media only screen and (max-width: 599px) {
     width: 99%;
     min-width: 300px;
+    padding-top: 160px;
   }
   @media only screen and (min-width: 600px) {
     min-width: 580px;
+    padding-top: 190px;
   }
   @media only screen and (min-width: 1200px) {
     min-width: 800px;
+    padding-top: 190px;
   }
   @media only screen and (min-width: 1800px) {
     min-width: 1050px;
+    padding-top: 190px;
   }
 `;
 
 const HeaderDiv = styled.div`
   z-index: 100;
-  height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 18px;
   font-weight: bold;
   @media only screen and (max-width: 599px) {
     width: 99%;
+    height: 160px;
     min-width: 300px;
   }
   @media only screen and (min-width: 600px) {
+    height: 190px;
     min-width: 580px;
   }
   @media only screen and (min-width: 1200px) {
+    height: 190px;
     min-width: 800px;
   }
   @media only screen and (min-width: 1800px) {
+    height: 190px;
     min-width: 1050px;
   }
 `;
@@ -86,65 +105,186 @@ const HeaderDiv = styled.div`
 const BroadDiv = styled.div`
   display: flex;
   align-items: flex-end;
-  margin-top: 20px;
-  margin-left: 20px;
+  @media only screen and (max-width: 599px) {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
 `;
 
 const BroadAvatarDiv = styled.div`
   background-color: ${props => props.theme.blackColor};
   border: 4px solid ${props => props.theme.whiteColor};
-  width: 90px;
-  height: 90px;
-  margin-right: 20px;
+  @media only screen and (max-width: 599px) {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+  }
 `;
 
 const BroadAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 90px;
-  height: 90px;
+  @media only screen and (max-width: 599px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 const BroadInfoDiv = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  @media only screen and (max-width: 599px) {
+    justify-content: flex-end;
+  }
+  @media only screen and (min-width: 600px) {
+    justify-content: space-between;
+  }
+  @media only screen and (min-width: 1200px) {
+    justify-content: space-between;
+  }
+  @media only screen and (min-width: 1800px) {
+    justify-content: space-between;
+  }
 `;
 
 const BroadPlatformDiv = styled.div`
   display: flex;
   background-color: ${props => props.theme.whiteColor};
   width: fit-content;
-  padding: 5px;
   border-radius: 4px;
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 5px;
+  }
 `;
 
 const PlatformIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 14px;
-  height: 14px;
-  margin-right: 3px;
+  @media only screen and (max-width: 599px) {
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+  }
 `;
 
 const BroadPlatform = styled.div`
-  font-size: 14px;
   color: ${props => props.theme.twitchColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+  }
 `;
 
 const BroadName = styled.div`
-  font-size: 32px;
   color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 28px;
+    margin: 8px 0px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 32px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 32px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 32px;
+  }
 `;
 
 const BroadSNameDiv = styled.div`
-  font-size: 14px;
   width: fit-content;
   color: ${props => props.theme.orangeColor};
   background-color: ${props => props.theme.whiteColor};
-  padding: 5px;
   border-radius: 4px;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+    padding: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 14px;
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+    padding: 5px;
+  }
 `;
 
 const MenuDiv = styled.div`
@@ -158,12 +298,30 @@ const MenuBox = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  padding: 0px 20px;
   color: ${props => props.theme.whiteColor};
   font-weight: normal;
-  font-size: 18px;
   cursor: pointer;
+  user-select: none;
+  @media only screen and (max-width: 599px) {
+    padding: 0px 8px;
+    height: 30px;
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 0px 20px;
+    height: 50px;
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 0px 20px;
+    height: 50px;
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 0px 20px;
+    height: 50px;
+    font-size: 18px;
+  }
 `;
 
 export default withRouter(({ loading, data, detailPage }) => {
