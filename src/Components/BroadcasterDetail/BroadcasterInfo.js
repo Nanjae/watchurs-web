@@ -58,13 +58,24 @@ const InfoColumn = styled.div`
 `;
 
 const InfoBox = styled.div`
-  margin-top: 10px;
+  @media only screen and (max-width: 599px) {
+    margin-top: 8px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 10px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: 15px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-top: 15px;
+  }
 `;
 
 const InfoMainDiv = styled.div`
   display: flex;
   @media only screen and (max-width: 599px) {
-    height: 360px;
+    height: 350px;
   }
   @media only screen and (min-width: 600px) {
     height: 370px;
@@ -104,25 +115,31 @@ const CommonTitleDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 40px;
   background-color: ${props => props.theme.darkGrayColor};
-  font-size: 16px;
   font-weight: bold;
   /* margin-left: -1px; */
   margin-top: -1px;
   color: ${props => props.theme.lightOrangeColor};
   @media only screen and (max-width: 599px) {
+    height: 30px;
     width: 100%;
     min-width: 300px;
+    font-size: 14px;
   }
   @media only screen and (min-width: 600px) {
+    height: 40px;
     min-width: 580px;
+    font-size: 16px;
   }
   @media only screen and (min-width: 1200px) {
+    height: 40px;
     min-width: 395px;
+    font-size: 16px;
   }
   @media only screen and (min-width: 1800px) {
+    height: 40px;
     min-width: 340px;
+    font-size: 16px;
   }
 `;
 
@@ -278,7 +295,7 @@ const SummonerDetailBox = styled.div`
   background-color: ${props => props.theme.grayColor};
   border: 1px solid ${props => props.theme.lightGrayColor};
   @media only screen and (max-width: 599px) {
-    padding: 10px;
+    padding: 10px 10px;
     margin: 10px;
     margin-top: 0px;
   }
@@ -303,7 +320,18 @@ const SummonerTierDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -10px;
+  @media only screen and (max-width: 599px) {
+    margin-bottom: 0px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-bottom: -10px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-bottom: -10px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-bottom: -10px;
+  }
 `;
 
 const SummonerTierBox = styled.div`
@@ -538,20 +566,51 @@ const LaneInfoBox = styled.div`
 const LaneImage = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 45px;
-  height: 45px;
+  @media only screen and (max-width: 599px) {
+    width: 36px;
+    height: 36px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 45px;
+    height: 45px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 45px;
+    height: 45px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 45px;
+    height: 45px;
+  }
 `;
 
 const LaneText = styled.div`
-  margin-top: 5px;
   width: fit-content;
   border-radius: 4px;
-  font-size: 14px;
   font-weight: bold;
-  padding: 4px;
   background-color: ${props => props.theme.orangeColor};
   color: ${props => props.theme.whiteColor};
   text-align: center;
+  @media only screen and (max-width: 599px) {
+    margin-top: 4px;
+    font-size: 12px;
+    padding: 3px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 5px;
+    font-size: 14px;
+    padding: 4px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: 5px;
+    font-size: 14px;
+    padding: 4px;
+  }
+  @media only screen and (min-width: 1800px) {
+    margin-top: 5px;
+    font-size: 14px;
+    padding: 4px;
+  }
 `;
 
 const LaneDetailDiv = styled.div`
@@ -559,19 +618,41 @@ const LaneDetailDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
   font-weight: bold;
   margin-top: 5px;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+  }
 `;
 
 const LanePickText = styled.div`
   display: flex;
   justify-content: center;
-  padding: 5px;
   font-weight: bold;
   border-radius: 4px;
   background-color: ${props => props.theme.brownColor};
   color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 5px;
+  }
 `;
 
 const LaneWinRateDiv = styled.div`
@@ -579,7 +660,18 @@ const LaneWinRateDiv = styled.div`
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: ${props => props.theme.grayColor};
   margin-top: 5px;
-  width: 100px;
+  @media only screen and (max-width: 599px) {
+    width: 90px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 100px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 100px;
+  }
 `;
 
 const LaneWinLossBox = styled.div`
@@ -613,12 +705,23 @@ const LaneWinRateText = styled.div`
 
 const RecentMatchDiv = styled.div`
   height: 150px;
-  width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
+  @media only screen and (max-width: 599px) {
+    width: 280px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 320px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 320px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 320px;
+  }
 `;
 
 const RecentMatchBox = styled.div`
@@ -644,10 +747,21 @@ const RecentWinLossDiv = styled.div`
 `;
 
 const RecentWinLossBox = styled.div`
-  font-size: 18px;
   font-weight: bold;
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 599px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const RecentTotalText = styled.div`
@@ -675,23 +789,47 @@ const RecentText = styled.div`
   font-size: 12px;
   font-weight: bold;
 `;
+/*
 
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
+
+ */
 /**
  * 4. 선호 챔피언
  */
 
 const FavChampDiv = styled.div`
-  height: 331px;
-  width: 340px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 599px) {
+    height: 321px;
+    width: 100%;
+    min-width: 300px;
+  }
+  @media only screen and (min-width: 600px) {
+    height: 331px;
+    width: 340px;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 331px;
+    width: 340px;
+  }
+  @media only screen and (min-width: 1800px) {
+    height: 331px;
+    width: 340px;
+  }
 `;
 
 const FavChampBox = styled.div`
-  padding: 5px;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -699,23 +837,41 @@ const FavChampBox = styled.div`
     border-top: 1px solid ${props => props.theme.lightGrayColor};
   }
   @media only screen and (max-width: 599px) {
-    width: 99%;
-    min-width: 300px;
+    height: 106px;
+    width: 100%;
+    min-width: 290px;
   }
   @media only screen and (min-width: 600px) {
+    height: 100px;
+    padding: 5px;
     min-width: 570px;
   }
   @media only screen and (min-width: 1200px) {
+    height: 100px;
+    padding: 5px;
     min-width: 385px;
   }
   @media only screen and (min-width: 1800px) {
+    height: 100px;
+    padding: 5px;
     min-width: 300px;
   }
 `;
 
 const ChampInfoDiv = styled.div`
   height: 100%;
-  width: 100px;
+  @media only screen and (max-width: 599px) {
+    width: 80px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 100px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 100px;
+  }
 `;
 
 const ChampInfoBox = styled.div`
@@ -730,29 +886,71 @@ const ChampInfoBox = styled.div`
 const ChampAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  width: 60px;
-  height: 60px;
+  @media only screen and (max-width: 599px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 60px;
+    height: 60px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 60px;
+    height: 60px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 const ChampName = styled.div`
   margin-top: 5px;
-  font-size: 14px;
   font-weight: bold;
   color: ${props => props.theme.blackColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+  }
 `;
 
 const ChampDetailDiv = styled.div`
   height: 70px;
-  width: 210px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
-  padding: 5px;
   margin-right: 10px;
   border: 1px solid ${props => props.theme.lightGrayColor};
   background-color: ${props => props.theme.grayColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+    padding: 4px;
+    width: 180px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 14px;
+    padding: 5px;
+    width: 210px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+    padding: 5px;
+    width: 210px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+    padding: 5px;
+    width: 210px;
+  }
 `;
 
 const ChampDetailBox = styled.div`
@@ -763,17 +961,39 @@ const ChampDetailBox = styled.div`
 `;
 
 const ChampPick = styled.div`
-  padding: 5px;
   font-weight: bold;
   border-radius: 4px;
   background-color: ${props => props.theme.brownColor};
   color: ${props => props.theme.whiteColor};
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 5px;
+  }
 `;
 
 const ChampWinRate = styled.div`
-  padding: 5px;
   font-weight: bold;
   margin-left: 10px;
+  @media only screen and (max-width: 599px) {
+    padding: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 5px;
+  }
 `;
 
 const ChampWinRateBar = styled.div`
@@ -789,11 +1009,31 @@ const ChampWinRateBar = styled.div`
   );
   border-radius: 10px;
   color: ${props => props.theme.whiteColor};
-  width: 170px;
-  height: 24px;
-  font-size: 12px;
-  margin: 0px 5px;
   font-weight: normal;
+  @media only screen and (max-width: 599px) {
+    width: 160px;
+    height: 20px;
+    font-size: 11px;
+    margin: 0px 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 170px;
+    height: 24px;
+    font-size: 12px;
+    margin: 0px 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 170px;
+    height: 24px;
+    font-size: 12px;
+    margin: 0px 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 170px;
+    height: 24px;
+    font-size: 12px;
+    margin: 0px 5px;
+  }
 `;
 
 const ChampWinText = styled.div`
@@ -801,12 +1041,23 @@ const ChampWinText = styled.div`
 `;
 
 const ChampTotalText = styled.div`
-  margin-top: -20px;
   color: ${props => props.theme.darkOrangeColor};
   font-weight: bold;
   border-radius: 10px;
   background-color: ${props => props.theme.grayColor};
-  padding: 3px 5px;
+  margin-top: -20px;
+  @media only screen and (max-width: 599px) {
+    padding: 2px 4px;
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 3px 5px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 3px 5px;
+  }
+  @media only screen and (min-width: 1800px) {
+    padding: 3px 5px;
+  }
 `;
 
 const ChampLossText = styled.div`

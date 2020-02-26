@@ -16,7 +16,7 @@ const DetailDiv = styled.div`
     margin: 8px 0px;
   }
   @media only screen and (min-width: 600px) {
-    margin: 15px 0px;
+    margin: 10px 0px;
   }
   @media only screen and (min-width: 1200px) {
     margin: 15px 0px;
