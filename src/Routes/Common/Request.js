@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { darkBlueColor } from "../../Styles/StyleFunction";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import BgImage from "../../Assets/Common/runeterra-freljord-02-r-c.png";
 import Footer from "../../Components/Footer";
+import Input from "../../Components/Input";
+import DropdownSelect from "react-dropdown-select";
+import useInput from "../../Hooks/useInput";
 
 const CommonPage = styled.div``;
 
@@ -139,7 +142,7 @@ const RequestInfoBox = styled.div`
 const RequestTagText = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   width: 100px;
   margin: 25px 0px;
@@ -148,11 +151,16 @@ const RequestTagText = styled.div`
   border-right: 1px solid ${props => props.theme.lightGrayColor};
 `;
 
-const RequestInputText = styled.div`
+const RequestInputText = styled(Input)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 220px;
+  margin: 20px 40px;
+  border-bottom: 2px solid ${props => props.theme.lightGrayColor};
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 const RequestPlatformBox = styled.div`
@@ -180,6 +188,16 @@ const RequestButtonBox = styled.div`
 
 export default () => {
   const { windowHeight } = useWindowDimensions();
+  const [platformValue, setPlatformValue] = useState("");
+
+  const requestName = useInput("");
+  const requestId = useInput("");
+
+  const sendRequestHandle = () => {
+    console.log("플랫폼 : " + platformValue);
+    console.log("닉네임 : " + requestName.value);
+    console.log("아이디 : " + requestId.value);
+  };
 
   return (
     <CommonPage>
@@ -204,18 +222,51 @@ export default () => {
                 <RequestInfoDiv>
                   <RequestInfoBox>
                     <RequestTagText>플랫폼</RequestTagText>
-                    <RequestPlatformBox>플랫폼콤보</RequestPlatformBox>
+                    <RequestPlatformBox>
+                      <DropdownSelect
+                        placeholder={"플랫폼 선택  "}
+                        options={[
+                          { id: 1, platformName: "트위치", platform: "TWITCH" },
+                          {
+                            id: 2,
+                            platformName: "아프리카TV",
+                            platform: "AFREECA"
+                          }
+                        ]}
+                        labelField={"platformName"}
+                        valueField={"platform"}
+                        searchable={false}
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: "bold",
+                          width: "180px"
+                        }}
+                        onChange={value => {
+                          setPlatformValue(value[0].platform);
+                        }}
+                      />
+                    </RequestPlatformBox>
                   </RequestInfoBox>
                   <RequestInfoBox>
                     <RequestTagText>닉네임</RequestTagText>
-                    <RequestInputText>닉네임인풋</RequestInputText>
+                    <RequestInputText
+                      placeholder={"브로드캐스터 닉네임 입력"}
+                      value={requestName.value}
+                      onChange={requestName.onChange}
+                    />
                   </RequestInfoBox>
                   <RequestInfoBox>
                     <RequestTagText>아이디</RequestTagText>
-                    <RequestInputText>아이디인풋</RequestInputText>
+                    <RequestInputText
+                      placeholder={"브로드캐스터 아이디 입력"}
+                      value={requestId.value}
+                      onChange={requestId.onChange}
+                    />
                   </RequestInfoBox>
                 </RequestInfoDiv>
-                <RequestButtonBox>등록요청</RequestButtonBox>
+                <RequestButtonBox onClick={sendRequestHandle}>
+                  등록요청
+                </RequestButtonBox>
               </RequestDiv>
             </PageBox>
           </PageDiv>
