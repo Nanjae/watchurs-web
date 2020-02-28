@@ -141,7 +141,7 @@ export default withRouter(
     }
 
     if (!loading && data && data.seeOneBroadcaster === null) {
-      history.push(`/common/request`);
+      history.push(`/common/search/null`);
     }
 
     if (

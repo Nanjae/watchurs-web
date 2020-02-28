@@ -221,9 +221,12 @@ export default () => {
             <PageBox>
               <PageHeaderDiv>
                 <PageHeaderBox>
-                  <HeaderFstText>WATCHURS 브로드캐스터 등록 요청</HeaderFstText>
+                  <HeaderFstText>
+                    WATCHURS에 등록되지 않은 브로드캐스터입니다.
+                  </HeaderFstText>
                   <HeaderSndText>
-                    등록된 브로드캐스터를 보고 싶으시면 아래 버튼을 눌러주세요.
+                    브로드캐스터 닉네임 또는 아이디를 다시 확인해주시거나
+                    등록요청을 해주세요.
                   </HeaderSndText>
                   <HeaderListButton to={"/common/list"}>
                     WATCHURS 브로드캐스터 리스트

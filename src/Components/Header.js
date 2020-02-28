@@ -608,9 +608,21 @@ export default withRouter(({ location }) => {
               >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
-              {/* <MenuBox to={"/"}>
+              <MenuBox
+                style={
+                  location.pathname.split("/")[1] === "common" &&
+                  location.pathname.split("/")[2] === "request"
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
+                to={`/common/request`}
+              >
                 <MenuText>등록 요청</MenuText>
-              </MenuBox> */}
+              </MenuBox>
             </MenuDiv>
           </BotOpacityDiv>
         </HeaderDiv>
@@ -698,9 +710,21 @@ export default withRouter(({ location }) => {
               >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
-              {/* <MenuBox to="/">
+              <MenuBox
+                style={
+                  location.pathname.split("/")[1] === "common" &&
+                  location.pathname.split("/")[2] === "request"
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
+                to={`/common/request`}
+              >
                 <MenuText>등록 요청</MenuText>
-              </MenuBox> */}
+              </MenuBox>
             </MenuDiv>
           </BotOpacityDiv>
         </HeaderDiv>

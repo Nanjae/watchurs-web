@@ -117,7 +117,7 @@ export default () => {
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
             <RankFstBoardBox>
-              <BoardTitle />
+              <BoardTitle platform={"트위치"} />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard
@@ -139,7 +139,7 @@ export default () => {
           )}
           {data && data.seeAllSummoner && (
             <RankSndBoardBox>
-              <BoardTitle />
+              <BoardTitle platform={"아프리카TV"} />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard

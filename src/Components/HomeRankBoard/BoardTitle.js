@@ -69,12 +69,12 @@ const TitleText = styled.div`
   color: ${props => props.theme.whiteColor};
 `;
 
-export default () => {
+export default ({ platform }) => {
   return (
     <BoardTitle>
       <BoardTitleDiv>
         <PlatformIcon url={twitchLogo} />
-        <TitleText>트위치 TOP 10</TitleText>
+        <TitleText>{platform} TOP 10</TitleText>
       </BoardTitleDiv>
     </BoardTitle>
   );
