@@ -348,24 +348,32 @@ export default withRouter(({ loading, data, detailPage }) => {
         <MenuDiv style={{ backgroundColor: deepBlueColor }}>
           <MenuBox
             to={`/detail/${data.seeOneBroadcaster[0].bId}/1`}
-            style={{
-              backgroundColor: Theme.deepBlueColor,
-              color: Theme.orangeColor,
-              fontWeight: "bold"
-            }}
+            style={
+              detailPage === "1"
+                ? {
+                    backgroundColor: Theme.deepBlueColor,
+                    color: Theme.orangeColor,
+                    fontWeight: "bold"
+                  }
+                : {}
+            }
           >
             {data.seeOneBroadcaster[0].bSummoner[0].sName}
           </MenuBox>
           {data.seeOneBroadcaster[0].bSummoner.length >= 2 && (
             <MenuBox
               to={`/detail/${data.seeOneBroadcaster[0].bId}/2`}
-              style={{
-                backgroundColor: Theme.deepBlueColor,
-                color: Theme.orangeColor,
-                fontWeight: "bold"
-              }}
+              style={
+                detailPage === "2"
+                  ? {
+                      backgroundColor: Theme.deepBlueColor,
+                      color: Theme.orangeColor,
+                      fontWeight: "bold"
+                    }
+                  : {}
+              }
             >
-              {data.seeOneBroadcaster[0].bSummoner[0].sName}
+              {data.seeOneBroadcaster[0].bSummoner[1].sName}
             </MenuBox>
           )}
           {data.seeOneBroadcaster[0].bSummoner.length >= 3 && (
@@ -377,7 +385,7 @@ export default withRouter(({ loading, data, detailPage }) => {
                 fontWeight: "bold"
               }}
             >
-              {data.seeOneBroadcaster[0].bSummoner[0].sName}
+              {data.seeOneBroadcaster[0].bSummoner[2].sName}
             </MenuBox>
           )}
           {data.seeOneBroadcaster[0].bSummoner.length >= 4 && (
@@ -389,7 +397,7 @@ export default withRouter(({ loading, data, detailPage }) => {
                 fontWeight: "bold"
               }}
             >
-              {data.seeOneBroadcaster[0].bSummoner[0].sName}
+              {data.seeOneBroadcaster[0].bSummoner[3].sName}
             </MenuBox>
           )}
           {data.seeOneBroadcaster[0].bSummoner.length >= 5 && (
@@ -401,7 +409,7 @@ export default withRouter(({ loading, data, detailPage }) => {
                 fontWeight: "bold"
               }}
             >
-              {data.seeOneBroadcaster[0].bSummoner[0].sName}
+              {data.seeOneBroadcaster[0].bSummoner[4].sName}
             </MenuBox>
           )}
         </MenuDiv>
