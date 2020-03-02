@@ -604,7 +604,7 @@ export default withRouter(({ location }) => {
                       }
                     : null
                 }
-                to={"/rank/1"}
+                to={"/rank/all/1"}
               >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>
@@ -706,7 +706,7 @@ export default withRouter(({ location }) => {
                       }
                     : null
                 }
-                to={`/rank/1`}
+                to={`/rank/all/1`}
               >
                 <MenuText>전체 랭킹</MenuText>
               </MenuBox>

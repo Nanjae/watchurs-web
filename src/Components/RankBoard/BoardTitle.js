@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Theme from "../../Styles/Theme";
+import { Link } from "react-router-dom";
 
 const BoardTitle = styled.div``;
 
@@ -50,7 +51,8 @@ const PlatformDiv = styled.div`
   }
 `;
 
-const PlatformBox = styled.div`
+const PlatformBox = styled(Link)`
+  color: ${props => props.theme.whiteColor};
   border-radius: 4px;
   cursor: pointer;
   @media only screen and (max-width: 599px) {
@@ -73,24 +75,52 @@ const PlatformBox = styled.div`
 
 const PlatformText = styled.div``;
 
-export default () => {
+export default ({ platformLocation }) => {
   return (
     <BoardTitle>
       <BoardTitleDiv>
         <PlatformDiv>
           <PlatformBox
-            style={{
-              backgroundColor: Theme.orangeColor,
-              border: `2px solid ${Theme.orangeColor}`
-            }}
+            to={`/rank/all/1`}
+            style={
+              platformLocation === "all"
+                ? {
+                    backgroundColor: Theme.orangeColor,
+                    border: `2px solid ${Theme.whiteColor}`,
+                    fontWeight: "bold"
+                  }
+                : null
+            }
           >
             <PlatformText>전체랭킹</PlatformText>
           </PlatformBox>
-          <PlatformBox style={{ border: `0px solid ${Theme.twitchColor}` }}>
+          <PlatformBox
+            to={`/rank/twitch/1`}
+            style={
+              platformLocation === "twitch"
+                ? {
+                    backgroundColor: Theme.twitchColor,
+                    border: `2px solid ${Theme.whiteColor}`,
+                    fontWeight: "bold"
+                  }
+                : null
+            }
+          >
             <PlatformText>트위치</PlatformText>
           </PlatformBox>
-          <PlatformBox style={{ border: `0px solid ${Theme.afreecaColor}` }}>
-            <PlatformText>아프리카</PlatformText>
+          <PlatformBox
+            to={`/rank/afreeca/1`}
+            style={
+              platformLocation === "afreeca"
+                ? {
+                    backgroundColor: Theme.afreecaColor,
+                    border: `2px solid ${Theme.whiteColor}`,
+                    fontWeight: "bold"
+                  }
+                : null
+            }
+          >
+            <PlatformText>아프리카TV</PlatformText>
           </PlatformBox>
         </PlatformDiv>
       </BoardTitleDiv>

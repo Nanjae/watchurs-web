@@ -10,8 +10,8 @@ import BoardNext from "./BoardNext";
 import { withRouter } from "react-router-dom";
 
 const SEE_ALL_SUMMONER = gql`
-  query seeAllSummoner($from: String, $to: String) {
-    seeAllSummoner(from: $from, to: $to) {
+  query seeAllSummoner($platform: String, $from: String, $to: String) {
+    seeAllSummoner(platform: $platform, from: $from, to: $to) {
       id
       sId
       sName
@@ -77,12 +77,41 @@ const RankBoardBox = styled.div`
 `;
 
 export default withRouter(({ location }) => {
-  const from = (location.pathname.split("/")[2] - 1) * 20 + 1;
-  const to = location.pathname.split("/")[2] * 20;
+  const from = (location.pathname.split("/")[3] - 1) * 20 + 1;
+  const to = location.pathname.split("/")[3] * 20;
+  const platformLocation = location.pathname.split("/")[2];
 
-  const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
+  const { data: allData, loading: allLoading } = useQuery(SEE_ALL_SUMMONER, {
     variables: { from: `${from}`, to: `${to}` }
   });
+
+  const { data: twitchData, loading: twitchLoading } = useQuery(
+    SEE_ALL_SUMMONER,
+    {
+      variables: { platform: "TWITCH", from: `${from}`, to: `${to}` }
+    }
+  );
+
+  const { data: afreecaData, loading: afreecaLoading } = useQuery(
+    SEE_ALL_SUMMONER,
+    {
+      variables: { platform: "AFREECATV", from: `${from}`, to: `${to}` }
+    }
+  );
+
+  let data;
+  let loading;
+
+  if (platformLocation === "all") {
+    data = allData;
+    loading = allLoading;
+  } else if (platformLocation === "twitch") {
+    data = twitchData;
+    loading = twitchLoading;
+  } else if (platformLocation === "afreeca") {
+    data = afreecaData;
+    loading = afreecaLoading;
+  }
 
   if (!loading) {
     // console.log(data);
@@ -96,7 +125,7 @@ export default withRouter(({ location }) => {
         <RankBoardDiv>
           {data && data.seeAllSummoner && (
             <RankBoardBox>
-              <BoardTitle />
+              <BoardTitle platformLocation={platformLocation} />
               <BoardTag />
               {data.seeAllSummoner.map((summoner, index) => {
                 return (
@@ -126,7 +155,10 @@ export default withRouter(({ location }) => {
                   />
                 );
               })}
-              <BoardNext />
+              <BoardNext
+                platformLocation={platformLocation}
+                dataCount={data.seeAllSummoner.length}
+              />
             </RankBoardBox>
           )}
         </RankBoardDiv>

@@ -8,8 +8,8 @@ import BoardTitle from "./BoardTitle";
 // import Loader from "../Loader";
 
 const SEE_ALL_SUMMONER = gql`
-  query seeAllSummoner($from: String, $to: String) {
-    seeAllSummoner(from: $from, to: $to) {
+  query seeAllSummoner($platform: String, $from: String, $to: String) {
+    seeAllSummoner(platform: $platform, from: $from, to: $to) {
       id
       sId
       sName
@@ -104,21 +104,32 @@ const RankSndBoardBox = styled.div`
 `;
 
 export default () => {
-  const { data, loading } = useQuery(SEE_ALL_SUMMONER, {
-    variables: { from: "1", to: "10" }
-  });
-  if (!loading) {
+  const { data: twitchData, loading: twitchLoading } = useQuery(
+    SEE_ALL_SUMMONER,
+    {
+      variables: { platform: "TWITCH", from: "1", to: "10" }
+    }
+  );
+
+  const { data: afreecaData, loading: afreecaLoading } = useQuery(
+    SEE_ALL_SUMMONER,
+    {
+      variables: { platform: "AFREECATV", from: "1", to: "10" }
+    }
+  );
+
+  if (!twitchLoading && !afreecaLoading) {
     // console.log(data);
   }
 
   return (
     <RankBoard>
-      {loading ? null : (
+      {twitchLoading || afreecaLoading ? null : (
         <RankBoardDiv>
-          {data && data.seeAllSummoner && (
+          {twitchData && twitchData.seeAllSummoner && (
             <RankFstBoardBox>
               <BoardTitle platform={"트위치"} />
-              {data.seeAllSummoner.map((summoner, index) => {
+              {twitchData.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard
                     key={index}
@@ -137,10 +148,10 @@ export default () => {
               })}
             </RankFstBoardBox>
           )}
-          {data && data.seeAllSummoner && (
+          {afreecaData && afreecaData.seeAllSummoner && (
             <RankSndBoardBox>
               <BoardTitle platform={"아프리카TV"} />
-              {data.seeAllSummoner.map((summoner, index) => {
+              {afreecaData.seeAllSummoner.map((summoner, index) => {
                 return (
                   <BoardCard
                     key={index}
