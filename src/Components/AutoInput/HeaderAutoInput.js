@@ -3,6 +3,7 @@ import Autosuggest from "react-autosuggest";
 import styled from "styled-components";
 import { broadcasters } from "../../BroadcasterList";
 import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import afreecatvLogo from "../../Assets/Afreecatv/AfreecatvLogo.png";
 import { Link, withRouter } from "react-router-dom";
 import IconArrow from "../../Assets/Common/IconArrow.png";
 import IconSearch from "../../Assets/Common/IconSearch.png";
@@ -223,7 +224,13 @@ const renderSuggestion = suggestion => {
     <AutoSuggestionDiv to={`/detail/${suggestion.bId}/1`}>
       <AutoSuggestionBox>
         <BroadcasterPlatform
-          url={suggestion.bPlatform === "TWITCH" ? twitchLogo : null}
+          url={
+            suggestion.bPlatform === "TWITCH"
+              ? twitchLogo
+              : suggestion.bPlatform === "AFREECATV"
+              ? afreecatvLogo
+              : twitchLogo
+          }
         />
         <BroadcasterNameText>{suggestion.bName}</BroadcasterNameText>
         <BroadcasterIdText>({suggestion.bId})</BroadcasterIdText>

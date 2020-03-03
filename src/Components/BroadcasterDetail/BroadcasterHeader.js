@@ -5,6 +5,7 @@ import HeaderImage from "../../Assets/Common/runeterra-ionia-01-c.png";
 import { lightOrangeColor, deepBlueColor } from "../../Styles/StyleFunction";
 import Theme from "../../Styles/Theme";
 import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import afreecatvLogo from "../../Assets/Afreecatv/AfreecatvLogo.png";
 import BroadcasterInfo from "./BroadcasterInfo";
 
 const DetailDiv = styled.div`
@@ -325,6 +326,8 @@ const MenuBox = styled(Link)`
 `;
 
 export default withRouter(({ loading, data, detailPage }) => {
+  // console.log(data);
+
   return (
     <DetailDiv>
       <HeaderBgDiv url={HeaderImage} />
@@ -336,8 +339,22 @@ export default withRouter(({ loading, data, detailPage }) => {
           </BroadAvatarDiv>
           <BroadInfoDiv>
             <BroadPlatformDiv>
-              <PlatformIcon url={twitchLogo} />
-              <BroadPlatform>트위치</BroadPlatform>
+              <PlatformIcon
+                url={
+                  data.seeOneBroadcaster[0].bPlatform === "TWITCH"
+                    ? twitchLogo
+                    : data.seeOneBroadcaster[0].bPlatform === "AFREECATV"
+                    ? afreecatvLogo
+                    : twitchLogo
+                }
+              />
+              <BroadPlatform>
+                {data.seeOneBroadcaster[0].bPlatform === "TWITCH"
+                  ? "트위치"
+                  : data.seeOneBroadcaster[0].bPlatform === "AFREECATV"
+                  ? "아프리카TV"
+                  : "트위치"}
+              </BroadPlatform>
             </BroadPlatformDiv>
             <BroadName>{data.seeOneBroadcaster[0].bName}</BroadName>
             <BroadSNameDiv>

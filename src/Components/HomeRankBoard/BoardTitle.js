@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import afreecatvLogo from "../../Assets/Afreecatv/AfreecatvLogo.png";
 
 const BoardTitle = styled.div``;
 
@@ -73,7 +74,15 @@ export default ({ platform }) => {
   return (
     <BoardTitle>
       <BoardTitleDiv>
-        <PlatformIcon url={twitchLogo} />
+        <PlatformIcon
+          url={
+            platform === "트위치"
+              ? twitchLogo
+              : platform === "아프리카TV"
+              ? afreecatvLogo
+              : twitchLogo
+          }
+        />
         <TitleText>{platform} TOP 10</TitleText>
       </BoardTitleDiv>
     </BoardTitle>

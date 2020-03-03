@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import afreecatvLogo from "../../Assets/Afreecatv/AfreecatvLogo.png";
 import emblemUnranked from "../../Assets/League/EmblemUnranked.png";
 import emblemIron from "../../Assets/League/EmblemIron.png";
 import emblemBronze from "../../Assets/League/EmblemBronze.png";
@@ -90,20 +91,20 @@ const BroadPlatform = styled.div`
   @media only screen and (min-width: 600px) {
     margin-right: 3px;
     margin-left: 3px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
   @media only screen and (min-width: 1200px) {
     margin-right: 4px;
     margin-left: 4px;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
   @media only screen and (min-width: 1800px) {
     margin-right: 5px;
     margin-left: 5px;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 `;
 
@@ -338,7 +339,15 @@ export default ({
           <TableRankText>{index}</TableRankText>
         </TableRankBox>
         <BroadInfoBox>
-          <BroadPlatform url={bPlatform ? twitchLogo : twitchLogo} />
+          <BroadPlatform
+            url={
+              bPlatform === "TWITCH"
+                ? twitchLogo
+                : bPlatform === "AFREECATV"
+                ? afreecatvLogo
+                : twitchLogo
+            }
+          />
           <BroadAvatar url={bAvatar} />
           <BroadNameText>{bName}</BroadNameText>
         </BroadInfoBox>

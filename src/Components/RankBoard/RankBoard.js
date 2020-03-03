@@ -31,6 +31,12 @@ const SEE_ALL_SUMMONER = gql`
   }
 `;
 
+const COUNT_ALL_SUMMONER = gql`
+  query countAllSummoner($platform: String) {
+    countAllSummoner(platform: $platform)
+  }
+`;
+
 const RankBoard = styled.div`
   width: 100%;
 `;
@@ -81,6 +87,24 @@ export default withRouter(({ location }) => {
   const to = location.pathname.split("/")[3] * 20;
   const platformLocation = location.pathname.split("/")[2];
 
+  const { data: allCount, loading: allCountLoading } = useQuery(
+    COUNT_ALL_SUMMONER
+  );
+
+  const { data: twitchCount, loading: twitchCountLoading } = useQuery(
+    COUNT_ALL_SUMMONER,
+    {
+      variables: { platform: "TWITCH" }
+    }
+  );
+
+  const { data: afreecaCount, loading: afreecaCountLoading } = useQuery(
+    COUNT_ALL_SUMMONER,
+    {
+      variables: { platform: "AFREECATV" }
+    }
+  );
+
   const { data: allData, loading: allLoading } = useQuery(SEE_ALL_SUMMONER, {
     variables: { from: `${from}`, to: `${to}` }
   });
@@ -101,20 +125,32 @@ export default withRouter(({ location }) => {
 
   let data;
   let loading;
+  let countData;
+  let countLoading;
 
   if (platformLocation === "all") {
     data = allData;
     loading = allLoading;
+    countData = allCount;
+    countLoading = allCountLoading;
   } else if (platformLocation === "twitch") {
     data = twitchData;
     loading = twitchLoading;
+    countData = twitchCount;
+    countLoading = twitchCountLoading;
   } else if (platformLocation === "afreeca") {
     data = afreecaData;
     loading = afreecaLoading;
+    countData = afreecaCount;
+    countLoading = afreecaCountLoading;
   }
 
   if (!loading) {
-    // console.log(data);
+    // console.log(data.seeAllSummoner.length);
+  }
+
+  if (!countLoading) {
+    // console.log(countData);
   }
 
   return (
@@ -155,10 +191,12 @@ export default withRouter(({ location }) => {
                   />
                 );
               })}
-              <BoardNext
-                platformLocation={platformLocation}
-                dataCount={data.seeAllSummoner.length}
-              />
+              {!countLoading && countData && countData.countAllSummoner && (
+                <BoardNext
+                  platformLocation={platformLocation}
+                  dataCount={countData.countAllSummoner}
+                />
+              )}
             </RankBoardBox>
           )}
         </RankBoardDiv>

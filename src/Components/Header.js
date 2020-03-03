@@ -526,9 +526,9 @@ const MenuText = styled.div`
 export default withRouter(({ location }) => {
   const { windowWidth } = useWindowDimensions();
 
-  const { data, loading } = useQuery(COUNT_ALL_BROADCASTER);
-  if (!loading) {
-    // console.log(data.countAllBroadcaster);
+  const { broadData, broadLoading } = useQuery(COUNT_ALL_BROADCASTER);
+  if (!broadLoading) {
+    // console.log(broadData.countAllBroadcaster);
   }
 
   useEffect(() => {
@@ -555,13 +555,13 @@ export default withRouter(({ location }) => {
                   <SiteInfoTrdText>브로드캐스터</SiteInfoTrdText>
                   <SiteInfoFthText>랭킹 & 통계</SiteInfoFthText>
                 </SiteInfoBox>
-                {!loading && data && data.countAllBroadcaster && (
+                {!broadLoading && broadData && broadData.countAllBroadcaster && (
                   <CountBroadBox>
                     <InfoIcon url={IconInfo} />
                     <CountBroadFstText>총 브로드캐스터:</CountBroadFstText>
                     <ArrowBox to={`/common/list`}>
                       <CountBroadSndText>
-                        {data.countAllBroadcaster}명
+                        {broadData.countAllBroadcaster}명
                       </CountBroadSndText>
                       <ArrowIcon url={IconCircleArrow} />
                     </ArrowBox>
@@ -664,13 +664,13 @@ export default withRouter(({ location }) => {
                     <SiteInfoFthText>랭킹 & 통계 조회</SiteInfoFthText>
                   </SiteInfoBox>
                 )}
-                {!loading && data && data.countAllBroadcaster && (
+                {!broadLoading && broadData && broadData.countAllBroadcaster && (
                   <CountBroadBox>
                     <InfoIcon url={IconInfo} />
                     <CountBroadFstText>등록된 브로드캐스터:</CountBroadFstText>
                     <ArrowBox to={`/common/list`}>
                       <CountBroadSndText>
-                        {data.countAllBroadcaster}명
+                        {broadData.countAllBroadcaster}명
                       </CountBroadSndText>
                       <ArrowIcon url={IconCircleArrow} />
                     </ArrowBox>

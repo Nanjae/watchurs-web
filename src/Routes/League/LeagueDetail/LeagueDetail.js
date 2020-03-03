@@ -16,7 +16,9 @@ const SEE_ONE_BROADCASTER = gql`
       bId
       bName
       bAvatar
+      bPlatform
       bSummoner {
+        sId
         sName
         sAvatar
         sLevel

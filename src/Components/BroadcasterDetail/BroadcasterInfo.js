@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
@@ -19,6 +19,14 @@ import positionJgl from "../../Assets/League/PositionJgl.png";
 import positionMid from "../../Assets/League/PositionMid.png";
 import positionSup from "../../Assets/League/PositionSup.png";
 import positionTop from "../../Assets/League/PositionTop.png";
+import { useQuery } from "react-apollo-hooks";
+import { gql } from "apollo-boost";
+
+const SEE_RANK_SUMMONER = gql`
+  query seeRankSumonner($platform: String, $sId: String!) {
+    seeRankSummoner(platform: $platform, sId: $sId)
+  }
+`;
 
 /**
  * 소환사 인포 박스
@@ -1077,7 +1085,56 @@ let arrChamp = [];
 export default withRouter(({ loading, data, detailPage }) => {
   const { windowWidth } = useWindowDimensions();
 
+  let allRankData = "?";
+  let platformRankData = "?";
+  let allRankLoading = true;
+  let platformRankLoading = true;
+
   if (!loading && data && data.seeOneBroadcaster) {
+    // console.log(data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sId);
+    const { data: allRank, loading: allLoading } = useQuery(SEE_RANK_SUMMONER, {
+      variables: {
+        sId: data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sId
+      }
+    });
+
+    if (!allLoading) {
+      allRankData = allRank.seeRankSummoner;
+      allRankLoading = allLoading;
+    }
+
+    if (data.seeOneBroadcaster[0].bPlatform === "TWITCH") {
+      const { data: platformRank, loading: platformLoading } = useQuery(
+        SEE_RANK_SUMMONER,
+        {
+          variables: {
+            platform: data.seeOneBroadcaster[0].bPlatform,
+            sId: data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sId
+          }
+        }
+      );
+
+      if (!platformLoading) {
+        platformRankData = platformRank.seeRankSummoner;
+        platformRankLoading = platformLoading;
+      }
+    } else if (data.seeOneBroadcaster[0].bPlatform === "AFREECATV") {
+      const { data: platformRank, loading: platformLoading } = useQuery(
+        SEE_RANK_SUMMONER,
+        {
+          variables: {
+            platform: data.seeOneBroadcaster[0].bPlatform,
+            sId: data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sId
+          }
+        }
+      );
+
+      if (!platformLoading) {
+        platformRankData = platformRank.seeRankSummoner;
+        platformRankLoading = platformLoading;
+      }
+    }
+
     /**
      * 포지션 분류
      */
@@ -1307,7 +1364,12 @@ export default withRouter(({ loading, data, detailPage }) => {
                         backgroundColor: Theme.twitchColor
                       }}
                     >
-                      트위치 1위
+                      {data.seeOneBroadcaster[0].bPlatform === "TWITCH"
+                        ? "트위치"
+                        : data.seeOneBroadcaster[0].bPlatform === "AFREECATV"
+                        ? "아프리카TV"
+                        : "트위치"}{" "}
+                      1위
                     </SummonerRankingText>
                   </SummonerRankingBox>
                   <SummonerName>
@@ -1708,16 +1770,25 @@ export default withRouter(({ loading, data, detailPage }) => {
               </SummonerInfoBox>
               <SummonerRankingDiv>
                 <SummonerRankingBox>
-                  <SummonerRankingText
-                    style={{ backgroundColor: Theme.orangeColor }}
-                  >
-                    전체 1위
-                  </SummonerRankingText>
-                  <SummonerRankingText
-                    style={{ backgroundColor: Theme.twitchColor }}
-                  >
-                    트위치 1위
-                  </SummonerRankingText>
+                  {!allRankLoading && (
+                    <SummonerRankingText
+                      style={{ backgroundColor: Theme.orangeColor }}
+                    >
+                      전체 {allRankData}위
+                    </SummonerRankingText>
+                  )}
+                  {!platformRankLoading && (
+                    <SummonerRankingText
+                      style={{ backgroundColor: Theme.twitchColor }}
+                    >
+                      {data.seeOneBroadcaster[0].bPlatform === "TWITCH"
+                        ? "트위치"
+                        : data.seeOneBroadcaster[0].bPlatform === "AFREECATV"
+                        ? "아프리카TV"
+                        : "트위치"}{" "}
+                      {platformRankData}위
+                    </SummonerRankingText>
+                  )}
                 </SummonerRankingBox>
                 <SummonerName>
                   {data.seeOneBroadcaster[0].bSummoner[detailPage - 1].sName}
