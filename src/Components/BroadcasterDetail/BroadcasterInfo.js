@@ -185,23 +185,23 @@ const SummonerInfoBox = styled.div``;
 const SummonerAvatarDiv = styled.div`
   background-color: ${props => props.theme.whiteColor};
   border: 4px solid ${props => props.theme.brownColor};
-  margin-right: 10px;
+  margin-right: 5px;
   @media only screen and (max-width: 599px) {
     width: 80px;
     height: 80px;
     margin-left: 10px;
   }
   @media only screen and (min-width: 600px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   @media only screen and (min-width: 1800px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 `;
 
@@ -216,16 +216,16 @@ const SummonerAvatar = styled.div`
     height: 80px;
   }
   @media only screen and (min-width: 600px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
   @media only screen and (min-width: 1800px) {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 `;
 
@@ -280,10 +280,10 @@ const SummonerName = styled.div`
     font-size: 24px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 24px;
+    font-size: 16px;
   }
   @media only screen and (min-width: 1800px) {
-    font-size: 24px;
+    font-size: 16px;
   }
 `;
 
@@ -308,17 +308,17 @@ const SummonerDetailBox = styled.div`
     margin-top: 0px;
   }
   @media only screen and (min-width: 600px) {
-    padding: 10px;
+    padding: 15px 10px;
     margin: 10px;
     margin-top: 0px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 10px;
+    padding: 15px 10px;
     margin: 10px;
     margin-top: 0px;
   }
   @media only screen and (min-width: 1800px) {
-    padding: 10px;
+    padding: 15px 10px;
     margin: 10px;
     margin-top: 0px;
   }
