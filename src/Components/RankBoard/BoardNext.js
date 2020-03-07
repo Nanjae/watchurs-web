@@ -137,6 +137,36 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>4</NumberText>
             </NumberBox>
           )}
+          {dataCount > 80 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/5`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/5`}
+            >
+              <NumberText>5</NumberText>
+            </NumberBox>
+          )}
+          {dataCount > 100 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/6`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/6`}
+            >
+              <NumberText>6</NumberText>
+            </NumberBox>
+          )}
         </NumberDiv>
       </BoardNextDiv>
     </BoardNext>

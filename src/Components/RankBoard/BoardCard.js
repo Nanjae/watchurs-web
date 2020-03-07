@@ -216,10 +216,10 @@ const LeagueTierBox = styled.div`
     width: 25%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 25%;
+    width: 20%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 25%;
+    width: 20%;
   }
 `;
 
@@ -232,7 +232,6 @@ const LeagueTierEmblem = styled.div`
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
-    border: 1px solid ${props => props.theme.darkOrangeColor};
     width: 0px;
     height: 0px;
   }
@@ -329,8 +328,8 @@ const LeagueWinRateBar = styled.div`
     margin: 0px 4px;
   }
   @media only screen and (min-width: 1800px) {
-    width: 170px;
-    height: 24px;
+    width: 150px;
+    height: 20px;
     font-size: 12px;
     margin: 0px 5px;
   }
@@ -379,10 +378,10 @@ const TableArrowBox = styled.div`
   @media only screen and (min-width: 600px) {
   }
   @media only screen and (min-width: 1200px) {
-    width: 4%;
+    width: 5%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 4%;
+    width: 5%;
   }
 `;
 
