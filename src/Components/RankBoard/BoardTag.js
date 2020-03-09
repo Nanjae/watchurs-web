@@ -2,6 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
+/**
+ * 7 31 31 31 0 0
+ * 5 25 30 18 22 0
+ * 5 25 25 20 20 5
+ * 5 25 25 20 20 5
+ */
+
 const BoardTag = styled.div``;
 
 const BoardTagDiv = styled.div`
@@ -56,22 +63,22 @@ const BroadInfoBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 28%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
-    width: 23%;
+    width: 25%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 23%;
+    width: 25%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 23%;
+    width: 25%;
   }
 `;
 
 const BroadNameText = styled.div`
   @media only screen and (max-width: 599px) {
-    margin-left: 16px;
+    margin-left: 4px;
   }
   @media only screen and (min-width: 600px) {
     margin-left: 45px;
@@ -89,25 +96,24 @@ const LeagueSNameBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 29%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
-    width: 22%;
+    width: 30%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 22%;
+    width: 25%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 22%;
+    width: 25%;
   }
 `;
 
 const LeagueSNameText = styled.div`
   @media only screen and (max-width: 599px) {
-    margin-left: 4px;
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 28px;
+    margin-left: 6px;
   }
   @media only screen and (min-width: 1200px) {
     margin-left: 32px;
@@ -122,25 +128,24 @@ const LeagueTierBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 36%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
-    width: 26%;
+    width: 18%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 23%;
+    width: 20%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 23%;
+    width: 20%;
   }
 `;
 
 const LeagueTierText = styled.div`
   @media only screen and (max-width: 599px) {
-    margin-left: 4px;
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 26px;
+    margin-left: 6px;
   }
   @media only screen and (min-width: 1200px) {
     margin-left: 30px;
@@ -157,13 +162,13 @@ const LeagueWinRateBox = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
-    width: 24%;
+    width: 22%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 27%;
+    width: 25%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 27%;
+    width: 25%;
   }
 `;
 
@@ -171,13 +176,13 @@ const LeagueWinRateText = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
-    margin-left: 44px;
+    margin-left: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-left: 57px;
+    margin-left: 55px;
   }
   @media only screen and (min-width: 1800px) {
-    margin-left: 75px;
+    margin-left: 70px;
   }
 `;
 

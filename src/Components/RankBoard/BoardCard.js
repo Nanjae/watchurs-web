@@ -17,6 +17,13 @@ import IconArrow from "../../Assets/Common/IconArrow.png";
 import { Link } from "react-router-dom";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
+/**
+ * 7 31 31 31 0 0
+ * 5 25 30 18 22 0
+ * 5 25 25 20 20 5
+ * 5 25 25 20 20 5
+ */
+
 const BoardCard = styled.div``;
 
 const BoardCardDiv = styled(Link)`
@@ -30,14 +37,15 @@ const BoardCardDiv = styled(Link)`
   @media only screen and (max-width: 599px) {
     height: 30px;
     font-size: 10px;
+    letter-spacing: -0.5px;
   }
   @media only screen and (min-width: 600px) {
     height: 40px;
-    font-size: 11px;
+    font-size: 10px;
   }
   @media only screen and (min-width: 1200px) {
     height: 40px;
-    font-size: 12px;
+    font-size: 11px;
   }
   @media only screen and (min-width: 1800px) {
     height: 50px;
@@ -50,7 +58,7 @@ const TableRankBox = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 10%;
+    width: 7%;
   }
   @media only screen and (min-width: 600px) {
     width: 5%;
@@ -70,7 +78,7 @@ const BroadInfoBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 30%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
     width: 25%;
@@ -87,7 +95,6 @@ const BroadPlatform = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
-    margin-left: 2px;
     width: 0px;
     height: 0px;
   }
@@ -114,12 +121,9 @@ const BroadPlatform = styled.div`
 const BroadAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  border: 1px solid ${props => props.theme.purpleColor};
   @media only screen and (max-width: 599px) {
-    border-radius: 6px;
-    width: 12px;
-    height: 12px;
-    margin-right: 2px;
+    width: 0px;
+    height: 0px;
   }
   @media only screen and (min-width: 600px) {
     border-radius: 10px;
@@ -143,6 +147,15 @@ const BroadAvatar = styled.div`
 
 const BroadNameText = styled.div`
   color: ${props => props.theme.purpleColor};
+  @media only screen and (max-width: 599px) {
+    margin-left: 4px;
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const LeagueSNameBox = styled.div`
@@ -150,40 +163,42 @@ const LeagueSNameBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 40%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
     width: 30%;
   }
   @media only screen and (min-width: 1200px) {
-    width: 30%;
+    width: 25%;
   }
   @media only screen and (min-width: 1800px) {
-    width: 30%;
+    width: 25%;
   }
 `;
 
 const LeagueSAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-  border: 1px solid ${props => props.theme.orangeColor};
+
   @media only screen and (max-width: 599px) {
     width: 0px;
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
+    border: 1px solid ${props => props.theme.orangeColor};
     width: 0px;
     height: 0px;
-    margin-left: 3px;
     margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
+    border: 0px;
     width: 22px;
     height: 22px;
     margin-left: 4px;
     margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
+    border: 0px;
     width: 24px;
     height: 24px;
     margin-left: 5px;
@@ -194,7 +209,6 @@ const LeagueSAvatar = styled.div`
 const LeagueSNameText = styled.div`
   color: ${props => props.theme.orangeColor};
   @media only screen and (max-width: 599px) {
-    margin-left: 2px;
   }
   @media only screen and (min-width: 600px) {
   }
@@ -210,10 +224,10 @@ const LeagueTierBox = styled.div`
   align-items: center;
   color: ${props => props.theme.darkOrangeColor};
   @media only screen and (max-width: 599px) {
-    width: 25%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
-    width: 25%;
+    width: 18%;
   }
   @media only screen and (min-width: 1200px) {
     width: 20%;
@@ -227,21 +241,23 @@ const LeagueTierEmblem = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
-    border: 1px solid ${props => props.theme.darkOrangeColor};
     width: 0px;
     height: 0px;
   }
   @media only screen and (min-width: 600px) {
+    border: 1px solid ${props => props.theme.darkOrangeColor};
     width: 0px;
     height: 0px;
   }
   @media only screen and (min-width: 1200px) {
+    border: 0px;
     width: 20px;
     height: 24px;
     margin-left: 4px;
     margin-right: 4px;
   }
   @media only screen and (min-width: 1800px) {
+    border: 0px;
     width: 22px;
     height: 26px;
     margin-left: 5px;
@@ -251,7 +267,6 @@ const LeagueTierEmblem = styled.div`
 
 const LeagueTierText = styled.div`
   @media only screen and (max-width: 599px) {
-    margin-left: 2px;
     margin-right: 2px;
   }
   @media only screen and (min-width: 600px) {
@@ -290,7 +305,7 @@ const LeagueWinRateBox = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
-    width: 20%;
+    width: 22%;
   }
   @media only screen and (min-width: 1200px) {
     width: 20%;
@@ -322,14 +337,14 @@ const LeagueWinRateBar = styled.div`
     margin: 0px 3px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 130px;
-    height: 22px;
-    font-size: 12px;
+    width: 120px;
+    height: 20px;
+    font-size: 11px;
     margin: 0px 4px;
   }
   @media only screen and (min-width: 1800px) {
     width: 150px;
-    height: 20px;
+    height: 22px;
     font-size: 12px;
     margin: 0px 5px;
   }
@@ -486,7 +501,7 @@ export default ({
           <LeagueTierText>{sTierName}</LeagueTierText>
           {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
           {sTierName !== "UNRANKED" ? (
-            <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+            <LeaguePointsText> {sPoints}LP</LeaguePointsText>
           ) : null}
         </LeagueTierBox>
         {windowWidth < 600 ? null : (
