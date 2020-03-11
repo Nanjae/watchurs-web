@@ -167,6 +167,96 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>6</NumberText>
             </NumberBox>
           )}
+          {dataCount > 120 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/7`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/7`}
+            >
+              <NumberText>7</NumberText>
+            </NumberBox>
+          )}
+          {dataCount > 140 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/8`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/8`}
+            >
+              <NumberText>8</NumberText>
+            </NumberBox>
+          )}
+          {dataCount > 160 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/9`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/9`}
+            >
+              <NumberText>9</NumberText>
+            </NumberBox>
+          )}
+          {dataCount > 180 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/10`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/10`}
+            >
+              <NumberText>10</NumberText>
+            </NumberBox>
+          )}
+          {dataCount > 200 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/11`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/11`}
+            >
+              <NumberText>11</NumberText>
+            </NumberBox>
+          )}
+          {dataCount > 220 && (
+            <NumberBox
+              style={
+                location.pathname === `/rank/${platformLocation}/12`
+                  ? {
+                      backgroundColor: Theme.orangeColor,
+                      color: Theme.whiteColor
+                    }
+                  : null
+              }
+              to={`/rank/${platformLocation}/12`}
+            >
+              <NumberText>12</NumberText>
+            </NumberBox>
+          )}
         </NumberDiv>
       </BoardNextDiv>
     </BoardNext>
