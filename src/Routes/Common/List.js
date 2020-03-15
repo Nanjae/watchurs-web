@@ -130,7 +130,7 @@ const ListBox = styled.div`
   padding: 0px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -201,7 +201,7 @@ export default () => {
                   {broadcasters &&
                     broadcasters.map(
                       broad =>
-                        broad.bPlatform === "AFREECA" && (
+                        broad.bPlatform === "AFREECATV" && (
                           <ListInfo>
                             <ListBNameText>{broad.bName}</ListBNameText>
                             <ListBIdText>({broad.bId})</ListBIdText>
