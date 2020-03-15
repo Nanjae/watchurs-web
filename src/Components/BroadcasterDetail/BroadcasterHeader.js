@@ -79,7 +79,7 @@ const HeaderOpacityDiv = styled.div`
 `;
 
 const HeaderDiv = styled.div`
-  z-index: 100;
+  z-index: 70;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

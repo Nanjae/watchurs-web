@@ -83,7 +83,7 @@ export default ({ platform }) => {
               : twitchLogo
           }
         />
-        <TitleText>{platform} TOP 10</TitleText>
+        <TitleText>{platform} TOP 20</TitleText>
       </BoardTitleDiv>
     </BoardTitle>
   );

@@ -16,6 +16,7 @@ const AutoSuggestionDiv = styled(Link)`
   cursor: pointer;
   user-select: none;
   border-radius: 4px;
+  z-index: 100;
   @media only screen and (max-width: 599px) {
     margin-top: -8px;
     margin-left: -6px;
@@ -198,13 +199,13 @@ const getSuggestions = value => {
     ? []
     : broadcasterList.filter(
         lang =>
-          lang.bName.toLowerCase().slice(0, inputLength) === inputName ||
+          lang.bName.toLowerCase().includes(inputName) ||
           lang.bId.toLowerCase().slice(0, inputLength) === inputId
       ).length === 0
     ? [{ bName: "", bId: "", bPlatform: "" }]
     : broadcasterList.filter(
         lang =>
-          lang.bName.toLowerCase().slice(0, inputLength) === inputName ||
+          lang.bName.toLowerCase().includes(inputName) ||
           lang.bId.toLowerCase().slice(0, inputLength) === inputId
       );
 };

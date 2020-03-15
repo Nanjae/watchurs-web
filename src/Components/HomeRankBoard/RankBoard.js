@@ -107,14 +107,14 @@ export default () => {
   const { data: twitchData, loading: twitchLoading } = useQuery(
     SEE_ALL_SUMMONER,
     {
-      variables: { platform: "TWITCH", from: "1", to: "10" }
+      variables: { platform: "TWITCH", from: "1", to: "20" }
     }
   );
 
   const { data: afreecaData, loading: afreecaLoading } = useQuery(
     SEE_ALL_SUMMONER,
     {
-      variables: { platform: "AFREECATV", from: "1", to: "10" }
+      variables: { platform: "AFREECATV", from: "1", to: "20" }
     }
   );
 

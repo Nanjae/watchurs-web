@@ -206,7 +206,7 @@ const SearchInputBox = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  z-index: 100;
+  z-index: 70;
   padding: 0px;
   @media only screen and (max-width: 599px) {
     width: 100%;
