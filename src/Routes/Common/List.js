@@ -187,9 +187,9 @@ export default () => {
                   <ListTitle>트위치</ListTitle>
                   {broadcasters &&
                     broadcasters.map(
-                      broad =>
+                      (broad, index) =>
                         broad.bPlatform === "TWITCH" && (
-                          <ListInfo>
+                          <ListInfo key={index}>
                             <ListBNameText>{broad.bName}</ListBNameText>
                             <ListBIdText>({broad.bId})</ListBIdText>
                           </ListInfo>
@@ -200,9 +200,9 @@ export default () => {
                   <ListTitle>아프리카TV</ListTitle>
                   {broadcasters &&
                     broadcasters.map(
-                      broad =>
+                      (broad, index) =>
                         broad.bPlatform === "AFREECATV" && (
-                          <ListInfo>
+                          <ListInfo key={index}>
                             <ListBNameText>{broad.bName}</ListBNameText>
                             <ListBIdText>({broad.bId})</ListBIdText>
                           </ListInfo>

@@ -528,7 +528,7 @@ export default withRouter(({ location }) => {
 
   const { data, loading } = useQuery(COUNT_ALL_BROADCASTER);
   if (!loading) {
-    console.log(data);
+    // console.log(data);
   }
 
   useEffect(() => {
