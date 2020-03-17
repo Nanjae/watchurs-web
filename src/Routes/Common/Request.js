@@ -8,6 +8,14 @@ import Input from "../../Components/Input";
 import DropdownSelect from "react-dropdown-select";
 import useInput from "../../Hooks/useInput";
 import { Link } from "react-router-dom";
+import { gql } from "apollo-boost";
+import { useMutation } from "react-apollo-hooks";
+
+const ADD_REQUEST = gql`
+  mutation addRequest($rPlatform: String!, $rId: String!, $rName: String!) {
+    addRequest(rPlatform: $rPlatform, rId: $rId, rName: $rName)
+  }
+`;
 
 const CommonPage = styled.div``;
 
@@ -205,10 +213,31 @@ export default () => {
   const requestName = useInput("");
   const requestId = useInput("");
 
+  const [addRequestMutation] = useMutation(ADD_REQUEST);
+
   const sendRequestHandle = () => {
-    console.log("플랫폼 : " + platformValue);
-    console.log("닉네임 : " + requestName.value);
-    console.log("아이디 : " + requestId.value);
+    if (
+      platformValue !== "" &&
+      requestName.value !== "" &&
+      requestId.value !== ""
+    ) {
+      // console.log("플랫폼 : " + platformValue);
+      // console.log("닉네임 : " + requestName.value);
+      // console.log("아이디 : " + requestId.value);
+      addRequestMutation({
+        variables: {
+          rPlatform: platformValue,
+          rId: requestId.value,
+          rName: requestName.value
+        }
+      });
+      console.log("입력완료");
+    } else {
+      // console.log("플랫폼 : " + platformValue);
+      // console.log("닉네임 : " + requestName.value);
+      // console.log("아이디 : " + requestId.value);
+      console.log("입력실패");
+    }
   };
 
   return (
