@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import twitchAvatar from "../../Assets/Twitch/TwitchAvatar.png";
 import afreecatvLogo from "../../Assets/Afreecatv/AfreecatvLogo.png";
 import emblemUnranked from "../../Assets/League/EmblemUnranked.png";
 import emblemIron from "../../Assets/League/EmblemIron.png";
@@ -348,7 +349,9 @@ export default ({
                 : twitchLogo
             }
           />
-          <BroadAvatar url={bAvatar} />
+          <BroadAvatar
+            url={bAvatar === "" || undefined || null ? twitchAvatar : bAvatar}
+          />
           <BroadNameText>{bName}</BroadNameText>
         </BroadInfoBox>
         <LeagueSNameBox>

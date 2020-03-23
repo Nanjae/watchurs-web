@@ -5,6 +5,7 @@ import HeaderImage from "../../Assets/Common/runeterra-ionia-01-c.png";
 import { lightOrangeColor, deepBlueColor } from "../../Styles/StyleFunction";
 import Theme from "../../Styles/Theme";
 import twitchLogo from "../../Assets/Twitch/TwitchLogo.png";
+import twitchAvatar from "../../Assets/Twitch/TwitchAvatar.png";
 import afreecatvLogo from "../../Assets/Afreecatv/AfreecatvLogo.png";
 import BroadcasterInfo from "./BroadcasterInfo";
 
@@ -335,7 +336,13 @@ export default withRouter(({ loading, data, detailPage }) => {
       <HeaderDiv>
         <BroadDiv>
           <BroadAvatarDiv>
-            <BroadAvatar url={data.seeOneBroadcaster[0].bAvatar} />
+            <BroadAvatar
+              url={
+                data.seeOneBroadcaster[0].bAvatar === "" || undefined || null
+                  ? twitchAvatar
+                  : data.seeOneBroadcaster[0].bAvatar
+              }
+            />
           </BroadAvatarDiv>
           <BroadInfoDiv>
             <BroadPlatformDiv>

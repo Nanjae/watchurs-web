@@ -9,7 +9,13 @@ import DropdownSelect from "react-dropdown-select";
 import useInput from "../../Hooks/useInput";
 import { Link } from "react-router-dom";
 import { gql } from "apollo-boost";
-import { useMutation } from "react-apollo-hooks";
+import { useMutation, useQuery } from "react-apollo-hooks";
+
+const SEE_RECENT_REQUEST = gql`
+  query seeRecentRequest {
+    seeRecentRequest
+  }
+`;
 
 const ADD_REQUEST = gql`
   mutation addRequest($rPlatform: String!, $rId: String!, $rName: String!) {
@@ -209,34 +215,47 @@ const RequestButtonBox = styled.div`
 export default () => {
   const { windowHeight } = useWindowDimensions();
   const [platformValue, setPlatformValue] = useState("");
+  const [recentCheck, setRecentCheck] = useState(false);
 
   const requestName = useInput("");
   const requestId = useInput("");
 
+  const { data, loading } = useQuery(SEE_RECENT_REQUEST);
   const [addRequestMutation] = useMutation(ADD_REQUEST);
 
+  if (!loading) {
+    // console.log(data.seeRecentRequest);
+  }
+
   const sendRequestHandle = () => {
-    if (
-      platformValue !== "" &&
-      requestName.value !== "" &&
-      requestId.value !== ""
-    ) {
-      // console.log("플랫폼 : " + platformValue);
-      // console.log("닉네임 : " + requestName.value);
-      // console.log("아이디 : " + requestId.value);
-      addRequestMutation({
-        variables: {
-          rPlatform: platformValue,
-          rId: requestId.value,
-          rName: requestName.value
-        }
-      });
-      console.log("입력완료");
-    } else {
-      // console.log("플랫폼 : " + platformValue);
-      // console.log("닉네임 : " + requestName.value);
-      // console.log("아이디 : " + requestId.value);
-      console.log("입력실패");
+    if (!loading) {
+      if (
+        !data.seeRecentRequest &&
+        !recentCheck &&
+        platformValue !== "" &&
+        requestName.value !== "" &&
+        requestId.value !== ""
+      ) {
+        // console.log("플랫폼 : " + platformValue);
+        // console.log("닉네임 : " + requestName.value);
+        // console.log("아이디 : " + requestId.value);
+        // console.log("데이터 : " + data.seeRecentRequest);
+        setRecentCheck(true);
+        addRequestMutation({
+          variables: {
+            rPlatform: platformValue,
+            rId: requestId.value,
+            rName: requestName.value
+          }
+        });
+        // console.log("입력완료");
+      } else {
+        // console.log("플랫폼 : " + platformValue);
+        // console.log("닉네임 : " + requestName.value);
+        // console.log("아이디 : " + requestId.value);
+        // console.log("데이터 : " + data.seeRecentRequest);
+        // console.log("입력실패");
+      }
     }
   };
 
