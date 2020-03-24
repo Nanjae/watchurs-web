@@ -16,6 +16,7 @@ const GoTop = styled.div`
   border-radius: 15px;
   border: 2px solid ${props => props.theme.blackColor};
   opacity: 0.3;
+  cursor: pointer;
 `;
 
 const ArrowTopIcon = styled.div`

@@ -33,6 +33,8 @@ export default createGlobalStyle`
         /* text-rendering: optimizeLegibility; */
     }
     button {
+        font-family: 'Nanum Gothic', sans-serif;
+        border: 0px;
         outline: none;
     }
 `;

@@ -317,6 +317,7 @@ export default () => {
   const { windowHeight } = useWindowDimensions();
   const [platformValue, setPlatformValue] = useState("");
   const [recentCheck, setRecentCheck] = useState(false);
+  const [buttonText, setButtonText] = useState("등록 요청");
 
   const requestName = useInput("");
   const requestId = useInput("");
@@ -342,6 +343,7 @@ export default () => {
         // console.log("아이디 : " + requestId.value);
         // console.log("데이터 : " + data.seeRecentRequest);
         setRecentCheck(true);
+        setButtonText("등록요청 완료");
         addRequestMutation({
           variables: {
             rPlatform: platformValue,
@@ -349,13 +351,14 @@ export default () => {
             rName: requestName.value
           }
         });
-        // console.log("입력완료");
+        // console.log(buttonText);
       } else {
         // console.log("플랫폼 : " + platformValue);
         // console.log("닉네임 : " + requestName.value);
         // console.log("아이디 : " + requestId.value);
         // console.log("데이터 : " + data.seeRecentRequest);
-        // console.log("입력실패");
+        setButtonText("등록요청 실패");
+        // console.log(buttonText);
       }
     }
   };
@@ -426,7 +429,7 @@ export default () => {
                   </RequestInfoBox>
                 </RequestInfoDiv>
                 <RequestButtonBox onClick={sendRequestHandle}>
-                  등록요청
+                  {buttonText}
                 </RequestButtonBox>
               </RequestDiv>
             </PageBox>
