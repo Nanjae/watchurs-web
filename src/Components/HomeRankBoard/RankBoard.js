@@ -119,7 +119,7 @@ export default () => {
   );
 
   if (!twitchLoading && !afreecaLoading) {
-    console.log(twitchData);
+    // console.log(twitchData);
   }
 
   return (

@@ -110,19 +110,40 @@ const PageHeaderBox = styled.div`
 `;
 
 const HeaderFstText = styled.div`
-  font-size: 24px;
   font-weight: bold;
+  @media only screen and (max-width: 599px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 24px;
+  }
 `;
 
 const HeaderSndText = styled.div`
-  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   color: ${props => props.theme.brownColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const HeaderListButton = styled(Link)`
-  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   padding: 10px;
@@ -130,16 +151,39 @@ const HeaderListButton = styled(Link)`
   color: ${props => props.theme.blackColor};
   border-radius: 8px;
   border: 2px solid ${props => props.theme.darkBlueColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const HeaderRequestButton = styled(Link)`
-  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   padding: 10px;
   background-color: ${props => props.theme.darkBlueColor};
   color: ${props => props.theme.whiteColor};
   border-radius: 8px;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 export default () => {
@@ -163,7 +207,7 @@ export default () => {
                     등록요청을 해주세요.
                   </HeaderSndText>
                   <HeaderListButton to={"/common/list"}>
-                    WATCHURS 브로드캐스터 리스트
+                    브로드캐스터 리스트
                   </HeaderListButton>
                   <HeaderRequestButton to={"/common/request"}>
                     등록요청 페이지 이동

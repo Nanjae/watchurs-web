@@ -109,21 +109,52 @@ const PageHeaderBox = styled.div`
 `;
 
 const HeaderFstText = styled.div`
-  font-size: 24px;
   font-weight: bold;
+  @media only screen and (max-width: 599px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 24px;
+  }
 `;
 
 const HeaderSndText = styled.div`
-  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   color: ${props => props.theme.brownColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const ListDiv = styled.div`
   display: flex;
   margin: 30px 0px;
   justify-content: center;
+  @media only screen and (max-width: 599px) {
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const ListBox = styled.div`
@@ -136,31 +167,78 @@ const ListBox = styled.div`
 
 const ListTitle = styled.div`
   padding: 10px;
-  width: 280px;
   color: ${props => props.theme.whiteColor};
   background-color: ${props => props.theme.darkBlueColor};
   border-radius: 4px;
   margin-bottom: 10px;
   font-weight: bold;
-  font-size: 18px;
   text-align: center;
+  @media only screen and (max-width: 599px) {
+    width: 260px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 220px;
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 280px;
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 280px;
+    font-size: 18px;
+  }
 `;
 
 const ListInfo = styled.div`
   display: flex;
-  width: 280px;
   font-weight: bold;
   padding: 10px 10px;
   background-color: ${props => props.theme.whiteColor};
   border-top: 2px solid ${props => props.theme.grayColor};
+  @media only screen and (max-width: 599px) {
+    width: 260px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 220px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 280px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 280px;
+  }
 `;
 
 const ListBNameText = styled.div`
-  font-size: 16px;
+  @media only screen and (max-width: 599px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 16px;
+  }
 `;
 
 const ListBIdText = styled.div`
-  font-size: 14px;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 13px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 14px;
+  }
 `;
 
 export default () => {

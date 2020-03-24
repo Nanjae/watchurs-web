@@ -126,25 +126,60 @@ const PageHeaderBox = styled.div`
 `;
 
 const HeaderFstText = styled.div`
-  font-size: 24px;
   font-weight: bold;
+  @media only screen and (max-width: 599px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 24px;
+  }
 `;
 
 const HeaderSndText = styled.div`
-  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   color: ${props => props.theme.brownColor};
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const HeaderListButton = styled(Link)`
-  font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
   padding: 10px;
   background-color: ${props => props.theme.darkBlueColor};
   color: ${props => props.theme.whiteColor};
   border-radius: 8px;
+  @media only screen and (max-width: 599px) {
+    font-size: 12px;
+    width: 260px;
+    text-align: center;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 18px;
+  }
 `;
 
 const RequestDiv = styled.div`
@@ -153,47 +188,99 @@ const RequestDiv = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const RequestInfoDiv = styled.div`
   background-color: white;
   border: 2px solid ${props => props.theme.lightGrayColor};
   margin-bottom: 30px;
+  @media only screen and (max-width: 599px) {
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const RequestInfoBox = styled.div`
   display: flex;
+  @media only screen and (max-width: 599px) {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  @media only screen and (min-width: 600px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const RequestTagText = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 16px;
   font-weight: bold;
-  width: 100px;
-  margin: 25px 0px;
-  padding: 5px 30px;
   color: ${props => props.theme.darkOrangeColor};
-  border-right: 1px solid ${props => props.theme.lightGrayColor};
+  @media only screen and (max-width: 599px) {
+    width: 100%;
+    margin: 10px 0px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    border-right: 1px solid ${props => props.theme.lightGrayColor};
+    width: 100px;
+    margin: 25px 0px;
+    padding: 5px 30px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 16px;
+  }
 `;
 
 const RequestInputText = styled(Input)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 220px;
-  margin: 20px 40px;
+  width: 200px;
   border-bottom: 2px solid ${props => props.theme.lightGrayColor};
   text-align: center;
-  font-size: 16px;
   font-weight: bold;
+  padding-bottom: 5px;
+  @media only screen and (max-width: 599px) {
+    margin: 10px 40px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin: 20px 40px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    font-size: 16px;
+  }
 `;
 
 const RequestPlatformBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 280px;
 `;
 
 const RequestButtonBox = styled.div`
@@ -203,13 +290,27 @@ const RequestButtonBox = styled.div`
   align-items: center;
   background-color: ${props => props.theme.darkBlueColor};
   color: ${props => props.theme.whiteColor};
-  font-size: 20px;
   font-weight: bold;
   user-select: none;
   cursor: pointer;
   padding: 10px;
-  width: 150px;
   border-radius: 8px;
+  @media only screen and (max-width: 599px) {
+    width: 260px;
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 150px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 150px;
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 150px;
+    font-size: 16px;
+  }
 `;
 
 export default () => {
@@ -274,7 +375,7 @@ export default () => {
                     등록된 브로드캐스터를 보고 싶으시면 아래 버튼을 눌러주세요.
                   </HeaderSndText>
                   <HeaderListButton to={"/common/list"}>
-                    WATCHURS 브로드캐스터 리스트
+                    브로드캐스터 리스트
                   </HeaderListButton>
                 </PageHeaderBox>
               </PageHeaderDiv>
@@ -297,7 +398,7 @@ export default () => {
                         valueField={"platform"}
                         searchable={false}
                         style={{
-                          fontSize: "16px",
+                          fontSize: "14px",
                           fontWeight: "bold",
                           width: "180px"
                         }}

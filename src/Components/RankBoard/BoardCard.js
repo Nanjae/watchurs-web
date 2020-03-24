@@ -228,7 +228,7 @@ const LeagueTierBox = styled.div`
     width: 31%;
   }
   @media only screen and (min-width: 600px) {
-    width: 18%;
+    width: 20%;
   }
   @media only screen and (min-width: 1200px) {
     width: 20%;
@@ -306,7 +306,7 @@ const LeagueWinRateBox = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
-    width: 22%;
+    width: 20%;
   }
   @media only screen and (min-width: 1200px) {
     width: 20%;
@@ -332,10 +332,10 @@ const LeagueWinRateBar = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
-    width: 100px;
-    height: 20px;
+    width: 80px;
+    height: 18px;
     font-size: 10px;
-    margin: 0px 3px;
+    margin-right: 3px;
   }
   @media only screen and (min-width: 1200px) {
     width: 120px;
@@ -392,6 +392,7 @@ const TableArrowBox = styled.div`
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
+    width: 0%;
   }
   @media only screen and (min-width: 1200px) {
     width: 5%;

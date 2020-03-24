@@ -68,7 +68,7 @@ const BroadInfoBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 28%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
     width: 30%;
@@ -114,10 +114,11 @@ const BroadAvatar = styled.div`
   background-size: cover;
   border: 1px solid ${props => props.theme.purpleColor};
   @media only screen and (max-width: 599px) {
-    border-radius: 6px;
-    width: 12px;
-    height: 12px;
-    margin-right: 2px;
+    border: 0px;
+    border-radius: 0px;
+    width: 0px;
+    height: 0px;
+    margin-right: 0px;
   }
   @media only screen and (min-width: 600px) {
     border-radius: 10px;
@@ -148,7 +149,7 @@ const LeagueSNameBox = styled.div`
   justify-content: flex-start;
   align-items: center;
   @media only screen and (max-width: 599px) {
-    width: 29%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
     width: 30%;
@@ -166,6 +167,7 @@ const LeagueSAvatar = styled.div`
   background-size: cover;
   border: 1px solid ${props => props.theme.orangeColor};
   @media only screen and (max-width: 599px) {
+    border: 0px;
     width: 0px;
     height: 0px;
   }
@@ -208,7 +210,7 @@ const LeagueTierBox = styled.div`
   align-items: center;
   color: ${props => props.theme.darkOrangeColor};
   @media only screen and (max-width: 599px) {
-    width: 36%;
+    width: 31%;
   }
   @media only screen and (min-width: 600px) {
     width: 35%;
@@ -225,7 +227,7 @@ const LeagueTierEmblem = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   @media only screen and (max-width: 599px) {
-    border: 1px solid ${props => props.theme.darkOrangeColor};
+    border: 0px;
     width: 0px;
     height: 0px;
   }
@@ -363,7 +365,7 @@ export default ({
           <LeagueTierText>{sTierName}</LeagueTierText>
           {sRank !== "" ? <LeagueRankText>{sRank}</LeagueRankText> : null}
           {sTierName !== "UNRANKED" ? (
-            <LeaguePointsText>({sPoints}LP)</LeaguePointsText>
+            <LeaguePointsText>{sPoints}LP</LeaguePointsText>
           ) : null}
         </LeagueTierBox>
       </BoardCardDiv>
