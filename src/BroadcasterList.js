@@ -1608,5 +1608,348 @@ export const broadcasters = [
     __typename: "Broadcaster",
     bPlatform: "AFREECATV",
     bId: "yoomingseo"
+  },
+  {
+    __id: "ck86qlo6908gu0732di3nw8il",
+    bName: "우민2",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "kyh04444"
+  },
+  {
+    __id: "ck86qo4ap08kw0732v5qsgblq",
+    bName: "[HS]희성",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "ahs950502"
+  },
+  {
+    __id: "ck86qs9u508ok073274yxz8e3",
+    bName: "데스티니:D",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "tjfxkd7698"
+  },
+  {
+    __id: "ck86qtd5j08ry07326xw4tvgp",
+    bName: "BJ푸른문어",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "shk0109"
+  },
+  {
+    __id: "ck86qv18y08vm0732m5jejcrh",
+    bName: "저라뎃",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "joey1114"
+  },
+  {
+    __id: "ck86r3c5g095a0732xc3aagz5",
+    bName: "BJ수찬",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "cbn270"
+  },
+  {
+    __id: "ck86r4st7098p0732dxvzpsz8",
+    bName: "준밧드",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "gksdidqksxn"
+  },
+  {
+    __id: "ck86r6knm09c50732pp72ydqr",
+    bName: "Axiyo",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "axiaxi"
+  },
+  {
+    __id: "ck86rfzsd09gs0732ztfzzdes",
+    bName: "제제-",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "juadong"
+  },
+  {
+    __id: "ck86ri93309l3073223qrbhrx",
+    bName: "블루리쉬",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "cwo0923"
+  },
+  {
+    __id: "ck86rjxpt09ok073236r9ht2o",
+    bName: "카브욤",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "rlatjdtn1011"
+  },
+  {
+    __id: "ck86rkri609rw0732mrgu3h1t",
+    bName: "BJ_슈",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "dlatmdtn99"
+  },
+  {
+    __id: "ck86rljf209v90732hsid05r8",
+    bName: "에프람",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "djaakaprk"
+  },
+  {
+    __id: "ck86ro0g309ys07329qbzgcll",
+    bName: "인간이덕팔",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "jijun27"
+  },
+  {
+    __id: "ck86rqvvm0a2d0732173w2scc",
+    bName: "녕재",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "yk7m7j77"
+  },
+  {
+    __id: "ck86rzfoi0a750732q76pb159",
+    bName: "미으르",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "whqls324"
+  },
+  {
+    __id: "ck86s0fae0aah073238u0jbym",
+    bName: "일루오뀨",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "ogm0905"
+  },
+  {
+    __id: "ck86s0ylj0adp0732zpbzpb09",
+    bName: "d펠다",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "tarorian"
+  },
+  {
+    __id: "ck86s5r0i0aif0732znzljihf",
+    bName: "따균",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "ldy0105"
+  },
+  {
+    __id: "ck86s7za90ap40732sh3y7eu4",
+    bName: "＃김동하",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "likekk"
+  },
+  {
+    __id: "ck86s9kv50ast07327u1tpqen",
+    bName: "BJ꼬꼬갓",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "alclsto415"
+  },
+  {
+    __id: "ck86salwo0aw70732bpkxfkll",
+    bName: "토토로★",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "dmswhdtjq"
+  },
+  {
+    __id: "ck86sckm50azp0732h9dlnsku",
+    bName: "린다랑b",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "gjaksgmd123"
+  },
+  {
+    __id: "ck86sditn0b340732nz8d4175",
+    bName: "BJ로이조",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "bigbigjo2"
+  },
+  {
+    __id: "ck86see3m0b6q0732okionxws",
+    bName: "이엣지",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "englks"
+  },
+  {
+    __id: "ck86sfbap0ba307326twcy2k1",
+    bName: "으댜다",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "jini30623"
+  },
+  {
+    __id: "ck86sggij0bdv0732r1l7m46t",
+    bName: "dhxodidh",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "dhxodidh"
+  },
+  {
+    __id: "ck86slfri0bkw0732laue7wk4",
+    bName: "양여명808",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "duaud6231"
+  },
+  {
+    __id: "ck86sot8r0brz07321qcqp6o3",
+    bName: "제동빠",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "chw2440"
+  },
+  {
+    __id: "ck86spe040bvc07321vyrv2aj",
+    bName: "종탁이",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "jhsun0620"
+  },
+  {
+    __id: "ck86sq16y0byq0732mpfl7oyc",
+    bName: "원빈이1",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "dnjsqls1739"
+  },
+  {
+    __id: "ck86ssn5w0c2h0732zaxbw6af",
+    bName: "스맵임",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "townboy"
+  },
+  {
+    __id: "ck86sx2of0c9l0732l6akjbs4",
+    bName: "롤선생",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "kissday621"
+  },
+  {
+    __id: "ck86sxqoj0ccs0732we28dm9b",
+    bName: "프으레이",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "pig2704"
+  },
+  {
+    __id: "ck86t03b70cgk0732nrtes93s",
+    bName: "레이스7",
+    __typename: "Broadcaster",
+    bPlatform: "TWITCH",
+    bId: "lol_wraith"
+  },
+  {
+    __id: "ck86t622q0clj0732e9fav4hn",
+    bName: "키사이",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "qu4tro"
+  },
+  {
+    __id: "ck86t6obv0cow0732sx529u53",
+    bName: "종학잉",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "battle8807"
+  },
+  {
+    __id: "ck86t7nig0csd07323jhwhw5w",
+    bName: "율천고최현우",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "chlgusdn1000"
+  },
+  {
+    __id: "ck86t8e3c0cvr0732igwe5idu",
+    bName: "BJ닭쳐",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "jozk12"
+  },
+  {
+    __id: "ck86tdc0c0d3g0732izdtpldy",
+    bName: "부들부들대졍",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "gkdlxpzm1"
+  },
+  {
+    __id: "ck86tedbk0d6u0732tniolov2",
+    bName: "김명치.",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "gudwlsdld"
+  },
+  {
+    __id: "ck86tf4eo0da10732i8fvbia0",
+    bName: "김무진-",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "moojinlol"
+  },
+  {
+    __id: "ck86tfptz0ddg0732f4zp3af0",
+    bName: "백크.",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "bj173999"
+  },
+  {
+    __id: "ck86tgkjl0dgw0732nyszsi68",
+    bName: "레이닝1",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "dksgusrnr12"
+  },
+  {
+    __id: "ck86thlm20dko0732kicrol9l",
+    bName: "BJ하얀눈길",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "qksdy147"
+  },
+  {
+    __id: "ck86tlbmt0doc07320i8lwn5z",
+    bName: "블라써엄",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "bubbletea153"
+  },
+  {
+    __id: "ck86tlzbj0drj0732w70g0zkf",
+    bName: "세체뽀",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "godqhr12"
+  },
+  {
+    __id: "ck86tn3he0duz0732vsgyf9ms",
+    bName: "뜨뜨뜨뜨-",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "seokwngud"
+  },
+  {
+    __id: "ck86torvw0dz407326zf78bvb",
+    bName: "꿈의남자",
+    __typename: "Broadcaster",
+    bPlatform: "AFREECATV",
+    bId: "wjdgus471"
   }
 ];
