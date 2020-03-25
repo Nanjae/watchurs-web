@@ -610,6 +610,20 @@ export default withRouter(({ location }) => {
               </MenuBox>
               <MenuBox
                 style={
+                  location.pathname.split("/")[1] === "contest"
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
+                to={`/contest/all`}
+              >
+                <MenuText>대회 정보</MenuText>
+              </MenuBox>
+              <MenuBox
+                style={
                   location.pathname.split("/")[1] === "common" &&
                   location.pathname.split("/")[2] === "request"
                     ? {
@@ -709,6 +723,20 @@ export default withRouter(({ location }) => {
                 to={`/rank/all/1`}
               >
                 <MenuText>전체 랭킹</MenuText>
+              </MenuBox>
+              <MenuBox
+                style={
+                  location.pathname.split("/")[1] === "contest"
+                    ? {
+                        backgroundColor: Theme.deepBlueColor,
+                        color: Theme.orangeColor,
+                        fontWeight: "bold"
+                      }
+                    : null
+                }
+                to={`/contest/all`}
+              >
+                <MenuText>대회 정보</MenuText>
               </MenuBox>
               <MenuBox
                 style={
