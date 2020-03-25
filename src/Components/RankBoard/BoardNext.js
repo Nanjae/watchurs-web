@@ -75,6 +75,7 @@ const NumberBox = styled(Link)`
 const NumberText = styled.div``;
 
 export default withRouter(({ platformLocation, dataCount, location }) => {
+  const boardCount = 30;
   return (
     <BoardNext>
       <BoardNextDiv>
@@ -92,7 +93,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
           >
             <NumberText>1</NumberText>
           </NumberBox>
-          {dataCount > 20 && (
+          {dataCount > boardCount * 1 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/2`
@@ -107,7 +108,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>2</NumberText>
             </NumberBox>
           )}
-          {dataCount > 40 && (
+          {dataCount > boardCount * 2 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/3`
@@ -122,7 +123,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>3</NumberText>
             </NumberBox>
           )}
-          {dataCount > 60 && (
+          {dataCount > boardCount * 3 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/4`
@@ -137,7 +138,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>4</NumberText>
             </NumberBox>
           )}
-          {dataCount > 80 && (
+          {dataCount > boardCount * 4 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/5`
@@ -152,7 +153,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>5</NumberText>
             </NumberBox>
           )}
-          {dataCount > 100 && (
+          {dataCount > boardCount * 5 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/6`
@@ -167,7 +168,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>6</NumberText>
             </NumberBox>
           )}
-          {dataCount > 120 && (
+          {dataCount > boardCount * 6 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/7`
@@ -182,7 +183,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>7</NumberText>
             </NumberBox>
           )}
-          {dataCount > 140 && (
+          {dataCount > boardCount * 7 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/8`
@@ -197,7 +198,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>8</NumberText>
             </NumberBox>
           )}
-          {dataCount > 160 && (
+          {dataCount > boardCount * 8 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/9`
@@ -212,7 +213,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>9</NumberText>
             </NumberBox>
           )}
-          {dataCount > 180 && (
+          {dataCount > boardCount * 9 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/10`
@@ -227,7 +228,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>10</NumberText>
             </NumberBox>
           )}
-          {dataCount > 200 && (
+          {dataCount > boardCount * 10 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/11`
@@ -242,7 +243,7 @@ export default withRouter(({ platformLocation, dataCount, location }) => {
               <NumberText>11</NumberText>
             </NumberBox>
           )}
-          {dataCount > 220 && (
+          {dataCount > boardCount * 11 && (
             <NumberBox
               style={
                 location.pathname === `/rank/${platformLocation}/12`

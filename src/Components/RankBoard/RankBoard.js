@@ -83,8 +83,8 @@ const RankBoardBox = styled.div`
 `;
 
 export default withRouter(({ location }) => {
-  const from = (location.pathname.split("/")[3] - 1) * 20 + 1;
-  const to = location.pathname.split("/")[3] * 20;
+  const from = (location.pathname.split("/")[3] - 1) * 30 + 1;
+  const to = location.pathname.split("/")[3] * 30;
   const platformLocation = location.pathname.split("/")[2];
 
   const { data: allCount, loading: allCountLoading } = useQuery(

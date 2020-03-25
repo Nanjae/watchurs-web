@@ -4,8 +4,7 @@ import { darkBlueColor } from "../../../Styles/StyleFunction";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
 import Footer from "../../../Components/Footer";
-import { withRouter } from "react-router-dom";
-import ContestBoard from "../../../Components/ContestBoard/ContestBoard";
+import { withRouter, useHistory } from "react-router-dom";
 
 /**
  * LeagueContest 전체 스크린
@@ -92,6 +91,12 @@ const MainDiv = styled.div`
 
 export default withRouter(({ location }) => {
   const { windowHeight } = useWindowDimensions();
+  const page = location.pathname.split("/")[3];
+  const history = useHistory();
+
+  if (page !== "1") {
+    history.push(`/home`);
+  }
 
   return (
     <LeagueContest>
@@ -99,7 +104,7 @@ export default withRouter(({ location }) => {
         <MainBgDiv windowHeight={windowHeight} url={BgImage} />
         <MainOpacityDiv style={{ backgroundColor: darkBlueColor }} />
         <MainDiv windowHeight={windowHeight}>
-          <ContestBoard />
+          콘테스트 {page}번 디테일 페이지
         </MainDiv>
         <Footer />
       </LeagueContestDiv>
