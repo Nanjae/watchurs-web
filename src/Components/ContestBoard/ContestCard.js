@@ -27,7 +27,6 @@ const CardDiv = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  /* border: 2px solid white; */
 `;
 
 const ContestImage = styled.div`
@@ -59,6 +58,7 @@ const ContestDiv = styled.div`
   width: 600px;
   height: 100%;
   font-weight: bold;
+  background-color: ${props => props.theme.whiteColor};
   @media only screen and (max-width: 599px) {
   }
   @media only screen and (min-width: 600px) {
@@ -72,7 +72,7 @@ const ContestDiv = styled.div`
 const ContestTitle = styled.div`
   padding: 15px;
   font-size: 22px;
-  background-color: ${props => props.theme.darkGrayColor};
+  background-color: ${props => props.theme.deepBlueColor};
   color: ${props => props.theme.lightOrangeColor};
 `;
 
@@ -104,7 +104,7 @@ const ContestTeamCount = styled.div`
 
 const ContestTeamButton = styled.div`
   padding: 10px;
-  background-color: ${props => props.theme.darkGrayColor};
+  background-color: ${props => props.theme.deepBlueColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +162,7 @@ export default ({
                 총 {teamCount}팀 중 {teamCurrent}팀 등록 완료
               </ContestTeamCount>
               <ContestTeamButton>
-                <ButtonText>대회 참가 팀 명단</ButtonText>
+                <ButtonText>참가 팀 명단 및 일정</ButtonText>
                 <IconArrowRight url={IconArrow} />
               </ContestTeamButton>
             </ContestSndBox>

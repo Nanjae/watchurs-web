@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ContestCard from "./ContestCard";
-import ContestTitle from "./ContestTitle";
+import ContestTitle from "../Title/DefaultTitle";
 import ContestBanner_1 from "../../Assets/Contest/ContestBanner_1.png";
 
 const ContestBoard = styled.div`
@@ -34,14 +34,14 @@ export default () => {
         titleText={"2020 LOL BJ멸망전 시즌1"}
         contestBanner={ContestBanner_1}
         hostText={"아프리카TV"}
-        planText={"2020-03-23(월) ~ 2020-03-29(일)"}
+        planText={"2020-03-23(월) ~ 2020-03-31(일)"}
         teamCount={"12"}
         teamCurrent={"12"}
         pageLink={"/contest/detail/1"}
       />
       <ContestTitle titleText={"종료된 대회"} />
       <ContestCard />
-      <ContestCard />
+      {/* <ContestCard /> */}
     </ContestBoard>
   );
 };

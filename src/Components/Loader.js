@@ -35,6 +35,8 @@ const Loader = styled.div`
   }
 `;
 
-export default ({ paddingTop = 200 }) => (
-  <Loader style={{ paddingTop }}>WATCHURS 로딩 중...</Loader>
+export default ({ paddingTop = 200, fontSize, height, alignItems }) => (
+  <Loader style={{ paddingTop, fontSize, height, alignItems }}>
+    WATCHURS 로딩 중...
+  </Loader>
 );

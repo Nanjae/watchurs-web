@@ -180,7 +180,6 @@ const LeagueSNameBox = styled.div`
 const LeagueSAvatar = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
-
   @media only screen and (max-width: 599px) {
     width: 0px;
     height: 0px;

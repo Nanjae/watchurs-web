@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ContestTitle = styled.div`
+const DefaultTitle = styled.div`
   width: 100%;
   background-color: ${props => props.theme.darkGrayColor};
   color: ${props => props.theme.whiteColor};
@@ -34,8 +34,8 @@ const TitleText = styled.div`
 
 export default ({ titleText }) => {
   return (
-    <ContestTitle>
+    <DefaultTitle>
       <TitleText>{titleText}</TitleText>
-    </ContestTitle>
+    </DefaultTitle>
   );
 };
