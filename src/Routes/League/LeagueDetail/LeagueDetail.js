@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { darkBlueColor } from "../../../Styles/StyleFunction";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
-import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
+import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.jpg";
 import Footer from "../../../Components/Footer";
 import { withRouter, useHistory } from "react-router-dom";
 import { useQuery } from "react-apollo-hooks";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.png";
+import BgImage from "../../../Assets/Common/runeterra-freljord-02-r-c.jpg";
 import { darkBlueColor } from "../../../Styles/StyleFunction";
 import IconClose from "../../../Assets/Common/IconClose.png";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
