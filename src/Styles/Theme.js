@@ -5,14 +5,13 @@ export default {
   deepBlueColor: "#010415",
   blackBlueColor: "#151722",
   pinkColor: "#4E6279",
-  whiteColor: "#FFFFFF",
   shinyOrangeColor: "#BBEE88",
   lightOrangeColor: "#99CC66",
   orangeColor: "#669933",
   darkOrangeColor: "#336600",
   blackColor: "#000000",
   lightGrayColor: "#c7c7c7",
-  grayColor: "#E8ECF1",
+  // grayColor: "#E8ECF1",
   shinyGrayColor: "#D6D6D6",
   darkGrayColor: "#313641",
   brownColor: "#EE6767",
@@ -30,5 +29,10 @@ export default {
   hTheme: "#464A61",
   iTheme: "#131329",
   jTheme: "#8C91A0",
-  kTheme: "#E19A10"
+  kTheme: "#E19A10",
+  gray: "#CDDAD7",
+  white: "#FFFFFF",
+  darkFont: "#222222",
+  darkFontH: "#585756",
+  lightYellow: "#F8F6F2"
 };
