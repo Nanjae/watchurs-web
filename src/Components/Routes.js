@@ -30,6 +30,6 @@ export const DefaultRoute = () => (
 
 export const LeagueRoute = () => (
   <Switch>
-    <Route exact path="/test" component={Test} />
+    <Route exact path="/" component={Test} />
   </Switch>
 );
