@@ -11,28 +11,30 @@ import reset from "styled-reset";
 export default createGlobalStyle`
     ${reset};
     @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap");
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
     body {
-        background-color: ${props => props.theme.white};
-        color: ${props => props.theme.darkFont};
-        font-family: 'Noto Sans KR', sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-    }
-    a {background-color: ${props => props.theme.white};
-        font-family: 'Noto Sans KR', sans-serif;
+        background-color: ${props => props.theme.whiteColor};
+        color: ${props => props.theme.blackColor};
+        font-family: 'Nanum Gothic', sans-serif;
         font-weight: normal;
-        color: ${props => props.theme.darkFont};
-        text-decoration: none;
+        font-size: 16px;
+        /* text-rendering: optimizeLegibility; */
     }
-    /* input {
-        font-family: 'Noto Sans KR', sans-serif;
+    a {
+        font-family: 'Nanum Gothic', sans-serif;
+        font-weight: normal;
+        color: ${props => props.theme.blackColor};
+        text-decoration: none;
+        /* text-rendering: optimizeLegibility; */
+    }
+    input {
+        font-family: 'Nanum Gothic', sans-serif;
         font-weight: normal;
         outline: none;
+        /* text-rendering: optimizeLegibility; */
     }
     button {
-        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Nanum Gothic', sans-serif;
         border: 0px;
         outline: none;
-    } */
+    }
 `;

@@ -8,7 +8,11 @@ import Request from "../Routes/Common/Request";
 import List from "../Routes/Common/List";
 import SearchNull from "../Routes/Common/SearchNull";
 import LeagueContestDetail from "../Routes/League/LeagueContest/LeagueContestDetail";
-import Test from "../Routes/Test/Test";
+// import FirstRanking from "../Routes/League/LeagueRanking/FirstRanking";
+// import LeagueFavorites from "../Routes/League/LeagueFavorites";
+// import LeagueContest from "../Routes/League/LeagueContest";
+// import AuthLogin from "../Routes/Auth/AuthLogin";
+// import SecondRanking from "../Routes/League/LeagueRanking/SecondRanking";
 
 export const DefaultRoute = () => (
   <Switch>
@@ -25,11 +29,5 @@ export const DefaultRoute = () => (
     <Route exact path="/common/search/null" component={SearchNull} />
     <Route exact path="/common/list" component={List} />
     <Redirect from="*" to="/" />
-  </Switch>
-);
-
-export const LeagueRoute = () => (
-  <Switch>
-    <Route exact path="/test" component={Test} />
   </Switch>
 );
