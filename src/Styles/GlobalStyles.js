@@ -16,12 +16,13 @@ export default createGlobalStyle`
         background-color: ${props => props.theme.white};
         color: ${props => props.theme.darkFont};
         font-family: 'Noto Sans KR', sans-serif;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 14px;
     }
-    a {background-color: ${props => props.theme.white};
+    a {
+        background-color: ${props => props.theme.white};
         font-family: 'Noto Sans KR', sans-serif;
-        font-weight: normal;
+        font-weight: 300;
         color: ${props => props.theme.darkFont};
         text-decoration: none;
     }

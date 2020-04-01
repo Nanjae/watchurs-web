@@ -11,8 +11,8 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: flex-end;
   width: 100%;
-  height: 48px;
-  padding: 0px 32px 28px 32px;
+  height: 44px;
+  padding: 8px 16px 24px 16px;
 `;
 
 const InnerWrapper = styled.div`
@@ -22,42 +22,51 @@ const InnerWrapper = styled.div`
 `;
 
 const LeftMenuDiv = styled.div`
-  width: 25%;
+  width: 40%;
   display: flex;
   justify-content: flex-start;
+  align-items: flex-end;
 `;
 
 const RightMenuDiv = styled.div`
-  width: 25%;
+  width: 40%;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 const MenuIcon = styled.div`
   background-image: url(${props => props.url});
   background-size: cover;
   background-position: center;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+`;
+
+const MenuText = styled.div`
+  margin: 0px 20px 1px 20px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
 `;
 
 const TitleDiv = styled.div`
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 20%;
 `;
 
 const TitleText = styled.div`
   font-size: 24px;
   font-weight: 700;
+  padding-bottom: 4px;
 `;
 
 const PopMenuDiv = styled.div`
   position: fixed;
   top: 0;
   left: ${props => (props.popClicked ? "0%" : "-50%")};
-  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
   background-color: ${props => props.theme.lightYellow};
   width: 0%;
   height: 0%;
@@ -103,12 +112,23 @@ export default () => {
     >
       <InnerWrapper>
         <LeftMenuDiv>
-          <MenuIcon onClick={popClickHandler} url={iconMenu} />
+          <MenuIcon
+            style={{ marginRight: 20 }}
+            onClick={popClickHandler}
+            url={iconMenu}
+          />
+          <MenuText>MENU</MenuText>
+          <MenuText>MENU</MenuText>
+          <MenuText>MENU</MenuText>
         </LeftMenuDiv>
         <TitleDiv>
           <TitleText>WATCHURS</TitleText>
         </TitleDiv>
-        <RightMenuDiv>{/* <MenuIcon url={iconMenu} /> */}</RightMenuDiv>
+        <RightMenuDiv>
+          <MenuText>MENU</MenuText>
+          <MenuText>/</MenuText>
+          <MenuText>MENU</MenuText>
+        </RightMenuDiv>
       </InnerWrapper>
       <PopMenuDiv popClicked={popClicked}>
         <PopMenuInner>
