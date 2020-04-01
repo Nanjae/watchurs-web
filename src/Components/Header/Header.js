@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
-import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import styled from "styled-components";
 import useWindowScroll from "@react-hook/window-scroll";
 import Theme from "../../Styles/Theme";
 import iconMenu from "../../Assets/Test/iconMenu.png";
@@ -56,7 +55,7 @@ const TitleText = styled.div`
 
 const PopMenuDiv = styled.div`
   position: fixed;
-  top: ${props => (props.popClicked ? "0%" : "-50%")};
+  top: 0;
   left: ${props => (props.popClicked ? "0%" : "-50%")};
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
   background-color: ${props => props.theme.lightYellow};
@@ -65,7 +64,7 @@ const PopMenuDiv = styled.div`
   width: 50%;
   height: 100%;
   min-width: 480px;
-  transition: left 0.3s, top 0.3s;
+  transition: left 0.3s;
 `;
 
 const PopMenuInner = styled.div`
@@ -83,14 +82,11 @@ const PopMenuBox = styled.div`
 `;
 
 export default () => {
-  const { windowHeight } = useWindowDimensions();
   const scrollY = useWindowScroll(60);
   const [popClicked, setPopClicked] = useState(false);
-  //   console.log(scrollY);
 
   const popClickHandler = () => {
     setPopClicked(!popClicked);
-    console.log(popClicked);
   };
 
   return (

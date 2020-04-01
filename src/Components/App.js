@@ -3,10 +3,8 @@ import GlobalStyles from "../Styles/GlobalStyles";
 import styled, { ThemeProvider } from "styled-components";
 import Theme from "../Styles/Theme";
 import { BrowserRouter as Router } from "react-router-dom";
-import { DefaultRoute, LeagueRoute } from "./Routes";
-import Header from "./Header";
-import GoTop from "./GoTop";
-import LeagueHeader from "./Test/LeagueHeader";
+import { DefaultRoute } from "./Routes";
+import Header from "./Header/Header";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,11 +17,8 @@ export default () => {
       <GlobalStyles />
       <Router>
         <Wrapper>
-          {/* <Header /> */}
-          {/* <DefaultRoute /> */}
-          <LeagueHeader />
-          <LeagueRoute />
-          {/* <GoTop /> */}
+          <Header />
+          <DefaultRoute />
         </Wrapper>
       </Router>
     </ThemeProvider>
