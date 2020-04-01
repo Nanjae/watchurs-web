@@ -25,7 +25,7 @@ const Box = styled.div`
 export default () => {
   return (
     <Wrapper>
-      <Box style={{ backgroundColor: Theme.gray }}>스크롤 테스트</Box>
+      <Box style={{ backgroundColor: Theme.gray }}>dev스크롤 테스트</Box>
       <Box style={{ backgroundColor: Theme.white }}>스크롤 테스트</Box>
       <Box style={{ backgroundColor: "black", color: "white" }}>
         스크롤 테스트
