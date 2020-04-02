@@ -4,6 +4,7 @@ import useWindowScroll from "@react-hook/window-scroll";
 import Theme from "../../Styles/Theme";
 import iconMenu from "../../Assets/Test/iconMenu.png";
 import iconXmark from "../../Assets/Test/iconXmark.png";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -66,14 +67,14 @@ const TitleText = styled.div`
 const PopMenuDiv = styled.div`
   position: fixed;
   top: 0;
-  left: ${props => (props.popClicked ? "0%" : "-50%")};
+  left: ${props => (props.popClicked ? "0%" : "-51%")};
+  z-index: 1000;
   background-color: ${props => props.theme.lightYellow};
-  width: 0%;
-  height: 0%;
-  width: 50%;
+  width: ${props => (props.windowWidth < 1000 ? "100%" : "50%")};
   height: 100%;
-  min-width: 480px;
+  min-width: ${props => (props.windowWidth < 1000 ? "300px" : "480px")};
   transition: left 0.3s;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
 `;
 
 const PopMenuInner = styled.div`
@@ -91,6 +92,7 @@ const PopMenuBox = styled.div`
 `;
 
 export default () => {
+  const { windowWidth } = useWindowDimensions();
   const scrollY = useWindowScroll(60);
   const [popClicked, setPopClicked] = useState(false);
 
@@ -101,7 +103,21 @@ export default () => {
   return (
     <Wrapper
       style={
-        scrollY >= 80
+        windowWidth < 600
+          ? {
+              padding: "24px 0px 28px 0px",
+              height: "68px",
+              backgroundColor: Theme.white,
+              boxShadow: "0 2px 4px 1px rgba(0, 0, 0, 0.1)",
+              transition: `background-color 0.2s`
+            }
+          : windowWidth < 800
+          ? {
+              backgroundColor: Theme.white,
+              boxShadow: "0 2px 4px 1px rgba(0, 0, 0, 0.1)",
+              transition: `background-color 0.2s`
+            }
+          : scrollY >= 80
           ? {
               backgroundColor: Theme.white,
               boxShadow: "0 2px 4px 1px rgba(0, 0, 0, 0.1)",
@@ -110,27 +126,60 @@ export default () => {
           : { backgroundColor: null, transition: `background-color 0.2s` }
       }
     >
-      <InnerWrapper>
-        <LeftMenuDiv>
-          <MenuIcon
-            style={{ marginRight: 20 }}
-            onClick={popClickHandler}
-            url={iconMenu}
-          />
-          <MenuText>MENU</MenuText>
-          <MenuText>MENU</MenuText>
-          <MenuText>MENU</MenuText>
-        </LeftMenuDiv>
-        <TitleDiv>
-          <TitleText>WATCHURS</TitleText>
-        </TitleDiv>
-        <RightMenuDiv>
-          <MenuText>MENU</MenuText>
-          <MenuText>/</MenuText>
-          <MenuText>MENU</MenuText>
-        </RightMenuDiv>
-      </InnerWrapper>
-      <PopMenuDiv popClicked={popClicked}>
+      {windowWidth < 600 ? (
+        <InnerWrapper
+          style={{
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "100%"
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-beteween" }}>
+            <LeftMenuDiv style={{ width: "50%" }}>
+              <MenuIcon
+                style={{ marginRight: 20 }}
+                onClick={popClickHandler}
+                url={iconMenu}
+              />
+              <MenuText>MENU</MenuText>
+            </LeftMenuDiv>
+            <RightMenuDiv style={{ width: "50%" }}>
+              <MenuText>Dev Intro</MenuText>
+            </RightMenuDiv>
+          </div>
+          <TitleDiv style={{ width: "100%" }}>
+            <TitleText>WATCHURS</TitleText>
+          </TitleDiv>
+        </InnerWrapper>
+      ) : (
+        <InnerWrapper>
+          <LeftMenuDiv>
+            <MenuIcon
+              style={{ marginRight: 20 }}
+              onClick={popClickHandler}
+              url={iconMenu}
+            />
+            <MenuText>MENU</MenuText>
+          </LeftMenuDiv>
+          <TitleDiv>
+            <TitleText>WATCHURS</TitleText>
+          </TitleDiv>
+          <RightMenuDiv>
+            <MenuText>Dev Intro</MenuText>
+          </RightMenuDiv>
+        </InnerWrapper>
+      )}
+      <PopMenuDiv
+        windowWidth={windowWidth}
+        popClicked={popClicked}
+        style={
+          windowWidth < 1000
+            ? popClicked
+              ? { left: "0%" }
+              : { left: "-101%", transition: "left 0.3s, width 0.3s" }
+            : null
+        }
+      >
         <PopMenuInner>
           <MenuIcon onClick={popClickHandler} url={iconXmark} />
           <PopMenuBox>팝업 테스트</PopMenuBox>

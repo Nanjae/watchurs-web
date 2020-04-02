@@ -3,5 +3,6 @@ export default {
   white: "#FFFFFF",
   darkFont: "#222222",
   darkFontH: "#585756",
-  lightYellow: "#F8F6F2"
+  lightYellow: "#F8F6F2",
+  lightGray: "#F6F4F0"
 };

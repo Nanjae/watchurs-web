@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Theme from "../../Styles/Theme";
 import introBanner from "../../Assets/Images/labtop_coffee.jpg";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   height: fit-content;
@@ -67,43 +68,155 @@ const IntroBanner = styled.div`
 `;
 
 export default () => {
+  const { windowWidth } = useWindowDimensions();
+
   return (
     <Wrapper>
-      <ContentDiv style={{ backgroundColor: Theme.gray }}>
-        <ContentInner>
-          <ContentBox>
-            <IntroDiv>
-              <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
-              <IntroTitle>= WATCH + YOURS</IntroTitle>
-              <IntroAuthor>
-                <IntroText style={{ marginRight: 5 }}>made by</IntroText>
-                <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
-              </IntroAuthor>
-              <IntroContents>
-                <IntroText style={{ lineHeight: 2.5 }}>
-                  I’ll go on a limb and say that even if you generally don’t
-                  like raisins in baked goods, you’ll like these cookies. I’m
-                  confident because I...generally don’t like raisins in baked
-                  goods. Soaking them in whiskey before baking gives them
-                  fantastic flavor and a softer, chewier texture. If you’re not
-                  feeling the whiskey, you could go for rum or, of course,
-                  simply warm water. But don’t skip the step of soaking them,
-                  it’s key. Toasting the oats in the oven is optional, but it
-                  does bring a nuttier flavor out in these cookies. (A step
-                  learned from Julia Turshen’s Small Victories.)
-                </IntroText>
-              </IntroContents>
-            </IntroDiv>
-          </ContentBox>
-          <ContentBox>
-            <IntroBanner url={introBanner} />
-          </ContentBox>
-        </ContentInner>
-      </ContentDiv>
+      {windowWidth < 600 ? (
+        <ContentDiv
+          style={{
+            paddingTop: "120px",
+            backgroundColor: Theme.gray,
+            height: "fit-content"
+          }}
+        >
+          <ContentInner
+            style={{ flexDirection: "column", height: "fit-content" }}
+          >
+            <ContentBox
+              style={{
+                width: "100%",
+                height: (windowWidth * 2) / 3
+                // minHeight: 270
+              }}
+            >
+              <IntroBanner url={introBanner} />
+            </ContentBox>
+            <ContentBox
+              style={{
+                width: "100%",
+                height: windowWidth,
+                minHeight: "fit-content"
+              }}
+            >
+              <IntroDiv
+                style={{ width: "90%", paddingTop: 20, paddingBottom: 20 }}
+              >
+                <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
+                <IntroTitle>= WATCH + YOURS</IntroTitle>
+                <IntroAuthor>
+                  <IntroText style={{ marginRight: 5 }}>made by</IntroText>
+                  <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
+                </IntroAuthor>
+                <IntroContents>
+                  <IntroText style={{ lineHeight: 2.5 }}>
+                    I’ll go on a limb and say that even if you generally don’t
+                    like raisins in baked goods, you’ll like these cookies. I’m
+                    confident because I...generally don’t like raisins in baked
+                    goods. Soaking them in whiskey before baking gives them
+                    fantastic flavor and a softer, chewier texture. If you’re
+                    not feeling the whiskey, you could go for rum or, of course,
+                    simply warm water. But don’t skip the step of soaking them,
+                    it’s key. Toasting the oats in the oven is optional, but it
+                    does bring a nuttier flavor out in these cookies. (A step
+                    learned from Julia Turshen’s Small Victories.)
+                  </IntroText>
+                </IntroContents>
+              </IntroDiv>
+            </ContentBox>
+          </ContentInner>
+        </ContentDiv>
+      ) : windowWidth < 800 ? (
+        <ContentDiv
+          style={{
+            paddingTop: "76px",
+            backgroundColor: Theme.gray,
+            height: "fit-content"
+          }}
+        >
+          <ContentInner
+            style={{ flexDirection: "column", height: "fit-content" }}
+          >
+            <ContentBox
+              style={{
+                width: "100%",
+                height: (windowWidth * 2) / 3
+                // minHeight: 360
+              }}
+            >
+              <IntroBanner url={introBanner} />
+            </ContentBox>
+            <ContentBox
+              style={{
+                width: "100%",
+                height: "fit-content",
+                minHeight: "fit-content"
+              }}
+            >
+              <IntroDiv
+                style={{ width: "90%", paddingTop: 40, paddingBottom: 40 }}
+              >
+                <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
+                <IntroTitle>= WATCH + YOURS</IntroTitle>
+                <IntroAuthor>
+                  <IntroText style={{ marginRight: 5 }}>made by</IntroText>
+                  <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
+                </IntroAuthor>
+                <IntroContents>
+                  <IntroText style={{ lineHeight: 2.5 }}>
+                    I’ll go on a limb and say that even if you generally don’t
+                    like raisins in baked goods, you’ll like these cookies. I’m
+                    confident because I...generally don’t like raisins in baked
+                    goods. Soaking them in whiskey before baking gives them
+                    fantastic flavor and a softer, chewier texture. If you’re
+                    not feeling the whiskey, you could go for rum or, of course,
+                    simply warm water. But don’t skip the step of soaking them,
+                    it’s key. Toasting the oats in the oven is optional, but it
+                    does bring a nuttier flavor out in these cookies. (A step
+                    learned from Julia Turshen’s Small Victories.)
+                  </IntroText>
+                </IntroContents>
+              </IntroDiv>
+            </ContentBox>
+          </ContentInner>
+        </ContentDiv>
+      ) : (
+        <ContentDiv style={{ backgroundColor: Theme.gray }}>
+          <ContentInner>
+            <ContentBox>
+              <IntroDiv>
+                <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
+                <IntroTitle>= WATCH + YOURS</IntroTitle>
+                <IntroAuthor>
+                  <IntroText style={{ marginRight: 5 }}>made by</IntroText>
+                  <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
+                </IntroAuthor>
+                <IntroContents>
+                  <IntroText style={{ lineHeight: 2.5 }}>
+                    I’ll go on a limb and say that even if you generally don’t
+                    like raisins in baked goods, you’ll like these cookies. I’m
+                    confident because I...generally don’t like raisins in baked
+                    goods. Soaking them in whiskey before baking gives them
+                    fantastic flavor and a softer, chewier texture. If you’re
+                    not feeling the whiskey, you could go for rum or, of course,
+                    simply warm water. But don’t skip the step of soaking them,
+                    it’s key. Toasting the oats in the oven is optional, but it
+                    does bring a nuttier flavor out in these cookies. (A step
+                    learned from Julia Turshen’s Small Victories.)
+                  </IntroText>
+                </IntroContents>
+              </IntroDiv>
+            </ContentBox>
+            <ContentBox>
+              <IntroBanner url={introBanner} />
+            </ContentBox>
+          </ContentInner>
+        </ContentDiv>
+      )}
       <ContentDiv style={{ backgroundColor: Theme.white }}>
         스크롤 테스트
       </ContentDiv>
-      <ContentDiv style={{ backgroundColor: "black", color: "white" }}>
+      <ContentDiv style={{ backgroundColor: Theme.lightGray }}>
         스크롤 테스트
       </ContentDiv>
       <ContentDiv style={{ backgroundColor: Theme.white }}>
