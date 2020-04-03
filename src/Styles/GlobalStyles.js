@@ -13,14 +13,12 @@ export default createGlobalStyle`
     @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap");
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
     body {
-        background-color: ${props => props.theme.white};
         color: ${props => props.theme.darkFont};
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 300;
         font-size: 14px;
     }
     a {
-        background-color: ${props => props.theme.white};
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 300;
         color: ${props => props.theme.darkFont};

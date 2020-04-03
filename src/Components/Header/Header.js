@@ -5,6 +5,7 @@ import Theme from "../../Styles/Theme";
 import iconMenu from "../../Assets/Test/iconMenu.png";
 import iconXmark from "../../Assets/Test/iconXmark.png";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -50,6 +51,9 @@ const MenuText = styled.div`
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  @media only screen and (max-width: 599px) {
+    margin: 0px 8px 1px 8px;
+  }
 `;
 
 const TitleDiv = styled.div`
@@ -58,13 +62,13 @@ const TitleDiv = styled.div`
   width: 20%;
 `;
 
-const TitleText = styled.div`
+const TitleText = styled(Link)`
   font-size: 24px;
   font-weight: 700;
   padding-bottom: 4px;
 `;
 
-const PopMenuDiv = styled.div`
+const PopLeftMenu = styled.div`
   position: fixed;
   top: 0;
   left: ${props => (props.popClicked ? "0%" : "-51%")};
@@ -74,6 +78,19 @@ const PopMenuDiv = styled.div`
   height: 100%;
   min-width: ${props => (props.windowWidth < 1000 ? "300px" : "480px")};
   transition: left 0.3s;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+`;
+
+const PopRightMenu = styled.div`
+  position: fixed;
+  top: 0;
+  right: ${props => (props.popClicked ? "0%" : "-51%")};
+  z-index: 1000;
+  background-color: ${props => props.theme.lightYellow};
+  width: ${props => (props.windowWidth < 1000 ? "100%" : "50%")};
+  height: 100%;
+  min-width: ${props => (props.windowWidth < 1000 ? "300px" : "480px")};
+  transition: right 0.3s;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
 `;
 
@@ -91,13 +108,41 @@ const PopMenuBox = styled.div`
   align-items: center;
 `;
 
+const PopCloseDiv = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-color: ${props => props.theme.darkFont};
+  visibility: hidden;
+`;
+
 export default () => {
   const { windowWidth } = useWindowDimensions();
   const scrollY = useWindowScroll(60);
-  const [popClicked, setPopClicked] = useState(false);
+  const [popLeftClicked, setPopLeftClicked] = useState(false);
+  const [popRightClicked, setPopRightClicked] = useState(false);
 
-  const popClickHandler = () => {
-    setPopClicked(!popClicked);
+  const popLeftClickHandler = () => {
+    setPopLeftClicked(!popLeftClicked);
+  };
+
+  const popRightClickHandler = () => {
+    setPopRightClicked(!popRightClicked);
+  };
+
+  const newTabHandler = () => {
+    window.open("https://lol.watchurs.com");
+  };
+
+  const popClickedOffHandler = () => {
+    if (popLeftClicked) {
+      setPopLeftClicked(false);
+    }
+    if (popRightClicked) {
+      setPopRightClicked(false);
+    }
   };
 
   return (
@@ -136,55 +181,69 @@ export default () => {
         >
           <div style={{ display: "flex", justifyContent: "space-beteween" }}>
             <LeftMenuDiv style={{ width: "50%" }}>
-              <MenuIcon
-                style={{ marginRight: 20 }}
-                onClick={popClickHandler}
-                url={iconMenu}
-              />
-              <MenuText>MENU</MenuText>
+              <MenuIcon onClick={popLeftClickHandler} url={iconMenu} />
+              <MenuText onClick={newTabHandler}>LOL</MenuText>
             </LeftMenuDiv>
             <RightMenuDiv style={{ width: "50%" }}>
-              <MenuText>Dev Intro</MenuText>
+              <MenuText onClick={popRightClickHandler}>개발자 정보</MenuText>
             </RightMenuDiv>
           </div>
           <TitleDiv style={{ width: "100%" }}>
-            <TitleText>WATCHURS</TitleText>
+            <TitleText to={"/home"}>WATCHURS</TitleText>
           </TitleDiv>
         </InnerWrapper>
       ) : (
         <InnerWrapper>
           <LeftMenuDiv>
-            <MenuIcon
-              style={{ marginRight: 20 }}
-              onClick={popClickHandler}
-              url={iconMenu}
-            />
-            <MenuText>MENU</MenuText>
+            <MenuIcon onClick={popLeftClickHandler} url={iconMenu} />
+            <MenuText onClick={newTabHandler}>리그오브레전드</MenuText>
           </LeftMenuDiv>
           <TitleDiv>
-            <TitleText>WATCHURS</TitleText>
+            <TitleText to={"/home"}>WATCHURS</TitleText>
           </TitleDiv>
           <RightMenuDiv>
-            <MenuText>Dev Intro</MenuText>
+            <MenuText onClick={popRightClickHandler}>개발자 정보</MenuText>
           </RightMenuDiv>
         </InnerWrapper>
       )}
-      <PopMenuDiv
+      <PopLeftMenu
         windowWidth={windowWidth}
-        popClicked={popClicked}
+        popClicked={popLeftClicked}
         style={
           windowWidth < 1000
-            ? popClicked
+            ? popLeftClicked
               ? { left: "0%" }
               : { left: "-101%", transition: "left 0.3s, width 0.3s" }
             : null
         }
       >
         <PopMenuInner>
-          <MenuIcon onClick={popClickHandler} url={iconXmark} />
+          <MenuIcon onClick={popLeftClickHandler} url={iconXmark} />
           <PopMenuBox>팝업 테스트</PopMenuBox>
         </PopMenuInner>
-      </PopMenuDiv>
+      </PopLeftMenu>
+      <PopRightMenu
+        windowWidth={windowWidth}
+        popClicked={popRightClicked}
+        style={
+          windowWidth < 1000
+            ? popRightClicked
+              ? { right: "0%" }
+              : { right: "-101%", transition: "right 0.3s, width 0.3s" }
+            : null
+        }
+      >
+        <PopMenuInner>
+          <MenuIcon onClick={popRightClickHandler} url={iconXmark} />
+          <PopMenuBox>팝업 테스트</PopMenuBox>
+        </PopMenuInner>
+      </PopRightMenu>
+      <PopCloseDiv
+        onClick={popClickedOffHandler}
+        style={
+          popLeftClicked || popRightClicked ? { visibility: "visible" } : null
+        }
+      />
     </Wrapper>
   );
 };
