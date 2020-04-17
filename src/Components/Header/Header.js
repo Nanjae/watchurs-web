@@ -38,7 +38,7 @@ const RightMenuDiv = styled.div`
 `;
 
 const MenuIcon = styled.div`
-  background-image: url(${props => props.url});
+  background-image: url(${(props) => props.url});
   background-size: cover;
   background-position: center;
   width: 14px;
@@ -71,12 +71,12 @@ const TitleText = styled(Link)`
 const PopLeftMenu = styled.div`
   position: fixed;
   top: 0;
-  left: ${props => (props.popClicked ? "0%" : "-51%")};
+  left: ${(props) => (props.popClicked ? "0%" : "-51%")};
   z-index: 1000;
-  background-color: ${props => props.theme.lightYellow};
-  width: ${props => (props.windowWidth < 1000 ? "100%" : "50%")};
+  background-color: ${(props) => props.theme.lightYellow};
+  width: ${(props) => (props.windowWidth < 1000 ? "100%" : "50%")};
   height: 100%;
-  min-width: ${props => (props.windowWidth < 1000 ? "300px" : "480px")};
+  min-width: ${(props) => (props.windowWidth < 1000 ? "300px" : "480px")};
   transition: left 0.3s;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
 `;
@@ -84,12 +84,12 @@ const PopLeftMenu = styled.div`
 const PopRightMenu = styled.div`
   position: fixed;
   top: 0;
-  right: ${props => (props.popClicked ? "0%" : "-51%")};
+  right: ${(props) => (props.popClicked ? "0%" : "-51%")};
   z-index: 1000;
-  background-color: ${props => props.theme.lightYellow};
-  width: ${props => (props.windowWidth < 1000 ? "100%" : "50%")};
+  background-color: ${(props) => props.theme.lightYellow};
+  width: ${(props) => (props.windowWidth < 1000 ? "100%" : "50%")};
   height: 100%;
-  min-width: ${props => (props.windowWidth < 1000 ? "300px" : "480px")};
+  min-width: ${(props) => (props.windowWidth < 1000 ? "300px" : "480px")};
   transition: right 0.3s;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
 `;
@@ -114,7 +114,7 @@ const PopCloseDiv = styled.div`
   width: 100%;
   height: 100%;
   opacity: 0.3;
-  background-color: ${props => props.theme.darkFont};
+  background-color: ${(props) => props.theme.darkFont};
   visibility: hidden;
 `;
 
@@ -154,19 +154,19 @@ export default () => {
               height: "68px",
               backgroundColor: Theme.white,
               boxShadow: "0 2px 4px 1px rgba(0, 0, 0, 0.1)",
-              transition: `background-color 0.2s`
+              transition: `background-color 0.2s`,
             }
           : windowWidth < 800
           ? {
               backgroundColor: Theme.white,
               boxShadow: "0 2px 4px 1px rgba(0, 0, 0, 0.1)",
-              transition: `background-color 0.2s`
+              transition: `background-color 0.2s`,
             }
           : scrollY >= 80
           ? {
               backgroundColor: Theme.white,
               boxShadow: "0 2px 4px 1px rgba(0, 0, 0, 0.1)",
-              transition: `background-color 0.2s`
+              transition: `background-color 0.2s`,
             }
           : { backgroundColor: null, transition: `background-color 0.2s` }
       }
@@ -176,7 +176,7 @@ export default () => {
           style={{
             flexDirection: "column",
             justifyContent: "space-between",
-            height: "100%"
+            height: "100%",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-beteween" }}>
