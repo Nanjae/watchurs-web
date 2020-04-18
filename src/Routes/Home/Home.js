@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Theme from "../../Styles/Theme";
 import introBanner from "../../Assets/Images/labtop_coffee.jpg";
+import iconPreparing from "../../Assets/Test/iconPreparing.png";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   height: fit-content;
   width: 100%;
   max-width: 1780px;
-  background-color: ${(props) => props.theme.gray};
+  background-color: ${(props) => props.theme.white};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +57,7 @@ const ContentSndDiv = styled.div`
   width: 100%;
 `;
 
-// 인트로 컨텐츠
+// Intro 컨텐츠
 
 const IntroDiv = styled.div`
   height: fit-content;
@@ -99,35 +100,161 @@ const IntroBanner = styled.div`
   height: 100%;
 `;
 
-// 서비스 목록 컨텐츠
+// Explorer Services 타이틀
+
+const ServiceTitleDiv = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 599px) {
+    margin-top: 30px;
+  }
+  @media screen and (min-width: 600px) {
+    margin-top: 30px;
+  }
+  @media screen and (min-width: 800px) {
+    margin-top: 50px;
+  }
+  @media screen and (min-width: 1300px) {
+    margin-top: 50px;
+  }
+`;
+
+const ServiceTitleText = styled.div`
+  font-size: 24px;
+  font-weight: 400;
+`;
+
+// Explore Services 컨텐츠
 
 const ServiceDiv = styled.div`
   height: fit-content;
-  /* background-color: black; */
   display: grid;
   width: 100%;
   @media screen and (max-width: 599px) {
     grid-template-columns: repeat(1, 1fr);
     min-height: 1200px;
+    margin: 10px 0px;
   }
   @media screen and (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 900px;
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 1800px;
+    margin: 10px 0px;
   }
   @media screen and (min-width: 800px) {
     grid-template-columns: repeat(2, 1fr);
     min-height: 1200px;
+    margin: 40px 0px;
   }
   @media screen and (min-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1440px;
     min-height: 840px;
+    margin: 40px 0px;
   }
 `;
 
 const ServiceBox = styled.div`
-  /* background-color: brown; */
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ServiceInner = styled.div`
+  @media screen and (max-width: 599px) {
+    width: 330px;
+    height: 180px;
+  }
+  @media screen and (min-width: 600px) {
+    width: 560px;
+    height: 280px;
+  }
+  @media screen and (min-width: 800px) {
+    width: 380px;
+    height: 380px;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 1300px) {
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+// Explorer Services 내부
+
+const ServiceImageBox = styled.div`
+  @media screen and (max-width: 599px) {
+    width: 180px;
+    height: 180px;
+  }
+  @media screen and (min-width: 600px) {
+    width: 280px;
+    height: 280px;
+  }
+  @media screen and (min-width: 800px) {
+    width: 300px;
+    height: 300px;
+  }
+  @media screen and (min-width: 1300px) {
+    width: 320px;
+    height: 320px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ServiceImage = styled.div`
+  width: 70%;
+  height: 70%;
+  background-image: url(${(props) => props.url});
+  background-size: cover;
+`;
+
+const ServiceTextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: 599px) {
+    justify-content: center;
+    height: 180px;
+    width: 150px;
+  }
+  @media screen and (min-width: 600px) {
+    justify-content: center;
+    height: 280px;
+    width: 280px;
+  }
+  @media screen and (min-width: 800px) {
+    justify-content: flex-start;
+    margin-top: 20px;
+    height: 60px;
+    width: 300px;
+  }
+  @media screen and (min-width: 1300px) {
+    justify-content: flex-start;
+    margin-top: 20px;
+    height: 60px;
+    width: 320px;
+  }
+`;
+
+const ServiceHeadText = styled.div`
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+`;
+
+const ServiceMainText = styled.div`
+  font-size: 14px;
+  font-weight: 400;
 `;
 
 export default () => {
@@ -170,7 +297,7 @@ export default () => {
                 <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
                 <IntroTitle>= WATCH + YOURS</IntroTitle>
                 <IntroAuthor>
-                  <IntroText style={{ marginRight: 5 }}>made by</IntroText>
+                  <IntroText style={{ marginRight: 5 }}>Author</IntroText>
                   <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
                 </IntroAuthor>
                 <IntroContents>
@@ -222,7 +349,7 @@ export default () => {
                 <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
                 <IntroTitle>= WATCH + YOURS</IntroTitle>
                 <IntroAuthor>
-                  <IntroText style={{ marginRight: 5 }}>made by</IntroText>
+                  <IntroText style={{ marginRight: 5 }}>Author</IntroText>
                   <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
                 </IntroAuthor>
                 <IntroContents>
@@ -251,7 +378,7 @@ export default () => {
                 <IntroTitle style={{ marginBottom: 10 }}>WATCHURS</IntroTitle>
                 <IntroTitle>= WATCH + YOURS</IntroTitle>
                 <IntroAuthor>
-                  <IntroText style={{ marginRight: 5 }}>made by</IntroText>
+                  <IntroText style={{ marginRight: 5 }}>Author</IntroText>
                   <IntroText style={{ fontWeight: 500 }}>Nanjae</IntroText>
                 </IntroAuthor>
                 <IntroContents>
@@ -276,44 +403,224 @@ export default () => {
           </ContentFstInner>
         </ContentFstDiv>
       )}
+      <ServiceTitleDiv>
+        <ServiceTitleText>Explore Services</ServiceTitleText>
+      </ServiceTitleDiv>
       {windowWidth < 600 ? (
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
           <ServiceDiv>
-            <ServiceBox style={{ backgroundColor: Theme.black }} />
-            <ServiceBox style={{ backgroundColor: Theme.random }} />
-            <ServiceBox style={{ backgroundColor: Theme.gray }} />
-            <ServiceBox style={{ backgroundColor: Theme.lightYellow }} />
-            <ServiceBox style={{ backgroundColor: Theme.darkFont }} />
-            <ServiceBox style={{ backgroundColor: Theme.darkFontH }} />
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
           </ServiceDiv>
         </ContentSndDiv>
       ) : windowWidth < 800 ? (
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
           <ServiceDiv>
-            <ServiceBox style={{ backgroundColor: Theme.black }} />
-            <ServiceBox style={{ backgroundColor: Theme.random }} />
-            <ServiceBox style={{ backgroundColor: Theme.gray }} />
-            <ServiceBox style={{ backgroundColor: Theme.lightYellow }} />
-            <ServiceBox style={{ backgroundColor: Theme.darkFont }} />
-            <ServiceBox style={{ backgroundColor: Theme.darkFontH }} />
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
           </ServiceDiv>
         </ContentSndDiv>
       ) : (
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
           <ServiceDiv>
-            <ServiceBox style={{ backgroundColor: Theme.black }} />
-            <ServiceBox style={{ backgroundColor: Theme.random }} />
-            <ServiceBox style={{ backgroundColor: Theme.gray }} />
-            <ServiceBox style={{ backgroundColor: Theme.lightYellow }} />
-            <ServiceBox style={{ backgroundColor: Theme.darkFont }} />
-            <ServiceBox style={{ backgroundColor: Theme.darkFontH }} />
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
+            <ServiceBox>
+              <ServiceInner>
+                <ServiceImageBox>
+                  <ServiceImage url={iconPreparing} />
+                </ServiceImageBox>
+                <ServiceTextBox>
+                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
+                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                </ServiceTextBox>
+              </ServiceInner>
+            </ServiceBox>
           </ServiceDiv>
         </ContentSndDiv>
       )}
       <ContentDiv style={{ backgroundColor: Theme.lightGray }}>
-        스크롤 테스트
-      </ContentDiv>
-      <ContentDiv style={{ backgroundColor: Theme.white }}>
         스크롤 테스트
       </ContentDiv>
     </Wrapper>
