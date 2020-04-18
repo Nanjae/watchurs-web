@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Theme from "../../Styles/Theme";
 import introBanner from "../../Assets/Images/labtop_coffee.jpg";
@@ -212,10 +212,11 @@ const ServiceImageBox = styled.div`
 `;
 
 const ServiceImage = styled.div`
-  width: 70%;
-  height: 70%;
   background-image: url(${(props) => props.url});
   background-size: cover;
+  width: ${(props) => (props.focus ? "70%" : "60%")};
+  height: ${(props) => (props.focus ? "70%" : "60%")};
+  transition: width 0.3s, height 0.3s;
 `;
 
 const ServiceTextBox = styled.div`
@@ -259,10 +260,19 @@ const ServiceMainText = styled.div`
 
 export default () => {
   const { windowWidth } = useWindowDimensions();
+  const [serviceFocused, setServiceFocused] = useState(0);
 
   const introTextMainString = `와쳐스는 당신의 일상 속에서 생기는 한 눈에 보고싶은 정보들을 간편하게 보여주는 서비스를 목표로 하는 개인 프로젝트입니다. 자주 보는 방송 플랫폼의 브로드캐스터(스트리머, BJ 등) 정보나 일상 속의 여러 분야에서 생기는 사소하지만 가끔씩 찾아보게 될지도 모를 정보들을 수집, 가공하여 제공합니다. 언제 어디서나 와쳐스를 통해 당신이 관심있는 정보들을 볼 수 있기를 바랍니다.`;
 
   const introTextSubString = `< Let's WATCH YOURS via WATCHURS >`;
+
+  const enterHandler = (number) => {
+    setServiceFocused(number);
+  };
+
+  const leaveHandler = () => {
+    setServiceFocused(0);
+  };
 
   return (
     <Wrapper>
@@ -410,9 +420,19 @@ export default () => {
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
           <ServiceDiv>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(1);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 1 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -421,9 +441,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(2);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 2 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -432,9 +462,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(3);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 3 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -443,9 +483,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(4);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 4 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -454,9 +504,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(5);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 5 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -465,9 +525,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(6);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 6 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -481,9 +551,19 @@ export default () => {
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
           <ServiceDiv>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(1);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 1 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -492,9 +572,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(2);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 2 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -503,9 +593,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(3);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 3 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -514,9 +614,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(4);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 4 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -525,9 +635,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(5);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 5 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -536,9 +656,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(6);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 6 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -552,9 +682,19 @@ export default () => {
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
           <ServiceDiv>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(1);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 1 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -563,9 +703,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(2);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 2 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -574,9 +724,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(3);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 3 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -585,9 +745,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(4);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 4 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -596,9 +766,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(5);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 5 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
@@ -607,9 +787,19 @@ export default () => {
               </ServiceInner>
             </ServiceBox>
             <ServiceBox>
-              <ServiceInner>
+              <ServiceInner
+                onMouseEnter={() => {
+                  enterHandler(6);
+                }}
+                onMouseLeave={() => {
+                  leaveHandler();
+                }}
+              >
                 <ServiceImageBox>
-                  <ServiceImage url={iconPreparing} />
+                  <ServiceImage
+                    focus={serviceFocused === 6 ? true : false}
+                    url={iconPreparing}
+                  />
                 </ServiceImageBox>
                 <ServiceTextBox>
                   <ServiceHeadText>서비스 준비중</ServiceHeadText>
