@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
 `;
 
 const ContentDiv = styled.div`
@@ -109,16 +110,20 @@ const ServiceTitleDiv = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 599px) {
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 5px;
   }
   @media screen and (min-width: 600px) {
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
   @media screen and (min-width: 800px) {
-    margin-top: 50px;
+    margin-top: 60px;
+    margin-bottom: 40px;
   }
   @media screen and (min-width: 1300px) {
-    margin-top: 50px;
+    margin-top: 80px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -136,23 +141,23 @@ const ServiceDiv = styled.div`
   @media screen and (max-width: 599px) {
     grid-template-columns: repeat(1, 1fr);
     min-height: 1200px;
-    margin: 10px 0px;
+    margin-bottom: 20px;
   }
   @media screen and (min-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
     min-height: 1800px;
-    margin: 10px 0px;
+    margin-bottom: 20px;
   }
   @media screen and (min-width: 800px) {
     grid-template-columns: repeat(2, 1fr);
     min-height: 1200px;
-    margin: 40px 0px;
+    margin-bottom: 60px;
   }
   @media screen and (min-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1440px;
     min-height: 840px;
-    margin: 40px 0px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -811,7 +816,7 @@ export default () => {
         </ContentSndDiv>
       )}
       <ContentDiv style={{ backgroundColor: Theme.lightGray }}>
-        스크롤 테스트
+        뭐 만들지 고민해보자!
       </ContentDiv>
     </Wrapper>
   );
