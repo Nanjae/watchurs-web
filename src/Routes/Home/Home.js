@@ -139,6 +139,7 @@ const ServiceTitleMainText = styled.div`
 const ServiceTitleSubText = styled.div`
   font-size: 18px;
   font-weight: 300;
+  color: ${(props) => props.theme.darkFontH};
 `;
 
 // Explore Services 컨텐츠
@@ -276,6 +277,7 @@ const ServiceHeadText = styled.div`
 const ServiceMainText = styled.div`
   font-size: 16px;
   font-weight: 300;
+  color: ${(props) => props.theme.darkGray};
   @media screen and (max-width: 599px) {
     font-size: 14px;
   }
