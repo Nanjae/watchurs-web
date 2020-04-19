@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Theme from "../../Styles/Theme";
 import introBanner from "../../Assets/Images/labtop_coffee.jpg";
+import watchurs_lol from "../../Assets/Images/watchurs_lol.jpg";
 import iconPreparing from "../../Assets/Test/iconPreparing.png";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
@@ -105,17 +106,18 @@ const IntroBanner = styled.div`
 
 const ServiceTitleDiv = styled.div`
   width: 100%;
-  height: 40px;
+  height: fit-content;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 599px) {
     margin-top: 40px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
   @media screen and (min-width: 600px) {
     margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   @media screen and (min-width: 800px) {
     margin-top: 60px;
@@ -127,9 +129,15 @@ const ServiceTitleDiv = styled.div`
   }
 `;
 
-const ServiceTitleText = styled.div`
+const ServiceTitleMainText = styled.div`
   font-size: 24px;
   font-weight: 400;
+  margin-bottom: 20px;
+`;
+
+const ServiceTitleSubText = styled.div`
+  font-size: 18px;
+  font-weight: 300;
 `;
 
 // Explore Services 컨텐츠
@@ -204,63 +212,71 @@ const ServiceImageBox = styled.div`
     height: 280px;
   }
   @media screen and (min-width: 800px) {
-    width: 300px;
-    height: 300px;
+    width: 290px;
+    height: 290px;
   }
   @media screen and (min-width: 1300px) {
-    width: 320px;
-    height: 320px;
+    width: 310px;
+    height: 310px;
   }
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 `;
 
 const ServiceImage = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
-  width: ${(props) => (props.focus ? "70%" : "60%")};
-  height: ${(props) => (props.focus ? "70%" : "60%")};
+  width: ${(props) => (props.focus ? "85%" : "75%")};
+  height: ${(props) => (props.focus ? "85%" : "75%")};
   transition: width 0.3s, height 0.3s;
+  border-radius: 8px;
 `;
 
 const ServiceTextBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   @media screen and (max-width: 599px) {
+    margin-left: 10px;
     justify-content: center;
     height: 180px;
-    width: 150px;
+    width: 140px;
   }
   @media screen and (min-width: 600px) {
+    margin-left: 20px;
     justify-content: center;
     height: 280px;
-    width: 280px;
+    width: 260px;
   }
   @media screen and (min-width: 800px) {
     justify-content: flex-start;
-    margin-top: 20px;
-    height: 60px;
-    width: 300px;
+    height: 90px;
+    width: 290px;
   }
   @media screen and (min-width: 1300px) {
     justify-content: flex-start;
-    margin-top: 20px;
-    height: 60px;
-    width: 320px;
+    height: 90px;
+    width: 310px;
   }
 `;
 
 const ServiceHeadText = styled.div`
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 599px) {
+    font-size: 18px;
+  }
 `;
 
 const ServiceMainText = styled.div`
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
+  @media screen and (max-width: 599px) {
+    font-size: 14px;
+  }
 `;
 
 export default () => {
@@ -270,6 +286,16 @@ export default () => {
   const introTextMainString = `와쳐스는 당신의 일상 속에서 생기는 한 눈에 보고싶은 정보들을 간편하게 보여주는 서비스를 목표로 하는 개인 프로젝트입니다. 자주 보는 방송 플랫폼의 브로드캐스터(스트리머, BJ 등) 정보나 일상 속의 여러 분야에서 생기는 사소하지만 가끔씩 찾아보게 될지도 모를 정보들을 수집, 가공하여 제공합니다. 언제 어디서나 와쳐스를 통해 당신이 관심있는 정보들을 볼 수 있기를 바랍니다.`;
 
   const introTextSubString = `< Let's WATCH YOURS via WATCHURS >`;
+
+  const lolTextMainString = `브로드캐스터 LOL 랭킹 조회`;
+
+  const lolTextSubString = `브로드캐스터 리그 오브 레전드 랭킹을 한 눈에 파악할 수 있는
+  서비스입니다. 소환사명 변경 시 자동 추적되도록
+  설계되었습니다.`;
+
+  const newTabHandler = (newTab) => {
+    window.open(newTab);
+  };
 
   const enterHandler = (number) => {
     setServiceFocused(number);
@@ -419,7 +445,10 @@ export default () => {
         </ContentFstDiv>
       )}
       <ServiceTitleDiv>
-        <ServiceTitleText>Explore Services</ServiceTitleText>
+        <ServiceTitleMainText>Explore Services</ServiceTitleMainText>
+        <ServiceTitleSubText>
+          당신을 위한 서비스는 계속 추가됩니다.
+        </ServiceTitleSubText>
       </ServiceTitleDiv>
       {windowWidth < 600 ? (
         <ContentSndDiv style={{ backgroundColor: Theme.white }}>
@@ -432,16 +461,22 @@ export default () => {
                 onMouseLeave={() => {
                   leaveHandler();
                 }}
+                onClick={() => {
+                  newTabHandler("https://lol.watchurs.com");
+                }}
               >
                 <ServiceImageBox>
                   <ServiceImage
                     focus={serviceFocused === 1 ? true : false}
-                    url={iconPreparing}
+                    url={watchurs_lol}
+                    style={{
+                      border: `1px solid ${Theme.darkWhite}`,
+                    }}
                   />
                 </ServiceImageBox>
                 <ServiceTextBox>
-                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
-                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                  <ServiceHeadText>{lolTextMainString}</ServiceHeadText>
+                  <ServiceMainText>{lolTextSubString}</ServiceMainText>
                 </ServiceTextBox>
               </ServiceInner>
             </ServiceBox>
@@ -563,16 +598,22 @@ export default () => {
                 onMouseLeave={() => {
                   leaveHandler();
                 }}
+                onClick={() => {
+                  newTabHandler("https://lol.watchurs.com");
+                }}
               >
                 <ServiceImageBox>
                   <ServiceImage
                     focus={serviceFocused === 1 ? true : false}
-                    url={iconPreparing}
+                    url={watchurs_lol}
+                    style={{
+                      border: `1px solid ${Theme.darkWhite}`,
+                    }}
                   />
                 </ServiceImageBox>
                 <ServiceTextBox>
-                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
-                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                  <ServiceHeadText>{lolTextMainString}</ServiceHeadText>
+                  <ServiceMainText>{lolTextSubString}</ServiceMainText>
                 </ServiceTextBox>
               </ServiceInner>
             </ServiceBox>
@@ -694,16 +735,22 @@ export default () => {
                 onMouseLeave={() => {
                   leaveHandler();
                 }}
+                onClick={() => {
+                  newTabHandler("https://lol.watchurs.com");
+                }}
               >
                 <ServiceImageBox>
                   <ServiceImage
                     focus={serviceFocused === 1 ? true : false}
-                    url={iconPreparing}
+                    url={watchurs_lol}
+                    style={{
+                      border: `1px solid ${Theme.darkWhite}`,
+                    }}
                   />
                 </ServiceImageBox>
                 <ServiceTextBox>
-                  <ServiceHeadText>서비스 준비중</ServiceHeadText>
-                  <ServiceMainText>서비스 준비중 입니다.</ServiceMainText>
+                  <ServiceHeadText>{lolTextMainString}</ServiceHeadText>
+                  <ServiceMainText>{lolTextSubString}</ServiceMainText>
                 </ServiceTextBox>
               </ServiceInner>
             </ServiceBox>

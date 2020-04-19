@@ -5,6 +5,7 @@ export default {
   darkFontH: "#585756",
   lightYellow: "#F8F6F2",
   lightGray: "#F6F4F0",
+  darkWhite: "#EBEBEB",
   black: "#000000",
   random: "#EA4F22",
 };
