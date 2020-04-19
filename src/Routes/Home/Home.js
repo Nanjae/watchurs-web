@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
+  user-select: none;
 `;
 
 const ContentDiv = styled.div`
@@ -198,6 +199,7 @@ const ServiceInner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 // Explorer Services 내부
