@@ -228,8 +228,8 @@ const ServiceImageBox = styled.div`
 const ServiceImage = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
-  width: ${(props) => (props.focus ? "85%" : "75%")};
-  height: ${(props) => (props.focus ? "85%" : "75%")};
+  width: ${(props) => (props.focus ? "80%" : "70%")};
+  height: ${(props) => (props.focus ? "80%" : "70%")};
   transition: width 0.3s, height 0.3s;
   border-radius: 8px;
 `;
