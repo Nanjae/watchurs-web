@@ -12,6 +12,7 @@ import logo_netlify from "../../Assets/Images/Logos/logo_netlify.png";
 import logo_nodejs from "../../Assets/Images/Logos/logo_nodejs.png";
 import logo_react from "../../Assets/Images/Logos/logo_react.png";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import Footer from "../../Components/Footer";
 
 const Wrapper = styled.div`
   height: fit-content;
@@ -1079,6 +1080,7 @@ export default () => {
           </TechStackDiv>
         </ContentTrdDiv>
       )}
+      <Footer />
     </Wrapper>
   );
 };
