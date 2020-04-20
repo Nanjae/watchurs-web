@@ -4,6 +4,13 @@ import Theme from "../../Styles/Theme";
 import introBanner from "../../Assets/Images/labtop_coffee.jpg";
 import watchurs_lol from "../../Assets/Images/watchurs_lol.jpg";
 import iconPreparing from "../../Assets/Test/iconPreparing.png";
+import logo_github from "../../Assets/Images/Logos/logo_github.png";
+import logo_apollo from "../../Assets/Images/Logos/logo_apollo.png";
+import logo_graphql from "../../Assets/Images/Logos/logo_graphql.png";
+import logo_heroku from "../../Assets/Images/Logos/logo_heroku.png";
+import logo_netlify from "../../Assets/Images/Logos/logo_netlify.png";
+import logo_nodejs from "../../Assets/Images/Logos/logo_nodejs.png";
+import logo_react from "../../Assets/Images/Logos/logo_react.png";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
@@ -17,14 +24,6 @@ const Wrapper = styled.div`
   justify-content: center;
   box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
   user-select: none;
-`;
-
-const ContentDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 840px;
-  width: 100%;
 `;
 
 const ContentFstDiv = styled.div`
@@ -58,6 +57,15 @@ const ContentSndDiv = styled.div`
   justify-content: center;
   height: fit-content;
   width: 100%;
+`;
+
+const ContentTrdDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: 100%;
+  background-color: ${(props) => props.theme.lightGray};
 `;
 
 // Intro 컨텐츠
@@ -281,6 +289,140 @@ const ServiceMainText = styled.div`
   @media screen and (max-width: 599px) {
     font-size: 14px;
   }
+`;
+
+// 기술 스택 타이틀
+
+const TechStackTitleDiv = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.lightGray};
+  @media screen and (max-width: 599px) {
+    padding-top: 40px;
+  }
+  @media screen and (min-width: 600px) {
+    padding-top: 40px;
+  }
+  @media screen and (min-width: 800px) {
+    padding-top: 60px;
+  }
+  @media screen and (min-width: 1300px) {
+    padding-top: 80px;
+  }
+`;
+
+const TechStackMainText = styled.div`
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+`;
+
+const TechStackSubText = styled.div`
+  font-size: 18px;
+  font-weight: 300;
+  color: ${(props) => props.theme.darkFontH};
+`;
+
+// 기술 스택 컨텐츠
+
+const TechStackDiv = styled.div`
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 599px) {
+    min-height: 600px;
+  }
+  @media screen and (min-width: 600px) {
+    min-height: 700px;
+  }
+  @media screen and (min-width: 800px) {
+    min-height: 600px;
+  }
+  @media screen and (min-width: 1300px) {
+    max-width: 1440px;
+    min-height: 840px;
+  }
+`;
+
+const TechStackFstBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 599px) {
+    height: 120px;
+  }
+  @media screen and (min-width: 600px) {
+    height: 140px;
+  }
+  @media screen and (min-width: 800px) {
+    height: 160px;
+  }
+  @media screen and (min-width: 1300px) {
+    height: 240px;
+  }
+`;
+
+const TechStackSndBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 599px) {
+    height: 120px;
+  }
+  @media screen and (min-width: 600px) {
+    height: 140px;
+  }
+  @media screen and (min-width: 800px) {
+    height: 160px;
+  }
+  @media screen and (min-width: 1300px) {
+    height: 240px;
+  }
+`;
+
+const TechStackInner = styled.div`
+  @media screen and (max-width: 599px) {
+    width: 50%;
+    height: 100%;
+  }
+  @media screen and (min-width: 600px) {
+    width: 50%;
+    height: 100%;
+  }
+  @media screen and (min-width: 800px) {
+    width: 33%;
+    height: 100%;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 1300px) {
+    width: 33%;
+    height: 100%;
+    flex-direction: column;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+// 기술 스택 내부
+
+const TechStackImage = styled.div`
+  background-image: url(${(props) => props.url});
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 60%;
 `;
 
 export default () => {
@@ -866,9 +1008,77 @@ export default () => {
           </ServiceDiv>
         </ContentSndDiv>
       )}
-      <ContentDiv style={{ backgroundColor: Theme.lightGray }}>
-        뭐 만들지 고민해보자!
-      </ContentDiv>
+      <TechStackTitleDiv>
+        <TechStackMainText>Tech Stack</TechStackMainText>
+        <TechStackSubText>와쳐스에서 사용된 기술 스택입니다.</TechStackSubText>
+      </TechStackTitleDiv>
+      {windowWidth < 800 ? (
+        <ContentTrdDiv>
+          <TechStackDiv>
+            <TechStackFstBox>
+              <TechStackInner>
+                <TechStackImage url={logo_react} />
+              </TechStackInner>
+            </TechStackFstBox>
+            <TechStackFstBox>
+              <TechStackInner>
+                <TechStackImage url={logo_nodejs} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_graphql} />
+              </TechStackInner>
+            </TechStackFstBox>
+            <TechStackSndBox>
+              <TechStackInner>
+                <TechStackImage url={logo_apollo} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_github} />
+              </TechStackInner>
+            </TechStackSndBox>
+            <TechStackFstBox>
+              <TechStackInner>
+                <TechStackImage url={logo_netlify} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_heroku} />
+              </TechStackInner>
+            </TechStackFstBox>
+          </TechStackDiv>
+        </ContentTrdDiv>
+      ) : (
+        <ContentTrdDiv>
+          <TechStackDiv>
+            <TechStackFstBox>
+              <TechStackInner>
+                <TechStackImage url={logo_nodejs} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_graphql} />
+              </TechStackInner>
+            </TechStackFstBox>
+            <TechStackSndBox>
+              <TechStackInner>
+                <TechStackImage url={logo_apollo} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_react} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_github} />
+              </TechStackInner>
+            </TechStackSndBox>
+            <TechStackFstBox>
+              <TechStackInner>
+                <TechStackImage url={logo_netlify} />
+              </TechStackInner>
+              <TechStackInner>
+                <TechStackImage url={logo_heroku} />
+              </TechStackInner>
+            </TechStackFstBox>
+          </TechStackDiv>
+        </ContentTrdDiv>
+      )}
     </Wrapper>
   );
 };
