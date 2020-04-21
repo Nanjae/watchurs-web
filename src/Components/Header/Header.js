@@ -217,7 +217,7 @@ export default () => {
             : null
         }
       >
-        <PopMenuInner>
+        <PopMenuInner style={{ alignItems: "flex-start" }}>
           <MenuIcon onClick={popLeftClickHandler} url={iconXmark} />
           <PopMenuBox>팝업 테스트</PopMenuBox>
         </PopMenuInner>
@@ -233,7 +233,7 @@ export default () => {
             : null
         }
       >
-        <PopMenuInner>
+        <PopMenuInner style={{ alignItems: "flex-end" }}>
           <MenuIcon onClick={popRightClickHandler} url={iconXmark} />
           <PopMenuBox>팝업 테스트</PopMenuBox>
         </PopMenuInner>
