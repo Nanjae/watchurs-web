@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Theme from "../../../Styles/Theme";
 import watchurs_lol from "../../../Assets/Images/watchurs_lol.jpg";
-import iconPreparing from "../../../Assets/Test/iconPreparing.png";
+import iconPreparing from "../../../Assets/Icons/iconPreparing.png";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 
 const ContentDiv = styled.div`

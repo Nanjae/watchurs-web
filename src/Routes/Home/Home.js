@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   user-select: none;
 `;
 
-//
+// Ref Point
 
 const IntroRefPoint = styled.div``;
 const ServicesRefPoint = styled.div``;
