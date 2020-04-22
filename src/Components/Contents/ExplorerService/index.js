@@ -113,13 +113,13 @@ const ServiceTextBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   @media screen and (max-width: 599px) {
-    margin-left: 10px;
+    margin-left: 0px 10px;
     justify-content: center;
     height: 180px;
-    width: 140px;
+    width: 130px;
   }
   @media screen and (min-width: 600px) {
-    margin-left: 20px;
+    margin: 0px 10px;
     justify-content: center;
     height: 280px;
     width: 260px;

@@ -149,13 +149,13 @@ const MenuBox = styled.div`
   cursor: pointer;
 `;
 
-export default () => {
+export default ({ introScroll, servicesScroll, techStackScroll }) => {
   const { windowWidth } = useWindowDimensions();
 
   const menu_1 = "Broadcaster(LOL)";
-  const menu_2 = "Tech Stack";
-  const menu_3 = "Terms of Use";
-  const menu_4 = "Instagram";
+  const menu_2 = "Intro";
+  const menu_3 = "Explorer Services";
+  const menu_4 = "Tech Stack";
   const menu_5 = "Facebook";
   const menu_6 = "Contact Developer";
 
@@ -167,9 +167,9 @@ export default () => {
             <MenuInner>
               <MenuGrid>
                 <MenuBox>{menu_1}</MenuBox>
-                <MenuBox>{menu_2}</MenuBox>
-                <MenuBox>{menu_3}</MenuBox>
-                <MenuBox>{menu_4}</MenuBox>
+                <MenuBox onClick={introScroll}>{menu_2}</MenuBox>
+                <MenuBox onClick={servicesScroll}>{menu_3}</MenuBox>
+                <MenuBox onClick={techStackScroll}>{menu_4}</MenuBox>
                 <MenuBox>{menu_5}</MenuBox>
                 <MenuBox>{menu_6}</MenuBox>
               </MenuGrid>
@@ -189,9 +189,9 @@ export default () => {
             <MenuInner>
               <MenuGrid>
                 <MenuBox>{menu_1}</MenuBox>
-                <MenuBox>{menu_2}</MenuBox>
-                <MenuBox>{menu_3}</MenuBox>
-                <MenuBox>{menu_4}</MenuBox>
+                <MenuBox onClick={introScroll}>{menu_2}</MenuBox>
+                <MenuBox onClick={servicesScroll}>{menu_3}</MenuBox>
+                <MenuBox onClick={techStackScroll}>{menu_4}</MenuBox>
                 <MenuBox>{menu_5}</MenuBox>
                 <MenuBox>{menu_6}</MenuBox>
               </MenuGrid>
@@ -218,9 +218,9 @@ export default () => {
             <MenuInner>
               <MenuGrid>
                 <MenuBox>{menu_1}</MenuBox>
-                <MenuBox>{menu_2}</MenuBox>
-                <MenuBox>{menu_3}</MenuBox>
-                <MenuBox>{menu_4}</MenuBox>
+                <MenuBox onClick={introScroll}>{menu_2}</MenuBox>
+                <MenuBox onClick={servicesScroll}>{menu_3}</MenuBox>
+                <MenuBox onClick={techStackScroll}>{menu_4}</MenuBox>
                 <MenuBox>{menu_5}</MenuBox>
                 <MenuBox>{menu_6}</MenuBox>
               </MenuGrid>

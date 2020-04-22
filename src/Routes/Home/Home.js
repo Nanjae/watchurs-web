@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import Intro from "../../Components/Contents/Intro";
 import ExplorerService from "../../Components/Contents/ExplorerService";
 import TechStack from "../../Components/Contents/TechStack";
 import Footer from "../../Components/Footer";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import Header from "../../Components/Header";
 
 const Wrapper = styled.div`
   height: fit-content;
@@ -17,6 +19,12 @@ const Wrapper = styled.div`
   box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
   user-select: none;
 `;
+
+//
+
+const IntroRefPoint = styled.div``;
+const ServicesRefPoint = styled.div``;
+const TechStackRefPoint = styled.div``;
 
 // Explorer Services 타이틀
 
@@ -93,23 +101,67 @@ const TechStackSubText = styled.div`
   color: ${(props) => props.theme.darkFontH};
 `;
 
+const scrollToRef = (ref, offTop = 76) =>
+  window.scrollTo(0, ref.current.offsetTop - offTop);
+
+const useMountEffect = (fun) => useEffect(fun, []);
+
 export default () => {
+  const { windowWidth } = useWindowDimensions();
+
+  const introRef = useRef(null);
+  const servicesRef = useRef(null);
+  const techStackRef = useRef(null);
+
+  useMountEffect(
+    () => scrollToRef(introRef),
+    () => scrollToRef(servicesRef),
+    () => scrollToRef(techStackRef),
+    []
+  );
+
   return (
-    <Wrapper>
-      <Intro />
-      <ServiceTitleDiv>
-        <ServiceTitleMainText>Explore Services</ServiceTitleMainText>
-        <ServiceTitleSubText>
-          당신을 위한 서비스는 계속 추가됩니다.
-        </ServiceTitleSubText>
-      </ServiceTitleDiv>
-      <ExplorerService />
-      <TechStackTitleDiv>
-        <TechStackMainText>Tech Stack</TechStackMainText>
-        <TechStackSubText>와쳐스에서 사용된 기술 스택입니다.</TechStackSubText>
-      </TechStackTitleDiv>
-      <TechStack />
-      <Footer />
-    </Wrapper>
+    <>
+      <Header
+        introScroll={() => scrollToRef(introRef, windowWidth < 600 ? 120 : 76)}
+        servicesScroll={() =>
+          scrollToRef(servicesRef, windowWidth < 600 ? 120 : 76)
+        }
+        techStackScroll={() =>
+          scrollToRef(techStackRef, windowWidth < 600 ? 120 : 76)
+        }
+      />
+      <Wrapper>
+        <IntroRefPoint ref={introRef} />
+        <Intro />
+        <ServicesRefPoint ref={servicesRef} />
+        <ServiceTitleDiv>
+          <ServiceTitleMainText>Explore Services</ServiceTitleMainText>
+          <ServiceTitleSubText>
+            당신을 위한 서비스는 계속 추가됩니다.
+          </ServiceTitleSubText>
+        </ServiceTitleDiv>
+        <ExplorerService />
+        <TechStackRefPoint ref={techStackRef} />
+        <TechStackTitleDiv>
+          <TechStackMainText>Tech Stack</TechStackMainText>
+          <TechStackSubText>
+            와쳐스에서 사용된 기술 스택입니다.
+          </TechStackSubText>
+        </TechStackTitleDiv>
+        <TechStack />
+        <Footer
+          introScroll={() =>
+            scrollToRef(introRef, windowWidth < 600 ? 120 : 76)
+          }
+          servicesScroll={() =>
+            scrollToRef(servicesRef, windowWidth < 600 ? 120 : 76)
+          }
+          techStackScroll={() =>
+            scrollToRef(techStackRef, windowWidth < 600 ? 120 : 76)
+          }
+        />
+      </Wrapper>
+    </>
   );
 };

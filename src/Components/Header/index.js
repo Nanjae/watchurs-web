@@ -6,6 +6,7 @@ import iconMenu from "../../Assets/Test/iconMenu.png";
 import iconXmark from "../../Assets/Test/iconXmark.png";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import { Link } from "react-router-dom";
+import PopLeft from "./PopLeft";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 44px;
   padding: 8px 16px 24px 16px;
+  user-select: none;
 `;
 
 const InnerWrapper = styled.div`
@@ -97,6 +99,7 @@ const PopRightMenu = styled.div`
 const PopMenuInner = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 24px 48px;
 `;
 
@@ -118,7 +121,7 @@ const PopCloseDiv = styled.div`
   visibility: hidden;
 `;
 
-export default () => {
+export default ({ introScroll, servicesScroll, techStackScroll }) => {
   const { windowWidth } = useWindowDimensions();
   const scrollY = useWindowScroll(60);
   const [popLeftClicked, setPopLeftClicked] = useState(false);
@@ -218,8 +221,17 @@ export default () => {
         }
       >
         <PopMenuInner style={{ alignItems: "flex-start" }}>
-          <MenuIcon onClick={popLeftClickHandler} url={iconXmark} />
-          <PopMenuBox>팝업 테스트</PopMenuBox>
+          <MenuIcon
+            style={{ marginTop: 15 }}
+            onClick={popLeftClickHandler}
+            url={iconXmark}
+          />
+          <PopLeft
+            introScroll={introScroll}
+            servicesScroll={servicesScroll}
+            techStackScroll={techStackScroll}
+            popLeftClickHandler={popLeftClickHandler}
+          />
         </PopMenuInner>
       </PopLeftMenu>
       <PopRightMenu
@@ -234,7 +246,11 @@ export default () => {
         }
       >
         <PopMenuInner style={{ alignItems: "flex-end" }}>
-          <MenuIcon onClick={popRightClickHandler} url={iconXmark} />
+          <MenuIcon
+            style={{ marginTop: 15 }}
+            onClick={popRightClickHandler}
+            url={iconXmark}
+          />
           <PopMenuBox>팝업 테스트</PopMenuBox>
         </PopMenuInner>
       </PopRightMenu>

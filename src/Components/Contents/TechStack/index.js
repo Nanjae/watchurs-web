@@ -118,7 +118,6 @@ const TechStackImage = styled.div`
 
 export default () => {
   const { windowWidth } = useWindowDimensions();
-
   return (
     <>
       {windowWidth < 800 ? (
