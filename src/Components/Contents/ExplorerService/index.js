@@ -144,7 +144,6 @@ const ServiceHeadText = styled.div`
     font-size: 18px;
   }
 `;
-
 const ServiceMainText = styled.div`
   font-size: 16px;
   font-weight: 300;
