@@ -6,8 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { DefaultRoute } from "./Routes";
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  display: flex;
   user-select: none;
 `;
 

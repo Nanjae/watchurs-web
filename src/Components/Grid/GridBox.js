@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Theme from "../../Styles/Theme";
 
 const GridBox = styled.div`
   width: 290px;
-  height: 100%;
+  height: 190px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -14,7 +15,8 @@ const GridOpacity = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: ${(props) => (props.url === null ? null : "black")};
+  background-color: ${(props) =>
+    props.url === null ? Theme.black : Theme.themeOrigin};
   opacity: ${(props) => (props.focused ? "0.6" : "0.3")};
   transition: opacity 0.3s;
 `;
@@ -40,10 +42,11 @@ const GridText = styled.div`
 `;
 
 export default ({
-  size = 1,
+  row = 1,
+  column = 1,
   theme = null,
   cursor = null,
-  url = "null",
+  url = null,
   text = null,
   textSize = 14,
 }) => {
@@ -58,7 +61,8 @@ export default ({
         setFocused(false);
       }}
       style={{
-        width: 290 * size + 10 * (size - 1),
+        width: 290 * row + 10 * (row - 1),
+        height: 190 * column + 10 * (column - 1),
         backgroundColor: theme,
         cursor: cursor,
       }}

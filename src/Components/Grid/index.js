@@ -20,13 +20,22 @@ const GridInner = styled.div`
   height: 790px;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 110px;
+  margin-top: 130px;
 `;
 
 const GridRow = styled.div`
   display: flex;
-  width: 100%;
-  height: 190px;
+  width: ${(props) => props.row * 290 + (props.row - 1) * 10}px;
+  height: fit-content
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const GridColumn = styled.div`
+  display: flex;
+  width: fit-content;
+  height: ${(props) => props.column * 190 + (props.column - 1) * 10}px;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
@@ -34,54 +43,40 @@ export default () => {
   return (
     <GridDiv>
       <GridInner>
-        <GridRow>
-          <GridBox size={1} url={bg_lol} cursor={"pointer"} />
-          <GridBox
-            size={2}
-            url={bg_lol}
-            cursor={"pointer"}
-            text={"리그 오브 레전드"}
-            textSize={24}
-          />
-          <GridBox
-            size={1}
-            text={"NANJAE"}
-            textSize={24}
-            theme={Theme.grayTrd}
-          />
+        <GridRow row={4}>
+          <GridColumn column={2}>
+            <GridRow row={1}>
+              <GridBox row={1} column={2}></GridBox>
+            </GridRow>
+          </GridColumn>
+          <GridColumn column={2}>
+            <GridRow row={3}>
+              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1}></GridBox>
+            </GridRow>
+            <GridRow row={3}>
+              <GridBox row={2} column={1}></GridBox>
+              <GridBox row={1} column={1}></GridBox>
+            </GridRow>
+          </GridColumn>
         </GridRow>
-        <GridRow>
-          <GridBox
-            size={1}
-            text={"디자인"}
-            textSize={24}
-            theme={Theme.graySnd}
-          />
-          <GridBox size={1} text={"하기"} textSize={24} theme={Theme.grayTrd} />
-          <GridBox size={1} url={bg_lol} cursor={"pointer"} />
-          <GridBox size={1} url={bg_lol} cursor={"pointer"} />
-        </GridRow>
-        <GridRow>
-          <GridBox
-            size={2}
-            url={bg_lol}
-            cursor={"pointer"}
-            text={"전략적 팀 전투"}
-            textSize={24}
-          />
-          <GridBox size={1} text={"싫다"} textSize={24} theme={Theme.grayFst} />
-          <GridBox size={1} url={bg_lol} cursor={"pointer"} />
-        </GridRow>
-        <GridRow>
-          <GridBox size={1} url={bg_lol} cursor={"pointer"} />
-          <GridBox size={1} text={"!!!"} textSize={24} theme={Theme.graySnd} />
-          <GridBox
-            size={2}
-            url={bg_lol}
-            cursor={"pointer"}
-            text={"커피는 카페라떼"}
-            textSize={24}
-          />
+        <GridRow row={4}>
+          <GridColumn column={2}>
+            <GridRow row={2}>
+              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1}></GridBox>
+            </GridRow>
+            <GridRow row={2}>
+              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1}></GridBox>
+            </GridRow>
+          </GridColumn>
+          <GridColumn column={2}>
+            <GridRow row={2}>
+              <GridBox row={2} column={2} />
+            </GridRow>
+          </GridColumn>
         </GridRow>
       </GridInner>
     </GridDiv>

@@ -5,12 +5,14 @@ import icon_search from "../../Assets/Icons/icon_search.png";
 
 const HeaderDiv = styled.div`
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
-  height: 90px;
+  height: 100px;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  padding-bottom: 30px;
+  background-color: ${(props) => props.theme.deepGray};
 `;
 
 const HeaderInner = styled.div`
@@ -47,6 +49,7 @@ const HeaderTitleDiv = styled.div`
 
 const HeaderTitleText = styled.div`
   font-size: 36px;
+  font-weight: 400;
   color: ${(props) => props.theme.lightGray};
   cursor: pointer;
 `;

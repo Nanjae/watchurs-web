@@ -10,8 +10,9 @@ export default {
   lightGray: "#F6F4F0",
   darkGray: "#606060",
   deepGray: "#1E1F20",
-  grayFst: "#482848",
-  graySnd: "#683868",
-  grayTrd: "#884888",
-  grayFth: "#A858A8",
+  themeOrigin: "#281828",
+  themeFst: "#482848",
+  themeSnd: "#683868",
+  themeTrd: "#884888",
+  themeFth: "#A858A8",
 };

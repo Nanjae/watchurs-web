@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: fit-content;
+  width: 200%;
   height: fit-content;
 `;
 
@@ -21,7 +21,6 @@ export default () => {
       <Wrapper
         style={{
           backgroundColor: Theme.deepGray,
-          minWidth: windowWidth,
           minHeight: windowHeight,
         }}
       >
