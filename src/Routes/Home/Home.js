@@ -9,17 +9,21 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
 `;
 
 export default () => {
-  const { windowHeight } = useWindowDimensions();
+  const { windowWidth, windowHeight } = useWindowDimensions();
 
   return (
     <>
       <Wrapper
-        style={{ backgroundColor: Theme.deepGray, minHeight: windowHeight }}
+        style={{
+          backgroundColor: Theme.deepGray,
+          minWidth: windowWidth,
+          minHeight: windowHeight,
+        }}
       >
         <Header />
         <Grid />
