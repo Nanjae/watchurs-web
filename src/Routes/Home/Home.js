@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  height: fit-content;
 `;
 
 export default () => {
@@ -18,7 +19,7 @@ export default () => {
   return (
     <>
       <Wrapper
-        style={{ backgroundColor: Theme.deepGray, height: windowHeight }}
+        style={{ backgroundColor: Theme.deepGray, minHeight: windowHeight }}
       >
         <Header />
         <Grid />

@@ -10,6 +10,7 @@ const GridDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 50px;
 `;
 
 const GridInner = styled.div`
