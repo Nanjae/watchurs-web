@@ -46,30 +46,36 @@ export default () => {
         <GridRow row={4}>
           <GridColumn column={2}>
             <GridRow row={1}>
-              <GridBox row={1} column={2}></GridBox>
+              <GridBox row={1} column={2} url={bg_lol} />
             </GridRow>
           </GridColumn>
           <GridColumn column={2}>
             <GridRow row={3}>
-              <GridBox row={1} column={1}></GridBox>
-              <GridBox row={1} column={1}></GridBox>
-              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1} url={bg_lol} />
+              <GridBox row={1} column={1} />
+              <GridBox row={1} column={1} />
             </GridRow>
             <GridRow row={3}>
-              <GridBox row={2} column={1}></GridBox>
-              <GridBox row={1} column={1}></GridBox>
+              <GridBox
+                row={2}
+                column={1}
+                url={bg_lol}
+                text={"이경은바보"}
+                textSize={28}
+              />
+              <GridBox row={1} column={1} />
             </GridRow>
           </GridColumn>
         </GridRow>
         <GridRow row={4}>
           <GridColumn column={2}>
             <GridRow row={2}>
-              <GridBox row={1} column={1}></GridBox>
-              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1} />
+              <GridBox row={1} column={1} />
             </GridRow>
             <GridRow row={2}>
-              <GridBox row={1} column={1}></GridBox>
-              <GridBox row={1} column={1}></GridBox>
+              <GridBox row={1} column={1} />
+              <GridBox row={1} column={1} />
             </GridRow>
           </GridColumn>
           <GridColumn column={2}>

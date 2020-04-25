@@ -12,7 +12,7 @@ const HeaderDiv = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
-  background-color: ${(props) => props.theme.deepGray};
+  background-color: ${(props) => props.theme.lightGray};
 `;
 
 const HeaderInner = styled.div`
@@ -50,7 +50,7 @@ const HeaderTitleDiv = styled.div`
 const HeaderTitleText = styled.div`
   font-size: 36px;
   font-weight: 400;
-  color: ${(props) => props.theme.lightGray};
+  color: ${(props) => props.theme.darkFont};
   cursor: pointer;
 `;
 

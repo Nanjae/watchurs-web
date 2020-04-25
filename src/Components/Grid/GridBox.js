@@ -15,9 +15,8 @@ const GridOpacity = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: ${(props) =>
-    props.url === null ? Theme.black : Theme.themeOrigin};
-  opacity: ${(props) => (props.focused ? "0.6" : "0.3")};
+  background-color: ${(props) => (props.url === null ? "black" : "black")};
+  opacity: ${(props) => (props.focused ? "0.4" : "0.2")};
   transition: opacity 0.3s;
 `;
 
@@ -25,13 +24,14 @@ const GridInner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: ${(props) => (props.focused ? "120%" : "100%")};
+  height: ${(props) => (props.focused ? "120%" : "100%")};
   background-image: url(${(props) => props.url});
   background-size: cover;
-  background-position-x: ${(props) => (props.focused ? "100%" : "90%")};
-  background-position-y: ${(props) => (props.focused ? "90%" : "100%")};
-  transition: background-position-x 0.3s, background-position-y 0.3s;
+  background-position-x: ${(props) => (props.focused ? "40%" : "20%")};
+  background-position-y: ${(props) => (props.focused ? "60%" : "80%")};
+  transition: width 0.3s, height 0.3s, background-position-x 0.3s,
+    background-position-y 0.3s;
 `;
 
 const GridText = styled.div`

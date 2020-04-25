@@ -20,7 +20,7 @@ export default () => {
     <>
       <Wrapper
         style={{
-          backgroundColor: Theme.deepGray,
+          backgroundColor: Theme.lightGray,
           minHeight: windowHeight,
         }}
       >
