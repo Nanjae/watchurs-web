@@ -110,6 +110,7 @@ const IntroUpperHeaderLogoIcon = styled.div`
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 const IntroUpperHeaderTitleText = styled.div`
@@ -119,6 +120,7 @@ const IntroUpperHeaderTitleText = styled.div`
   color: ${(props) => props.theme.fontDark};
   transform: rotate(-90deg) translate(-50%, -280%);
   white-space: nowrap;
+  cursor: pointer;
 `;
 
 const IntroUpperHeaderMenuDiv = styled.div`
@@ -234,6 +236,7 @@ const IntroUpperHeaderIcon = styled.div`
   width: 20px;
   height: 20px;
   margin-top: 40px;
+  cursor: pointer;
 `;
 
 const IntroUpperCenterDiv = styled.div`
@@ -358,6 +361,7 @@ const IntroMainContentIcon = styled.div`
   width: 20px;
   height: 20px;
   margin-left: 20px;
+  cursor: pointer;
 `;
 
 const IntroMainContentTextDiv = styled.div`
@@ -391,6 +395,8 @@ const IntroMainContentTextSubBox = styled.div`
   display: flex;
   align-items: flex-end;
   margin-top: 40px;
+  opacity: 1;
+  transition: opacity 0.3s;
   cursor: pointer;
 `;
 
@@ -407,7 +413,7 @@ const IntroMainContentTextSubBoxLine = styled.div`
   margin-left: 20px;
   margin-bottom: 5px;
   background-color: ${(props) => props.theme.whiteDark};
-  transition: width 0.3s, margin-left 0.3s, background-color 0.3s;
+  transition: margin-left 0.3s;
 `;
 
 const IntroMainSwiperDiv = styled.div`
@@ -451,6 +457,7 @@ export default () => {
   const [upperTextIndex, setUpperTextIndex] = useState("01");
   const [headerMenuEnter, setHeaderMenuEnter] = useState(false);
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
+  const [moreEnter, setMoreEnter] = useState(false);
 
   return (
     <>
@@ -556,11 +563,21 @@ export default () => {
                     <IntroMainContentTextMainBox>
                       It features some modern and classic elements in the decor.
                     </IntroMainContentTextMainBox>
-                    <IntroMainContentTextSubBox>
+                    <IntroMainContentTextSubBox
+                      style={moreEnter ? { opacity: "0.5" } : null}
+                      onMouseEnter={() => {
+                        setMoreEnter(true);
+                      }}
+                      onMouseLeave={() => {
+                        setMoreEnter(false);
+                      }}
+                    >
                       <IntroMainContentTextSubBoxText>
                         more
                       </IntroMainContentTextSubBoxText>
-                      <IntroMainContentTextSubBoxLine />
+                      <IntroMainContentTextSubBoxLine
+                        style={moreEnter ? { marginLeft: "15px" } : null}
+                      />
                     </IntroMainContentTextSubBox>
                   </IntroMainContentTextDiv>
                 </IntroMainContentDiv>
