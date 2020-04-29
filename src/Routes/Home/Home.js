@@ -6,6 +6,7 @@ import bg02 from "../../Assets/Images/Bg/bg02.jpg";
 import bg03 from "../../Assets/Images/Bg/bg03.jpg";
 import bg04 from "../../Assets/Images/Bg/bg04.jpg";
 import icon_contrast_dark from "../../Assets/Icons/icon_contrast_dark.png";
+import logo_watchurs_dark from "../../Assets/Images/Logos/logo_watchurs_dark.png";
 // import icon_contrast_light from "../../Assets/Icons/icon_contrast_light.png";
 import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
@@ -106,7 +107,8 @@ const IntroUpperHeaderTitleDiv = styled.div`
 `;
 
 const IntroUpperHeaderLogoIcon = styled.div`
-  background-color: white;
+  background-image: url(${(props) => props.url});
+  background-size: cover;
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
@@ -478,7 +480,7 @@ export default () => {
             <IntroUpperLeftDiv>
               <IntroUpperHeaderDiv>
                 <IntroUpperHeaderTitleDiv>
-                  <IntroUpperHeaderLogoIcon />
+                  <IntroUpperHeaderLogoIcon url={logo_watchurs_dark} />
                   <IntroUpperHeaderTitleText>
                     WATCHURS
                   </IntroUpperHeaderTitleText>
