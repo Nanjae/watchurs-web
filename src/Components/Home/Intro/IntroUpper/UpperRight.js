@@ -159,6 +159,7 @@ export default ({
   siteTheme,
   setSiteTheme,
   setUpperTextIndex,
+  scrollY,
 }) => {
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
   const [moreEnter, setMoreEnter] = useState(false);
@@ -175,13 +176,17 @@ export default ({
                 setSiteTheme(!siteTheme);
               }}
             >
-              <ContentIconText>
-                {siteTheme ? "LIGHT MODE" : "DARK MODE"}
-              </ContentIconText>
-              <ContentIcon
-                url={icon_contrast}
-                style={{ transform: "rotate(45deg)" }}
-              />
+              {scrollY > 50 ? null : (
+                <>
+                  <ContentIconText>
+                    {siteTheme ? "LIGHT MODE" : "DARK MODE"}
+                  </ContentIconText>
+                  <ContentIcon
+                    url={icon_contrast}
+                    style={{ transform: "rotate(45deg)" }}
+                  />
+                </>
+              )}
             </ContentIconDiv>
             <ContentTextDiv>
               <ContentTextTitle>Featured Project</ContentTextTitle>

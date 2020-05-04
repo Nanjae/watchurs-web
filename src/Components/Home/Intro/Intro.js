@@ -14,7 +14,13 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default ({ siteTheme, setSiteTheme }) => {
+export default ({
+  siteTheme,
+  setSiteTheme,
+  scrollY,
+  headerMenuEnter,
+  setHeaderMenuEnter,
+}) => {
   const { windowHeight } = useWindowDimensions();
   const [underBgIndex, setUnderBgIndex] = useState(bg01);
 
@@ -26,6 +32,9 @@ export default ({ siteTheme, setSiteTheme }) => {
           setUnderBgIndex={setUnderBgIndex}
           siteTheme={siteTheme}
           setSiteTheme={setSiteTheme}
+          scrollY={scrollY}
+          headerMenuEnter={headerMenuEnter}
+          setHeaderMenuEnter={setHeaderMenuEnter}
         />
       </Wrapper>
     </>

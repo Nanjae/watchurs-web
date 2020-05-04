@@ -13,13 +13,25 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export default ({ setUnderBgIndex, siteTheme, setSiteTheme }) => {
+export default ({
+  setUnderBgIndex,
+  siteTheme,
+  setSiteTheme,
+  scrollY,
+  headerMenuEnter,
+  setHeaderMenuEnter,
+}) => {
   const [upperTextIndex, setUpperTextIndex] = useState("01");
 
   return (
     <>
       <Wrapper>
-        <UpperLeft siteTheme={siteTheme} />
+        <UpperLeft
+          siteTheme={siteTheme}
+          scrollY={scrollY}
+          headerMenuEnter={headerMenuEnter}
+          setHeaderMenuEnter={setHeaderMenuEnter}
+        />
         <UpperCenter
           siteTheme={siteTheme}
           upperTextIndex={upperTextIndex}
@@ -30,6 +42,7 @@ export default ({ setUnderBgIndex, siteTheme, setSiteTheme }) => {
           setSiteTheme={setSiteTheme}
           setUnderBgIndex={setUnderBgIndex}
           setUpperTextIndex={setUpperTextIndex}
+          scrollY={scrollY}
         />
       </Wrapper>
     </>
