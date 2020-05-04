@@ -9,7 +9,7 @@ import MenuLine from "./Common/MenuLine";
 const Wrapper = styled.div`
   position: fixed;
   z-index: 100;
-  top: -76;
+  top: -76px;
   width: 100%;
   height: 75px;
   background-color: ${(props) => props.theme.bgMainColor};
@@ -38,6 +38,7 @@ const LogoIcon = styled.div`
   width: 50px;
   height: 50px;
   transition: background-image 0.3s;
+  cursor: pointer;
 `;
 
 const CenterDiv = styled.div`
@@ -105,7 +106,12 @@ export default ({
       <Wrapper style={scrollY > 50 ? { top: 0 } : { top: -76 }}>
         <Inner>
           <LeftDiv>
-            <LogoIcon url={logo_watchurs} />
+            <LogoIcon
+              onClick={() => {
+                window.location.reload();
+              }}
+              url={logo_watchurs}
+            />
           </LeftDiv>
           <CenterDiv>
             <MenuLineDiv

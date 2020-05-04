@@ -7,6 +7,7 @@ import Intro from "../../Components/Home/Intro/Intro";
 import About from "../../Components/Home/About/About";
 import Header from "../../Components/Home/Header";
 import { useWindowScroll } from "@react-hook/window-scroll";
+import GoTop from "../../Components/Home/Common/GoTop";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -49,6 +50,7 @@ export default () => {
             setHeaderMenuEnter={setHeaderMenuEnter}
           />
           <About />
+          <GoTop />
         </Wrapper>
       </ThemeProvider>
     </>

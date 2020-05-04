@@ -10,7 +10,6 @@ import icon_twitter_dark from "../../../../Assets/Icons/icon_twitter_dark.png";
 import icon_twitter_light from "../../../../Assets/Icons/icon_twitter_light.png";
 import MenuLine from "../../Common/MenuLine";
 import "swiper/css/swiper.css";
-import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 8%;
@@ -36,7 +35,7 @@ const TitleDiv = styled.div`
   align-items: flex-start;
 `;
 
-const LogoIcon = styled(Link)`
+const LogoIcon = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
   width: 60px;
@@ -46,7 +45,7 @@ const LogoIcon = styled(Link)`
   transition: background-image 0.3s;
 `;
 
-const TitleText = styled(Link)`
+const TitleText = styled.div`
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -123,8 +122,19 @@ export default ({
         {scrollY > 50 ? null : (
           <Inner>
             <TitleDiv>
-              <LogoIcon to={`/home`} url={logo_watchurs} />
-              <TitleText to={`/home`}>WATCHURS</TitleText>
+              <LogoIcon
+                onClick={() => {
+                  window.location.reload();
+                }}
+                url={logo_watchurs}
+              />
+              <TitleText
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                WATCHURS
+              </TitleText>
             </TitleDiv>
             <MenuDiv>
               <MenuInner
