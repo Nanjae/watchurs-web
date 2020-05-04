@@ -163,8 +163,6 @@ export default ({
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
   const [moreEnter, setMoreEnter] = useState(false);
 
-  console.log(siteTheme);
-
   const icon_contrast = siteTheme ? icon_contrast_light : icon_contrast_dark;
 
   return (
