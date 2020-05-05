@@ -106,8 +106,8 @@ const ContentTextSubBoxText = styled.div`
 const ContentTextSubBoxLine = styled.div`
   width: 70px;
   height: 2px;
-  margin-left: 20px;
-  margin-bottom: 5px;
+  margin-left: 15px;
+  margin-bottom: 6px;
   background-color: ${(props) => props.theme.lineMainColor};
   transition: margin-left 0.3s, background-color 0.3s;
 `;
@@ -209,7 +209,7 @@ export default ({
               >
                 <ContentTextSubBoxText>more</ContentTextSubBoxText>
                 <ContentTextSubBoxLine
-                  style={moreEnter ? { marginLeft: "15px" } : null}
+                  style={moreEnter ? { marginLeft: "10px" } : null}
                 />
               </ContentTextSubBox>
             </ContentTextDiv>

@@ -3,6 +3,7 @@ export default {
   bgSubColor: "#FFFFFF",
   borderMainColor: "#d7d7d7",
   fontMainColor: "#FFFFFF",
+  fontSubColor: "#282832",
   highlightColor: "#A1C950",
   lineMainColor: "#FFFFFF",
   lineSubColor: "#808080",
