@@ -9,14 +9,14 @@ import icon_search_dark from "../../../Assets/Icons/icon_search_dark.png";
 import icon_search_light from "../../../Assets/Icons/icon_search_light.png";
 import icon_search_highlight from "../../../Assets/Icons/icon_search_highlight.png";
 
-const ProjectWrapper = styled.div`
+const Wrapper = styled.div`
   height: fit-content;
   width: 100%;
   display: flex;
   justify-content: center;
 `;
 
-const ProjectInner = styled.div`
+const Inner = styled.div`
   height: fit-content;
   width: 1200px;
   padding: 50px 0px;
@@ -24,7 +24,7 @@ const ProjectInner = styled.div`
   justify-content: center;
 `;
 
-const ProjectTitleDiv = styled.div`
+const TitleDiv = styled.div`
   position: absolute;
   width: 100%;
   height: fit-content;
@@ -32,14 +32,14 @@ const ProjectTitleDiv = styled.div`
   justify-content: center;
 `;
 
-const ProjectTitleText = styled.div`
+const TitleText = styled.div`
   color: ${(props) => props.theme.fontSubColor};
   font-size: 300px;
   font-weight: 900;
   transition: color 0.3s;
 `;
 
-const ProjectImageDiv = styled.div`
+const ImageDiv = styled.div`
   z-index: 50;
   width: 1140px;
   height: fit-content;
@@ -48,12 +48,12 @@ const ProjectImageDiv = styled.div`
   margin: 220px 40px 0px 40px;
 `;
 
-const ProjectImageRow = styled.div`
+const ImageRow = styled.div`
   width: 530px;
   height: fit-content;
 `;
 
-const ProjectImageBox = styled.div`
+const ImageBox = styled.div`
   width: 100%;
   height: 630px;
   display: flex;
@@ -64,7 +64,7 @@ const ProjectImageBox = styled.div`
   }
 `;
 
-const ProjectImage = styled.div`
+const Image = styled.div`
   position: absolute;
   background-image: url(${(props) => props.url});
   background-size: cover;
@@ -73,7 +73,7 @@ const ProjectImage = styled.div`
   height: 630px;
 `;
 
-const ProjectImageSearchIcon = styled.div`
+const ImageSearchIcon = styled.div`
   position: absolute;
   z-index: 60;
   background-image: url(${(props) => props.url});
@@ -86,7 +86,7 @@ const ProjectImageSearchIcon = styled.div`
   cursor: pointer;
 `;
 
-const ProjectImageOpacity = styled.div`
+const ImageOpacity = styled.div`
   background-color: ${(props) => props.theme.bgMainColor};
   position: absolute;
   width: 430px;
@@ -98,7 +98,7 @@ const ProjectImageOpacity = styled.div`
   transition: opacity 0.3s, width 0.3s, height 0.3s;
 `;
 
-const ProjectImageOpacityLine = styled.div`
+const ImageOpacityLine = styled.div`
   width: 96%;
   height: 96%;
   border: 2px solid
@@ -110,9 +110,9 @@ const ProjectImageOpacityLine = styled.div`
   transition: border 0.3s;
 `;
 
-const ProjectMoreBox = styled.div`
+const MoreBox = styled.div`
   width: fit-content;
-  margin-top: 60px;
+  margin-top: 180px;
   display: flex;
   align-items: flex-end;
   opacity: 1;
@@ -120,14 +120,14 @@ const ProjectMoreBox = styled.div`
   transition: opacity 0.3s;
 `;
 
-const ProjectMoreText = styled.div`
+const MoreText = styled.div`
   color: ${(props) => props.theme.lineMainColor};
   font-size: 18px;
   font-weight: 400;
   transition: color 0.3s;
 `;
 
-const ProjectMoreLine = styled.div`
+const MoreLine = styled.div`
   background-color: ${(props) => props.theme.lineMainColor};
   width: 70px;
   height: 2px;
@@ -139,29 +139,29 @@ const ProjectMoreLine = styled.div`
 export default ({ siteTheme }) => {
   const [moreEnter, setMoreEnter] = useState(false);
   const [searchEnter, setSearchEnter] = useState(false);
-  const [projectEnter, setProjectEnter] = useState(0);
+  const [projectEnter, setEnter] = useState(0);
 
   const icon_search = siteTheme ? icon_search_light : icon_search_dark;
 
   return (
     <>
-      <ProjectWrapper>
-        <ProjectInner>
-          <ProjectTitleDiv>
-            <ProjectTitleText>project</ProjectTitleText>
-          </ProjectTitleDiv>
-          <ProjectImageDiv>
-            <ProjectImageRow style={{ marginTop: 200 }}>
-              <ProjectImageBox
+      <Wrapper>
+        <Inner>
+          <TitleDiv>
+            <TitleText>project</TitleText>
+          </TitleDiv>
+          <ImageDiv>
+            <ImageRow style={{ marginTop: 200 }}>
+              <ImageBox
                 onMouseEnter={() => {
-                  setProjectEnter(1);
+                  setEnter(1);
                 }}
                 onMouseLeave={() => {
-                  setProjectEnter(0);
+                  setEnter(0);
                 }}
               >
-                <ProjectImage url={bg01} />
-                <ProjectImageSearchIcon
+                <Image url={bg01} />
+                <ImageSearchIcon
                   url={searchEnter ? icon_search_highlight : icon_search}
                   style={projectEnter === 1 ? { opacity: 1 } : null}
                   onMouseEnter={() => {
@@ -171,26 +171,26 @@ export default ({ siteTheme }) => {
                     setSearchEnter(false);
                   }}
                 />
-                <ProjectImageOpacity
+                <ImageOpacity
                   style={
                     projectEnter === 1
                       ? { opacity: "0.4", width: 530, height: 630 }
                       : null
                   }
                 >
-                  <ProjectImageOpacityLine searchEnter={searchEnter} />
-                </ProjectImageOpacity>
-              </ProjectImageBox>
-              <ProjectImageBox
+                  <ImageOpacityLine searchEnter={searchEnter} />
+                </ImageOpacity>
+              </ImageBox>
+              <ImageBox
                 onMouseEnter={() => {
-                  setProjectEnter(3);
+                  setEnter(3);
                 }}
                 onMouseLeave={() => {
-                  setProjectEnter(0);
+                  setEnter(0);
                 }}
               >
-                <ProjectImage url={bg03} />
-                <ProjectImageSearchIcon
+                <Image url={bg03} />
+                <ImageSearchIcon
                   url={searchEnter ? icon_search_highlight : icon_search}
                   style={projectEnter === 3 ? { opacity: 1 } : null}
                   onMouseEnter={() => {
@@ -200,28 +200,28 @@ export default ({ siteTheme }) => {
                     setSearchEnter(false);
                   }}
                 />
-                <ProjectImageOpacity
+                <ImageOpacity
                   style={
                     projectEnter === 3
                       ? { opacity: "0.4", width: 530, height: 630 }
                       : null
                   }
                 >
-                  <ProjectImageOpacityLine searchEnter={searchEnter} />
-                </ProjectImageOpacity>
-              </ProjectImageBox>
-            </ProjectImageRow>
-            <ProjectImageRow>
-              <ProjectImageBox
+                  <ImageOpacityLine searchEnter={searchEnter} />
+                </ImageOpacity>
+              </ImageBox>
+            </ImageRow>
+            <ImageRow>
+              <ImageBox
                 onMouseEnter={() => {
-                  setProjectEnter(2);
+                  setEnter(2);
                 }}
                 onMouseLeave={() => {
-                  setProjectEnter(0);
+                  setEnter(0);
                 }}
               >
-                <ProjectImage url={bg02} />
-                <ProjectImageSearchIcon
+                <Image url={bg02} />
+                <ImageSearchIcon
                   url={searchEnter ? icon_search_highlight : icon_search}
                   style={projectEnter === 2 ? { opacity: 1 } : null}
                   onMouseEnter={() => {
@@ -231,26 +231,26 @@ export default ({ siteTheme }) => {
                     setSearchEnter(false);
                   }}
                 />
-                <ProjectImageOpacity
+                <ImageOpacity
                   style={
                     projectEnter === 2
                       ? { opacity: "0.4", width: 530, height: 630 }
                       : null
                   }
                 >
-                  <ProjectImageOpacityLine searchEnter={searchEnter} />
-                </ProjectImageOpacity>
-              </ProjectImageBox>
-              <ProjectImageBox
+                  <ImageOpacityLine searchEnter={searchEnter} />
+                </ImageOpacity>
+              </ImageBox>
+              <ImageBox
                 onMouseEnter={() => {
-                  setProjectEnter(4);
+                  setEnter(4);
                 }}
                 onMouseLeave={() => {
-                  setProjectEnter(0);
+                  setEnter(0);
                 }}
               >
-                <ProjectImage url={bg04} />
-                <ProjectImageSearchIcon
+                <Image url={bg04} />
+                <ImageSearchIcon
                   url={searchEnter ? icon_search_highlight : icon_search}
                   style={projectEnter === 4 ? { opacity: 1 } : null}
                   onMouseEnter={() => {
@@ -260,17 +260,17 @@ export default ({ siteTheme }) => {
                     setSearchEnter(false);
                   }}
                 />
-                <ProjectImageOpacity
+                <ImageOpacity
                   style={
                     projectEnter === 4
                       ? { opacity: "0.4", width: 530, height: 630 }
                       : null
                   }
                 >
-                  <ProjectImageOpacityLine searchEnter={searchEnter} />
-                </ProjectImageOpacity>
-              </ProjectImageBox>
-              <ProjectMoreBox
+                  <ImageOpacityLine searchEnter={searchEnter} />
+                </ImageOpacity>
+              </ImageBox>
+              <MoreBox
                 style={moreEnter ? { opacity: "0.6" } : null}
                 onMouseEnter={() => {
                   setMoreEnter(true);
@@ -279,15 +279,13 @@ export default ({ siteTheme }) => {
                   setMoreEnter(false);
                 }}
               >
-                <ProjectMoreText>view more</ProjectMoreText>
-                <ProjectMoreLine
-                  style={moreEnter ? { marginLeft: "10px" } : null}
-                />
-              </ProjectMoreBox>
-            </ProjectImageRow>
-          </ProjectImageDiv>
-        </ProjectInner>
-      </ProjectWrapper>
+                <MoreText>view more</MoreText>
+                <MoreLine style={moreEnter ? { marginLeft: "10px" } : null} />
+              </MoreBox>
+            </ImageRow>
+          </ImageDiv>
+        </Inner>
+      </Wrapper>
     </>
   );
 };
