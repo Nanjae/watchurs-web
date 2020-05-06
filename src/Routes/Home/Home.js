@@ -27,6 +27,56 @@ const Wrapper = styled.div`
   }
 `;
 
+const FooterWrapper = styled.div`
+  background-color: ${(props) => props.theme.bgFooterColor};
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FooterInner = styled.div`
+  width: 1160px;
+  height: 350px;
+  margin: 80px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const FooterTopDiv = styled.div`
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+const FooterTopBox = styled.div`
+  background-color: white;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  :first-child {
+    margin-right: 80px;
+  }
+`;
+
+const FooterBottomDiv = styled.div`
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+const FooterBottomBox = styled.div`
+  background-color: white;
+  width: 70%;
+  height: 100%;
+`;
+
 export default () => {
   const [siteTheme, setSiteTheme] = useState(false);
   const [headerMenuEnter, setHeaderMenuEnter] = useState(false);
@@ -52,6 +102,17 @@ export default () => {
           />
           <About />
           <Project siteTheme={siteTheme} />
+          <FooterWrapper>
+            <FooterInner>
+              <FooterTopDiv>
+                <FooterTopBox></FooterTopBox>
+                <FooterTopBox></FooterTopBox>
+              </FooterTopDiv>
+              <FooterBottomDiv>
+                <FooterBottomBox></FooterBottomBox>
+              </FooterBottomDiv>
+            </FooterInner>
+          </FooterWrapper>
           <GoTop />
         </Wrapper>
       </ThemeProvider>

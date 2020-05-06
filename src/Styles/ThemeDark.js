@@ -7,4 +7,5 @@ export default {
   highlightColor: "#A1C950",
   lineMainColor: "#FFFFFF",
   lineSubColor: "#808080",
+  bgFooterColor: "#0F0F12",
 };

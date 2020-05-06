@@ -41,16 +41,17 @@ const TitleText = styled.div`
 
 const ImageDiv = styled.div`
   z-index: 50;
-  width: 1140px;
+  width: 100%;
   height: fit-content;
   display: flex;
   justify-content: space-between;
-  margin: 220px 40px 0px 40px;
+  margin-top: 220px;
 `;
 
 const ImageRow = styled.div`
   width: 530px;
   height: fit-content;
+  padding: 30px;
 `;
 
 const ImageBox = styled.div`
