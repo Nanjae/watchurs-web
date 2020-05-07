@@ -10,6 +10,13 @@ import GoTop from "../../Components/Home/Common/GoTop";
 import Project from "../../Components/Home/Project/Project";
 import Footer from "../../Components/Home/Footer";
 import Swiper from "react-id-swiper";
+import logo_graphql from "../../Assets/Images/Logos/logo_graphql.png";
+import logo_react from "../../Assets/Images/Logos/logo_react.png";
+import logo_github from "../../Assets/Images/Logos/logo_github.png";
+import logo_apollo from "../../Assets/Images/Logos/logo_apollo.png";
+import logo_netlify from "../../Assets/Images/Logos/logo_netlify.png";
+import logo_nodejs from "../../Assets/Images/Logos/logo_nodejs.png";
+import logo_heroku from "../../Assets/Images/Logos/logo_heroku.png";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -94,30 +101,35 @@ const StackTitleBottomText = styled.div`
 `;
 
 const StackSwiperDiv = styled.div`
-  width: 100%;
-  height: 400px;
+  width: 1120px;
+  height: fit-content;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  cursor: e-resize;
 `;
 
 const StackSwiperImageBox = styled.div`
   display: flex;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
+  justify-content: center;
 `;
 
 const StackSwiperImage = styled.div`
   background-image: url(${(props) => props.url});
-  background-size: cover;
-  width: 280px;
-  height: 180px;
-  box-shadow: 5px 5px 3px ${(props) => props.theme.bgSubColor};
-  border: 1px solid ${(props) => props.theme.bgSubColor};
-  margin-bottom: 8px;
-  transition: box-shadow 0.3s, border 0.3s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 80px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
 `;
 
 export default () => {
   const [siteTheme, setSiteTheme] = useState(false);
   const [headerMenuEnter, setHeaderMenuEnter] = useState(false);
+  const [techEnter, setTechEnter] = useState(0);
   const scrollY = useWindowScroll();
 
   return (
@@ -152,15 +164,90 @@ export default () => {
                 </StackTitleBox>
               </StackTitleDiv>
               <StackSwiperDiv>
-                <Swiper>
+                <Swiper slidesPerView={5} spaceBetween={50}>
                   <StackSwiperImageBox>
-                    <StackSwiperImage />
+                    <StackSwiperImage
+                      url={logo_react}
+                      onMouseEnter={() => {
+                        setTechEnter(1);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 1 ? { opacity: 1 } : null}
+                    />
                   </StackSwiperImageBox>
                   <StackSwiperImageBox>
-                    <StackSwiperImage />
+                    <StackSwiperImage
+                      url={logo_github}
+                      onMouseEnter={() => {
+                        setTechEnter(2);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 2 ? { opacity: 1 } : null}
+                    />
                   </StackSwiperImageBox>
                   <StackSwiperImageBox>
-                    <StackSwiperImage />
+                    <StackSwiperImage
+                      url={logo_nodejs}
+                      onMouseEnter={() => {
+                        setTechEnter(3);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 3 ? { opacity: 1 } : null}
+                    />
+                  </StackSwiperImageBox>
+                  <StackSwiperImageBox>
+                    <StackSwiperImage
+                      url={logo_graphql}
+                      onMouseEnter={() => {
+                        setTechEnter(4);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 4 ? { opacity: 1 } : null}
+                    />
+                  </StackSwiperImageBox>
+                  <StackSwiperImageBox>
+                    <StackSwiperImage
+                      url={logo_apollo}
+                      onMouseEnter={() => {
+                        setTechEnter(5);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 5 ? { opacity: 1 } : null}
+                    />
+                  </StackSwiperImageBox>
+                  <StackSwiperImageBox>
+                    <StackSwiperImage
+                      url={logo_heroku}
+                      onMouseEnter={() => {
+                        setTechEnter(6);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 6 ? { opacity: 1 } : null}
+                    />
+                  </StackSwiperImageBox>
+                  <StackSwiperImageBox>
+                    <StackSwiperImage
+                      url={logo_netlify}
+                      onMouseEnter={() => {
+                        setTechEnter(7);
+                      }}
+                      onMouseLeave={() => {
+                        setTechEnter(0);
+                      }}
+                      style={techEnter === 7 ? { opacity: 1 } : null}
+                    />
                   </StackSwiperImageBox>
                 </Swiper>
               </StackSwiperDiv>

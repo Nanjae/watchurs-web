@@ -115,11 +115,11 @@ const SwiperDiv = styled.div`
   width: 100%;
   height: 185px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `;
 
 const SwiperInner = styled.div`
-  width: 85%;
+  width: 100%;
   height: fit-content;
 `;
 
@@ -143,7 +143,7 @@ const SwiperImage = styled.div`
 const SwiperImageOpacity = styled.div`
   position: absolute;
   background-color: ${(props) => props.theme.bgMainColor};
-  width: 278px;
+  width: 280px;
   height: 180px;
   box-shadow: 5px 5px 3px ${(props) => props.theme.bgMainColor};
   border: 1px solid ${(props) => props.theme.bgMainColor};
@@ -216,87 +216,71 @@ export default ({
           <SwiperDiv>
             <SwiperInner>
               <Swiper
-                width={280}
-                centeredSlides={true}
+                slidesPerView={3}
                 slideToClickedSlide={true}
+                centeredSlides={true}
               >
-                <SwiperImageBox
-                  style={{
-                    marginLeft: "60px",
-                  }}
-                  onClick={() => {
-                    setUnderBgIndex(bg01);
-                    setUpperTextIndex("01");
-                  }}
-                  onMouseEnter={() => {
-                    setSwiperImageEnter(1);
-                  }}
-                  onMouseLeave={() => {
-                    setSwiperImageEnter(0);
-                  }}
-                >
+                <SwiperImageBox>
                   <SwiperImage url={bg01} />
                   <SwiperImageOpacity
+                    onClick={() => {
+                      setUnderBgIndex(bg01);
+                      setUpperTextIndex("01");
+                    }}
+                    onMouseEnter={() => {
+                      setSwiperImageEnter(1);
+                    }}
+                    onMouseLeave={() => {
+                      setSwiperImageEnter(0);
+                    }}
                     style={swiperImageEnter === 1 ? { opacity: 0.5 } : null}
                   />
                 </SwiperImageBox>
-                <SwiperImageBox
-                  style={{
-                    marginLeft: "60px",
-                  }}
-                  onClick={() => {
-                    setUnderBgIndex(bg02);
-                    setUpperTextIndex("02");
-                  }}
-                  onMouseEnter={() => {
-                    setSwiperImageEnter(2);
-                  }}
-                  onMouseLeave={() => {
-                    setSwiperImageEnter(0);
-                  }}
-                >
+                <SwiperImageBox>
                   <SwiperImage url={bg02} />
                   <SwiperImageOpacity
+                    onClick={() => {
+                      setUnderBgIndex(bg02);
+                      setUpperTextIndex("02");
+                    }}
+                    onMouseEnter={() => {
+                      setSwiperImageEnter(2);
+                    }}
+                    onMouseLeave={() => {
+                      setSwiperImageEnter(0);
+                    }}
                     style={swiperImageEnter === 2 ? { opacity: 0.5 } : null}
                   />
                 </SwiperImageBox>
-                <SwiperImageBox
-                  style={{
-                    marginLeft: "60px",
-                  }}
-                  onClick={() => {
-                    setUnderBgIndex(bg03);
-                    setUpperTextIndex("03");
-                  }}
-                  onMouseEnter={() => {
-                    setSwiperImageEnter(3);
-                  }}
-                  onMouseLeave={() => {
-                    setSwiperImageEnter(0);
-                  }}
-                >
+                <SwiperImageBox>
                   <SwiperImage url={bg03} />
                   <SwiperImageOpacity
+                    onClick={() => {
+                      setUnderBgIndex(bg03);
+                      setUpperTextIndex("03");
+                    }}
+                    onMouseEnter={() => {
+                      setSwiperImageEnter(3);
+                    }}
+                    onMouseLeave={() => {
+                      setSwiperImageEnter(0);
+                    }}
                     style={swiperImageEnter === 3 ? { opacity: 0.5 } : null}
                   />
                 </SwiperImageBox>
-                <SwiperImageBox
-                  style={{
-                    marginLeft: "60px",
-                  }}
-                  onClick={() => {
-                    setUnderBgIndex(bg04);
-                    setUpperTextIndex("04");
-                  }}
-                  onMouseEnter={() => {
-                    setSwiperImageEnter(4);
-                  }}
-                  onMouseLeave={() => {
-                    setSwiperImageEnter(0);
-                  }}
-                >
+                <SwiperImageBox>
                   <SwiperImage url={bg04} />
                   <SwiperImageOpacity
+                    onClick={() => {
+                      setUnderBgIndex(bg04);
+                      setUpperTextIndex("04");
+                    }}
+                    onMouseEnter={() => {
+                      setSwiperImageEnter(4);
+                    }}
+                    onMouseLeave={() => {
+                      setSwiperImageEnter(0);
+                    }}
                     style={swiperImageEnter === 4 ? { opacity: 0.3 } : null}
                   />
                 </SwiperImageBox>

@@ -8,13 +8,14 @@ const Wrapper = styled.div`
   bottom: -201px;
   right: 30px;
   width: 30px;
-  height: 200px;
+  height: 205px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   opacity: ${(props) => (props.goTopEnter ? 1 : 0.7)};
-  transition: bottom 0.3s, opacity 0.5s;
+  background-color: ${(props) => props.theme.bgMainColor};
+  transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
   cursor: pointer;
 `;
 
