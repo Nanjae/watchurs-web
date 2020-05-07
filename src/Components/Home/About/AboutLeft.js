@@ -97,7 +97,7 @@ export default () => {
         <Inner>
           <TopDiv>
             <TopBgTextDiv>
-              <TopBgText>W</TopBgText>
+              <TopBgText>A</TopBgText>
             </TopBgTextDiv>
             <TopTitleDiv>
               <TopTitleTopText>ABOUT</TopTitleTopText>

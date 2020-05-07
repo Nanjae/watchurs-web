@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
+import ThemeDark from "../../Styles/ThemeDark";
 
-const FooterWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: ${(props) => props.theme.bgFooterColor};
   width: 100%;
   height: fit-content;
@@ -10,7 +12,7 @@ const FooterWrapper = styled.div`
   align-items: center;
 `;
 
-const FooterInner = styled.div`
+const Inner = styled.div`
   width: 1160px;
   height: 350px;
   margin: 80px 30px 30px 30px;
@@ -20,14 +22,14 @@ const FooterInner = styled.div`
   align-items: center;
 `;
 
-const FooterTopDiv = styled.div`
+const TopDiv = styled.div`
   width: 100%;
   height: 70%;
   display: flex;
   justify-content: flex-start;
 `;
 
-const FooterTopBox = styled.div`
+const TopBox = styled.div`
   width: 25%;
   height: 100%;
   display: flex;
@@ -38,46 +40,48 @@ const FooterTopBox = styled.div`
   }
 `;
 
-const FooterTopMainTextBox = styled.div`
+const TopMainTextBox = styled.div`
   height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 `;
 
-const FooterTopMainText = styled.div`
+const TopMainText = styled.div`
   color: ${(props) => props.theme.fontFooterColor};
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 700;
   :not(:first-child) {
-    margin-top: 10px;
+    margin-top: 5px;
   }
 `;
 
-const FooterTopSubTextBox = styled.div`
+const TopSubTextBox = styled.div`
   height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 `;
 
-const FooterTopSubText = styled.div`
+const TopSubText = styled.div`
   color: ${(props) => props.theme.fontFooterColor};
   font-size: 18px;
   font-weight: 300;
   display: flex;
   align-items: center;
   height: 25%;
+  width: fit-content;
+  transition: color 0.3s;
 `;
 
-const FooterBottomDiv = styled.div`
+const BottomDiv = styled.div`
   width: 100%;
   height: 10%;
   display: flex;
   justify-content: flex-start;
 `;
 
-const FooterBottomBox = styled.div`
+const BottomBox = styled.div`
   width: 70%;
   height: 100%;
   display: flex;
@@ -85,53 +89,90 @@ const FooterBottomBox = styled.div`
   align-items: center;
 `;
 
-const FooterBottomText = styled.div`
+const BottomText = styled.div`
   color: ${(props) => props.theme.lineSubColor};
   font-size: 18px;
 `;
 
 export default () => {
+  const [textEnter, setTextEnter] = useState(0);
+
   return (
     <>
-      <FooterWrapper>
-        <FooterInner>
-          <FooterTopDiv>
-            <FooterTopBox>
-              <FooterTopMainTextBox>
-                <FooterTopMainText>Contact to</FooterTopMainText>
-                <FooterTopMainText>:: WATCHURS</FooterTopMainText>
-              </FooterTopMainTextBox>
-              <FooterTopSubTextBox>
-                <FooterTopSubText>dngngn3045@gmail.com</FooterTopSubText>
-                <FooterTopSubText>
-                  개발 :
-                  <FooterTopSubText style={{ marginLeft: 5, fontWeight: 500 }}>
-                    Nanjae
-                  </FooterTopSubText>
-                </FooterTopSubText>
-              </FooterTopSubTextBox>
-            </FooterTopBox>
-            <FooterTopBox>
-              <FooterTopMainTextBox>
-                <FooterTopMainText>Project</FooterTopMainText>
-                <FooterTopMainText>:: Broadcaster</FooterTopMainText>
-              </FooterTopMainTextBox>
-              <FooterTopSubTextBox>
-                <FooterTopSubText>리그 오브 레전드 : LOL</FooterTopSubText>
-                <FooterTopSubText>전략적 팀 전투 : TFT</FooterTopSubText>
-              </FooterTopSubTextBox>
-            </FooterTopBox>
-            <FooterTopBox></FooterTopBox>
-          </FooterTopDiv>
-          <FooterBottomDiv>
-            <FooterBottomBox>
-              <FooterBottomText>
-                © 2020 WATCHURS. All rights reserved.
-              </FooterBottomText>
-            </FooterBottomBox>
-          </FooterBottomDiv>
-        </FooterInner>
-      </FooterWrapper>
+      <Wrapper>
+        <Inner>
+          <TopDiv>
+            <TopBox>
+              <TopMainTextBox>
+                <TopMainText>Contact to</TopMainText>
+                <TopMainText>:: WATCHURS</TopMainText>
+              </TopMainTextBox>
+              <TopSubTextBox>
+                <TopSubText>개발 : Nanjae</TopSubText>
+                <TopSubText
+                  onMouseEnter={() => {
+                    setTextEnter(1);
+                  }}
+                  onMouseLeave={() => {
+                    setTextEnter(0);
+                  }}
+                  style={
+                    textEnter === 1
+                      ? { color: ThemeDark.highlightColor, cursor: "pointer" }
+                      : { cursor: "pointer" }
+                  }
+                >
+                  dev.nanjae@gmail.com
+                </TopSubText>
+              </TopSubTextBox>
+            </TopBox>
+            <TopBox>
+              <TopMainTextBox>
+                <TopMainText>Project</TopMainText>
+                <TopMainText>:: Broadcaster</TopMainText>
+              </TopMainTextBox>
+              <TopSubTextBox>
+                <TopSubText
+                  onMouseEnter={() => {
+                    setTextEnter(2);
+                  }}
+                  onMouseLeave={() => {
+                    setTextEnter(0);
+                  }}
+                  style={
+                    textEnter === 2
+                      ? { color: ThemeDark.highlightColor, cursor: "pointer" }
+                      : { cursor: "pointer" }
+                  }
+                >
+                  리그 오브 레전드 : LOL
+                </TopSubText>
+                <TopSubText
+                  onMouseEnter={() => {
+                    setTextEnter(3);
+                  }}
+                  onMouseLeave={() => {
+                    setTextEnter(0);
+                  }}
+                  style={
+                    textEnter === 3
+                      ? { color: ThemeDark.highlightColor, cursor: "pointer" }
+                      : { cursor: "pointer" }
+                  }
+                >
+                  전략적 팀 전투 : TFT
+                </TopSubText>
+              </TopSubTextBox>
+            </TopBox>
+            <TopBox></TopBox>
+          </TopDiv>
+          <BottomDiv>
+            <BottomBox>
+              <BottomText>© 2020 WATCHURS. All rights reserved.</BottomText>
+            </BottomBox>
+          </BottomDiv>
+        </Inner>
+      </Wrapper>
     </>
   );
 };
