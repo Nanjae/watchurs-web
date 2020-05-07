@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import "swiper/css/swiper.css";
 import bg01 from "../../../Assets/Images/Bg/bg01.jpg";
 import bg02 from "../../../Assets/Images/Bg/bg02.jpg";
 import bg03 from "../../../Assets/Images/Bg/bg03.jpg";

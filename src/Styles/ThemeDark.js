@@ -8,4 +8,5 @@ export default {
   lineMainColor: "#FFFFFF",
   lineSubColor: "#808080",
   bgFooterColor: "#0F0F12",
+  fontFooterColor: "#FFFFFF",
 };

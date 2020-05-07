@@ -3,6 +3,7 @@ import GlobalStyles from "../Styles/GlobalStyles";
 import styled from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
 import { DefaultRoute } from "./Routes";
+import "swiper/css/swiper.css";
 
 const Wrapper = styled.div`
   user-select: none;

@@ -9,7 +9,6 @@ import icon_instagram_light from "../../../../Assets/Icons/icon_instagram_light.
 import icon_twitter_dark from "../../../../Assets/Icons/icon_twitter_dark.png";
 import icon_twitter_light from "../../../../Assets/Icons/icon_twitter_light.png";
 import MenuLine from "../../Common/MenuLine";
-import "swiper/css/swiper.css";
 
 const Wrapper = styled.div`
   width: 8%;

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import bg01 from "../../../Assets/Images/Bg/bg01.jpg";
-import "swiper/css/swiper.css";
 import IntroUnder from "./IntroUnder/IntroUnder";
 import IntroUpper from "./IntroUpper/IntroUpper";
 

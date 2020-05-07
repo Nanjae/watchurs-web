@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import "swiper/css/swiper.css";
 import { useWindowScroll } from "@react-hook/window-scroll";
 
 const Wrapper = styled.div`

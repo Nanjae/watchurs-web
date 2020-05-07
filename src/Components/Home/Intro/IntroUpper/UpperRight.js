@@ -7,7 +7,6 @@ import bg04 from "../../../../Assets/Images/Bg/bg04.jpg";
 import icon_contrast_dark from "../../../../Assets/Icons/icon_contrast_dark.png";
 import icon_contrast_light from "../../../../Assets/Icons/icon_contrast_light.png";
 import Swiper from "react-id-swiper";
-import "swiper/css/swiper.css";
 
 const Wrapper = styled.div`
   width: 55%;

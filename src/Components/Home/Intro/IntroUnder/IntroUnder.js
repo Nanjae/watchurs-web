@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "swiper/css/swiper.css";
 
 const Wrapper = styled.div`
   position: absolute;

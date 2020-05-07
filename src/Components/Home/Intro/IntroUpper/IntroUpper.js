@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import "swiper/css/swiper.css";
 import UpperLeft from "./UpperLeft";
 import UpperCenter from "./UpperCenter";
 import UpperRight from "./UpperRight";
