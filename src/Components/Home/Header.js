@@ -43,18 +43,19 @@ const LogoIcon = styled.div`
 
 const CenterDiv = styled.div`
   height: 100%;
-  width: 20%;
+  width: fit-content;
   justify-content: center;
   align-items: center;
 `;
 
 const MenuLineDiv = styled.div`
-  width: 100%;
+  width: fit-content;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding: 0px 20px;
 `;
 
 const RightDiv = styled.div`
@@ -97,6 +98,8 @@ export default ({
   scrollY,
   headerMenuEnter,
   setHeaderMenuEnter,
+  popClosed,
+  setPopClosed,
 }) => {
   const logo_watchurs = siteTheme ? logo_watchurs_light : logo_watchurs_dark;
   const icon_contrast = siteTheme ? icon_contrast_light : icon_contrast_dark;
@@ -113,7 +116,11 @@ export default ({
               url={logo_watchurs}
             />
           </LeftDiv>
-          <CenterDiv>
+          <CenterDiv
+            onClick={() => {
+              setPopClosed(!popClosed);
+            }}
+          >
             <MenuLineDiv
               onMouseEnter={() => {
                 setHeaderMenuEnter(true);

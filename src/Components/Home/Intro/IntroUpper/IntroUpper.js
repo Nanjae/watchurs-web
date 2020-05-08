@@ -19,6 +19,7 @@ export default ({
   scrollY,
   headerMenuEnter,
   setHeaderMenuEnter,
+  setPopClosed,
 }) => {
   const [upperTextIndex, setUpperTextIndex] = useState("01");
 
@@ -30,6 +31,7 @@ export default ({
           scrollY={scrollY}
           headerMenuEnter={headerMenuEnter}
           setHeaderMenuEnter={setHeaderMenuEnter}
+          setPopClosed={setPopClosed}
         />
         <UpperCenter
           siteTheme={siteTheme}

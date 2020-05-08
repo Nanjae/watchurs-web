@@ -9,6 +9,7 @@ import icon_instagram_light from "../../../../Assets/Icons/icon_instagram_light.
 import icon_twitter_dark from "../../../../Assets/Icons/icon_twitter_dark.png";
 import icon_twitter_light from "../../../../Assets/Icons/icon_twitter_light.png";
 import MenuLine from "../../Common/MenuLine";
+import { useState } from "react";
 
 const Wrapper = styled.div`
   width: 8%;
@@ -75,15 +76,18 @@ const MenuTextBox = styled.div`
   width: 54px;
   display: flex;
   justify-content: space-between;
+  color: ${(props) =>
+    props.headerMenuEnter
+      ? props.theme.lineSubColor
+      : props.theme.fontMainColor};
   padding: 0px 3px;
   margin-top: 20px;
+  transition: color 0.3s;
 `;
 
 const MenuText = styled.div`
   font-size: 15px;
   font-weight: 700;
-  color: ${(props) => props.theme.fontMainColor};
-  transition: color 0.3s;
 `;
 
 const IconDiv = styled.div`
@@ -101,7 +105,8 @@ const Icon = styled.div`
   height: 20px;
   margin-top: 40px;
   cursor: pointer;
-  transition: background-image 0.3s;
+  opacity: 1;
+  transition: background-image 0.3s, opacity 0.3s;
 `;
 
 export default ({
@@ -109,7 +114,10 @@ export default ({
   scrollY,
   headerMenuEnter,
   setHeaderMenuEnter,
+  setPopClosed,
 }) => {
+  const [iconEnter, setIconEnter] = useState(0);
+
   const logo_watchurs = siteTheme ? logo_watchurs_light : logo_watchurs_dark;
   const icon_facebook = siteTheme ? icon_facebook_light : icon_facebook_dark;
   const icon_instagram = siteTheme ? icon_instagram_light : icon_instagram_dark;
@@ -137,6 +145,9 @@ export default ({
             </TitleDiv>
             <MenuDiv>
               <MenuInner
+                onClick={() => {
+                  setPopClosed(false);
+                }}
                 onMouseEnter={() => {
                   setHeaderMenuEnter(true);
                 }}
@@ -145,7 +156,7 @@ export default ({
                 }}
               >
                 <MenuLine headerMenuEnter={headerMenuEnter} />
-                <MenuTextBox>
+                <MenuTextBox headerMenuEnter={headerMenuEnter}>
                   <MenuText>M</MenuText>
                   <MenuText>E</MenuText>
                   <MenuText>N</MenuText>
@@ -154,9 +165,36 @@ export default ({
               </MenuInner>
             </MenuDiv>
             <IconDiv>
-              <Icon url={icon_facebook} />
-              <Icon url={icon_instagram} />
-              <Icon url={icon_twitter} />
+              <Icon
+                onMouseEnter={() => {
+                  setIconEnter(1);
+                }}
+                onMouseLeave={() => {
+                  setIconEnter(0);
+                }}
+                style={iconEnter === 1 ? { opacity: 0.6 } : { opacity: 1 }}
+                url={icon_facebook}
+              />
+              <Icon
+                onMouseEnter={() => {
+                  setIconEnter(2);
+                }}
+                onMouseLeave={() => {
+                  setIconEnter(0);
+                }}
+                style={iconEnter === 2 ? { opacity: 0.6 } : { opacity: 1 }}
+                url={icon_instagram}
+              />
+              <Icon
+                onMouseEnter={() => {
+                  setIconEnter(3);
+                }}
+                onMouseLeave={() => {
+                  setIconEnter(0);
+                }}
+                style={iconEnter === 3 ? { opacity: 0.6 } : { opacity: 1 }}
+                url={icon_twitter}
+              />
             </IconDiv>
           </Inner>
         )}

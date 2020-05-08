@@ -19,6 +19,7 @@ export default ({
   scrollY,
   headerMenuEnter,
   setHeaderMenuEnter,
+  setPopClosed,
 }) => {
   const { windowHeight } = useWindowDimensions();
   const [underBgIndex, setUnderBgIndex] = useState(bg01);
@@ -34,6 +35,7 @@ export default ({
           scrollY={scrollY}
           headerMenuEnter={headerMenuEnter}
           setHeaderMenuEnter={setHeaderMenuEnter}
+          setPopClosed={setPopClosed}
         />
       </Wrapper>
     </>
