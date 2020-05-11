@@ -5,23 +5,58 @@ import logo_watchurs_light from "../../Assets/Images/Logos/logo_watchurs_light.p
 import icon_contrast_dark from "../../Assets/Icons/icon_contrast_dark.png";
 import icon_contrast_light from "../../Assets/Icons/icon_contrast_light.png";
 import MenuLine from "./Common/MenuLine";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   position: fixed;
   z-index: 100;
-  top: -76px;
   width: 100%;
-  height: 75px;
   background-color: ${(props) => props.theme.bgMainColor};
   border-bottom: 1px solid ${(props) => props.theme.borderMainColor};
   transition: background-color 0.3s, top 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    top: 0px;
+    height: 56px;
+  }
+  @media only screen and (min-width: 576px) {
+    top: 0px;
+    height: 56px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    top: -76px;
+    height: 75px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const Inner = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 0px 2%;
+  @media only screen and (max-width: 575.99px) {
+    margin: 0px 15px;
+  }
+  @media only screen and (min-width: 576px) {
+    margin: 0px 15px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    margin: 0px 2%;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const LeftDiv = styled.div`
@@ -35,10 +70,28 @@ const LeftDiv = styled.div`
 const LogoIcon = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
-  width: 50px;
-  height: 50px;
   transition: background-image 0.3s;
   cursor: pointer;
+  @media only screen and (max-width: 575.99px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media only screen and (min-width: 576px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 50px;
+    height: 50px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const CenterDiv = styled.div`
@@ -101,52 +154,114 @@ export default ({
   popClosed,
   setPopClosed,
 }) => {
+  const { windowWidth } = useWindowDimensions();
+
   const logo_watchurs = siteTheme ? logo_watchurs_light : logo_watchurs_dark;
   const icon_contrast = siteTheme ? icon_contrast_light : icon_contrast_dark;
 
+  const ThemeTextString = siteTheme
+    ? windowWidth >= 1200
+      ? "LIGHT"
+      : windowWidth >= 768
+      ? "LIGHT MODE"
+      : windowWidth >= 576
+      ? "LIGHT"
+      : ""
+    : windowWidth >= 1200
+    ? "DARK"
+    : windowWidth >= 768
+    ? "DARK MODE"
+    : windowWidth >= 576
+    ? "DARK"
+    : "";
+
   return (
     <>
-      <Wrapper style={scrollY > 50 ? { top: 0 } : { top: -76 }}>
-        <Inner>
-          <LeftDiv>
-            <LogoIcon
-              onClick={() => {
-                window.location.reload();
-              }}
-              url={logo_watchurs}
-            />
-          </LeftDiv>
-          <CenterDiv
-            onClick={() => {
-              setPopClosed(!popClosed);
-            }}
-          >
-            <MenuLineDiv
-              onMouseEnter={() => {
-                setHeaderMenuEnter(true);
-              }}
-              onMouseLeave={() => {
-                setHeaderMenuEnter(false);
-              }}
-            >
-              <MenuLine headerMenuEnter={headerMenuEnter} />
-            </MenuLineDiv>
-          </CenterDiv>
-          <RightDiv>
-            <ThemeBox
-              onClick={() => {
-                setSiteTheme(!siteTheme);
-              }}
-            >
-              <ThemeText>{siteTheme ? "LIGHT" : "DARK"}</ThemeText>
-              <ThemeIcon
-                url={icon_contrast}
-                style={{ transform: "rotate(45deg)" }}
+      {windowWidth >= 1200 ? (
+        <Wrapper style={scrollY > 50 ? { top: 0 } : { top: -76 }}>
+          <Inner>
+            <LeftDiv>
+              <LogoIcon
+                onClick={() => {
+                  window.location.reload();
+                }}
+                url={logo_watchurs}
               />
-            </ThemeBox>
-          </RightDiv>
-        </Inner>
-      </Wrapper>
+            </LeftDiv>
+            <CenterDiv
+              onClick={() => {
+                setPopClosed(!popClosed);
+              }}
+            >
+              <MenuLineDiv
+                onMouseEnter={() => {
+                  setHeaderMenuEnter(true);
+                }}
+                onMouseLeave={() => {
+                  setHeaderMenuEnter(false);
+                }}
+              >
+                <MenuLine headerMenuEnter={headerMenuEnter} />
+              </MenuLineDiv>
+            </CenterDiv>
+            <RightDiv>
+              <ThemeBox
+                onClick={() => {
+                  setSiteTheme(!siteTheme);
+                }}
+              >
+                <ThemeText>{siteTheme ? "LIGHT" : "DARK"}</ThemeText>
+                <ThemeIcon
+                  url={icon_contrast}
+                  style={{ transform: "rotate(45deg)" }}
+                />
+              </ThemeBox>
+            </RightDiv>
+          </Inner>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <Inner>
+            <LeftDiv>
+              <LogoIcon
+                onClick={() => {
+                  window.location.reload();
+                }}
+                url={logo_watchurs}
+              />
+            </LeftDiv>
+            <CenterDiv
+              onClick={() => {
+                setPopClosed(!popClosed);
+              }}
+            >
+              <MenuLineDiv
+                onMouseEnter={() => {
+                  setHeaderMenuEnter(true);
+                }}
+                onMouseLeave={() => {
+                  setHeaderMenuEnter(false);
+                }}
+              >
+                <MenuLine headerMenuEnter={headerMenuEnter} />
+              </MenuLineDiv>
+            </CenterDiv>
+            <RightDiv>
+              <ThemeBox
+                onClick={() => {
+                  setSiteTheme(!siteTheme);
+                }}
+              >
+                <ThemeText>{ThemeTextString}</ThemeText>
+                <ThemeIcon
+                  url={icon_contrast}
+                  style={{ transform: "rotate(45deg)" }}
+                />
+              </ThemeBox>
+            </RightDiv>
+          </Inner>
+        </Wrapper>
+      )}
     </>
   );
 };
