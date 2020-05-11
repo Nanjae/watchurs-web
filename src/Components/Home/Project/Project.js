@@ -7,6 +7,7 @@ import bg04 from "../../../Assets/Images/Bg/bg04.jpg";
 import icon_search_dark from "../../../Assets/Icons/icon_search_dark.png";
 import icon_search_light from "../../../Assets/Icons/icon_search_light.png";
 import icon_search_highlight from "../../../Assets/Icons/icon_search_highlight.png";
+import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   height: fit-content;
@@ -17,18 +18,50 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
   height: fit-content;
-  width: 1200px;
-  padding: 50px 0px;
   display: flex;
   justify-content: center;
+  padding: 50px 0px;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  @media only screen and (min-width: 1536px) {
+    width: 1280px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 1440px;
+  }
 `;
 
 const TitleDiv = styled.div`
   position: absolute;
-  width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  @media only screen and (min-width: 1536px) {
+    width: 1280px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 1440px;
+  }
 `;
 
 const TitleText = styled.div`
@@ -36,6 +69,7 @@ const TitleText = styled.div`
   font-size: 300px;
   font-weight: 900;
   transition: color 0.3s;
+  margin-left: 20px;
 `;
 
 const ImageDiv = styled.div`
@@ -48,19 +82,49 @@ const ImageDiv = styled.div`
 `;
 
 const ImageRow = styled.div`
-  width: 530px;
   height: fit-content;
   padding: 30px;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 530px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 650px;
+  }
 `;
 
 const ImageBox = styled.div`
   width: 100%;
-  height: 630px;
   display: flex;
   justify-content: center;
   align-items: center;
   :not(:first-child) {
     margin-top: 60px;
+  }
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 630px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+    height: 780px;
   }
 `;
 
@@ -69,8 +133,24 @@ const Image = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
   background-position: center;
-  width: 530px;
-  height: 630px;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 530px;
+    height: 630px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 650px;
+    height: 780px;
+  }
 `;
 
 const ImageSearchIcon = styled.div`
@@ -89,13 +169,29 @@ const ImageSearchIcon = styled.div`
 const ImageOpacity = styled.div`
   background-color: ${(props) => props.theme.bgMainColor};
   position: absolute;
-  width: 430px;
-  height: 530px;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s, width 0.3s, height 0.3s;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 430px;
+    height: 530px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 550px;
+    height: 680px;
+  }
 `;
 
 const ImageOpacityLine = styled.div`
@@ -143,6 +239,8 @@ export default ({ siteTheme }) => {
 
   const icon_search = siteTheme ? icon_search_light : icon_search_dark;
 
+  const { windowWidth } = useWindowDimensions();
+
   return (
     <>
       <Wrapper>
@@ -174,7 +272,9 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 1
-                      ? { opacity: "0.4", width: 530, height: 630 }
+                      ? windowWidth < 1536
+                        ? { opacity: "0.4", width: 530, height: 630 }
+                        : { opacity: "0.4", width: 650, height: 780 }
                       : null
                   }
                 >
@@ -203,7 +303,9 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 3
-                      ? { opacity: "0.4", width: 530, height: 630 }
+                      ? windowWidth < 1536
+                        ? { opacity: "0.4", width: 530, height: 630 }
+                        : { opacity: "0.4", width: 650, height: 780 }
                       : null
                   }
                 >
@@ -234,7 +336,9 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 2
-                      ? { opacity: "0.4", width: 530, height: 630 }
+                      ? windowWidth < 1536
+                        ? { opacity: "0.4", width: 530, height: 630 }
+                        : { opacity: "0.4", width: 650, height: 780 }
                       : null
                   }
                 >
@@ -263,7 +367,9 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 4
-                      ? { opacity: "0.4", width: 530, height: 630 }
+                      ? windowWidth < 1536
+                        ? { opacity: "0.4", width: 530, height: 630 }
+                        : { opacity: "0.4", width: 650, height: 780 }
                       : null
                   }
                 >

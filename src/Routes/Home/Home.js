@@ -34,6 +34,10 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-width: 1200px) {
   }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopWrapper = styled.div`
@@ -179,6 +183,7 @@ export default () => {
   const [popClosedEnter, setPopClosedEnter] = useState(false);
   const [popMenuEnter, setPopMenuEnter] = useState(0);
   const [popIconEnter, setPopIconEnter] = useState(0);
+
   const scrollY = useWindowScroll();
 
   const introRef = useRef(null);

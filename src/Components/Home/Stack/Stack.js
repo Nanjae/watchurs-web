@@ -18,17 +18,51 @@ const StackWrapper = styled.div`
 
 const StackInner = styled.div`
   height: fit-content;
-  width: 1200px;
   padding: 50px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  @media only screen and (min-width: 1536px) {
+    width: 1280px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 1440px;
+  }
 `;
 
 const StackTitleDiv = styled.div`
-  width: 1120px;
   height: 350px;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+    margin-left: 60px;
+  }
+  @media only screen and (min-width: 1536px) {
+    width: 1280px;
+    margin-left: 0px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 1440px;
+  }
 `;
 
 const StackBgTextDiv = styled.div`
@@ -75,11 +109,27 @@ const StackTitleBottomText = styled.div`
 `;
 
 const StackSwiperDiv = styled.div`
-  width: 1120px;
   height: fit-content;
   margin-top: 80px;
   margin-bottom: 50px;
   cursor: e-resize;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 1140px;
+  }
+  @media only screen and (min-width: 1536px) {
+    width: 1220px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 1380px;
+  }
 `;
 
 const StackSwiperImageBox = styled.div`

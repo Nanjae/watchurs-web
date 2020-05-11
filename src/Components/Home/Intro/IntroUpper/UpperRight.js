@@ -125,7 +125,7 @@ const SwiperInner = styled.div`
 
 const SwiperImageBox = styled.div`
   display: flex;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
 `;
 
@@ -216,9 +216,11 @@ export default ({
           <SwiperDiv>
             <SwiperInner>
               <Swiper
-                slidesPerView={3}
+                width={300}
                 slideToClickedSlide={true}
                 centeredSlides={true}
+                slidesOffsetBefore={150}
+                speed={500}
               >
                 <SwiperImageBox>
                   <SwiperImage url={bg01} />

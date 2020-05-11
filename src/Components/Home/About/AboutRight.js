@@ -3,10 +3,26 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   height: 100%;
-  width: 560px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media only screen and (max-width: 575.99px) {
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 560px;
+  }
+  @media only screen and (min-width: 1536px) {
+    width: 640px;
+  }
+  @media only screen and (min-width: 1800px) {
+    width: 720px;
+  }
 `;
 
 const Inner = styled.div`

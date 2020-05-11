@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Inner = styled.div`
-  width: 1160px;
+  width: 90%;
   height: 350px;
   margin: 80px 30px 30px 30px;
   display: flex;
@@ -30,7 +30,7 @@ const TopDiv = styled.div`
 `;
 
 const TopBox = styled.div`
-  width: 25%;
+  width: 280px;
   height: 100%;
   display: flex;
   flex-direction: column;
