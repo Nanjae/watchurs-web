@@ -7,10 +7,29 @@ import IntroUpper from "./IntroUpper/IntroUpper";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: ${(props) => props.windowHeight};
-  min-height: 768px;
-  max-height: 1024px;
   display: flex;
+  @media only screen and (max-width: 575.99px) {
+    height: 600px;
+    padding-top: 57px;
+  }
+  @media only screen and (min-width: 576px) {
+    height: 560px;
+    padding-top: 57px;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 760px;
+    padding-top: 57px;
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    height: ${(props) => props.windowHeight};
+    padding-top: 0px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 export default ({
@@ -21,12 +40,12 @@ export default ({
   setHeaderMenuEnter,
   setPopClosed,
 }) => {
-  const { windowHeight } = useWindowDimensions();
+  const { windowWidth, windowHeight } = useWindowDimensions();
   const [underBgIndex, setUnderBgIndex] = useState(bg01);
 
   return (
     <>
-      <Wrapper style={{ height: windowHeight }}>
+      <Wrapper style={windowWidth >= 1200 ? { height: windowHeight } : null}>
         <IntroUnder underBgIndex={underBgIndex} />
         <IntroUpper
           setUnderBgIndex={setUnderBgIndex}

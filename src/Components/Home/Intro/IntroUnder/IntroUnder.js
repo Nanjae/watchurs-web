@@ -1,16 +1,50 @@
 import React from "react";
 import styled from "styled-components";
+import useWindowDimensions from "../../../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
   display: flex;
+  @media only screen and (max-width: 575.99px) {
+    height: 600px;
+  }
+  @media only screen and (min-width: 576px) {
+    height: 560px;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 760px;
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 100%;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const ContentDiv = styled.div`
-  width: 60%;
-  margin-left: 8%;
+  width: 100%;
+  @media only screen and (max-width: 575.99px) {
+    margin-left: 0%;
+  }
+  @media only screen and (min-width: 576px) {
+    margin-left: 0%;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 8%;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const ContentBox = styled.div`
@@ -20,7 +54,23 @@ const ContentBox = styled.div`
 
 const ImageBox = styled.div`
   width: 100%;
-  height: 90%;
+  @media only screen and (max-width: 575.99px) {
+    height: 100%;
+  }
+  @media only screen and (min-width: 576px) {
+    height: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 90%;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const Image = styled.div`
@@ -42,19 +92,34 @@ const ImageOpacity = styled.div`
 `;
 
 export default ({ underBgIndex }) => {
+  const { windowWidth } = useWindowDimensions();
   return (
     <>
-      <Wrapper>
-        <ContentDiv>
-          <ContentBox>
-            <ImageBox>
-              <Image url={underBgIndex}>
-                <ImageOpacity />
-              </Image>
-            </ImageBox>
-          </ContentBox>
-        </ContentDiv>
-      </Wrapper>
+      {windowWidth >= 1200 ? (
+        <Wrapper>
+          <ContentDiv>
+            <ContentBox>
+              <ImageBox>
+                <Image url={underBgIndex}>
+                  <ImageOpacity />
+                </Image>
+              </ImageBox>
+            </ContentBox>
+          </ContentDiv>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <ContentDiv>
+            <ContentBox>
+              <ImageBox>
+                <Image url={underBgIndex}>
+                  <ImageOpacity />
+                </Image>
+              </ImageBox>
+            </ContentBox>
+          </ContentDiv>
+        </Wrapper>
+      )}
     </>
   );
 };

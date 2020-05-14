@@ -2,6 +2,7 @@ export default {
   bgMainColor: "#1F1F25",
   bgSubColor: "#FFFFFF",
   bgPopColor: "#000000",
+  bgLineColor: "#1F1F25",
   borderMainColor: "#d7d7d7",
   fontMainColor: "#FFFFFF",
   fontSubColor: "#282832",

@@ -26,13 +26,13 @@ const SwiperBarBox = styled.div`
 
 const SwiperEmptyBar = styled.div`
   position: absolute;
-  background-color: ${(props) => props.theme.bgMainColor};
+  background-color: ${(props) => props.theme.bgLineColor};
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   width: 3px;
   height: 120px;
-  opacity: 0.9;
+  opacity: 0.8;
   transition: background-color 0.3s;
 `;
 
@@ -66,8 +66,8 @@ const SwiperTextBox = styled.div`
 const SwiperMaxText = styled.div`
   font-size: 20px;
   font-weight: 500;
-  color: ${(props) => props.theme.bgMainColor};
-  opacity: 0.9;
+  color: ${(props) => props.theme.bgLineColor};
+  opacity: 0.8;
   transition: color 0.3s;
 `;
 
@@ -75,8 +75,8 @@ const SwiperTextDivsion = styled.div`
   font-size: 20px;
   font-weight: 700;
   margin: 0px 10px;
-  color: ${(props) => props.theme.bgMainColor};
-  opacity: 0.9;
+  color: ${(props) => props.theme.bgLineColor};
+  opacity: 0.8;
   transition: color 0.3s;
 `;
 
