@@ -9,14 +9,14 @@ import logo_netlify from "../../../Assets/Images/Logos/logo_netlify.png";
 import logo_nodejs from "../../../Assets/Images/Logos/logo_nodejs.png";
 import logo_heroku from "../../../Assets/Images/Logos/logo_heroku.png";
 
-const StackWrapper = styled.div`
+const Wrapper = styled.div`
   height: fit-content;
   width: 100%;
   display: flex;
   justify-content: center;
 `;
 
-const StackInner = styled.div`
+const Inner = styled.div`
   height: fit-content;
   padding: 50px 0px;
   display: flex;
@@ -24,15 +24,19 @@ const StackInner = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 575.99px) {
+    width: 98%;
   }
   @media only screen and (min-width: 576px) {
+    width: 540px;
   }
   @media only screen and (min-width: 768px) {
+    width: 720px;
   }
   @media only screen and (min-width: 992px) {
+    width: 960px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 1200px;
+    width: 1120px;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
@@ -42,7 +46,7 @@ const StackInner = styled.div`
   }
 `;
 
-const StackTitleDiv = styled.div`
+const TitleDiv = styled.div`
   height: 350px;
   @media only screen and (max-width: 575.99px) {
   }
@@ -53,19 +57,17 @@ const StackTitleDiv = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    width: 1200px;
-    margin-left: 60px;
+    width: 1120px;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
-    margin-left: 0px;
   }
   @media only screen and (min-width: 1800px) {
     width: 1440px;
   }
 `;
 
-const StackBgTextDiv = styled.div`
+const BgTextDiv = styled.div`
   position: absolute;
   height: 375px;
   width: 375px;
@@ -74,7 +76,7 @@ const StackBgTextDiv = styled.div`
   align-items: flex-end;
 `;
 
-const StackBgText = styled.div`
+const BgText = styled.div`
   color: ${(props) => props.theme.fontMainColor};
   font-size: 350px;
   font-family: "Monoton", sans-serif;
@@ -82,7 +84,7 @@ const StackBgText = styled.div`
   transition: color 0.3s;
 `;
 
-const StackTitleBox = styled.div`
+const TitleBox = styled.div`
   position: absolute;
   height: 300px;
   width: 500px;
@@ -94,21 +96,21 @@ const StackTitleBox = styled.div`
   align-items: flex-start;
 `;
 
-const StackTitleTopText = styled.div`
+const TitleTopText = styled.div`
   color: ${(props) => props.theme.fontMainColor};
   font-size: 70px;
   margin-bottom: 10px;
   transition: color 0.3s;
 `;
 
-const StackTitleBottomText = styled.div`
+const TitleBottomText = styled.div`
   color: ${(props) => props.theme.fontMainColor};
   font-size: 70px;
   font-weight: 900;
   transition: color 0.3s;
 `;
 
-const StackSwiperDiv = styled.div`
+const SwiperDiv = styled.div`
   height: fit-content;
   margin-top: 80px;
   margin-bottom: 50px;
@@ -122,7 +124,7 @@ const StackSwiperDiv = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    width: 1140px;
+    width: 1120px;
   }
   @media only screen and (min-width: 1536px) {
     width: 1220px;
@@ -132,14 +134,14 @@ const StackSwiperDiv = styled.div`
   }
 `;
 
-const StackSwiperImageBox = styled.div`
+const SwiperImageBox = styled.div`
   display: flex;
   width: fit-content;
   height: fit-content;
   justify-content: center;
 `;
 
-const StackSwiperImage = styled.div`
+const SwiperImage = styled.div`
   background-image: url(${(props) => props.url});
   background-size: contain;
   background-repeat: no-repeat;
@@ -155,21 +157,21 @@ export default () => {
 
   return (
     <>
-      <StackWrapper>
-        <StackInner>
-          <StackTitleDiv>
-            <StackBgTextDiv>
-              <StackBgText>U</StackBgText>
-            </StackBgTextDiv>
-            <StackTitleBox>
-              <StackTitleTopText>USED</StackTitleTopText>
-              <StackTitleBottomText>TECH STACK</StackTitleBottomText>
-            </StackTitleBox>
-          </StackTitleDiv>
-          <StackSwiperDiv>
+      <Wrapper>
+        <Inner>
+          <TitleDiv>
+            <BgTextDiv>
+              <BgText>U</BgText>
+            </BgTextDiv>
+            <TitleBox>
+              <TitleTopText>USED</TitleTopText>
+              <TitleBottomText>TECH STACK</TitleBottomText>
+            </TitleBox>
+          </TitleDiv>
+          <SwiperDiv>
             <Swiper slidesPerView={5} spaceBetween={50}>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_react}
                   onMouseEnter={() => {
                     setTechEnter(1);
@@ -179,9 +181,9 @@ export default () => {
                   }}
                   style={techEnter === 1 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              </SwiperImageBox>
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_github}
                   onMouseEnter={() => {
                     setTechEnter(2);
@@ -191,9 +193,9 @@ export default () => {
                   }}
                   style={techEnter === 2 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              </SwiperImageBox>
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_nodejs}
                   onMouseEnter={() => {
                     setTechEnter(3);
@@ -203,9 +205,9 @@ export default () => {
                   }}
                   style={techEnter === 3 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              </SwiperImageBox>
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_graphql}
                   onMouseEnter={() => {
                     setTechEnter(4);
@@ -215,9 +217,9 @@ export default () => {
                   }}
                   style={techEnter === 4 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              </SwiperImageBox>
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_apollo}
                   onMouseEnter={() => {
                     setTechEnter(5);
@@ -227,9 +229,9 @@ export default () => {
                   }}
                   style={techEnter === 5 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              </SwiperImageBox>
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_heroku}
                   onMouseEnter={() => {
                     setTechEnter(6);
@@ -239,9 +241,9 @@ export default () => {
                   }}
                   style={techEnter === 6 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
-              <StackSwiperImageBox>
-                <StackSwiperImage
+              </SwiperImageBox>
+              <SwiperImageBox>
+                <SwiperImage
                   url={logo_netlify}
                   onMouseEnter={() => {
                     setTechEnter(7);
@@ -251,11 +253,11 @@ export default () => {
                   }}
                   style={techEnter === 7 ? { opacity: 1 } : null}
                 />
-              </StackSwiperImageBox>
+              </SwiperImageBox>
             </Swiper>
-          </StackSwiperDiv>
-        </StackInner>
-      </StackWrapper>
+          </SwiperDiv>
+        </Inner>
+      </Wrapper>
     </>
   );
 };

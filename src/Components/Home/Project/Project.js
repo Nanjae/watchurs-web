@@ -22,15 +22,19 @@ const Inner = styled.div`
   justify-content: center;
   padding: 50px 0px;
   @media only screen and (max-width: 575.99px) {
+    width: 98%;
   }
   @media only screen and (min-width: 576px) {
+    width: 540px;
   }
   @media only screen and (min-width: 768px) {
+    width: 720px;
   }
   @media only screen and (min-width: 992px) {
+    width: 960px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 1200px;
+    width: 1120px;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
@@ -54,7 +58,7 @@ const TitleDiv = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    width: 1200px;
+    width: 1120px;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
@@ -69,7 +73,6 @@ const TitleText = styled.div`
   font-size: 300px;
   font-weight: 900;
   transition: color 0.3s;
-  margin-left: 20px;
 `;
 
 const ImageDiv = styled.div`
@@ -272,7 +275,7 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 1
-                      ? windowWidth < 1536
+                      ? windowWidth < 1800
                         ? { opacity: "0.4", width: 530, height: 630 }
                         : { opacity: "0.4", width: 650, height: 780 }
                       : null
@@ -303,7 +306,7 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 3
-                      ? windowWidth < 1536
+                      ? windowWidth < 1800
                         ? { opacity: "0.4", width: 530, height: 630 }
                         : { opacity: "0.4", width: 650, height: 780 }
                       : null
@@ -336,7 +339,7 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 2
-                      ? windowWidth < 1536
+                      ? windowWidth < 1800
                         ? { opacity: "0.4", width: 530, height: 630 }
                         : { opacity: "0.4", width: 650, height: 780 }
                       : null
@@ -367,7 +370,7 @@ export default ({ siteTheme }) => {
                 <ImageOpacity
                   style={
                     projectEnter === 4
-                      ? windowWidth < 1536
+                      ? windowWidth < 1800
                         ? { opacity: "0.4", width: 530, height: 630 }
                         : { opacity: "0.4", width: 650, height: 780 }
                       : null

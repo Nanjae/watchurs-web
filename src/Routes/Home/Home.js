@@ -18,6 +18,7 @@ import icon_instagram_dark from "../../Assets/Icons/icon_instagram_dark.png";
 import icon_instagram_light from "../../Assets/Icons/icon_instagram_light.png";
 import icon_twitter_dark from "../../Assets/Icons/icon_twitter_dark.png";
 import icon_twitter_light from "../../Assets/Icons/icon_twitter_light.png";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -185,6 +186,7 @@ export default () => {
   const [popIconEnter, setPopIconEnter] = useState(0);
 
   const scrollY = useWindowScroll();
+  const { windowWidth } = useWindowDimensions();
 
   const introRef = useRef(null);
   const aboutRef = useRef(null);
@@ -203,6 +205,8 @@ export default () => {
   const icon_facebook = siteTheme ? icon_facebook_light : icon_facebook_dark;
   const icon_instagram = siteTheme ? icon_instagram_light : icon_instagram_dark;
   const icon_twitter = siteTheme ? icon_twitter_light : icon_twitter_dark;
+
+  console.log(windowWidth);
 
   return (
     <>

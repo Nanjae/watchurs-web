@@ -98,7 +98,7 @@ const ContentTextDiv = styled.div`
 const ContentTextTitle = styled.div`
   font-weight: 700;
   @media only screen and (max-width: 575.99px) {
-    font-size: 24px;
+    font-size: 22px;
   }
   @media only screen and (min-width: 576px) {
     font-size: 24px;
@@ -142,7 +142,7 @@ const ContentTextBox = styled.div`
   font-weight: 400;
   line-height: 30px;
   @media only screen and (max-width: 575.99px) {
-    font-size: 18px;
+    font-size: 16px;
   }
   @media only screen and (min-width: 576px) {
     font-size: 18px;
@@ -229,8 +229,6 @@ const SwiperDiv = styled.div`
   @media only screen and (min-width: 1800px) {
   }
 `;
-
-//
 
 const SwiperBarDiv = styled.div`
   height: 100%;
@@ -332,18 +330,20 @@ const SwiperFillBar = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  transition: height 0.5s, background-color 0.3s;
   @media only screen and (max-width: 575.99px) {
     width: ${(props) => (props.upperTextIndex - 1) * 40}px;
     height: 3px;
+    transition: width 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 576px) {
     width: ${(props) => (props.upperTextIndex - 1) * 40}px;
     height: 3px;
+    transition: width 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 768px) {
     width: 3px;
     height: ${(props) => (props.upperTextIndex - 1) * 40}px;
+    transition: height 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 992px) {
   }
@@ -361,18 +361,20 @@ const SwiperCircle = styled.div`
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  transition: margin-top 0.5s, background-color 0.3s;
   @media only screen and (max-width: 575.99px) {
     margin-top: 0px;
     margin-left: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
+    transition: margin-left 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 576px) {
     margin-top: 0px;
     margin-left: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
+    transition: margin-left 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 768px) {
     margin-top: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
     margin-left: 0px;
+    transition: margin-top 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 992px) {
   }
@@ -431,8 +433,6 @@ const SwiperCurrentText = styled.div`
   color: ${(props) => props.theme.bgSubColor};
   transition: color 0.3s;
 `;
-
-//
 
 const SwiperInner = styled.div`
   width: 75%;
@@ -598,8 +598,8 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
               <SwiperBarDiv>
                 <SwiperBarBox>
                   <SwiperEmptyBar />
-                  <SwiperFillBar upperTextIndex={"01"} />
-                  <SwiperCircle upperTextIndex={"01"} />
+                  <SwiperFillBar upperTextIndex={upperTextIndex} />
+                  <SwiperCircle upperTextIndex={upperTextIndex} />
                 </SwiperBarBox>
                 <SwiperTextBox>
                   <SwiperCurrentText>{upperTextIndex}</SwiperCurrentText>

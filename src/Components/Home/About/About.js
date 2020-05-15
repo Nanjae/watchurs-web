@@ -11,20 +11,28 @@ const Wrapper = styled.div`
 `;
 
 const Inner = styled.div`
-  height: 750px;
-  padding: 50px 0px;
   display: flex;
   justify-content: center;
   @media only screen and (max-width: 575.99px) {
+    width: 98%;
   }
   @media only screen and (min-width: 576px) {
+    width: 540px;
   }
   @media only screen and (min-width: 768px) {
+    padding: 60px 0px;
+    width: 720px;
+    height: 700px;
   }
   @media only screen and (min-width: 992px) {
+    padding: 60px 0px;
+    height: 600px;
+    width: 960px;
   }
   @media only screen and (min-width: 1200px) {
-    width: 1200px;
+    padding: 50px 0px;
+    height: 750px;
+    width: 1120px;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
