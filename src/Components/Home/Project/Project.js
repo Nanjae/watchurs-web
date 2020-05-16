@@ -22,7 +22,7 @@ const Inner = styled.div`
   justify-content: center;
   padding: 50px 0px;
   @media only screen and (max-width: 575.99px) {
-    width: 98%;
+    width: 90%;
   }
   @media only screen and (min-width: 576px) {
     width: 540px;
@@ -48,12 +48,20 @@ const TitleDiv = styled.div`
   position: absolute;
   height: fit-content;
   display: flex;
-  justify-content: flex-start;
   @media only screen and (max-width: 575.99px) {
+    justify-content: center;
+    width: 90%;
   }
   @media only screen and (min-width: 576px) {
+    justify-content: center;
+    width: 540px;
   }
   @media only screen and (min-width: 768px) {
+    justify-content: flex-start;
+    width: 720px;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 960px;
   }
   @media only screen and (min-width: 992px) {
   }
@@ -70,9 +78,27 @@ const TitleDiv = styled.div`
 
 const TitleText = styled.div`
   color: ${(props) => props.theme.fontSubColor};
-  font-size: 300px;
   font-weight: 900;
   transition: color 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    font-size: 70px;
+  }
+  @media only screen and (min-width: 576px) {
+    font-size: 100px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 190px;
+  }
+  @media only screen and (min-width: 992px) {
+    font-size: 260px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 300px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const ImageDiv = styled.div`
@@ -80,25 +106,55 @@ const ImageDiv = styled.div`
   width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: space-between;
-  margin-top: 220px;
+  @media only screen and (max-width: 575.99px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media only screen and (min-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 120px;
+  }
+  @media only screen and (min-width: 992px) {
+    margin-top: 180px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: 220px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const ImageRow = styled.div`
   height: fit-content;
-  padding: 30px;
   @media only screen and (max-width: 575.99px) {
+    padding: 15px;
+    width: 300px;
   }
   @media only screen and (min-width: 576px) {
+    padding: 15px;
+    width: 300px;
   }
   @media only screen and (min-width: 768px) {
+    padding: 30px;
+    width: 300px;
   }
   @media only screen and (min-width: 992px) {
+    padding: 30px;
+    width: 420px;
   }
   @media only screen and (min-width: 1200px) {
+    padding: 10px;
     width: 530px;
   }
   @media only screen and (min-width: 1536px) {
+    padding: 30px;
   }
   @media only screen and (min-width: 1800px) {
     width: 650px;
@@ -110,18 +166,34 @@ const ImageBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  :not(:first-child) {
-    margin-top: 60px;
-  }
   @media only screen and (max-width: 575.99px) {
+    :not(:first-child) {
+      margin-top: 30px;
+    }
+    height: 360px;
   }
   @media only screen and (min-width: 576px) {
+    :not(:first-child) {
+      margin-top: 30px;
+    }
+    height: 360px;
   }
   @media only screen and (min-width: 768px) {
+    :not(:first-child) {
+      margin-top: 40px;
+    }
+    height: 360px;
   }
   @media only screen and (min-width: 992px) {
+    :not(:first-child) {
+      margin-top: 40px;
+    }
+    height: 500px;
   }
   @media only screen and (min-width: 1200px) {
+    :not(:first-child) {
+      margin-top: 60px;
+    }
     height: 630px;
   }
   @media only screen and (min-width: 1536px) {
@@ -137,12 +209,20 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   @media only screen and (max-width: 575.99px) {
+    width: 300px;
+    height: 360px;
   }
   @media only screen and (min-width: 576px) {
+    width: 300px;
+    height: 360px;
   }
   @media only screen and (min-width: 768px) {
+    width: 300px;
+    height: 360px;
   }
   @media only screen and (min-width: 992px) {
+    width: 420px;
+    height: 500px;
   }
   @media only screen and (min-width: 1200px) {
     width: 530px;
@@ -162,11 +242,34 @@ const ImageSearchIcon = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
   background-position: center;
-  width: 80px;
-  height: 80px;
-  opacity: 0;
   transition: opacity 0.3s, background-image 0.3s;
   cursor: pointer;
+  @media only screen and (max-width: 575.99px) {
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+  }
+  @media only screen and (min-width: 576px) {
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+  }
+  @media only screen and (min-width: 768px) {
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+  }
+  @media only screen and (min-width: 992px) {
+    opacity: 0;
+    width: 80px;
+    height: 80px;
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const ImageOpacity = styled.div`
@@ -175,15 +278,27 @@ const ImageOpacity = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+
   transition: opacity 0.3s, width 0.3s, height 0.3s;
   @media only screen and (max-width: 575.99px) {
+    opacity: 0.2;
+    width: 300px;
+    height: 360px;
   }
   @media only screen and (min-width: 576px) {
+    opacity: 0.2;
+    width: 300px;
+    height: 360px;
   }
   @media only screen and (min-width: 768px) {
+    opacity: 0.2;
+    width: 300px;
+    height: 360px;
   }
   @media only screen and (min-width: 992px) {
+    opacity: 0;
+    width: 320px;
+    height: 400px;
   }
   @media only screen and (min-width: 1200px) {
     width: 430px;
@@ -198,25 +313,65 @@ const ImageOpacity = styled.div`
 `;
 
 const ImageOpacityLine = styled.div`
-  width: 96%;
-  height: 96%;
-  border: 2px solid
-    ${(props) =>
-      props.searchEnter ? props.theme.highlightColor : props.theme.bgSubColor};
   display: flex;
   justify-content: center;
   align-items: center;
   transition: border 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    border: 0px;
+  }
+  @media only screen and (min-width: 576px) {
+    border: 0px;
+  }
+  @media only screen and (min-width: 768px) {
+    border: 0px;
+  }
+  @media only screen and (min-width: 992px) {
+    border: 2px solid
+      ${(props) =>
+        props.searchEnter
+          ? props.theme.highlightColor
+          : props.theme.bgSubColor};
+    width: 96%;
+    height: 96%;
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const MoreBox = styled.div`
-  width: fit-content;
-  margin-top: 180px;
+  width: 100%;
   display: flex;
   align-items: flex-end;
   opacity: 1;
   cursor: pointer;
   transition: opacity 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  @media only screen and (min-width: 576px) {
+    justify-content: center;
+    margin-top: 40px;
+  }
+  @media only screen and (min-width: 768px) {
+    justify-content: flex-start;
+    margin-top: 60px;
+  }
+  @media only screen and (min-width: 992px) {
+    margin-top: 70px;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: 100px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const MoreText = styled.div`
@@ -238,11 +393,20 @@ const MoreLine = styled.div`
 export default ({ siteTheme }) => {
   const [moreEnter, setMoreEnter] = useState(false);
   const [searchEnter, setSearchEnter] = useState(false);
-  const [projectEnter, setEnter] = useState(0);
+  const [projectEnter, setProjectEnter] = useState(0);
 
   const icon_search = siteTheme ? icon_search_light : icon_search_dark;
 
   const { windowWidth } = useWindowDimensions();
+
+  const opacityOptions =
+    windowWidth < 1800
+      ? windowWidth < 1200
+        ? windowWidth < 992
+          ? null
+          : { opacity: "0.2", width: 420, height: 500 }
+        : { opacity: "0.2", width: 530, height: 630 }
+      : { opacity: "0.2", width: 650, height: 780 };
 
   return (
     <>
@@ -252,19 +416,37 @@ export default ({ siteTheme }) => {
             <TitleText>project</TitleText>
           </TitleDiv>
           <ImageDiv>
-            <ImageRow style={{ marginTop: 200 }}>
+            <ImageRow
+              style={
+                windowWidth < 1800
+                  ? windowWidth < 1200
+                    ? { marginTop: 130 }
+                    : { marginTop: 160 }
+                  : { marginTop: 200 }
+              }
+            >
               <ImageBox
                 onMouseEnter={() => {
-                  setEnter(1);
+                  setProjectEnter(1);
                 }}
                 onMouseLeave={() => {
-                  setEnter(0);
+                  setProjectEnter(0);
                 }}
               >
                 <Image url={bg01} />
                 <ImageSearchIcon
-                  url={searchEnter ? icon_search_highlight : icon_search}
-                  style={projectEnter === 1 ? { opacity: 1 } : null}
+                  url={
+                    searchEnter && projectEnter === 1
+                      ? icon_search_highlight
+                      : icon_search
+                  }
+                  style={
+                    projectEnter === 1
+                      ? windowWidth < 992
+                        ? null
+                        : { opacity: 1 }
+                      : null
+                  }
                   onMouseEnter={() => {
                     setSearchEnter(true);
                   }}
@@ -273,29 +455,33 @@ export default ({ siteTheme }) => {
                   }}
                 />
                 <ImageOpacity
-                  style={
-                    projectEnter === 1
-                      ? windowWidth < 1800
-                        ? { opacity: "0.4", width: 530, height: 630 }
-                        : { opacity: "0.4", width: 650, height: 780 }
-                      : null
-                  }
+                  style={projectEnter === 1 ? opacityOptions : null}
                 >
                   <ImageOpacityLine searchEnter={searchEnter} />
                 </ImageOpacity>
               </ImageBox>
               <ImageBox
                 onMouseEnter={() => {
-                  setEnter(3);
+                  setProjectEnter(3);
                 }}
                 onMouseLeave={() => {
-                  setEnter(0);
+                  setProjectEnter(0);
                 }}
               >
                 <Image url={bg03} />
                 <ImageSearchIcon
-                  url={searchEnter ? icon_search_highlight : icon_search}
-                  style={projectEnter === 3 ? { opacity: 1 } : null}
+                  url={
+                    searchEnter && projectEnter === 3
+                      ? icon_search_highlight
+                      : icon_search
+                  }
+                  style={
+                    projectEnter === 3
+                      ? windowWidth < 992
+                        ? null
+                        : { opacity: 1 }
+                      : null
+                  }
                   onMouseEnter={() => {
                     setSearchEnter(true);
                   }}
@@ -304,13 +490,7 @@ export default ({ siteTheme }) => {
                   }}
                 />
                 <ImageOpacity
-                  style={
-                    projectEnter === 3
-                      ? windowWidth < 1800
-                        ? { opacity: "0.4", width: 530, height: 630 }
-                        : { opacity: "0.4", width: 650, height: 780 }
-                      : null
-                  }
+                  style={projectEnter === 3 ? opacityOptions : null}
                 >
                   <ImageOpacityLine searchEnter={searchEnter} />
                 </ImageOpacity>
@@ -319,16 +499,26 @@ export default ({ siteTheme }) => {
             <ImageRow>
               <ImageBox
                 onMouseEnter={() => {
-                  setEnter(2);
+                  setProjectEnter(2);
                 }}
                 onMouseLeave={() => {
-                  setEnter(0);
+                  setProjectEnter(0);
                 }}
               >
                 <Image url={bg02} />
                 <ImageSearchIcon
-                  url={searchEnter ? icon_search_highlight : icon_search}
-                  style={projectEnter === 2 ? { opacity: 1 } : null}
+                  url={
+                    searchEnter && projectEnter === 2
+                      ? icon_search_highlight
+                      : icon_search
+                  }
+                  style={
+                    projectEnter === 2
+                      ? windowWidth < 992
+                        ? null
+                        : { opacity: 1 }
+                      : null
+                  }
                   onMouseEnter={() => {
                     setSearchEnter(true);
                   }}
@@ -337,29 +527,33 @@ export default ({ siteTheme }) => {
                   }}
                 />
                 <ImageOpacity
-                  style={
-                    projectEnter === 2
-                      ? windowWidth < 1800
-                        ? { opacity: "0.4", width: 530, height: 630 }
-                        : { opacity: "0.4", width: 650, height: 780 }
-                      : null
-                  }
+                  style={projectEnter === 2 ? opacityOptions : null}
                 >
                   <ImageOpacityLine searchEnter={searchEnter} />
                 </ImageOpacity>
               </ImageBox>
               <ImageBox
                 onMouseEnter={() => {
-                  setEnter(4);
+                  setProjectEnter(4);
                 }}
                 onMouseLeave={() => {
-                  setEnter(0);
+                  setProjectEnter(0);
                 }}
               >
                 <Image url={bg04} />
                 <ImageSearchIcon
-                  url={searchEnter ? icon_search_highlight : icon_search}
-                  style={projectEnter === 4 ? { opacity: 1 } : null}
+                  url={
+                    searchEnter && projectEnter === 4
+                      ? icon_search_highlight
+                      : icon_search
+                  }
+                  style={
+                    projectEnter === 4
+                      ? windowWidth < 992
+                        ? null
+                        : { opacity: 1 }
+                      : null
+                  }
                   onMouseEnter={() => {
                     setSearchEnter(true);
                   }}
@@ -368,13 +562,7 @@ export default ({ siteTheme }) => {
                   }}
                 />
                 <ImageOpacity
-                  style={
-                    projectEnter === 4
-                      ? windowWidth < 1800
-                        ? { opacity: "0.4", width: 530, height: 630 }
-                        : { opacity: "0.4", width: 650, height: 780 }
-                      : null
-                  }
+                  style={projectEnter === 4 ? opacityOptions : null}
                 >
                   <ImageOpacityLine searchEnter={searchEnter} />
                 </ImageOpacity>
