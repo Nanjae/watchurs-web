@@ -6,8 +6,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   @media only screen and (max-width: 575.99px) {
+    width: 100%;
   }
   @media only screen and (min-width: 576px) {
+    width: 540px;
   }
   @media only screen and (min-width: 768px) {
     width: 360px;
@@ -32,8 +34,11 @@ const Inner = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: 575.99px) {
+    width: 100%;
   }
   @media only screen and (min-width: 576px) {
+    width: 480px;
+    margin: 0px 30px;
   }
   @media only screen and (min-width: 768px) {
     width: 330px;
@@ -57,8 +62,10 @@ const Inner = styled.div`
 const TopDiv = styled.div`
   width: 100%;
   @media only screen and (max-width: 575.99px) {
+    height: 200px;
   }
   @media only screen and (min-width: 576px) {
+    height: 200px;
   }
   @media only screen and (min-width: 768px) {
     height: 240px;
@@ -81,8 +88,12 @@ const TopBgTextDiv = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   @media only screen and (max-width: 575.99px) {
+    height: 200px;
+    width: 90%;
   }
   @media only screen and (min-width: 576px) {
+    height: 200px;
+    width: 480px;
   }
   @media only screen and (min-width: 768px) {
     height: 240px;
@@ -108,8 +119,10 @@ const TopBgText = styled.div`
   opacity: 0.1;
   transition: color 0.3s;
   @media only screen and (max-width: 575.99px) {
+    font-size: 200px;
   }
   @media only screen and (min-width: 576px) {
+    font-size: 200px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 225px;
@@ -133,8 +146,16 @@ const TopTitleDiv = styled.div`
   justify-content: center;
   align-items: flex-start;
   @media only screen and (max-width: 575.99px) {
+    margin-top: 40px;
+    margin-left: 80px;
+    height: 160px;
+    width: 200px;
   }
   @media only screen and (min-width: 576px) {
+    margin-top: 40px;
+    margin-left: 80px;
+    height: 160px;
+    width: 400px;
   }
   @media only screen and (min-width: 768px) {
     margin-top: 40px;
@@ -165,8 +186,10 @@ const TopTitleTopText = styled.div`
   margin-bottom: 10px;
   transition: color 0.3s;
   @media only screen and (max-width: 575.99px) {
+    font-size: 35px;
   }
   @media only screen and (min-width: 576px) {
+    font-size: 35px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 40px;
@@ -188,8 +211,10 @@ const TopTitleBottomText = styled.div`
   font-weight: 900;
   transition: color 0.3s;
   @media only screen and (max-width: 575.99px) {
+    font-size: 35px;
   }
   @media only screen and (min-width: 576px) {
+    font-size: 35px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 40px;
@@ -212,8 +237,12 @@ const BottomDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: 575.99px) {
+    padding: 10px 0px;
+    height: fit-content;
   }
   @media only screen and (min-width: 576px) {
+    padding: 10px 0px;
+    height: 320px;
   }
   @media only screen and (min-width: 768px) {
     padding: 20px 0px;
@@ -248,6 +277,21 @@ const BottomSubText = styled.div`
   line-height: 36px;
   text-align: right;
   transition: color 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    margin-top: 20px;
+  }
+  @media only screen and (min-width: 576px) {
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 export default () => {

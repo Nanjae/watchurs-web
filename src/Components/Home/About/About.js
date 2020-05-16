@@ -13,24 +13,27 @@ const Wrapper = styled.div`
 const Inner = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 60px 0px;
   @media only screen and (max-width: 575.99px) {
-    width: 98%;
+    width: 90%;
+    flex-direction: column;
   }
   @media only screen and (min-width: 576px) {
     width: 540px;
+    height: 790px;
+    flex-direction: column;
   }
   @media only screen and (min-width: 768px) {
-    padding: 60px 0px;
     width: 720px;
     height: 700px;
+    flex-direction: row;
   }
   @media only screen and (min-width: 992px) {
-    padding: 60px 0px;
     height: 600px;
     width: 960px;
   }
   @media only screen and (min-width: 1200px) {
-    padding: 50px 0px;
     height: 750px;
     width: 1120px;
   }

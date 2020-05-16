@@ -7,8 +7,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   @media only screen and (max-width: 575.99px) {
+    width: 100%;
   }
   @media only screen and (min-width: 576px) {
+    width: 540px;
   }
   @media only screen and (min-width: 768px) {
     width: 360px;
@@ -34,8 +36,11 @@ const Inner = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 575.99px) {
+    width: 100%;
   }
   @media only screen and (min-width: 576px) {
+    width: 480px;
+    margin: 0px 30px;
   }
   @media only screen and (min-width: 768px) {
     width: 330px;
@@ -57,16 +62,22 @@ const Inner = styled.div`
 `;
 
 const CounterDiv = styled.div`
-  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   @media only screen and (max-width: 575.99px) {
+    width: 100%;
+    height: 400px;
+    margin-top: 40px;
   }
   @media only screen and (min-width: 576px) {
+    width: 100%;
+    height: 200px;
+    margin-top: 50px;
   }
   @media only screen and (min-width: 768px) {
+    width: 90%;
     height: 350px;
   }
   @media only screen and (min-width: 992px) {
@@ -86,8 +97,12 @@ const CounterColumn = styled.div`
   display: flex;
   justify-content: space-between;
   @media only screen and (max-width: 575.99px) {
+    flex-direction: column;
+    height: 180px;
   }
   @media only screen and (min-width: 576px) {
+    flex-direction: row;
+    height: 70px;
   }
   @media only screen and (min-width: 768px) {
     height: 150px;
@@ -105,15 +120,19 @@ const CounterColumn = styled.div`
 `;
 
 const CounterBox = styled.div`
-  height: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   @media only screen and (max-width: 575.99px) {
+    justify-content: center;
+    height: 40%;
   }
   @media only screen and (min-width: 576px) {
+    justify-content: flex-start;
+    width: 45%;
+    height: 100%;
   }
   @media only screen and (min-width: 768px) {
+    justify-content: flex-end;
     width: 45%;
   }
   @media only screen and (min-width: 992px) {
@@ -128,15 +147,19 @@ const CounterBox = styled.div`
 `;
 
 const CounterBoxInner = styled.div`
-  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: 575.99px) {
+    align-items: center;
+    height: 100%;
   }
   @media only screen and (min-width: 576px) {
+    align-items: flex-start;
+    height: 100%;
   }
   @media only screen and (min-width: 768px) {
+    height: 50%;
     width: 100%;
   }
   @media only screen and (min-width: 992px) {
@@ -155,8 +178,10 @@ const CounterBoxCount = styled.div`
   color: ${(props) => props.theme.fontMainColor};
   transition: color 0.3s;
   @media only screen and (max-width: 575.99px) {
+    font-size: 35px;
   }
   @media only screen and (min-width: 576px) {
+    font-size: 35px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 40px;
@@ -178,8 +203,10 @@ const CounterBoxText = styled.div`
   color: ${(props) => props.theme.fontMainColor};
   transition: color 0.3s;
   @media only screen and (max-width: 575.99px) {
+    font-size: 18px;
   }
   @media only screen and (min-width: 576px) {
+    font-size: 18px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 18px;

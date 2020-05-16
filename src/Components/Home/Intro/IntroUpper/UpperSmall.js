@@ -142,7 +142,7 @@ const ContentTextBox = styled.div`
   font-weight: 400;
   line-height: 30px;
   @media only screen and (max-width: 575.99px) {
-    font-size: 16px;
+    font-size: 18px;
   }
   @media only screen and (min-width: 576px) {
     font-size: 18px;
@@ -483,10 +483,8 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
               <ContentTextSubTitle>WATCH YOURS</ContentTextSubTitle>
               <ContentTextBox>
                 In this project, our designers tried to combine several styles
-                in a single interior.
-              </ContentTextBox>
-              <ContentTextBox>
-                It features some modern and classic elements in the decor.
+                in a single interior. It features some modern and classic
+                elements in the decor.
               </ContentTextBox>
               <ContentTextSubBox
                 style={moreEnter ? { opacity: "0.6" } : null}
