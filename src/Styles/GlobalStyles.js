@@ -17,20 +17,11 @@ export default createGlobalStyle`
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 300;
         font-size: 14px;
+        -webkit-tap-highlight-color: transparent;
     }
     a {
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 300;
         text-decoration: none;
     }
-    /* input {
-        font-family: 'Noto Sans KR', sans-serif;
-        font-weight: normal;
-        outline: none;
-    }
-    button {
-        font-family: 'Noto Sans KR', sans-serif;
-        border: 0px;
-        outline: none;
-    } */
 `;

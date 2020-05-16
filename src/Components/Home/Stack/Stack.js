@@ -8,7 +8,6 @@ import logo_apollo from "../../../Assets/Images/Logos/logo_apollo.png";
 import logo_netlify from "../../../Assets/Images/Logos/logo_netlify.png";
 import logo_nodejs from "../../../Assets/Images/Logos/logo_nodejs.png";
 import logo_heroku from "../../../Assets/Images/Logos/logo_heroku.png";
-import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   height: fit-content;
@@ -281,8 +280,6 @@ const SwiperImage = styled.div`
 
 export default () => {
   const [techEnter, setTechEnter] = useState(0);
-
-  const { windowWidth } = useWindowDimensions();
 
   const swiperParams = {
     breakpoints: {
