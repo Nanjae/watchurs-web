@@ -14,29 +14,83 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
   width: 90%;
-  height: 350px;
   margin: 80px 30px 30px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 575.99px) {
+    height: fit-content;
+  }
+  @media only screen and (min-width: 576px) {
+    height: 350px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const TopDiv = styled.div`
   width: 100%;
-  height: 70%;
   display: flex;
   justify-content: flex-start;
+  @media only screen and (max-width: 575.99px) {
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+  }
+  @media only screen and (min-width: 576px) {
+    align-items: flex-start;
+    flex-direction: row;
+    height: 70%;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const TopBox = styled.div`
   width: 280px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  :not(:first-child) {
-    margin-left: 80px;
+  @media only screen and (max-width: 575.99px) {
+    align-items: center;
+    height: 245px;
+    :not(:first-child) {
+      margin-left: 0px;
+    }
+  }
+  @media only screen and (min-width: 576px) {
+    align-items: flex-start;
+    height: 100%;
+    :not(:first-child) {
+      margin-left: 80px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
   }
 `;
 
@@ -82,16 +136,46 @@ const BottomDiv = styled.div`
 `;
 
 const BottomBox = styled.div`
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @media only screen and (max-width: 575.99px) {
+    justify-content: center;
+  }
+  @media only screen and (min-width: 576px) {
+    justify-content: flex-start;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const BottomText = styled.div`
   color: ${(props) => props.theme.lineSubColor};
-  font-size: 18px;
+  text-align: center;
+  @media only screen and (max-width: 575.99px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 576px) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 export default () => {
@@ -164,7 +248,6 @@ export default () => {
                 </TopSubText>
               </TopSubTextBox>
             </TopBox>
-            <TopBox></TopBox>
           </TopDiv>
           <BottomDiv>
             <BottomBox>
