@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  justify-content: flex-end;
   @media only screen and (max-width: 575.99px) {
     width: 100%;
   }
