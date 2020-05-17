@@ -24,4 +24,54 @@ export default createGlobalStyle`
         font-weight: 300;
         text-decoration: none;
     }
+    .swiper-stack-custom {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+        padding-bottom: 40px;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        border-radius: 100%;
+        background: #007AFF;
+        opacity: 0.8;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active-prev {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        border-radius: 100%;
+        background: #007AFF;
+        opacity: 0.4;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active-prev-prev {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        border-radius: 100%;
+        background: #007AFF;
+        opacity: 0.4;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active-next {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        border-radius: 100%;
+        background: #007AFF;
+        opacity: 0.4;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active-next-next {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        border-radius: 100%;
+        background: #007AFF;
+        opacity: 0.4;
+    }
 `;

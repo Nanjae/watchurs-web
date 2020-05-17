@@ -229,7 +229,7 @@ const TitleBottomText = styled.div`
 `;
 
 const SwiperDiv = styled.div`
-  height: fit-content;
+  height: 130px;
   margin-bottom: 50px;
   cursor: e-resize;
   @media only screen and (max-width: 575.99px) {
@@ -282,6 +282,10 @@ export default () => {
   const [techEnter, setTechEnter] = useState(0);
 
   const swiperParams = {
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    },
     breakpoints: {
       576: { slidesPerView: 2 },
       768: { slidesPerView: 3 },
@@ -304,7 +308,12 @@ export default () => {
             </TitleBox>
           </TitleDiv>
           <SwiperDiv>
-            <Swiper {...swiperParams} slidesPerView={1} spaceBetween={50}>
+            <Swiper
+              containerClass={"swiper-stack-custom"}
+              {...swiperParams}
+              slidesPerView={1}
+              spaceBetween={50}
+            >
               <SwiperImageBox>
                 <SwiperImage
                   url={logo_react}
