@@ -12,14 +12,20 @@ const Wrapper = styled.div`
   z-index: 100;
   width: 100%;
   background-color: ${(props) => props.theme.bgMainColor};
-  transition: background-color 0.3s, top 0.3s;
+  transition: background-color 0.3s, top 0.3s, box-shadow 0.3s;
   @media only screen and (max-width: 575.99px) {
-    box-shadow: 0px 0px 5px 0px ${(props) => props.theme.borderMainColor};
+    box-shadow: ${(props) =>
+      props.siteTheme
+        ? `0px 1px 20px 1px rgba(15, 15, 18, 0.1)`
+        : `0px 1px 20px 1px rgba(255, 255, 255, 0.1)`};
     top: 0px;
     height: 56px;
   }
   @media only screen and (min-width: 576px) {
-    box-shadow: 0px 0px 5px 0px ${(props) => props.theme.borderMainColor};
+    box-shadow: ${(props) =>
+      props.siteTheme
+        ? `0px 1px 20px 1px rgba(15, 15, 18, 0.1)`
+        : `0px 1px 20px 1px rgba(255, 255, 255, 0.1)`};
     top: 0px;
     height: 56px;
   }
@@ -223,7 +229,7 @@ export default ({
           </Inner>
         </Wrapper>
       ) : (
-        <Wrapper>
+        <Wrapper siteTheme={siteTheme}>
           <Inner>
             <LeftDiv>
               <LogoIcon
