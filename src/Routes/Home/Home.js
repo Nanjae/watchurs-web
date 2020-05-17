@@ -18,6 +18,7 @@ import icon_instagram_dark from "../../Assets/Icons/icon_instagram_dark.png";
 import icon_instagram_light from "../../Assets/Icons/icon_instagram_light.png";
 import icon_twitter_dark from "../../Assets/Icons/icon_twitter_dark.png";
 import icon_twitter_light from "../../Assets/Icons/icon_twitter_light.png";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -42,33 +43,89 @@ const Wrapper = styled.div`
 
 const PopWrapper = styled.div`
   position: fixed;
-  z-index: 150;
   top: 0;
-  left: -821px;
-  width: 820px;
   height: 100%;
   border-right: 1px solid ${(props) => props.theme.borderMainColor};
   transition: border-right 0.3s, left 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    z-index: 50;
+    left: -281px;
+    width: 280px;
+  }
+  @media only screen and (min-width: 576px) {
+    z-index: 50;
+    left: -281px;
+    width: 280px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    z-index: 150;
+    left: -821px;
+    width: 820px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopOpacity = styled.div`
   position: absolute;
-  width: 820px;
   height: 100%;
-  background-color: ${(props) => props.theme.bgPopColor};
-  opacity: 0.9;
   transition: background-color 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    width: 280px;
+    opacity: 1;
+    background-color: ${(props) => props.theme.bgMainColor};
+  }
+  @media only screen and (min-width: 576px) {
+    width: 280px;
+    opacity: 1;
+    background-color: ${(props) => props.theme.bgMainColor};
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 820px;
+    opacity: 0.9;
+    background-color: ${(props) => props.theme.bgPopColor};
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopInner = styled.div`
   position: absolute;
-  width: 820px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   color: white;
+  @media only screen and (max-width: 575.99px) {
+    width: 280px;
+  }
+  @media only screen and (min-width: 576px) {
+    width: 280px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 820px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopTopDiv = styled.div`
@@ -106,11 +163,33 @@ const PopMainDiv = styled.div`
 const PopMainInner = styled.div`
   width: fit-content;
   height: fit-content;
-  padding-left: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  @media only screen and (max-width: 575.99px) {
+    margin-top: 10px;
+    padding-left: 0px;
+    padding-top: 56px;
+  }
+  @media only screen and (min-width: 576px) {
+    margin-top: 10px;
+    padding-left: 0px;
+    padding-top: 56px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-top: 0px;
+    padding-left: 200px;
+    padding-top: 0px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopMainMenuDiv = styled.div`
@@ -119,10 +198,30 @@ const PopMainMenuDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  :not(:first-child) {
-    margin-top: 50px;
-  }
   cursor: pointer;
+  @media only screen and (max-width: 575.99px) {
+    :not(:first-child) {
+      margin-top: 0px;
+    }
+  }
+  @media only screen and (min-width: 576px) {
+    :not(:first-child) {
+      margin-top: 0px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    :not(:first-child) {
+      margin-top: 50px;
+    }
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopMainMenuNum = styled.div`
@@ -134,13 +233,56 @@ const PopMainMenuNum = styled.div`
 `;
 
 const PopMainMenuText = styled.div`
-  color: ${(props) =>
-    props.popMenuEnter === props.popMenuIndex
-      ? props.theme.fontPopColor
-      : props.theme.fontMainColor};
-  font-size: 70px;
-  font-weight: 700;
   transition: color 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    background-color: ${(props) =>
+      props.popMenuEnter === props.popMenuIndex
+        ? props.theme.fontPopColor
+        : null};
+    color: ${(props) =>
+      props.popMenuEnter === props.popMenuIndex
+        ? props.theme.fontFooterColor
+        : props.theme.fontPopSubColor};
+    font-size: 16px;
+    font-weight: 200;
+    margin: 2px 15px;
+    padding: 18px 35px 18px 15px;
+    width: 200px;
+  }
+  @media only screen and (min-width: 576px) {
+    background-color: ${(props) =>
+      props.popMenuEnter === props.popMenuIndex
+        ? props.theme.fontPopColor
+        : null};
+    color: ${(props) =>
+      props.popMenuEnter === props.popMenuIndex
+        ? props.theme.fontFooterColor
+        : props.theme.fontPopSubColor};
+    font-size: 16px;
+    font-weight: 200;
+    margin: 2px 15px;
+    padding: 18px 35px 18px 15px;
+    width: 200px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    background-color: null;
+    color: ${(props) =>
+      props.popMenuEnter === props.popMenuIndex
+        ? props.theme.fontPopColor
+        : props.theme.fontMainColor};
+    font-size: 70px;
+    font-weight: 700;
+    padding: 0px;
+    width: 0px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopBottomDiv = styled.div`
@@ -149,26 +291,78 @@ const PopBottomDiv = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-bottom: 60px;
+  @media only screen and (max-width: 575.99px) {
+    padding-bottom: 40px;
+  }
+  @media only screen and (min-width: 576px) {
+    padding-bottom: 40px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    padding-bottom: 60px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopBottomInner = styled.div`
   width: fit-content;
   height: fit-content;
-  padding-left: 200px;
   display: flex;
   justify-content: flex-start;
+  @media only screen and (max-width: 575.99px) {
+    padding-left: 10px;
+  }
+  @media only screen and (min-width: 576px) {
+    padding-left: 10px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    padding-left: 200px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const PopBottomIcon = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
-  width: 20px;
-  height: 20px;
   cursor: pointer;
-  margin: 0px 20px;
   opacity: 1;
   transition: background-image 0.3s, opacity 0.3s;
+  @media only screen and (max-width: 575.99px) {
+    width: 16px;
+    height: 16px;
+    margin: 0px 10px;
+  }
+  @media only screen and (min-width: 576px) {
+    width: 16px;
+    height: 16px;
+    margin: 0px 10px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 20px;
+    height: 20px;
+    margin: 0px 20px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const scrollToRef = (ref) =>
@@ -204,6 +398,8 @@ export default () => {
   const icon_instagram = siteTheme ? icon_instagram_light : icon_instagram_dark;
   const icon_twitter = siteTheme ? icon_twitter_light : icon_twitter_dark;
 
+  const { windowWidth } = useWindowDimensions();
+
   return (
     <>
       <ThemeProvider theme={siteTheme ? ThemeLight : ThemeDark}>
@@ -234,148 +430,276 @@ export default () => {
           <Stack />
           <Footer />
           <GoTop />
-          <PopWrapper style={popClosed ? { left: "-821px" } : { left: "0px" }}>
-            <PopOpacity />
-            <PopInner>
-              <PopTopDiv>
-                <PopTopInner>
-                  <PopTopIcon
-                    onMouseEnter={() => {
-                      setPopClosedEnter(true);
-                    }}
-                    onMouseLeave={() => {
-                      setPopClosedEnter(false);
-                    }}
-                    onClick={() => {
-                      setPopClosed(true);
-                    }}
-                    url={icon_cross}
-                    style={popClosedEnter ? { opacity: 0.6 } : { opacity: 1 }}
-                  />
-                </PopTopInner>
-              </PopTopDiv>
-              <PopMainDiv>
-                <PopMainInner>
-                  <PopMainMenuDiv
-                    onMouseEnter={() => {
-                      setPopMenuEnter(1);
-                    }}
-                    onMouseLeave={() => {
-                      setPopMenuEnter(0);
-                    }}
-                    onClick={() => {
-                      scrollToRef(introRef);
-                    }}
-                  >
-                    <PopMainMenuNum>01</PopMainMenuNum>
-                    <PopMainMenuText
-                      popMenuEnter={popMenuEnter}
-                      popMenuIndex={1}
+          {windowWidth < 1200 ? (
+            <PopWrapper
+              style={popClosed ? { left: "-281px" } : { left: "0px" }}
+            >
+              <PopOpacity />
+              <PopInner>
+                <PopMainDiv>
+                  <PopMainInner>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(1);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(introRef);
+                      }}
                     >
-                      intro
-                    </PopMainMenuText>
-                  </PopMainMenuDiv>
-                  <PopMainMenuDiv
-                    onMouseEnter={() => {
-                      setPopMenuEnter(2);
-                    }}
-                    onMouseLeave={() => {
-                      setPopMenuEnter(0);
-                    }}
-                    onClick={() => {
-                      scrollToRef(aboutRef);
-                    }}
-                  >
-                    <PopMainMenuNum>02</PopMainMenuNum>
-                    <PopMainMenuText
-                      popMenuEnter={popMenuEnter}
-                      popMenuIndex={2}
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={1}
+                      >
+                        intro
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(2);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(aboutRef);
+                      }}
                     >
-                      about
-                    </PopMainMenuText>
-                  </PopMainMenuDiv>
-                  <PopMainMenuDiv
-                    onMouseEnter={() => {
-                      setPopMenuEnter(3);
-                    }}
-                    onMouseLeave={() => {
-                      setPopMenuEnter(0);
-                    }}
-                    onClick={() => {
-                      scrollToRef(projectRef);
-                    }}
-                  >
-                    <PopMainMenuNum>03</PopMainMenuNum>
-                    <PopMainMenuText
-                      popMenuEnter={popMenuEnter}
-                      popMenuIndex={3}
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={2}
+                      >
+                        about
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(3);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(projectRef);
+                      }}
                     >
-                      project
-                    </PopMainMenuText>
-                  </PopMainMenuDiv>
-                  <PopMainMenuDiv
-                    onMouseEnter={() => {
-                      setPopMenuEnter(4);
-                    }}
-                    onMouseLeave={() => {
-                      setPopMenuEnter(0);
-                    }}
-                    onClick={() => {
-                      scrollToRef(usedRef);
-                    }}
-                  >
-                    <PopMainMenuNum>04</PopMainMenuNum>
-                    <PopMainMenuText
-                      popMenuEnter={popMenuEnter}
-                      popMenuIndex={4}
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={3}
+                      >
+                        project
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(4);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(usedRef);
+                      }}
                     >
-                      used
-                    </PopMainMenuText>
-                  </PopMainMenuDiv>
-                </PopMainInner>
-              </PopMainDiv>
-              <PopBottomDiv>
-                <PopBottomInner>
-                  <PopBottomIcon
-                    onMouseEnter={() => {
-                      setPopIconEnter(1);
-                    }}
-                    onMouseLeave={() => {
-                      setPopIconEnter(0);
-                    }}
-                    url={icon_facebook}
-                    style={
-                      popIconEnter === 1 ? { opacity: 0.6 } : { opacity: 1 }
-                    }
-                  />
-                  <PopBottomIcon
-                    onMouseEnter={() => {
-                      setPopIconEnter(2);
-                    }}
-                    onMouseLeave={() => {
-                      setPopIconEnter(0);
-                    }}
-                    url={icon_instagram}
-                    style={
-                      popIconEnter === 2 ? { opacity: 0.6 } : { opacity: 1 }
-                    }
-                  />
-                  <PopBottomIcon
-                    onMouseEnter={() => {
-                      setPopIconEnter(3);
-                    }}
-                    onMouseLeave={() => {
-                      setPopIconEnter(0);
-                    }}
-                    url={icon_twitter}
-                    style={
-                      popIconEnter === 3 ? { opacity: 0.6 } : { opacity: 1 }
-                    }
-                  />
-                </PopBottomInner>
-              </PopBottomDiv>
-            </PopInner>
-          </PopWrapper>
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={4}
+                      >
+                        used
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                  </PopMainInner>
+                </PopMainDiv>
+                <PopBottomDiv>
+                  <PopBottomInner>
+                    <PopBottomIcon
+                      onMouseEnter={() => {
+                        setPopIconEnter(1);
+                      }}
+                      onMouseLeave={() => {
+                        setPopIconEnter(0);
+                      }}
+                      url={icon_facebook}
+                      style={
+                        popIconEnter === 1 ? { opacity: 0.6 } : { opacity: 1 }
+                      }
+                    />
+                    <PopBottomIcon
+                      onMouseEnter={() => {
+                        setPopIconEnter(2);
+                      }}
+                      onMouseLeave={() => {
+                        setPopIconEnter(0);
+                      }}
+                      url={icon_instagram}
+                      style={
+                        popIconEnter === 2 ? { opacity: 0.6 } : { opacity: 1 }
+                      }
+                    />
+                    <PopBottomIcon
+                      onMouseEnter={() => {
+                        setPopIconEnter(3);
+                      }}
+                      onMouseLeave={() => {
+                        setPopIconEnter(0);
+                      }}
+                      url={icon_twitter}
+                      style={
+                        popIconEnter === 3 ? { opacity: 0.6 } : { opacity: 1 }
+                      }
+                    />
+                  </PopBottomInner>
+                </PopBottomDiv>
+              </PopInner>
+            </PopWrapper>
+          ) : (
+            <PopWrapper
+              style={popClosed ? { left: "-821px" } : { left: "0px" }}
+            >
+              <PopOpacity />
+              <PopInner>
+                <PopTopDiv>
+                  <PopTopInner>
+                    <PopTopIcon
+                      onMouseEnter={() => {
+                        setPopClosedEnter(true);
+                      }}
+                      onMouseLeave={() => {
+                        setPopClosedEnter(false);
+                      }}
+                      onClick={() => {
+                        setPopClosed(true);
+                      }}
+                      url={icon_cross}
+                      style={popClosedEnter ? { opacity: 0.6 } : { opacity: 1 }}
+                    />
+                  </PopTopInner>
+                </PopTopDiv>
+                <PopMainDiv>
+                  <PopMainInner>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(1);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(introRef);
+                      }}
+                    >
+                      <PopMainMenuNum>01</PopMainMenuNum>
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={1}
+                      >
+                        intro
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(2);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(aboutRef);
+                      }}
+                    >
+                      <PopMainMenuNum>02</PopMainMenuNum>
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={2}
+                      >
+                        about
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(3);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(projectRef);
+                      }}
+                    >
+                      <PopMainMenuNum>03</PopMainMenuNum>
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={3}
+                      >
+                        project
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                    <PopMainMenuDiv
+                      onMouseEnter={() => {
+                        setPopMenuEnter(4);
+                      }}
+                      onMouseLeave={() => {
+                        setPopMenuEnter(0);
+                      }}
+                      onClick={() => {
+                        scrollToRef(usedRef);
+                      }}
+                    >
+                      <PopMainMenuNum>04</PopMainMenuNum>
+                      <PopMainMenuText
+                        popMenuEnter={popMenuEnter}
+                        popMenuIndex={4}
+                      >
+                        used
+                      </PopMainMenuText>
+                    </PopMainMenuDiv>
+                  </PopMainInner>
+                </PopMainDiv>
+                <PopBottomDiv>
+                  <PopBottomInner>
+                    <PopBottomIcon
+                      onMouseEnter={() => {
+                        setPopIconEnter(1);
+                      }}
+                      onMouseLeave={() => {
+                        setPopIconEnter(0);
+                      }}
+                      url={icon_facebook}
+                      style={
+                        popIconEnter === 1 ? { opacity: 0.6 } : { opacity: 1 }
+                      }
+                    />
+                    <PopBottomIcon
+                      onMouseEnter={() => {
+                        setPopIconEnter(2);
+                      }}
+                      onMouseLeave={() => {
+                        setPopIconEnter(0);
+                      }}
+                      url={icon_instagram}
+                      style={
+                        popIconEnter === 2 ? { opacity: 0.6 } : { opacity: 1 }
+                      }
+                    />
+                    <PopBottomIcon
+                      onMouseEnter={() => {
+                        setPopIconEnter(3);
+                      }}
+                      onMouseLeave={() => {
+                        setPopIconEnter(0);
+                      }}
+                      url={icon_twitter}
+                      style={
+                        popIconEnter === 3 ? { opacity: 0.6 } : { opacity: 1 }
+                      }
+                    />
+                  </PopBottomInner>
+                </PopBottomDiv>
+              </PopInner>
+            </PopWrapper>
+          )}
         </Wrapper>
       </ThemeProvider>
     </>

@@ -7,6 +7,7 @@ export default {
   fontMainColor: "#1F1F25",
   fontSubColor: "#EFEFF0",
   fontPopColor: "#595967",
+  fontPopSubColor: "#ABAAAD",
   highlightColor: "#A1C950",
   lineMainColor: "#1F1F25",
   lineSubColor: "#808080",

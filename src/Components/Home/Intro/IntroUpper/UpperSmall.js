@@ -98,13 +98,13 @@ const ContentTextDiv = styled.div`
 const ContentTextTitle = styled.div`
   font-weight: 700;
   @media only screen and (max-width: 575.99px) {
-    font-size: 22px;
+    font-size: 24px;
   }
   @media only screen and (min-width: 576px) {
     font-size: 24px;
   }
   @media only screen and (min-width: 768px) {
-    font-size: 26px;
+    font-size: 24px;
   }
   @media only screen and (min-width: 992px) {
   }
@@ -126,7 +126,7 @@ const ContentTextSubTitle = styled.div`
     font-size: 50px;
   }
   @media only screen and (min-width: 768px) {
-    font-size: 80px;
+    font-size: 60px;
   }
   @media only screen and (min-width: 992px) {
   }

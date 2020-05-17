@@ -12,13 +12,14 @@ const Wrapper = styled.div`
   z-index: 100;
   width: 100%;
   background-color: ${(props) => props.theme.bgMainColor};
-  border-bottom: 1px solid ${(props) => props.theme.borderMainColor};
   transition: background-color 0.3s, top 0.3s;
   @media only screen and (max-width: 575.99px) {
+    box-shadow: 0px 1px 20px 1px rgba(255, 255, 255, 0.1);
     top: 0px;
     height: 56px;
   }
   @media only screen and (min-width: 576px) {
+    box-shadow: 0px 1px 20px 1px rgba(255, 255, 255, 0.1);
     top: 0px;
     height: 56px;
   }
@@ -27,6 +28,8 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
+    box-shadow: none;
+    border-bottom: 1px solid ${(props) => props.theme.borderMainColor};
     top: -76px;
     height: 75px;
   }
