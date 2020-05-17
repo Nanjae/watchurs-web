@@ -14,12 +14,12 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.bgMainColor};
   transition: background-color 0.3s, top 0.3s;
   @media only screen and (max-width: 575.99px) {
-    box-shadow: 0px 1px 20px 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 5px 0px ${(props) => props.theme.borderMainColor};
     top: 0px;
     height: 56px;
   }
   @media only screen and (min-width: 576px) {
-    box-shadow: 0px 1px 20px 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 5px 0px ${(props) => props.theme.borderMainColor};
     top: 0px;
     height: 56px;
   }
