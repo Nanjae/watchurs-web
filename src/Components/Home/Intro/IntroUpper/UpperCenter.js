@@ -43,7 +43,7 @@ const SwiperFillBar = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 3px;
-  height: ${(props) => (props.upperTextIndex - 1) * 40}px;
+  height: ${(props) => props.arrayIndex * 40}px;
   transition: height 0.5s, background-color 0.3s;
 `;
 
@@ -53,7 +53,7 @@ const SwiperCircle = styled.div`
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  margin-top: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
+  margin-top: ${(props) => props.arrayIndex * 40 - 5}px;
   transition: margin-top 0.5s, background-color 0.3s;
 `;
 
@@ -88,18 +88,18 @@ const SwiperCurrentText = styled.div`
   transition: color 0.3s;
 `;
 
-export default ({ upperTextIndex }) => {
+export default ({ arrayIndex }) => {
   return (
     <>
       <Wrapper>
         <Inner>
           <SwiperBarBox>
             <SwiperEmptyBar />
-            <SwiperFillBar upperTextIndex={upperTextIndex} />
-            <SwiperCircle upperTextIndex={upperTextIndex} />
+            <SwiperFillBar arrayIndex={arrayIndex} />
+            <SwiperCircle arrayIndex={arrayIndex} />
           </SwiperBarBox>
           <SwiperTextBox>
-            <SwiperCurrentText>{upperTextIndex}</SwiperCurrentText>
+            <SwiperCurrentText>0{arrayIndex + 1}</SwiperCurrentText>
             <SwiperTextDivsion>/</SwiperTextDivsion>
             <SwiperMaxText>04</SwiperMaxText>
           </SwiperTextBox>

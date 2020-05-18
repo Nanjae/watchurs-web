@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import bg01 from "../../../../Assets/Images/Bg/bg01.jpg";
-import bg02 from "../../../../Assets/Images/Bg/bg02.jpg";
-import bg03 from "../../../../Assets/Images/Bg/bg03.jpg";
-import bg04 from "../../../../Assets/Images/Bg/bg04.jpg";
 import icon_contrast_dark from "../../../../Assets/Icons/icon_contrast_dark.png";
 import icon_contrast_light from "../../../../Assets/Icons/icon_contrast_light.png";
 import Swiper from "react-id-swiper";
@@ -33,6 +29,7 @@ const ContentDiv = styled.div`
 `;
 
 const ContentIconDiv = styled.div`
+  z-index: 30;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -86,6 +83,7 @@ const ContentTextBox = styled.div`
 `;
 
 const ContentTextSubBox = styled.div`
+  z-index: 30;
   width: fit-content;
   display: flex;
   align-items: flex-end;
@@ -112,6 +110,7 @@ const ContentTextSubBoxLine = styled.div`
 `;
 
 const SwiperDiv = styled.div`
+  z-index: 30;
   width: 100%;
   height: 185px;
   display: flex;
@@ -154,10 +153,10 @@ const SwiperImageOpacity = styled.div`
 `;
 
 export default ({
-  setUnderBgIndex,
+  setArrayIndex,
+  bgArray,
   siteTheme,
   setSiteTheme,
-  setUpperTextIndex,
   scrollY,
 }) => {
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
@@ -223,11 +222,10 @@ export default ({
                 speed={500}
               >
                 <SwiperImageBox>
-                  <SwiperImage url={bg01} />
+                  <SwiperImage url={bgArray[0]} />
                   <SwiperImageOpacity
                     onClick={() => {
-                      setUnderBgIndex(bg01);
-                      setUpperTextIndex("01");
+                      setArrayIndex(0);
                     }}
                     onMouseEnter={() => {
                       setSwiperImageEnter(1);
@@ -239,11 +237,10 @@ export default ({
                   />
                 </SwiperImageBox>
                 <SwiperImageBox>
-                  <SwiperImage url={bg02} />
+                  <SwiperImage url={bgArray[1]} />
                   <SwiperImageOpacity
                     onClick={() => {
-                      setUnderBgIndex(bg02);
-                      setUpperTextIndex("02");
+                      setArrayIndex(1);
                     }}
                     onMouseEnter={() => {
                       setSwiperImageEnter(2);
@@ -255,11 +252,10 @@ export default ({
                   />
                 </SwiperImageBox>
                 <SwiperImageBox>
-                  <SwiperImage url={bg03} />
+                  <SwiperImage url={bgArray[2]} />
                   <SwiperImageOpacity
                     onClick={() => {
-                      setUnderBgIndex(bg03);
-                      setUpperTextIndex("03");
+                      setArrayIndex(2);
                     }}
                     onMouseEnter={() => {
                       setSwiperImageEnter(3);
@@ -271,11 +267,10 @@ export default ({
                   />
                 </SwiperImageBox>
                 <SwiperImageBox>
-                  <SwiperImage url={bg04} />
+                  <SwiperImage url={bgArray[3]} />
                   <SwiperImageOpacity
                     onClick={() => {
-                      setUnderBgIndex(bg04);
-                      setUpperTextIndex("04");
+                      setArrayIndex(3);
                     }}
                     onMouseEnter={() => {
                       setSwiperImageEnter(4);

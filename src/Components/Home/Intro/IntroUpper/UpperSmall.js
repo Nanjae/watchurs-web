@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import bg01 from "../../../../Assets/Images/Bg/bg01.jpg";
-import bg02 from "../../../../Assets/Images/Bg/bg02.jpg";
-import bg03 from "../../../../Assets/Images/Bg/bg03.jpg";
-import bg04 from "../../../../Assets/Images/Bg/bg04.jpg";
 import Swiper from "react-id-swiper";
 import useWindowDimensions from "../../../../Hooks/useWindowDimensions";
 
@@ -161,6 +157,7 @@ const ContentTextBox = styled.div`
 `;
 
 const ContentTextSubBox = styled.div`
+  z-index: 30;
   width: fit-content;
   display: flex;
   align-items: flex-end;
@@ -331,18 +328,18 @@ const SwiperFillBar = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   @media only screen and (max-width: 575.99px) {
-    width: ${(props) => (props.upperTextIndex - 1) * 40}px;
+    width: ${(props) => props.arrayIndex * 40}px;
     height: 3px;
     transition: width 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 576px) {
-    width: ${(props) => (props.upperTextIndex - 1) * 40}px;
+    width: ${(props) => props.arrayIndex * 40}px;
     height: 3px;
     transition: width 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 768px) {
     width: 3px;
-    height: ${(props) => (props.upperTextIndex - 1) * 40}px;
+    height: ${(props) => props.arrayIndex * 40}px;
     transition: height 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 992px) {
@@ -363,16 +360,16 @@ const SwiperCircle = styled.div`
   border-radius: 50%;
   @media only screen and (max-width: 575.99px) {
     margin-top: 0px;
-    margin-left: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
+    margin-left: ${(props) => props.arrayIndex * 40 - 5}px;
     transition: margin-left 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 576px) {
     margin-top: 0px;
-    margin-left: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
+    margin-left: ${(props) => props.arrayIndex * 40 - 5}px;
     transition: margin-left 0.5s, background-color 0.3s;
   }
   @media only screen and (min-width: 768px) {
-    margin-top: ${(props) => (props.upperTextIndex - 1) * 40 - 5}px;
+    margin-top: ${(props) => props.arrayIndex * 40 - 5}px;
     margin-left: 0px;
     transition: margin-top 0.5s, background-color 0.3s;
   }
@@ -435,6 +432,7 @@ const SwiperCurrentText = styled.div`
 `;
 
 const SwiperInner = styled.div`
+  z-index: 30;
   width: 75%;
   height: fit-content;
 `;
@@ -467,7 +465,7 @@ const SwiperImageOpacity = styled.div`
   cursor: pointer;
 `;
 
-export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
+export default ({ arrayIndex, setArrayIndex, bgArray }) => {
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
   const [moreEnter, setMoreEnter] = useState(false);
 
@@ -507,11 +505,11 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
               <SwiperBarDiv>
                 <SwiperBarBox>
                   <SwiperEmptyBar />
-                  <SwiperFillBar upperTextIndex={upperTextIndex} />
-                  <SwiperCircle upperTextIndex={upperTextIndex} />
+                  <SwiperFillBar arrayIndex={arrayIndex} />
+                  <SwiperCircle arrayIndex={arrayIndex} />
                 </SwiperBarBox>
                 <SwiperTextBox>
-                  <SwiperCurrentText>{upperTextIndex}</SwiperCurrentText>
+                  <SwiperCurrentText>0{arrayIndex + 1}</SwiperCurrentText>
                   <SwiperTextDivsion>/</SwiperTextDivsion>
                   <SwiperMaxText>04</SwiperMaxText>
                 </SwiperTextBox>
@@ -525,11 +523,10 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
                   speed={500}
                 >
                   <SwiperImageBox>
-                    <SwiperImage url={bg01} />
+                    <SwiperImage url={bgArray[0]} />
                     <SwiperImageOpacity
                       onClick={() => {
-                        setUnderBgIndex(bg01);
-                        setUpperTextIndex("01");
+                        setArrayIndex(0);
                       }}
                       onMouseEnter={() => {
                         setSwiperImageEnter(1);
@@ -541,11 +538,10 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
                     />
                   </SwiperImageBox>
                   <SwiperImageBox>
-                    <SwiperImage url={bg02} />
+                    <SwiperImage url={bgArray[1]} />
                     <SwiperImageOpacity
                       onClick={() => {
-                        setUnderBgIndex(bg02);
-                        setUpperTextIndex("02");
+                        setArrayIndex(1);
                       }}
                       onMouseEnter={() => {
                         setSwiperImageEnter(2);
@@ -557,11 +553,10 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
                     />
                   </SwiperImageBox>
                   <SwiperImageBox>
-                    <SwiperImage url={bg03} />
+                    <SwiperImage url={bgArray[2]} />
                     <SwiperImageOpacity
                       onClick={() => {
-                        setUnderBgIndex(bg03);
-                        setUpperTextIndex("03");
+                        setArrayIndex(2);
                       }}
                       onMouseEnter={() => {
                         setSwiperImageEnter(3);
@@ -573,11 +568,10 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
                     />
                   </SwiperImageBox>
                   <SwiperImageBox>
-                    <SwiperImage url={bg04} />
+                    <SwiperImage url={bgArray[3]} />
                     <SwiperImageOpacity
                       onClick={() => {
-                        setUnderBgIndex(bg04);
-                        setUpperTextIndex("04");
+                        setArrayIndex(3);
                       }}
                       onMouseEnter={() => {
                         setSwiperImageEnter(4);
@@ -596,11 +590,11 @@ export default ({ setUnderBgIndex, setUpperTextIndex, upperTextIndex }) => {
               <SwiperBarDiv>
                 <SwiperBarBox>
                   <SwiperEmptyBar />
-                  <SwiperFillBar upperTextIndex={upperTextIndex} />
-                  <SwiperCircle upperTextIndex={upperTextIndex} />
+                  <SwiperFillBar arrayIndex={arrayIndex} />
+                  <SwiperCircle arrayIndex={arrayIndex} />
                 </SwiperBarBox>
                 <SwiperTextBox>
-                  <SwiperCurrentText>{upperTextIndex}</SwiperCurrentText>
+                  <SwiperCurrentText>0{arrayIndex + 1}</SwiperCurrentText>
                   <SwiperTextDivsion>/</SwiperTextDivsion>
                   <SwiperMaxText>04</SwiperMaxText>
                 </SwiperTextBox>

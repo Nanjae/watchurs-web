@@ -18,6 +18,10 @@ import icon_instagram_dark from "../../Assets/Icons/icon_instagram_dark.png";
 import icon_instagram_light from "../../Assets/Icons/icon_instagram_light.png";
 import icon_twitter_dark from "../../Assets/Icons/icon_twitter_dark.png";
 import icon_twitter_light from "../../Assets/Icons/icon_twitter_light.png";
+import bg01 from "../../Assets/Images/Bg/bg01.jpg";
+import bg02 from "../../Assets/Images/Bg/bg02.jpg";
+import bg03 from "../../Assets/Images/Bg/bg03.jpg";
+import bg04 from "../../Assets/Images/Bg/bg04.jpg";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
@@ -47,13 +51,14 @@ const PopWrapper = styled.div`
   height: 100%;
   border-right: 1px solid ${(props) => props.theme.borderMainColor};
   transition: border-right 0.3s, left 0.3s;
+  visibility: ${(props) => (props.popClosed ? "hidden" : "visible")};
   @media only screen and (max-width: 575.99px) {
-    z-index: 50;
+    z-index: 80;
     left: -281px;
     width: 280px;
   }
   @media only screen and (min-width: 576px) {
-    z-index: 50;
+    z-index: 80;
     left: -281px;
     width: 280px;
   }
@@ -365,6 +370,15 @@ const PopBottomIcon = styled.div`
   }
 `;
 
+const PopCloseDiv = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+`;
+
 const scrollToRef = (ref) =>
   window.scrollTo({ top: ref.current.offsetTop, behavior: "smooth" });
 
@@ -379,6 +393,8 @@ export default () => {
   const [popIconEnter, setPopIconEnter] = useState(0);
 
   const scrollY = useWindowScroll();
+
+  const bgArray = [bg01, bg02, bg03, bg04];
 
   const introRef = useRef(null);
   const aboutRef = useRef(null);
@@ -415,6 +431,7 @@ export default () => {
           />
           <div ref={introRef} />
           <Intro
+            bgArray={bgArray}
             siteTheme={siteTheme}
             setSiteTheme={setSiteTheme}
             scrollY={scrollY}
@@ -425,13 +442,21 @@ export default () => {
           <div ref={aboutRef} />
           <About />
           <div ref={projectRef} />
-          <Project siteTheme={siteTheme} />
+          <Project bgArray={bgArray} siteTheme={siteTheme} />
           <div ref={usedRef} />
           <Stack />
           <Footer />
           <GoTop />
+          {popClosed ? null : (
+            <PopCloseDiv
+              onClick={() => {
+                setPopClosed(true);
+              }}
+            />
+          )}
           {windowWidth < 1200 ? (
             <PopWrapper
+              popClosed={popClosed}
               style={popClosed ? { left: "-281px" } : { left: "0px" }}
             >
               <PopOpacity />
@@ -556,6 +581,7 @@ export default () => {
             </PopWrapper>
           ) : (
             <PopWrapper
+              popClosed={popClosed}
               style={popClosed ? { left: "-821px" } : { left: "0px" }}
             >
               <PopOpacity />

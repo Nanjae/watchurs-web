@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import bg01 from "../../../Assets/Images/Bg/bg01.jpg";
-import bg02 from "../../../Assets/Images/Bg/bg02.jpg";
-import bg03 from "../../../Assets/Images/Bg/bg03.jpg";
-import bg04 from "../../../Assets/Images/Bg/bg04.jpg";
 import icon_search_dark from "../../../Assets/Icons/icon_search_dark.png";
 import icon_search_light from "../../../Assets/Icons/icon_search_light.png";
 import icon_search_highlight from "../../../Assets/Icons/icon_search_highlight.png";
@@ -390,7 +386,7 @@ const MoreLine = styled.div`
   transition: margin-left 0.3s, background-color 0.3s;
 `;
 
-export default ({ siteTheme }) => {
+export default ({ bgArray, siteTheme }) => {
   const [moreEnter, setMoreEnter] = useState(false);
   const [searchEnter, setSearchEnter] = useState(false);
   const [projectEnter, setProjectEnter] = useState(0);
@@ -433,7 +429,7 @@ export default ({ siteTheme }) => {
                   setProjectEnter(0);
                 }}
               >
-                <Image url={bg01} />
+                <Image url={bgArray[0]} />
                 <ImageSearchIcon
                   url={
                     searchEnter && projectEnter === 1
@@ -468,7 +464,7 @@ export default ({ siteTheme }) => {
                   setProjectEnter(0);
                 }}
               >
-                <Image url={bg03} />
+                <Image url={bgArray[2]} />
                 <ImageSearchIcon
                   url={
                     searchEnter && projectEnter === 3
@@ -505,7 +501,7 @@ export default ({ siteTheme }) => {
                   setProjectEnter(0);
                 }}
               >
-                <Image url={bg02} />
+                <Image url={bgArray[1]} />
                 <ImageSearchIcon
                   url={
                     searchEnter && projectEnter === 2
@@ -540,7 +536,7 @@ export default ({ siteTheme }) => {
                   setProjectEnter(0);
                 }}
               >
-                <Image url={bg04} />
+                <Image url={bgArray[3]} />
                 <ImageSearchIcon
                   url={
                     searchEnter && projectEnter === 4

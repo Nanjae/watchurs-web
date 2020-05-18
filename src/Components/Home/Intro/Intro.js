@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import useWindowDimensions from "../../../Hooks/useWindowDimensions";
-import bg01 from "../../../Assets/Images/Bg/bg01.jpg";
 import IntroUnder from "./IntroUnder/IntroUnder";
 import IntroUpper from "./IntroUpper/IntroUpper";
 
@@ -33,6 +32,7 @@ const Wrapper = styled.div`
 `;
 
 export default ({
+  bgArray,
   siteTheme,
   setSiteTheme,
   scrollY,
@@ -41,14 +41,20 @@ export default ({
   setPopClosed,
 }) => {
   const { windowWidth, windowHeight } = useWindowDimensions();
-  const [underBgIndex, setUnderBgIndex] = useState(bg01);
+  const [arrayIndex, setArrayIndex] = useState(0);
 
   return (
     <>
       <Wrapper style={windowWidth >= 1200 ? { height: windowHeight } : null}>
-        <IntroUnder underBgIndex={underBgIndex} />
+        <IntroUnder
+          arrayIndex={arrayIndex}
+          setArrayIndex={setArrayIndex}
+          bgArray={bgArray}
+        />
         <IntroUpper
-          setUnderBgIndex={setUnderBgIndex}
+          arrayIndex={arrayIndex}
+          setArrayIndex={setArrayIndex}
+          bgArray={bgArray}
           siteTheme={siteTheme}
           setSiteTheme={setSiteTheme}
           scrollY={scrollY}

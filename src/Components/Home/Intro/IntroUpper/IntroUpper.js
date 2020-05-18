@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import UpperLeft from "./UpperLeft";
 import UpperCenter from "./UpperCenter";
@@ -33,7 +33,9 @@ const Wrapper = styled.div`
 `;
 
 export default ({
-  setUnderBgIndex,
+  arrayIndex,
+  setArrayIndex,
+  bgArray,
   siteTheme,
   setSiteTheme,
   scrollY,
@@ -42,7 +44,6 @@ export default ({
   setPopClosed,
 }) => {
   const { windowWidth } = useWindowDimensions();
-  const [upperTextIndex, setUpperTextIndex] = useState("01");
 
   return (
     <>
@@ -55,28 +56,24 @@ export default ({
             setHeaderMenuEnter={setHeaderMenuEnter}
             setPopClosed={setPopClosed}
           />
-          <UpperCenter
-            siteTheme={siteTheme}
-            upperTextIndex={upperTextIndex}
-            setUpperTextIndex={setUpperTextIndex}
-          />
+          <UpperCenter arrayIndex={arrayIndex} siteTheme={siteTheme} />
           <UpperRight
+            setArrayIndex={setArrayIndex}
+            bgArray={bgArray}
             siteTheme={siteTheme}
             setSiteTheme={setSiteTheme}
-            setUnderBgIndex={setUnderBgIndex}
-            setUpperTextIndex={setUpperTextIndex}
             scrollY={scrollY}
           />
         </Wrapper>
       ) : (
         <Wrapper>
           <UpperSmall
+            arrayIndex={arrayIndex}
+            setArrayIndex={setArrayIndex}
+            bgArray={bgArray}
             siteTheme={siteTheme}
             setSiteTheme={setSiteTheme}
-            setUnderBgIndex={setUnderBgIndex}
-            setUpperTextIndex={setUpperTextIndex}
             scrollY={scrollY}
-            upperTextIndex={upperTextIndex}
           />
         </Wrapper>
       )}

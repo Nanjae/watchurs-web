@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import useWindowDimensions from "../../../../Hooks/useWindowDimensions";
+import { useDrag } from "react-use-gesture";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -91,8 +92,29 @@ const ImageOpacity = styled.div`
   transition: background-color 0.3s;
 `;
 
-export default ({ underBgIndex }) => {
+const ImageDragDiv = styled.div`
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+`;
+
+export default ({ arrayIndex, setArrayIndex, bgArray }) => {
   const { windowWidth } = useWindowDimensions();
+
+  const [dragX, setDragX] = useState(0);
+
+  const bind = useDrag(({ down, movement: [mx] }) => {
+    setDragX(down ? mx : 0);
+    if (!down) {
+      if (dragX >= 30) {
+        setArrayIndex(arrayIndex > 0 ? arrayIndex - 1 : 3);
+      } else if (dragX <= -30) {
+        setArrayIndex(arrayIndex < bgArray.length - 1 ? arrayIndex + 1 : 0);
+      }
+    }
+  });
+
   return (
     <>
       {windowWidth >= 1200 ? (
@@ -100,7 +122,8 @@ export default ({ underBgIndex }) => {
           <ContentDiv>
             <ContentBox>
               <ImageBox>
-                <Image url={underBgIndex}>
+                <ImageDragDiv style={{ height: "90%" }} {...bind()} />
+                <Image url={bgArray[arrayIndex]}>
                   <ImageOpacity />
                 </Image>
               </ImageBox>
@@ -110,9 +133,10 @@ export default ({ underBgIndex }) => {
       ) : (
         <Wrapper>
           <ContentDiv>
+            <ImageDragDiv {...bind()} />
             <ContentBox>
               <ImageBox>
-                <Image url={underBgIndex}>
+                <Image url={bgArray[arrayIndex]}>
                   <ImageOpacity />
                 </Image>
               </ImageBox>
