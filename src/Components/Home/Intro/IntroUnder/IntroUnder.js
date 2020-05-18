@@ -122,8 +122,11 @@ export default ({ arrayIndex, setArrayIndex, bgArray }) => {
           <ContentDiv>
             <ContentBox>
               <ImageBox>
-                <ImageDragDiv style={{ height: "90%" }} {...bind()} />
-                <Image url={bgArray[arrayIndex]}>
+                <ImageDragDiv
+                  style={{ width: "92%", height: "90%" }}
+                  {...bind()}
+                />
+                <Image style={{ width: "70%" }} url={bgArray[arrayIndex]}>
                   <ImageOpacity />
                 </Image>
               </ImageBox>
