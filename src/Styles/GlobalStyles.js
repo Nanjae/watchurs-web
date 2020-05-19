@@ -18,11 +18,16 @@ export default createGlobalStyle`
         font-weight: 300;
         font-size: 14px;
         -webkit-tap-highlight-color: transparent;
+        background-color:"#1F1F25";
     }
     a {
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 300;
         text-decoration: none;
+        background-color:"#1F1F25";
+    }
+    div {
+        background-color:"#1F1F25";
     }
     .swiper-stack-custom {
         margin-left: auto;

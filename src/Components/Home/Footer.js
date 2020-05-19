@@ -161,7 +161,7 @@ const BottomText = styled.div`
   color: ${(props) => props.theme.lineSubColor};
   text-align: center;
   @media only screen and (max-width: 575.99px) {
-    font-size: 18px;
+    font-size: 16px;
   }
   @media only screen and (min-width: 576px) {
     font-size: 18px;

@@ -11,13 +11,13 @@ const Wrapper = styled.div`
   z-index: 100;
   width: 100%;
   background-color: ${(props) => props.theme.bgMainColor};
-  transition: background-color 0.3s, top 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  top: 0px;
   @media only screen and (max-width: 575.99px) {
     box-shadow: ${(props) =>
       props.siteTheme
         ? `0px 1px 20px 1px rgba(15, 15, 18, 0.1)`
         : `0px 1px 20px 1px rgba(255, 255, 255, 0.1)`};
-    top: 0px;
     height: 56px;
   }
   @media only screen and (min-width: 576px) {
@@ -25,7 +25,6 @@ const Wrapper = styled.div`
       props.siteTheme
         ? `0px 1px 20px 1px rgba(15, 15, 18, 0.1)`
         : `0px 1px 20px 1px rgba(255, 255, 255, 0.1)`};
-    top: 0px;
     height: 56px;
   }
   @media only screen and (min-width: 768px) {
@@ -35,8 +34,8 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 1200px) {
     box-shadow: none;
     border-bottom: 1px solid ${(props) => props.theme.borderMainColor};
-    top: -76px;
     height: 75px;
+    transform: translateY(${(props) => (props.scrollY >= 50 ? "0%" : "-100%")});
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -185,7 +184,7 @@ export default ({
   return (
     <>
       {windowWidth >= 1200 ? (
-        <Wrapper style={scrollY > 50 ? { top: 0 } : { top: -76 }}>
+        <Wrapper scrollY={scrollY}>
           <Inner>
             <LeftDiv>
               <LogoIcon

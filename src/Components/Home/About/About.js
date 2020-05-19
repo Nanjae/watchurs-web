@@ -47,13 +47,17 @@ const Inner = styled.div`
   }
 `;
 
-export default ({ scrollY }) => {
+export default ({ scrollY, windowWidth, scrollYBottom }) => {
   return (
     <>
       <Wrapper>
         <Inner>
           <AboutLeft scrollY={scrollY} />
-          <AboutRight scrollY={scrollY} />
+          <AboutRight
+            scrollY={scrollY}
+            windowWidth={windowWidth}
+            scrollYBottom={scrollYBottom}
+          />
         </Inner>
       </Wrapper>
     </>

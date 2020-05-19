@@ -6,12 +6,12 @@ const getWindowDimensions = () => {
   if (width < 360) {
     return {
       windowWidth: 360,
-      windowHeight: height
+      windowHeight: height,
     };
   } else {
     return {
       windowWidth: width,
-      windowHeight: height
+      windowHeight: height,
     };
   }
 };

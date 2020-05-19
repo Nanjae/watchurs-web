@@ -17,9 +17,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  position: relative;
-  left: ${(props) => (props.scrollY >= 50 ? `-100%` : `0%`)};
-  transition: left 0.5s;
+  transform: translateX(${(props) => (props.scrollY < 50 ? "0%" : "-100%")});
+  transition: transform 0.5s;
 `;
 
 const Inner = styled.div`

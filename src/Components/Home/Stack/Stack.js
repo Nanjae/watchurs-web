@@ -79,18 +79,26 @@ const TitleDiv = styled.div`
 `;
 
 const BgTextDiv = styled.div`
-  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   overflow: hidden;
+  transition: transform 0.8s, opacity 0.5s;
   @media only screen and (max-width: 575.99px) {
     height: 200px;
     width: 90%;
+    transform: translateX(
+      ${(props) => (props.scrollYBottom <= 1000 ? "0%" : "-200%")}
+    );
+    opacity: ${(props) => (props.scrollYBottom <= 1000 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     height: 200px;
     width: 480px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 768px) {
     height: 240px;
@@ -103,8 +111,6 @@ const BgTextDiv = styled.div`
   @media only screen and (min-width: 1200px) {
     height: 375px;
     width: 550px;
-    left: ${(props) => (props.scrollY >= 2950 ? `0%` : `-100%`)};
-    transition: left 0.5s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -186,12 +192,20 @@ const TitleTopText = styled.div`
   position: relative;
   color: ${(props) => props.theme.fontMainColor};
   margin-bottom: 10px;
-  transition: color 0.3s, right 0.5s;
+  transition: color 0.3s, transform 0.5s, opacity 0.5s;
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
+    transform: translateX(
+      ${(props) => (props.scrollYBottom <= 1000 ? "0%" : "200%")}
+    );
+    opacity: ${(props) => (props.scrollYBottom <= 1000 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     font-size: 35px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "500%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 768px) {
     font-size: 40px;
@@ -201,7 +215,6 @@ const TitleTopText = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     font-size: 70px;
-    right: ${(props) => (props.scrollY >= 2950 ? `0%` : `-150%`)};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -213,12 +226,20 @@ const TitleBottomText = styled.div`
   position: relative;
   color: ${(props) => props.theme.fontMainColor};
   font-weight: 900;
-  transition: color 0.3s, right 0.8s;
+  transition: color 0.3s, transform 0.8s, opacity 0.5s;
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
+    transform: translateX(
+      ${(props) => (props.scrollYBottom <= 950 ? "0%" : "200%")}
+    );
+    opacity: ${(props) => (props.scrollYBottom <= 950 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     font-size: 35px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "200%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 768px) {
     font-size: 40px;
@@ -228,7 +249,6 @@ const TitleBottomText = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     font-size: 70px;
-    right: ${(props) => (props.scrollY >= 3000 ? `0%` : `-150%`)};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -241,13 +261,16 @@ const SwiperDiv = styled.div`
   height: 130px;
   margin-bottom: 50px;
   cursor: e-resize;
+  transition: opacity 1s;
   @media only screen and (max-width: 575.99px) {
     margin-top: 40px;
     width: 90%;
+    opacity: ${(props) => (props.scrollYBottom <= 800 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     margin-top: 40px;
     width: 480px;
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 768px) {
     margin-top: 40px;
@@ -260,8 +283,6 @@ const SwiperDiv = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-top: 80px;
     width: 1060px;
-    opacity: ${(props) => (props.scrollY >= 3250 ? 1 : 0)};
-    transition: opacity 1s;
   }
   @media only screen and (min-width: 1536px) {
     width: 1220px;
@@ -289,7 +310,7 @@ const SwiperImage = styled.div`
   transition: opacity 0.3s;
 `;
 
-export default ({ scrollY }) => {
+export default ({ scrollY, windowWidth, scrollYBottom }) => {
   const [techEnter, setTechEnter] = useState(0);
 
   const swiperParams = {
@@ -310,15 +331,75 @@ export default ({ scrollY }) => {
       <Wrapper>
         <Inner>
           <TitleDiv>
-            <BgTextDiv scrollY={scrollY}>
+            <BgTextDiv
+              scrollY={scrollY}
+              scrollPos={
+                windowWidth >= 1800
+                  ? 3350
+                  : windowWidth >= 1200
+                  ? 2950
+                  : windowWidth >= 992
+                  ? 2350
+                  : windowWidth >= 768
+                  ? 2100
+                  : 2650
+              }
+              scrollYBottom={scrollYBottom}
+            >
               <BgText>U</BgText>
             </BgTextDiv>
             <TitleBox>
-              <TitleTopText scrollY={scrollY}>USED</TitleTopText>
-              <TitleBottomText scrollY={scrollY}>TECH STACK</TitleBottomText>
+              <TitleTopText
+                scrollY={scrollY}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 3350
+                    : windowWidth >= 1200
+                    ? 2950
+                    : windowWidth >= 992
+                    ? 2350
+                    : windowWidth >= 768
+                    ? 2100
+                    : 2650
+                }
+                scrollYBottom={scrollYBottom}
+              >
+                USED
+              </TitleTopText>
+              <TitleBottomText
+                scrollY={scrollY}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 3400
+                    : windowWidth >= 1200
+                    ? 3000
+                    : windowWidth >= 992
+                    ? 2400
+                    : windowWidth >= 768
+                    ? 2150
+                    : 2700
+                }
+                scrollYBottom={scrollYBottom}
+              >
+                TECH STACK
+              </TitleBottomText>
             </TitleBox>
           </TitleDiv>
-          <SwiperDiv scrollY={scrollY}>
+          <SwiperDiv
+            scrollY={scrollY}
+            scrollPos={
+              windowWidth >= 1800
+                ? 3650
+                : windowWidth >= 1200
+                ? 3300
+                : windowWidth >= 992
+                ? 2550
+                : windowWidth >= 768
+                ? 2300
+                : 2850
+            }
+            scrollYBottom={scrollYBottom}
+          >
             <Swiper
               containerClass={"swiper-stack-custom"}
               {...swiperParams}

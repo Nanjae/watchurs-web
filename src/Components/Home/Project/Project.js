@@ -17,7 +17,7 @@ const Inner = styled.div`
   display: flex;
   justify-content: center;
   padding: 50px 0px;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     width: 90%;
   }
   @media only screen and (min-width: 576px) {
@@ -44,25 +44,29 @@ const TitleDiv = styled.div`
   position: absolute;
   height: fit-content;
   display: flex;
-  @media only screen and (max-width: 575.99px) {
+  transition: opacity 1s;
+  @media only screen and (max-width: 575.98px) {
     justify-content: center;
     width: 90%;
+    opacity: ${(props) => (props.scrollYBottom <= 2850 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
+    opacity: ${(props) => (props.scrollY >= 750 ? 1 : 0)};
     justify-content: center;
     width: 540px;
   }
   @media only screen and (min-width: 768px) {
     justify-content: flex-start;
     width: 720px;
+    opacity: ${(props) => (props.scrollY >= 900 ? 1 : 0)};
   }
   @media only screen and (min-width: 992px) {
     width: 960px;
+    opacity: ${(props) => (props.scrollY >= 850 ? 1 : 0)};
   }
   @media only screen and (min-width: 1200px) {
     width: 1120px;
     opacity: ${(props) => (props.scrollY >= 1200 ? 1 : 0)};
-    transition: opacity 1s;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
@@ -76,7 +80,7 @@ const TitleText = styled.div`
   color: ${(props) => props.theme.fontSubColor};
   font-weight: 900;
   transition: color 0.3s;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     font-size: 70px;
   }
   @media only screen and (min-width: 576px) {
@@ -102,7 +106,7 @@ const ImageDiv = styled.div`
   width: 100%;
   height: fit-content;
   display: flex;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     flex-direction: column;
     align-items: center;
   }
@@ -129,7 +133,7 @@ const ImageDiv = styled.div`
 
 const ImageRow = styled.div`
   height: fit-content;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     padding: 15px;
     width: 300px;
   }
@@ -162,24 +166,58 @@ const ImageBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  @media only screen and (max-width: 575.99px) {
+  transition: transform 0.8s, opacity 0.5s;
+  @media only screen and (max-width: 575.98px) {
     :not(:first-child) {
       margin-top: 30px;
     }
     height: 360px;
+    transform: translateX(
+      ${(props) =>
+        props.pos % 2 === 1
+          ? props.scrollYBottom <= props.scrollPosBottom
+            ? `0%`
+            : `-100%`
+          : props.scrollYBottom <= props.scrollPosBottom
+          ? `0%`
+          : `100%`}
+    );
+    opacity: ${(props) =>
+      props.scrollYBottom <= props.scrollPosBottom ? 1 : 0};
   }
   @media only screen and (min-width: 576px) {
     :not(:first-child) {
       margin-top: 30px;
     }
     height: 360px;
+    transform: translateX(
+      ${(props) =>
+        props.pos % 2 === 1
+          ? props.scrollY >= props.scrollPos
+            ? `0%`
+            : `-100%`
+          : props.scrollY >= props.scrollPos
+          ? `0%`
+          : `100%`}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 768px) {
     :not(:first-child) {
       margin-top: 40px;
     }
     height: 360px;
+    transform: translateX(
+      ${(props) =>
+        props.pos % 2 === 1
+          ? props.scrollY >= props.scrollPos
+            ? `0%`
+            : `-100%`
+          : props.scrollY >= props.scrollPos
+          ? `0%`
+          : `100%`}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 992px) {
     :not(:first-child) {
@@ -192,15 +230,6 @@ const ImageBox = styled.div`
       margin-top: 60px;
     }
     height: 630px;
-    ${(props) =>
-      props.pos % 2 === 1
-        ? props.scrollY >= props.scrollPos
-          ? `left:0%`
-          : `left: -150%`
-        : props.scrollY >= props.scrollPos
-        ? `right:0%`
-        : `right: -150%`}
-    transition: right 0.8s, left 0.8s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -214,7 +243,7 @@ const Image = styled.div`
   background-image: url(${(props) => props.url});
   background-size: cover;
   background-position: center;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     width: 300px;
     height: 360px;
   }
@@ -250,7 +279,7 @@ const ImageSearchIcon = styled.div`
   background-position: center;
   transition: opacity 0.3s, background-image 0.3s;
   cursor: pointer;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     opacity: 1;
     width: 60px;
     height: 60px;
@@ -284,9 +313,8 @@ const ImageOpacity = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   transition: opacity 0.3s, width 0.3s, height 0.3s;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     opacity: 0.2;
     width: 300px;
     height: 360px;
@@ -323,7 +351,7 @@ const ImageOpacityLine = styled.div`
   justify-content: center;
   align-items: center;
   transition: border 0.3s;
-  @media only screen and (max-width: 575.99px) {
+  @media only screen and (max-width: 575.98px) {
     border: 0px;
   }
   @media only screen and (min-width: 576px) {
@@ -355,18 +383,30 @@ const MoreBox = styled.div`
   align-items: flex-end;
   opacity: 1;
   cursor: pointer;
-  transition: opacity 0.3s;
-  @media only screen and (max-width: 575.99px) {
+  transition: opacity 0.5s, transform 0.5s;
+  @media only screen and (max-width: 575.98px) {
     justify-content: center;
     margin-top: 40px;
+    transform: translateX(
+      ${(props) => (props.scrollYBottom <= 1200 ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollYBottom <= 1200 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     justify-content: center;
     margin-top: 40px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 768px) {
     justify-content: flex-start;
     margin-top: 60px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? 1 : 0)};
   }
   @media only screen and (min-width: 992px) {
     margin-top: 70px;
@@ -396,7 +436,13 @@ const MoreLine = styled.div`
   transition: margin-left 0.3s, background-color 0.3s;
 `;
 
-export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
+export default ({
+  bgArray,
+  siteTheme,
+  scrollY,
+  windowWidth,
+  scrollYBottom,
+}) => {
   const [moreEnter, setMoreEnter] = useState(false);
   const [searchEnter, setSearchEnter] = useState(false);
   const [projectEnter, setProjectEnter] = useState(0);
@@ -416,7 +462,7 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
     <>
       <Wrapper>
         <Inner>
-          <TitleDiv scrollY={scrollY}>
+          <TitleDiv scrollY={scrollY} scrollYBottom={scrollYBottom}>
             <TitleText>project</TitleText>
           </TitleDiv>
           <ImageDiv>
@@ -432,7 +478,17 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
               <ImageBox
                 scrollY={scrollY}
                 pos={1}
-                scrollPos={1550}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 1600
+                    : windowWidth >= 1200
+                    ? 1550
+                    : windowWidth >= 768
+                    ? 1200
+                    : 950
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={2700}
                 onMouseEnter={() => {
                   setProjectEnter(1);
                 }}
@@ -470,15 +526,27 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
               <ImageBox
                 scrollY={scrollY}
                 pos={3}
-                scrollPos={2250}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 2400
+                    : windowWidth >= 1200
+                    ? 2250
+                    : windowWidth >= 992
+                    ? 1750
+                    : windowWidth >= 768
+                    ? 1550
+                    : 1300
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={2300}
                 onMouseEnter={() => {
-                  setProjectEnter(3);
+                  setProjectEnter(windowWidth >= 768 ? 3 : 2);
                 }}
                 onMouseLeave={() => {
                   setProjectEnter(0);
                 }}
               >
-                <Image url={bgArray[2]} />
+                <Image url={bgArray[windowWidth >= 768 ? 2 : 1]} />
                 <ImageSearchIcon
                   url={
                     searchEnter && projectEnter === 3
@@ -486,7 +554,7 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
                       : icon_search
                   }
                   style={
-                    projectEnter === 3
+                    projectEnter === (windowWidth >= 768 ? 3 : 2)
                       ? windowWidth < 992
                         ? null
                         : { opacity: 1 }
@@ -500,7 +568,11 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
                   }}
                 />
                 <ImageOpacity
-                  style={projectEnter === 3 ? opacityOptions : null}
+                  style={
+                    projectEnter === (windowWidth >= 768 ? 3 : 2)
+                      ? opacityOptions
+                      : null
+                  }
                 >
                   <ImageOpacityLine searchEnter={searchEnter} />
                 </ImageOpacity>
@@ -510,23 +582,33 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
               <ImageBox
                 scrollY={scrollY}
                 pos={2}
-                scrollPos={1400}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 1450
+                    : windowWidth >= 1200
+                    ? 1400
+                    : windowWidth >= 768
+                    ? 1100
+                    : 1700
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={1900}
                 onMouseEnter={() => {
-                  setProjectEnter(2);
+                  setProjectEnter(windowWidth >= 768 ? 2 : 3);
                 }}
                 onMouseLeave={() => {
                   setProjectEnter(0);
                 }}
               >
-                <Image url={bgArray[1]} />
+                <Image url={bgArray[windowWidth >= 768 ? 1 : 2]} />
                 <ImageSearchIcon
                   url={
-                    searchEnter && projectEnter === 2
+                    searchEnter && projectEnter === (windowWidth >= 768 ? 2 : 3)
                       ? icon_search_highlight
                       : icon_search
                   }
                   style={
-                    projectEnter === 2
+                    projectEnter === (windowWidth >= 768 ? 2 : 3)
                       ? windowWidth < 992
                         ? null
                         : { opacity: 1 }
@@ -548,7 +630,19 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
               <ImageBox
                 scrollY={scrollY}
                 pos={4}
-                scrollPos={2100}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 2250
+                    : windowWidth >= 1200
+                    ? 2100
+                    : windowWidth >= 992
+                    ? 1600
+                    : windowWidth >= 768
+                    ? 1450
+                    : 2100
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={1500}
                 onMouseEnter={() => {
                   setProjectEnter(4);
                 }}
@@ -584,6 +678,19 @@ export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
                 </ImageOpacity>
               </ImageBox>
               <MoreBox
+                scrollY={scrollY}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 2950
+                    : windowWidth >= 1200
+                    ? 2650
+                    : windowWidth >= 992
+                    ? 2050
+                    : windowWidth >= 768
+                    ? 1800
+                    : 2400
+                }
+                scrollYBottom={scrollYBottom}
                 style={moreEnter ? { opacity: "0.6" } : null}
                 onMouseEnter={() => {
                   setMoreEnter(true);

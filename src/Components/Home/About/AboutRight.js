@@ -122,26 +122,47 @@ const CounterColumn = styled.div`
 const CounterBox = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
+  transition: transform ${(props) => props.scrollSpd}s, opacity 0.5s;
   @media only screen and (max-width: 575.99px) {
     justify-content: center;
     height: 40%;
+    transform: translateX(
+      ${(props) =>
+        props.scrollYBottom <= props.scrollPosBottom ? "0%" : "-100%"}
+    );
+    opacity: ${(props) =>
+      props.scrollYBottom <= props.scrollPosBottom ? "1" : "0"};
   }
   @media only screen and (min-width: 576px) {
     justify-content: flex-start;
     width: 45%;
     height: 100%;
+    transform: translateX(
+      ${(props) =>
+        props.scrollY >= props.scrollPos
+          ? "0%"
+          : props.pos === 1
+          ? "100%"
+          : "-100%"}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? "1" : "0")};
   }
   @media only screen and (min-width: 768px) {
     justify-content: flex-end;
     width: 45%;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? "1" : "0")};
   }
   @media only screen and (min-width: 992px) {
     width: 50%;
   }
   @media only screen and (min-width: 1200px) {
-    right: ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "-100%")};
-    transition: right ${(props) => props.scrollSpd}s;
+    transform: translateX(
+      ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= props.scrollPos ? "1" : "0")};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -226,20 +247,50 @@ const CounterBoxText = styled.div`
   }
 `;
 
-export default ({ scrollY }) => {
+export default ({ scrollY, windowWidth, scrollYBottom }) => {
   return (
     <>
       <Wrapper>
         <Inner>
           <CounterDiv>
             <CounterColumn>
-              <CounterBox scrollY={scrollY} scrollSpd={0.8} scrollPos={350}>
+              <CounterBox
+                scrollY={scrollY}
+                scrollSpd={0.8}
+                pos={1}
+                scrollPos={
+                  windowWidth >= 1200
+                    ? 350
+                    : windowWidth >= 992
+                    ? 200
+                    : windowWidth >= 768
+                    ? 250
+                    : 400
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={3400}
+              >
                 <CounterBoxInner>
                   <CounterBoxCount>35</CounterBoxCount>
                   <CounterBoxText>PROJECTS</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
-              <CounterBox scrollY={scrollY} scrollSpd={0.5} scrollPos={350}>
+              <CounterBox
+                scrollY={scrollY}
+                scrollSpd={0.4}
+                pos={1}
+                scrollPos={
+                  windowWidth >= 1200
+                    ? 350
+                    : windowWidth >= 992
+                    ? 200
+                    : windowWidth >= 768
+                    ? 250
+                    : 400
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={3300}
+              >
                 <CounterBoxInner>
                   <CounterBoxCount>12</CounterBoxCount>
                   <CounterBoxText>EMPLOYEES</CounterBoxText>
@@ -247,13 +298,43 @@ export default ({ scrollY }) => {
               </CounterBox>
             </CounterColumn>
             <CounterColumn>
-              <CounterBox scrollY={scrollY} scrollSpd={0.5} scrollPos={600}>
+              <CounterBox
+                scrollY={scrollY}
+                scrollSpd={0.6}
+                pos={2}
+                scrollPos={
+                  windowWidth >= 1200
+                    ? 600
+                    : windowWidth >= 992
+                    ? 400
+                    : windowWidth >= 768
+                    ? 450
+                    : 550
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={3200}
+              >
                 <CounterBoxInner>
                   <CounterBoxCount>120</CounterBoxCount>
                   <CounterBoxText>CONTRACTORS</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
-              <CounterBox scrollY={scrollY} scrollSpd={0.8} scrollPos={600}>
+              <CounterBox
+                scrollY={scrollY}
+                scrollSpd={0.8}
+                pos={2}
+                scrollPos={
+                  windowWidth >= 1200
+                    ? 600
+                    : windowWidth >= 992
+                    ? 400
+                    : windowWidth >= 768
+                    ? 450
+                    : 550
+                }
+                scrollYBottom={scrollYBottom}
+                scrollPosBottom={3100}
+              >
                 <CounterBoxInner>
                   <CounterBoxCount>80</CounterBoxCount>
                   <CounterBoxText>CLIENTS</CounterBoxText>

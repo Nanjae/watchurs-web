@@ -418,6 +418,11 @@ export default () => {
 
   console.log(scrollY);
 
+  const scrollYBottom =
+    window.document.body.offsetHeight - scrollY - windowHeight;
+
+  // console.log(scrollYBottom);
+
   return (
     <>
       <ThemeProvider theme={siteTheme ? ThemeLight : ThemeDark}>
@@ -445,16 +450,25 @@ export default () => {
             windowHeight={windowHeight}
           />
           <div ref={aboutRef} />
-          <About scrollY={scrollY} />
+          <About
+            scrollY={scrollY}
+            windowWidth={windowWidth}
+            scrollYBottom={scrollYBottom}
+          />
           <div ref={projectRef} />
           <Project
             bgArray={bgArray}
             siteTheme={siteTheme}
             scrollY={scrollY}
             windowWidth={windowWidth}
+            scrollYBottom={scrollYBottom}
           />
           <div ref={usedRef} />
-          <Stack scrollY={scrollY} />
+          <Stack
+            scrollY={scrollY}
+            windowWidth={windowWidth}
+            scrollYBottom={scrollYBottom}
+          />
           <Footer />
           <GoTop />
           {popClosed ? null : (

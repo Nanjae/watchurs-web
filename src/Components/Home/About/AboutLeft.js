@@ -60,7 +60,7 @@ const Inner = styled.div`
 
 const TopDiv = styled.div`
   width: 100%;
-  position: relative;
+  transition: transform 0.8s, opacity 0.5s;
   @media only screen and (max-width: 575.99px) {
     height: 200px;
   }
@@ -69,14 +69,19 @@ const TopDiv = styled.div`
   }
   @media only screen and (min-width: 768px) {
     height: 240px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= 100 ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= 100 ? "1" : "0")};
   }
   @media only screen and (min-width: 992px) {
-    height: 240px;
   }
   @media only screen and (min-width: 1200px) {
     height: 375px;
-    left: ${(props) => (props.scrollY >= 250 ? "0%" : "-100%")};
-    transition: left 0.5s;
+    transform: translateX(
+      ${(props) => (props.scrollY >= 250 ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= 250 ? "1" : "0")};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -238,7 +243,7 @@ const BottomDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
+  transition: transform 0.8s, opacity 0.5s;
   @media only screen and (max-width: 575.99px) {
     padding: 10px 0px;
     height: fit-content;
@@ -250,6 +255,10 @@ const BottomDiv = styled.div`
   @media only screen and (min-width: 768px) {
     padding: 20px 0px;
     height: 420px;
+    transform: translateX(
+      ${(props) => (props.scrollY >= 300 ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= 300 ? "1" : "0")};
   }
   @media only screen and (min-width: 992px) {
     padding: 20px 0px;
@@ -258,8 +267,10 @@ const BottomDiv = styled.div`
   @media only screen and (min-width: 1200px) {
     padding: 30px 0px;
     height: 300px;
-    left: ${(props) => (props.scrollY >= 550 ? "0%" : "-100%")};
-    transition: left 0.8s;
+    transform: translateX(
+      ${(props) => (props.scrollY >= 550 ? "0%" : "-100%")}
+    );
+    opacity: ${(props) => (props.scrollY >= 550 ? "1" : "0")};
   }
   @media only screen and (min-width: 1536px) {
   }
