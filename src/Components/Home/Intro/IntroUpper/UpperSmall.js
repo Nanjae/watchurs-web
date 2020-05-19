@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Swiper from "react-id-swiper";
-import useWindowDimensions from "../../../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -465,11 +464,15 @@ const SwiperImageOpacity = styled.div`
   cursor: pointer;
 `;
 
-export default ({ arrayIndex, setArrayIndex, bgArray }) => {
+export default ({
+  arrayIndex,
+  setArrayIndex,
+  bgArray,
+  scrollY,
+  windowWidth,
+}) => {
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
   const [moreEnter, setMoreEnter] = useState(false);
-
-  const { windowWidth } = useWindowDimensions();
 
   return (
     <>

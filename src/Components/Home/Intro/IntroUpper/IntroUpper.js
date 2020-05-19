@@ -3,7 +3,6 @@ import styled from "styled-components";
 import UpperLeft from "./UpperLeft";
 import UpperCenter from "./UpperCenter";
 import UpperRight from "./UpperRight";
-import useWindowDimensions from "../../../../Hooks/useWindowDimensions";
 import UpperSmall from "./UpperSmall";
 
 const Wrapper = styled.div`
@@ -42,9 +41,8 @@ export default ({
   headerMenuEnter,
   setHeaderMenuEnter,
   setPopClosed,
+  windowWidth,
 }) => {
-  const { windowWidth } = useWindowDimensions();
-
   return (
     <>
       {windowWidth >= 1200 ? (
@@ -71,9 +69,8 @@ export default ({
             arrayIndex={arrayIndex}
             setArrayIndex={setArrayIndex}
             bgArray={bgArray}
-            siteTheme={siteTheme}
-            setSiteTheme={setSiteTheme}
             scrollY={scrollY}
+            windowWidth={windowWidth}
           />
         </Wrapper>
       )}

@@ -3,13 +3,13 @@ import styled from "styled-components";
 import icon_search_dark from "../../../Assets/Icons/icon_search_dark.png";
 import icon_search_light from "../../../Assets/Icons/icon_search_light.png";
 import icon_search_highlight from "../../../Assets/Icons/icon_search_highlight.png";
-import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   height: fit-content;
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 `;
 
 const Inner = styled.div`
@@ -59,10 +59,10 @@ const TitleDiv = styled.div`
   @media only screen and (min-width: 992px) {
     width: 960px;
   }
-  @media only screen and (min-width: 992px) {
-  }
   @media only screen and (min-width: 1200px) {
     width: 1120px;
+    opacity: ${(props) => (props.scrollY >= 1200 ? 1 : 0)};
+    transition: opacity 1s;
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
@@ -162,6 +162,7 @@ const ImageBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   @media only screen and (max-width: 575.99px) {
     :not(:first-child) {
       margin-top: 30px;
@@ -191,6 +192,15 @@ const ImageBox = styled.div`
       margin-top: 60px;
     }
     height: 630px;
+    ${(props) =>
+      props.pos % 2 === 1
+        ? props.scrollY >= props.scrollPos
+          ? `left:0%`
+          : `left: -150%`
+        : props.scrollY >= props.scrollPos
+        ? `right:0%`
+        : `right: -150%`}
+    transition: right 0.8s, left 0.8s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -386,14 +396,12 @@ const MoreLine = styled.div`
   transition: margin-left 0.3s, background-color 0.3s;
 `;
 
-export default ({ bgArray, siteTheme }) => {
+export default ({ bgArray, siteTheme, scrollY, windowWidth }) => {
   const [moreEnter, setMoreEnter] = useState(false);
   const [searchEnter, setSearchEnter] = useState(false);
   const [projectEnter, setProjectEnter] = useState(0);
 
   const icon_search = siteTheme ? icon_search_light : icon_search_dark;
-
-  const { windowWidth } = useWindowDimensions();
 
   const opacityOptions =
     windowWidth < 1800
@@ -408,7 +416,7 @@ export default ({ bgArray, siteTheme }) => {
     <>
       <Wrapper>
         <Inner>
-          <TitleDiv>
+          <TitleDiv scrollY={scrollY}>
             <TitleText>project</TitleText>
           </TitleDiv>
           <ImageDiv>
@@ -422,6 +430,9 @@ export default ({ bgArray, siteTheme }) => {
               }
             >
               <ImageBox
+                scrollY={scrollY}
+                pos={1}
+                scrollPos={1550}
                 onMouseEnter={() => {
                   setProjectEnter(1);
                 }}
@@ -457,6 +468,9 @@ export default ({ bgArray, siteTheme }) => {
                 </ImageOpacity>
               </ImageBox>
               <ImageBox
+                scrollY={scrollY}
+                pos={3}
+                scrollPos={2250}
                 onMouseEnter={() => {
                   setProjectEnter(3);
                 }}
@@ -494,6 +508,9 @@ export default ({ bgArray, siteTheme }) => {
             </ImageRow>
             <ImageRow>
               <ImageBox
+                scrollY={scrollY}
+                pos={2}
+                scrollPos={1400}
                 onMouseEnter={() => {
                   setProjectEnter(2);
                 }}
@@ -529,6 +546,9 @@ export default ({ bgArray, siteTheme }) => {
                 </ImageOpacity>
               </ImageBox>
               <ImageBox
+                scrollY={scrollY}
+                pos={4}
+                scrollPos={2100}
                 onMouseEnter={() => {
                   setProjectEnter(4);
                 }}

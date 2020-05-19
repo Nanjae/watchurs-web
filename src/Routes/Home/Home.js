@@ -414,7 +414,9 @@ export default () => {
   const icon_instagram = siteTheme ? icon_instagram_light : icon_instagram_dark;
   const icon_twitter = siteTheme ? icon_twitter_light : icon_twitter_dark;
 
-  const { windowWidth } = useWindowDimensions();
+  const { windowWidth, windowHeight } = useWindowDimensions();
+
+  console.log(scrollY);
 
   return (
     <>
@@ -428,6 +430,7 @@ export default () => {
             setHeaderMenuEnter={setHeaderMenuEnter}
             popClosed={popClosed}
             setPopClosed={setPopClosed}
+            windowWidth={windowWidth}
           />
           <div ref={introRef} />
           <Intro
@@ -438,13 +441,20 @@ export default () => {
             headerMenuEnter={headerMenuEnter}
             setHeaderMenuEnter={setHeaderMenuEnter}
             setPopClosed={setPopClosed}
+            windowWidth={windowWidth}
+            windowHeight={windowHeight}
           />
           <div ref={aboutRef} />
-          <About />
+          <About scrollY={scrollY} />
           <div ref={projectRef} />
-          <Project bgArray={bgArray} siteTheme={siteTheme} />
+          <Project
+            bgArray={bgArray}
+            siteTheme={siteTheme}
+            scrollY={scrollY}
+            windowWidth={windowWidth}
+          />
           <div ref={usedRef} />
-          <Stack />
+          <Stack scrollY={scrollY} />
           <Footer />
           <GoTop />
           {popClosed ? null : (

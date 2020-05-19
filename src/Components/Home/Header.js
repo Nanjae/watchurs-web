@@ -5,7 +5,6 @@ import logo_watchurs_light from "../../Assets/Images/Logos/logo_watchurs_light.p
 import icon_contrast_dark from "../../Assets/Icons/icon_contrast_dark.png";
 import icon_contrast_light from "../../Assets/Icons/icon_contrast_light.png";
 import MenuLine from "./Common/MenuLine";
-import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -162,9 +161,8 @@ export default ({
   setHeaderMenuEnter,
   popClosed,
   setPopClosed,
+  windowWidth,
 }) => {
-  const { windowWidth } = useWindowDimensions();
-
   const logo_watchurs = siteTheme ? logo_watchurs_light : logo_watchurs_dark;
   const icon_contrast = siteTheme ? icon_contrast_light : icon_contrast_dark;
 

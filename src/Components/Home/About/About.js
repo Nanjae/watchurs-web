@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 `;
 
 const Inner = styled.div`
@@ -46,13 +47,13 @@ const Inner = styled.div`
   }
 `;
 
-export default () => {
+export default ({ scrollY }) => {
   return (
     <>
       <Wrapper>
         <Inner>
-          <AboutLeft />
-          <AboutRight />
+          <AboutLeft scrollY={scrollY} />
+          <AboutRight scrollY={scrollY} />
         </Inner>
       </Wrapper>
     </>

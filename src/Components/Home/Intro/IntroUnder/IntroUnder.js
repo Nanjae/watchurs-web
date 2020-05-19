@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import useWindowDimensions from "../../../../Hooks/useWindowDimensions";
 import { useDrag } from "react-use-gesture";
 
 const Wrapper = styled.div`
@@ -99,9 +98,7 @@ const ImageDragDiv = styled.div`
   height: 100%;
 `;
 
-export default ({ arrayIndex, setArrayIndex, bgArray }) => {
-  const { windowWidth } = useWindowDimensions();
-
+export default ({ arrayIndex, setArrayIndex, bgArray, windowWidth }) => {
   const [dragX, setDragX] = useState(0);
 
   const bind = useDrag(({ down, movement: [mx] }) => {

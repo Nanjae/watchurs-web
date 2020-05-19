@@ -122,6 +122,7 @@ const CounterColumn = styled.div`
 const CounterBox = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
   @media only screen and (max-width: 575.99px) {
     justify-content: center;
     height: 40%;
@@ -139,6 +140,8 @@ const CounterBox = styled.div`
     width: 50%;
   }
   @media only screen and (min-width: 1200px) {
+    right: ${(props) => (props.scrollY >= props.scrollPos ? "0%" : "-100%")};
+    transition: right ${(props) => props.scrollSpd}s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -223,20 +226,20 @@ const CounterBoxText = styled.div`
   }
 `;
 
-export default () => {
+export default ({ scrollY }) => {
   return (
     <>
       <Wrapper>
         <Inner>
           <CounterDiv>
             <CounterColumn>
-              <CounterBox>
+              <CounterBox scrollY={scrollY} scrollSpd={0.8} scrollPos={350}>
                 <CounterBoxInner>
                   <CounterBoxCount>35</CounterBoxCount>
                   <CounterBoxText>PROJECTS</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
-              <CounterBox>
+              <CounterBox scrollY={scrollY} scrollSpd={0.5} scrollPos={350}>
                 <CounterBoxInner>
                   <CounterBoxCount>12</CounterBoxCount>
                   <CounterBoxText>EMPLOYEES</CounterBoxText>
@@ -244,13 +247,13 @@ export default () => {
               </CounterBox>
             </CounterColumn>
             <CounterColumn>
-              <CounterBox>
+              <CounterBox scrollY={scrollY} scrollSpd={0.5} scrollPos={600}>
                 <CounterBoxInner>
                   <CounterBoxCount>120</CounterBoxCount>
                   <CounterBoxText>CONTRACTORS</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
-              <CounterBox>
+              <CounterBox scrollY={scrollY} scrollSpd={0.8} scrollPos={600}>
                 <CounterBoxInner>
                   <CounterBoxCount>80</CounterBoxCount>
                   <CounterBoxText>CLIENTS</CounterBoxText>

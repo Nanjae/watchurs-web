@@ -60,6 +60,7 @@ const Inner = styled.div`
 
 const TopDiv = styled.div`
   width: 100%;
+  position: relative;
   @media only screen and (max-width: 575.99px) {
     height: 200px;
   }
@@ -74,6 +75,8 @@ const TopDiv = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     height: 375px;
+    left: ${(props) => (props.scrollY >= 250 ? "0%" : "-100%")};
+    transition: left 0.5s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -235,6 +238,7 @@ const BottomDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   @media only screen and (max-width: 575.99px) {
     padding: 10px 0px;
     height: fit-content;
@@ -254,6 +258,8 @@ const BottomDiv = styled.div`
   @media only screen and (min-width: 1200px) {
     padding: 30px 0px;
     height: 300px;
+    left: ${(props) => (props.scrollY >= 550 ? "0%" : "-100%")};
+    transition: left 0.8s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -293,12 +299,12 @@ const BottomSubText = styled.div`
   }
 `;
 
-export default () => {
+export default ({ scrollY }) => {
   return (
     <>
       <Wrapper>
         <Inner>
-          <TopDiv>
+          <TopDiv scrollY={scrollY}>
             <TopBgTextDiv>
               <TopBgText>A</TopBgText>
             </TopBgTextDiv>
@@ -307,7 +313,7 @@ export default () => {
               <TopTitleBottomText>WATCHURS</TopTitleBottomText>
             </TopTitleDiv>
           </TopDiv>
-          <BottomDiv>
+          <BottomDiv scrollY={scrollY}>
             <BottomMainText>
               Founded in 1999, ID works to deliver full interior design packages
               from concept schemes to full scale of interior & architectural

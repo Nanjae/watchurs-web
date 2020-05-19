@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import useWindowDimensions from "../../../Hooks/useWindowDimensions";
 import IntroUnder from "./IntroUnder/IntroUnder";
 import IntroUpper from "./IntroUpper/IntroUpper";
 
@@ -39,8 +38,9 @@ export default ({
   headerMenuEnter,
   setHeaderMenuEnter,
   setPopClosed,
+  windowWidth,
+  windowHeight,
 }) => {
-  const { windowWidth, windowHeight } = useWindowDimensions();
   const [arrayIndex, setArrayIndex] = useState(0);
 
   return (
@@ -50,6 +50,7 @@ export default ({
           arrayIndex={arrayIndex}
           setArrayIndex={setArrayIndex}
           bgArray={bgArray}
+          windowWidth={windowWidth}
         />
         <IntroUpper
           arrayIndex={arrayIndex}
@@ -61,6 +62,7 @@ export default ({
           headerMenuEnter={headerMenuEnter}
           setHeaderMenuEnter={setHeaderMenuEnter}
           setPopClosed={setPopClosed}
+          windowWidth={windowWidth}
         />
       </Wrapper>
     </>

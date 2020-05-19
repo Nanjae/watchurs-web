@@ -79,10 +79,11 @@ const TitleDiv = styled.div`
 `;
 
 const BgTextDiv = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  overflow: hidden;
   @media only screen and (max-width: 575.99px) {
     height: 200px;
     width: 90%;
@@ -102,6 +103,8 @@ const BgTextDiv = styled.div`
   @media only screen and (min-width: 1200px) {
     height: 375px;
     width: 550px;
+    left: ${(props) => (props.scrollY >= 2950 ? `0%` : `-100%`)};
+    transition: left 0.5s;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -141,6 +144,7 @@ const TitleBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
   @media only screen and (max-width: 575.99px) {
     margin-top: 40px;
     margin-left: 80px;
@@ -179,9 +183,10 @@ const TitleBox = styled.div`
 `;
 
 const TitleTopText = styled.div`
+  position: relative;
   color: ${(props) => props.theme.fontMainColor};
   margin-bottom: 10px;
-  transition: color 0.3s;
+  transition: color 0.3s, right 0.5s;
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
   }
@@ -196,6 +201,7 @@ const TitleTopText = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     font-size: 70px;
+    right: ${(props) => (props.scrollY >= 2950 ? `0%` : `-150%`)};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -204,9 +210,10 @@ const TitleTopText = styled.div`
 `;
 
 const TitleBottomText = styled.div`
+  position: relative;
   color: ${(props) => props.theme.fontMainColor};
   font-weight: 900;
-  transition: color 0.3s;
+  transition: color 0.3s, right 0.8s;
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
   }
@@ -221,6 +228,7 @@ const TitleBottomText = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     font-size: 70px;
+    right: ${(props) => (props.scrollY >= 3000 ? `0%` : `-150%`)};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -229,6 +237,7 @@ const TitleBottomText = styled.div`
 `;
 
 const SwiperDiv = styled.div`
+  position: relative;
   height: 130px;
   margin-bottom: 50px;
   cursor: e-resize;
@@ -251,6 +260,8 @@ const SwiperDiv = styled.div`
   @media only screen and (min-width: 1200px) {
     margin-top: 80px;
     width: 1060px;
+    opacity: ${(props) => (props.scrollY >= 3250 ? 1 : 0)};
+    transition: opacity 1s;
   }
   @media only screen and (min-width: 1536px) {
     width: 1220px;
@@ -274,11 +285,11 @@ const SwiperImage = styled.div`
   background-position: center;
   width: 200px;
   height: 80px;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 0.3s;
 `;
 
-export default () => {
+export default ({ scrollY }) => {
   const [techEnter, setTechEnter] = useState(0);
 
   const swiperParams = {
@@ -299,15 +310,15 @@ export default () => {
       <Wrapper>
         <Inner>
           <TitleDiv>
-            <BgTextDiv>
+            <BgTextDiv scrollY={scrollY}>
               <BgText>U</BgText>
             </BgTextDiv>
             <TitleBox>
-              <TitleTopText>USED</TitleTopText>
-              <TitleBottomText>TECH STACK</TitleBottomText>
+              <TitleTopText scrollY={scrollY}>USED</TitleTopText>
+              <TitleBottomText scrollY={scrollY}>TECH STACK</TitleBottomText>
             </TitleBox>
           </TitleDiv>
-          <SwiperDiv>
+          <SwiperDiv scrollY={scrollY}>
             <Swiper
               containerClass={"swiper-stack-custom"}
               {...swiperParams}

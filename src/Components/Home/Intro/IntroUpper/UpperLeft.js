@@ -17,6 +17,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  position: relative;
+  left: ${(props) => (props.scrollY >= 50 ? `-100%` : `0%`)};
+  transition: left 0.5s;
 `;
 
 const Inner = styled.div`
@@ -125,79 +128,77 @@ export default ({
 
   return (
     <>
-      <Wrapper>
-        {scrollY > 50 ? null : (
-          <Inner>
-            <TitleDiv>
-              <LogoIcon
-                onClick={() => {
-                  window.location.reload();
-                }}
-                url={logo_watchurs}
-              />
-              <TitleText
-                onClick={() => {
-                  window.location.reload();
-                }}
-              >
-                WATCHURS
-              </TitleText>
-            </TitleDiv>
-            <MenuDiv>
-              <MenuInner
-                onClick={() => {
-                  setPopClosed(false);
-                }}
-                onMouseEnter={() => {
-                  setHeaderMenuEnter(true);
-                }}
-                onMouseLeave={() => {
-                  setHeaderMenuEnter(false);
-                }}
-              >
-                <MenuLine headerMenuEnter={headerMenuEnter} />
-                <MenuTextBox headerMenuEnter={headerMenuEnter}>
-                  <MenuText>M</MenuText>
-                  <MenuText>E</MenuText>
-                  <MenuText>N</MenuText>
-                  <MenuText>U</MenuText>
-                </MenuTextBox>
-              </MenuInner>
-            </MenuDiv>
-            <IconDiv>
-              <Icon
-                onMouseEnter={() => {
-                  setIconEnter(1);
-                }}
-                onMouseLeave={() => {
-                  setIconEnter(0);
-                }}
-                style={iconEnter === 1 ? { opacity: 0.6 } : { opacity: 1 }}
-                url={icon_facebook}
-              />
-              <Icon
-                onMouseEnter={() => {
-                  setIconEnter(2);
-                }}
-                onMouseLeave={() => {
-                  setIconEnter(0);
-                }}
-                style={iconEnter === 2 ? { opacity: 0.6 } : { opacity: 1 }}
-                url={icon_instagram}
-              />
-              <Icon
-                onMouseEnter={() => {
-                  setIconEnter(3);
-                }}
-                onMouseLeave={() => {
-                  setIconEnter(0);
-                }}
-                style={iconEnter === 3 ? { opacity: 0.6 } : { opacity: 1 }}
-                url={icon_twitter}
-              />
-            </IconDiv>
-          </Inner>
-        )}
+      <Wrapper scrollY={scrollY}>
+        <Inner>
+          <TitleDiv>
+            <LogoIcon
+              onClick={() => {
+                window.location.reload();
+              }}
+              url={logo_watchurs}
+            />
+            <TitleText
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              WATCHURS
+            </TitleText>
+          </TitleDiv>
+          <MenuDiv>
+            <MenuInner
+              onClick={() => {
+                setPopClosed(false);
+              }}
+              onMouseEnter={() => {
+                setHeaderMenuEnter(true);
+              }}
+              onMouseLeave={() => {
+                setHeaderMenuEnter(false);
+              }}
+            >
+              <MenuLine headerMenuEnter={headerMenuEnter} />
+              <MenuTextBox headerMenuEnter={headerMenuEnter}>
+                <MenuText>M</MenuText>
+                <MenuText>E</MenuText>
+                <MenuText>N</MenuText>
+                <MenuText>U</MenuText>
+              </MenuTextBox>
+            </MenuInner>
+          </MenuDiv>
+          <IconDiv>
+            <Icon
+              onMouseEnter={() => {
+                setIconEnter(1);
+              }}
+              onMouseLeave={() => {
+                setIconEnter(0);
+              }}
+              style={iconEnter === 1 ? { opacity: 0.6 } : { opacity: 1 }}
+              url={icon_facebook}
+            />
+            <Icon
+              onMouseEnter={() => {
+                setIconEnter(2);
+              }}
+              onMouseLeave={() => {
+                setIconEnter(0);
+              }}
+              style={iconEnter === 2 ? { opacity: 0.6 } : { opacity: 1 }}
+              url={icon_instagram}
+            />
+            <Icon
+              onMouseEnter={() => {
+                setIconEnter(3);
+              }}
+              onMouseLeave={() => {
+                setIconEnter(0);
+              }}
+              style={iconEnter === 3 ? { opacity: 0.6 } : { opacity: 1 }}
+              url={icon_twitter}
+            />
+          </IconDiv>
+        </Inner>
       </Wrapper>
     </>
   );
