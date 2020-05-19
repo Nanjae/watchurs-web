@@ -416,7 +416,7 @@ export default () => {
 
   const { windowWidth, windowHeight } = useWindowDimensions();
 
-  console.log(scrollY);
+  // console.log(scrollY);
 
   const scrollYBottom =
     window.document.body.offsetHeight - scrollY - windowHeight;
