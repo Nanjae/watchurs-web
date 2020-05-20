@@ -48,25 +48,25 @@ const TitleDiv = styled.div`
   @media only screen and (max-width: 575.98px) {
     justify-content: center;
     width: 90%;
-    opacity: ${(props) => (props.scrollYBottom <= 2900 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 3000 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
-    opacity: ${(props) => (props.scrollY >= 700 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 600 ? 1 : 0)};
     justify-content: center;
     width: 540px;
   }
   @media only screen and (min-width: 768px) {
     justify-content: flex-start;
     width: 720px;
-    opacity: ${(props) => (props.scrollY >= 850 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 750 ? 1 : 0)};
   }
   @media only screen and (min-width: 992px) {
     width: 960px;
-    opacity: ${(props) => (props.scrollY >= 800 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 700 ? 1 : 0)};
   }
   @media only screen and (min-width: 1200px) {
     width: 1120px;
-    opacity: ${(props) => (props.scrollY >= 1150 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 1050 ? 1 : 0)};
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;

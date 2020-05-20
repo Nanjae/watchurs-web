@@ -88,9 +88,9 @@ const BgTextDiv = styled.div`
     height: 200px;
     width: 90%;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 1050 ? "0%" : "-200%")}
+      ${(props) => (props.scrollYBottom <= 1100 ? "0%" : "-200%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 1050 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1100 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     height: 200px;
@@ -196,9 +196,9 @@ const TitleTopText = styled.div`
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 1050 ? "0%" : "200%")}
+      ${(props) => (props.scrollYBottom <= 1100 ? "0%" : "200%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 1050 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1100 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     font-size: 35px;
@@ -230,9 +230,9 @@ const TitleBottomText = styled.div`
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 1000 ? "0%" : "200%")}
+      ${(props) => (props.scrollYBottom <= 1050 ? "0%" : "200%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 1000 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1050 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     font-size: 35px;
@@ -335,14 +335,14 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
               scrollY={scrollY}
               scrollPos={
                 windowWidth >= 1800
-                  ? 3300
+                  ? 3250
                   : windowWidth >= 1200
-                  ? 2900
+                  ? 2850
                   : windowWidth >= 992
-                  ? 2300
+                  ? 2250
                   : windowWidth >= 768
-                  ? 2050
-                  : 2600
+                  ? 2000
+                  : 2550
               }
               scrollYBottom={scrollYBottom}
             >
@@ -350,6 +350,23 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
             </BgTextDiv>
             <TitleBox>
               <TitleTopText
+                scrollY={scrollY}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 3250
+                    : windowWidth >= 1200
+                    ? 2850
+                    : windowWidth >= 992
+                    ? 2250
+                    : windowWidth >= 768
+                    ? 2000
+                    : 2550
+                }
+                scrollYBottom={scrollYBottom}
+              >
+                USED
+              </TitleTopText>
+              <TitleBottomText
                 scrollY={scrollY}
                 scrollPos={
                   windowWidth >= 1800
@@ -361,23 +378,6 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                     : windowWidth >= 768
                     ? 2050
                     : 2600
-                }
-                scrollYBottom={scrollYBottom}
-              >
-                USED
-              </TitleTopText>
-              <TitleBottomText
-                scrollY={scrollY}
-                scrollPos={
-                  windowWidth >= 1800
-                    ? 3350
-                    : windowWidth >= 1200
-                    ? 2950
-                    : windowWidth >= 992
-                    ? 2350
-                    : windowWidth >= 768
-                    ? 2100
-                    : 2650
                 }
                 scrollYBottom={scrollYBottom}
               >

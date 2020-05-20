@@ -214,7 +214,7 @@ const CounterBoxCount = styled.div`
     font-size: 40px;
   }
   @media only screen and (min-width: 1200px) {
-    font-size: 80px;
+    font-size: 60px;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -248,6 +248,14 @@ const CounterBoxText = styled.div`
 `;
 
 export default ({ scrollY, windowWidth, scrollYBottom }) => {
+  const countTitleArray = [
+    "PROJECTS",
+    "EMPLOYEES",
+    "PLATFORMS",
+    "BROADCASTERS",
+  ];
+  const countNumArray = [1, "SOLO", 2, 360];
+
   return (
     <>
       <Wrapper>
@@ -271,8 +279,8 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 scrollPosBottom={3450}
               >
                 <CounterBoxInner>
-                  <CounterBoxCount>35</CounterBoxCount>
-                  <CounterBoxText>PROJECTS</CounterBoxText>
+                  <CounterBoxCount>{countNumArray[0]}</CounterBoxCount>
+                  <CounterBoxText>{countTitleArray[0]}</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
               <CounterBox
@@ -292,8 +300,8 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 scrollPosBottom={3350}
               >
                 <CounterBoxInner>
-                  <CounterBoxCount>12</CounterBoxCount>
-                  <CounterBoxText>EMPLOYEES</CounterBoxText>
+                  <CounterBoxCount>{countNumArray[1]}</CounterBoxCount>
+                  <CounterBoxText>{countTitleArray[1]}</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
             </CounterColumn>
@@ -315,8 +323,8 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 scrollPosBottom={3250}
               >
                 <CounterBoxInner>
-                  <CounterBoxCount>120</CounterBoxCount>
-                  <CounterBoxText>CONTRACTORS</CounterBoxText>
+                  <CounterBoxCount>{countNumArray[2]}</CounterBoxCount>
+                  <CounterBoxText>{countTitleArray[2]}</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
               <CounterBox
@@ -336,8 +344,8 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 scrollPosBottom={3150}
               >
                 <CounterBoxInner>
-                  <CounterBoxCount>80</CounterBoxCount>
-                  <CounterBoxText>CLIENTS</CounterBoxText>
+                  <CounterBoxCount>{countNumArray[3]}</CounterBoxCount>
+                  <CounterBoxText>{countTitleArray[3]}</CounterBoxText>
                 </CounterBoxInner>
               </CounterBox>
             </CounterColumn>

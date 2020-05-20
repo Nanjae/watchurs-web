@@ -10,9 +10,8 @@ import reset from "styled-reset";
 
 export default createGlobalStyle`
     ${reset};
-    @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap");
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=fallback'); */
+    /* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=fallback'); */
     body {
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: 300;

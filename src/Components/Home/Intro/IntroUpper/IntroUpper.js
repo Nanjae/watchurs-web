@@ -43,6 +43,11 @@ export default ({
   setPopClosed,
   windowWidth,
 }) => {
+  const titleMainString = `프로젝트 WATCHURS`;
+  const titleSubString = `WATCH YOURS`;
+  const bodyMainString = `와쳐스는 일상생활 속에서 여러분이 알고 싶은 정보를 제공하기 위해 시작된 개인 프로젝트입니다.`;
+  const bodySubString = `당신의 관심사를 다양한 스타일의 페이지에서 확인해보세요.`;
+
   return (
     <>
       {windowWidth >= 1200 ? (
@@ -61,6 +66,10 @@ export default ({
             siteTheme={siteTheme}
             setSiteTheme={setSiteTheme}
             scrollY={scrollY}
+            titleMainString={titleMainString}
+            titleSubString={titleSubString}
+            bodyMainString={bodyMainString}
+            bodySubString={bodySubString}
           />
         </Wrapper>
       ) : (
@@ -71,6 +80,10 @@ export default ({
             bgArray={bgArray}
             scrollY={scrollY}
             windowWidth={windowWidth}
+            titleMainString={titleMainString}
+            titleSubString={titleSubString}
+            bodyMainString={bodyMainString}
+            bodySubString={bodySubString}
           />
         </Wrapper>
       )}

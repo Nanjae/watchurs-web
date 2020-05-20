@@ -33,9 +33,11 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 1000);
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 0);
+    });
   }
 
   render() {

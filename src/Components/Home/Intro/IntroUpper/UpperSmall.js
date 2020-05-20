@@ -470,6 +470,10 @@ export default ({
   bgArray,
   scrollY,
   windowWidth,
+  titleMainString,
+  titleSubString,
+  bodyMainString,
+  bodySubString,
 }) => {
   const [swiperImageEnter, setSwiperImageEnter] = useState(0);
   const [moreEnter, setMoreEnter] = useState(false);
@@ -480,13 +484,10 @@ export default ({
         <Inner>
           <ContentDiv>
             <ContentTextDiv>
-              <ContentTextTitle>Featured Project</ContentTextTitle>
-              <ContentTextSubTitle>WATCH YOURS</ContentTextSubTitle>
-              <ContentTextBox>
-                In this project, our designers tried to combine several styles
-                in a single interior. It features some modern and classic
-                elements in the decor.
-              </ContentTextBox>
+              <ContentTextTitle>{titleMainString}</ContentTextTitle>
+              <ContentTextSubTitle>{titleSubString}</ContentTextSubTitle>
+              <ContentTextBox>{bodyMainString}</ContentTextBox>
+              <ContentTextBox>{bodySubString}</ContentTextBox>
               <ContentTextSubBox
                 style={moreEnter ? { opacity: "0.6" } : null}
                 onMouseEnter={() => {

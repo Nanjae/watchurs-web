@@ -212,7 +212,7 @@ export default () => {
             </TopBox>
             <TopBox>
               <TopMainTextBox>
-                <TopMainText>Project</TopMainText>
+                <TopMainText>Services</TopMainText>
                 <TopMainText>:: Broadcaster</TopMainText>
               </TopMainTextBox>
               <TopSubTextBox>

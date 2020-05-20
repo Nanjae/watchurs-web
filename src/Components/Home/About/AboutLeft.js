@@ -282,7 +282,7 @@ const BottomMainText = styled.div`
   font-size: 18px;
   font-weight: 300;
   color: ${(props) => props.theme.fontMainColor};
-  line-height: 36px;
+  line-height: 30px;
   transition: color 0.3s;
 `;
 
@@ -290,7 +290,7 @@ const BottomSubText = styled.div`
   font-size: 18px;
   font-weight: 500;
   color: ${(props) => props.theme.fontMainColor};
-  line-height: 36px;
+  line-height: 30px;
   text-align: right;
   transition: color 0.3s;
   @media only screen and (max-width: 575.99px) {
@@ -311,6 +311,11 @@ const BottomSubText = styled.div`
 `;
 
 export default ({ scrollY }) => {
+  const mainString = `와쳐스는 WATCH YOURS의 줄임말로 당신의 것, 즉, 일상생활 속 생겨나는 당신의 관심사에 대한 정보를 제공하기 위해 만들어졌습니다.
+                      각각의 정보들은 와쳐스라는 하나의 프로젝트 속에서 다양한 스타일과 기술을 통해 만나보실 수 있습니다.
+                      현재는 브로드캐스터와 관련된 게임 정보 위주로 제작 중이며, 언젠가 범위를 넓혀 사소하지만 가끔은 여러분의 관심을 끄는 정보들을 한눈에 보여줄 수 있도록 기획 중입니다.
+                      원하시는 정보나 아이디어, 문의가 있으시면 사이트 하단의 이메일로 연락해주시면 감사하겠습니다.`;
+
   return (
     <>
       <Wrapper>
@@ -325,15 +330,7 @@ export default ({ scrollY }) => {
             </TopTitleDiv>
           </TopDiv>
           <BottomDiv scrollY={scrollY}>
-            <BottomMainText>
-              Founded in 1999, ID works to deliver full interior design packages
-              from concept schemes to full scale of interior & architectural
-              refurbishments with the needed technical drawings & 3D
-              visualizations , with close attention to details, managed and
-              implemented with great care; for interior construction, space
-              planning, materials, finishes, furnishings, fixtures and
-              equipment.
-            </BottomMainText>
+            <BottomMainText>{mainString}</BottomMainText>
             <BottomSubText>
               {"< Let's watch yours via WATCHURS >"}
             </BottomSubText>
