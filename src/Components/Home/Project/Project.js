@@ -166,7 +166,7 @@ const ImageBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.8s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
   @media only screen and (max-width: 575.98px) {
     :not(:first-child) {
       margin-top: 30px;
@@ -549,7 +549,7 @@ export default ({
                 <Image url={bgArray[windowWidth >= 768 ? 2 : 1]} />
                 <ImageSearchIcon
                   url={
-                    searchEnter && projectEnter === 3
+                    searchEnter && projectEnter === (windowWidth >= 768 ? 3 : 2)
                       ? icon_search_highlight
                       : icon_search
                   }

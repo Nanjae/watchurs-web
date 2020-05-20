@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  opacity: ${(props) => (props.goTopEnter ? 1 : 0.7)};
+  opacity: ${(props) => (props.goTopEnter ? 1 : 0.5)};
   background-color: ${(props) => props.theme.bgMainColor};
   transition: bottom 0.5s, opacity 0.5s, background-color 0.5s;
   cursor: pointer;
