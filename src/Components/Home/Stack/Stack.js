@@ -88,9 +88,9 @@ const BgTextDiv = styled.div`
     height: 200px;
     width: 90%;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 1000 ? "0%" : "-200%")}
+      ${(props) => (props.scrollYBottom <= 1050 ? "0%" : "-200%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 1000 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1050 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     height: 200px;
@@ -196,9 +196,9 @@ const TitleTopText = styled.div`
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 1000 ? "0%" : "200%")}
+      ${(props) => (props.scrollYBottom <= 1050 ? "0%" : "200%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 1000 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1050 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     font-size: 35px;
@@ -230,9 +230,9 @@ const TitleBottomText = styled.div`
   @media only screen and (max-width: 575.99px) {
     font-size: 35px;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 950 ? "0%" : "200%")}
+      ${(props) => (props.scrollYBottom <= 1000 ? "0%" : "200%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 950 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1000 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     font-size: 35px;
@@ -265,7 +265,7 @@ const SwiperDiv = styled.div`
   @media only screen and (max-width: 575.99px) {
     margin-top: 40px;
     width: 90%;
-    opacity: ${(props) => (props.scrollYBottom <= 800 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 850 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     margin-top: 40px;
@@ -335,14 +335,14 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
               scrollY={scrollY}
               scrollPos={
                 windowWidth >= 1800
-                  ? 3350
+                  ? 3300
                   : windowWidth >= 1200
-                  ? 2950
+                  ? 2900
                   : windowWidth >= 992
-                  ? 2350
+                  ? 2300
                   : windowWidth >= 768
-                  ? 2100
-                  : 2650
+                  ? 2050
+                  : 2600
               }
               scrollYBottom={scrollYBottom}
             >
@@ -350,6 +350,23 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
             </BgTextDiv>
             <TitleBox>
               <TitleTopText
+                scrollY={scrollY}
+                scrollPos={
+                  windowWidth >= 1800
+                    ? 3300
+                    : windowWidth >= 1200
+                    ? 2900
+                    : windowWidth >= 992
+                    ? 2300
+                    : windowWidth >= 768
+                    ? 2050
+                    : 2600
+                }
+                scrollYBottom={scrollYBottom}
+              >
+                USED
+              </TitleTopText>
+              <TitleBottomText
                 scrollY={scrollY}
                 scrollPos={
                   windowWidth >= 1800
@@ -364,23 +381,6 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 }
                 scrollYBottom={scrollYBottom}
               >
-                USED
-              </TitleTopText>
-              <TitleBottomText
-                scrollY={scrollY}
-                scrollPos={
-                  windowWidth >= 1800
-                    ? 3400
-                    : windowWidth >= 1200
-                    ? 3000
-                    : windowWidth >= 992
-                    ? 2400
-                    : windowWidth >= 768
-                    ? 2150
-                    : 2700
-                }
-                scrollYBottom={scrollYBottom}
-              >
                 TECH STACK
               </TitleBottomText>
             </TitleBox>
@@ -389,14 +389,14 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
             scrollY={scrollY}
             scrollPos={
               windowWidth >= 1800
-                ? 3650
+                ? 3600
                 : windowWidth >= 1200
-                ? 3300
+                ? 3250
                 : windowWidth >= 992
-                ? 2550
+                ? 2500
                 : windowWidth >= 768
-                ? 2300
-                : 2850
+                ? 2250
+                : 2800
             }
             scrollYBottom={scrollYBottom}
           >

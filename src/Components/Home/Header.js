@@ -104,6 +104,7 @@ const LogoIcon = styled.div`
 const CenterDiv = styled.div`
   height: 100%;
   width: fit-content;
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
@@ -115,7 +116,23 @@ const MenuLineDiv = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 0px 20px;
+  @media only screen and (max-width: 575.99px) {
+    padding: 0px 0px;
+  }
+  @media only screen and (min-width: 576px) {
+    padding: 0px 0px;
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  @media only screen and (min-width: 992px) {
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 0px 20px;
+  }
+  @media only screen and (min-width: 1536px) {
+  }
+  @media only screen and (min-width: 1800px) {
+  }
 `;
 
 const RightDiv = styled.div`
@@ -228,15 +245,7 @@ export default ({
       ) : (
         <Wrapper siteTheme={siteTheme}>
           <Inner>
-            <LeftDiv>
-              <LogoIcon
-                onClick={() => {
-                  window.location.reload();
-                }}
-                url={logo_watchurs}
-              />
-            </LeftDiv>
-            <CenterDiv
+            <LeftDiv
               onClick={() => {
                 setPopClosed(!popClosed);
               }}
@@ -251,6 +260,14 @@ export default ({
               >
                 <MenuLine headerMenuEnter={headerMenuEnter} />
               </MenuLineDiv>
+            </LeftDiv>
+            <CenterDiv>
+              <LogoIcon
+                onClick={() => {
+                  window.location.reload();
+                }}
+                url={logo_watchurs}
+              />
             </CenterDiv>
             <RightDiv>
               <ThemeBox

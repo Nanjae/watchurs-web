@@ -48,25 +48,25 @@ const TitleDiv = styled.div`
   @media only screen and (max-width: 575.98px) {
     justify-content: center;
     width: 90%;
-    opacity: ${(props) => (props.scrollYBottom <= 2850 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 2900 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
-    opacity: ${(props) => (props.scrollY >= 750 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 700 ? 1 : 0)};
     justify-content: center;
     width: 540px;
   }
   @media only screen and (min-width: 768px) {
     justify-content: flex-start;
     width: 720px;
-    opacity: ${(props) => (props.scrollY >= 900 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 850 ? 1 : 0)};
   }
   @media only screen and (min-width: 992px) {
     width: 960px;
-    opacity: ${(props) => (props.scrollY >= 850 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 800 ? 1 : 0)};
   }
   @media only screen and (min-width: 1200px) {
     width: 1120px;
-    opacity: ${(props) => (props.scrollY >= 1200 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollY >= 1150 ? 1 : 0)};
   }
   @media only screen and (min-width: 1536px) {
     width: 1280px;
@@ -388,9 +388,9 @@ const MoreBox = styled.div`
     justify-content: center;
     margin-top: 40px;
     transform: translateX(
-      ${(props) => (props.scrollYBottom <= 1200 ? "0%" : "-100%")}
+      ${(props) => (props.scrollYBottom <= 1250 ? "0%" : "-100%")}
     );
-    opacity: ${(props) => (props.scrollYBottom <= 1200 ? 1 : 0)};
+    opacity: ${(props) => (props.scrollYBottom <= 1250 ? 1 : 0)};
   }
   @media only screen and (min-width: 576px) {
     justify-content: center;
@@ -480,15 +480,15 @@ export default ({
                 pos={1}
                 scrollPos={
                   windowWidth >= 1800
-                    ? 1600
-                    : windowWidth >= 1200
                     ? 1550
+                    : windowWidth >= 1200
+                    ? 1500
                     : windowWidth >= 768
-                    ? 1200
-                    : 950
+                    ? 1150
+                    : 900
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={2700}
+                scrollPosBottom={2800}
                 onMouseEnter={() => {
                   setProjectEnter(1);
                 }}
@@ -528,17 +528,17 @@ export default ({
                 pos={3}
                 scrollPos={
                   windowWidth >= 1800
-                    ? 2400
+                    ? 2350
                     : windowWidth >= 1200
-                    ? 2250
+                    ? 2200
                     : windowWidth >= 992
-                    ? 1750
+                    ? 1700
                     : windowWidth >= 768
-                    ? 1550
-                    : 1300
+                    ? 1500
+                    : 1250
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={2300}
+                scrollPosBottom={2400}
                 onMouseEnter={() => {
                   setProjectEnter(windowWidth >= 768 ? 3 : 2);
                 }}
@@ -584,15 +584,15 @@ export default ({
                 pos={2}
                 scrollPos={
                   windowWidth >= 1800
-                    ? 1450
-                    : windowWidth >= 1200
                     ? 1400
+                    : windowWidth >= 1200
+                    ? 1350
                     : windowWidth >= 768
-                    ? 1100
-                    : 1700
+                    ? 1050
+                    : 1650
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={1900}
+                scrollPosBottom={2000}
                 onMouseEnter={() => {
                   setProjectEnter(windowWidth >= 768 ? 2 : 3);
                 }}
@@ -632,17 +632,17 @@ export default ({
                 pos={4}
                 scrollPos={
                   windowWidth >= 1800
-                    ? 2250
+                    ? 2200
                     : windowWidth >= 1200
-                    ? 2100
+                    ? 2050
                     : windowWidth >= 992
-                    ? 1600
+                    ? 1550
                     : windowWidth >= 768
-                    ? 1450
-                    : 2100
+                    ? 1400
+                    : 2050
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={1500}
+                scrollPosBottom={1600}
                 onMouseEnter={() => {
                   setProjectEnter(4);
                 }}
@@ -681,14 +681,14 @@ export default ({
                 scrollY={scrollY}
                 scrollPos={
                   windowWidth >= 1800
-                    ? 2950
+                    ? 2900
                     : windowWidth >= 1200
-                    ? 2650
+                    ? 2600
                     : windowWidth >= 992
-                    ? 2050
+                    ? 2000
                     : windowWidth >= 768
-                    ? 1800
-                    : 2400
+                    ? 1750
+                    : 2350
                 }
                 scrollYBottom={scrollYBottom}
                 style={moreEnter ? { opacity: "0.6" } : null}

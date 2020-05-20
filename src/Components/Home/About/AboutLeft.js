@@ -28,19 +28,21 @@ const Wrapper = styled.div`
 `;
 
 const Inner = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: 575.99px) {
     width: 100%;
+    height: 100%;
   }
   @media only screen and (min-width: 576px) {
     width: 480px;
+    height: 540px;
     margin: 0px 30px;
   }
   @media only screen and (min-width: 768px) {
     width: 330px;
+    height: 100%;
     margin-right: 10px;
     margin-left: 20px;
   }
@@ -69,19 +71,17 @@ const TopDiv = styled.div`
   }
   @media only screen and (min-width: 768px) {
     height: 240px;
-    transform: translateX(
-      ${(props) => (props.scrollY >= 100 ? "0%" : "-100%")}
-    );
-    opacity: ${(props) => (props.scrollY >= 100 ? "1" : "0")};
+    transform: translateX(${(props) => (props.scrollY >= 50 ? "0%" : "-100%")});
+    opacity: ${(props) => (props.scrollY >= 50 ? "1" : "0")};
   }
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
     height: 375px;
     transform: translateX(
-      ${(props) => (props.scrollY >= 250 ? "0%" : "-100%")}
+      ${(props) => (props.scrollY >= 200 ? "0%" : "-100%")}
     );
-    opacity: ${(props) => (props.scrollY >= 250 ? "1" : "0")};
+    opacity: ${(props) => (props.scrollY >= 200 ? "1" : "0")};
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -256,9 +256,9 @@ const BottomDiv = styled.div`
     padding: 20px 0px;
     height: 420px;
     transform: translateX(
-      ${(props) => (props.scrollY >= 300 ? "0%" : "-100%")}
+      ${(props) => (props.scrollY >= 250 ? "0%" : "-100%")}
     );
-    opacity: ${(props) => (props.scrollY >= 300 ? "1" : "0")};
+    opacity: ${(props) => (props.scrollY >= 250 ? "1" : "0")};
   }
   @media only screen and (min-width: 992px) {
     padding: 20px 0px;
@@ -268,9 +268,9 @@ const BottomDiv = styled.div`
     padding: 30px 0px;
     height: 300px;
     transform: translateX(
-      ${(props) => (props.scrollY >= 550 ? "0%" : "-100%")}
+      ${(props) => (props.scrollY >= 500 ? "0%" : "-100%")}
     );
-    opacity: ${(props) => (props.scrollY >= 550 ? "1" : "0")};
+    opacity: ${(props) => (props.scrollY >= 500 ? "1" : "0")};
   }
   @media only screen and (min-width: 1536px) {
   }

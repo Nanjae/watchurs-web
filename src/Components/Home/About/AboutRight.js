@@ -260,15 +260,15 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 pos={1}
                 scrollPos={
                   windowWidth >= 1200
-                    ? 350
+                    ? 300
                     : windowWidth >= 992
-                    ? 200
+                    ? 150
                     : windowWidth >= 768
-                    ? 250
-                    : 400
+                    ? 200
+                    : 350
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={3400}
+                scrollPosBottom={3450}
               >
                 <CounterBoxInner>
                   <CounterBoxCount>35</CounterBoxCount>
@@ -281,15 +281,15 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 pos={1}
                 scrollPos={
                   windowWidth >= 1200
-                    ? 350
+                    ? 300
                     : windowWidth >= 992
-                    ? 200
+                    ? 150
                     : windowWidth >= 768
-                    ? 250
-                    : 400
+                    ? 200
+                    : 350
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={3300}
+                scrollPosBottom={3350}
               >
                 <CounterBoxInner>
                   <CounterBoxCount>12</CounterBoxCount>
@@ -304,15 +304,15 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 pos={2}
                 scrollPos={
                   windowWidth >= 1200
-                    ? 600
+                    ? 550
                     : windowWidth >= 992
-                    ? 400
+                    ? 350
                     : windowWidth >= 768
-                    ? 450
-                    : 550
+                    ? 400
+                    : 500
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={3200}
+                scrollPosBottom={3250}
               >
                 <CounterBoxInner>
                   <CounterBoxCount>120</CounterBoxCount>
@@ -325,15 +325,15 @@ export default ({ scrollY, windowWidth, scrollYBottom }) => {
                 pos={2}
                 scrollPos={
                   windowWidth >= 1200
-                    ? 600
+                    ? 550
                     : windowWidth >= 992
-                    ? 400
+                    ? 350
                     : windowWidth >= 768
-                    ? 450
-                    : 550
+                    ? 400
+                    : 500
                 }
                 scrollYBottom={scrollYBottom}
-                scrollPosBottom={3100}
+                scrollPosBottom={3150}
               >
                 <CounterBoxInner>
                   <CounterBoxCount>80</CounterBoxCount>
