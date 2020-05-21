@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Swiper from "react-id-swiper";
-import logo_graphql from "../../../Assets/Images/Logos/logo_graphql.png";
-import logo_react from "../../../Assets/Images/Logos/logo_react.png";
-import logo_github from "../../../Assets/Images/Logos/logo_github.png";
-import logo_apollo from "../../../Assets/Images/Logos/logo_apollo.png";
-import logo_netlify from "../../../Assets/Images/Logos/logo_netlify.png";
-import logo_nodejs from "../../../Assets/Images/Logos/logo_nodejs.png";
-import logo_heroku from "../../../Assets/Images/Logos/logo_heroku.png";
+import logo_graphql from "../../Assets/Images/Logos/logo_graphql.png";
+import logo_react from "../../Assets/Images/Logos/logo_react.png";
+import logo_github from "../../Assets/Images/Logos/logo_github.png";
+import logo_apollo from "../../Assets/Images/Logos/logo_apollo.png";
+import logo_netlify from "../../Assets/Images/Logos/logo_netlify.png";
+import logo_nodejs from "../../Assets/Images/Logos/logo_nodejs.png";
+import logo_heroku from "../../Assets/Images/Logos/logo_heroku.png";
 
 const Wrapper = styled.div`
   height: fit-content;

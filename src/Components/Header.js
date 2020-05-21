@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import logo_watchurs_dark from "../../Assets/Images/Logos/logo_watchurs_dark.png";
-import logo_watchurs_light from "../../Assets/Images/Logos/logo_watchurs_light.png";
-import icon_contrast_dark from "../../Assets/Icons/icon_contrast_dark.png";
-import icon_contrast_light from "../../Assets/Icons/icon_contrast_light.png";
+import logo_watchurs_dark from "../Assets/Images/Logos/logo_watchurs_dark.png";
+import logo_watchurs_light from "../Assets/Images/Logos/logo_watchurs_light.png";
+import icon_contrast_dark from "../Assets/Icons/icon_contrast_dark.png";
+import icon_contrast_light from "../Assets/Icons/icon_contrast_light.png";
 import MenuLine from "./Common/MenuLine";
 
 const Wrapper = styled.div`

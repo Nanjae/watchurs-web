@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import ThemeDark from "../../Styles/ThemeDark";
+import ThemeDark from "../Styles/ThemeDark";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.bgFooterColor};

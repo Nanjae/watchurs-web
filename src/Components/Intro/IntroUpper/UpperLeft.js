@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import logo_watchurs_dark from "../../../../Assets/Images/Logos/logo_watchurs_dark.png";
-import logo_watchurs_light from "../../../../Assets/Images/Logos/logo_watchurs_light.png";
-import icon_facebook_dark from "../../../../Assets/Icons/icon_facebook_dark.png";
-import icon_facebook_light from "../../../../Assets/Icons/icon_facebook_light.png";
-import icon_instagram_dark from "../../../../Assets/Icons/icon_instagram_dark.png";
-import icon_instagram_light from "../../../../Assets/Icons/icon_instagram_light.png";
-import icon_twitter_dark from "../../../../Assets/Icons/icon_twitter_dark.png";
-import icon_twitter_light from "../../../../Assets/Icons/icon_twitter_light.png";
+import logo_watchurs_dark from "../../../Assets/Images/Logos/logo_watchurs_dark.png";
+import logo_watchurs_light from "../../../Assets/Images/Logos/logo_watchurs_light.png";
+import icon_facebook_dark from "../../../Assets/Icons/icon_facebook_dark.png";
+import icon_facebook_light from "../../../Assets/Icons/icon_facebook_light.png";
+import icon_instagram_dark from "../../../Assets/Icons/icon_instagram_dark.png";
+import icon_instagram_light from "../../../Assets/Icons/icon_instagram_light.png";
+import icon_twitter_dark from "../../../Assets/Icons/icon_twitter_dark.png";
+import icon_twitter_light from "../../../Assets/Icons/icon_twitter_light.png";
 import MenuLine from "../../Common/MenuLine";
 import { useState } from "react";
 

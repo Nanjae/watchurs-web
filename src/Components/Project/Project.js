@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import icon_search_dark from "../../../Assets/Icons/icon_search_dark.png";
-import icon_search_light from "../../../Assets/Icons/icon_search_light.png";
-import icon_search_highlight from "../../../Assets/Icons/icon_search_highlight.png";
+import icon_search_dark from "../../Assets/Icons/icon_search_dark.png";
+import icon_search_light from "../../Assets/Icons/icon_search_light.png";
+import icon_search_highlight from "../../Assets/Icons/icon_search_highlight.png";
 
 const Wrapper = styled.div`
   height: fit-content;

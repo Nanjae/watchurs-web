@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import icon_contrast_dark from "../../../../Assets/Icons/icon_contrast_dark.png";
-import icon_contrast_light from "../../../../Assets/Icons/icon_contrast_light.png";
+import icon_contrast_dark from "../../../Assets/Icons/icon_contrast_dark.png";
+import icon_contrast_light from "../../../Assets/Icons/icon_contrast_light.png";
 import Swiper from "react-id-swiper";
 
 const Wrapper = styled.div`
