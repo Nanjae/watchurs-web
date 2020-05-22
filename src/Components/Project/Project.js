@@ -314,6 +314,7 @@ const ImageOpacity = styled.div`
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s, width 0.3s, height 0.3s;
+  cursor: pointer;
   @media only screen and (max-width: 575.98px) {
     opacity: 0.2;
     width: 300px;
