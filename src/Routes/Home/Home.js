@@ -68,8 +68,8 @@ const PopWrapper = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     z-index: 150;
-    left: -821px;
-    width: 820px;
+    left: -621px;
+    width: 620px;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -96,7 +96,7 @@ const PopOpacity = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    width: 820px;
+    width: 620px;
     opacity: 0.9;
     background-color: ${(props) => props.theme.bgPopColor};
   }
@@ -125,7 +125,7 @@ const PopInner = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    width: 820px;
+    width: 620px;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -188,7 +188,7 @@ const PopMainInner = styled.div`
   }
   @media only screen and (min-width: 1200px) {
     margin-top: 0px;
-    padding-left: 200px;
+    padding-left: 180px;
     padding-top: 0px;
   }
   @media only screen and (min-width: 1536px) {
@@ -274,7 +274,7 @@ const PopMainMenuText = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    background-color: null;
+    background-color: unset;
     color: ${(props) =>
       props.popMenuEnter === props.popMenuIndex
         ? props.theme.fontPopColor
@@ -282,7 +282,7 @@ const PopMainMenuText = styled.div`
     font-size: 70px;
     font-weight: 700;
     padding: 0px;
-    width: 0px;
+    width: fit-content;
   }
   @media only screen and (min-width: 1536px) {
   }
@@ -331,7 +331,7 @@ const PopBottomInner = styled.div`
   @media only screen and (min-width: 992px) {
   }
   @media only screen and (min-width: 1200px) {
-    padding-left: 200px;
+    padding-left: 180px;
   }
   @media only screen and (min-width: 1536px) {
   }

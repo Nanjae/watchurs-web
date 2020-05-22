@@ -260,7 +260,7 @@ const SwiperDiv = styled.div`
   position: relative;
   height: 130px;
   margin-bottom: 50px;
-  cursor: e-resize;
+  cursor: pointer;
   transition: opacity 1s;
   @media only screen and (max-width: 575.99px) {
     margin-top: 40px;

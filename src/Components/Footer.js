@@ -38,16 +38,18 @@ const Inner = styled.div`
 `;
 
 const TopDiv = styled.div`
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
   @media only screen and (max-width: 575.99px) {
-    align-items: center;
+    width: fit-content;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
     height: 500px;
   }
   @media only screen and (min-width: 576px) {
+    width: 100%;
     align-items: flex-start;
+    justify-content: flex-end;
     flex-direction: row;
     height: 70%;
   }
@@ -64,19 +66,20 @@ const TopDiv = styled.div`
 `;
 
 const TopBox = styled.div`
-  width: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   @media only screen and (max-width: 575.99px) {
-    align-items: center;
+    width: fit-content;
+    align-items: flex-start;
     height: 245px;
     :not(:first-child) {
       margin-left: 0px;
     }
   }
   @media only screen and (min-width: 576px) {
+    width: 280px;
     align-items: flex-start;
+    justify-content: space-between;
     height: 100%;
     :not(:first-child) {
       margin-left: 80px;
@@ -143,7 +146,7 @@ const BottomBox = styled.div`
     justify-content: center;
   }
   @media only screen and (min-width: 576px) {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
   @media only screen and (min-width: 768px) {
   }
