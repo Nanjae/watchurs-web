@@ -133,13 +133,13 @@ const TopSubText = styled.div`
 
 const BottomDiv = styled.div`
   width: 100%;
-  height: 10%;
+  height: 25%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 `;
 
 const BottomBox = styled.div`
-  width: 100%;
+  width: 30%;
   height: 100%;
   display: flex;
   @media only screen and (max-width: 575.99px) {
@@ -147,6 +147,7 @@ const BottomBox = styled.div`
   }
   @media only screen and (min-width: 576px) {
     justify-content: flex-end;
+    align-items: flex-end;
   }
   @media only screen and (min-width: 768px) {
   }
@@ -167,7 +168,8 @@ const BottomText = styled.div`
     font-size: 16px;
   }
   @media only screen and (min-width: 576px) {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 20px;
   }
   @media only screen and (min-width: 768px) {
   }
@@ -195,7 +197,7 @@ export default () => {
                 <TopMainText>:: WATCHURS</TopMainText>
               </TopMainTextBox>
               <TopSubTextBox>
-                <TopSubText>개발 : Nanjae</TopSubText>
+                <TopSubText>개발 : 난재(Nanjae)</TopSubText>
                 <TopSubText
                   onMouseEnter={() => {
                     setTextEnter(1);
@@ -210,6 +212,24 @@ export default () => {
                   }
                 >
                   dev.nanjae@gmail.com
+                </TopSubText>
+                <TopSubText
+                  onClick={() => {
+                    window.open(`https://watchurs.com`);
+                  }}
+                  onMouseEnter={() => {
+                    setTextEnter(4);
+                  }}
+                  onMouseLeave={() => {
+                    setTextEnter(0);
+                  }}
+                  style={
+                    textEnter === 4
+                      ? { color: ThemeDark.highlightColor, cursor: "pointer" }
+                      : { cursor: "pointer" }
+                  }
+                >
+                  프로젝트 와쳐스란?
                 </TopSubText>
               </TopSubTextBox>
             </TopBox>
@@ -235,6 +255,9 @@ export default () => {
                   리그 오브 레전드 : LOL
                 </TopSubText>
                 <TopSubText
+                  onClick={() => {
+                    window.open(`https://tft.watchurs.com`);
+                  }}
                   onMouseEnter={() => {
                     setTextEnter(3);
                   }}
