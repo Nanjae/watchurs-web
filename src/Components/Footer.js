@@ -135,19 +135,18 @@ const BottomDiv = styled.div`
   width: 100%;
   height: 25%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
-const BottomBox = styled.div`
-  width: 30%;
-  height: 100%;
-  display: flex;
+const BottomText = styled.div`
+  color: ${(props) => props.theme.lineSubColor};
+  text-align: center;
   @media only screen and (max-width: 575.99px) {
-    justify-content: center;
+    font-size: 16px;
   }
   @media only screen and (min-width: 576px) {
-    justify-content: flex-end;
-    align-items: flex-end;
+    font-size: 16px;
+    line-height: 20px;
   }
   @media only screen and (min-width: 768px) {
   }
@@ -161,15 +160,16 @@ const BottomBox = styled.div`
   }
 `;
 
-const BottomText = styled.div`
-  color: ${(props) => props.theme.lineSubColor};
-  text-align: center;
+const BottomRightBox = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
   @media only screen and (max-width: 575.99px) {
-    font-size: 16px;
+    justify-content: center;
   }
   @media only screen and (min-width: 576px) {
-    font-size: 16px;
-    line-height: 20px;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
   @media only screen and (min-width: 768px) {
   }
@@ -248,11 +248,15 @@ export default () => {
                   }}
                   style={
                     textEnter === 2
-                      ? { color: ThemeDark.highlightColor, cursor: "pointer" }
-                      : { cursor: "pointer" }
+                      ? {
+                          color: "crimson",
+                          cursor: "pointer",
+                          transition: "null",
+                        }
+                      : { cursor: "pointer", transition: "null" }
                   }
                 >
-                  리그 오브 레전드 : LOL
+                  {textEnter === 2 ? "준비중입니다." : "리그 오브 레전드_LOL"}
                 </TopSubText>
                 <TopSubText
                   onClick={() => {
@@ -270,15 +274,15 @@ export default () => {
                       : { cursor: "pointer" }
                   }
                 >
-                  전략적 팀 전투 : TFT
+                  전략적 팀 전투_TFT
                 </TopSubText>
               </TopSubTextBox>
             </TopBox>
           </TopDiv>
           <BottomDiv>
-            <BottomBox>
+            <BottomRightBox>
               <BottomText>© 2020 WATCHURS. All rights reserved.</BottomText>
-            </BottomBox>
+            </BottomRightBox>
           </BottomDiv>
         </Inner>
       </Wrapper>
